@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 
     <!--=== Header v5 ===-->
     <%--...--%>
@@ -10,6 +11,17 @@
         <%--<li><a href="admin/admin">관리자</a></li>--%>
         <%--<li><a href="contents">컨텐츠</a></li></li>--%>
     <%--</ul>--%>
+
+<%--
+<h1>
+helloworld!
+</h1>
+
+<h2>
+    ${result}
+</h2>
+--%>
+
 
 <!--=== Slider ===-->
 <div class="tp-banner-container">

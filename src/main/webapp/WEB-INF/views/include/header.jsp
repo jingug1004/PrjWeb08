@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%--<%@ page session="false" %>--%>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
@@ -178,7 +178,7 @@
                         <ul class="list-inline right-topbar pull-right">
                             <li><a href="#">Account</a></li>
                             <li><a href="shop-ui-add-to-cart.html">Wishlist (0)</a></li>
-                            <li><a href="<c:url value="/loginT"/>">Login</a> | <a href="<c:url value="/shop-ui-register"/>">Register</a>
+                            <li><a href="<c:url value="/user/login"/>">Login</a> | <a href="<c:url value="/shop-ui-register"/>">Register</a>
                             </li>
                             <li><i class="search fa fa-search search-button"></i></li>
                         </ul>
@@ -508,7 +508,7 @@
                         <!-- End Clothes -->
 
                         <!-- Main Demo -->
-                        <li><a href="<c:url value="/sboard/list"/>">Free Board^^22</a></li>
+                        <li><a href="<c:url value="/sboard/list"/>">Free Board</a></li>
                         <!-- Main Demo -->
                     </ul>
                     <!-- End Nav Menu -->

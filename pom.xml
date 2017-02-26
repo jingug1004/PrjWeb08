@@ -4,8 +4,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.zerock</groupId>
-    <artifactId>Web05</artifactId>
-    <name>Web05</name>
+    <artifactId>Web06</artifactId>
+    <name>Web06</name>
     <packaging>war</packaging>
     <version>1.0.0-BUILD-SNAPSHOT</version>
 

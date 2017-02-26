@@ -105,7 +105,7 @@
                         <ul class="list-inline right-topbar pull-right">
                             <li><a href="#">중복Account</a></li>
                             <li><a href="shop-ui-add-to-cart.html">중복Wishlist (0)</a></li>
-                            <li><a href="shop-ui-login.html">중복Login</a> | <a href="shop-ui-register.html">Register</a>
+                            <li><a href="shop-ui-login.jsp">중복Login</a> | <a href="shop-ui-register.html">Register</a>
                             </li>
                             <li><i class="search fa fa-search search-button"></i></li>
                         </ul>
@@ -199,7 +199,7 @@
                                 <li><a href="shop-ui-filter-grid.html">Filter Grid Page</a></li>
                                 <li><a href="shop-ui-filter-list.html">Filter List Page</a></li>
                                 <li><a href="shop-ui-add-to-cart.html">Checkout</a></li>
-                                <li class="active"><a href="shop-ui-login.html">Login</a></li>
+                                <li class="active"><a href="shop-ui-login.jsp">Login</a></li>
                                 <li><a href="shop-ui-register.html">Register</a></li>
                             </ul>
                         </li>
