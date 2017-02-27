@@ -24,7 +24,7 @@
 <%--<!--[if !IE]><!-->--%>
 <%--<html lang="en"> <!--<![endif]-->--%>
 <%--<head>--%>
-    <%--<title>Login | Unify </title>--%>
+    <%--<title>Login | UNIFY </title>--%>
 
     <%--<!-- Meta -->--%>
     <%--<meta charset="utf-8">--%>
@@ -472,31 +472,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 md-margin-bottom-50">
-                    <h2 class="welcome-title">Welcome to Unify</h2>
-                    <p>Suspendisse et tincidunt ipsum, et dignissim urna. Vestibulum nisl tortor, gravida at magna et,
-                        suscipit vehicula massa.</p><br>
+                    <h2 class="welcome-title">Welcome to UNIFY</h2>
+                    <p>UNIFY에 오신것을 환영합니다. UNIFY는 여러분의 삶을 가치와 품격을 한단계 업그레이드하기 위해 노력할 것 입니다.</p><br>
                     <div class="info-block-v2">
                         <i class="icon icon-layers"></i>
                         <div class="info-block-in">
-                            <h3>Pellentesque vulputate</h3>
-                            <p>Vestibulum non ex volutpat, sodales diam sit amet, semper nunc. Integer sed nibh commodo,
-                                tincidunt nisi.</p>
+                            <h3>국내 최대의 규모</h3>
+                            <p>UNIFY는 국내 최대의 규모로서 여러 기업과의 상생과 공존을 통하여 매년 18%씩 시장 점유를 달성하고 있습니다.</p>
                         </div>
                     </div>
                     <div class="info-block-v2">
                         <i class="icon icon-settings"></i>
                         <div class="info-block-in">
-                            <h3>Curabitur tincidunt</h3>
-                            <p>Vestibulum non ex volutpat, sodales diam sit amet, semper nunc. Integer sed nibh commodo,
-                                tincidunt nisi.</p>
+                            <h3>가치를 통한 진보</h3>
+                            <p>보이는 것이 전부가 아닌 진정한 개인개인의 자아실현과 가치실현의 길잡이로서 항상 함께 할 것을 약속드립니다.</p>
                         </div>
                     </div>
                     <div class="info-block-v2">
                         <i class="icon icon-paper-plane"></i>
                         <div class="info-block-in">
-                            <h3>Aenean condimentum</h3>
-                            <p>Vestibulum non ex volutpat, sodales diam sit amet, semper nunc. Integer sed nibh commodo,
-                                tincidunt nisi.</p>
+                            <h3>여행같은 삶</h3>
+                            <p>매일 새로운 곳에 여행하는 기분을 만끽하실 수 있습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -567,7 +563,8 @@
                             <div class="col-xs-6">
                                 <label class="checkbox">
                                     <%--<input type="checkbox" name="checkbox"/>--%>
-                                    <input type="checkbox" name="useCookie"/>
+
+                                    &nbsp;<input type="checkbox" name="useCookie"/>
                                     <i></i>
                                     Remember me
                                 </label>
@@ -589,7 +586,7 @@
 
 
                         <div class="border-wings">
-                            <span>or</span>
+                            <span></span>
                         </div>
 
                         <div class="row columns-space-removes">
@@ -607,7 +604,7 @@
                     </form>
 
                     <div class="margin-bottom-20"></div>
-                    <p class="text-center">Don't have account yet? Learn more and <a href="../shop-ui-register.html">Sign
+                    <p class="text-center">회원이 아니십니까? 회원가입 <a href="../shop-ui-register.html">Sign
                         Up</a></p>
                 </div>
             </div><!--/end row-->
@@ -645,7 +642,7 @@
                     <%--<!-- About -->--%>
                     <%--<div class="col-md-4 md-margin-bottom-40">--%>
                         <%--<a href="home.jsp"><img class="footer-logo" src="assets/img/logo-2.png" alt=""></a>--%>
-                        <%--<p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero--%>
+                        <%--<p>About UNIFY dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero--%>
                             <%--tincidunt sodales.</p>--%>
                         <%--<br>--%>
                         <%--<ul class="list-unstyled address-list margin-bottom-20">--%>
@@ -773,7 +770,7 @@
                 <%--<div class="row">--%>
                     <%--<div class="col-md-6">--%>
                         <%--<p>--%>
-                            <%--2014 &copy; Unify. ALL Rights Reserved.--%>
+                            <%--2014 &copy; UNIFY. ALL Rights Reserved.--%>
                             <%--<a target="_blank" href="https://twitter.com/htmlstream">Htmlstream</a> | <a href="#">Privacy--%>
                             <%--Policy</a> | <a href="#">Terms of Service</a>--%>
                         <%--</p>--%>

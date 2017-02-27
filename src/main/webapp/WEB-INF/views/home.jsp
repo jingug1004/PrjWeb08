@@ -668,7 +668,7 @@ helloworld!
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <p>Unify has reached 10000 plus sales and we just want to thank you to our all customers for being part of the Unify Template success <a href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a><p>
+                    <p>UNIFY has reached 10000 plus sales and we just want to thank you to our all customers for being part of the UNIFY Template success <a href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a><p>
                     <p><a href="https://twitter.com/htmlstream">@htmlstream</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>

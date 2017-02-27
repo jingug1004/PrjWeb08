@@ -9,7 +9,7 @@
         <!-- About -->
         <div class="col-md-4 md-margin-bottom-40">
           <a href="index.html"><img class="footer-logo" src="/assets/img/logo-2.png" alt=""></a>
-          <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
+          <p>About UNIFY dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
           <br>
           <ul class="list-unstyled address-list margin-bottom-20">
             <li><i class="fa fa-angle-right"></i>서울특별시 강남구 홍길동 679-12 서자빌딩</li>
@@ -136,7 +136,7 @@
       <div class="row">
         <div class="col-md-6">
           <p>
-            2017 &copy; Unify. ALL Rights Reserved.
+            2017 &copy; UNIFY. ALL Rights Reserved.
             Sponsored by <a href="http://www.naver.com">naver.com</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
           </p>
         </div>

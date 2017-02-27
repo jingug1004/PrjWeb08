@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Web03:war exploded">
-    <output-path>$PROJECT_DIR$/target/Web03-1.0.0-BUILD-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="Web06:war exploded">
+    <output-path>$PROJECT_DIR$/target/Web06-1.0.0-BUILD-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Web03" />
+          <element id="module-output" name="Web06" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.1.RELEASE" />
@@ -47,9 +47,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/Web03-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/Web06-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Web03/web/Web" />
+      <element id="javaee-facet-resources" facet="Web06/web/Web" />
     </root>
   </artifact>
 </component>
