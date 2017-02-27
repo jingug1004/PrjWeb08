@@ -9,13 +9,15 @@
         <!-- About -->
         <div class="col-md-4 md-margin-bottom-40">
           <a href="index.html"><img class="footer-logo" src="/assets/img/logo-2.png" alt=""></a>
-          <p>About UNIFY dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
+          <p>UNIFY는 Spring MVC의 선진기술을 활용하여 <br/>
+            다른 쇼핑몰에서는 경험하지 못한 편리하고<br/>
+            안전한 쇼핑을 할 수 있는 격이 다른 마켓입니다.<br/></p>
           <br>
           <ul class="list-unstyled address-list margin-bottom-20">
             <li><i class="fa fa-angle-right"></i>서울특별시 강남구 홍길동 679-12 서자빌딩</li>
             <li><i class="fa fa-angle-right"></i>Phone: 010 123 3456</li>
             <li><i class="fa fa-angle-right"></i>Fax: 02 123 3456</li>
-            <li><i class="fa fa-angle-right"></i>Email: info@mall.co.kr</li>
+            <li><i class="fa fa-angle-right"></i>Email: info@unify.com</li>
           </ul>
 
           <ul class="list-inline shop-social">
@@ -31,23 +33,87 @@
         <div class="col-md-2 col-sm-3">
           <div class="row">
             <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">Section</h2>
+              <h2 class="thumb-headline">GUIDE</h2>
               <ul class="list-unstyled simple-list margin-bottom-20">
-                <li><a href="#">마지막 시간</a></li>
-                <li><a href="#">독점적</a></li>
-                <li><a href="#">서류 </a></li>
-                <li><a href="#">시스코 교황</a></li>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">인재채용</a></li>
+                <li><a href="#">도매/제휴 문의</a></li>
+                <li><a href="#">모델지원</a></li>
+                <li><a href="#">Partnership Proposal</a></li>
+                <li><a href="#">오프라인 매장</a></li>
                 <li>...</li>
               </ul>
             </div>
 
             <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">Themes</h2>
+              <h2 class="thumb-headline">DELIVERY</h2>
               <ul class="list-unstyled simple-list">
-                <li><a href="#">Ultima Hora</a></li>
-                <li><a href="#">Exclusiva</a></li>
-                <li><a href="#">Documentos </a></li>
-                <li><a href="#">Francisco papa</a></li>
+                <li><a href="#">반품주소</a></li>
+                <li><a href="#">반품요청</a></li>
+                <li><a href="#">배송조회</a></li>
+                <li>...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-sm-3">
+          <div class="row">
+            <div class="col-sm-12 col-xs-6">
+              <h2 class="thumb-headline">BANK INFO</h2>
+              <ul class="list-unstyled simple-list margin-bottom-20">
+                <li><a href="#">예금주 : 김진국(주)</a></li>
+                <li><a href="#">KDB하나은행</a></li>
+                <li><a href="#">국민은행</a></li>
+                <li><a href="#">신한은행</a></li>
+                <li><a href="#">우리은행</a></li>
+                <li><a href="#">기업은행</a></li>
+                <li><a href="#">농협</a></li>
+                <li>...</li>
+              </ul>
+            </div>
+
+            <div class="col-sm-12 col-xs-6">
+              <h2 class="thumb-headline">1688-1688</h2>
+              <ul class="list-unstyled simple-list">
+                <li><a href="#">10:00~17:00</a></li>
+                <li><a href="#">(Lunch 13:00)</a></li>
+                <li><a href="#">SAT, SUN, Holiday</a></li>
+                <li><a href="#">문의하기</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+                <li>...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-sm-3">
+          <div class="row">
+            <div class="col-sm-12 col-xs-6">
+              <h2 class="thumb-headline">CUSTOMER SERVICE</h2>
+              <ul class="list-unstyled simple-list margin-bottom-20">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">배송조회</a></li>
+                <li><a href="#">출석체크</a></li>
+                <li><a href="#">UNIFY 119</a></li>
+                <li><a href="#">해외배송안내</a></li>
+                <li><a href="#">매장 / 면세점 상담</a></li>
+                <li>...</li>
+              </ul>
+            </div>
+
+            <div class="col-sm-12 col-xs-6">
+              <h2 class="thumb-headline">CUSTOMER's SPACE</h2>
+              <ul class="list-unstyled simple-list">
+                <li><a href="#">인증후기</a></li>
+                <li><a href="#">구매질문</a></li>
+                <li><a href="#">구매인증</a></li>
+                <li><a href="#">패션센스</a></li>
                 <li>...</li>
               </ul>
             </div>
@@ -59,68 +125,22 @@
             <div class="col-sm-12 col-xs-6">
               <h2 class="thumb-headline">Download</h2>
               <ul class="list-unstyled simple-list margin-bottom-20">
-                <li><a href="#">Ultima Hora</a></li>
-                <li><a href="#">Exclusiva</a></li>
-                <li><a href="#">Documentos </a></li>
+                <li><a href="#">가이드 라인</a></li>
+                <li><a href="#">표준약관</a></li>
+                <li><a href="#">Tip & KnowHow</a></li>
                 <li>...</li>
               </ul>
             </div>
 
             <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">Documents</h2>
+              <h2 class="thumb-headline">FAMILY SITE</h2>
               <ul class="list-unstyled simple-list">
-                <li><a href="#">Ultima Hora</a></li>
-                <li><a href="#">Exclusiva</a></li>
-                <li><a href="#">Documentos </a></li>
-                <li><a href="#">Francisco papa</a></li>
-                <li>...</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2 col-sm-3">
-          <div class="row">
-            <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">Advertising</h2>
-              <ul class="list-unstyled simple-list margin-bottom-20">
-                <li><a href="#">Ultima Hora</a></li>
-                <li><a href="#">Exclusiva</a></li>
-                <li><a href="#">Documentos </a></li>
-                <li><a href="#">Francisco papa</a></li>
-                <li>...</li>
-              </ul>
-            </div>
-
-            <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">Contact</h2>
-              <ul class="list-unstyled simple-list">
-                <li><a href="#">Ultima Hora</a></li>
-                <li><a href="#">Exclusiva</a></li>
-                <li><a href="#">Documentos </a></li>
-                <li><a href="#">Francisco papa</a></li>
-                <li>...</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2 col-sm-3">
-          <div class="row">
-            <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">Download</h2>
-              <ul class="list-unstyled simple-list margin-bottom-20">
-                <li><a href="#">Ultima Hora</a></li>
-                <li><a href="#">Exclusiva</a></li>
-                <li>...</li>
-              </ul>
-            </div>
-
-            <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">Documents</h2>
-              <ul class="list-unstyled simple-list">
-                <li><a href="#">Ultima Hora</a></li>
-                <li><a href="#">Exclusiva</a></li>
+                <li><a href="#">NEVER</a></li>
+                <li><a href="#">Baum</a></li>
+                <li><a href="#">MATE</a></li>
+                <li><a href="#">GOGLE</a></li>
+                <li><a href="#">HeapOverflow</a></li>
+                <li><a href="#">NOKKKY</a></li>
                 <li>...</li>
               </ul>
             </div>
@@ -137,7 +157,7 @@
         <div class="col-md-6">
           <p>
             2017 &copy; UNIFY. ALL Rights Reserved.
-            Sponsored by <a href="http://www.naver.com">naver.com</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            Sponsored by <a href="http://www.naver.com">heapoverflow.com</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
           </p>
         </div>
         <div class="col-md-6">

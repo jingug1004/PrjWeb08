@@ -72,4 +72,16 @@ public class UserController {
 
     }
 
+    @RequestMapping(value = "/shop-ui-register")
+    public String register () {
+
+        return "user/shop-ui-register";
+    }
+
+//    @RequestMapping(value = "/shop-ui-register", method = RequestMethod.POST)
+//    public String register () {
+//
+//        return "user/shop-ui-register";
+//    }
+
 }

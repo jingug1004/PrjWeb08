@@ -152,21 +152,27 @@
                         <!-- Topbar Navigation -->
                         <ul class="left-topbar">
                             <li>
-                                <a>Currency (USD)</a>
+                                <a>Currency (KRW)</a>
                                 <ul class="currency">
                                     <li class="active">
-                                        <a href="#">USD <i class="fa fa-check"></i></a>
+                                        <a href="#">KRW <i class="fa fa-check"></i></a>
                                     </li>
+                                    <li><a href="#">JPY</a></li>
+                                    <li><a href="#">CNY</a></li>
+                                    <li><a href="#">Dollar</a></li>
                                     <li><a href="#">Euro</a></li>
                                     <li><a href="#">Pound</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a>Language (EN)</a>
+                                <a>Language (KOR)</a>
                                 <ul class="language">
                                     <li class="active">
-                                        <a href="#">English (EN)<i class="fa fa-check"></i></a>
+                                        <a href="#">Korean (KOR)<i class="fa fa-check"></i></a>
                                     </li>
+                                    <li><a href="#">Japanese (JPN)</a></li>
+                                    <li><a href="#">Chinese (CHN)</a></li>
+                                    <li><a href="#">English (EN)</a></li>
                                     <li><a href="#">Spanish (SPN)</a></li>
                                     <li><a href="#">Russian (RUS)</a></li>
                                     <li><a href="#">German (GRM)</a></li>
@@ -178,7 +184,7 @@
                         <ul class="list-inline right-topbar pull-right">
                             <li><a href="#">Account</a></li>
                             <li><a href="shop-ui-add-to-cart.html">Wishlist (0)</a></li>
-                            <li><a href="<c:url value="/user/login"/>">Login</a> | <a href="<c:url value="/shop-ui-register"/>">Register</a>
+                            <li><a href="<c:url value="/user/login"/>">Login</a> | <a href="<c:url value="/user/shop-ui-register"/>">Register</a>
                             </li>
                             <li><i class="search fa fa-search search-button"></i></li>
                         </ul>
@@ -273,7 +279,7 @@
                                 <li><a href="shop-ui-filter-list.html">Filter List Page</a></li>
                                 <li><a href="shop-ui-add-to-cart.html">Checkout</a></li>
                                 <li><a href="shop-ui-login.html">Login</a></li>
-                                <li><a href="shop-ui-register.jsp">Register</a></li>
+                                <li><a href="../include/shop-ui-register.jsp">Register</a></li>
                             </ul>
                         </li>
                         <!-- End Pages -->

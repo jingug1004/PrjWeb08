@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: wtime
-  Date: 2017-02-20
-  Time: 오전 10:08
+  Date: 2017-02-23
+  Time: 오후 1:34
   To change this template use File | Settings | File Templates.
 --%>
 
@@ -16,15 +16,13 @@
 <!--=== End Header v5 ===-->
 <%@ include file="../include/header.jsp"%>
 
-
-<%--&lt;%&ndash;<%@ page contentType="text/html;charset=UTF-8" language="java" %>&ndash;%&gt;--%>
 <%--<!DOCTYPE html>--%>
 <%--<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->--%>
 <%--<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->--%>
 <%--<!--[if !IE]><!-->--%>
 <%--<html lang="en"> <!--<![endif]-->--%>
 <%--<head>--%>
-    <%--<title>Login | UNIFY </title>--%>
+    <%--<title>Registration | UNIFY</title>--%>
 
     <%--<!-- Meta -->--%>
     <%--<meta charset="utf-8">--%>
@@ -53,7 +51,7 @@
     <%--<link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css">--%>
     <%--<link rel="stylesheet" href="../assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">--%>
 
-    <%--<!-- CSS Page Style -->--%>
+    <%--<!-- CSS Page Styles -->--%>
     <%--<link rel="stylesheet" href="../assets/css/pages/log-reg-v3.css">--%>
 
     <%--<!-- Style Switcher -->--%>
@@ -112,7 +110,7 @@
                         <%--<ul class="list-inline right-topbar pull-right">--%>
                             <%--<li><a href="#">Account</a></li>--%>
                             <%--<li><a href="../shop-ui-add-to-cart.html">Wishlist (0)</a></li>--%>
-                            <%--<li><a href="../shop-ui-login.jsp">Login</a> | <a href="../shop-ui-register.jsp">Register</a>--%>
+                            <%--<li><a href="shop-ui-login.jsp">Login</a> | <a href="shop-ui-register.jsp">Register</a>--%>
                             <%--</li>--%>
                             <%--<li><i class="search fa fa-search search-button"></i></li>--%>
                         <%--</ul>--%>
@@ -206,8 +204,8 @@
                                 <%--<li><a href="../shop-ui-filter-grid.html">Filter Grid Page</a></li>--%>
                                 <%--<li><a href="../shop-ui-filter-list.html">Filter List Page</a></li>--%>
                                 <%--<li><a href="../shop-ui-add-to-cart.html">Checkout</a></li>--%>
-                                <%--<li class="active"><a href="../shop-ui-login.jsp">Login</a></li>--%>
-                                <%--<li><a href="../shop-ui-register.jsp">Register</a></li>--%>
+                                <%--<li><a href="shop-ui-login.jsp">Login</a></li>--%>
+                                <%--<li class="active"><a href="shop-ui-register.jsp">Register</a></li>--%>
                             <%--</ul>--%>
                         <%--</li>--%>
                         <%--<!-- End Pages -->--%>
@@ -457,7 +455,7 @@
     <div class="breadcrumbs-v4">
         <div class="container">
             <span class="page-name">Log In</span>
-            <h1>새로운 품격의 <span class="shop-green">시작</span> 입니다.</h1>
+            <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
             <ul class="breadcrumb-v4-in">
                 <li><a href="../home.jsp">Home</a></li>
                 <li><a href="">Product</a></li>
@@ -467,150 +465,142 @@
     </div>
     <!--=== End Breadcrumbs v4 ===-->
 
-    <!--=== Login ===-->
-    <div class="log-reg-v3 content-md">
+    <!--=== Registre ===-->
+    <div class="log-reg-v3 content-md margin-bottom-30">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 md-margin-bottom-50">
                     <h2 class="welcome-title">Welcome to UNIFY</h2>
-                    <p>UNIFY에 오신것을 환영합니다. UNIFY는 여러분의 삶을 가치와 품격을 한단계 업그레이드하기 위해 노력할 것 입니다.</p><br>
-                    <div class="info-block-v2">
-                        <i class="icon icon-layers"></i>
-                        <div class="info-block-in">
-                            <h3>국내 최대의 규모</h3>
-                            <p>UNIFY는 국내 최대의 규모로서 여러 기업과의 상생과 공존을 통하여 매년 18%씩 시장 점유를 달성하고 있습니다.</p>
+                    <p>지금 회원 가입하신 후 UNIFY의 다양한 서비스를 만나보세요.</p><br>
+                    <div class="row margin-bottom-50">
+                        <div class="col-sm-4 md-margin-bottom-20">
+                            <div class="site-statistics">
+                                <span>20,039</span>
+                                <small>Products</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 md-margin-bottom-20">
+                            <div class="site-statistics">
+                                <span>54,283</span>
+                                <small>Reviews</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="site-statistics">
+                                <span>376k</span>
+                                <small>Sale</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="info-block-v2">
-                        <i class="icon icon-settings"></i>
-                        <div class="info-block-in">
-                            <h3>가치를 통한 진보</h3>
-                            <p>보이는 것이 전부가 아닌 진정한 개인개인의 자아실현과 가치실현의 길잡이로서 항상 함께 할 것을 약속드립니다.</p>
-                        </div>
-                    </div>
-                    <div class="info-block-v2">
-                        <i class="icon icon-paper-plane"></i>
-                        <div class="info-block-in">
-                            <h3>여행같은 삶</h3>
-                            <p>매일 새로운 곳에 여행하는 기분을 만끽하실 수 있습니다.</p>
-                        </div>
+                    <div class="members-number">
+                        <h3>Join more than <span class="shop-green">13,000</span> members worldwide</h3>
+                        <img class="img-responsive" src="../assets/img/map.png" alt="">
                     </div>
                 </div>
 
-                <!--
-                <form-login/>
-                    login-page : 로그인 페이지 주소 지정
-                    username-parameter : 로그인 페이지 form에 있는 username을 저장한 변수이름 지정
-                    password-parameter : 로그인 페이지 form에 있는 password를 저장한 변수이름 지정
-                    login-processing-url : 로그인 페이지 form action에 입력할 주소 지정
-                    default-target-url : 로그인 성공인 경우 호출할 주소 지정
-                    authentication-failure-url : 로그인 실패인 경우 호출할 주소 지정
-                    always-use-default-target
-                * 중복 로그인
-                <concurrency-contorl>
-                    max-session : 중복 로그인이 가능한 세션 수
-                    expired-url : 중복 로그인이 발생하면, 먼저 로그인한 세션이 종료되며
-                    세션이 끊어진 상태에서 모든 url을 호출할 경우 끊어진 원인을 알려줄 주소 지정
-                 -->
-                <%--
                 <div class="col-md-5">
-                    <form id="loginfrm" name="loginfrm"
-                    &lt;%&ndash;<form id="sky-form1" class="log-reg-block sky-form"&ndash;%&gt;
-                          action="loginProcess"
-                          &lt;%&ndash;action="<c:url value="${ctx}/login"/>"&ndash;%&gt;
-                          method="post">
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-                        <h2>Log in to your account</h2>
-                        --%>
+                    <form id="sky-form4" class="log-reg-block sky-form">
+                        <h2>Create New Account</h2>
 
-                <div class="col-md-5">
-                    <form id="loginfrm" name="loginfrm"
-                    <%--<form id="sky-form1" class="log-reg-block sky-form"--%>
-                          action="/user/loginPost"
-                          <%--action="<c:url value="${ctx}/login"/>"--%>
-                          method="post">
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-                        <h2>Log in to your account</h2>
-
-
-                        <%--<form action="${ctx}/j_spring_security_ckeck" method="post">--%>
-                        <section>
-                            <label class="input login-input">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input type="text" placeholder="USER ID" name="uid"
-                                           class="form-control">
-                                    <%--<input type="email" placeholder="ID(Email Address)" name="email" class="form-control">--%>
+                        <div class="login-input reg-input">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <section>
+                                        <label class="input">
+                                            <input type="text" name="firstname" placeholder="First name"
+                                                   class="form-control">
+                                        </label>
+                                    </section>
                                 </div>
-                            </label>
-                        </section>
-
-                        <section>
-                            <label class="input login-input no-border-top">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                    <input type="password" placeholder="Password" name="upw"
-                                           class="form-control">
-                                    <%--<input type="password" placeholder="Password" name="password" class="form-control">--%>
+                                <div class="col-sm-6">
+                                    <section>
+                                        <label class="input">
+                                            <input type="text" name="lastname" placeholder="Last name"
+                                                   class="form-control">
+                                        </label>
+                                    </section>
                                 </div>
+                            </div>
+                            <label class="select margin-bottom-15">
+                                <select name="gender" class="form-control">
+                                    <option value="0" selected disabled>Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                    <option value="3">Other</option>
+                                </select>
                             </label>
-                        </section>
-                        <%--<input type="submit" value="login">--%>
-                        <%--</form>--%>
-
-
-                        <div class="row margin-bottom-5">
-                            <div class="col-xs-6">
-                                <label class="checkbox">
-                                    <%--<input type="checkbox" name="checkbox"/>--%>
-
-                                    <input type="checkbox" name="useCookie"/>
-                                    <i></i>
-                                    Remember me
+                            <div class="row margin-bottom-10">
+                                <div class="col-xs-6">
+                                    <label class="select">
+                                        <select name="month" class="form-control">
+                                            <option disabled="" selected="" value="0">Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="col-xs-3">
+                                    <input type="text" name="day" placeholder="Day" class="form-control">
+                                </div>
+                                <div class="col-xs-3">
+                                    <input type="text" name="year" placeholder="Year" class="form-control">
+                                </div>
+                            </div>
+                            <section>
+                                <label class="input">
+                                    <input type="text" name="username" placeholder="Username" class="form-control">
                                 </label>
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <a href="#">Forget your Password?</a>
-                            </div>
+                            </section>
+                            <section>
+                                <label class="input">
+                                    <input type="email" name="email" placeholder="Email address" class="form-control">
+                                </label>
+                            </section>
+                            <section>
+                                <label class="input">
+                                    <input type="password" name="password" placeholder="Password" id="password"
+                                           class="form-control">
+                                </label>
+                            </section>
+                            <section>
+                                <label class="input">
+                                    <input type="password" name="passwordConfirm" placeholder="Confirm password"
+                                           class="form-control">
+                                </label>
+                            </section>
                         </div>
-                        <button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit" value="login">Log in</button>
-                        <%--<button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Log in</button>--%>
 
-                        <c:if test="${not empty param.fail}">
-                            <font class="bg-color-red">
-                                <p>Your login attempt was not successful, try again</p>
-                                <p>Reason:${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</p>
-                            </font>
-                            <c:remove scope="session" var="SPRING_SECURITY_LAST_EXCEPTION"/>
-                        </c:if>
-
-
-                        <div class="border-wings">
-                            <span></span>
-                        </div>
-
-                        <div class="row columns-space-removes">
-                            <div class="col-lg-6 margin-bottom-10">
-                                <button type="button" class="btn-u btn-u-md btn-u-fb btn-block"><i
-                                        class="fa fa-facebook"></i> Facebook Log In
-                                </button>
-                            </div>
-                            <div class="col-lg-6">
-                                <button type="button" class="btn-u btn-u-md btn-u-tw btn-block"><i
-                                        class="fa fa-twitter"></i> Twitter Log In
-                                </button>
-                            </div>
-                        </div>
+                        <label class="checkbox margin-bottom-10">
+                            <input type="checkbox" name="checkbox"/>
+                            <i></i>
+                            Subscribe to our newsletter to get the latest offers
+                        </label>
+                        <label class="checkbox margin-bottom-20">
+                            <input type="checkbox" name="checkbox"/>
+                            <i></i>
+                            I have read agreed with the <a href="#">terms &amp; conditions</a>
+                        </label>
+                        <button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Create Account
+                        </button>
                     </form>
 
                     <div class="margin-bottom-20"></div>
-                    <p class="text-center">회원이 아니십니까? 회원가입 <a href="<c:url value="/user/shop-ui-register"/>">Sign
-                        Up</a></p>
+                    <p class="text-center">Already you have an account? <a href="shop-ui-login.jsp">Sign In</a></p>
                 </div>
             </div><!--/end row-->
         </div><!--/end container-->
     </div>
-    <!--=== End Login ===-->
+    <!--=== End Registre ===-->
 
     <!--=== Shop Suvbscribe ===-->
     <div class="shop-subscribe">
@@ -632,7 +622,7 @@
     </div>
     <!--=== End Shop Suvbscribe ===-->
 
-    <%@ include file="../include/footer.jsp"%>
+<%@ include file="../include/footer.jsp"%>
 
     <%--<!--=== Footer v4 ===-->--%>
     <%--<div class="footer-v4">--%>
@@ -641,7 +631,7 @@
                 <%--<div class="row">--%>
                     <%--<!-- About -->--%>
                     <%--<div class="col-md-4 md-margin-bottom-40">--%>
-                        <%--<a href="home.jsp"><img class="footer-logo" src="assets/img/logo-2.png" alt=""></a>--%>
+                        <%--<a href="../home.jsp"><img class="footer-logo" src="../assets/img/logo-2.png" alt=""></a>--%>
                         <%--<p>About UNIFY dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero--%>
                             <%--tincidunt sodales.</p>--%>
                         <%--<br>--%>
@@ -790,60 +780,30 @@
     <%--<!--=== End Footer v4 ===-->--%>
 <%--</div><!--/wrapper-->--%>
 
-<%--<!-- Wait Block -->--%>
-<%--<div class="g-popup-wrapper">--%>
-    <%--<div class="g-popup g-popup--fb">--%>
-        <%--<div class="g-popup--fb-title">--%>
-            <%--<a target="_blank" href="https://www.facebook.com/htmlstream" class="g-popup--fb__logo"><img alt="facebook"--%>
-                                                                                                         <%--src="assets/img/others/fb.png"--%>
-                                                                                                         <%--width="110"></a>--%>
-            <%--<div class="g-popup--fb-message">Click <strong>"Like"</strong><br>to read our blog on Facebook</div>--%>
-        <%--</div>--%>
-        <%--<div class="g-popup--fb-widjet">--%>
-            <%--<div id="fb-root"></div>--%>
-            <%--<script>(function (d, s, id) {--%>
-                <%--var js, fjs = d.getElementsByTagName(s)[0];--%>
-                <%--if (d.getElementById(id)) return;--%>
-                <%--js = d.createElement(s);--%>
-                <%--js.id = id;--%>
-                <%--js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.4&appId=118547268248380";--%>
-                <%--fjs.parentNode.insertBefore(js, fjs);--%>
-            <%--}(document, 'script', 'facebook-jssdk'));</script>--%>
-            <%--<div class="fb-like" data-href="https://www.facebook.com/htmlstream/" data-width="270"--%>
-                 <%--data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>--%>
-        <%--</div>--%>
-        <%--<a href="javascript:void(0);" class="g-popup__close g-popup--fb__close"><span class="icon-close"--%>
-                                                                                      <%--aria-hidden="true"></span></a>--%>
-    <%--</div>--%>
-<%--</div>--%>
-<%--<!-- End Wait Block -->--%>
-
 <%--<!-- JS Global Compulsory -->--%>
-<%--<script src="assets/plugins/jquery/jquery.min.js"></script>--%>
-<%--<script src="assets/plugins/jquery/jquery-migrate.min.js"></script>--%>
-<%--<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>--%>
+<%--<script src="../assets/plugins/jquery/jquery.min.js"></script>--%>
+<%--<script src="../assets/plugins/jquery/jquery-migrate.min.js"></script>--%>
+<%--<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>--%>
 <%--<!-- JS Implementing Plugins -->--%>
-<%--<script src="assets/plugins/back-to-top.js"></script>--%>
-<%--<script src="assets/plugins/smoothScroll.js"></script>--%>
-<%--<script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>--%>
-<%--<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>--%>
-<%--<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>--%>
+<%--<script src="../assets/plugins/back-to-top.js"></script>--%>
+<%--<script src="../assets/plugins/smoothScroll.js"></script>--%>
+<%--<script src="../assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>--%>
+<%--<script src="../assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>--%>
 <%--<!-- JS Customization -->--%>
-<%--<script src="assets/js/custom.js"></script>--%>
+<%--<script src="../assets/js/custom.js"></script>--%>
 <%--<!-- JS Page Level -->--%>
-<%--<script src="assets/js/shop.app.js"></script>--%>
-<%--<script src="assets/js/forms/page_login.js"></script>--%>
-<%--<script src="assets/js/plugins/style-switcher.js"></script>--%>
-<%--<script src="assets/js/forms/page_contact_form.js"></script>--%>
+<%--<script src="../assets/js/shop.app.js"></script>--%>
+<%--<script src="../assets/js/plugins/style-switcher.js"></script>--%>
+<%--<script src="../assets/js/forms/page_registration.js"></script>--%>
 <%--<script>--%>
     <%--jQuery(document).ready(function () {--%>
         <%--App.init();--%>
-        <%--Login.initLogin();--%>
         <%--App.initScrollBar();--%>
+        <%--Registration.initRegistration();--%>
         <%--StyleSwitcher.initStyleSwitcher();--%>
-        <%--PageContactForm.initPageContactForm();--%>
     <%--});--%>
 <%--</script>--%>
+
 <%--<!--[if lt IE 9]>--%>
 <%--<script src="assets/plugins/respond.js"></script>--%>
 <%--<script src="assets/plugins/html5shiv.js"></script>--%>
