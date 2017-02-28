@@ -2,15 +2,15 @@
          pageEncoding="UTF-8" %>
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 
-    <!--=== Header v5 ===-->
-    <%--...--%>
-    <!--=== End Header v5 ===-->
-<%@ include file="include/header.jsp"%>
+<!--=== Header v5 ===-->
+<%--...--%>
+<!--=== End Header v5 ===-->
+<%@ include file="include/header.jsp" %>
 
-    <%--<ul>--%>
-        <%--<li><a href="admin/admin">관리자</a></li>--%>
-        <%--<li><a href="contents">컨텐츠</a></li></li>--%>
-    <%--</ul>--%>
+<%--<ul>--%>
+<%--<li><a href="admin/admin">관리자</a></li>--%>
+<%--<li><a href="contents">컨텐츠</a></li></li>--%>
+<%--</ul>--%>
 
 <%--
 <h1>
@@ -28,9 +28,11 @@ helloworld!
     <div class="tp-banner">
         <ul>
             <!-- SLIDE -->
-            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 1">
+            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
+                data-title="Slide 1">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/1.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                <img src="assets/img/1.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                     data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch1 sft start"
                      data-x="center"
@@ -64,9 +66,11 @@ helloworld!
             <!-- END SLIDE -->
 
             <!-- SLIDE -->
-            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
+                data-title="Slide 2">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/5.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                <img src="assets/img/5.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                     data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch3 sft start"
                      data-x="center"
@@ -92,8 +96,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    Cras non dui et quam auctor pretium.<br>
-                    Aenean enim tortr, tempus et iteus m
+                     새로운 개념의 시대를 앞서가는 패션 <br>
+                     끝없는 도전으로 스스로의 한계 탈피
                 </div>
 
                 <!-- LAYER -->
@@ -114,9 +118,11 @@ helloworld!
             <!-- END SLIDE -->
 
             <!-- SLIDE -->
-            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 3">
+            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
+                data-title="Slide 3">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/3.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top" data-bgrepeat="no-repeat">
+                <img src="assets/img/3.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
+                     data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch3 sft start"
                      data-x="right"
@@ -142,8 +148,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    lectus. Cras non dui et quam auctor.<br>
-                    Aenean enim tortor, tempus et im
+                    미세한 변화까지 최소화해&nbsp;&nbsp;&nbsp;<br/>시계 본연의 멋과 가치,&nbsp;&nbsp;&nbsp;<br/><br/><br/><br/>
+                    원칙을 최대한 지켜 명품 본연의&nbsp;&nbsp;&nbsp;<br/>고귀함을 뼛속까지 그대로 전달&nbsp;&nbsp;&nbsp;<br/>
                 </div>
 
                 <!-- LAYER -->
@@ -164,9 +170,11 @@ helloworld!
             <!-- END SLIDE -->
 
             <!-- SLIDE -->
-            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 4">
+            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
+                data-title="Slide 4">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/2.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                <img src="assets/img/2.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                     data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch1 sft start"
                      data-x="center"
@@ -192,7 +200,7 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    Super Promo
+                    Super Promotion
                 </div>
 
                 <!-- LAYER -->
@@ -214,9 +222,11 @@ helloworld!
             <!-- END SLIDE -->
 
             <!-- SLIDE -->
-            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 5">
+            <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
+                data-title="Slide 5">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/4.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top" data-bgrepeat="no-repeat">
+                <img src="assets/img/4.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
+                     data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch5 sft start"
                      data-x="right"
@@ -242,8 +252,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    Cras non dui et quam auctor pretium.<br>
-                    Aenean enim tortr, tempus et iteus m
+                    여러 패션용품으로 삶을 더 즐겁게&nbsp;&nbsp;&nbsp;<br/>바꿀 준비 되셨나요?&nbsp;&nbsp;&nbsp;<br><br/><br/><br/>
+                    단지 입고 세탁하던 모든 것들이&nbsp;&nbsp;&nbsp;<br/>이야기가 넘치는 소재로 바뀝니다.&nbsp;&nbsp;&nbsp;<br/>
                 </div>
 
                 <!-- LAYER -->
@@ -301,7 +311,9 @@ helloworld!
 
     <div class="heading heading-v1 margin-bottom-20">
         <h2>Featured products</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio elit, ultrices vel cursus sed, placerat ut leo. Phasellus in magna erat. Etiam gravida convallis augue non tincidunt. Nunc lobortis dapibus neque quis lacinia. Nam dapibus tellus sit amet odio venenatis</p>
+        <p>새로운 개념의 패션! 혁신적인 방식으로 기존의 고정관념에서 벗어난 디자인과 기능을 선보입니다.<br/>일상 속에 자연스럽게 스며드는 디자인에 실용적인 사용성까지 더한 패션들, 우리가 기다렸던 바로
+            그 새로운 시작입니다.
+        <p>
     </div>
 
     <!--=== Illustration v2 ===-->
@@ -314,7 +326,8 @@ helloworld!
         <ul class="list-inline owl-slider">
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/09.jpg" alt=""></a>
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/09.jpg"
+                                                      alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
@@ -335,13 +348,16 @@ helloworld!
                         <li><i class="rating-selected fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                 data-placement="left" class="tooltips" href="#"><i
+                                class="fa fa-heart"></i></a></li>
                     </ul>
                 </div>
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/26.jpg" alt=""></a>
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/26.jpg"
+                                                      alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
@@ -363,13 +379,16 @@ helloworld!
                         <li><i class="rating-selected fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                 data-placement="left" class="tooltips" href="#"><i
+                                class="fa fa-heart"></i></a></li>
                     </ul>
                 </div>
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg"
+                                                      alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     <div class="shop-rgba-red rgba-banner">Out of stock</div>
@@ -391,13 +410,16 @@ helloworld!
                         <li><i class="rating-selected fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                 data-placement="left" class="tooltips" href="#"><i
+                                class="fa fa-heart"></i></a></li>
                     </ul>
                 </div>
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/12.jpg" alt=""></a>
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/12.jpg"
+                                                      alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     <div class="shop-rgba-dark-green rgba-banner">New</div>
@@ -419,13 +441,16 @@ helloworld!
                         <li><i class="rating-selected fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                 data-placement="left" class="tooltips" href="#"><i
+                                class="fa fa-heart"></i></a></li>
                     </ul>
                 </div>
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/10.jpg" alt=""></a>
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/10.jpg"
+                                                      alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
@@ -446,13 +471,16 @@ helloworld!
                         <li><i class="rating-selected fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                 data-placement="left" class="tooltips" href="#"><i
+                                class="fa fa-heart"></i></a></li>
                     </ul>
                 </div>
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg"
+                                                      alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     <div class="shop-rgba-red rgba-banner">Out of stock</div>
@@ -474,7 +502,9 @@ helloworld!
                         <li><i class="rating-selected fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
                         <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                 data-placement="left" class="tooltips" href="#"><i
+                                class="fa fa-heart"></i></a></li>
                     </ul>
                 </div>
             </li>
@@ -558,7 +588,9 @@ helloworld!
                     <li><i class="rating-selected fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -586,7 +618,9 @@ helloworld!
                     <li><i class="rating-selected fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -614,7 +648,9 @@ helloworld!
                     <li><i class="rating-selected fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -642,7 +678,9 @@ helloworld!
                     <li><i class="rating-selected fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
                     <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -668,7 +706,9 @@ helloworld!
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <p>UNIFY has reached 10000 plus sales and we just want to thank you to our all customers for being part of the UNIFY Template success <a href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a><p>
+                    <p>UNIFY는 매출액이 100억에 이르렀으며 UNIFY의 성공에 참여해 주신 모든 고객 여러분께 감사드리고 싶습니다.<br/> <br/><a
+                            href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a>
+                    <p>
                     <p><a href="https://twitter.com/htmlstream">@htmlstream</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
@@ -677,7 +717,7 @@ helloworld!
                     </ul>
                 </div>
                 <div class="item">
-                    <p>the majority have suffered #alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
+                    <p>UNIFY의 사회기부 활동 및 운동<br/><br/></p>
                     <p><a href="https://twitter.com/htmlstream">@twbootstrap</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
@@ -686,7 +726,8 @@ helloworld!
                     </ul>
                 </div>
                 <div class="item">
-                    <p>New 100% Free Stock Photos. Every. Single. Day. Everything you need for your creative projects. <a href="#">http://publicdomainarchive.com</a></p>
+                    <p>21c 새로운 창의적인 것들에 대하여 필요한 모든 것을 보여줍니다. <br/><br/><a href="#">http://publicdomainarchive.com</a>
+                    </p>
                     <p><a href="https://twitter.com/htmlstream">@wrapbootstrap</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
@@ -718,7 +759,8 @@ helloworld!
             </div>
             <div class="product-service-in">
                 <h3>Free Delivery</h3>
-                <p>Integer mattis lacinia felis vel molestie. Ut eu euismod erat, tincidunt pulvinar semper veliUt porta, leo...</p>
+                <p>1등 쇼핑은 달라야 합니다.<br/>눈에 보이는 상품,<br/>서비스 혜택은 물론<br/>
+                    보이지 않는 문화, 사랑, 스타일까지<br/>누구나 원하는 것을<br/>얻을 수 있어야 합니다.<br/></p>
                 <a href="#">+Read More</a>
             </div>
         </div>
@@ -728,7 +770,8 @@ helloworld!
             </div>
             <div class="product-service-in">
                 <h3>Customer Service</h3>
-                <p>Integer mattis lacinia felis vel molestie. Ut eu euismod erat, tincidunt pulvinar semper veliUt porta, leo...</p>
+                <p>고객이 원하는 것은 무엇이든<br/>만족하고 쇼핑할 수 있도록<br/>UNIFY는 외형의 성장을 넘어<br/>
+                    투명경영, 윤리경영을 바탕으로<br/> 더 큰 고객만족을 위해<br/>최선을 다하고 있습니다.</p>
                 <a href="#">+Read More</a>
             </div>
         </div>
@@ -738,7 +781,8 @@ helloworld!
             </div>
             <div class="product-service-in">
                 <h3>Free Returns</h3>
-                <p>Integer mattis lacinia felis vel molestie. Ut eu euismod erat, tincidunt pulvinar semper veliUt porta, leo...</p>
+                <p>앞으로도 UNIFY는 보다 가치있는<br/>서비스를 통해 상거래 서비스의<br/>
+                    리더로서 지속적인 혁신을<br/>이루어 나가겠습니다.</p>
                 <a href="#">+Read More</a>
             </div>
         </div>
@@ -760,7 +804,8 @@ helloworld!
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price line-through">$75.00</li>
                     <li class="thumb-product-price">$65.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
             <div class="thumb-product">
@@ -771,7 +816,8 @@ helloworld!
                 </div>
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price">$75.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
             <div class="thumb-product">
@@ -782,7 +828,8 @@ helloworld!
                 </div>
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price">$75.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -798,7 +845,8 @@ helloworld!
                 </div>
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price">$75.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
             <div class="thumb-product">
@@ -809,7 +857,8 @@ helloworld!
                 </div>
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price">$75.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
             <div class="thumb-product">
@@ -821,7 +870,8 @@ helloworld!
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price line-through">$75.00</li>
                     <li class="thumb-product-price">$65.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -838,7 +888,8 @@ helloworld!
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price line-through">$75.00</li>
                     <li class="thumb-product-price">$65.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
             <div class="thumb-product">
@@ -849,7 +900,8 @@ helloworld!
                 </div>
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price">$75.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
             <div class="thumb-product">
@@ -860,20 +912,22 @@ helloworld!
                 </div>
                 <ul class="list-inline overflow-h">
                     <li class="thumb-product-price">$75.00</li>
-                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a href="#"><i class="fa fa-heart"></i></a></li>
+                    <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
+                            href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
             </div>
         </div>
     </div><!--/end row-->
     <!--=== End Illustration v4 ===-->
-</div><!--/end cotnainer-->
+</div>
+<!--/end cotnainer-->
 
 <!--=== Collection Banner ===-->
 <div class="collection-banner">
     <div class="container">
         <div class="col-md-7 md-margin-bottom-50">
             <h2>Makeup collection</h2>
-            <p>Duis in posuere risus. Vivamus sed dignissim tellus. In vehicula justo tempor commodo. <br> Nunc lobortis dapibus neque quis lacinia</p><br>
+            <p>특별한 날을 위한 특별한 선택! 주인공은 바로 나!<br>UNIFY는 다양한 스타일과 노하우로 유행에 앞선 Collection을 제공합니다.</p><br>
             <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Shop Now</a>
         </div>
         <div class="col-md-5">
@@ -897,27 +951,28 @@ helloworld!
 <div class="container content">
     <div class="heading heading-v1 margin-bottom-40">
         <h2>Sponsors</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio elit, ultrices vel cursus sed, placerat ut leo. Phasellus in magna erat. Etiam gravida convallis augue non tincidunt. Nunc lobortis dapibus neque quis lacinia. Nam dapibus tellus sit amet odio venenatis</p>
+        <p>UNIFY는 취약계층에게 사회서비스 또는 일자리를 제공하여 지역주민의 삶의 질을 높이는 등의<br/>사회적 목적을 추구하면서 재화 및 서비스의 생산·판매 등 영업활동을 수행하는 기업과 함께
+            합니다.</p>
     </div>
 
     <ul class="list-inline owl-slider-v2">
         <li class="item first-child">
-            <img src="assets/img/clients/07.png" alt="">
+            <img src="assets/img/clients/01.png" alt="">
         </li>
         <li class="item">
-            <img src="assets/img/clients/08.png" alt="">
+            <img src="assets/img/clients/02.png" alt="">
         </li>
         <li class="item">
-            <img src="assets/img/clients/10.png" alt="">
+            <img src="assets/img/clients/03.png" alt="">
         </li>
         <li class="item">
-            <img src="assets/img/clients/11.png" alt="">
+            <img src="assets/img/clients/04.png" alt="">
         </li>
         <li class="item">
-            <img src="assets/img/clients/09.png" alt="">
+            <img src="assets/img/clients/05.png" alt="">
         </li>
         <li class="item">
-            <img src="assets/img/clients/12.png" alt="">
+            <img src="assets/img/clients/06.png" alt="">
         </li>
         <li class="item">
             <img src="assets/img/clients/07.png" alt="">
@@ -962,12 +1017,10 @@ helloworld!
 <!--=== End Shop Suvbscribe ===-->
 
 
-
-    <!--=== Footer v4 ===-->
-    <%--...--%>
-    <!--=== End Footer v4 ===-->
-
+<!--=== Footer v4 ===-->
+<%--...--%>
+<!--=== End Footer v4 ===-->
 
 
-<%@ include file="include/footer.jsp"%>
+<%@ include file="include/footer.jsp" %>
 

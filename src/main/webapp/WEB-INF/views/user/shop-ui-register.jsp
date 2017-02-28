@@ -455,7 +455,7 @@
     <div class="breadcrumbs-v4">
         <div class="container">
             <span class="page-name">Log In</span>
-            <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
+            <h1>새로운 품격을 <span class="shop-green">시작</span>하기 위한 가입</h1>
             <ul class="breadcrumb-v4-in">
                 <li><a href="../home.jsp">Home</a></li>
                 <li><a href="">Product</a></li>
@@ -493,7 +493,7 @@
                         </div>
                     </div>
                     <div class="members-number">
-                        <h3>Join more than <span class="shop-green">13,000</span> members worldwide</h3>
+                        <h3>전 세계 <span class="shop-green">13,000명 </span>이상의 회원</h3>
                         <img class="img-responsive" src="../assets/img/map.png" alt="">
                     </div>
                 </div>
@@ -583,19 +583,19 @@
                         <label class="checkbox margin-bottom-10">
                             <input type="checkbox" name="checkbox"/>
                             <i></i>
-                            Subscribe to our newsletter to get the latest offers
+                            최신 뉴스를 받아 보려면 '뉴스 레터 구독'
                         </label>
                         <label class="checkbox margin-bottom-20">
                             <input type="checkbox" name="checkbox"/>
                             <i></i>
-                            I have read agreed with the <a href="#">terms &amp; conditions</a>
+                            저는 <a href="#">이용약관 &amp; 운영방침</a>에 동의한 것을 읽었습니다.
                         </label>
                         <button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Create Account
                         </button>
                     </form>
 
                     <div class="margin-bottom-20"></div>
-                    <p class="text-center">Already you have an account? <a href="shop-ui-login.jsp">Sign In</a></p>
+                    <p class="text-center">계정을 가지고 계신가요? <a href="shop-ui-login.jsp">Login</a></p>
                 </div>
             </div><!--/end row-->
         </div><!--/end container-->
