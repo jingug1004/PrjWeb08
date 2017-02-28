@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 
-<%@include file="../include/header.jsp"%>
+<%@include file="../include/header.jsp" %>
 
 
 <style>
@@ -30,17 +30,20 @@
                 <form id='registerForm' role="form" method="post">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Title</label> <input type="text"
-                                                                                 name='title' class="form-control" placeholder="Enter Title">
+                            <%--@declare id="exampleinputemail1"--%>
+                            <label for="exampleInputEmail1">Title</label>
+                            <input type="text" name='title' class="form-control" placeholder="Enter Title">
                         </div>
                         <div class="form-group">
+                            <%--@declare id="exampleinputpassword1"--%>
                             <label for="exampleInputPassword1">Content</label>
                             <textarea class="form-control" name="content" rows="3"
                                       placeholder="Enter ..."></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Writer</label> <input type="text"
-                                                                                  name="writer" class="form-control" placeholder="Enter Writer">
+                            <label for="exampleInputEmail1">Writer</label>
+                            <%--<input type="text" name="writer" class="form-control" placeholder="Enter Writer">--%>
+                            <input type="text" name="writer" class="form-control" value='${login.uid}' readonly>
                         </div>
 
                         <div class="form-group">
@@ -63,7 +66,6 @@
 
                     </div>
                 </form>
-
 
             </div>
             <!-- /.box -->
@@ -96,12 +98,12 @@
 
     var template = Handlebars.compile($("#template").html());
 
-    $(".fileDrop").on("dragenter dragover", function(event){
+    $(".fileDrop").on("dragenter dragover", function (event) {
         event.preventDefault();
     });
 
 
-    $(".fileDrop").on("drop", function(event){
+    $(".fileDrop").on("drop", function (event) {
         event.preventDefault();
 
         var files = event.originalEvent.dataTransfer.files;
@@ -116,11 +118,11 @@
         $.ajax({
             url: '/uploadAjax',
             data: formData,
-            dataType:'text',
+            dataType: 'text',
             processData: false,
             contentType: false,
             type: 'POST',
-            success: function(data){
+            success: function (data) {
 
                 var fileInfo = getFileInfo(data);
 
@@ -151,14 +153,14 @@
     });
 
 
-    $("#registerForm").submit(function(event){
+    $("#registerForm").submit(function (event) {
         event.preventDefault();
 
         var that = $(this);
 
-        var str ="";
-        $(".uploadedList .delbtn").each(function(index){
-            str += "<input type='hidden' name='files["+index+"]' value='"+$(this).attr("href") +"'> ";
+        var str = "";
+        $(".uploadedList .delbtn").each(function (index) {
+            str += "<input type='hidden' name='files[" + index + "]' value='" + $(this).attr("href") + "'> ";
         });
 
         that.append(str);
@@ -169,9 +171,7 @@
     });
 
 
-
 </script>
 
 
-
-<%@include file="../include/footer.jsp"%>
+<%@include file="../include/footer.jsp" %>

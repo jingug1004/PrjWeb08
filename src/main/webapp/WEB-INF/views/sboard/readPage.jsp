@@ -8,6 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <%@include file="../include/header.jsp" %>
@@ -79,7 +80,8 @@
                                                                              readonly="readonly">
                     </div>
                     <div class="form-group">
-                        <%--@declare id="exampleinputpassword1"--%><label for="exampleInputPassword1">Content</label>
+                        <%--@declare id="exampleinputpassword1"--%>
+                        <label for="exampleInputPassword1">Content</label>
                         <textarea class="form-control" name="content" rows="3"
                                   readonly="readonly">${boardVO.content}</textarea>
                     </div>
@@ -92,12 +94,18 @@
                 </div>
 
                 <!-- /.box-body -->
-
-                <ul class="mailbox-attachments clearfix uploadedList"></ul>
-
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
-                    <button type="submit" class="btn btn-danger" id="removeBtn">Remove</button>
+
+                    <div>
+                        <hr/>
+                    </div>
+
+
+                    <ul class="mailbox-attachments clearfix uploadedList"></ul>
+                    <c:if test="${login.uid == boardVO.writer}">
+                        <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
+                        <button type="submit" class="btn btn-danger" id="removeBtn">Remove</button>
+                    </c:if>
                     <button type="submit" class="btn btn-primary" id="goListBtn">Go List</button>
                 </div>
 
@@ -116,20 +124,29 @@
                 <div class="box-header">
                     <h3 class="box-title">ADD NEW REPLY</h3>
                 </div>
+                <c:if test="${not empty login}">
+                    <div class="box-body">
+                            <%--@declare id="exampleinputemail1"--%>
+                        <label for="exampleInputEmail1">Writer</label>
+                        <input class="form-control" type="text" placeholder="USER ID" id="newReplyWriter"
+                               value="${login.uid }" readonly="readonly">
+                        <label for="exampleInputEmail1">Reply Text</label>
+                        <input class="form-control" type="text" placeholder="Reply TEXT" id="newReplyText">
+                    </div>
+                    <!--/.box-body-->
 
-                <div class="box-body">
-                    <%--@declare id="exampleinputemail1"--%><label for="exampleInputEmail1">Writer</label>
-                    <input class="form-control" type="text" placeholder="User ID" id="newReplyWriter">
-                    <label for="exampleInputEmail1">Reply Text</label>
-                    <input class="form-control" type="text" placeholder="Reply TEXT" id="newReplyText">
-                </div>
-                <!--/.box-body-->
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary" id="replyAddBtn">
+                            Add Reply
+                        </button>
+                    </div>
+                </c:if>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary" id="replyAddBtn">
-                        Add Reply
-                    </button>
-                </div>
+                <c:if test="${empty login}">
+                    <div class="box-body">
+                        <div><a href="javascript:goLogin();">Login Please</a></div>
+                    </div>
+                </c:if>
             </div>
 
 
@@ -205,19 +222,39 @@
 </script>
 
 
+<%--<script id="template" type="text/x-handlebars-template">
+{{#each .}}
+<li class="replyLi" data-rno={{rno}}>
+<i class="fa fa-comments bg-blue"></i>
+<div class="timeline-item">
+<span class="time">
+<i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
+</span>
+<h3 class="timeline-header"><strong>{{rno}}</strong> -{{replyer}}</h3>
+<div class="timeline-body">{{replytext}}</div>
+<div class="timeline-footer">
+<a class="btn btn-primary btn-xs"
+data-toggle="modal" data-target="#modifyModal">Modify</a>
+</div>
+</div>
+</li>
+{{/each}}
+</script>--%>
+
 <script id="template" type="text/x-handlebars-template">
     {{#each .}}
     <li class="replyLi" data-rno={{rno}}>
         <i class="fa fa-comments bg-blue"></i>
         <div class="timeline-item">
-            <span class="time">
-                <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
-            </span>
+                <span class="time">
+                  <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
+                </span>
             <h3 class="timeline-header"><strong>{{rno}}</strong> -{{replyer}}</h3>
             <div class="timeline-body">{{replytext}}</div>
             <div class="timeline-footer">
-                <a class="btn btn-primary btn-xs"
-                   data-toggle="modal" data-target="#modifyModal">Modify</a>
+                {{#eqReplyer replyer }}
+                <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modifyModal">Modify</a>
+                {{/eqReplyer}}
             </div>
         </div>
     </li>
@@ -228,6 +265,15 @@
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
 <%--<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>--%>
 <script>
+
+    Handlebars.registerHelper("eqReplyer", function (replyer, block) {
+        var accum = '';
+        if (replyer == '${login.uid}') {
+            accum += block.fn();
+        }
+        return accum;
+    });
+
     Handlebars.registerHelper("prettifyDate", function (timeValue) {
         var dateObj = new Date(timeValue);
         var year = dateObj.getFullYear();
@@ -332,7 +378,11 @@
                 "X-HTTP-Method-Override": "POST"
             },
             dataType: 'text',
-            data: JSON.stringify({bno: bno, replyer: replyer, replytext: replytext}),
+            data: JSON.stringify({
+                bno: bno,
+                replyer: replyer,
+                replytext: replytext
+            }),
             success: function (result) {
                 console.log("result: " + result);
                 if (result == 'SUCCESS') {
@@ -369,7 +419,9 @@
                 "Content-Type": "application/json",
                 "X-HTTP-Method-Override": "PUT"
             },
-            data: JSON.stringify({replytext: replytext}),
+            data: JSON.stringify({
+                replytext: replytext
+            }),
             dataType: 'text',
             success: function (result) {
                 console.log("result: " + result);

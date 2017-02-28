@@ -11,7 +11,7 @@
           <a href="index.html"><img class="footer-logo" src="/assets/img/logo-2.png" alt=""></a>
           <p>UNIFY는 Spring MVC의 선진기술을 활용하여 <br/>
             다른 쇼핑몰에서는 경험하지 못한 편리하고<br/>
-            안전한 쇼핑을 할 수 있는 격이 다른 마켓입니다.<br/></p>
+            안전한 쇼핑을 할수 있는 격이 다른 마켓입니다<br/></p>
           <br>
           <ul class="list-unstyled address-list margin-bottom-20">
             <li><i class="fa fa-angle-right"></i>서울특별시 강남구 홍길동 679-12 서자빌딩</li>
@@ -77,8 +77,9 @@
             </div>
 
             <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">1688-1688</h2>
+              <h2 class="thumb-headline">CONTACT</h2>
               <ul class="list-unstyled simple-list">
+                <li><a href="#">1688-1688</a></li>
                 <li><a href="#">10:00~17:00</a></li>
                 <li><a href="#">(Lunch 13:00)</a></li>
                 <li><a href="#">SAT, SUN, Holiday</a></li>
@@ -93,7 +94,7 @@
         <div class="col-md-2 col-sm-3">
           <div class="row">
             <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">CUSTOMER SERVICE</h2>
+              <h2 class="thumb-headline">SERVICE</h2>
               <ul class="list-unstyled simple-list margin-bottom-20">
                 <li><a href="#">공지사항</a></li>
                 <li><a href="#">자주 묻는 질문</a></li>
@@ -108,7 +109,7 @@
             </div>
 
             <div class="col-sm-12 col-xs-6">
-              <h2 class="thumb-headline">CUSTOMER's SPACE</h2>
+              <h2 class="thumb-headline">CUSTOMER'S</h2>
               <ul class="list-unstyled simple-list">
                 <li><a href="#">인증후기</a></li>
                 <li><a href="#">구매질문</a></li>
