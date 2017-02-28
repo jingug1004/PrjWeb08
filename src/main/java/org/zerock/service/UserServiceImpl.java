@@ -6,6 +6,7 @@ import org.zerock.dto.LoginDTO;
 import org.zerock.persistence.UserDAO;
 
 import javax.inject.Inject;
+import java.util.Date;
 
 /**
  * Created by macbookpro on 2017. 2. 26. PM 7:53
@@ -23,5 +24,17 @@ public class UserServiceImpl implements UserService {
     public UserVO login(LoginDTO dto) throws Exception {
 
         return dao.login(dto);
+    }
+
+    @Override
+    public void keepLogin(String uid, String sessionId, Date next) throws Exception {
+
+        dao.keepLogin(uid, sessionId, next);
+    }
+
+    @Override
+    public UserVO checkLoginBefore(String value) {
+
+        return dao.checkUserWithSessionKey(value);
     }
 }

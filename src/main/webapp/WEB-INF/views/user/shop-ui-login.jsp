@@ -564,7 +564,7 @@
                                 <label class="checkbox">
                                     <%--<input type="checkbox" name="checkbox"/>--%>
 
-                                    <input type="checkbox" name="useCookie"/>
+                                    <input type="checkbox" name="useCookie">
                                     <i></i>
                                     Remember me
                                 </label>

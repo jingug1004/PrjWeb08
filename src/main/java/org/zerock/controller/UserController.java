@@ -1,16 +1,23 @@
 package org.zerock.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.util.WebUtils;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.service.UserService;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 /**
  * Created by wtime on 2017-02-21. 오후 1:28
@@ -28,25 +35,28 @@ public class UserController {
 //        return "shop-ui-login";
 //    }
 
-    @RequestMapping(value = "/shop-ui-login")
-    public void login() {
+    public static final Logger logger =
+            LoggerFactory.getLogger(UserController.class);
 
-    }
-
-    @RequestMapping(value = "/login_success")
-    public void login_success() {
-
-    }
-
-    @RequestMapping(value = "/login_duplicate")
-    public void login_duplicate() {
-
-    }
-
-    @RequestMapping(value = "/logout")
-    public void logout() {
-
-    }
+//    @RequestMapping(value = "/shop-ui-login")
+//    public void login() {
+//
+//    }
+//
+//    @RequestMapping(value = "/login_success")
+//    public void login_success() {
+//
+//    }
+//
+//    @RequestMapping(value = "/login_duplicate")
+//    public void login_duplicate() {
+//
+//    }
+//
+//    @RequestMapping(value = "/logout")
+//    public void logout() {
+//
+//    }
 
     @Inject
     private UserService service;
@@ -70,10 +80,18 @@ public class UserController {
 
         model.addAttribute("userVO", vo);
 
+        if (dto.isUseCookie()) {
+
+            int amount = 60 * 60 * 24 * 7;
+
+            Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
+
+            service.keepLogin(vo.getUid(), session.getId(), sessionLimit);
+        }
     }
 
     @RequestMapping(value = "/shop-ui-register")
-    public String register () {
+    public String register() {
 
         return "user/shop-ui-register";
     }
@@ -84,4 +102,38 @@ public class UserController {
 //        return "user/shop-ui-register";
 //    }
 
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public void logout(HttpServletRequest request,
+                         HttpServletResponse response,
+                         HttpSession session) throws Exception {
+
+        logger.info("~~~ logout.................................1 ~~~");
+
+        Object obj = session.getAttribute("login");
+
+        if (obj != null) {
+
+            UserVO vo = (UserVO) obj;
+
+            logger.info("~~~ logout.................................2 ~~~");
+
+            session.removeAttribute("login");
+            session.invalidate();
+
+            logger.info("~~~ logout.................................3 ~~~");
+
+            Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
+
+            if (loginCookie != null) {
+
+                logger.info("~~~ logout.................................4 ~~~");
+
+                loginCookie.setPath("/");
+                loginCookie.setMaxAge(0);
+                response.addCookie(loginCookie);
+                service.keepLogin(vo.getUid(), session.getId(), new Date());
+            }
+        }
+//        return "home";
+    }
 }
