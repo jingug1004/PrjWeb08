@@ -20,4 +20,6 @@ public interface UserDAO {
 
     public UserVO checkUserWithSessionKey(String value);
 
+    public void create(UserVO uvo) throws Exception;
+
 }

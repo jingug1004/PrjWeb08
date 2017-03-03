@@ -32,7 +32,7 @@ public class BoardController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public void registerGET(BoardVO board, Model model) throws Exception {
 
-        logger.info("register get ...........");
+        logger.info("~~~ register get ........... ~~~");
 
     }
 
@@ -41,7 +41,7 @@ public class BoardController {
                              RedirectAttributes rttr) throws Exception {
         //public String registPOST(BoardVO board, Model model) throws Exception {
 
-        logger.info("regist post ...........");
+        logger.info("~~~ regist post ........... ~~~");
         logger.info(board.toString());
 
         service.regist(board);
@@ -56,7 +56,7 @@ public class BoardController {
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     public void listAll(Model model) throws Exception {
 
-        logger.info("show All list.................");
+        logger.info("~~~ show All list................. ~~~");
         model.addAttribute("list", service.listAll());
 
     }
@@ -92,7 +92,7 @@ public class BoardController {
     public String modifyPOST(BoardVO board,
                              RedirectAttributes rttr) throws Exception {
 
-        logger.info("mod post............");
+        logger.info("~~~ mod post............ ~~~");
 
         service.modify(board);
         rttr.addFlashAttribute("msg", "success");
@@ -103,7 +103,7 @@ public class BoardController {
     @RequestMapping(value = "/listCri", method = RequestMethod.GET)
     public void listAll(Criteria cri, Model model) throws Exception {
 
-        logger.info("show list Page with Criteria......................");
+        logger.info("~~~ show list Page with Criteria...................... ~~~");
 
         model.addAttribute("list", service.listCriteria(cri));
 

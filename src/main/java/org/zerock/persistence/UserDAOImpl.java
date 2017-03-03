@@ -48,5 +48,11 @@ public class UserDAOImpl implements UserDAO{
         return session.selectOne(namespace + ".checkUserWithSessionKey", value);
     }
 
+    @Override
+    public void create(UserVO uvo) throws Exception {
+
+        session.insert(namespace + ".create", uvo);
+    }
+
 
 }

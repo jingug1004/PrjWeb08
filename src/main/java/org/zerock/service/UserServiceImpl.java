@@ -37,4 +37,10 @@ public class UserServiceImpl implements UserService {
 
         return dao.checkUserWithSessionKey(value);
     }
+
+    @Override
+    public void regist(UserVO user) throws Exception {
+
+        dao.create(user);
+    }
 }

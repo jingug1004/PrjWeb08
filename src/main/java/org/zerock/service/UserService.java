@@ -19,4 +19,6 @@ public interface UserService {
 
     public UserVO checkLoginBefore(String value);
 
+    public void regist(UserVO user) throws Exception;
+
 }

@@ -14,7 +14,7 @@ public class SampleController4 {
 
 	@RequestMapping("/doE")
 	public String doE(RedirectAttributes rttr){
-		logger.info("doE called but redirect to /doF.............");
+		logger.info("~~~ doE called but redirect to /doF............. ~~~");
 		
 		rttr.addFlashAttribute("msg", "This is the Message!! with redirected");
 		return "redirect:/doF";
@@ -23,7 +23,7 @@ public class SampleController4 {
 	@RequestMapping("/doF")
 	public void doF(String msg){
 		
-		logger.info("doF called..............."+ msg);
+		logger.info("~~~ doF called..............." + msg + " ~~~");
 	}
 }
 

@@ -17,5 +17,10 @@
         SELECT * FROM tbl_user WHERE sessionKey = #{value} AND sessionlimit > now()
     </select>
 
+    <insert id="create">
+        INSERT INTO tbl_user(uid, upw, upwconfirm, uname, email, nickname, uday, uyear, umonth)
+        VALUES (#{uid}, #{upw}, #{upwconfirm}, #{uname}, #{email}, #{nickname}, #{uday}, #{uyear}, #{umonth})
+    </insert>
+
 
 </mapper>

@@ -96,8 +96,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                     새로운 개념의 시대를 앞서가는 패션 <br>
-                     끝없는 도전으로 스스로의 한계 탈피
+                    새로운 개념의 시대를 앞서가는 패션 <br>
+                    끝없는 도전으로 스스로의 한계 탈피
                 </div>
 
                 <!-- LAYER -->
@@ -148,8 +148,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    미세한 변화까지 최소화해&nbsp;&nbsp;&nbsp;<br/>시계 본연의 멋과 가치,&nbsp;&nbsp;&nbsp;<br/><br/><br/><br/>
-                    원칙을 최대한 지켜 명품 본연의&nbsp;&nbsp;&nbsp;<br/>고귀함을 뼛속까지 그대로 전달&nbsp;&nbsp;&nbsp;<br/>
+                     미세한 변화까지 최소화<br/>시계 본연의 멋과 가치,<br/><br/><br/><br/>
+                     원칙을 최대한 지켜 명품 본연의<br/>고귀함을 뼛속까지 그대로 전달<br/>
                 </div>
 
                 <!-- LAYER -->
@@ -252,8 +252,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    여러 패션용품으로 삶을 더 즐겁게&nbsp;&nbsp;&nbsp;<br/>바꿀 준비 되셨나요?&nbsp;&nbsp;&nbsp;<br><br/><br/><br/>
-                    단지 입고 세탁하던 모든 것들이&nbsp;&nbsp;&nbsp;<br/>이야기가 넘치는 소재로 바뀝니다.&nbsp;&nbsp;&nbsp;<br/>
+                    여러 패션용품으로 삶을 더 즐겁게<br/>바꿀 준비 되셨나요?<br><br/><br/><br/>
+                    단지 입고 세탁하던 모든 것들이<br/>이야기가 넘치는 소재로 바뀝니다.<br/>
                 </div>
 
                 <!-- LAYER -->

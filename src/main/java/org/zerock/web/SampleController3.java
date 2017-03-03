@@ -19,7 +19,7 @@ public class SampleController3 {
 		//make sample data
 		ProductVO product = new ProductVO("Sample Product", 10000);
 		
-		logger.info("doD");
+		logger.info("~~~ doD ~~~");
 	
 		model.addAttribute(product);
 		

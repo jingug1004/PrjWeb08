@@ -157,7 +157,7 @@
       <div class="row">
         <div class="col-md-6">
           <p>
-            2017 &copy; UNIFY. ALL Rights Reserved.
+            2017 &copy; UNIFY. ALL Rights Reserved.<br/>
             Sponsored by <a href="http://www.naver.com">heapoverflow.com</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
           </p>
         </div>

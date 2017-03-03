@@ -4,9 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
@@ -17,7 +20,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by wtime on 2017-02-21. 오후 1:28
@@ -90,22 +95,42 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/shop-ui-register")
-    public String register() {
+    @RequestMapping(value = "/shop-ui-register", method = RequestMethod.GET)
+    public String registerGET() {
 
         return "user/shop-ui-register";
     }
 
-//    @RequestMapping(value = "/shop-ui-register", method = RequestMethod.POST)
-//    public String register () {
-//
-//        return "user/shop-ui-register";
-//    }
+    @RequestMapping(value = "/registPost", method = RequestMethod.POST)
+    public String registerPOST(@Valid UserVO userVO,
+                               RedirectAttributes rttr,
+                               BindingResult bindingResult) throws Exception {
+
+        logger.info("~~~ user regist post ........... ~~~");
+        logger.info(userVO.toString());
+
+        if (bindingResult.hasErrors()) {
+            logger.info("~~~ Binding Result has error! ~~~");
+            List<ObjectError> errors = bindingResult.getAllErrors();
+
+            for (ObjectError error:errors) {
+                logger.info("~~~ error : {}, {}", error.getCode(), error.getDefaultMessage() + " ~~~");
+            }
+
+            return "user/shop-ui-register";
+        }
+
+        service.regist(userVO);
+        rttr.addFlashAttribute("msg", "SUCCESS");
+
+//        return "redirect:/home";
+        return "home";
+    }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public void logout(HttpServletRequest request,
-                         HttpServletResponse response,
-                         HttpSession session) throws Exception {
+                       HttpServletResponse response,
+                       HttpSession session) throws Exception {
 
         logger.info("~~~ logout.................................1 ~~~");
 

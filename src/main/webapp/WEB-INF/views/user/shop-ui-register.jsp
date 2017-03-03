@@ -9,6 +9,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 
 <!--=== Header v5 ===-->
@@ -455,7 +456,7 @@
     <div class="breadcrumbs-v4">
         <div class="container">
             <span class="page-name">Log In</span>
-            <h1>새로운 품격을 <span class="shop-green">시작</span>하기 위한 가입</h1>
+            <h1>새로운 품격을 위한 <span class="shop-green">시작</span></h1>
             <ul class="breadcrumb-v4-in">
                 <li><a href="../home.jsp">Home</a></li>
                 <li><a href="">Product</a></li>
@@ -499,7 +500,8 @@
                 </div>
 
                 <div class="col-md-5">
-                    <form id="sky-form4" class="log-reg-block sky-form">
+                    <%--<form id="sky-form4" class="log-reg-block sky-form">--%>
+                    <form id="sky-form4" class="log-reg-block sky-form" action="/user/registPost" method="post">
                         <h2>Create New Account</h2>
 
                         <div class="login-input reg-input">
@@ -507,22 +509,25 @@
                                 <div class="col-sm-6">
                                     <section>
                                         <label class="input">
-                                            <input type="text" name="firstname" placeholder="First name"
+                                            <input type="text" name="uid" placeholder="USER ID"
                                                    class="form-control">
+                                            <form:errors path="uid" cssClass="error"/>
                                         </label>
                                     </section>
                                 </div>
                                 <div class="col-sm-6">
                                     <section>
                                         <label class="input">
-                                            <input type="text" name="lastname" placeholder="Last name"
+                                            <input type="text" name="uname" placeholder="User name"
                                                    class="form-control">
+                                            <form:errors path="uname" cssClass="error"/>
+                                            <%--messages.properties 안에 경로 레벨과 같아야 함!--%>
                                         </label>
                                     </section>
                                 </div>
                             </div>
                             <label class="select margin-bottom-15">
-                                <select name="gender" class="form-control">
+                                <select name="ugender" class="form-control">
                                     <option value="0" selected disabled>Gender</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
@@ -532,50 +537,56 @@
                             <div class="row margin-bottom-10">
                                 <div class="col-xs-6">
                                     <label class="select">
-                                        <select name="month" class="form-control">
-                                            <option disabled="" selected="" value="0">Month</option>
-                                            <option>January</option>
-                                            <option>February</option>
-                                            <option>March</option>
-                                            <option>April</option>
-                                            <option>May</option>
-                                            <option>June</option>
-                                            <option>July</option>
-                                            <option>August</option>
-                                            <option>September</option>
-                                            <option>October</option>
-                                            <option>November</option>
-                                            <option>December</option>
+                                        <select name="umonth" class="form-control">
+                                            <option disabled="" selected="" value="0"
+                                                    <c:if test="${reg_month == 0}"></c:if>>Month</option>
+                                            <%--<option>January</option>--%>
+                                            <option value="1" <c:if test="${reg_month == 1}">selected</c:if>>January</option>
+                                            <option value="2" <c:if test="${reg_month == 2}">selected</c:if>>February</option>
+                                            <option value="3" <c:if test="${reg_month == 3}">selected</c:if>>March</option>
+                                            <option value="4" <c:if test="${reg_month == 4}">selected</c:if>>April</option>
+                                            <option value="5" <c:if test="${reg_month == 5}">selected</c:if>>May</option>
+                                            <option value="6" <c:if test="${reg_month == 6}">selected</c:if>>June</option>
+                                            <option value="7" <c:if test="${reg_month == 7}">selected</c:if>>July</option>
+                                            <option value="8" <c:if test="${reg_month == 8}">selected</c:if>>August</option>
+                                            <option value="9" <c:if test="${reg_month == 9}">selected</c:if>>September</option>
+                                            <option value="10" <c:if test="${reg_month == 10}">selected</c:if>>October</option>
+                                            <option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November</option>
+                                            <option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December</option>
                                         </select>
                                     </label>
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="text" name="day" placeholder="Day" class="form-control">
+                                    <input type="text" name="uday" placeholder="Day" class="form-control" maxlength="2">
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="text" name="year" placeholder="Year" class="form-control">
+                                    <input type="text" name="uyear" placeholder="Year" class="form-control" maxlength="4">
                                 </div>
                             </div>
                             <section>
                                 <label class="input">
-                                    <input type="text" name="username" placeholder="Username" class="form-control">
+                                    <input type="text" name="nickname" placeholder="Nickname" class="form-control">
+                                    <form:errors path="nickname" cssClass="error"/>
                                 </label>
                             </section>
                             <section>
                                 <label class="input">
                                     <input type="email" name="email" placeholder="Email address" class="form-control">
+                                    <form:errors path="email" cssClass="error"/>
                                 </label>
                             </section>
                             <section>
                                 <label class="input">
-                                    <input type="password" name="password" placeholder="Password" id="password"
+                                    <input type="password" name="upw" placeholder="Password" id="password"
                                            class="form-control">
+                                    <form:errors path="upw" cssClass="error"/>
                                 </label>
                             </section>
                             <section>
                                 <label class="input">
-                                    <input type="password" name="passwordConfirm" placeholder="Confirm password"
+                                    <input type="password" name="upwconfirm" placeholder="Confirm password"
                                            class="form-control">
+                                    <form:errors path="upwconfirm" cssClass="error"/>
                                 </label>
                             </section>
                         </div>
