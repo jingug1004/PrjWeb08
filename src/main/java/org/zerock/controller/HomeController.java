@@ -79,5 +79,10 @@ public class HomeController {
 //		return "shop-ui-register";
     }
 
+    @RequestMapping(value = "/docuunify", method = RequestMethod.GET)
+    public String docu() {
+        return "docu/docuunify";
+    }
+
 
 }

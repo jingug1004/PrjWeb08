@@ -33,8 +33,27 @@ public class UserVO {
     private String uday;
     private String uyear;
 
-    private int umonth;
-    private int ugender;
+    private String umonth;
+    private String ugender;
+
+    public UserVO () {
+
+    }
+
+    public UserVO(String uid, String upw, String upwconfirm, String uname, int upoint, String email, String nickname, String uday, String uyear, String umonth, String ugender) {
+        this.uid = uid;
+        this.upw = upw;
+        this.upwconfirm = upwconfirm;
+        this.uname = uname;
+        this.upoint = upoint;
+        this.email = email;
+        this.nickname = nickname;
+        this.uday = uday;
+        this.uyear = uyear;
+        this.umonth = umonth;
+        this.ugender = ugender;
+    }
+
 
     public String getUid() {
         return uid;
@@ -108,19 +127,19 @@ public class UserVO {
         this.uyear = uyear;
     }
 
-    public int getUmonth() {
+    public String getUmonth() {
         return umonth;
     }
 
-    public void setUmonth(int umonth) {
+    public void setUmonth(String umonth) {
         this.umonth = umonth;
     }
 
-    public int getUgender() {
+    public String getUgender() {
         return ugender;
     }
 
-    public void setUgender(int ugender) {
+    public void setUgender(String ugender) {
         this.ugender = ugender;
     }
 
@@ -136,8 +155,8 @@ public class UserVO {
                 ", nickname='" + nickname + '\'' +
                 ", uday='" + uday + '\'' +
                 ", uyear='" + uyear + '\'' +
-                ", umonth=" + umonth +
-                ", ugender=" + ugender +
+                ", umonth='" + umonth + '\'' +
+                ", ugender='" + ugender + '\'' +
                 '}';
     }
 }

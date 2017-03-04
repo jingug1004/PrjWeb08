@@ -174,35 +174,30 @@
   </div><!--/copyright-->
 </div>
 <!--=== End Footer v4 ===-->
-
-
-
-
-
 </div><!--/wrapper-->
 
-<!-- Wait Block 메인 화면에서 뜨는 팝업!-->
+<%--<!-- Wait Block -->--%>
 <%--<div class="g-popup-wrapper">--%>
-  <%--<div class="g-popup g-popup--discount2">--%>
-    <%--<div class="g-popup--discount2-message">--%>
-      <%--<h3>Want 10% Off?</h3>--%>
-      <%--<h4>You Are Fabulous!</h4>--%>
-      <%--<p>Get 10% Off Your Next Purchase! Just Type Email Below!</p>--%>
-
-      <%--<form action="#" class="sky-form">--%>
-        <%--<label class="input">--%>
-          <%--<input type="email" placeholder="Email" class="form-control">--%>
-        <%--</label>--%>
-        <%--<label class="input">--%>
-          <%--<button class="btn btn-default" type="button">Subscribe</button>--%>
-        <%--</label>--%>
-      <%--</form>--%>
+  <%--<div class="g-popup g-popup--fb">--%>
+    <%--<div class="g-popup--fb-title">--%>
+      <%--<a target="_blank" href="https://www.facebook.com/htmlstream" class="g-popup--fb__logo"><img alt="facebook" src="/assets/img/others/fb.png" width="110"></a>--%>
+      <%--<div class="g-popup--fb-message">Click <strong>"Like"</strong><br>to read our blog on Facebook</div>--%>
     <%--</div>--%>
-    <%--<img src="/assets/img/blog/26.jpg" alt="ALT" width="270">--%>
-    <%--<a href="javascript:void(0);" class="g-popup__close g-popup--discount2__close"><span class="icon-close" aria-hidden="true"></span></a>--%>
+    <%--<div class="g-popup--fb-widjet">--%>
+      <%--<div id="fb-root"></div>--%>
+      <%--<script>(function(d, s, id) {--%>
+          <%--var js, fjs = d.getElementsByTagName(s)[0];--%>
+          <%--if (d.getElementById(id)) return;--%>
+          <%--js = d.createElement(s); js.id = id;--%>
+          <%--js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.4&appId=118547268248380";--%>
+          <%--fjs.parentNode.insertBefore(js, fjs);--%>
+      <%--}(document, 'script', 'facebook-jssdk'));</script>--%>
+      <%--<div class="fb-like" data-href="https://www.facebook.com/htmlstream/" data-width="270" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>--%>
+    <%--</div>--%>
+    <%--<a href="javascript:void(0);" class="g-popup__close g-popup--fb__close"><span class="icon-close" aria-hidden="true"></span></a>--%>
   <%--</div>--%>
 <%--</div>--%>
-<!-- End Wait Block -->
+<%--<!-- End Wait Block -->--%>
 
 <!-- JS Global Compulsory -->
 <script src="/assets/plugins/jquery/jquery.min.js"></script>
@@ -212,6 +207,8 @@
 <script src="/assets/plugins/back-to-top.js"></script>
 <script src="/assets/plugins/smoothScroll.js"></script>
 <script src="/assets/plugins/jquery.parallax.js"></script>
+<script src="/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+<script src="/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
 <script src="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
 <script src="/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
@@ -223,20 +220,30 @@
 <script src="/assets/js/plugins/owl-carousel.js"></script>
 <script src="/assets/js/plugins/revolution-slider.js"></script>
 <script src="/assets/js/plugins/style-switcher.js"></script>
+<script src="/assets/js/forms/page_registration.js"></script>
+<script src="/assets/js/forms/page_login.js"></script>
+<script src="/assets/js/forms/page_contact_form.js"></script>
+
 <script>
     jQuery(document).ready(function() {
         App.init();
+        Login.initLogin();
         App.initScrollBar();
         App.initParallaxBg();
         OwlCarousel.initOwlCarousel();
         RevolutionSlider.initRSfullWidth();
         StyleSwitcher.initStyleSwitcher();
+        PageContactForm.initPageContactForm();
     });
 </script>
 <!--[if lt IE 9]>
 <script src="/assets/plugins/respond.js"></script>
 <script src="/assets/plugins/html5shiv.js"></script>
 <script src="/assets/js/plugins/placeholder-IE-fixes.js"></script>
+<script src="/assets/plugins/sky-forms-pro/skyforms/js/sky-forms-ie8.js"></script>
+<![endif]-->
+<!--[if lt IE 10]>
+<script src="/assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
 
 </body>

@@ -18,8 +18,8 @@
     </select>
 
     <insert id="create">
-        INSERT INTO tbl_user(uid, upw, upwconfirm, uname, email, nickname, uday, uyear, umonth)
-        VALUES (#{uid}, #{upw}, #{upwconfirm}, #{uname}, #{email}, #{nickname}, #{uday}, #{uyear}, #{umonth})
+        INSERT INTO tbl_user(uid, upw, upwconfirm, uname, email, nickname, uday, uyear, umonth, ugender)
+        VALUES (#{uid}, #{upw}, #{upwconfirm}, #{uname}, #{email}, #{nickname}, #{uday}, #{uyear}, #{umonth}, #{ugender})
     </insert>
 
 

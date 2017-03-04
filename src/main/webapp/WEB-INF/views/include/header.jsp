@@ -97,6 +97,12 @@
     <link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="/assets/plugins/revolution-slider/rs-plugin/css/settings.css">
 
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="/assets/css/pages/log-reg-v3.css">
+
+    <!-- Style Switcher -->
+    <link rel="stylesheet" href="/assets/css/plugins/style-switcher.css">
+
     <!-- CSS Theme -->
     <link rel="stylesheet" href="/assets/css/theme-colors/default.css" id="style_color">
 
@@ -322,10 +328,8 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
-                                                    <h3 class="mega-menu-heading">Pellentes que nec diam lectus</h3>
-                                                    <p>Proin pulvinar libero quis auctor pharet ra. Aenean fermentum met
-                                                        us orci, sedf eugiat augue pulvina r vitae. Nulla dolor nisl,
-                                                        molestie nec aliquam vitae, gravida sodals dolor...</p>
+                                                    <h3 class="mega-menu-heading">고객 사은 할인 이벤트</h3>
+                                                    <p>언제나 저희 UNIFY를 이용해 주심에 고객의 성원에 보답하고자 365일 이월 재고 상품을 대폭 할인하고 있습니다</p>
                                                     <button type="button" class="btn-u btn-u-dark">Read More</button>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
@@ -352,7 +356,7 @@
                         <li class="dropdown mega-menu-fullwidth">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
                                data-toggle="dropdown">
-                                Books
+                                MENU
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -360,7 +364,7 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Clothe</h3>
+                                                    <h3 class="mega-menu-heading">Clothes</h3>
                                                     <ul class="list-unstyled style-list">
                                                         <li><a href="#">New in</a></li>
                                                         <li><a href="#">Coats &amp; Jackets</a></li>
@@ -374,7 +378,7 @@
                                                     <h3 class="mega-menu-heading">Shoes</h3>
                                                     <ul class="list-unstyled style-list">
                                                         <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">FLats</a></li>
+                                                        <li><a href="#">Flats</a></li>
                                                         <li><a href="#">Heels</a></li>
                                                         <li><a href="#">Sandals</a></li>
                                                         <li><a href="#">Sports</a></li>
@@ -388,7 +392,7 @@
                                                         <li><a href="#">Bags &amp; Purses</a></li>
                                                         <li><a href="#">Scarvs &amp; Hats</a></li>
                                                         <li><a href="#">Jewellery</a></li>
-                                                        <li><a href="#">Fragrance &amp; Beauty</a></li>
+                                                        <li><a href="#">Whatch &amp; Belt</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">Lingerie</h3>
                                                     <ul class="list-unstyled style-list">
@@ -425,69 +429,78 @@
                                                     </ul>
                                                 </div>
 
+
+
+
+
+
+
+
+
+
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Clothe</h3>
+                                                    <h3 class="mega-menu-heading">Beauty</h3>
                                                     <ul class="list-unstyled style-list">
                                                         <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a> <span
+                                                        <li><a href="#">Cleansing &amp; Peeling</a></li>
+                                                        <li><a href="#">Skincare</a></li>
+                                                        <li><a href="#">Haircare</a></li>
+                                                        <li><a href="#">Bodycare</a> <span
                                                                 class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-shirts</a></li>
+                                                        <li><a href="#">Nailcare</a></li>
+                                                        <li><a href="#">Soap</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Shoes</h3>
+                                                    <h3 class="mega-menu-heading">Travel</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">Flats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
+                                                        <li><a href="#">Package Tour</a></li>
+                                                        <li><a href="#">Free Travel</a></li>
+                                                        <li><a href="#">Hotel</a></li>
+                                                        <li><a href="#">Resort</a></li>
+                                                        <li><a href="#">Pension</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Accessories</h3>
+                                                    <h3 class="mega-menu-heading">Food</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">All accessories</a></li>
-                                                        <li><a href="#">Bags &amp; Purses</a></li>
-                                                        <li><a href="#">Scarvs &amp; Hats</a></li>
-                                                        <li><a href="#">Jewellery</a></li>
-                                                        <li><a href="#">Fragrance &amp; Beauty</a></li>
+                                                        <li><a href="#">All Food</a></li>
+                                                        <li><a href="#">Agricultural &amp; Animal</a></li>
+                                                        <li><a href="#">Side Dish &amp; Processed Food</a></li>
+                                                        <li><a href="#">Fish</a></li>
+                                                        <li><a href="#">Snack &amp; Instant Food</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Lingerie</h3>
+                                                    <h3 class="mega-menu-heading">Interest</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Linger</a> <span
+                                                        <li><a href="#">Pet</a> <span
                                                                 class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Slippers</a></li>
+                                                        <li><a href="#">Flower</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Nightwear</h3>
+                                                    <h3 class="mega-menu-heading">Goods</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Nightwear</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a></li>
+                                                        <li><a href="#">Notebook</a></li>
+                                                        <li><a href="#">Smartphone</a></li>
+                                                        <li><a href="#">Smart Device</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Mixed</h3>
+                                                    <h3 class="mega-menu-heading">Infant care</h3>
                                                     <ul class="list-unstyled style-list">
                                                         <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a> <span
+                                                        <li><a href="#">Clothes &amp; Shoes</a> <span
                                                                 class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-shirts</a></li>
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">Flats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a> <span
+                                                        <li><a href="#">Diaper</a></li>
+                                                        <li><a href="#">Powdered Milk</a></li>
+                                                        <li><a href="#">Bath</a></li>
+                                                        <li><a href="#">Skincare</a></li>
+                                                        <li><a href="#">Oral Care</a></li>
+                                                        <li><a href="#">Dinnerware</a></li>
+                                                        <li><a href="#">Detergent for Baby</a></li>
+                                                        <li><a href="#">Toy</a></li>
+                                                        <li><a href="#">Nutritional Supplements</a></li>
+                                                        <li><a href="#">Maternity Dress</a></li>
+                                                        <li><a href="#">Return present</a></li>
+                                                        <li><a href="#">Childbirth DIY</a> <span
                                                                 class="label label-danger-shop">New</span></li>
                                                     </ul>
                                                 </div>

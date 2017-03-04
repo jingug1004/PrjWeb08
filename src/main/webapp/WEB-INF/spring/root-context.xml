@@ -36,10 +36,10 @@
         <property name="driverClassName"
                   value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
         <property name="url"
-                  value="jdbc:log4jdbc:mysql://127.0.0.1:3306/book_ex?verifyServerCertificate=false&amp;useSSL=true"></property>
+                  value="jdbc:log4jdbc:mysql://127.0.0.1:3306/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>
         <!--value="jdbc:log4jdbc:mysql://127.0.0.1:3306/book_ex"></property>-->
         <property name="username" value="root"></property>
-        <property name="password" value="123"></property>
+        <property name="password" value="1111"></property>
     </bean>
 
 

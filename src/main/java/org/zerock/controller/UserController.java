@@ -124,7 +124,7 @@ public class UserController {
         rttr.addFlashAttribute("msg", "SUCCESS");
 
 //        return "redirect:/home";
-        return "home";
+        return "redirect:/home";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)

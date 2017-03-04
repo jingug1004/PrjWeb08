@@ -242,4 +242,27 @@
 </div>
 <!-- /.content-wrapper -->
 
+<!-- Wait Block 메인 화면에서 뜨는 팝업!-->
+<div class="g-popup-wrapper">
+    <div class="g-popup g-popup--discount2">
+        <div class="g-popup--discount2-message">
+            <h3>10% 할인을 원하십니까?</h3>
+            <h4>You Are Fabulous!</h4>
+            <p>뉴스레터에 이메일을 등록하시고 10% 할인을 더 받으세요 ^^</p>
+
+            <form action="#" class="sky-form">
+                <label class="input">
+                    <input type="email" placeholder="Email" class="form-control">
+                </label>
+                <label class="input">
+                    <button class="btn btn-default" type="button">Subscribe</button>
+                </label>
+            </form>
+        </div>
+        <img src="/assets/img/blog/26.jpg" alt="ALT" width="270">
+        <a href="javascript:void(0);" class="g-popup__close g-popup--discount2__close"><span class="icon-close" aria-hidden="true"></span></a>
+    </div>
+</div>
+<!-- End Wait Block -->
+
 <%@include file="../include/footer.jsp" %>
