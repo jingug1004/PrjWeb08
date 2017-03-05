@@ -17,7 +17,7 @@
 <!--[if !IE]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Documentation | UNIFY¢</title>
+    <title>Documentation | UNIFY</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -46,7 +46,7 @@
 <!-- Sidebar -->
 <div class="page-wrap">
     <div class="aside" id="sidebar">
-        <h1>UNIFY - Shopping Website by<a href="http://maxtheme.net">MaxTheme.net</a></h1>
+        <h1>UNIFY - Shopping Website by <a href="https://www.facebook.com/jingug1004">김진국</a></h1>
         <p>Documentation v1.9.4</p>
 
         <hr>
@@ -79,64 +79,93 @@
 
                     <hr>
 
-                    <p>Dear customers, first of all we would like to thank you for choosing UNIFY Template! We truly
-                        hope that UNIFY will serve you well, and that it will live up to your expectations.</p>
+                    <p>안녕하십니까, 먼저 Unify Template을 선택해 주셔서 감사드립니다! Unify가 귀하를 잘 대할 것이며 귀하의 기대에 부응 할 것을 진심으로 바랍니다. 연계과목, 기간, 개발언어, 플랫폼, 개발툴, 주요기술, 목적, 내용..</p>
 
                     <br>
 
-                    <p>We hope you will enjoy using UNIFY template's easy to navigate and user-friendly layout as well
-                        as developer-friendly code. Furthermore, a lot of resources have been employed and many options
-                        have been added just to make sure that our valued customers will be satisfied with their
-                        purchase.</p>
+                    <p>UNIFY 템플릿의 탐색하기 쉽고 사용하기 쉬운 레이아웃과 개발자 친화적 인 코드를 사용하여 즐겁게 보내시기 바랍니다.
+                        또한 많은 리소스가 사용되었으며 많은 고객들이 구매에 만족할 수 있도록 다양한 옵션이 추가되었습니다.</p>
 
                     <br>
 
                     <h4>Updates</h4>
 
-                    <p>In order to keep up with the fast paced evolution of web design trends, we always try to release
-                        new updates on continuous basis. Our goal with each update is to impress our customers and to
-                        put huge smiles on their faces.</p>
-                    <p>We would like to bring to your attention that once you purchase UNIFY, you become eligible for a
-                        lifetime entitlement to download updates for <strong>FREE!</strong></p>
+                    <p>웹 디자인 트렌드의 급변하는 발전 추세에 발 맞춰 항상 새로운 업데이트를 지속적으로 출시하려고 노력하고 있습니다.
+                        각 업데이트의 목표는 고객에게 깊은 인상을 남기고 얼굴에 거대한 미소를 짓는 것입니다.</p>
 
-                    <p>On the other hand however, we regret to inform you that license upgrade is not available. If you
-                        wish to upgrade your license, a new purchase must be made.</p>
+                    <p>UNIFY를 구매하면 평생 무료로 업데이트를 다운로드 할 자격이 주어집니다. <strong>FREE!</strong></p>
 
-                    <p>Current updated release is v1.9+, which offers several improvements including fixed bugs, a
-                        variety of new thematic demos and plenty of new designs. UNIFY does not stop there as many more
-                        new amazing features are surely coming soon in the next updates. Thank you always for using
-                        UNIFY Template and for being a vital part of its success.</p><br>
+                    <p>그러나 다른 한편으로는 라이센스 업그레이드가 불가능하다는 사실을 알려드립니다. 라이센스를 업그레이드하려면 새로운 구매가 이루어져야합니다.</p>
+
+                    <p>현재 업데이트 된 버전은 v1.9 +로 고정 버그, 다양한 새로운 테마 데모 및 새로운 디자인 등 여러 가지 개선 사항을 제공합니다.
+                        UNIFY는 다음 업데이트에서 더 많은 새로운 놀라운 기능이 곧 출시 될 예정이어서 거기에서 멈추지 않습니다.
+                        항상 UNIFY 템플릿을 사용하고 성공의 중요한 부분을 담당해 주셔서 감사합니다.</p><br>
 
                     <h4>Support</h4>
 
-                    <p>We believe in UNIFY that support is a crucial aspect of any successful product. Therefore, we try
-                        our very best to offer the most excellent support, and we always try anything within our power
-                        to assist our valued customers.
-                        It is worth noting that our support mainly covers any design issues that one might encounter, in
-                        addition to frontend-related issues, as long as it is not complete customized work.</p>
+                    <p>우리는 UNIFY가 지원이 성공적인 제품의 중요한 측면이라고 믿습니다. 따라서 우리는 가장 우수한 지원을 제공하기 위해 최선을 다하며
+                        항상 우리의 소중한 고객을 돕기 위해 무엇이든 시도합니다. 우리의 지원은 완전한 사용자 정의 작업이 아닌 한 프론트 엔드 관련
+                        문제 이외에 발생할 수있는 모든 설계 문제를 주로 다루고 있음을 알아 두십시오.</p>
 
-                    <p>If you have any questions, please feel free to contact us at
-                        <strong>support@htmlstream.com</strong> and we will do our best to get back to you within 24
-                        hours. It might take a bit longer, but we try hard not to keep you waiting longer than 48 hours.
+                    <p> "요즘 업계 최고의 기술인 XX 를 도입해서 YY 를 구현하였는데 그것이 아주 성공적이어서 유저들에게 ZZ 한 반응과 함께 $$ 의 매출을..." => 이것도 좀.
+                        말하는 게 우선 너무 매니저스러움.
+
+                        개발자스러운 답변은
+                        "아실지 모르겠지만 XX 라는 기술이 있는데 저희가 풀어야 했던 문제는 YY 였으므로 ZZ 방식으로 구현 시도를 했습니다. 그러면서 배운 거라면 AA 는
+                        이런 면이 좋아서 어느 정도 좋은 결과였던 것 같고 BB 는 이러이러한 문제가 있어서 저러저러하게 대처를 하였음" => 이상적인 답변.
+                        여러 각도로 문제를 바라볼 수 있으며 객관적으로 좋은 점 나쁜 점을 나열 할 수 있고, 나쁜 점은 어떻게 극복하였는지도 디테일 말할 수 있음 플러스.</p>
+
+                    <pre> 자가 Development Environment(Server * Client, H/W * S/W)
+                        Processor : Intel Core™ i5
+                        RAM : 4GB
+                        TCP/IP Network : LocalHost
+                        Web Programming Language : Java 8(JDK1.8), JSP
+                        Markup Language : HTML5, CSS
+                        Scripting Language : JavaScript, JQuery, ajax
+                        Structured Query Language : MariaDB
+                        Framework : Spring MVC, Maven, MyBatis
+                        OS : MAC OSX 10.12.3
+                        IDE : IntelliJ, SublimeText3
+                        Server : Apache Tomcat 8.0.0.M17 WAS
+                        VCS : GitHub
+                        Client GUI Tool : Sequel Pro
+                        Test Browser : Chrome, Safari
+                        CI : Jenkins
+                        WS : AWS
+                    </pre>
+
+                    <pre> 학원 Development Environment(Server * Client, H/W * S/W)
+                        Processor : Intel Core™ i7
+                        RAM : 16GB
+                        TCP/IP Network : LocalHost(Identical port, Port forwarding)
+                        OS : MS Window 7
+                        IDE : IntelliJ, Eclipse Neon, EditPlus
+                        Client GUI Tool : HeidiSQL
+                        Test Browser : Chrome, FireFox
+                    </pre>
+
+                    <p>질문이 있으시면 언제든지
+                        <strong>KAKAO TALK : jingug1004</strong>에 연락하여 24 시간 이내에 연락 드리도록 최선을 다할 것입니다.
+                        조금 더 오래 걸릴 수도 있지만 48 시간 이상 기다리지 않으려 고 노력합니다.
                     </p>
 
-                    <p>You may also leave us a message through our social pages:
-                        <a class="color-dark-blue" href="https://www.facebook.com/htmlstream "> Facebook</a> and <a
-                                href="https://twitter.com/htmlstream"> Twitter</a></p>
+                    <p>소셜 페이지를 통해 메시지를 남길 수도 있습니다.
+                        <a class="color-dark-blue" href="https://www.facebook.com/jingug1004 "> Facebook</a> and <a
+                                href="https://twitter.com/jingug1004"> Twitter</a></p>
 
                     <div class="margin-bottom-30"></div>
 
                     <ul class="list-unstyled overview-details list-style margin-bottom-40">
-                        <li>Author: <a target="_blank" href="http://htmlstream.com">Htmlstream</a></li>
+                        <li>Author: <a target="_blank" href="http://htmlstream.com">김진국</a></li>
                         <li>Contact:
-                            <a href="mailto:support@htmlstream.com">support@htmlstream.com</a>
+                            <a href="mailto:jingug1004@naver.com">jingug1004@naver.com</a>
                             <span>|</span>
-                            <a target="_blank" href="https://twitter.com/htmlstream">Twitter</a>
+                            <a target="_blank" href="https://twitter.com/jingug1004">Twitter</a>
                             <span>|</span>
-                            <a target="_blank" href="https://www.facebook.com/htmlstream?ref=hl">Facebook</a>
+                            <a target="_blank" href="https://www.facebook.com/jingug1004?ref=hl">Facebook</a>
                         </li>
-                        <li>Created on: 24/04/2013</li>
-                        <li>Latest Update on: 19/04/2016</li>
+                        <li>Created on: 2013/02/05</li>
+                        <li>Latest Update on: 2017/03/10</li>
                     </ul>
                 </div><!--/overview-->
 

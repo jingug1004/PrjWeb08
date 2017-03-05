@@ -68,7 +68,7 @@
     -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="<c:url value="/WEB-INF/views/favicon.ico"/>">
 
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css'
