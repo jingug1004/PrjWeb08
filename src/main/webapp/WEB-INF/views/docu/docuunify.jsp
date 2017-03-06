@@ -79,7 +79,8 @@
 
                     <hr>
 
-                    <p>안녕하십니까, 먼저 Unify Template을 선택해 주셔서 감사드립니다! Unify가 귀하를 잘 대할 것이며 귀하의 기대에 부응 할 것을 진심으로 바랍니다. 연계과목, 기간, 개발언어, 플랫폼, 개발툴, 주요기술, 목적, 내용..</p>
+                    <p>안녕하십니까, 먼저 Unify Template을 선택해 주셔서 감사드립니다! Unify가 귀하를 잘 대할 것이며 귀하의 기대에 부응 할 것을 진심으로 바랍니다. 연계과목,
+                        기간, 개발언어, 플랫폼, 개발툴, 주요기술, 목적, 내용..</p>
 
                     <br>
 
@@ -232,8 +233,7 @@
 
                     <!--Beginning of Page-->
                     <h3>Beginning of the Page</h3>
-                    <p>In order to detect Internet Explorer browser version 9, a specific class is implemented at the
-                        beginning of all HTML pages, as shown in the code below.</p>
+                    <p>Internet Explorer 브라우저 버전 9를 검색하기 위해 아래 코드와 같이 모든 HTML 페이지에서 특정 클래스가 구현됩니다.</p>
 
                     <pre class="line-numbers"><code class="language-php">&lt;!DOCTYPE html&gt;
 &lt;!--[if IE 9]&gt; &lt;html lang=&quot;en&quot; class=&quot;ie9&quot;&gt; &lt;![endif]--&gt;
@@ -242,7 +242,7 @@
 
                     <!--Page Head-->
                     <h3 id="scroll_page_head">Page Head <span class="label label-dark">Updated v1.7</span></h3>
-                    <p>Page head contains Metadata, Favicon, Title, Web Fonts and CSS links.</p>
+                    <p>페이지 헤드에는 메타 데이터, 파비콘, 제목, 웹 글꼴 및 CSS 링크가 포함됩니다.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;head&gt;
     &lt;title&gt;UNIFY - Responsive Website Template&lt;/title&gt;
 
@@ -281,14 +281,14 @@
 
                     <!--Header-->
                     <h3>Wrapper <span class="label label-dark">Added v1.4</span></h3>
-                    <p><code>.wrapper</code> class is added on v1.4 to wrap <strong>ALL</strong> body contents. It
-                        mainly consists of header, slider, breadcrumbs, content parts etc.</p>
+                    <p><code>.wrapper</code> 클래스가 모든 본문 내용을 래핑하기 위해 v1.4에 추가되었습니다. <strong>ALL</strong>
+                        주로 헤더, 슬라이더, 빵 부스러기, 내용 부분 등으로 구성됩니다.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;div class=&quot;wrapper&quot;&gt;
     ...
     ...
 &lt;/div&gt;</code></pre>
-                    <p><span class="label label-blue">Note</span> Below codes are nested within the wrapper content. It
-                        starts from <code>header</code> and ends after the <code>copyright</code> part.</p><br>
+                    <p><span class="label label-blue">Note</span>아래 코드는 래퍼 내용 내에 중첩되어 있습니다.
+                        <code>header</code> 에서 시작하여 <code>copyright</code> 부분 다음에 끝납니다.</p><br>
 
 
                     <!--Header-->
@@ -312,8 +312,8 @@
 &lt;!--=== End Header ===--&gt;</code></pre>
                     <!--Content-->
                     <h3>Content <span class="label label-dark">Updated v1.6</span></h3>
-                    <p>Container block includes all the content of the page. Moreover, the <code>.content</code> class
-                        was added in v1.4 to the main wrap container to give space (padding) for the content.</p>
+                    <p>컨테이너 블록은 페이지의 모든 내용을 포함합니다. 또한 <code>.content</code>
+                        클래스는 v1.4에서 주 랩 컨테이너에 추가되어 내용에 공간 (패딩)을 제공합니다.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;!--=== Content Part  ===--&gt;
 &lt;div class=&quot;container content&quot;&gt;
     ...
@@ -345,8 +345,7 @@
 
                     <!--Javascript and jQuery-->
                     <h3>Javascript and jQuery</h3>
-                    <p>Javascript files are called at the bottom of the page, this practice effectively reduces load
-                        time.</p>
+                    <p>Javascript 파일은 페이지 하단에서 호출되므로 이 방법은로드 시간을 효과적으로 줄입니다.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;!-- JS Global Compulsory --&gt;
 &lt;script src=&quot;assets/plugins/jquery/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;assets/plugins/jquery/jquery-migrate.min.js&quot;&gt;&lt;/script&gt;
@@ -380,28 +379,23 @@ jQuery(document).ready(function() {
                 <div id="scroll_misc" class="margin-bottom-60">
                     <h2>Misc Pages <span class="label label-dark">Updated v1.9.1</span></h2>
                     <hr>
-                    <p>Misc pages were purposely created with merely the main parts of the page, which makes it easier
-                        for developers to add their content directly. Simply use any following page to start your new
-                        project:</p>
+                    <p>기타 페이지는 의도적으로 페이지의 주요 부분만으로 만들어 졌으므로 개발자가 직접 내용을 직접 추가 할 수 있습니다.
+                        다음 페이지를 사용하여 새 프로젝트를 시작하십시오.</p>
                     <ol>
-                        <li><code>page_misc_blank.html</code>&nbsp;&nbsp; Empty blank page with all main components
-                            connected already
+                        <li><code>page_misc_blank.html</code>&nbsp;&nbsp; 이미 연결된 모든 주요 구성 요소가있는 빈 페이지가 비어 있습니다.
                         </li>
-                        <li><code>page_misc_boxed.html</code>&nbsp;&nbsp; Boxed layout of Unify Template</li>
-                        <li><code>page_misc_boxed_img.html</code>&nbsp;&nbsp; Boxed layout of Unify Template</li>
-                        <li><code>page_misc_boxed_fixed_header.html</code>&nbsp;&nbsp;Fixed header in boxed layout of
-                            Unify Template
+                        <li><code>page_misc_boxed.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>
+                        <li><code>page_misc_boxed_img.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>
+                        <li><code>page_misc_boxed_fixed_header.html</code>&nbsp;&nbsp; 템플릿의 박스형 레이아웃의 고정 헤더
                         </li>
-                        <!-- <li><code>page_misc_fixed_header.html</code>&nbsp;&nbsp; Fixed header in Unify Template</li> -->
-                        <li><code>page_misc_dark.html</code>&nbsp;&nbsp; Dark version of Unify Template</li>
-                        <li><code>page_misc_dark_boxed.html</code>&nbsp;&nbsp; Dark version in boxed layout of Unify
-                            Template
+                        <li><code>page_misc_fixed_header.html</code>&nbsp;&nbsp; 통합 템플릿의 고정 헤더</li>
+                        <li><code>page_misc_dark.html</code>&nbsp;&nbsp; Unify 템플릿의 어두운 버전
                         </li>
-                        <li><code>page_misc_dark_other_color.html</code>&nbsp;&nbsp; Dark version with other theme color
-                            of Unify Template
+                        <li><code>page_misc_dark_boxed.html</code>&nbsp;&nbsp; 통일 템플릿의 박스형 레이아웃의 어두운 버전
                         </li>
-                        <li><code>page_misc_sticky_footer.html.html</code>&nbsp;&nbsp; Sticky Footer with Copyright
-                            Section
+                        <li><code>page_misc_dark_other_color.html</code>&nbsp;&nbsp; Unify Template의 다른 테마 색이있는 어두운 버전
+                        </li>
+                        <li><code>page_misc_sticky_footer.html.html</code>&nbsp;&nbsp; 저작권 섹션이있는 끈적한 바닥 글
                         </li>
                     </ol>
                 </div>
@@ -411,16 +405,16 @@ jQuery(document).ready(function() {
                     <h2>Headers &amp; Footers <span class="label label-dark">Updated v1.9</span><a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <hr>
-                    <p class="lead">Unify Template includes 8 Header and Footer alternatives.</p>
+                    <p class="lead">통합 템플릿에는 8 개의 머리글 및 바닥 글 대안이 포함되어 있습니다.</p>
 
                     <h3 id="scroll_headerDemos">Headers <span class="label label-dark">Updated v1.9</span></h3>
 
-                    <h4>Make the Header Fixed to the Top</h4>
+                    <h4>머리글을 상단에 고정 시키십시오.</h4>
                     <p>Where <code>x</code>&nbsp; =&nbsp;<code> v1, v2, v3, v5, v6</code> or nothing for the default
                         header. Any header option can be used as fixed (sticky) header except for <code>v4</code> and
-                        <code>v7</code>. On a different note, header <code>One Page</code> is designed only for One Page
-                        template and can not be used in other Unify pages. For detailed information on how to use header
-                        options, please refer to <strong>"Header Options"</strong> section below.</p>
+                        <code>v7</code>. 다른 메모에서 머리글 한 페이지는 한 <code>One Page</code> 서식 파일 용으로 만 설계되었으며
+                        다른 통합 페이지에서는 사용할 수 없습니다. 머리글 옵션을 사용하는 방법에 대한 자세한 내용은 아래 <strong>"Header Options"</strong> 섹션을
+                        참조하십시오.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;body class=&quot;header-fixed&quot;&gt;
 ..
 ..
@@ -435,794 +429,794 @@ jQuery(document).ready(function() {
 &lt;/body&gt;</code></pre>
                     <div class="clearfix margin-bottom-30"></div>
                     <h4>Header Options</h4>
-                    <p>For more detailed information click any link below</p>
+                    <p>자세한 내용을 보려면 아래 링크를 클릭하십시오.</p>
                     <div class="panel-group acc-v1" id="accordion-header">
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header">
-                                        Header "Default"
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img
-                                            class="img-responsive header-img-bordered padding-top-10"
-                                            src="/resources/docu/img/header-default.jpg" alt="Default Header"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header">--%>
+                        <%--Header "Default"--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img--%>
+                        <%--class="img-responsive header-img-bordered padding-top-10"--%>
+                        <%--src="/resources/docu/img/header-default.jpg" alt="Default Header"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header ===--&gt;
-&lt;div class="header"&gt;
-    &lt;div class="container"&gt;
-        &lt;!-- Logo --&gt;
-        &lt;a class="logo" href="index.html"&gt;
-            &lt;img src="assets/img/logo1-default.png" alt="Logo"&gt;
-        &lt;/a&gt;
-        &lt;!--  End Logo --&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header ===--&gt;--%>
+                        <%--&lt;div class="header"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Logo --&gt;--%>
+                        <%--&lt;a class="logo" href="index.html"&gt;--%>
+                        <%--&lt;img src="assets/img/logo1-default.png" alt="Logo"&gt;--%>
+                        <%--&lt;/a&gt;--%>
+                        <%--&lt;!--  End Logo --&gt;--%>
 
-        &lt;!-- Topbar --&gt;
-        &lt;div class="topbar"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-        &lt;!--  End Topbar --&gt;
+                        <%--&lt;!-- Topbar --&gt;--%>
+                        <%--&lt;div class="topbar"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--  End Topbar --&gt;--%>
 
-        &lt;!-- Toggle get grouped for better mobile display --&gt;
-        &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"&gt;
-            ...
-            ...
-        &lt;/button&gt;&lt;!-- /end container --&gt;
-        &lt;!--  End Toggle --&gt;
-    &lt;/div&gt;
+                        <%--&lt;!-- Toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/button&gt;&lt;!-- /end container --&gt;--%>
+                        <%--&lt;!--  End Toggle --&gt;--%>
+                        <%--&lt;/div&gt;--%>
 
-    &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-    &lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;
-        ...
-        ...
-    &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-&lt;/div&gt;
-&lt;!--=== End Header ===--&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_Default.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--=== End Header ===--&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_Default.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-v1">
-                                        Header v1
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-v1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v1.jpg" alt="Header v1">
-                                    </div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-v1">--%>
+                        <%--Header v1--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-v1" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v1.jpg" alt="Header v1">--%>
+                        <%--</div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v1===--&gt;
-&lt;div class="header-v1"&gt;
-    &lt;!-- Topbar --&gt;
-    &lt;div class="topbar-v1"&gt;
-        ...
-        ...
-    &lt;/div&gt;
-    &lt;!--  End Topbar --&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v1===--&gt;--%>
+                        <%--&lt;div class="header-v1"&gt;--%>
+                        <%--&lt;!-- Topbar --&gt;--%>
+                        <%--&lt;div class="topbar-v1"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--  End Topbar --&gt;--%>
 
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-            &lt;div class="navbar-header"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="navbar-header"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-            &lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;
-                ...
-                ...
-            &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header v1 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v1.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v1 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v1.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-v2">
-                                        Header v2
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-v2" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v2.jpg" alt="Header v2">
-                                    </div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-v2">--%>
+                        <%--Header v2--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-v2" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v2.jpg" alt="Header v2">--%>
+                        <%--</div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v2===--&gt;
-&lt;div class="header-v2 header-sticky"&gt;
-    &lt;div class="container container-space"&gt;
-        &lt;!-- Topbar v2 --&gt;
-        &lt;div class="topbar-v2"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-        &lt;!--  End Topbar v2 --&gt;
-    &lt;/div&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v2===--&gt;--%>
+                        <%--&lt;div class="header-v2 header-sticky"&gt;--%>
+                        <%--&lt;div class="container container-space"&gt;--%>
+                        <%--&lt;!-- Topbar v2 --&gt;--%>
+                        <%--&lt;div class="topbar-v2"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--  End Topbar v2 --&gt;--%>
+                        <%--&lt;/div&gt;--%>
 
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;
-        &lt;div class="container container-space"&gt;
-            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-            &lt;div class="navbar-header"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container container-space"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="navbar-header"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-            &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-                ...
-                ...
-            &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header v2 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v2.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v2 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v2.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-v3">
-                                        Header v3
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-v3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img
-                                            class="img-responsive header-img-bordered padding-top-15"
-                                            src="/resources/docu/img/header_v3.jpg" alt="Header v3"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-v3">--%>
+                        <%--Header v3--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-v3" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img--%>
+                        <%--class="img-responsive header-img-bordered padding-top-15"--%>
+                        <%--src="/resources/docu/img/header_v3.jpg" alt="Header v3"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v3===--&gt;
-&lt;div class="header-v3"&gt;
-    &lt;div class="container container-space"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-            &lt;div class="navbar-header"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v3===--&gt;--%>
+                        <%--&lt;div class="header-v3"&gt;--%>
+                        <%--&lt;div class="container container-space"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="navbar-header"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-            &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-                ...
-                ...
-            &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header v3 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v3.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v3 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v3.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-v4">
-                                        Header v4
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-v4" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v4.jpg" alt="Header v4">
-                                    </div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-v4">--%>
+                        <%--Header v4--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-v4" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v4.jpg" alt="Header v4">--%>
+                        <%--</div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v4===--&gt;
-&lt;div class="header-v4"&gt;
-    &lt;div class="container"&gt;
-        &lt;!-- Topbar v1 --&gt;
-        &lt;div class="topbar-v1"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-        &lt;!--  End Topbar v1 --&gt;
-    &lt;/div&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v4===--&gt;--%>
+                        <%--&lt;div class="header-v4"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Topbar v1 --&gt;--%>
+                        <%--&lt;div class="topbar-v1"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--  End Topbar v1 --&gt;--%>
+                        <%--&lt;/div&gt;--%>
 
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-            &lt;div class="navbar-header"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="navbar-header"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;div class="clearfix"&gt;&lt;/div&gt;
+                        <%--&lt;div class="clearfix"&gt;&lt;/div&gt;--%>
 
-            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-            &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-                ...
-                ...
-            &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header v4 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v4.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v4 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v4.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-v5">
-                                        Header v5
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-v5" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v5.jpg" alt="Header v5">
-                                    </div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-v5">--%>
+                        <%--Header v5--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-v5" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v5.jpg" alt="Header v5">--%>
+                        <%--</div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v5===--&gt;
-&lt;div class="header-v5"&gt;
-    &lt;div class="container"&gt;
-        &lt;!-- Topbar v3 --&gt;
-        &lt;div class="topbar-v3"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-        &lt;!--  End Topbar v3 --&gt;
-    &lt;/div&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v5===--&gt;--%>
+                        <%--&lt;div class="header-v5"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Topbar v3 --&gt;--%>
+                        <%--&lt;div class="topbar-v3"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--  End Topbar v3 --&gt;--%>
+                        <%--&lt;/div&gt;--%>
 
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-            &lt;div class="navbar-header"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar navbar-default mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="navbar-header"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-            &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-                ...
-                ...
-            &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header v5 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v5.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v5 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v5.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6">
-                                        Header v6 Transparent
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_transparent.jpg"
-                                                                   alt="Header v6 Transparent"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6">--%>
+                        <%--Header v6 Transparent--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_transparent.jpg"--%>
+                        <%--alt="Header v6 Transparent"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-            &lt;div class="menu-container"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="menu-container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-            &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-                ...
-                ...
-            &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_transparent.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_transparent.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dark">
-                                        Header v6 Dark Transparent
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-dark" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_dark_transparent.jpg"
-                                                                   alt="Header v6 Dark Transparent"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dark">--%>
+                        <%--Header v6 Dark Transparent--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-dark" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_dark_transparent.jpg"--%>
+                        <%--alt="Header v6 Dark Transparent"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-dark-transparent"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_semi_dark_transparent.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-dark-transparent"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_semi_dark_transparent.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-white">
-                                        Header v6 White Transparent
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-white" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_white_transparent.jpg"
-                                                                   alt="Header v6 White Transparent"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-white">--%>
+                        <%--Header v6 White Transparent--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-white" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_white_transparent.jpg"--%>
+                        <%--alt="Header v6 White Transparent"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-white-transparent"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_semi_white_transparent.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-white-transparent"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_semi_white_transparent.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-border">
-                                        Header v6 Border Bottom
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-border" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_border_bottom.jpg"
-                                                                   alt="Header v6 Border Bottom"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-border">--%>
+                        <%--Header v6 Border Bottom--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-border" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_border_bottom.jpg"--%>
+                        <%--alt="Header v6 Border Bottom"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-border-bottom"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_border_bottom.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-border-bottom"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_border_bottom.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-cd">
-                                        Header v6 Classic Dark
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-cd" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_classic_dark.jpg"
-                                                                   alt="Header v6 Classic Dark"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-cd">--%>
+                        <%--Header v6 Classic Dark--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-cd" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_classic_dark.jpg"--%>
+                        <%--alt="Header v6 Classic Dark"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-classic-dark"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_classic_dark.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-classic-dark"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_classic_dark.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-cw">
-                                        Header v6 Classic White
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-cw" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_classic_white.jpg"
-                                                                   alt="Header v6 Classic White"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-cw">--%>
+                        <%--Header v6 Classic White--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-cw" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_classic_white.jpg"--%>
+                        <%--alt="Header v6 Classic White"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-classic-white"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_classic_white.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-classic-white"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_classic_white.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dd">
-                                        Header v6 Dark Dropdown
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-dd" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_dark_dropdown.jpg"
-                                                                   alt="Header v6 Dark Dropdown"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dd">--%>
+                        <%--Header v6 Dark Dropdown--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-dd" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_dark_dropdown.jpg"--%>
+                        <%--alt="Header v6 Dark Dropdown"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-dark-dropdown"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_dark_dropdown.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-dark-dropdown"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_dark_dropdown.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-ds">
-                                        Header v6 Dark on Scroll
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-ds" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_dark_scroll.jpg"
-                                                                   alt="Header v6 Dark on Scroll "></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-ds">--%>
+                        <%--Header v6 Dark on Scroll--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-ds" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_dark_scroll.jpg"--%>
+                        <%--alt="Header v6 Dark on Scroll "></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-dark-scroll"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_dark_scroll.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-dark-scroll"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_dark_scroll.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dsb">
-                                        Header v6 Dark Search Box
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-dsb" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_dark_search.jpg"
-                                                                   alt="Header v6 Dark Search Box"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dsb">--%>
+                        <%--Header v6 Dark Search Box--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-dsb" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_dark_search.jpg"--%>
+                        <%--alt="Header v6 Dark Search Box"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-dark-search"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_dark_search.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dr">
-                                        Header v6 Dark on Responsive
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-6-dr" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v6_dark_res.jpg"
-                                                                   alt="Header v6 Dark on Responsive"></div>
-                                    <div class="clearfix margin-bottom-40"></div>
-
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;
-&lt;div class="header-6 header-sticky header-dark-res-nav"&gt;
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-        &lt;div class="container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header 6 --&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v6_dark_res_nav.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-dark-search"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_dark_search.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-7-left">
-                                        Header v7 Left
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-7-left" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v7_left.jpg"
-                                                                   alt="Header v7 Left">
-                                    </div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-6-dr">--%>
+                        <%--Header v6 Dark on Responsive--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-6-dr" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v6_dark_res.jpg"--%>
+                        <%--alt="Header v6 Dark on Responsive"></div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v7 Left===--&gt;
-&lt;div class="header-v7 header-left-v7"&gt;
-    &lt;nav class="navbar navbar-default mCustomScrollbar" role="navigation" data-mcs-theme="minimal-dark"&gt;
-        &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-        &lt;div class="menu-container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header 6===--&gt;--%>
+                        <%--&lt;div class="header-6 header-sticky header-dark-res-nav"&gt;--%>
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v6_dark_res_nav.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-        &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-        &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/nav&gt;
-&lt;/div&gt;
-&lt;!-- End Header v7 Left--&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>page_home12.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-7-right">
-                                        Header v7 Right
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-7-right" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v7_right.jpg"
-                                                                   alt="Header v7 Right">
-                                    </div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-7-left">--%>
+                        <%--Header v7 Left--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-7-left" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v7_left.jpg"--%>
+                        <%--alt="Header v7 Left">--%>
+                        <%--</div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v7 Right===--&gt;
-&lt;div class="header-v7 header-right-v7"&gt;
-    &lt;nav class="navbar navbar-default mCustomScrollbar" role="navigation" data-mcs-theme="minimal-dark"&gt;
-        &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-        &lt;div class="menu-container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v7 Left===--&gt;--%>
+                        <%--&lt;div class="header-v7 header-left-v7"&gt;--%>
+                        <%--&lt;nav class="navbar navbar-default mCustomScrollbar" role="navigation" data-mcs-theme="minimal-dark"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="menu-container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-        &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-        &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/nav&gt;
-&lt;/div&gt;
-&lt;!-- End Header v7 Right--&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>page_home13.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/nav&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v7 Left--&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>page_home12.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header-8">
-                                        Header v8
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="header-8" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive header-img-bordered"
-                                                                   src="/resources/docu/img/header_v8.jpg" alt="Header v8">
-                                    </div>
-                                    <div class="clearfix margin-bottom-40"></div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-7-right">--%>
+                        <%--Header v7 Right--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-7-right" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v7_right.jpg"--%>
+                        <%--alt="Header v7 Right">--%>
+                        <%--</div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header v8===--&gt;
-&lt;div class="header-v8 header-sticky"&gt;
-    &lt;!-- Topbar blog --&gt;
-    &lt;div class="blog-topbar"&gt;
-        ...
-        ...
-    &lt;/div&gt;
-    &lt;!-- End Topbar blog --&gt;
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v7 Right===--&gt;--%>
+                        <%--&lt;div class="header-v7 header-right-v7"&gt;--%>
+                        <%--&lt;nav class="navbar navbar-default mCustomScrollbar" role="navigation" data-mcs-theme="minimal-dark"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="menu-container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-    &lt;!-- Navbar --&gt;
-    &lt;div class="navbar mega-menu" role="navigation"&gt;
-      &lt;div class="container"&gt;
-        &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
-        &lt;div class="res-container"&gt;
-            ...
-            ...
-        &lt;/div&gt;
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/nav&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v7 Right--&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>page_home13.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-        &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-        &lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;
-            ...
-            ...
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- End Navbar --&gt;
-&lt;/div&gt;
-&lt;!-- End Header v8--&gt;</code></pre>
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_header_v8.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header-8">--%>
+                        <%--Header v8--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="header-8" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive header-img-bordered"--%>
+                        <%--src="/resources/docu/img/header_v8.jpg" alt="Header v8">--%>
+                        <%--</div>--%>
+                        <%--<div class="clearfix margin-bottom-40"></div>--%>
+
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header v8===--&gt;--%>
+                        <%--&lt;div class="header-v8 header-sticky"&gt;--%>
+                        <%--&lt;!-- Topbar blog --&gt;--%>
+                        <%--&lt;div class="blog-topbar"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Topbar blog --&gt;--%>
+
+                        <%--&lt;!-- Navbar --&gt;--%>
+                        <%--&lt;div class="navbar mega-menu" role="navigation"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;!-- Brand and toggle get grouped for better mobile display --&gt;--%>
+                        <%--&lt;div class="res-container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+
+                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
+                        <%--&lt;div class="collapse navbar-collapse navbar-responsive-collapse"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Navbar --&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!-- End Header v8--&gt;</code></pre>--%>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_header_v8.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
 
                     </div>
@@ -1232,7 +1226,7 @@ jQuery(document).ready(function() {
                     <h3 id="scroll_footerDemos" class="margin-bottom-20">Footers <span class="label label-dark">Updated v1.9</span>
                     </h3>
                     <h4>Footer Options</h4>
-                    <p>For more detailed information click any link below</p>
+                    <p>자세한 내용을 보려면 아래 링크를 클릭하십시오.</p>
                     <div class="panel-group acc-v1" id="accordion-footer">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -1273,333 +1267,333 @@ jQuery(document).ready(function() {
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v1">
-                                        Footer v1
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v1" class="panel-collapse collapse">
-                                <div class="panel-body">
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v1">--%>
+                        <%--Footer v1--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v1" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
 
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v1.jpg"
-                                                                   alt="Footer 1"></div>
-                                    <div class="clearfix margin-bottom-10"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 1 ===--&gt;
-&lt;div class=&quot;footer-v1&quot;&gt;
-    &lt;div class=&quot;footer&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/footer--&gt;
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v1.jpg"--%>
+                        <%--alt="Footer 1"></div>--%>
+                        <%--<div class="clearfix margin-bottom-10"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 1 ===--&gt;--%>
+                        <%--&lt;div class=&quot;footer-v1&quot;&gt;--%>
+                        <%--&lt;div class=&quot;footer&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/footer--&gt;--%>
 
-    &lt;div class=&quot;copyright&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/copyright--&gt;
-&lt;/div&gt;
-&lt;!--=== End Footer Version 1 ===--&gt;</code></pre>
+                        <%--&lt;div class=&quot;copyright&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/copyright--&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--=== End Footer Version 1 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v1.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v2">
-                                        Footer v2
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v2" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v2.jpg"
-                                                                   alt="Footer 2"></div>
-                                    <div class="clearfix margin-bottom-20"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 2 ===--&gt;
-&lt;div class=&quot;footer-v2&quot;&gt;
-    &lt;div class=&quot;footer&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/footer--&gt;
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v1.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v2">--%>
+                        <%--Footer v2--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v2" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v2.jpg"--%>
+                        <%--alt="Footer 2"></div>--%>
+                        <%--<div class="clearfix margin-bottom-20"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 2 ===--&gt;--%>
+                        <%--&lt;div class=&quot;footer-v2&quot;&gt;--%>
+                        <%--&lt;div class=&quot;footer&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/footer--&gt;--%>
 
-    &lt;div class=&quot;copyright&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/copyright--&gt;
-&lt;/div&gt;
-&lt;!--=== End Footer Version 2 ===--&gt;</code></pre>
+                        <%--&lt;div class=&quot;copyright&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/copyright--&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--=== End Footer Version 2 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v2.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v3">
-                                        Footer v3
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v3" class="panel-collapse collapse">
-                                <div class="panel-body">
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v2.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v3">--%>
+                        <%--Footer v3--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v3" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
 
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v3.jpg"
-                                                                   alt="Footer 3"></div>
-                                    <div class="clearfix margin-bottom-20"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 3 ===--&gt;
-&lt;div class=&quot;footer-v3&quot;&gt;
-    &lt;div class=&quot;footer&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/footer--&gt;
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v3.jpg"--%>
+                        <%--alt="Footer 3"></div>--%>
+                        <%--<div class="clearfix margin-bottom-20"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 3 ===--&gt;--%>
+                        <%--&lt;div class=&quot;footer-v3&quot;&gt;--%>
+                        <%--&lt;div class=&quot;footer&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/footer--&gt;--%>
 
-    &lt;div class=&quot;copyright&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/copyright--&gt;
-&lt;/div&gt;
-&lt;!--=== End Footer Version 3 ===--&gt;</code></pre>
+                        <%--&lt;div class=&quot;copyright&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/copyright--&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--=== End Footer Version 3 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v3.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v4">
-                                        Footer v4
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v4" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v4.jpg"
-                                                                   alt="Footer 4"></div>
-                                    <div class="clearfix margin-bottom-20"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 4 ===--&gt;
-&lt;div class=&quot;footer-v4&quot;&gt;
-    &lt;div class=&quot;footer&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/footer--&gt;
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v3.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v4">--%>
+                        <%--Footer v4--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v4" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v4.jpg"--%>
+                        <%--alt="Footer 4"></div>--%>
+                        <%--<div class="clearfix margin-bottom-20"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 4 ===--&gt;--%>
+                        <%--&lt;div class=&quot;footer-v4&quot;&gt;--%>
+                        <%--&lt;div class=&quot;footer&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/footer--&gt;--%>
 
-    &lt;div class=&quot;copyright&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/copyright--&gt;
-&lt;/div&gt;
-&lt;!--=== End Footer Version 4 ===--&gt;</code></pre>
+                        <%--&lt;div class=&quot;copyright&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/copyright--&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--=== End Footer Version 4 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v4.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v5">
-                                        Footer v5
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v5" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v5.jpg"
-                                                                   alt="Footer 5"></div>
-                                    <div class="clearfix margin-bottom-20"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 5 ===--&gt;
-&lt;div class=&quot;footer-v5&quot;&gt;
-    &lt;div class=&quot;footer&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/footer--&gt;
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v4.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v5">--%>
+                        <%--Footer v5--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v5" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v5.jpg"--%>
+                        <%--alt="Footer 5"></div>--%>
+                        <%--<div class="clearfix margin-bottom-20"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 5 ===--&gt;--%>
+                        <%--&lt;div class=&quot;footer-v5&quot;&gt;--%>
+                        <%--&lt;div class=&quot;footer&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/footer--&gt;--%>
 
-    &lt;div class=&quot;copyright&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/copyright--&gt;
-&lt;/div&gt;
-&lt;!--=== End Footer Version 5 ===--&gt;</code></pre>
+                        <%--&lt;div class=&quot;copyright&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/copyright--&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--=== End Footer Version 5 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v5.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v6">
-                                        Footer v6
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v6" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v5.jpg"
-                                                                   alt="Footer 5"></div>
-                                    <div class="clearfix margin-bottom-20"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 6 ===--&gt;
-&lt;div class=&quot;footer-v6&quot;&gt;
-    &lt;div class=&quot;footer&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/footer--&gt;
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v5.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v6">--%>
+                        <%--Footer v6--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v6" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v5.jpg"--%>
+                        <%--alt="Footer 5"></div>--%>
+                        <%--<div class="clearfix margin-bottom-20"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 6 ===--&gt;--%>
+                        <%--&lt;div class=&quot;footer-v6&quot;&gt;--%>
+                        <%--&lt;div class=&quot;footer&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/footer--&gt;--%>
 
-    &lt;div class=&quot;copyright&quot;&gt;
-        &lt;div class=&quot;container&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;!--/copyright--&gt;
-&lt;/div&gt;
-&lt;!--=== End Footer Version 6 ===--&gt;</code></pre>
+                        <%--&lt;div class=&quot;copyright&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;&lt;!--/copyright--&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;!--=== End Footer Version 6 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v6.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v7">
-                                        Footer v7
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v7" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v7.jpg"
-                                                                   alt="Footer 7"></div>
-                                    <div class="clearfix margin-bottom-20"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 7 (One Page) ===--&gt;
-&lt;section class=&quot;contacts-section&quot;&gt;
-    &lt;div class=&quot;container content-lg&quot;&gt;
-        &lt;div class=&quot;title-v1&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v6.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v7">--%>
+                        <%--Footer v7--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v7" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v7.jpg"--%>
+                        <%--alt="Footer 7"></div>--%>
+                        <%--<div class="clearfix margin-bottom-20"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer Version 7 (One Page) ===--&gt;--%>
+                        <%--&lt;section class=&quot;contacts-section&quot;&gt;--%>
+                        <%--&lt;div class=&quot;container content-lg&quot;&gt;--%>
+                        <%--&lt;div class=&quot;title-v1&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-        &lt;div class=&quot;row contacts-in&quot;&gt;
-            ...
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
+                        <%--&lt;div class=&quot;row contacts-in&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
 
-    &lt;div class=&quot;copyright-section&quot;&gt;
-            ...
-            ...
-    &lt;/div&gt;&lt;!--/copyright--&gt;
-&lt;/section&gt;
-&lt;!--=== End Footer Version 7 ===--&gt;</code></pre>
+                        <%--&lt;div class=&quot;copyright-section&quot;&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;&lt;!--/copyright--&gt;--%>
+                        <%--&lt;/section&gt;--%>
+                        <%--&lt;!--=== End Footer Version 7 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v7.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v7.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v8">
-                                        Footer v8
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="footer-v8" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_v8.jpg"
-                                                                   alt="Footer 8"></div>
-                                    <div class="clearfix margin-bottom-20"></div>
-                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Footer v8 ===--&gt;
-&lt;footer class="footer"&gt;
-    &lt;div class="container"&gt;
-        &lt;div class="row"&gt;
-            &lt;div class="col-md-3 col-sm-6 column-one md-margin-bottom-50"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                        <%--<h4 class="panel-title">--%>
+                        <%--<a data-toggle="collapse" data-parent="#accordion-footer" href="#footer-v8">--%>
+                        <%--Footer v8--%>
+                        <%--</a>--%>
+                        <%--</h4>--%>
+                        <%--</div>--%>
+                        <%--<div id="footer-v8" class="panel-collapse collapse">--%>
+                        <%--<div class="panel-body">--%>
+                        <%--<div class="block-center"><img class="img-responsive"--%>
+                        <%--src="/resources/docu/img/footer_v8.jpg"--%>
+                        <%--alt="Footer 8"></div>--%>
+                        <%--<div class="clearfix margin-bottom-20"></div>--%>
+                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Footer v8 ===--&gt;--%>
+                        <%--&lt;footer class="footer"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--&lt;div class="row"&gt;--%>
+                        <%--&lt;div class="col-md-3 col-sm-6 column-one md-margin-bottom-50"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;div class="col-md-3 col-sm-6 md-margin-bottom-50"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--&lt;div class="col-md-3 col-sm-6 md-margin-bottom-50"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;div class="col-md-3 col-sm-6 md-margin-bottom-50"&gt;
-                ...
-                ...
-            &lt;/div&gt;
+                        <%--&lt;div class="col-md-3 col-sm-6 md-margin-bottom-50"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
 
-            &lt;div class="col-md-3 col-sm-6"&gt;
-                ...
-                ...
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/footer&gt;
+                        <%--&lt;div class="col-md-3 col-sm-6"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/footer&gt;--%>
 
-&lt;footer class="copyright"&gt;
-    &lt;div class="container"&gt;
-        ...
-        ...
-    &lt;/div&gt;
-&lt;/footer&gt;
-&lt;!--=== End Footer v8 ===--&gt;</code></pre>
+                        <%--&lt;footer class="copyright"&gt;--%>
+                        <%--&lt;div class="container"&gt;--%>
+                        <%--...--%>
+                        <%--...--%>
+                        <%--&lt;/div&gt;--%>
+                        <%--&lt;/footer&gt;--%>
+                        <%--&lt;!--=== End Footer v8 ===--&gt;</code></pre>--%>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_v8.html</code></small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<small><code>feature_footer_v8.html</code></small>--%>
+                        <%--</p>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
                     </div>
                     <!-- End CSS Classes -->
                     <div class="clearfix margin-bottom-50"></div>
@@ -1611,7 +1605,8 @@ jQuery(document).ready(function() {
 
                         <hr>
 
-                        <p>Unify Template includes 12 predefined theme colors. All theme CSS files are located in <code>assets/css/theme-colors/..</code>
+                        <p>Unify Template에는 미리 정의 된 12 가지 테마 색상이 있습니다. 모든 테마 CSS 파일은
+                            <code>assets/css/theme-colors/..</code>에 있습니다.
                         </p>
 
                         <ul class="list-inline theme-colors">
@@ -1677,10 +1672,10 @@ jQuery(document).ready(function() {
                             </li>
                         </ul>
 
-                        <p>To change the theme color, you should just replace <code>assets/css/theme-colors/<strong>default.css</strong></code>
-                            with <code>assets/css/theme-colors/<strong>your_theme.css</strong></code> or you can use
-                            ready theme css files <code>blue.css</code>, <code>red.css</code>, <code>orange.css</code>
-                            etc. instead of <strong>your_theme.css</strong>
+                        <p>테마 색상을 변경하려면 <code>assets/css/theme-colors/<strong>default.css</strong></code>
+                            를 <code>assets/css/theme-colors/<strong>your_theme.css</strong></code>로
+                            바꾸거나 준비된 테마 CSS 파일 <code>blue.css</code>, <code>red.css</code>, <code>orange.css</code>
+                            등. <strong>your_theme.css</strong>대신입니다.
                         <p>
                         <pre class="line-numbers"><code class="language-markup">&lt;head&gt;
     &lt;title&gt;Unify - Responsive Website Template&lt;/title&gt;
@@ -1689,17 +1684,16 @@ jQuery(document).ready(function() {
     <span class="tag-cover">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/theme-colors/default.css&quot; /&gt;</span>
 &lt;/head&gt;</code></pre>
 
-                        <p class="theme-info"><span class="label label-info">Info</span> If you want to use the <strong>default
-                            theme</strong> style, there's no necessity to link
-                            <code>assets/css/theme-colors/default.css</code> you can just remove this line from the HTML
-                            head. It's already included in the main CSS files such as <code>style.css</code>, <code>app.css</code>
-                            etc.</p>
+                        <p class="theme-info"><span class="label label-info">Info</span><strong>default
+                            theme</strong>을 사용하려면
+                            <code>assets/css/theme-colors/default.css</code>를 연결할 필요가 없습니다.이 줄을 HTML 헤드에서 제거하면됩니다. 이미
+                            <code>style.css</code>, <code>app.css</code>등과 같은 기본 CSS 파일에 포함되어 있습니다.
+                        </p>
 
                         <div class="clearfix margin-bottom-40"></div>
 
                         <h3>Theme color CSS links</h3>
-                        <p>If you wish to use one of the Unify predefined theme colors, simply use one of the CSS links
-                            bellow and replace it with the above <code>default.css</code> link</p>
+                        <p>미리 정의 된 테마 색상 중 하나를 사용하려면 CSS 링크 중 하나를 사용하여 위의 <code>default.css</code> 링크로 바꾸십시오.</p>
                         <pre class="line-numbers"><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/theme-colors/default.css&quot;/&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/theme-colors/default.css&quot;/&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/theme-colors/blue.css&quot;/&gt;
@@ -1740,14 +1734,14 @@ jQuery(document).ready(function() {
                     <div class="clearfix margin-bottom-60"></div>
 
                     <h3>Boxed Layout <span class="label label-dark">Added v1.9.1</span></h3>
-                    <p>To apply the boxed layout, you may just add the class <code>boxed-layout</code> and the class
-                        <code>container</code> to the <code>&lt;body&gt;</code> tag..</p>
+                    <p>박스형 레이아웃을 적용하려면 클래스 <code>boxed-layout</code>과 클래스
+                        <code>container</code>를 <code>&lt;body&gt;</code> 태그에 추가하면됩니다.</p>
 
                     <pre class="line-numbers"><code class="language-php">&lt;body class=&quot;boxed-layout container&quot;&gt;
     ....
     ....
 &lt;/body&gt;</code></pre>
-                    <p><span class="label label-info">Info</span> Example Page: <code>page_misc_boxed.html</code></p>
+                    <p><span class="label label-info">Info</span> 예제 페이지 : <code>page_misc_boxed.html</code></p>
                 </div>
                 <!-- End Theme Configuration -->
 
@@ -1758,38 +1752,35 @@ jQuery(document).ready(function() {
                     <h2>CSS (Cascading Style Sheets) <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                     <hr>
                     <h3>CSS Files Structure</h3>
-                    <p>Unify Template uses a number of CSS files in order to keep the template organized and easy to use
-                        for further development, from small projects to massive corporate projects. All <code>CSS</code>
-                        files are logically organized. Knowing <code>CSS</code> files makes customization process a lot
-                        easier and far more flexible. In addition <code>app.css</code> and <code>blocks.css</code> CSS
-                        files are used globally in all packages, It helps to use all Unify default elements, blocks etc.
-                        in any packages.</p>
-                    <p>All CSS files located in <code>assets/css</code></p>
+                    <p>Unify Template은 소규모 프로젝트부터 대규모 기업 프로젝트에 이르기까지 템플릿을 체계적으로 구성하여 사용하기 쉽도록 여러 CSS 파일을 사용합니다. 모든
+                        <code>CSS</code>
+                        파일은 논리적으로 구성됩니다. <code>CSS</code>파일을 알면 커스터마이징 프로세스가 훨씬 쉽고 훨씬 유연 해집니다. 또한 <code>app.css</code> 및
+                        <code>blocks.css</code>CSS 파일은 모든 패키지에서 전역으로 사용되므로 모든 패키지에서 모든 Unify 기본 요소, 블록 등을 사용하는 것이 좋습니다.
+                    </p>
+                    <p><code>assets/css</code>에 있는 모든 CSS 파일</p>
                     <h3><i class="fa fa-folder fa-2x color-blue"></i> CSS</h3>
                     <ul class="list-unstyled css-files">
-                        <li>----<i class="fa fa-folder"></i> <strong>pages:</strong> From here you may control all of
-                            the independent CSS pages.
+                        <li>----<i class="fa fa-folder"></i> <strong>pages:</strong> 여기에서 모든 독립적 인 CSS 페이지를 제어 할 수 있습니다.
                         </li>
-                        <li>----<i class="fa fa-folder"></i> <strong>headers:</strong> From here you may control all of
-                            the 8 Headers. They are in a separate folder because usually one header is used per project.
+                        <li>----<i class="fa fa-folder"></i> <strong>headers:</strong> 여기에서 8 개의 모든 머리글을 제어 할 수 있습니다.
+                            일반적으로 프로젝트 당 하나의 헤더가 사용되므로 별도의 폴더에 있습니다.
                         </li>
-                        <li>----<i class="fa fa-folder"></i> <strong>footers:</strong> From here you may control all of
-                            the 8 Footers. They are in a separate folder because usually one footer is used per project.
+                        <li>----<i class="fa fa-folder"></i> <strong>footers:</strong> 여기에서 8 개의 바닥 글을 모두 제어 할 수 있습니다.
+                            일반적으로 한 프로젝트에 하나의 바닥 글이 사용되므로 별도의 폴더에 있습니다.
                         </li>
-                        <li>----<i class="fa fa-folder"></i> <strong>theme-skins</strong> From here you may control the
-                            theme skins. At the moment Unify has only one theme skin which is dark version of Unify
-                            Template.
+                        <li>----<i class="fa fa-folder"></i> <strong>theme-skins</strong> 여기에서 테마 스킨을 제어 할 수 있습니다.
+                            현재 Unify에는 Unify Template의 어두운 버전 인 테마 스킨이 하나만 있습니다.
                         </li>
-                        <li>----<i class="fa fa-folder"></i> <strong>theme-colors:</strong> From here you may control
-                            all 12 theme colors. For color codes please refer to <a href="#scroll_theme">"Theme
-                                Configuration"</a> section.
+                        <li>----<i class="fa fa-folder"></i> <strong>theme-colors:</strong> 여기에서 12 개의 테마 색을 모두 제어 할 수
+                            있습니다. 색상 코드는 <a href="#scroll_theme">"Theme
+                                Configuration"</a> 섹션을 참조하십시오.
                         </li>
                         <li>---- &nbsp;<code>app.css</code></li>
                         <li>---- &nbsp;<code>style.css</code></li>
                         <li>---- &nbsp;<code>blocks.css</code></li>
                     </ul>
                     <h3>CSS Classes <span class="label label-dark">Updated v1.9</span></h3>
-                    <p>For more detailed information click any link below</p>
+                    <p>자세한 내용을 보려면 아래 링크를 클릭하십시오.</p>
                     <div class="panel-group acc-v1" id="accordion">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -1816,139 +1807,136 @@ jQuery(document).ready(function() {
                                         <tr>
                                             <td>1</td>
                                             <td><code>content</code></td>
-                                            <td>Applies<code>40px</code>padding from top and bottom.</br>Designed to be
-                                                used in big blocks
+                                            <td>상단과 하단에서<code>40px</code>패딩을 적용합니다.</br>큰 블록으로 사용하도록 설계
                                             </td>
                                             <td>padding-top: 40px;</br>padding-bottom: 40px;</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td><code>content-sm</code></td>
-                                            <td>Applies<code>60px</code>padding from top and bottom.</br>Designed to be
-                                                used in big blocks
+                                            <td>상단과 하단에서<code>60px</code>패딩을 적용합니다.</br>큰 블록으로 사용하도록 설계
                                             </td>
                                             <td>padding-top: 60px;</br>padding-bottom: 60px;</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td><code>content-md</code></td>
-                                            <td>Applies<code>80px</code>padding from top and bottom</td>
+                                            <td>상단과 하단에서<code>80px</code>패딩을 적용합니다.</td>
                                             <td>padding-top: 80px;</br>padding-bottom: 80px;</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><code>content-lg</code></td>
-                                            <td>Applies<code>100px</code>padding from top and bottom.</br>Designed to be
-                                                used in big blocks
+                                            <td>왼쪽과 오른쪽에서<code>100px</code>패딩을 적용합니다.</br>큰 블록으로 사용하도록 설계
                                             </td>
                                             <td>padding-top: 100px;</br>padding-bottom: 100px;</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
                                             <td><code>space-lg-hor</code></td>
-                                            <td>Applies<code>60px</code>padding from left and right side</td>
+                                            <td>왼쪽과 오른쪽에서 <code>60px</code> 패딩을 적용합니다.</td>
                                             <td>padding-left: 60px</br>padding-right: 60px;</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
                                             <td><code>space-xlg-hor</code></td>
-                                            <td>Applies<code>100px</code>padding from left and right side</td>
+                                            <td>왼쪽 및 오른쪽에서 <code>100px</code> 패딩을 적용합니다.</td>
                                             <td>padding-left: 100px;</br>padding-right: 100px;</td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
                                             <td><code>margin-left-5</code></td>
-                                            <td>Applies<code>5px</code>margin to the left</td>
+                                            <td>왼쪽에 <code>5px</code> 여백을 적용합니다.</td>
                                             <td>margin-left: 5px</td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
                                             <td><code>margin-right-5</code></td>
-                                            <td>Applies<code>5px</code>margin to the right</td>
+                                            <td>오른쪽에 <code>5px</code>여백을 적용합니다.</td>
                                             <td>margin-right: 5px</td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
                                             <td><code>no-top-space</code></td>
-                                            <td>Removes padding-top and margin-top</td>
+                                            <td>padding-top 및 margin-top 제거합니다.</td>
                                             <td>margin-top: 0; </br> padding-top: 0;</td>
                                         </tr>
                                         <tr>
                                             <td>10</td>
                                             <td><code>no-bottom-space</code></td>
-                                            <td>Removes padding-bottom and margin-bottom</td>
+                                            <td>padding-bottom과 margin-bottom을 제거합니다.</td>
                                             <td>margin-bottom: 0; </br> padding-bottom: 0;</td>
                                         </tr>
                                         <tr>
                                             <td>11</td>
                                             <td><code>margin-bottom-5</code></td>
-                                            <td>Applies<code>5px</code> margin to the bottom</td>
+                                            <td>하단에 <code>5px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 5px</td>
                                         </tr>
                                         <tr>
                                             <td>12</td>
                                             <td><code>margin-bottom-10</code></td>
-                                            <td>Applies<code>10px</code> margin to the bottom</td>
+                                            <td>하단에 <code>10px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 10px</td>
                                         </tr>
                                         <tr>
                                             <td>13</td>
                                             <td><code>margin-bottom-15</code></td>
-                                            <td>Applies<code>15px</code> margin to the bottom</td>
+                                            <td>하단에 <code>15px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 15px</td>
                                         </tr>
                                         <tr>
                                             <td>14</td>
                                             <td><code>margin-bottom-20</code></td>
-                                            <td>Applies<code>20px</code> margin to the bottom</td>
+                                            <td>하단에 <code>20px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 20px</td>
                                         </tr>
                                         <tr>
                                             <td>15</td>
                                             <td><code>margin-bottom-25</code></td>
-                                            <td>Applies<code>25px</code> margin to the bottom</td>
+                                            <td>하단에 <code>25px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 25px</td>
                                         </tr>
                                         <tr>
                                             <td>16</td>
                                             <td><code>margin-bottom-30</code></td>
-                                            <td>Applies<code>30px</code> margin to the bottom</td>
+                                            <td>하단에 <code>30px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 30px</td>
                                         </tr>
                                         <tr>
                                             <td>17</td>
                                             <td><code>margin-bottom-35</code></td>
-                                            <td>Applies<code>35px</code> margin to the bottom</td>
+                                            <td>하단에 <code>35px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 35px</td>
                                         </tr>
                                         <tr>
                                             <td>18</td>
                                             <td><code>margin-bottom-40</code></td>
-                                            <td>Applies<code>40px</code> margin to the bottom</td>
+                                            <td>하단에 <code>40px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 40px</td>
                                         </tr>
                                         <tr>
                                             <td>19</td>
                                             <td><code>margin-bottom-45</code></td>
-                                            <td>Applies<code>45px</code> margin to the bottom</td>
+                                            <td>하단에 <code>45px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 45px</td>
                                         </tr>
                                         <tr>
                                             <td>20</td>
                                             <td><code>margin-bottom-50</code></td>
-                                            <td>Applies<code>50px</code> margin to the bottom</td>
+                                            <td>하단에 <code>50px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 50px</td>
                                         </tr>
                                         <tr>
                                             <td>21</td>
                                             <td><code>margin-bottom-55</code></td>
-                                            <td>Applies<code>55px</code> margin to the bottom</td>
+                                            <td>하단에 <code>55px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 55px</td>
                                         </tr>
                                         <tr>
                                             <td>22</td>
                                             <td><code>margin-bottom-60</code></td>
-                                            <td>Applies<code>60px</code> margin to the bottom</td>
+                                            <td>하단에 <code>60px</code>의 여백을 적용합니다.</td>
                                             <td>margin-bottom: 60px</td>
                                         </tr>
 
@@ -1963,12 +1951,8 @@ jQuery(document).ready(function() {
 &lt/ul&gt</code></pre>
                                     </br>
                                     <h4 class="no-top-space">For medium device modern @media (max-width: 992px)</h4>
-                                    <p>Those
-                                        classes are effective when the screen size is less than 992px in width. For
-                                        example when elements are placed horizontally on bigger devices and vertically
-                                        on smaller devices they will get stuck to each other because there is not enough
-                                        spacing between elements. Which is why the following
-                                        classes will be very useful.</p>
+                                    <p>이러한 클래스는 화면 크기가 너비가 992px 미만일 때 유효합니다. 예를 들어 요소가 더 큰 장치에 수평으로 배치되고 더 작은 장치에 수직으로
+                                        배치되는 경우 요소 사이에 충분한 간격이 없기 때문에 서로 붙어있게됩니다. 그래서 다음과 같은 수업이 매우 유용 할 것입니다.</p>
                                     <table class="table table-hover table-striped table-bordered">
                                         <thead>
                                         <tr>
@@ -1982,48 +1966,42 @@ jQuery(document).ready(function() {
                                         <tr>
                                             <td>1</td>
                                             <td><code>md-margin-bottom-10 </code></td>
-                                            <td>Applies<code>10px</code>margin bottom for widths less
-                                                than<code>992px</code>only
+                                            <td>최대 너비가 <code>992px</code> 미만인 경우 <code>10px</code> 여백 하단 적용
                                             </td>
                                             <td>margin-bottom: 10px</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td><code>md-margin-bottom-20 </code></td>
-                                            <td>Applies<code>20px</code>margin bottom for widths less
-                                                than<code>992px</code>only
+                                            <td>최대 너비가 <code>992px</code> 미만인 경우 <code>20px</code> 여백 하단 적용
                                             </td>
                                             <td>margin-bottom: 20px</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td><code>md-margin-bottom-30 </code></td>
-                                            <td>Applies<code>30px</code>margin bottom for widths less
-                                                than<code>992px</code>only
+                                            <td>최대 너비가 <code>992px</code> 미만인 경우 <code>30px</code> 여백 하단 적용
                                             </td>
                                             <td>margin-bottom: 30px</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><code>md-margin-bottom-40 </code></td>
-                                            <td>Applies<code>40px</code>margin bottom for widths less
-                                                than<code>992px</code>only
+                                            <td>최대 너비가 <code>992px</code> 미만인 경우 <code>40px</code> 여백 하단 적용
                                             </td>
                                             <td>margin-bottom: 40px</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
                                             <td><code>md-margin-bottom-50 </code></td>
-                                            <td>Applies<code>50px</code>margin bottom for widths less
-                                                than<code>992px</code>only
+                                            <td>최대 너비가 <code>992px</code> 미만인 경우 <code>50px</code> 여백 하단 적용
                                             </td>
                                             <td>margin-bottom: 50px</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
                                             <td><code>md-margin-bottom-60 </code></td>
-                                            <td>Applies<code>60px</code>margin bottom for widths less
-                                                than<code>992px</code>only
+                                            <td>최대 너비가 <code>992px</code> 미만인 경우 <code>60px</code> 여백 하단 적용
                                             </td>
                                             <td>margin-bottom: 60px</td>
                                         </tr>
@@ -2031,12 +2009,8 @@ jQuery(document).ready(function() {
                                     </table>
                                     </br>
                                     <h4 class="no-top-space">For small device mode @media (max-width: 768px)</h4>
-                                    <p>Those
-                                        classes are effective when the screen size is less than 768px in width. For
-                                        example when elements are placed horizontally on bigger devices and vertically
-                                        on smaller devices they will get stuck to each other because there is not enough
-                                        spacing between elements. Which is why the following
-                                        classes will be very useful.</p>
+                                    <p>화면 크기가 너비가 768px보다 작으면 효과적입니다. 예를 들어 요소가 더 큰 장치에 수평으로 배치되고 더 작은 장치에 수직으로 배치되는 경우
+                                        요소 사이에 충분한 간격이 없기 때문에 서로 붙어있게됩니다. 그래서 다음과 같은 수업이 매우 유용 할 것입니다.</p>
                                     <table class="table table-hover table-striped table-bordered">
                                         <thead>
                                         <tr>
@@ -2050,48 +2024,42 @@ jQuery(document).ready(function() {
                                         <tr>
                                             <td>1</td>
                                             <td><code>sm-margin-bottom-10 </code></td>
-                                            <td>Applies<code>10px</code>margin bottom for widths less
-                                                than<code>768px</code>only
+                                            <td>최대 너비가 <code>768px</code> 미만인 경우 <code>10px</code> 여백 하단에 적용됩니다.
                                             </td>
                                             <td>margin-bottom: 10px</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td><code>sm-margin-bottom-20 </code></td>
-                                            <td>Applies<code>20px</code>margin bottom for widths less
-                                                than<code>768px</code>only
+                                            <td>최대 너비가 <code>768px</code> 미만인 경우 <code>20px</code> 여백 하단에 적용됩니다.
                                             </td>
                                             <td>margin-bottom: 20px</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td><code>sm-margin-bottom-30 </code></td>
-                                            <td>Applies<code>30px</code>margin bottom for widths less
-                                                than<code>768px</code>only
+                                            <td>최대 너비가 <code>768px</code> 미만인 경우 <code>30px</code> 여백 하단에 적용됩니다.
                                             </td>
                                             <td>margin-bottom: 30px</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><code>sm-margin-bottom-40 </code></td>
-                                            <td>Applies<code>40px</code>margin bottom for widths less
-                                                than<code>768px</code>only
+                                            <td>최대 너비가 <code>768px</code> 미만인 경우 <code>40px</code> 여백 하단에 적용됩니다.
                                             </td>
                                             <td>margin-bottom: 40px</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
                                             <td><code>sm-margin-bottom-50 </code></td>
-                                            <td>Applies<code>50px</code>margin bottom for widths less
-                                                than<code>768px</code>only
+                                            <td>최대 너비가 <code>768px</code> 미만인 경우 <code>50px</code> 여백 하단에 적용됩니다.
                                             </td>
                                             <td>margin-bottom: 50px</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
                                             <td><code>sm-margin-bottom-60 </code></td>
-                                            <td>Applies<code>60px</code>margin bottom for widths less
-                                                than<code>768px</code>only
+                                            <td>최대 너비가 <code>768px</code> 미만인 경우 <code>60px</code> 여백 하단에 적용됩니다.
                                             </td>
                                             <td>margin-bottom: 60px</td>
                                         </tr>
@@ -2126,97 +2094,97 @@ jQuery(document).ready(function() {
                                         <tr>
                                             <td>1</td>
                                             <td><code>color-sea</code></td>
-                                            <td class="color-sea">Changes a text color to sea</td>
+                                            <td class="color-sea">텍스트 색상을 바다로 변경합니다.</td>
                                             <td class="color-sea">color: #1abc9c;</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td><code>color-green</code></td>
-                                            <td class="color-green">Changes a text color to green</td>
+                                            <td class="color-green">텍스트 색상을 녹색으로 변경합니다.</td>
                                             <td class="color-green">color: #72c02c</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td><code>color-redgreen1</code></td>
-                                            <td class="color-green1">Changes a text color to redgreen1</td>
+                                            <td class="color-green1">텍스트 색상을 연한 녹색으로 변경합니다.</td>
                                             <td class="color-green1">color: #2ecc71</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><code>color-light-green</code></td>
-                                            <td class="color-light-green">Changes a text color to light-green</td>
+                                            <td class="color-light-green">텍스트 색상을 밝은 녹색으로 변경합니다.</td>
                                             <td class="color-light-green">color: #1abc9c</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
                                             <td><code>color-purple</code></td>
-                                            <td class="color-purple">Changes a text color to purple</td>
+                                            <td class="color-purple">텍스트 색상을 자주색으로 변경합니다.</td>
                                             <td class="color-purple">color: #9b6bcc</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
                                             <td><code>color-dark-blue</code></td>
-                                            <td class="color-dark-blue">Changes a text color to dark-blue</td>
+                                            <td class="color-dark-blue">텍스트 색상을 진한 파란색으로 변경합니다.</td>
                                             <td class="color-dark-blue">color: #4765a0</td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
                                             <td><code>color-blue</code></td>
-                                            <td class="color-blue">Changes a text color to blue</td>
+                                            <td class="color-blue">텍스트 색상을 파란색으로 변경합니다.</td>
                                             <td class="color-blue">color: #3498db</td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
                                             <td><code>color-aqua</code></td>
-                                            <td class="color-aqua">Changes a text color to aqua</td>
+                                            <td class="color-aqua">텍스트 색상을 아쿠아로 변경합니다.</td>
                                             <td class="color-aqua">color: #27d7e7</td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
                                             <td><code>color-red</code></td>
-                                            <td class="color-red">Changes a text color to red</td>
+                                            <td class="color-red">텍스트 색상을 빨간색으로 변경합니다.</td>
                                             <td class="color-red">color: #e74c3c;</td>
                                         </tr>
                                         <tr>
                                             <td>10</td>
                                             <td><code>color-orange</code></td>
-                                            <td class="color-orange">Changes a text color to orange</td>
+                                            <td class="color-orange">텍스트 색상을 오렌지색으로 변경합니다.</td>
                                             <td class="color-orange">color: #e67e22</td>
                                         </tr>
                                         <tr>
                                             <td>11</td>
                                             <td><code>color-yellow</code></td>
-                                            <td class="color-yellow">Changes a text color to yellow</td>
+                                            <td class="color-yellow">텍스트 색상을 노랑색으로 변경합니다.</td>
                                             <td class="color-yellow">color: #f1c40f</td>
                                         </tr>
                                         <tr>
                                             <td>12</td>
                                             <td><code>color-brown</code></td>
-                                            <td class="color-brown">Changes a text color to brown</td>
+                                            <td class="color-brown">텍스트 색상을 갈색으로 변경합니다.</td>
                                             <td class="color-brown">color: #9c8061</td>
                                         </tr>
                                         <tr>
                                             <td>13</td>
                                             <td><code>color-dark</code></td>
-                                            <td class="color-dark">Changes a text color to dark</td>
+                                            <td class="color-dark">텍스트 색상을 어둡게 변경합니다.</td>
                                             <td class="color-dark">color: #555555</td>
                                         </tr>
                                         <tr>
                                             <td>14</td>
                                             <td><code>color-light-grey</code></td>
-                                            <td class="color-light-grey">Changes a text color to light-grey</td>
+                                            <td class="color-light-grey">텍스트 색상을 밝은 회색으로 변경합니다.</td>
                                             <td class="color-light-grey">color: #585f69</td>
                                         </tr>
                                         <tr>
                                             <td>15</td>
                                             <td><code>color-grey</code></td>
-                                            <td class="color-grey">Changes a text color to grey</td>
+                                            <td class="color-grey">텍스트 색상을 회색으로 변경합니다.</td>
                                             <td class="color-grey">color: #95a5a6</td>
                                         </tr>
                                         <tr>
                                             <td>16</td>
                                             <td><code>color-light</code></td>
-                                            <td class="color-light">Changes a text color to light</td>
+                                            <td class="color-light">텍스트 색상을 조명으로 변경합니다.</td>
                                             <td class="color-light">color: #ffffff</td>
                                         </tr>
                                         </tbody>
@@ -2237,79 +2205,79 @@ jQuery(document).ready(function() {
                                         <tr class="bg-color-dark">
                                             <td>1</td>
                                             <td><code>bg-color-dark</code></td>
-                                            <td>Changes a Background color to dark</td>
+                                            <td>배경색을 어둡게 변경합니다.</td>
                                             <td>background-color: #555;</td>
                                         </tr>
                                         <tr class="bg-color-red">
                                             <td>1</td>
                                             <td><code>bg-color-red</code></td>
-                                            <td>Changes a Background color to red</td>
+                                            <td>배경색을 빨갛게 변경합니다.</td>
                                             <td>background-color: #e74c3c;</td>
                                         </tr>
                                         <tr class="bg-color-sea">
                                             <td>1</td>
                                             <td><code>bg-color-sea</code></td>
-                                            <td>Changes a Background color to sea</td>
+                                            <td>배경색을 바다로 변경합니다.</td>
                                             <td>background-color: #1abc9c;</td>
                                         </tr>
                                         <tr class="bg-color-blue">
                                             <td>1</td>
                                             <td><code>bg-color-blue</code></td>
-                                            <td>Changes a Background color to blue</td>
+                                            <td>배경색을 파란색으로 변경합니다.</td>
                                             <td>background-color: #3498db;</td>
                                         </tr>
                                         <tr class="bg-color-grey">
                                             <td>1</td>
                                             <td><code>bg-color-grey</code></td>
-                                            <td>Changes a Background color to grey</td>
+                                            <td>배경색을 회색으로 변경합니다.</td>
                                             <td>background-color: #95a5a6;</td>
                                         </tr>
                                         <tr class="bg-color-green">
                                             <td>1</td>
                                             <td><code>bg-color-green</code></td>
-                                            <td>Changes a Background color to green</td>
+                                            <td>배경색을 녹색으로 변경합니다.</td>
                                             <td>background-color: #72c02c;</td>
                                         </tr>
                                         <tr class="bg-color-brown">
                                             <td>1</td>
                                             <td><code>bg-color-brown</code></td>
-                                            <td>Changes a Background color to brown</td>
+                                            <td>배경색을 갈색으로 변경합니다.</td>
                                             <td>background-color: #9c8061;</td>
                                         </tr>
                                         <tr class="bg-color-orange">
                                             <td>1</td>
                                             <td><code>bg-color-orange</code></td>
-                                            <td>Changes a Background color to orange</td>
+                                            <td>배경색을 오렌지색으로 변경합니다.</td>
                                             <td>background-color: #e67e22;</td>
                                         </tr>
                                         <tr class="bg-color-green1">
                                             <td>1</td>
                                             <td><code>bg-color-green1</code></td>
-                                            <td>Changes a Background color to green1</td>
+                                            <td>배경색을 연두색으로 변경합니다.</td>
                                             <td>background-color: #2ecc71;</td>
                                         </tr>
                                         <tr class="bg-color-purple">
                                             <td>1</td>
                                             <td><code>bg-color-purple</code></td>
-                                            <td>Changes a Background color to purple</td>
+                                            <td>배경색을 보라색으로 변경합니다.</td>
                                             <td>background-color: #9b6bcc;</td>
                                         </tr>
                                         <tr class="bg-color-dark-blue">
                                             <td>1</td>
                                             <td><code>bg-color-dark-blue</code></td>
-                                            <td>Changes a Background color to dark-blue</td>
+                                            <td>배경색을 진한 파랑색으로 변경합니다.</td>
                                             <td>background-color: #4765a0;</td>
                                         </tr>
                                         <tr class="bg-color-light-grey">
                                             <td>1</td>
                                             <td><code>bg-color-light-grey</code></td>
-                                            <td>Changes a Background color to light-grey</td>
+                                            <td>배경색을 밝은 회색으로 변경합니다.</td>
                                             <td>background-color: #585f69;</td>
                                         </tr>
                                         <tr class="bg-color-light-green">
                                             <td>1</td>
                                             <td><code>bg-color-light-green</code></td>
-                                            <td>Changes a Background color to light-green</td>
+                                            <td>배경색을 밝은 녹색으로 변경합니다.</td>
                                             <td>background-color: #79d5b3;</td>
                                         </tr>
                                         </tbody>
@@ -2332,8 +2300,8 @@ jQuery(document).ready(function() {
                                 <div class="panel-body">
                                     <h4>
                                         Classes for rounded corners</h4>
-                                    <p><code>round</code> classes can be applied to <code>images, blocks,
-                                        buttons...</code></p>
+                                    <p><code>round</code> 클래스는 <code>images, blocks,
+                                        buttons...</code>에 적용 할 수 있습니다</p>
                                     <div class="row margin-bottom-40">
                                         <div class="col-md-4">
                                             <h5 class="text-center"><code>rounded-top</code></h5>
@@ -2398,55 +2366,55 @@ jQuery(document).ready(function() {
                                         <tr>
                                             <td>1</td>
                                             <td><code>rounded-top</code></td>
-                                            <td>Applies <code>4px</code> border-radius to top corners</td>
+                                            <td>상단 모서리에 <code>4px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 4px 4px 0 0 !important;</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td><code>rounded-left</code></td>
-                                            <td>Applies <code>4px</code> border-radius to left corners</td>
+                                            <td>왼쪽 모서리에 <code>4px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 4px 0 0 4px !important;</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td><code>rounded-right</code></td>
-                                            <td>Applies <code>4px</code> border-radius to right corners</td>
+                                            <td>오른쪽 모서리에 <code>4px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 0 4px 4px 0 !important;</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><code>rounded-bottom</code></td>
-                                            <td>Applies <code>4px</code> border-radius to bottom corners</td>
+                                            <td>하단 모서리에 <code>4px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 0 0 4px 4px !important;</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
                                             <td><code>rounded</code></td>
-                                            <td>Applies <code>4px</code> border-radius to all corners</td>
+                                            <td>모든 모서리에 <code>4px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 4px;</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
                                             <td><code>rounded-x</code></td>
-                                            <td>Makes the item round (full circle)</td>
+                                            <td>항목을 둥글게 만듭니다 (전체 원).</td>
                                             <td>border-radius: 50% !important;</td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
                                             <td><code>rounded-2</code></td>
-                                            <td>Applies <code>10px</code> border-radius to all corners</td>
+                                            <td>모든 모서리에 <code>10px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 10px !important;;</td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
                                             <td><code>rounded-3</code></td>
-                                            <td>Applies <code>15px</code> border-radius to all corners</td>
+                                            <td>모든 모서리에 <code>15px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 15px !important;</td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
                                             <td><code>rounded-4</code></td>
-                                            <td>Applies <code>20px</code> border-radius to all corners</td>
+                                            <td>모든 모서리에 <code>20px</code> 테두리 반경을 적용합니다.</td>
                                             <td>border-radius: 20px !important;</td>
                                         </tr>
 
@@ -2481,31 +2449,31 @@ jQuery(document).ready(function() {
                                         <tr>
                                             <td>1</td>
                                             <td><code>height-100</code></td>
-                                            <td>Applies minimum 100px of height to an element</td>
+                                            <td>요소에 최소 100 픽셀의 높이를 적용합니다.</td>
                                             <td>min-height: 100px;</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td><code>height-200</code></td>
-                                            <td>Applies minimum 200px of height to an element</td>
+                                            <td>요소에 최소 200 픽셀의 높이를 적용합니다.</td>
                                             <td>min-height: 200px;</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td><code>height-300</code></td>
-                                            <td>Applies minimum 300px of height to an element</td>
+                                            <td>요소에 최소 300 픽셀의 높이를 적용합니다.</td>
                                             <td>min-height: 300px;</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><code>height-400</code></td>
-                                            <td>Applies minimum 400px of height to an element</td>
+                                            <td>요소에 최소 400 픽셀의 높이를 적용합니다.</td>
                                             <td>min-height: 400px;</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><code>height-500</code></td>
-                                            <td>Applies minimum 500px of height to an element</td>
+                                            <td>요소에 최소 500 픽셀의 높이를 적용합니다.</td>
                                             <td>min-height: 500px;</td>
                                         </tr>
                                         </tbody>
@@ -2601,20 +2569,18 @@ jQuery(document).ready(function() {
                         <h2>JavaScript Initialization<span class="label label-dark">Updated v1.9</span> <a href="#top">top
                             <i class="fa fa-angle-up"></i></a></h2>
                         <hr>
-                        <p>Core javascript initialization is implemented in <code>assets/js/app.js</code> through the
-                            "App" object as shown below. This approach enables an easy modular implementation to
-                            initialize jquery plugins and other application logics.</p>
+                        <p>핵심 자바 스크립트 초기화는 아래와 같이 "App"객체를 통해 <code>assets/js/app.js</code>에 구현됩니다. 이 접근법을 사용하면 jquery
+                            플러그인 및 기타 애플리케이션 로직을 쉽게 초기화 할 수 있습니다.</p>
 
-                        <p>The App object only includes the initialization of the plugins that are used in almost every
-                            Unify page. Other plugins must be initialized independently, refer to the <strong>JavaScript
-                                Plugins</strong> below.</p>
+                        <p>App 객체는 거의 모든 Unify 페이지에서 사용되는 플러그인의 초기화 만 포함합니다. 다른 플러그인은 독립적으로 초기화해야합니다. 아래의 <strong>JavaScript
+                            Plugins</strong>을 참조하십시오.</p>
                         <pre class="line-numbers"><code class="language-php">var App = function () {
     ...
     ...
 }();</code></pre>
 
                         <h3>JavaScript Plugins <span class="label label-dark">Updated v1.9.2</span></h3>
-                        <p>For more detailed information click any link below</p>
+                        <p>더 자세한 정보는 아래 링크를 클릭하십시오.</p>
                         <div class="clearfix margin-bottom-20"></div>
 
                         <div class="panel-group acc-v1" id="accordion-1">
@@ -2629,8 +2595,8 @@ jQuery(document).ready(function() {
                                 </div>
                                 <div id="collapse-2" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing
-                                            responsive, mobile first projects on the web.</p>
+                                        <p>부트 스트랩은 반응형 모바일 첫 번째 프로젝트를 웹에서 개발하기위한 가장 널리 사용되는 HTML, CSS 및 JS 프레임
+                                            워크입니다.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&ltlink rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css"&gt</code></pre>
@@ -2638,7 +2604,7 @@ jQuery(document).ready(function() {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Global Compulsory --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Global Compulsory --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&ltscript src="assets/plugins/bootstrap/js/bootstrap.min.js"&gt&lt/script&gt</code></pre>
 
                                         <div class="margin-bottom-20"></div>
@@ -2649,8 +2615,8 @@ jQuery(document).ready(function() {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <p>All Unify Pages</p>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<p>All Unify Pages</p>--%>
                                     </div>
                                 </div>
                             </div>
@@ -2668,11 +2634,9 @@ jQuery(document).ready(function() {
                                 </div>
                                 <div id="collapse-jquery" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things
-                                            like HTML document traversal and manipulation, event handling, animation,
-                                            and Ajax much simpler with an easy-to-use API that works across a multitude
-                                            of browsers. With a combination of versatility and extensibility, jQuery has
-                                            changed the way that millions of people write JavaScript.</p>
+                                        <p>jQuery는 빠르고 작으며 기능이 풍부한 JavaScript 라이브러리입니다. HTML 문서 탐색 및 조작, 이벤트 처리, 애니메이션 및
+                                            Ajax를 여러 브라우저에서 작동하는 사용하기 쉬운 API로 훨씬 간단하게 만듭니다. 다양성과 확장 성을 결합한 jQuery는 수백만
+                                            명이 JavaScript를 작성하는 방식을 변경했습니다.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-php">No CSS Required </code></pre>
@@ -2680,7 +2644,7 @@ jQuery(document).ready(function() {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Global Compulsory --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Global Compulsory --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&ltscript src="assets/plugins/jquery/jquery.min.js"&gt&lt/script&gt
 &ltscript src="assets/plugins/jquery/jquery-migrate.min.js"&gt&lt/script&gt</code></pre>
 
@@ -2691,8 +2655,8 @@ jQuery(document).ready(function() {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <p>All Unify Pages</p>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<p>All Unify Pages</p>--%>
                                     </div>
                                 </div>
                             </div>
@@ -2709,8 +2673,7 @@ jQuery(document).ready(function() {
                                 </div>
                                 <div id="collapse-4" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Lightweight JavaScript library that generates circular graphs in SVG. Now
-                                            with animation.</p>
+                                        <p>SVG에서 원형 그래프를 생성하는 경량의 JavaScript 라이브러리. 이제 애니메이션이 있습니다.</p>
                                         <h4>CSS Installation</h4>
 
                                         <div class="margin-bottom-20"></div>
@@ -2721,19 +2684,19 @@ jQuery(document).ready(function() {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/circles-master/circles.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/plugins/circles-master.js"&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line <code>CirclesMaster.initCirclesMaster1();</code>
-                                            or <code>CirclesMaster.initCirclesMaster2();</code> to the jQuery function
-                                            at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오. <code>CirclesMaster.initCirclesMaster1();</code>
+                                            또는 <code>CirclesMaster.initCirclesMaster2();</code> HTML 페이지 맨 아래의 jQuery
+                                            함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -2754,8 +2717,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_compo_charts.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_compo_charts.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -2772,8 +2735,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-6" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Counter-Up is a jQuery plugin that animates a number from zero (counting up
-                                            towards it)</p>
+                                        <p>Counter-Up은 0부터 숫자를 움직이는 jQuery 플러그인입니다.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-php">No CSS Required </code></pre>
@@ -2781,16 +2743,15 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&ltscript src="assets/plugins/counter/waypoints.min.js"&gt&lt/script&gt
 &ltscript src="assets/plugins/counter/jquery.counterup.min.js"&gt&lt/script&gt</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line:
-                                            <code>App.initCounter();</code> to the jQuery function at the bottom of the
-                                            HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오.
+                                            <code>App.initCounter();</code> HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -2805,8 +2766,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_compo_charts.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_compo_charts.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -2823,9 +2784,8 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-23" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Cube Portfolio is a powerful jQuery plugin that provides beautiful animated
-                                            filtering, custom captions and it’s perfect for portfolios, galleries, team
-                                            members, blog posts or any other ordered content.</p>
+                                        <p>"큐브 포트폴리오"는 아름다운 애니메이션 필터링, 사용자 정의 캡션을 제공하는 강력한 jQuery 플러그인으로, 포트폴리오, 갤러리, 팀
+                                            구성원, 블로그 게시물 또는 기타 주문한 컨텐츠에 이상적입니다.</p>
 
                                         <div class="margin-bottom-20"></div>
 
@@ -2836,15 +2796,15 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/plugins/cube-portfolio/cube-portfolio-4-ns.js"&gt;</code></pre>
-                                        <p><span class="label label-red">Note</span> The path depends on the Portfolio
-                                            grid structure. In the above example <strong>4 columns no space
-                                                grid</strong> is chosen.</p>
+                                        <p><span class="label label-red">Note</span> 경로는 포트폴리오 그리드 구조에 따라 다릅니다. 위의 예
+                                            <strong>4 columns no space
+                                                grid</strong>가 선택되지 않습니다.</p>
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Official Documentation</h4>
@@ -2852,8 +2812,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">Used in Portfolio Pages</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">Used in Portfolio Pages</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -2870,10 +2830,8 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-7" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>FancyBox is a tool that offers a nice and elegant way to add zooming
-                                            functionality for images, HTML content and multi-media on your webpages. It
-                                            is built on the top of the popular JavaScript framework jQuery and is both
-                                            easy to implement and a snap to customize.</p>
+                                        <p>FancyBox는 웹 페이지의 이미지, HTML 콘텐츠 및 멀티미디어에 확대 / 축소 기능을 추가하는 멋지고 우아한 방법을 제공하는
+                                            도구입니다. 인기있는 JavaScript 프레임 워크 인 jQuery의 상단에 구현되어 구현하기 쉽고 맞춤 설정이 쉽습니다.</p>
 
                                         <div class="margin-bottom-20"></div>
 
@@ -2883,18 +2841,18 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/fancybox/source/jquery.fancybox.pack.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/plugins/fancy-box.js"&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line: <code>FancyBox.initFancybox();</code>
-                                            to the jQuery function at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오.<code>FancyBox.initFancybox();</code>
+                                            HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -2914,8 +2872,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">feature_gallery.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">feature_gallery.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -2932,9 +2890,8 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-9" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Font Awesome gives you scalable vector icons that can instantly be customized
-                                            — size, color, drop shadow, and anything that can be done with the power of
-                                            CSS.</p>
+                                        <p>Font Awesome은 크기, 색상, 그림자 및 기타 CSS 기능을 사용하여 수행 할 수있는 모든 작업을 즉시 사용자 지정할 수있는 확장
+                                            가능한 벡터 아이콘을 제공합니다.</p>
 
                                         <div class="margin-bottom-20"></div>
 
@@ -2950,8 +2907,7 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>HTML</h4>
-                                        <p>After you get up and running, you can place Font Awesome icons just about
-                                            anywhere with the &lt;i&gt; tag</p>
+                                        <p>시작한 후 &lt;i&gt; 태그를 사용하여 어디에서나 글꼴 썸네일 아이콘을 배치 할 수 있습니다.</p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;i class="fa fa-camera-retro"&gt;&lt;/i&gt; fa-camera-retro</code></pre>
                                         <p><i class="fa fa-camera-retro"></i> fa-camera-retro</p>
 
@@ -2962,8 +2918,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_icon_fa.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_icon_fa.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -2980,11 +2936,8 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-16" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Simple Line Icons is 162 simple stroke icons that are great for mobile
-                                            applications,
-                                            websites, user interfaces, etc. All icons were converted from the same
-                                            beautiful
-                                            simple line icon sets released previously on GraphicBurger.</p>
+                                        <p>심플 라인 아이콘은 모바일 응용 프로그램, 웹 사이트, 사용자 인터페이스 등에 적합한 162 개의 간단한 획 아이콘입니다. 모든 아이콘은
+                                            이전에 GraphicBurger에 출시 된 똑같은 아름다운 단순한 선 아이콘 세트에서 변환되었습니다.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&ltlink rel="stylesheet" href="assets/plugins/line-icons/line-icons.css"&gt</code></pre>
@@ -3011,8 +2964,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_line.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_line.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3029,34 +2982,34 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-11" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>gmaps.js allows you to use the potential of Google Maps in a simple way.
-                                            No more extensive documentation or large amount of code.</p>
+                                        <p>gmaps.js는 간단한 방법으로 Google지도의 잠재력을 사용할 수있게합니다. 더 이상의 광범위한 문서 또는 많은 양의 코드가 필요하지
+                                            않습니다.</p>
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-php">No CSS Required</code></pre>
                                         <br>
-                                        <p><span class="label label-red">Note</span> If the map doesn't appear:</p>
-                                        <p>Then you probably have forgotten to link the file: <code>HTML\assets\css\pages\page_contact.css</code>
-                                            or the file: <code>HTML\assets\css\style.css</code>. Alternatively however,
-                                            you can specify a fixed height within your CSS or by using one of the Unify
-                                            predefined height classes explained above.</p><br>
+                                        <p><span class="label label-red">Note</span> 지도가 나타나지 않는 경우 :</p>
+                                        <p>그렇다면 <code>HTML\assets\css\pages\page_contact.css</code>
+                                            또는 <code>HTML\assets\css\style.css</code>. 파일을 링크하는 것을 잊어 버린 것 같습니다. 그러나 CSS
+                                            내에서 고정 된 높이를 지정하거나 위에 설명 된 Unify 사전 정의 된 높이 클래스 중 하나를 사용하여 지정할 수 있습니다.</p>
+                                        <br>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="http://maps.google.com/maps/api/js?sensor=true"&gt;&lt;/script&gt;
 &lt;script src="assets/plugins/gmap/gmaps.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/pages/page_contacts.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line: <code>ContactPage.initMap();</code>
-                                            to the jQuery function at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 줄을 추가하십시오. <code>ContactPage.initMap();</code>
+                                            HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -3067,11 +3020,10 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Set location</h4>
-                                        <p>To change the location:</p>
-                                        <p>1. Navigate to the file <code>HTML\assets\js\pages\page_contacts.js</code>
+                                        <p>위치를 변경하려면 다음과 같이하십시오.</p>
+                                        <p>1. 파일 탐색 <code>HTML\assets\js\pages\page_contacts.js</code>
                                         </p>
-                                        <p>2. Set the <code>lat</code> and <code>lng</code> coordinates of your
-                                            location.</p>
+                                        <p>2. 위치의 <code>lat</code> 및 <code>lng</code> 좌표를 설정하십시오.</p>
                                         </p>
 
                                         <div class="margin-bottom-20"></div>
@@ -3081,8 +3033,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_maps_google.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_maps_google.html</span>--%>
                                     </div>
                                 </div>
                             </div>

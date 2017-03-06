@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Web06:war exploded">
-    <output-path>$PROJECT_DIR$/target/Web06-1.0.0-BUILD-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="Web07:war exploded">
+    <output-path>$PROJECT_DIR$/target/Web07-1.0.0-BUILD-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Web06" />
+          <element id="module-output" name="Web07" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.1.RELEASE" />
@@ -24,6 +24,7 @@
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.1" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.1.RELEASE" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.4" />
@@ -44,12 +45,28 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:4.2.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:4.2.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:4.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:5.1.0.Final" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.1.3.GA" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.0.0" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.20.0-GA" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
+          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" />
+          <element id="library" level="project" name="Maven: org.jboss:jandex:2.0.0.Final" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:5.1.0.Final" />
+          <element id="library" level="project" name="Maven: javax.el:javax.el-api:2.2.4" />
+          <element id="library" level="project" name="Maven: org.glassfish.web:javax.el:2.2.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/Web06-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/Web07-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Web06/web/Web" />
+      <element id="javaee-facet-resources" facet="Web07/web/Web" />
     </root>
   </artifact>
 </component>

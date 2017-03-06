@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Web03" />
         <module name="Web06" />
+        <module name="Web07" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Web03" target="1.7" />
       <module name="Web06" target="1.7" />
+      <module name="Web07" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

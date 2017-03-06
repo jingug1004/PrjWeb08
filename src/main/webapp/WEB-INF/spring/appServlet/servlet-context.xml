@@ -47,12 +47,12 @@
     -->
 
     <!--이건 됨. 맨 위의 것은 안 됨!-->
-    <resources location="/WEB-INF/views/assets/css/" mapping="assets/css/**" />
+    <resources location="/WEB-INF/views/assets/css/" mapping="assets/css/**"/>
     <!--<resources location="/WEB-INF/views/assets/fonts/" mapping="assets/fonts/**" />-->
-    <resources location="/WEB-INF/views/assets/img/" mapping="assets/img/**" />
-    <resources location="/WEB-INF/views/assets/js/" mapping="assets/js/**" />
+    <resources location="/WEB-INF/views/assets/img/" mapping="assets/img/**"/>
+    <resources location="/WEB-INF/views/assets/js/" mapping="assets/js/**"/>
     <!--<resources location="/WEB-INF/views/assets/php/" mapping="assets/php/**" />-->
-    <resources location="/WEB-INF/views/assets/plugins/" mapping="assets/plugins/**" />
+    <resources location="/WEB-INF/views/assets/plugins/" mapping="assets/plugins/**"/>
 
     <!--
     이것도 됨. 맨 위의 것은 안 됨!
@@ -83,7 +83,7 @@
         <beans:constructor-arg value="/Volumes/noname/zzz/upload"></beans:constructor-arg>
     </beans:bean>
     <!--<beans:bean id="uploadPath" class="java.lang.String">-->
-        <!--<beans:constructor-arg value="C:\\zzz\\upload"></beans:constructor-arg>-->
+    <!--<beans:constructor-arg value="C:\\zzz\\upload"></beans:constructor-arg>-->
     <!--</beans:bean>-->
 
     <beans:bean id="sampleInterceptor" class="org.zerock.interceptor.SampleInterceptor"></beans:bean>
