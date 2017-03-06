@@ -3051,28 +3051,27 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-12" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Sliding Horizontal Parallax moves multiple elements at the same time but at
-                                            different speeds to create a parallax effect — the appearance of 3D
-                                            movement.</p>
+                                        <p>수평 시차 (Sliding Horizontal) 시차는 시차 효과 (시차 효과)를 창출하기 위해 동시에 여러 요소를 서로 다른 속도로
+                                            움직입니다..</p>
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/plugins/parallax-slider/css/parallax-slider.css"&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;tscript src="assets/plugins/parallax-slider/js/modernizr.js"&gt;&lt;/script&gt;
 &lt;script src="assets/plugins/parallax-slider/js/jquery.cslider.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/plugins/parallax-slider.js"&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line: <code>ParallaxSlider.initParallaxSlider();</code>
-                                            to the jQuery function at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오. <code>ParallaxSlider.initParallaxSlider();</code>
+                                            HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -3088,8 +3087,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">index.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">index.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3106,30 +3105,29 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-15" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>LayerSlider is a premium multi-purpose slider for creating image galleries,
-                                            content sliders, and mind-blowing slide-shows with must-see effects. It uses
-                                            cutting edge technologies to provide the smoothest experience possible, and
-                                            it comes with more than 200 preset 2D and 3D slide transitions.</p>
+                                        <p>LayerSlider는 이미지 갤러리, 컨텐츠 슬라이더 및 필견적 인 효과를 제공하는 마음을 발산하는 슬라이드 쇼를 만들기위한 프리미엄
+                                            다목적 슬라이더입니다. 최첨단 기술을 사용하여 가장 매끄러운 경험을 제공하며 200 개가 넘는 프리 세트 2D 및 3D 슬라이드 전환이
+                                            제공됩니다.</p>
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/plugins/layer-slider/layerslider/css/layerslider.css"&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&ltscript src="assets/plugins/layer-slider/layerslider/js/greensock.js"&gt&lt/script&gt
 &lt;script src="assets/plugins/layer-slider/layerslider/js/layerslider.transitions.js"&gt;&lt;/script&gt;
 &lt;script src="assets/plugins/layer-slider/layerslider/js/layerslider.kreaturamedia.jquery.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/plugins/layer-slider.js"&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line: <code>LayerSlider.initLayerSlider();</code>
-                                            to the jQuery function at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오. <code>LayerSlider.initLayerSlider();</code>
+                                            HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -3144,8 +3142,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">page_home1.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">page_home1.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3162,10 +3160,8 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-17" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Masonry is a JavaScript grid layout library. It works by placing elements in
-                                            optimal position based on available vertical space, sort of like a mason
-                                            fitting stones in a wall. You’ve probably seen it in use all over the
-                                            Internet.</p>
+                                        <p>Masonry는 JavaScript 그리드 레이아웃 라이브러리입니다. 그것은 가능한 수직 공간을 기반으로 최적의 위치에 요소를 배치함으로써
+                                            작동합니다. 일종의 석공 술은 벽에 돌을 맞추고 있습니다. 당신은 아마 인터넷을 통해 사용되는 것을 보았을 것입니다.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/css/pages/blog_masonry_3col.css"&gt;</code></pre>
@@ -3173,12 +3169,12 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/masonry/jquery.masonry.min.js"&gt;&lt;/script&gt;
 &lt;script src="assets/js/pages/blog-masonry.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/pages/blog-masonry.js"&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
@@ -3188,8 +3184,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">blog_masonry_3col.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">blog_masonry_3col.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3206,8 +3202,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-18" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Touch enabled jQuery plugin that lets you create beautiful responsive
-                                            carousel slider.</p>
+                                        <p>민감한 회전식 슬라이드 슬라이더를 만들 수있는 터치 가능한 jQuery 플러그인.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css"&gt;</code></pre>
@@ -3215,18 +3210,18 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/plugins/owl-carousel.js"&gt;&lt;/script&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line: <code>OwlCarousel.initOwlCarousel();</code>
-                                            to the jQuery function at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오.<code>OwlCarousel.initOwlCarousel();</code>
+                                            HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -3240,8 +3235,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_carousels.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_carousels.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3258,13 +3253,10 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-19" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Slider Revolution is a fully developed slide displaying system offering the
-                                            capability to show images, videos and captions paired with simple, modern
-                                            and fancy 3D transitions. This plugin features tons of unique transition
-                                            effects, an image preloader, video embedding, autoplay that stops on user
-                                            interaction and lots of easy to set options to create your own effects. All
-                                            customization can be handled via jQuery Options, HTML 5 data-attributes and
-                                            CSS!</p>
+                                        <p>Slider Revolution은 이미지, 비디오 및 캡션을 단순하고 현대적이고 멋진 3D 전환과 함께 표시 할 수있는 기능을 제공하는
+                                            완전히 개발 된 슬라이드 표시 시스템입니다. 이 플러그인에는 독특한 전환 효과, 이미지 프리 로더, 비디오 퍼가기, 사용자 상호 작용에서
+                                            멈추는 자동 재생 및 자신 만의 효과를 만들기위한 다양한 설정 옵션이 있습니다. 모든 사용자 정의는 jQuery 옵션, HTML 5
+                                            데이터 속성 및 CSS를 통해 처리 할 수 있습니다!</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/plugins/revolution-sliderrs-plugin/css/tools.css"&gt;</code></pre>
@@ -3272,19 +3264,20 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.plugins.min.js"&gt;&lt;/script&gt;
 &lt;script src="assets/plugins/revolution-sliderrs-plugin/js/jquery.themepunch.revolution.min.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/plugins/revolution-slider.js"&gt;&lt;/script&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line: <code>RevolutionSlider.initRSfullScreenOffset();</code>
-                                            to the jQuery function at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오.
+                                            <code>RevolutionSlider.initRSfullScreenOffset();</code>
+                                            HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -3299,8 +3292,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">page_home9.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">page_home9.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3317,10 +3310,9 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-21" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Sky Forms Pro is a set of beautiful form elements with large amount of
-                                            javascript features: validation, masking, modals, ajax submit, datepickers.
-                                            It allows you to create forms of any complexity and for any needs: login,
-                                            registration, contacts, review, order, comment, checkout, etc.</p>
+                                        <p>Sky Forms Pro는 유효성 검사, 마스킹, 모달, 아약스 제출, datepickers와 같이 많은 양의 자바 스크립트 기능이있는
+                                            아름다운 양식 요소 세트입니다. 로그인, 등록, 연락처, 검토, 주문, 설명, 체크 아웃 등 복잡하고 필요한 모든 양식을 작성할 수
+                                            있습니다.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/plugins/sky-forms-pro/sky-forms/css/sky-forms.css"&gt;
@@ -3329,7 +3321,7 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/sky-forms-pro/sky-forms/js/jquery.maskedinput.min.js"&gt;&lt;/script&gt;
 &lt;script src="assets/plugins/sky-forms-pro/sky-forms/js/jquery-ui.min.js"&gt;&lt;/script&gt;
 &lt;script src="assets/plugins/sky-forms-pro/sky-forms/js/jquery.validate.min.js"&gt;&lt;/script&gt;</code></pre>
@@ -3343,7 +3335,7 @@ jQuery(document).ready(function () {
 &lt;![endif]--&gt; </code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;!-- For Masking --&gt;
 &lt;script src="assets/js/plugins/masking.js"&gt;&lt;/script&gt;
 &lt;!-- For Datepicker --&gt;
@@ -3355,10 +3347,9 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line to the jQuery function at
-                                            the bottom of the HTML page: <code>Masking.initMasking();</code> for
-                                            masking, <code>Datepicker.initDatepicker();</code> for datepicker, or <code>Validation.initValidation();</code>
-                                            for validation.</p>
+                                        <p>플러그인을 초기화하려면 HTML 페이지 맨 아래의 jQuery 함수에 다음 행을 추가하십시오. <code>Masking.initMasking();</code>
+                                            마스킹을 위해 <code>Datepicker.initDatepicker();</code> datepicker 또는 <code>Validation.initValidation();</code>
+                                            검증을 위해.</p>
 
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
@@ -3378,8 +3369,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_form_general1.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_form_general1.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3396,8 +3387,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-5" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>A jQuery plugin that sets a div or span to show a countdown to a given
-                                            time.</p>
+                                        <p>지정된 시간에 카운트 다운을 표시하도록 div 또는 span을 설정하는 jQuery 플러그인입니다.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/css/pages/page_coming_soon.css"&gt;</code></pre>
@@ -3405,18 +3395,18 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/countdown/jquery.plugin.js"&gt;&lt;/script&gt;
 &lt;script src="assets/plugins/countdown/jquery.countdown.js"&gt;&lt;/script&gt;</code></pre>
                                         <br>
 
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/js/pages/page_coming_soon.js"&gt;&lt;/script&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following line: <code>PageComingSoon.initPageComingSoon();</code>
-                                            to the jQuery function at the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오. <code>PageComingSoon.initPageComingSoon();</code>
+                                            HTML 페이지 맨 아래의 jQuery 함수에 추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -3427,9 +3417,10 @@ jQuery(document).ready(function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Set countdown</h4>
-                                        <p>To change the date and time of the countdown:</p>
-                                        <p>1. Navigate to <code>HTML/resources/js/pages/page_coming_soon.js</code></p>
-                                        <p>2. Replace the whole function with the following function:</p>
+                                        <p>카운트 다운 날짜와 시간을 변경하려면 다음과 같이하십시오.</p>
+                                        <p>1. <code>HTML/resources/js/pages/page_coming_soon.js</code>로 이동하십시오.
+                                        </p>
+                                        <p>2. 전체 함수를 다음 함수로 바꿉니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
 var PageComingSoon = function () {
     return {
@@ -3447,8 +3438,8 @@ var PageComingSoon = function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">page_coming_soon.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">page_coming_soon.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3465,18 +3456,19 @@ var PageComingSoon = function () {
                                 </div>
                                 <div id="collapse-1" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p> A simple jQuery plugin that allows you to add a dynamically-resized,
-                                            slideshow-capable background image to any page or element.</p>
+                                        <p> 동적인 크기 조정이 가능한 슬라이드 쇼 가능 배경 이미지를 모든 페이지 또는 요소에 추가 할 수있는 간단한 jQuery
+                                            플러그인입니다.</p>
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-php">No CSS required</code></pre>
                                         <br>
-                                        <p><span class="label label-red">Note</span> The image is set using JS, please
-                                            refer to the official documentation for more information.</p>
+                                        <p><span class="label label-red">Note</span> 이미지는 JS를 사용하여 설정됩니다. 자세한 내용은 공식
+                                            설명서를 참조하십시오.
+                                        </p>
 
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="plugins/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;</code></pre>
 
                                         <div class="margin-bottom-20"></div>
@@ -3486,8 +3478,8 @@ var PageComingSoon = function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">page_coming_soon.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">page_coming_soon.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3504,14 +3496,13 @@ var PageComingSoon = function () {
                                 </div>
                                 <div id="collapse-22" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>jVectorMap uses only native browser technologies like JavaScript, CSS, HTML,
-                                            SVG or VML. No Flash or any other proprietary browser plug-in is required.
-                                            This allows jVectorMap to work in all modern mobile browsers.</p>
+                                        <p>jVectorMap은 JavaScript, CSS, HTML, SVG 또는 VML과 같은 고유 브라우저 기술 만 사용합니다. Flash
+                                            또는 기타 독점 브라우저 플러그인은 필요하지 않습니다. 이를 통해 jVectorMap은 모든 최신 모바일 브라우저에서 작동합니다.</p>
                                         <ul>
-                                            <li>Works in all modern browsers (including IE6-8)</li>
-                                            <li>Looks great on any resolution because of its vector nature</li>
-                                            <li>Many maps are available</li>
-                                            <li>Custom maps could be created using converter</li>
+                                            <li>모든 최신 브라우저 (IE6-8 포함)에서 작동합니다.</li>
+                                            <li>그것의 벡터 본성 때문에 어떤 해상도에서도 멋지게 보입니다.</li>
+                                            <li>많은 Map을 사용할 수 있습니다.</li>
+                                            <li>사용자 지정 Map은 변환기를 사용하여 만들 수 있습니다.</li>
                                         </ul>
 
                                         <h4>CSS Installation</h4>
@@ -3520,12 +3511,11 @@ var PageComingSoon = function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>JavaScript Installation</h4>
-                                        <p>Under <code>&lt;!-- JS Page Level --&gt;</code></p>
+                                        <p>주석 밑 <code>&lt;!-- JS Page Level --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script rel="stylesheet" href="assets/js/plugins/vector-map.js"&gt;&lt;/script&gt; </code></pre>
                                         <br>
-                                        <p>Depending on which map style needed, one of the following js installations
-                                            will be required to place</p>
-                                        <p>Under <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
+                                        <p>어떤 Map 스타일이 필요한지에 따라, 다음 js 설치 중 하나가 필요합니다.</p>
+                                        <p>주석 밑 <code>&lt;!-- JS Implementing Plugins --&gt;</code></p>
                                         <pre class="line-numbers"><code class="language-markup">&lt;script src="assets/plugins/vector-map/jquery-jvectormap.js"&gt&lt/script&gt
 &ltscript src="assets/plugins/vector-map/jquery-mousewheel.js"&gt&lt/script&gt
 &ltscript src="assets/plugins/vector-map/jquery-mousewheel.js"&gt&lt/script&gt
@@ -3558,9 +3548,9 @@ var PageComingSoon = function () {
                                         <div class="margin-bottom-20"></div>
 
                                         <h4>Initialization</h4>
-                                        <p>To initialize the plugin, add the following lines: <code>VectorMap.initVectorMap();</code>
-                                            and <code>VectorMap.initMarkerVectorMap();</code> to the jQuery function at
-                                            the bottom of the HTML page:</p>
+                                        <p>플러그인을 초기화하려면 다음 행을 추가하십시오. <code>VectorMap.initVectorMap();</code>
+                                            및 <code>VectorMap.initMarkerVectorMap();</code> HTML 페이지 맨 아래의 jQuery 함수에
+                                            추가합니다.</p>
                                         <pre class="line-numbers"><code class="language-javascript">
                                     <script>
 jQuery(document).ready(function () {
@@ -3576,8 +3566,8 @@ jQuery(document).ready(function () {
 
                                         <div class="margin-bottom-20"></div>
 
-                                        <h4>Demo</h4>
-                                        <span class="color-green">shortcode_maps_vector.html</span>
+                                        <%--<h4>Demo</h4>--%>
+                                        <%--<span class="color-green">shortcode_maps_vector.html</span>--%>
                                     </div>
                                 </div>
                             </div>
@@ -3594,25 +3584,22 @@ jQuery(document).ready(function () {
                         <h2>Fonts <span class="label label-dark">Updated v1.9</span><a href="#top">top <i
                                 class="fa fa-angle-up"></i></a></h2>
                         <hr>
-                        <p>Unify Template uses Open Sans font for headings and some elements from Google Web Fonts. You
-                            are able to choose from more than 600+ fonts from <a target="_blank"
-                                                                                 href="https://www.google.com/fonts">Google
-                                Web Fonts</a>. The font is linked in all HTML files at the <code>&lt;head&gt;</code>
-                            section.</p>
+                        <p>Unify Template은 제목 및 Google 웹 글꼴의 일부 요소에 Open Sans 글꼴을 사용합니다.
+                            <a target="_blank" href="https://www.google.com/fonts">Google
+                                Web Fonts</a>에서 600 개가 넘는 글꼴 중에서 선택할 수 있습니다. 글꼴은 <code>&lt;head&gt;</code>
+                            섹션의 모든 HTML 파일에 연결됩니다.</p>
                         <pre class="line-numbers"><code class="language-php">&lt;!-- Web Fonts --&gt;
 &lt;link rel=&quot;shortcut&quot; type=&quot;text/css&quot; href=&quot;//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin&quot;&gt;</code></pre>
                         <br>
 
-                        <p><span class="label label-red">Note</span> Always remember to specify the font you choose in
-                            your <strong>CSS</strong>.</p><br>
+                        <p><span class="label label-red">Note</span>항상 <strong>CSS</strong>에서 선택한 글꼴을 지정해야합니다.</p><br>
 
                         <pre class="line-numbers"><code class="language-css">
 .example {
     font-family: "Open Sans", Arial, sans-serif;
 }
             </code></pre>
-                        <p><span class="label label-green">Example</span> The specification for Open Sans font family in
-                            CSS.</p>
+                        <p><span class="label label-green">Example</span> CSS에서 Open Sans 글꼴 패밀리에 대한 사양입니다.</p>
                     </div><!--/end-->
                     <!-- End Fonts -->
 
@@ -3626,7 +3613,7 @@ jQuery(document).ready(function () {
                             <a href="#top">top <i class="fa fa-angle-up"></i></a>
                         </h2>
                         <hr>
-                        <p>All plugins are located in <code>assets/plugins/..</code></p>
+                        <p>모든 플러그인은 <code>assets/plugins/..</code>에 있습니다.</p>
                         <table class="table table-striped table-bordered">
                             <thead>
                             <tr>
@@ -3638,40 +3625,36 @@ jQuery(document).ready(function () {
                             <tbody>
                             <tr>
                                 <td>Bootstrap</td>
-                                <td class="hidden-sm">Bootstrap is the most popular HTML, CSS, and JS framework for
-                                    developing responsive, mobile first projects on the web.
+                                <td class="hidden-sm">부트 스트랩은 반응 형 모바일 첫 번째 프로젝트를 웹에서 개발하기위한 가장 널리 사용되는 HTML, CSS 및 JS
+                                    프레임 워크입니다.
                                 </td>
                                 <td><a target="_blank" href="http://getbootstrap.com">http://getbootstrap.com</a></td>
                             </tr>
                             <tr>
                                 <td>jQuery</td>
-                                <td class="hidden-sm">jQuery is a fast, small, and feature-rich JavaScript library. It
-                                    makes things like HTML document traversal and manipulation, event handling,
-                                    animation, and Ajax much simpler with an easy-to-use API that works across a
-                                    multitude of browsers. With a combination of versatility and extensibility, jQuery
-                                    has changed the way that millions of people write JavaScript.
+                                <td class="hidden-sm">jQuery는 빠르고 작으며 기능이 풍부한 JavaScript 라이브러리입니다. HTML 문서 탐색 및 조작, 이벤트
+                                    처리, 애니메이션 및 Ajax를 여러 브라우저에서 작동하는 사용하기 쉬운 API로 훨씬 간단하게 만듭니다. 다양성과 확장 성을 결합한 jQuery는
+                                    수백만 명이 JavaScript를 작성하는 방식을 변경했습니다.
                                 </td>
                                 <td><a target="_blank" href="http://jquery.com">http://jquery.com</a></td>
                             </tr>
                             <tr>
                                 <td>Font Awesome</td>
-                                <td class="hidden-sm">Font Awesome The iconic font designed for Bootstrap</td>
+                                <td class="hidden-sm">Font Awesome 부트 스트랩을 위해 고안된 상징적 글꼴.</td>
                                 <td><a target="_blank" href="http://fortawesome.github.io/Font-Awesome">http://fortawesome.github.io/Font-Awesome</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Line Icons</td>
-                                <td class="hidden-sm">All 160 simple line icons are now embedded in a webfont for more
-                                    convenient use on the web or in a native application. Big thanks to Jamal Jama for
-                                    creating this awesome webfont.
+                                <td class="hidden-sm">웹이나 네이티브 응용 프로그램에서보다 편리하게 사용할 수 있도록 160 개의 간단한 회선 아이콘이 모두 이제 웹 폰트에
+                                    포함됩니다. 이 멋진 웹 폰트를 만든 Jamal Jama에게 큰 감사를드립니다.
                                 </td>
                                 <td><a target="_blank" href="http://graphicburger.com/simple-line-icons-webfont">http://graphicburger.com/simple-line-icons-webfont</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Parallax Slider</td>
-                                <td class="hidden-sm">A simple parallax content slider with different animations for
-                                    each slider element and a background parallax effect.
+                                <td class="hidden-sm">각 슬라이더 요소와 배경 시차 효과에 대해 서로 다른 애니메이션이있는 간단한 시차 콘텐츠 슬라이더입니다.
                                 </td>
                                 <td><a target="_blank"
                                        href="http://tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery">http://tympanus.net/codrops/2012/03/15/parallax-content-slider-with-css3-and-jquery</a>
@@ -3679,160 +3662,144 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>OWL Carousel</td>
-                                <td class="hidden-sm">Touch enabled jQuery plugin that lets you create beautiful
-                                    responsive carousel slider.
+                                <td class="hidden-sm">민감한 회전식 슬라이드 슬라이더를 만들 수있는 터치 가능한 jQuery 플러그인.
                                 </td>
                                 <td><a target="_blank" href="http://owlgraphic.com/owlcarousel">http://owlgraphic.com/owlcarousel</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Backstretch</td>
-                                <td class="hidden-sm">A simple jQuery plugin that allows you to add a
-                                    dynamically-resized, slideshow-capable background image to any page or element.
+                                <td class="hidden-sm">동적인 크기가 조정 된 슬라이드 쇼 가능 배경 이미지를 페이지 나 요소에 추가 할 수있는 간단한 jQuery
+                                    플러그인입니다.
                                 </td>
                                 <td><a target="_blank" href="http://srobbin.com/jquery-plugins/backstretch">http://srobbin.com/jquery-plugins/backstretch</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>MIXITUP</td>
-                                <td class="hidden-sm">A CSS3 and JQuery Filter &amp; Sort Plugin (Version: 1.5.4)</td>
+                                <td class="hidden-sm">CSS3 및 JQuery 필터 및 정렬 플러그인 (버전 : 1.5.4)</td>
                                 <td><a target="_blank" href="https://mixitup-old.kunkalabs.com">https://mixitup-old.kunkalabs.com</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Counter-Up</td>
-                                <td class="hidden-sm">Counter-Up is a jQuery plugin that animates a number from zero
-                                    (counting up towards it).
+                                <td class="hidden-sm">Counter-Up은 0부터 숫자를 움직이는 jQuery 플러그인입니다.
                                 </td>
                                 <td><a target="_blank" href="https://github.com/bfintal/Counter-Up">https://github.com/bfintal/Counter-Up</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Pace.js</td>
-                                <td class="hidden-sm">A beautiful progress indicator for your page load and ajax
-                                    navigation.
+                                <td class="hidden-sm">페이지로드 및 Ajax 탐색을위한 아름다운 진행 표시기.
                                 </td>
                                 <td><a target="_blank" href="http://github.hubspot.com/pace/docs/welcome">http://github.hubspot.com/pace/docs/welcome</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Circles (Master)</td>
-                                <td class="hidden-sm">Lightwheight JavaScript library that generates circular graphs in
-                                    SVG. Now with animation.
+                                <td class="hidden-sm">SVG에서 원형 그래프를 생성하는 경량의 JavaScript 라이브러리. 이제 애니메이션이 있습니다.
                                 </td>
                                 <td><a target="_blank" href="https://github.com/lugolabs/circles">https://github.com/lugolabs/circles</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Respond.js</td>
-                                <td class="hidden-sm">A fast &amp; lightweight polyfill for min/max-width CSS3 Media
-                                    Queries (for IE 6-8, and more).
+                                <td class="hidden-sm">최소 / 최대 너비의 CSS3 Media Queries (IE 6-8 및 그 이상)를위한 빠르고 가벼운 폴리필.
                                 </td>
                                 <td><a target="_blank" href="https://github.com/scottjehl/Respond">https://github.com/scottjehl/Respond</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Ladda Buttons</td>
-                                <td class="hidden-sm">A UI concept which merges loading indicators into the action that
-                                    invoked them. Primarily intended for use with forms where it gives users immediate
-                                    feedback upon submit rather than leaving them wondering while the browser does its
-                                    thing.
+                                <td class="hidden-sm">로드 인디케이터를 호출 한 액션에로드 인디케이터를 병합하는 UI 개념. 주로 브라우저가 그 일을하는 동안 사용자가
+                                    궁금해하는 채로 떠나지 않고 제출 즉시 즉각적인 피드백을 제공하는 양식과 함께 사용하기위한 것입니다.
                                 </td>
                                 <td><a target="_blank" href="https://github.com/scottjehl/Respond">https://github.com/scottjehl/Respond</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>HTML5 Shiv</td>
-                                <td class="hidden-sm">The HTML5 Shiv enables use of HTML5 sectioning elements in legacy
-                                    Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9, Safari
-                                    4.x (and iPhone 3.x), and Firefox 3.x.
+                                <td class="hidden-sm">HTML5 Shiv는 레거시 Internet Explorer에서 HTML5 섹션 요소 사용을 지원하며 Internet
+                                    Explorer 6-9, Safari 4.x (및 iPhone 3.x) 및 Firefox 3.x에 기본 HTML5 스타일을 제공합니다.
                                 </td>
                                 <td><a target="_blank" href="https://github.com/aFarkas/html5shiv">https://github.com/aFarkas/html5shiv</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Countdown</td>
-                                <td class="hidden-sm">jQuery Countdown Plugin</td>
+                                <td class="hidden-sm">jQuery 카운트 다운 플러그인</td>
                                 <td><a target="_blank" href="http://keith-wood.name/countdown.html">http://keith-wood.name/countdown.html</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>GMaps</td>
-                                <td class="hidden-sm">gmaps.js allows you to use the potential of Google Maps in a
-                                    simple way. No more extensive documentation or large amount of code
+                                <td class="hidden-sm">gmaps.js는 간단한 방법으로 Google지도의 잠재력을 사용할 수있게합니다. 더 이상의 광범위한 문서 또는 많은
+                                    양의 코드가 필요하지 않습니다.
                                 </td>
                                 <td><a target="_blank"
                                        href="http://hpneo.github.io/gmaps">http://hpneo.github.io/gmaps</a></td>
                             </tr>
                             <tr>
                                 <td>Brand Buttons</td>
-                                <td class="hidden-sm">CSS buttons plugin</td>
+                                <td class="hidden-sm">CSS 버튼 플러그인</td>
                                 <td><a target="_blank" href="https://github.com/theaqua/bootstrap-brand-buttons">https://github.com/theaqua/bootstrap-brand-buttons</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Hover Effects</td>
-                                <td class="hidden-sm">A collection of CSS3 powered hover effects to be applied to links,
-                                    buttons, logos, SVG, featured images and so on. Easily apply to your own elements,
-                                    modify or just use for inspiration. Available in CSS, Sass, and LESS.
+                                <td class="hidden-sm">링크, 버튼, 로고, SVG, 추천 이미지 등에 적용 할 수있는 CSS3 구동 호버 효과 모음입니다. 자신의 요소에
+                                    쉽게 적용하거나, 수정하거나, 영감을 얻기 위해 사용하십시오. CSS, Sass 및 LESS로 제공됩니다.
                                 </td>
                                 <td><a target="_blank" href="http://ianlunn.github.io/Hover/">http://ianlunn.github.io/Hover/</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Login/Sign up Modal Window</td>
-                                <td class="hidden-sm">This modal window allows users to login/signup into your website.
-                                    Once opened, the user can easily switch from one form to the other, or select the
-                                    reset password option.
+                                <td class="hidden-sm">이 모달 창을 통해 사용자는 귀하의 웹 사이트에 로그인 / 가입 할 수 있습니다. 일단 열면 사용자는 한 양식에서 다른
+                                    양식으로 쉽게 전환하거나 암호 재설정 옵션을 선택할 수 있습니다.
                                 </td>
                                 <td><a target="_blank" href="https://codyhouse.co/gem/loginsignup-modal-window/">https://codyhouse.co/gem/loginsignup-modal-window/</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Masonry</td>
-                                <td class="hidden-sm">Masonry is a JavaScript grid layout library. It works by placing
-                                    elements in optimal position based on available vertical space, sort of like a mason
-                                    fitting stones in a wall. You’ve probably seen it in use all over the Internet.
+                                <td class="hidden-sm">Masonry는 JavaScript 그리드 레이아웃 라이브러리입니다. 그것은 가능한 수직 공간을 기반으로 최적의 위치에
+                                    요소를 배치함으로써 작동합니다. 일종의 석공 술은 벽에 돌을 맞추고 있습니다. 당신은 아마 인터넷을 통해 사용되는 것을 보았을 것입니다.
                                 </td>
                                 <td><a target="_blank"
                                        href="http://masonry.desandro.com/">http://masonry.desandro.com/</a></td>
                             </tr>
                             <tr>
                                 <td>Vector Maps</td>
-                                <td class="hidden-sm">Many maps of the world, world regions, countries and cities are
-                                    available for download from this site. All of them are made from the data in public
-                                    domain or data licensed under the free licenses, so you can use them for any purpose
-                                    free of charge.
+                                <td class="hidden-sm">세계, 세계 지역, 국가 및 도시의 많은지도를이 사이트에서 다운로드 할 수 있습니다. 이 모든 것은 공개 된 데이터
+                                    또는 무료 라이센스에 따라 사용이 허가 된 데이터로 만들어 지므로 어떤 목적 으로든 무료로 사용할 수 있습니다.
                                 </td>
                                 <td><a target="_blank" href="http://jvectormap.com/">http://jvectormap.com/</a></td>
                             </tr>
                             <tr>
                                 <td>WOW Animation</td>
-                                <td class="hidden-sm">Reveal CSS animation as you scroll down a page. By default, you
-                                    can use it to trigger animate.css animations. But you can easily change the settings
-                                    to your favorite animation library.
+                                <td class="hidden-sm">페이지를 아래로 스크롤 할 때 CSS 애니메이션을 보여줍니다. 기본적으로 animate.css 애니메이션을 트리거하는
+                                    데 사용할 수 있습니다. 그러나 설정을 좋아하는 애니메이션 라이브러리로 쉽게 변경할 수 있습니다.
                                 </td>
                                 <td><a target="_blank" href="http://mynameismatthieu.com/WOW/">http://mynameismatthieu.com/WOW/</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Animate.css</td>
-                                <td class="hidden-sm">CSS animation plugin</td>
+                                <td class="hidden-sm">CSS 애니메이션 플러그인</td>
                                 <td><a target="_blank" href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Modernizr</td>
-                                <td class="hidden-sm">It’s a collection of superfast tests – or “detects” as we like to
-                                    call them – which run as your web page loads, then you can use the results to tailor
-                                    the experience to the user.
+                                <td class="hidden-sm">그것은 초고속 테스트의 모음입니다. 또는 우리가 호출하기를 원하는대로 "탐지"합니다. 웹 페이지가로드 될 때 실행되며,
+                                    그 결과를 사용하여 사용자에게 경험을 맞출 수 있습니다.
                                 </td>
                                 <td><a target="_blank" href="https://modernizr.com/">https://modernizr.com/</a></td>
                             </tr>
                             <tr>
                                 <td>Smooth Scroll</td>
-                                <td class="hidden-sm">Allows for easy implementation of smooth scrolling for same-page
-                                    links.
+                                <td class="hidden-sm">동일한 페이지 링크에 대해 부드러운 스크롤을 쉽게 구현할 수 있습니다.
                                 </td>
                                 <td><a target="_blank" href="https://github.com/kswedberg/jquery-smooth-scroll">https://github.com/kswedberg/jquery-smooth-scroll</a>
                                 </td>
@@ -3855,15 +3822,10 @@ jQuery(document).ready(function () {
                             <tbody>
                             <tr>
                                 <td>Master Slider</td>
-                                <td class="hidden-sm">Master Slider is a premium image and content slider with super
-                                    smooth hardware accelerated transitions. It supports touch navigation with pure
-                                    swipe gesture that you have never experienced before. It’s a truly responsive and
-                                    device friendly slider which works perfect in all major devices. Master Slider is an
-                                    awesome layer slider as well, with the ability of adding any html contents (texts,
-                                    images, …) in layers. It is easy to use, plus there are 25+ ready to use templates
-                                    available for you. You almost have everything in Master slider which is the most
-                                    complete among the best, hotspots, thumbnails, variety of effects, Video support and
-                                    much more.
+                                <td class="hidden-sm">마스터 슬라이더는 최고급 부드러운 하드웨어 가속 전환 효과가있는 프리미엄 이미지 및 콘텐츠 슬라이더입니다. 이전에 경험
+                                    해보지 못한 순수 스와이프 제스처로 터치 탐색을 지원합니다. 모든 주요 장치에서 완벽하게 작동하는 진정으로 반응적이고 장치 친화적 인 슬라이더입니다.
+                                    마스터 슬라이더는 레이어의 모든 HTML 내용 (텍스트, 이미지 등)을 추가 할 수있는 멋진 슬라이더입니다. 사용하기 쉽고 25 개 이상의 템플릿을
+                                    사용할 준비가되어 있습니다. 마스터 슬라이더의 모든 항목은 거의 최고, 핫스팟, 축소판, 다양한 효과, 비디오 지원 등에서 가장 완벽합니다.
                                 </td>
                                 <td><a target="_blank"
                                        href="http://codecanyon.net/item/master-slider-jquery-touch-swipe-slider/6337671?ref=htmlstream">http://codecanyon.net/item/master-slider-jquery-touch-swipe-slider/6337671</a>
@@ -3871,12 +3833,10 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Revolution Slider</td>
-                                <td class="hidden-sm">Slider Revolution is a fully developed slide displaying system
-                                    offering the capability to show images, videos and captions paired with simple,
-                                    modern and fancy 3D transitions. This plugin features tons of unique transition
-                                    effects, an image preloader, video embedding, autoplay that stops on user
-                                    interaction and lots of easy to set options to create your own effects. All
-                                    customization can be handled via jQuery Options, HTML 5 data-attributes and CSS!
+                                <td class="hidden-sm" Slider Revolution은 이미지, 비디오 및 캡션을 단순하고 현대적이고 멋진 3D 전환과 함께 표시 할 수있는
+                                    기능을 제공하는 완전히 개발 된 슬라이드 표시 시스템입니다. 이 플러그인에는 독특한 전환 효과, 이미지 프리 로더, 비디오 퍼가기, 사용자 상호
+                                    작용에서 멈추는 자동 재생 및 자신 만의 효과를 만들기위한 다양한 설정 옵션이 있습니다. 모든 사용자 정의는 jQuery 옵션, HTML 5 데이터
+                                    속성 및 CSS를 통해 처리 할 수 있습니다!
                                 </td>
                                 <td><a target="_blank"
                                        href="http://codecanyon.net/item/slider-revolution-responsive-jquery-plugin/2580848?ref=htmlstream">http://codecanyon.net/item/slider-revolution-responsive-jquery-plugin/2580848</a>
@@ -3884,10 +3844,9 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Layer Slider</td>
-                                <td class="hidden-sm">LayerSlider is a premium multi-purpose slider for creating image
-                                    galleries, content sliders, and mind-blowing slideshows with must-see effects. It
-                                    uses cutting edge technologies to provide the smoothest experience that’s possible,
-                                    and it comes with more than 200 preset 2D and 3D slide transitions.
+                                <td class="hidden-sm">LayerSlider는 이미지 갤러리, 컨텐츠 슬라이더 및 필수적인 효과가있는 마음을 끄는 슬라이드 쇼를 만들기위한
+                                    프리미엄 다목적 슬라이더입니다. 가능한 최첨단 기술을 제공하기 위해 최첨단 기술을 사용하며 200 개가 넘는 프리 세트 2D 및 3D 슬라이드 전환이
+                                    제공됩니다.
                                 </td>
                                 <td><a target="_blank"
                                        href="http://codecanyon.net/item/layerslider-responsive-jquery-slider-plugin/922100?ref=htmlstream">http://codecanyon.net/item/layerslider-responsive-jquery-slider-plugin/922100</a>
@@ -3895,9 +3854,8 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Cube Portfolio</td>
-                                <td class="hidden-sm">Cube Portfolio is a powerful jQuery plugin that provides beautiful
-                                    animated filtering, custom captions and it’s perfect for portfolios, galleries, team
-                                    members, blog posts or any other ordered content.
+                                <td class="hidden-sm">큐브 포트폴리오는 아름다운 애니메이션 필터링, 사용자 정의 캡션을 제공하는 강력한 jQuery 플러그인으로,
+                                    포트폴리오, 갤러리, 팀 구성원, 블로그 게시물 또는 기타 주문한 콘텐츠에 이상적입니다.
                                 </td>
                                 <td><a target="_blank"
                                        href="http://codecanyon.net/item/cube-portfolio-responsive-jquery-grid-plugin/6372959?ref=htmlstream">http://codecanyon.net/item/cube-portfolio-responsive-jquery-grid-plugin/6372959</a>
@@ -3905,10 +3863,9 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Sky Forms Pro</td>
-                                <td class="hidden-sm">Sky Forms Pro is a set of beautiful form elements with large
-                                    amount of javascript features: validation, masking, modals, ajax submit,
-                                    datepickers. It allows you to create forms of any complexity and for any needs:
-                                    login, registration, contacts, review, order, comment, checkout, etc.
+                                <td class="hidden-sm">Sky Forms Pro는 유효성 검사, 마스킹, 모달, 아약스 제출, datepickers와 같이 많은 양의 자바
+                                    스크립트 기능이있는 아름다운 양식 요소 세트입니다. 로그인, 등록, 연락처, 검토, 주문, 설명, 체크 아웃 등 복잡하고 필요한 모든 양식을 작성할 수
+                                    있습니다.
                                 </td>
                                 <td><a target="_blank"
                                        href="http://codecanyon.net/item/sky-forms-pro/5414510?ref=htmlstream">http://codecanyon.net/item/sky-forms-pro/5414510</a>
@@ -3916,10 +3873,8 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>FancyBox</td>
-                                <td class="hidden-sm">FancyBox is a tool that offers a nice and elegant way to add
-                                    zooming functionality for images, html content and multi-media on your webpages. It
-                                    is built on the top of the popular JavaScript framework jQuery and is both easy to
-                                    implement and a snap to customize.
+                                <td class="hidden-sm">FancyBox는 웹 페이지의 이미지, HTML 콘텐츠 및 멀티미디어에 확대 / 축소 기능을 추가하는 멋지고 우아한
+                                    방법을 제공하는 도구입니다. 인기있는 JavaScript 프레임 워크 인 jQuery의 상단에 구현되어 구현하기 쉽고 맞춤 설정이 쉽습니다.
                                 </td>
                                 <td><a target="_blank" href="http://fancyapps.com/fancybox">http://fancyapps.com/fancybox</a>
                                 </td>
