@@ -125,7 +125,7 @@
                         Scripting Language : JavaScript, JQuery, ajax
                         Structured Query Language : MariaDB
                         Framework : Spring MVC, Maven, MyBatis
-                        OS : MAC OSX 10.12.3
+                        OS : MAC OSX 10.12.3, Ubuntu(Linux)
                         IDE : IntelliJ, SublimeText3
                         Server : Apache Tomcat 8.0.0.M17 WAS
                         VCS : GitHub
@@ -133,6 +133,9 @@
                         Test Browser : Chrome, Safari
                         CI : Jenkins
                         WS : AWS
+                        FTP S/W : FileZilla
+
+
                     </pre>
 
                     <pre> 학원 Development Environment(Server * Client, H/W * S/W)
@@ -140,7 +143,7 @@
                         RAM : 16GB
                         TCP/IP Network : LocalHost(Identical port, Port forwarding)
                         OS : MS Window 7
-                        IDE : IntelliJ, Eclipse Neon, EditPlus
+                        IDE : IntelliJ, Eclipse Neon, NotePad++
                         Client GUI Tool : HeidiSQL
                         Test Browser : Chrome, FireFox
                     </pre>
@@ -3831,7 +3834,8 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Revolution Slider</td>
-                                <td class="hidden-sm" Slider Revolution은 이미지, 비디오 및 캡션을 단순하고 현대적이고 멋진 3D 전환과 함께 표시 할 수있는
+                                <td class="hidden-sm"> Slider Revolution은 이미지, 비디오 및 캡션을 단순하고 현대적이고 멋진 3D 전환과 함께 표시 할
+                                    수있는
                                     기능을 제공하는 완전히 개발 된 슬라이드 표시 시스템입니다. 이 플러그인에는 독특한 전환 효과, 이미지 프리 로더, 비디오 퍼가기, 사용자 상호
                                     작용에서 멈추는 자동 재생 및 자신 만의 효과를 만들기위한 다양한 설정 옵션이 있습니다. 모든 사용자 정의는 jQuery 옵션, HTML 5 데이터
                                     속성 및 CSS를 통해 처리 할 수 있습니다!
@@ -3906,8 +3910,7 @@ jQuery(document).ready(function () {
                         <div class="clearfix margin-bottom-10"></div>
 
                         <h3>Premium Image Credits</h3>
-                        <p>Due to licencing rights following images are only used in demo for demonstration purposes and
-                            it can be purchased at
+                        <p>라이센싱 권한으로 인해 이미지는 데모 용도로만 데모 용으로 사용되며 다음 위치에서 구입할 수 있습니다.
                             <a target="_blank" href="http://photodune.net?ref=htmlstream">wwww.photodune.net</a>, <a
                                     target="_blank" href="http://peopleimages.com">http://peopleimages.com</a> and <a
                                     target="_blank" href="http://deathtothestockphoto.com">http://deathtothestockphoto.com</a>
@@ -3974,8 +3977,7 @@ jQuery(document).ready(function () {
                     <div id="scroll_changelog" class="changelog margin-bottom-70">
                         <h2>Change Log <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                         <hr>
-                        <p><label class="label label-danger">Important!</label> Please do not forget to backup your
-                            files before the upgrade.</p>
+                        <p><label class="label label-danger">Important!</label> 업그레이드하기 전에 파일을 백업하는 것을 잊지 마십시오.</p>
                         <br>
 
                         <h4><span>Version 1.9.4 – 19 April 2016</span></h4>
@@ -5158,22 +5160,20 @@ jQuery(document).ready(function () {
                         </p>
                         <h4>Internet Explorer 8 and @font-face</h4>
                         <p>
-                        <p>IE8 has some issues with <code>@font-face</code> when combined with <code>:before</code>.
-                            Bootstrap uses that combination with its Glyphicons. If a page is cached, and loaded without
-                            the mouse over the window (i.e. hit the refresh button or load something in an iframe) then
-                            the page gets rendered before the font loads. Hovering over the page (body) will show some
-                            of the icons and hovering over the remaining icons will show those as well. <a
+                        <p>IE8은 <code>:before</code>와 결합 할 때 <code>@font-face</code> 에 몇 가지 문제가 있습니다. 부트 스트랩은 Glyphicon과
+                            그 조합을 사용합니다. 페이지가 캐싱되어 마우스없이 창 위에로드 된 경우 (즉, 새로 고침 버튼을 누르거나 iframe에서 무언가를로드하면) 글꼴로드 전에 페이지가
+                            렌더링됩니다. 페이지 (본체) 위로 마우스를 가져 가면 아이콘 중 일부가 표시되고 나머지 아이콘 위로 마우스를 올리면 해당 아이콘이 표시됩니다. 자세한 내용은 <a
                                     target="_blank" href="https://github.com/twbs/bootstrap/issues/13863">See issue
-                                #13863</a> for details.</p></p>
+                                #13863</a></p></p>
                         <!-- End Bootsrap -->
 
                         <hr>
 
                         <!-- Sublime text editor  -->
-                        <h3>Sublime Text Editor</h3>
-                        <p>We use Sublime text editor for coding. If you would like to use Sublime text editor please <a
-                                target="_blank" href="http://www.sublimetext.com/">click here "Sublime Text Editor"</a>
-                            for more detailed information.</p><br>
+                        <h3>IntelliJ IDE</h3>
+                        <p>우리는 코딩을 위해 "IntelliJ"를 사용합니다. Sublime 텍스트 편집기를 사용 하시려면 여기를 클릭하십시오. <a
+                                target="_blank" href="http://www.jetbrains.com ">click here "IntelliJ IDE"</a>
+                            를 클릭하시면 더 자세한 정보를 얻을 수 있습니다.</p><br>
                         <!-- End Sublime text editor -->
                     </div>
 
@@ -5181,8 +5181,8 @@ jQuery(document).ready(function () {
                     <div id="scroll_end">
                         <h2>End of Documentation <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                         <hr>
-                        <p>Once again, thank you for purchasing Unify Template.</p>
-                        <p>With much love <i class="fa fa-heart color-red"></i> <strong>Unify team.</strong></p>
+                        <p>다시 한번 Unify Template을 구입해 주셔서 감사합니다.</p>
+                        <p>언제나 행복합시다<i class="fa fa-heart color-red"></i> <strong> 김진국^^ </strong></p>
                     </div><!--/end-->
                     <!-- End of Documentation -->
                 </div><!--/content-->

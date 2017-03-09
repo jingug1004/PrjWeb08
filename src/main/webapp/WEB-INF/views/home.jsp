@@ -148,8 +148,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                     미세한 변화까지 최소화<br/>시계 본연의 멋과 가치,<br/><br/><br/><br/>
-                     원칙을 최대한 지켜 명품 본연의<br/>고귀함을 뼛속까지 그대로 전달<br/>
+                    미세한 변화까지 최소화<br/>시계 본연의 멋과 가치,<br/><br/><br/><br/>
+                    원칙을 최대한 지켜 명품 본연의<br/>고귀함을 뼛속까지 그대로 전달<br/>
                 </div>
 
                 <!-- LAYER -->
@@ -326,7 +326,8 @@ helloworld!
         <ul class="list-inline owl-slider">
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/09.jpg"
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                      src="http://static.showit.co/800/AUdzBDFUQAic22fP3fXbVw/61049/senior-portraits-photography-los-angeles-california_0064.jpg"
                                                       alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -334,12 +335,12 @@ helloworld!
                 <div class="product-description product-description-brd">
                     <div class="overflow-h margin-bottom-5">
                         <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Men</span>
-                            <span class="gender">Suits - Blazers</span>
+                            <h4 class="title-price"><a href="shop-ui-inner.html">When I met him</a></h4>
+                            <span class="gender text-uppercase">GIRL</span>
+                            <span class="gender">Suits - Schoollooks</span>
                         </div>
                         <div class="product-price">
-                            <span class="title-price">$95.00</span>
+                            <span class="title-price">123,000</span>
                         </div>
                     </div>
                     <ul class="list-inline product-ratings">
@@ -356,7 +357,8 @@ helloworld!
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/26.jpg"
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                      src="https://ae01.alicdn.com/kf/HTB1CLXcPFXXXXXbXFXXq6xXFXXXy/2017-New-Fashion-Winter-Coats-Women-Europe-Long-Jacket-Green-Wool-Long-Trench-Coat.jpg_640x640.jpg"
                                                       alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -364,13 +366,13 @@ helloworld!
                 <div class="product-description product-description-brd">
                     <div class="overflow-h margin-bottom-5">
                         <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
+                            <h4 class="title-price"><a href="shop-ui-inner.html">Community S</a></h4>
                             <span class="gender text-uppercase">Women</span>
-                            <span class="gender">Suits - Blazers</span>
+                            <span class="gender">Outers - Coat</span>
                         </div>
                         <div class="product-price">
-                            <span class="title-price">$60.00</span>
-                            <span class="title-price line-through">$95.00</span>
+                            <span class="title-price">60,000</span>
+                            <span class="title-price line-through">70,000</span>
                         </div>
                     </div>
                     <ul class="list-inline product-ratings">
@@ -387,7 +389,8 @@ helloworld!
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg"
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                      src="http://cdn1-www.momtastic.com/assets/uploads/2015/03/Nelly-Stella-dress-with-cut-out-sleeves.jpg"
                                                       alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -396,12 +399,12 @@ helloworld!
                 <div class="product-description product-description-brd">
                     <div class="overflow-h margin-bottom-5">
                         <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Men</span>
-                            <span class="gender">Suits - Blazers</span>
+                            <h4 class="title-price"><a href="shop-ui-inner.html">Joy of family</a></h4>
+                            <span class="gender text-uppercase">CHILDREN</span>
+                            <span class="gender">Outers - Coat</span>
                         </div>
                         <div class="product-price">
-                            <span class="title-price">$95.00</span>
+                            <span class="title-price">67,000</span>
                         </div>
                     </div>
                     <ul class="list-inline product-ratings">
@@ -418,7 +421,8 @@ helloworld!
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/12.jpg"
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                      src="https://s-media-cache-ak0.pinimg.com/564x/b6/28/4d/b6284d49d9b351dbba981d896e64f522.jpg"
                                                       alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -427,12 +431,12 @@ helloworld!
                 <div class="product-description product-description-brd">
                     <div class="overflow-h margin-bottom-5">
                         <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
+                            <h4 class="title-price"><a href="shop-ui-inner.html">Don't tell BF</a></h4>
                             <span class="gender text-uppercase">Women</span>
-                            <span class="gender">Suits - Blazers</span>
+                            <span class="gender">Suits - Onepiece</span>
                         </div>
                         <div class="product-price">
-                            <span class="title-price">$95.00</span>
+                            <span class="title-price">87,000</span>
                         </div>
                     </div>
                     <ul class="list-inline product-ratings">
@@ -449,7 +453,8 @@ helloworld!
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/10.jpg"
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                      src="http://img.yonhapnews.co.kr//etc/inner/KR/2012/01/11//AKR20120111074800003_01_i.jpg"
                                                       alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -457,12 +462,12 @@ helloworld!
                 <div class="product-description product-description-brd">
                     <div class="overflow-h margin-bottom-5">
                         <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Women</span>
-                            <span class="gender">Suits - Blazers</span>
+                            <h4 class="title-price"><a href="shop-ui-inner.html">Baby Baby Baby</a></h4>
+                            <span class="gender text-uppercase">Baby</span>
+                            <span class="gender">Suits - set</span>
                         </div>
                         <div class="product-price">
-                            <span class="title-price">$95.00</span>
+                            <span class="title-price">45,000</span>
                         </div>
                     </div>
                     <ul class="list-inline product-ratings">
@@ -479,7 +484,8 @@ helloworld!
             </li>
             <li class="item">
                 <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg"
+                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                      src="http://g03.a.alicdn.com/kf/HTB1pRN5OXXXXXciXpXXq6xXFXXXs/Cenmon-%EC%88%A0-%EC%B2%B4%EC%9D%B8-%EA%B8%B4-%EB%AA%A9%EA%B1%B8%EC%9D%B4-%ED%8E%9C%EB%8D%98%ED%8A%B8-%EC%9D%98%EC%83%81-%EB%B3%B4%EC%84%9D-%EC%9C%A0%ED%96%89-%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC-%EC%97%AC%EC%84%B1-Colar-%EB%AA%A9%EA%B1%B8%EC%9D%B4.jpg"
                                                       alt=""></a>
                     <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                     <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -488,12 +494,12 @@ helloworld!
                 <div class="product-description product-description-brd">
                     <div class="overflow-h margin-bottom-5">
                         <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Men</span>
-                            <span class="gender">Suits - Blazers</span>
+                            <h4 class="title-price"><a href="shop-ui-inner.html">It's my life</a></h4>
+                            <span class="gender text-uppercase">Women</span>
+                            <span class="gender">Accessory - Necklace</span>
                         </div>
                         <div class="product-price">
-                            <span class="title-price">$95.00</span>
+                            <span class="title-price">168,000</span>
                         </div>
                     </div>
                     <ul class="list-inline product-ratings">
@@ -512,52 +518,56 @@ helloworld!
     </div>
     <!--=== End Illustration v2 ===-->
 
-    <!--=== Illustration v3 ===-->
-    <div class="row margin-bottom-50">
-        <div class="col-md-4 md-margin-bottom-30">
-            <div class="overflow-h">
-                <a class="illustration-v3 illustration-img1" href="#">
-					<span class="illustration-bg">
-						<span class="illustration-ads">
-							<span class="illustration-v3-category">
-								<span class="product-category">Men</span>
-								<span class="product-amount">56 Items</span>
-							</span>
-						</span>
-					</span>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4 md-margin-bottom-30">
-            <div class="overflow-h">
-                <a class="illustration-v3 illustration-img2" href="#">
-					<span class="illustration-bg">
-						<span class="illustration-ads">
-							<span class="illustration-v3-category">
-								<span class="product-category">Women</span>
-								<span class="product-amount">56 Items</span>
-							</span>
-						</span>
-					</span>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="overflow-h">
-                <a class="illustration-v3 illustration-img3" href="#">
-					<span class="illustration-bg">
-						<span class="illustration-ads">
-							<span class="illustration-v3-category">
-								<span class="product-category">Children</span>
-								<span class="product-amount">56 Items</span>
-							</span>
-						</span>
-					</span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!--=== End Illustration v3 ===-->
+    <%--09.home.jsp의 가운데 카테고리 CSS 코넥트 연결 안 되는 이슈 해결(지금은 주석처리 해놨음)--%>
+    <%--<!--=== Illustration v3 ===-->--%>
+    <%--<div class="row margin-bottom-50">--%>
+        <%--<div class="col-md-4 md-margin-bottom-30">--%>
+            <%--<div class="overflow-h">--%>
+                <%--<a class="illustration-v3 illustration-img1"--%>
+                   <%--href="#">--%>
+					<%--<span class="illustration-bg">--%>
+                         <%--<span class="illustration-ads">--%>
+							<%--<span class="illustration-v3-category">--%>
+								<%--<span class="product-category">GIRL</span>--%>
+								<%--<span class="product-amount">87 Items</span>--%>
+							<%--</span>--%>
+						<%--</span>--%>
+					<%--</span>--%>
+                <%--</a>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-4 md-margin-bottom-30">--%>
+            <%--<div class="overflow-h">--%>
+                <%--<a class="illustration-v3 illustration-img2"--%>
+                   <%--href="http://www.dove.com/content/dam/unilever/dove/global/general_image/personal_care_unidentified/personal_care_unidentified/day10_shot04_076_hero-293217.jpg.ulenscale.767x360.jpg">--%>
+					<%--<span class="illustration-bg">--%>
+						<%--<span class="illustration-ads">--%>
+							<%--<span class="illustration-v3-category">--%>
+								<%--<span class="product-category">Women</span>--%>
+								<%--<span class="product-amount">156 Items</span>--%>
+							<%--</span>--%>
+						<%--</span>--%>
+					<%--</span>--%>
+                <%--</a>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-4">--%>
+            <%--<div class="overflow-h">--%>
+                <%--<a class="illustration-v3 illustration-img3"--%>
+                   <%--href="http://mummyfique.com/wp-content/uploads/2016/12/MFE-side-ad-1.jpg">--%>
+					<%--<span class="illustration-bg">--%>
+						<%--<span class="illustration-ads">--%>
+							<%--<span class="illustration-v3-category">--%>
+								<%--<span class="product-category">Children</span>--%>
+								<%--<span class="product-amount">68 Items</span>--%>
+							<%--</span>--%>
+						<%--</span>--%>
+					<%--</span>--%>
+                <%--</a>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+    <%--<!--=== End Illustration v3 ===-->--%>
 
     <div class="heading heading-v1 margin-bottom-40">
         <h2>Latest products</h2>
@@ -567,19 +577,21 @@ helloworld!
     <div class="row illustration-v2">
         <div class="col-md-3 col-sm-6 md-margin-bottom-30">
             <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/25.jpg" alt=""></a>
+                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                  src="https://ae01.alicdn.com/kf/HTB1W6VEJpXXXXbQXFXXq6xXFXXXa/Summer-women-font-b-dress-b-font-Europe-and-America-in-spring-and-summer-haute-couture.jpg"
+                                                  alt=""></a>
                 <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                 <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
             </div>
             <div class="product-description product-description-brd">
                 <div class="overflow-h margin-bottom-5">
                     <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
+                        <h4 class="title-price"><a href="shop-ui-inner.html">Anywhere Whatever</a></h4>
                         <span class="gender text-uppercase">Woman</span>
-                        <span class="gender">Suits - Blazers</span>
+                        <span class="gender">Suits - Two Piece</span>
                     </div>
                     <div class="product-price">
-                        <span class="title-price">$95.00</span>
+                        <span class="title-price">75,000</span>
                     </div>
                 </div>
                 <ul class="list-inline product-ratings">
@@ -596,20 +608,22 @@ helloworld!
         </div>
         <div class="col-md-3 col-sm-6 md-margin-bottom-30">
             <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/09.jpg" alt=""></a>
+                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                  src="https://s-media-cache-ak0.pinimg.com/236x/15/d7/9d/15d79da32b5b69a62f8b6d109630b866.jpg"
+                                                  alt=""></a>
                 <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                 <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
             </div>
             <div class="product-description product-description-brd">
                 <div class="overflow-h margin-bottom-5">
                     <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                        <span class="gender text-uppercase">Men</span>
-                        <span class="gender">Suits - Blazers</span>
+                        <h4 class="title-price"><a href="shop-ui-inner.html">Alaways It's sunny</a></h4>
+                        <span class="gender text-uppercase">GIRL</span>
+                        <span class="gender">Suits - One Piece</span>
                     </div>
                     <div class="product-price">
-                        <span class="title-price">$60.00</span>
-                        <span class="title-price line-through">$95.00</span>
+                        <span class="title-price">58,000</span>
+                        <span class="title-price line-through">68,000</span>
                     </div>
                 </div>
                 <ul class="list-inline product-ratings">
@@ -626,7 +640,9 @@ helloworld!
         </div>
         <div class="col-md-3 col-sm-6 md-margin-bottom-30">
             <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/10.jpg" alt=""></a>
+                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                  src="http://image.dhgate.com/0x0/f2/albu/g2/M01/44/97/rBVaGlbRBKyAPVG8AAKKg_G2kJ8367.jpg"
+                                                  alt=""></a>
                 <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                 <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 <div class="shop-rgba-red rgba-banner">Out of stock</div>
@@ -634,12 +650,12 @@ helloworld!
             <div class="product-description product-description-brd">
                 <div class="overflow-h margin-bottom-5">
                     <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                        <span class="gender text-uppercase">Women</span>
-                        <span class="gender">Suits - Blazers</span>
+                        <h4 class="title-price"><a href="shop-ui-inner.html">I wannabe mom</a></h4>
+                        <span class="gender text-uppercase">GIRL</span>
+                        <span class="gender">Bottom - Skirt</span>
                     </div>
                     <div class="product-price">
-                        <span class="title-price">$95.00</span>
+                        <span class="title-price">45,000</span>
                     </div>
                 </div>
                 <ul class="list-inline product-ratings">
@@ -656,7 +672,9 @@ helloworld!
         </div>
         <div class="col-md-3 col-sm-6 md-margin-bottom-30">
             <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>
+                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
+                                                  src="http://www.dhresource.com/260x260s/f2-albu-g5-M00-E3-E7-rBVaJFi761GAVVvbAAGiBhA4wOw827.jpg/hot-kid-girls-dress-plaid-bowknot-belt-vest.jpg"
+                                                  alt=""></a>
                 <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                 <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 <div class="shop-rgba-dark-green rgba-banner">New</div>
@@ -664,12 +682,12 @@ helloworld!
             <div class="product-description product-description-brd">
                 <div class="overflow-h margin-bottom-5">
                     <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                        <span class="gender text-uppercase">Men</span>
-                        <span class="gender">Suits - Blazers</span>
+                        <h4 class="title-price"><a href="shop-ui-inner.html">Happy Thing</a></h4>
+                        <span class="gender text-uppercase">CHILDREN</span>
+                        <span class="gender">Suits - One Piece</span>
                     </div>
                     <div class="product-price">
-                        <span class="title-price">$95.00</span>
+                        <span class="title-price">35,000</span>
                     </div>
                 </div>
                 <ul class="list-inline product-ratings">
@@ -707,9 +725,9 @@ helloworld!
             <div class="carousel-inner">
                 <div class="item active">
                     <p>UNIFY는 매출액이 100억에 이르렀으며 UNIFY의 성공에 참여해 주신 모든 고객 여러분께 감사드리고 싶습니다.<br/> <br/><a
-                            href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a>
+                            href="https://youtu.be/VCX5tPdGpmg">https://youtu.be/VCX5tPdGpmg</a>
                     <p>
-                    <p><a href="https://twitter.com/htmlstream">@htmlstream</a></p>
+                    <p><a href="https://twitter.com/jingug1004">@jingug1004</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -718,7 +736,7 @@ helloworld!
                 </div>
                 <div class="item">
                     <p>UNIFY의 사회기부 활동 및 운동<br/><br/></p>
-                    <p><a href="https://twitter.com/htmlstream">@twbootstrap</a></p>
+                    <p><a href="https://youtu.be/UoB0IkaNIIc">@social dominate operation</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -728,7 +746,7 @@ helloworld!
                 <div class="item">
                     <p>21c 새로운 창의적인 것들에 대하여 필요한 모든 것을 보여줍니다. <br/><br/><a href="#">http://publicdomainarchive.com</a>
                     </p>
-                    <p><a href="https://twitter.com/htmlstream">@wrapbootstrap</a></p>
+                    <p><a href="https://youtu.be/UlqNxG95CRE">@Pope Kim</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -798,12 +816,12 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/08.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
+                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Pants</a></h4>
                     <span class="thumb-product-type">Footwear - Oxfords</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price line-through">$75.00</li>
-                    <li class="thumb-product-price">$65.00</li>
+                    <li class="thumb-product-price line-through">75,000</li>
+                    <li class="thumb-product-price">65,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -811,11 +829,11 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/09.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">Missi</a> – <a href="shop-ui-inner.html">Doran Hat</a></h4>
+                    <span class="thumb-product-type">Headwear - Havard</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price">$75.00</li>
+                    <li class="thumb-product-price">45,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -823,11 +841,11 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/03.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">Nani</a> – <a href="shop-ui-inner.html">Hoga Belts</a></h4>
+                    <span class="thumb-product-type">Bodywear - MIT</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price">$75.00</li>
+                    <li class="thumb-product-price">31,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -840,11 +858,11 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/02.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">Brian</a> – <a href="shop-ui-inner.html">Koi Eye-glass</a></h4>
+                    <span class="thumb-product-type">Eyewear - Juliad</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price">$75.00</li>
+                    <li class="thumb-product-price">24,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -852,11 +870,11 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/10.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">GuiGui</a> – <a href="shop-ui-inner.html">Miami Persue</a></h4>
+                    <span class="thumb-product-type">Accesory - Queen's</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price">$75.00</li>
+                    <li class="thumb-product-price">175,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -864,12 +882,12 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/06.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">Nakatati</a> – <a href="shop-ui-inner.html">NYC Shoe</a></h4>
+                    <span class="thumb-product-type">Footwear - Washington</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price line-through">$75.00</li>
-                    <li class="thumb-product-price">$65.00</li>
+                    <li class="thumb-product-price line-through">138,000</li>
+                    <li class="thumb-product-price">128,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -882,12 +900,12 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/07.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">Owen</a> – <a href="shop-ui-inner.html">Primera Shirts</a></h4>
+                    <span class="thumb-product-type">Topwear - War</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price line-through">$75.00</li>
-                    <li class="thumb-product-price">$65.00</li>
+                    <li class="thumb-product-price line-through">68,000</li>
+                    <li class="thumb-product-price">58,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -895,11 +913,11 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/04.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">Nani</a> – <a href="shop-ui-inner.html">Leon Hat</a></h4>
+                    <span class="thumb-product-type">Headwear - Vera</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price">$75.00</li>
+                    <li class="thumb-product-price">45,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>
@@ -907,11 +925,11 @@ helloworld!
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/05.jpg" alt="">
                 <div class="thumb-product-in">
-                    <h4><a href="shop-ui-inner.html">Yuketen</a> – <a href="shop-ui-inner.html">Derby Shoe</a></h4>
-                    <span class="thumb-product-type">Footwear - Oxfords</span>
+                    <h4><a href="shop-ui-inner.html">Hudson</a> – <a href="shop-ui-inner.html">EU watch</a></h4>
+                    <span class="thumb-product-type">Handwear - classic</span>
                 </div>
                 <ul class="list-inline overflow-h">
-                    <li class="thumb-product-price">$75.00</li>
+                    <li class="thumb-product-price">127,000</li>
                     <li class="thumb-product-purchase"><a href="#"><i class="fa fa-shopping-cart"></i></a> | <a
                             href="#"><i class="fa fa-heart"></i></a></li>
                 </ul>

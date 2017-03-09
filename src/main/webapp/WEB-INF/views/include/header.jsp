@@ -9,7 +9,7 @@
 <!--[if !IE]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Shop UI | Mall </title>
+    <title>UNIFY | Shopping Mall </title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -279,13 +279,13 @@
                                 Pages
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="active"><a href="home.jsp">Shop UI</a></li>
-                                <li><a href="shop-ui-inner.html">Product Page</a></li>
-                                <li><a href="shop-ui-filter-grid.html">Filter Grid Page</a></li>
-                                <li><a href="shop-ui-filter-list.html">Filter List Page</a></li>
-                                <li><a href="shop-ui-add-to-cart.html">Checkout</a></li>
-                                <li><a href="shop-ui-login.html">Login</a></li>
-                                <li><a href="../include/shop-ui-register.jsp">Register</a></li>
+                                <li class="active"><a href="home.jsp">BEST</a></li>
+                                <li><a href="shop-ui-inner.html">기획전</a></li>
+                                <li><a href="shop-ui-filter-grid.html">이벤트</a></li>
+                                <li><a href="shop-ui-filter-list.html">포토리뷰/후기</a></li>
+                                <li><a href="shop-ui-add-to-cart.html">VIP 게시판</a></li>
+                                <li><a href="shop-ui-login.html">회원등급별 혜택</a></li>
+                                <li><a href="../include/shop-ui-register.jsp">득템샵</a></li>
                             </ul>
                         </li>
                         <!-- End Pages -->
