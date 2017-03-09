@@ -9,6 +9,18 @@
 */
 --%>
 
+<%--웹 개발자들이 주로 작업하는 환경--%>
+<%--운영 체제: 윈도, 유닉스, 리눅스--%>
+<%--클라이언트 측면 언어: HTML, CSS, 자바스크립트, XML ,XHTML, JSON--%>
+<%--클라이언트 측면 js 프레임워크: jQuery, dojo , prototype, YUI, Jindo--%>
+<%--클라이언트 측면 ui 프레임워크: jQuery UI, fontawesome, bootstrap--%>
+<%--서버 측면 언어 : 자바, C#(ASP.NET), PHP, JSP, VB 스크립트(ASP), 파이썬, 펄, Ruby on Rails, grail--%>
+<%--프레임워크 : J2EE, ASP.NET MVC, ASP.NET Webform, Struts, Spring, ibatis , hibernate , gwt ,spring roo, sitemesh , oscache, tiles, templete_--%>
+<%--데이터베이스 : Oracle, MS SQL, Mysql, Postgres--%>
+<%--버전 관리 : WinCVS, TotoiseCVS, Subversion, Rational ClearCase, git--%>
+<%--웹 서버 : Nginx, Apache, Tomcat, JBoss, WAS, Bea Logic, IIS , jetty--%>
+<%--도구 : 이클립스, WASD, Editplus, Oracle Developer, 메모장, Notepad++, Putty, FTP 클라이언트, Zend Studio, 비주얼 스튜디오--%>
+
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -46,6 +58,7 @@
 <!-- Sidebar -->
 <div class="page-wrap">
     <div class="aside" id="sidebar">
+    <%--<div class="aside" id="sidebar">--%>
         <h1>UNIFY - Shopping Website by <a href="https://www.facebook.com/jingug1004">김진국</a></h1>
         <p>Documentation v1.9.4</p>
 
@@ -54,17 +67,28 @@
         <ul class="list-unstyled">
             <li><a href="#scroll_overview">Overview</a></li>
             <li><a href="#scroll_main">Main Structure</a></li>
-            <li><a href="#scroll_misc">Misc Pages</a></li>
-            <li><a href="#scroll_nav">Headers &amp; Footers</a></li>
-            <li><a href="#scroll_theme">Theme Configuration</a></li>
-            <li><a href="#scroll_css">CSS (Cascading Style Sheets)</a></li>
-            <li><a href="#scroll_js">JavaScript Initialization</a></li>
-            <li><a href="#scroll_fonts">Fonts</a></li>
-            <li><a href="#scroll_credits">Credits</a></li>
+            <li><a href="#scroll_ssl">SSL & RSH</a></li>
+            <li><a href="#scroll_jenkins">Jenkins</a></li>
+            <li><a href="#scroll_aws">AWS</a></li>
+            <li><a href="#scroll_vcs">VCS</a></li>
+            <li><a href="#scroll_sql">SQL</a></li>
+            <li><a href="#scroll_interceptor">Interceptor</a></li>
+            <li><a href="#scroll_fileupload">File Upload</a></li>
+            <li><a href="#scroll_aop">AOP & Transaction</a></li>
+            <li><a href="#scroll_board">Board</a></li>
+            <li><a href="#scroll_spring">Spring Framework</a></li>
+            <li><a href="#scroll_ajax">Ajax & Front-End</a></li>
+            <%--<li><a href="#scroll_misc">Misc Pages</a></li>--%>
+            <%--<li><a href="#scroll_nav">Headers &amp; Footers</a></li>--%>
+            <%--<li><a href="#scroll_theme">Theme Configuration</a></li>--%>
+            <%--<li><a href="#scroll_css">CSS (Cascading Style Sheets)</a></li>--%>
+            <%--<li><a href="#scroll_js">JavaScript Initialization</a></li>--%>
+            <%--<li><a href="#scroll_fonts">Fonts</a></li>--%>
+            <%--<li><a href="#scroll_credits">Credits</a></li>--%>
             <li><a href="#scroll_changelog">Change Log</a></li>
             <li><a href="#scroll_upgrade">Upgrade</a></li>
-            <li><a href="#scroll_others">Others</a></li>
-            <li><a href="#scroll_end">End of Documentation</a></li>
+            <li><a href="#scroll_others">Others & End of Documentation</a></li>
+            <%--<li><a href="#scroll_end">End of Documentation</a></li>--%>
         </ul>
     </div>
 </div>
@@ -79,74 +103,97 @@
 
                     <hr>
 
-                    <p>안녕하십니까, 먼저 Unify Template을 선택해 주셔서 감사드립니다! Unify가 귀하를 잘 대할 것이며 귀하의 기대에 부응 할 것을 진심으로 바랍니다. 연계과목,
-                        기간, 개발언어, 플랫폼, 개발툴, 주요기술, 목적, 내용..</p>
+                    <p>안녕하십니까, 먼저 제 포트폴리오에 손수 방문해 주셔서 감사드립니다!</p>
 
-                    <br>
+                    <p>제 포트폴리오가 기대에 부응할 것을 진심으로 바랍니다. 다큐멘테이션이지만 포트폴리오에 적용했던 기술들의 보고서 형식으로 나열합니다.</p>
 
-                    <p>UNIFY 템플릿의 탐색하기 쉽고 사용하기 쉬운 레이아웃과 개발자 친화적 인 코드를 사용하여 즐겁게 보내시기 바랍니다.
-                        또한 많은 리소스가 사용되었으며 많은 고객들이 구매에 만족할 수 있도록 다양한 옵션이 추가되었습니다.</p>
+                    <%--<strong>연계과목, 기간, 개발언어, 플랫폼, 개발툴, 주요기술, 목적, 내용..</strong>--%>
+
+                    <%--<br>--%>
+
+                    <p>제 포트폴리오는 "UNIFY"라는 이름의 여성 쇼핑몰로서 어린 여아부터 중장년 여성까지 모든 아이템을 다룰 수 있게 카테고리화 하였습니다.
+                        주 포인트는 게시판 작성(조회수 증가, 댓글 달기, 파일 업로드 등) 및 로그인 세션 유지, 보안으로 스프링 MVC 프레임워크(4.3.1)개념과 비지니스 로직 프로세스를 익히는데 초점을 두었으며 그 과정에
+                        TDD, 마이바티스, 메이븐, CI(젠킨스), WS(AWS), Ajax, JQuery 등 여러 플랫폼, 엔진, 스크립트 언어까지 부가적으로 익힐 수 있었습니다.</p>
+
+                    <p>잘 아시다시피 MVW 프레임워크(AngularJS)라는 기술이 있는데 제가 풀어야 했던 문제는 기본에 충실한 기능 구현이 목표였으므로 Spring MVC 방식으로 구현 시도를 했습니다.
+                    그러면서 배운 거라면 위에 나열한 것들이며 마이바티스와 메이븐이 Spring MVC 프레임워크와 가장 최적화되어 좋은 결과를 만들었던 것 같고
+                    AWS는 개발서버와 실제로 운영하는 서버에서 Run 할 때 처음 접하는 버그들이 많이 발생하여 많은 괴리감과 간극을 느꼈습니다. 그래서 포트폴리오로 제출할
+                        최소한의 문제들을 즉각 대처할 수 있게 서버 인스턴스를 Ubuntu에서 Amazone Linux API로 변경하여 사용하고 있습니다.
+                    </p>
+
+                    <p>
+                        UI는 탐색하기 쉽고 단순하고 사용하기 쉬운 레이아웃과 개발자 친화적인 코드를 사용하였습니다.
+                        또한 많은 리소스가 사용되었으며 많은 개발자들이 유지 보수에 어려움이 없도록 다양한 옵션이 추가되었습니다.</p>
 
                     <br>
 
                     <h4>Updates</h4>
 
-                    <p>웹 디자인 트렌드의 급변하는 발전 추세에 발 맞춰 항상 새로운 업데이트를 지속적으로 출시하려고 노력하고 있습니다.
-                        각 업데이트의 목표는 고객에게 깊은 인상을 남기고 얼굴에 거대한 미소를 짓는 것입니다.</p>
+                    <p>웹 프로그래밍 트렌드의 급변하는 발전 추세에 발 맞춰 항상 새로운 업데이트를 지속적으로 출시하려고 노력하고 있습니다.
+                        각 업데이트의 목표는 개발자와 미래 사용할 잠재 고객에게 깊은 인상을 남기는 것입니다.</p>
 
-                    <p>UNIFY를 구매하면 평생 무료로 업데이트를 다운로드 할 자격이 주어집니다. <strong>FREE!</strong></p>
+                    <%--<p>UNIFY를 구매하면 평생 무료로 업데이트를 다운로드 할 자격이 주어집니다. <strong>FREE!</strong></p>--%>
 
-                    <p>그러나 다른 한편으로는 라이센스 업그레이드가 불가능하다는 사실을 알려드립니다. 라이센스를 업그레이드하려면 새로운 구매가 이루어져야합니다.</p>
+                    <%--<p>그러나 다른 한편으로는 라이센스 업그레이드가 불가능하다는 사실을 알려드립니다. 라이센스를 업그레이드하려면 새로운 구매가 이루어져야합니다.</p>--%>
 
-                    <p>현재 업데이트 된 버전은 v1.9 +로 고정 버그, 다양한 새로운 테마 데모 및 새로운 디자인 등 여러 가지 개선 사항을 제공합니다.
-                        UNIFY는 다음 업데이트에서 더 많은 새로운 놀라운 기능이 곧 출시 될 예정이어서 거기에서 멈추지 않습니다.
-                        항상 UNIFY 템플릿을 사용하고 성공의 중요한 부분을 담당해 주셔서 감사합니다.</p><br>
+                    <p>현재 업데이트 된 버전은 v1.9 +로 서버(AWS)에서의 고정 버그, 개발 서버가 아닌 운영 서버에서의 오류 등 여러 가지 개선 사항을 제공합니다.
+                        UNIFY는 다음 업데이트에서 더 많은 새로운 놀라운 기능이 곧 출시 될 예정이어서 스스로의 공부를 멈추지 않습니다.</p>
+                        <%--항상 UNIFY를 사용하고 성공의 중요한 부분을 담당해 주셔서 감사합니다.</p><br>--%>
+
+                    <br/>
 
                     <h4>Support</h4>
 
-                    <p>우리는 UNIFY가 지원이 성공적인 제품의 중요한 측면이라고 믿습니다. 따라서 우리는 가장 우수한 지원을 제공하기 위해 최선을 다하며
-                        항상 우리의 소중한 고객을 돕기 위해 무엇이든 시도합니다. 우리의 지원은 완전한 사용자 정의 작업이 아닌 한 프론트 엔드 관련
-                        문제 이외에 발생할 수있는 모든 설계 문제를 주로 다루고 있음을 알아 두십시오.</p>
+                    <%--<p>우리는 UNIFY가 지원이 성공적인 제품의 중요한 측면이라고 믿습니다. 따라서 우리는 가장 우수한 지원을 제공하기 위해 최선을 다하며--%>
+                        <%--항상 우리의 소중한 고객을 돕기 위해 무엇이든 시도합니다. 우리의 지원은 완전한 사용자 정의 작업이 아닌 한 프론트 엔드 관련--%>
+                        <%--문제 이외에 발생할 수 있는 모든 설계 문제를 주로 다루고 있음을 알아 두십시오.</p>--%>
 
-                    <p> "요즘 업계 최고의 기술인 XX 를 도입해서 YY 를 구현하였는데 그것이 아주 성공적이어서 유저들에게 ZZ 한 반응과 함께 $$ 의 매출을..." => 이것도 좀.
-                        말하는 게 우선 너무 매니저스러움.
+                    <p>저의 지원은 완전한 사용자 정의 작업이 아닌 백엔드 관련 문제 이외에 발생할 수 있는 모든 설계 문제를 주로 다루고 있습니다.</p>
 
-                        개발자스러운 답변은
-                        "아실지 모르겠지만 XX 라는 기술이 있는데 저희가 풀어야 했던 문제는 YY 였으므로 ZZ 방식으로 구현 시도를 했습니다. 그러면서 배운 거라면 AA 는
-                        이런 면이 좋아서 어느 정도 좋은 결과였던 것 같고 BB 는 이러이러한 문제가 있어서 저러저러하게 대처를 하였음" => 이상적인 답변.
-                        여러 각도로 문제를 바라볼 수 있으며 객관적으로 좋은 점 나쁜 점을 나열 할 수 있고, 나쁜 점은 어떻게 극복하였는지도 디테일 말할 수 있음 플러스.</p>
+                    <%--<p><strong> "요즘 업계 최고의 기술인 XX 를 도입해서 YY 를 구현하였는데 그것이 아주 성공적이어서 유저들에게 ZZ 한 반응과 함께 $$ 의 매출을..." => 이것도--%>
+                        <%--좀.--%>
+                        <%--말하는 게 우선 너무 매니저스러움.--%>
 
-                    <pre> 자가 Development Environment(Server * Client, H/W * S/W)
-                        Processor : Intel Core™ i5
-                        RAM : 4GB
-                        TCP/IP Network : LocalHost
-                        Web Programming Language : Java 8(JDK1.8), JSP
-                        Markup Language : HTML5, CSS
-                        Scripting Language : JavaScript, JQuery, ajax
-                        Structured Query Language : MariaDB
-                        Framework : Spring MVC, Maven, MyBatis
-                        OS : MAC OSX 10.12.3, Ubuntu(Linux)
-                        IDE : IntelliJ, SublimeText3
-                        Server : Apache Tomcat 8.0.0.M17 WAS
-                        VCS : GitHub
-                        Client GUI Tool : Sequel Pro
-                        Test Browser : Chrome, Safari
-                        CI : Jenkins
-                        WS : AWS
-                        FTP S/W : FileZilla
+                        <%--개발자스러운 답변은--%>
+                        <%--"아실지 모르겠지만 XX 라는 기술이 있는데 저희가 풀어야 했던 문제는 YY 였으므로 ZZ 방식으로 구현 시도를 했습니다. 그러면서 배운 거라면 AA 는--%>
+                        <%--이런 면이 좋아서 어느 정도 좋은 결과였던 것 같고 BB 는 이러이러한 문제가 있어서 저러저러하게 대처를 하였음" => 이상적인 답변.--%>
+                        <%--여러 각도로 문제를 바라볼 수 있으며 객관적으로 좋은 점 나쁜 점을 나열 할 수 있고, 나쁜 점은 어떻게 극복하였는지도 디테일 말할 수 있음 플러스. </strong>--%>
+                    <%--</p>--%>
 
+<pre>
+    자가(주) Development Environment(Server * Client, H/W * S/W)
+        Processor : Intel Core™ i5
+        RAM : 4GB
+        TCP/IP Network : LocalHost
+        Web Programming Language : Java 8(JDK1.8), JSP
+        Markup Language : HTML5, CSS, XML, JSON
+        Scripting Language : JavaScript, JQuery, Ajax
+        Structured Query Language : MariaDB
+        Framework : Spring MVC, Maven, MyBatis
+        OS : MAC OSX 10.12.3, Ubuntu(Linux)
+        IDE : IntelliJ, SublimeText3
+        Web Server : Apache Tomcat 8.0.0.M17 WAS
+        VCS : GitHub
+        Client GUI Tool : Sequel Pro
+        Test Browser : Chrome, Safari
+        CI : Jenkins
+        Online Web Service : AWS(Amazone Web Service)
+        Accesible DNS : www.unifyshop.ga (Instability : Not Recommend)
+                        ec2-13-124-8-223.ap-northeast-2.compute.amazonaws.com
+                        13.124.8.223
+        FTP S/W : FileZilla
+</pre>
 
-                    </pre>
-
-                    <pre> 학원 Development Environment(Server * Client, H/W * S/W)
-                        Processor : Intel Core™ i7
-                        RAM : 16GB
-                        TCP/IP Network : LocalHost(Identical port, Port forwarding)
-                        OS : MS Window 7
-                        IDE : IntelliJ, Eclipse Neon, NotePad++
-                        Client GUI Tool : HeidiSQL
-                        Test Browser : Chrome, FireFox
-                    </pre>
+<pre>
+    학원(부) Development Environment(Server * Client, H/W * S/W)
+        Processor : Intel Core™ i7
+        RAM : 16GB
+        TCP/IP Network : LocalHost(Identical port, Port forwarding)
+        OS : MS Window 7
+        IDE : IntelliJ, Eclipse Neon, NotePad++
+        Client GUI Tool : HeidiSQL
+        Test Browser : Chrome, FireFox
+</pre>
 
                     <p>질문이 있으시면 언제든지
                         <strong>KAKAO TALK : jingug1004</strong>에 연락하여 24 시간 이내에 연락 드리도록 최선을 다할 것입니다.
@@ -169,7 +216,7 @@
                             <a target="_blank" href="https://www.facebook.com/jingug1004?ref=hl">Facebook</a>
                         </li>
                         <li>Created on: 2013/02/05</li>
-                        <li>Latest Update on: 2017/03/10</li>
+                        <li>Latest Update on: 2017/03/10 ~</li>
                     </ul>
                 </div><!--/overview-->
 
@@ -177,59 +224,70 @@
                     <h2>Main Structure <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                     <hr>
                     <h3> Files Structure <span class="label label-dark">Updated v1.9.2</span></h3>
-                    <p>UNIFY comes with <strong>6 complete independent packages</strong>. In your download package,
-                        inside the HTML fodler you will find main <code>UNIFY Main (Default)</code> template and assets
-                        files, <code>E-commerce (Shop UI)</code> , <code>Blog &amp; Template</code>, <code>One
-                            Pages</code>, <code>Landing Pages</code>, and <code>Email Templates</code> packages. It also
-                        includes with PSD files. Please check <strong>README.txt</strong> file in the PSD folder to
-                        download the full version of available PSD files. The <strong>README.txt</strong> file includes
-                        the download link and password.</p><br>
-                    <h4><i class="fa fa-folder fa-2x color-blue"></i> DOWNLOAD PACKAGE</h4>
-                    <ul class="list-unstyled css-files">
-                        <li>----<i class="fa fa-folder"></i> <span>Documentation</span></li>
-                        <li>----<i class="fa fa-folder"></i> <span>PSD</span></li>
-                        <li>----<i class="fa fa-folder"></i> <span>HTML</span>
-                            <ul class="list-unstyled css-files css-v1">
-                                <li>----<i class="fa fa-folder"></i> <span>assets</span></li>
-                                <li>----<i class="fa fa-folder"></i> <span>E-Commerce</span></li>
-                                <li>----<i class="fa fa-folder"></i> <span>Blog-Magazine</span></li>
-                                <li>----<i class="fa fa-folder"></i>
-                                    <span>One-Pages</span>
-                                    <ul class="list-unstyled css-files css-v1">
-                                        <li>----<i class="fa fa-folder"></i> <span>assets</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Classic</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Agency</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>App</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Architecture</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Business</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Lawyer</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Shipping</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Spa</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Travel</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Wedding</span></li>
-                                        <li>----<i class="fa fa-folder"></i> <span>Courses</span></li>
-                                        <li>---- &nbsp;<code>..</code></li>
-                                        <li>---- &nbsp;<code>..</code></li>
-                                    </ul>
+                    <p>UNIFY에는 <strong>기본적인 스프링 MVC</strong>폴더 경로로 작성 되었습니다. (기본적인 스프링 MVC - STS Legacy Project, Spring MVC로 프로젝트 작성시 자동 빌드되는 폴더링 기준)
+                        <%--다운로드 패키지에서 HTML 포더 내부에는 기본--%>
+                        <%--<code>UNIFY Main (Default)</code> 템플리트 및 자산 파일, <code>E-commerce (Shop UI)</code> , <code>Blog--%>
+                            <%--&amp; Template</code>, <code>One--%>
+                            <%--Pages</code>, <code>Landing Pages</code> 및 <code>Email Templates</code> 패키지. 또한 PSD 파일도--%>
+                        <%--포함됩니다. --%>
+                        <%--사용 가능한 PSD 파일의 전체 버전을 다운로드하려면 PSD 폴더의 <strong>README.txt</strong> 파일을 확인하십시오. <strong>README.txt</strong>--%>
+                        <%--파일에는 다운로드 링크와 암호가 포함되어 있습니다.</p><br>--%>
 
-                                </li>
-                                <li>----<i class="fa fa-folder"></i> <span>Landing-Pages</span></li>
-                                <li>----<i class="fa fa-folder"></i> <span>Email-Templates</span></li>
-                                <li>---- &nbsp;<code>index.html</code></li>
-                                <li>---- &nbsp;<code>..</code></li>
-                                <li>---- &nbsp;<code>..</code></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <%--<h4><i class="fa fa-folder fa-2x color-blue"></i> DOWNLOAD PACKAGE</h4>--%>
+                    <%--<ul class="list-unstyled css-files">--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Documentation</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>PSD</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>HTML</span>--%>
+                            <%--<ul class="list-unstyled css-files css-v1">--%>
+                                <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
+                                <%--<li>----<i class="fa fa-folder"></i> <span>E-Commerce</span></li>--%>
+                                <%--<li>----<i class="fa fa-folder"></i> <span>Blog-Magazine</span></li>--%>
+                                <%--<li>----<i class="fa fa-folder"></i>--%>
+                                    <%--<span>One-Pages</span>--%>
+                                    <%--<ul class="list-unstyled css-files css-v1">--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Classic</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Agency</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>App</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Architecture</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Business</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Lawyer</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Shipping</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Spa</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Travel</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Wedding</span></li>--%>
+                                        <%--<li>----<i class="fa fa-folder"></i> <span>Courses</span></li>--%>
+                                        <%--<li>---- &nbsp;<code>..</code></li>--%>
+                                        <%--<li>---- &nbsp;<code>..</code></li>--%>
+                                    <%--</ul>--%>
+
+                                <%--</li>--%>
+                                <%--<li>----<i class="fa fa-folder"></i> <span>Landing-Pages</span></li>--%>
+                                <%--<li>----<i class="fa fa-folder"></i> <span>Email-Templates</span></li>--%>
+                                <%--<li>---- &nbsp;<code>index.html</code></li>--%>
+                                <%--<li>---- &nbsp;<code>..</code></li>--%>
+                                <%--<li>---- &nbsp;<code>..</code></li>--%>
+                            <%--</ul>--%>
+                        <%--</li>--%>
+                    <%--</ul>--%>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>
+                        <img class="img-responsive" src="/resources/docu/img/mainstructure02.png" alt=""/>
+                        <img class="img-responsive" src="/resources/docu/img/mainstructure03.png" alt=""/>
+                        <img class="img-responsive" src="/resources/docu/img/mainstructure04.png" alt=""/>
+                        <img class="img-responsive" src="/resources/docu/img/mainstructure05.png" alt=""/>
+                    </div>
 
                     <br>
 
-                    <p>Home pages in UNIFY Template consist of <code>header</code>, <code>slider</code>, <code>content
-                        part</code>, <code>footer</code> and <code>copyright</code> parts. However, inner pages include
-                        <code>breadcrumbs</code> instead of <code>slider</code>.</p>
+                    <p>UNIFY 홈페이지는 <code>header</code>, <code>slider</code>, <code>content
+                        part</code>, <code>footer</code> 및 <code>copyright</code> 부분으로 구성됩니다. 그러나 내부 페이지에는
+                        <code>slider</code> 대신 <code>breadcrumbs</code>가 포함됩니다.</p>
 
                     <div class="block-center margin-bottom-30">
-                        <img class="img-responsive" src="/resources/docu/img/unify.png" alt=""/>
+                        <%--<img class="img-responsive" src="/resources/docu/img/unify.png" alt=""/>--%>
+                        <img class="img-responsive" src="/resources/docu/img/mainstructure06.png" alt=""/>
                     </div>
 
                     <hr class="margin-bottom-30">
@@ -247,7 +305,7 @@
                     <h3 id="scroll_page_head">Page Head <span class="label label-dark">Updated v1.7</span></h3>
                     <p>페이지 헤드에는 메타 데이터, 파비콘, 제목, 웹 글꼴 및 CSS 링크가 포함됩니다.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;head&gt;
-    &lt;title&gt;UNIFY - Responsive Website Template&lt;/title&gt;
+    &lt;title&gt;UNIFY &lt;/title&gt;
 
     &lt;!-- Meta --&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -285,12 +343,12 @@
                     <!--Header-->
                     <h3>Wrapper <span class="label label-dark">Added v1.4</span></h3>
                     <p><code>.wrapper</code> 클래스가 모든 본문 내용을 래핑하기 위해 v1.4에 추가되었습니다. <strong>ALL</strong>
-                        주로 헤더, 슬라이더, 빵 부스러기, 내용 부분 등으로 구성됩니다.</p>
+                        주로 헤더, 슬라이더, breadcrumbs, 내용 부분 등으로 구성됩니다.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;div class=&quot;wrapper&quot;&gt;
     ...
     ...
 &lt;/div&gt;</code></pre>
-                    <p><span class="label label-blue">Note</span>아래 코드는 래퍼 내용 내에 중첩되어 있습니다.
+                    <p><span class="label label-blue">Note</span> 아래 코드는 래퍼 내용 내에 중첩되어 있습니다.
                         <code>header</code> 에서 시작하여 <code>copyright</code> 부분 다음에 끝납니다.</p><br>
 
 
@@ -376,6 +434,235 @@ jQuery(document).ready(function() {
 &lt;![endif]--&gt;</code></pre>
                 </div>
 
+                <div id="scroll_ssl">
+                    <h2>SSL & RSA <span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+                    <!-- Bootsrap  -->
+                    <h3>Bootstrap</h3>
+                    <p>버전 3.0부터 Bootstrap은 기본적으로 응답 성이 뛰어난 디자인을 강조하면서 모바일 첫 디자인 철학을 채택했습니다.</p>
+                    <h4>Bootstrap Translations</h4>
+                    <p> 부트 스트랩에 대해 더 자세히 알고 싶으시면 아래 링크를 클릭하십시오.</p>
+                    <ul>
+                        <li><a target="_blank" href="http://holdirbootstrap.de/" hreflang="de">Bootstrap auf Deutsch
+                            (German)</a></li>
+                        <li><a target="_blank" href="http://www.hackerstribe.com/guide/IT-bootstrap-3.1.1/"
+                               hreflang="it">Bootstrap in Italiano (Italian)</a></li>
+                        <li><a target="_blank" href="http://www.oneskyapp.com/docs/bootstrap/fr" hreflang="fr">Bootstrap
+                            en Français (French)</a></li>
+                        <li><a target="_blank" href="http://v3.bootcss.com/" hreflang="zh">Bootstrap 中文文档
+                            (Chinese)</a></li>
+                        <li><a target="_blank" href="http://bootstrapk.com/BS3/" hreflang="ko">Bootstrap 한국어
+                            (Korean)</a></li>
+                        <li><a target="_blank" href="http://www.oneskyapp.com/docs/bootstrap/ru" hreflang="ru">Bootstrap
+                            по-русски (Russian)</a></li>
+                        <li><a target="_blank" href="http://www.oneskyapp.com/docs/bootstrap/es" hreflang="es">Bootstrap
+                            en Español (Spanish)</a></li>
+                        <li><a target="_blank" href="http://twbs.site-konstruktor.com.ua" hreflang="uk">Bootstrap ua
+                            Українською (Ukrainian)</a></li>
+                    </ul>
+
+                    <h4>Supported Browsers</h4>
+                    <p>특히 부트 스트랩은 다음 브라우저와 플랫폼의 최신 버전을 지원합니다. Windows에서 부트 스트랩은 Internet Explorer 8-11을 지원합니다. 보다
+                        구체적인 지원 정보는 아래에 제공됩니다.</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <td></td>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Internet Explorer</th>
+                                <th>Opera</th>
+                                <th>Safari</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>Android</th>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-muted" rowspan="3" style="vertical-align: middle;">N/A</td>
+                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span
+                                        class="sr-only">Not Supported</span></td>
+                                <td class="text-muted">N/A</td>
+                            </tr>
+                            <tr>
+                                <th>iOS</th>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-muted">N/A</td>
+                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span
+                                        class="sr-only">Not Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                            </tr>
+                            <tr>
+                                <th>Mac OS X</th>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                            </tr>
+                            <tr>
+                                <th>Windows</th>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
+                                        class="sr-only">Supported</span></td>
+                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span
+                                        class="sr-only">Not Supported</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>공식적으로 지원되지는 않지만 비공식적으로 부트 스트랩은 Chromium 및 Linux 용 Chrome, Linux 용 Firefox 및 Internet Explorer
+                        7에서 제대로 작동하고 올바르게 작동해야합니다. 부트 스트랩이 해결해야하는 일부 브라우저 버그 목록은 부트 스트랩 <a
+                                target="_blank" href="http://getbootstrap.com/browser-bugs/">을 참조하십시오.</a></p>
+                    <h4>Internet Explorer 8 and 9</h4>
+                    <p>Internet Explorer 8 및 9도 지원되지만 일부 CSS3 속성과 HTML5 요소는이 브라우저에서 완전히 지원되지 않습니다. 또한 Internet
+                        Explorer 8에서는 미디어 쿼리 지원을 활성화하기 위해 <a target="_blank"
+                                                             href="https://github.com/scottjehl/Respond">Respond.js </a>
+                        를 사용해야합니다.</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="col-xs-4">Feature</th>
+                                <th scope="col" class="col-xs-4">Internet Explorer 8</th>
+                                <th scope="col" class="col-xs-4">Internet Explorer 9</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row"><code>border-radius</code></th>
+                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not
+                                    supported
+                                </td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>box-shadow</code></th>
+                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not
+                                    supported
+                                </td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>transform</code></th>
+                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not
+                                    supported
+                                </td>
+                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported,
+                                    with <code>-ms</code> prefix
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>transition</code></th>
+                                <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span>
+                                    Not supported
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>placeholder</code></th>
+                                <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span>
+                                    Not supported
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>CSS3 및 HTML5 기능의 브라우저 지원에 대한 자세한 내용은 <a target="_blank" href="http://caniuse.com/">사용법</a>을
+                        참조하십시오.</p>
+
+                    <h4>Internet Explorer 8 and Respond.js</h4>
+                    <p>Internet Explorer 8의 개발 환경 및 프로덕션 환경에서 Respond.js를 사용할 때는 다음주의 사항을주의하십시오.</p>
+                    <h5><strong>Respond.js and cross-domain CSS</strong></h5>
+                    <p>다른 하위 도메인 (예 : CDN)에서 호스팅되는 CSS와 함께 Respond.js를 사용하려면 몇 가지 추가 설정이 필요합니다. 자세한 내용은 <a
+                            target="_blank"
+                            href="https://github.com/scottjehl/Respond/blob/master/README.md#cdnx-domain-setup">See
+                        the Respond.js docs </a>문서를 참조하십시오.</p>
+                    <h5><strong>Respond.js and <code>file://</code></strong></h5>
+                    <p>브라우저 보안 규칙으로 인해 Respond.js는 file : // 프로토콜을 통해 (로컬 HTML 파일을 열 때와 마찬가지로) 볼 수 있는 페이지에서는 작동하지
+                        않습니다. IE8에서 반응 형 기능을 테스트하려면 HTTP (S)를 통해 페이지를보십시오. 자세한 내용은 <a target="_blank"
+                                                                                      href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See
+                            the Respond.js docs </a>문서를 참조하십시오.</p>
+                    <h5><strong>Respond.js and <code>@import</code></strong></h5>
+                    <p>Respond.js는 @import를 통해 참조 된 CSS에서 작동하지 않습니다. 특히, 일부 드루팔 구성은 @import를 사용하는 것으로 알려져 있습니다. 자세한
+                        내용은 <a target="_blank"
+                               href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Respond.js
+                            docs</a> 문서를 참조하십시오.</p>
+                    <h4>Internet Explorer 8 and box-sizing</h4>
+                    <p>IE8은 <code>box-sizing: border-box;</code>를 완전히 지원하지 않습니다. <code>min-width</code>,
+                        <code>max-width</code>, <code>min-height</code>, 또는 <code>max-height</code>와 결합 된 경우 이러한 이유
+                        때문에 v3.0.1부터 <code>max-width</code>에 <code>.container</code>를 더 이상 사용하지 않습니다.
+                    </p>
+                    <h4>Internet Explorer 8 and @font-face</h4>
+                    <p>
+                    <p>IE8은 <code>:before</code>와 결합 할 때 <code>@font-face</code> 에 몇 가지 문제가 있습니다. 부트 스트랩은 Glyphicon과
+                        그 조합을 사용합니다. 페이지가 캐싱되어 마우스없이 창 위에로드 된 경우 (즉, 새로 고침 버튼을 누르거나 iframe에서 무언가를로드하면) 글꼴로드 전에 페이지가
+                        렌더링됩니다. 페이지 (본체) 위로 마우스를 가져 가면 아이콘 중 일부가 표시되고 나머지 아이콘 위로 마우스를 올리면 해당 아이콘이 표시됩니다. 자세한 내용은 <a
+                                target="_blank" href="https://github.com/twbs/bootstrap/issues/13863">See issue
+                            #13863</a></p></p>
+                    <!-- End Bootsrap -->
+
+                    <hr>
+
+                    <!-- Sublime text editor  -->
+                    <h3>IntelliJ IDE</h3>
+                    <p>저는 코딩을 위해 "IntelliJ"를 사용합니다. Sublime 텍스트 편집기를 사용 하시려면 여기를 클릭하십시오. <a
+                            target="_blank" href="http://www.jetbrains.com ">click here "IntelliJ IDE"</a>
+                        를 클릭하시면 더 자세한 정보를 얻을 수 있습니다.</p><br>
+                    <!-- End Sublime text editor -->
+                    <%--</div>--%>
+
+                    <!-- Documentation -->
+                    <%--<div id="scroll_end">--%>
+                    <h2>End of Documentation <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
+                    <hr>
+                    <p>다시 한번 제 포트폴리오를 지금까지 봐주셔서 감사합니다.</p>
+                    <p>언제나 행복합시다 <i class="fa fa-heart color-red"></i> <strong> 김진국^^ </strong></p>
+                </div><!--/end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <div class="clearfix margin-bottom-50"></div>
 
@@ -384,23 +671,23 @@ jQuery(document).ready(function() {
                     <hr>
                     <p>기타 페이지는 의도적으로 페이지의 주요 부분만으로 만들어 졌으므로 개발자가 직접 내용을 직접 추가 할 수 있습니다.
                         다음 페이지를 사용하여 새 프로젝트를 시작하십시오.</p>
-                    <ol>
-                        <li><code>page_misc_blank.html</code>&nbsp;&nbsp; 이미 연결된 모든 주요 구성 요소가있는 빈 페이지가 비어 있습니다.
-                        </li>
-                        <li><code>page_misc_boxed.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>
-                        <li><code>page_misc_boxed_img.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>
-                        <li><code>page_misc_boxed_fixed_header.html</code>&nbsp;&nbsp; 템플릿의 박스형 레이아웃의 고정 헤더
-                        </li>
-                        <li><code>page_misc_fixed_header.html</code>&nbsp;&nbsp; 통합 템플릿의 고정 헤더</li>
-                        <li><code>page_misc_dark.html</code>&nbsp;&nbsp; Unify 템플릿의 어두운 버전
-                        </li>
-                        <li><code>page_misc_dark_boxed.html</code>&nbsp;&nbsp; 통일 템플릿의 박스형 레이아웃의 어두운 버전
-                        </li>
-                        <li><code>page_misc_dark_other_color.html</code>&nbsp;&nbsp; Unify Template의 다른 테마 색이있는 어두운 버전
-                        </li>
-                        <li><code>page_misc_sticky_footer.html.html</code>&nbsp;&nbsp; 저작권 섹션이있는 끈적한 바닥 글
-                        </li>
-                    </ol>
+                    <%--<ol>--%>
+                        <%--<li><code>page_misc_blank.html</code>&nbsp;&nbsp; 이미 연결된 모든 주요 구성 요소가있는 빈 페이지가 비어 있습니다.--%>
+                        <%--</li>--%>
+                        <%--<li><code>page_misc_boxed.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>--%>
+                        <%--<li><code>page_misc_boxed_img.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>--%>
+                        <%--<li><code>page_misc_boxed_fixed_header.html</code>&nbsp;&nbsp; 템플릿의 박스형 레이아웃의 고정 헤더--%>
+                        <%--</li>--%>
+                        <%--<li><code>page_misc_fixed_header.html</code>&nbsp;&nbsp; 통합 템플릿의 고정 헤더</li>--%>
+                        <%--<li><code>page_misc_dark.html</code>&nbsp;&nbsp; Unify의 어두운 버전--%>
+                        <%--</li>--%>
+                        <%--<li><code>page_misc_dark_boxed.html</code>&nbsp;&nbsp; 통일 템플릿의 박스형 레이아웃의 어두운 버전--%>
+                        <%--</li>--%>
+                        <%--<li><code>page_misc_dark_other_color.html</code>&nbsp;&nbsp; Unify Template의 다른 테마 색이있는 어두운 버전--%>
+                        <%--</li>--%>
+                        <%--<li><code>page_misc_sticky_footer.html.html</code>&nbsp;&nbsp; 저작권 섹션이 있는 바닥 글--%>
+                        <%--</li>--%>
+                    <%--</ol>--%>
                 </div>
 
                 <!-- Header and Footer -->
@@ -408,14 +695,14 @@ jQuery(document).ready(function() {
                     <h2>Headers &amp; Footers <span class="label label-dark">Updated v1.9</span><a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <hr>
-                    <p class="lead">통합 템플릿에는 8 개의 머리글 및 바닥 글 대안이 포함되어 있습니다.</p>
+                    <p class="lead">UNIFY에는 Header, Footer가 있습니다.</p>
 
                     <h3 id="scroll_headerDemos">Headers <span class="label label-dark">Updated v1.9</span></h3>
 
                     <h4>머리글을 상단에 고정 시키십시오.</h4>
-                    <p>Where <code>x</code>&nbsp; =&nbsp;<code> v1, v2, v3, v5, v6</code> or nothing for the default
+                    <p><%--Where <code>x</code>&nbsp; =&nbsp;<code> v1, v2, v3, v5, v6</code> or nothing for the default
                         header. Any header option can be used as fixed (sticky) header except for <code>v4</code> and
-                        <code>v7</code>. 다른 메모에서 머리글 한 페이지는 한 <code>One Page</code> 서식 파일 용으로 만 설계되었으며
+                        <code>v7</code>.--%> 다른 메모에서 머리글 한 페이지는 한 <code>One Page</code> 서식 파일 용으로만 설계되었으며
                         다른 통합 페이지에서는 사용할 수 없습니다. 머리글 옵션을 사용하는 방법에 대한 자세한 내용은 아래 <strong>"Header Options"</strong> 섹션을
                         참조하십시오.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;body class=&quot;header-fixed&quot;&gt;
@@ -435,58 +722,58 @@ jQuery(document).ready(function() {
                     <p>자세한 내용을 보려면 아래 링크를 클릭하십시오.</p>
                     <div class="panel-group acc-v1" id="accordion-header">
 
-                        <%--<div class="panel panel-default">--%>
-                        <%--<div class="panel-heading">--%>
-                        <%--<h4 class="panel-title">--%>
-                        <%--<a data-toggle="collapse" data-parent="#accordion-header" href="#header">--%>
-                        <%--Header "Default"--%>
-                        <%--</a>--%>
-                        <%--</h4>--%>
-                        <%--</div>--%>
-                        <%--<div id="header" class="panel-collapse collapse">--%>
-                        <%--<div class="panel-body">--%>
-                        <%--<div class="block-center"><img--%>
-                        <%--class="img-responsive header-img-bordered padding-top-10"--%>
-                        <%--src="/resources/docu/img/header-default.jpg" alt="Default Header"></div>--%>
-                        <%--<div class="clearfix margin-bottom-40"></div>--%>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header">
+                                        Header "Default"
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="header" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="block-center"><img
+                                            class="img-responsive header-img-bordered padding-top-10"
+                                            src="/resources/docu/img/header01.png" alt="Default Header"></div>
+                                    <div class="clearfix margin-bottom-40"></div>
 
-                        <%--<pre class="line-numbers"><code class="language-php">&lt;!--=== Header ===--&gt;--%>
-                        <%--&lt;div class="header"&gt;--%>
-                        <%--&lt;div class="container"&gt;--%>
-                        <%--&lt;!-- Logo --&gt;--%>
-                        <%--&lt;a class="logo" href="index.html"&gt;--%>
-                        <%--&lt;img src="assets/img/logo1-default.png" alt="Logo"&gt;--%>
-                        <%--&lt;/a&gt;--%>
-                        <%--&lt;!--  End Logo --&gt;--%>
+                                    <pre class="line-numbers"><code class="language-php">&lt;!--=== Header ===--&gt;
+                        &lt;div class="header"&gt;
+                        &lt;div class="container"&gt;
+                        &lt;!-- Logo --&gt;
+                        &lt;a class="logo" href="index.html"&gt;
+                        &lt;img src="assets/img/logo1-default.png" alt="Logo"&gt;
+                        &lt;/a&gt;
+                        &lt;!--  End Logo --&gt;
 
-                        <%--&lt;!-- Topbar --&gt;--%>
-                        <%--&lt;div class="topbar"&gt;--%>
-                        <%--...--%>
-                        <%--...--%>
-                        <%--&lt;/div&gt;--%>
-                        <%--&lt;!--  End Topbar --&gt;--%>
+                        &lt;!-- Topbar --&gt;
+                        &lt;div class="topbar"&gt;
+                        ...
+                        ...
+                        &lt;/div&gt;
+                        &lt;!--  End Topbar --&gt;
 
-                        <%--&lt;!-- Toggle get grouped for better mobile display --&gt;--%>
-                        <%--&lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"&gt;--%>
-                        <%--...--%>
-                        <%--...--%>
-                        <%--&lt;/button&gt;&lt;!-- /end container --&gt;--%>
-                        <%--&lt;!--  End Toggle --&gt;--%>
-                        <%--&lt;/div&gt;--%>
+                        &lt;!-- Toggle get grouped for better mobile display --&gt;
+                        &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"&gt;
+                        ...
+                        ...
+                        &lt;/button&gt;&lt;!-- /end container --&gt;
+                        &lt;!--  End Toggle --&gt;
+                        &lt;/div&gt;
 
-                        <%--&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;--%>
-                        <%--&lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;--%>
-                        <%--...--%>
-                        <%--...--%>
-                        <%--&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;--%>
-                        <%--&lt;/div&gt;--%>
-                        <%--&lt;!--=== End Header ===--&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
-                        <%--<small><code>feature_header_Default.html</code></small>--%>
-                        <%--</p>--%>
-                        <%--</div>--%>
-                        <%--</div>--%>
-                        <%--</div>--%>
+                        &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+                        &lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;
+                        ...
+                        ...
+                        &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
+                        &lt;/div&gt;
+                        &lt;!--=== End Header ===--&gt;</code></pre>
+                                    <p><span class="label label-info">Info</span> 예시:
+                                        <small><code>header.jsp</code></small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
                         <%--<div class="panel panel-default">--%>
                         <%--<div class="panel-heading">--%>
@@ -531,7 +818,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v1 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v1.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -583,7 +870,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v2 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v2.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -627,7 +914,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v3 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v3.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -681,7 +968,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v4 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v4.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -733,7 +1020,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v5 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v5.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -776,7 +1063,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_transparent.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -810,7 +1097,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_semi_dark_transparent.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -844,7 +1131,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_semi_white_transparent.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -878,7 +1165,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_border_bottom.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -912,7 +1199,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_classic_dark.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -946,7 +1233,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_classic_white.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -980,7 +1267,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_dark_dropdown.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1014,7 +1301,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_dark_scroll.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1048,7 +1335,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_dark_search.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1083,7 +1370,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header 6 --&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v6_dark_res_nav.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1124,7 +1411,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/nav&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v7 Left--&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>page_home12.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1164,7 +1451,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/nav&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v7 Right--&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>page_home13.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1214,7 +1501,7 @@ jQuery(document).ready(function() {
                         <%--&lt;!-- End Navbar --&gt;--%>
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!-- End Header v8--&gt;</code></pre>--%>
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_header_v8.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1242,7 +1529,7 @@ jQuery(document).ready(function() {
                             <div id="footer" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <div class="block-center"><img class="img-responsive"
-                                                                   src="/resources/docu/img/footer_default.jpg"
+                                                                   src="/resources/docu/img/footer01.png"
                                                                    alt="Default Footer"></div>
                                     <div class="clearfix margin-bottom-20"></div>
 
@@ -1264,8 +1551,8 @@ jQuery(document).ready(function() {
 &lt;/div&gt;
 &lt;!--=== End Default Footer ===--&gt;</code></pre>
 
-                                    <p><span class="label label-info">Info</span> Example Page:
-                                        <small><code>feature_footer_default.htm.html</code></small>
+                                    <p><span class="label label-info">Info</span> 예시:
+                                        <small><code>footer.jsp</code></small>
                                     </p>
                                 </div>
                             </div>
@@ -1303,7 +1590,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!--=== End Footer Version 1 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v1.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1341,7 +1628,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!--=== End Footer Version 2 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v2.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1380,7 +1667,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!--=== End Footer Version 3 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v3.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1418,7 +1705,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!--=== End Footer Version 4 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v4.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1456,7 +1743,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!--=== End Footer Version 5 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v5.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1494,7 +1781,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/div&gt;--%>
                         <%--&lt;!--=== End Footer Version 6 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v6.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1535,7 +1822,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/section&gt;--%>
                         <%--&lt;!--=== End Footer Version 7 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v7.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1591,7 +1878,7 @@ jQuery(document).ready(function() {
                         <%--&lt;/footer&gt;--%>
                         <%--&lt;!--=== End Footer v8 ===--&gt;</code></pre>--%>
 
-                        <%--<p><span class="label label-info">Info</span> Example Page:--%>
+                        <%--<p><span class="label label-info">Info</span> 예시:--%>
                         <%--<small><code>feature_footer_v8.html</code></small>--%>
                         <%--</p>--%>
                         <%--</div>--%>
@@ -1608,7 +1895,7 @@ jQuery(document).ready(function() {
 
                         <hr>
 
-                        <p>Unify Template에는 미리 정의 된 12 가지 테마 색상이 있습니다. 모든 테마 CSS 파일은
+                        <p>Unify에는 미리 정의 된 12 가지 색상을 사용하였습니다. 모든 테마 CSS 파일은
                             <code>assets/css/theme-colors/..</code>에 있습니다.
                         </p>
 
@@ -1678,16 +1965,16 @@ jQuery(document).ready(function() {
                         <p>테마 색상을 변경하려면 <code>assets/css/theme-colors/<strong>default.css</strong></code>
                             를 <code>assets/css/theme-colors/<strong>your_theme.css</strong></code>로
                             바꾸거나 준비된 테마 CSS 파일 <code>blue.css</code>, <code>red.css</code>, <code>orange.css</code>
-                            등. <strong>your_theme.css</strong>대신입니다.
+                            등 <strong>your_theme.css</strong>을 대신 적용합니다.
                         <p>
                         <pre class="line-numbers"><code class="language-markup">&lt;head&gt;
-    &lt;title&gt;Unify - Responsive Website Template&lt;/title&gt;
+    &lt;title&gt;Unify &lt;/title&gt;
 
     &lt;!-- CSS Theme --&gt;
     <span class="tag-cover">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/theme-colors/default.css&quot; /&gt;</span>
 &lt;/head&gt;</code></pre>
 
-                        <p class="theme-info"><span class="label label-info">Info</span><strong>default
+                        <p class="theme-info"><span class="label label-info">Info</span><strong> default
                             theme</strong>을 사용하려면
                             <code>assets/css/theme-colors/default.css</code>를 연결할 필요가 없습니다.이 줄을 HTML 헤드에서 제거하면됩니다. 이미
                             <code>style.css</code>, <code>app.css</code>등과 같은 기본 CSS 파일에 포함되어 있습니다.
@@ -1715,11 +2002,11 @@ jQuery(document).ready(function() {
                         <div class="clearfix margin-bottom-60"></div>
 
                         <h3>Dark Layout</h3>
-                        <p>Here are two easy steps to implement the Dark Theme:</p>
-                        <p>1. Link <code>dark.css</code> inside <code>&lt;head&gt;</code> section.</p>
-                        <p>2. Add a <code>.dark</code> class to <code>&lt;body&gt;</code> tag.</p>
+                        <p>Dark Theme를 구현하는 두 가지 간단한 단계는 다음과 같습니다.</p>
+                        <p>1. <code>&lt;head&gt;</code> 섹션에 <code>dark.css</code>를 연결하십시오.</p>
+                        <p>2. <code>&lt;body&gt;</code> 태그에 <code>.dark</code>클래스를 추가하십시오.</p>
                         <pre class="line-numbers"><code class="language-php">&lt;head&gt;
-    &lt;title&gt;Unify - Responsive Website Template&lt;/title&gt;
+    &lt;title&gt;Unify &lt;/title&gt;
 
     &lt;!-- CSS Theme --&gt;
     <span class="tag-cover">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/theme-colors/dark.css&quot;&gt;</span>
@@ -1730,7 +2017,7 @@ jQuery(document).ready(function() {
     ....
     ....
 &lt;/body&gt;</code></pre>
-                        <p><span class="label label-info">Info</span> Example Page: <code>page_misc_dark.html</code></p>
+                        <p><span class="label label-info">Info</span> 예시: <code>page_misc_dark.html</code></p>
                     </div>
 
 
@@ -1755,7 +2042,7 @@ jQuery(document).ready(function() {
                     <h2>CSS (Cascading Style Sheets) <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                     <hr>
                     <h3>CSS Files Structure</h3>
-                    <p>Unify Template은 소규모 프로젝트부터 대규모 기업 프로젝트에 이르기까지 템플릿을 체계적으로 구성하여 사용하기 쉽도록 여러 CSS 파일을 사용합니다. 모든
+                    <p>Unify은 소규모 프로젝트부터 대규모 기업 프로젝트에 이르기까지 템플릿을 체계적으로 구성하여 사용하기 쉽도록 여러 CSS 파일을 사용합니다. 모든
                         <code>CSS</code>
                         파일은 논리적으로 구성됩니다. <code>CSS</code>파일을 알면 커스터마이징 프로세스가 훨씬 쉽고 훨씬 유연 해집니다. 또한 <code>app.css</code> 및
                         <code>blocks.css</code>CSS 파일은 모든 패키지에서 전역으로 사용되므로 모든 패키지에서 모든 Unify 기본 요소, 블록 등을 사용하는 것이 좋습니다.
@@ -1772,7 +2059,7 @@ jQuery(document).ready(function() {
                             일반적으로 한 프로젝트에 하나의 바닥 글이 사용되므로 별도의 폴더에 있습니다.
                         </li>
                         <li>----<i class="fa fa-folder"></i> <strong>theme-skins</strong> 여기에서 테마 스킨을 제어 할 수 있습니다.
-                            현재 Unify에는 Unify Template의 어두운 버전 인 테마 스킨이 하나만 있습니다.
+                            현재 Unify에는 Unify의 어두운 버전 인 테마 스킨이 하나만 있습니다.
                         </li>
                         <li>----<i class="fa fa-folder"></i> <strong>theme-colors:</strong> 여기에서 12 개의 테마 색을 모두 제어 할 수
                             있습니다. 색상 코드는 <a href="#scroll_theme">"Theme
@@ -2891,7 +3178,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-9" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Font Awesome은 크기, 색상, 그림자 및 기타 CSS 기능을 사용하여 수행 할 수있는 모든 작업을 즉시 사용자 지정할 수있는 확장
+                                        <p>Font Awesome은 크기, 색상, 그림자 및 기타 CSS 기능을 사용하여 수행 할 수 있는 모든 작업을 즉시 사용자 지정할 수 있는 확장
                                             가능한 벡터 아이콘을 제공합니다.</p>
 
                                         <div class="margin-bottom-20"></div>
@@ -3203,7 +3490,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-18" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>민감한 회전식 슬라이드 슬라이더를 만들 수있는 터치 가능한 jQuery 플러그인.</p>
+                                        <p>민감한 회전식 슬라이드 슬라이더를 만들 수 있는 터치 가능한 jQuery 플러그인.</p>
 
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-markup">&lt;link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css"&gt;</code></pre>
@@ -3254,7 +3541,7 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-19" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Slider Revolution은 이미지, 비디오 및 캡션을 단순하고 현대적이고 멋진 3D 전환과 함께 표시 할 수있는 기능을 제공하는
+                                        <p>Slider Revolution은 이미지, 비디오 및 캡션을 단순하고 현대적이고 멋진 3D 전환과 함께 표시 할 수 있는 기능을 제공하는
                                             완전히 개발 된 슬라이드 표시 시스템입니다. 이 플러그인에는 독특한 전환 효과, 이미지 프리 로더, 비디오 퍼가기, 사용자 상호 작용에서
                                             멈추는 자동 재생 및 자신 만의 효과를 만들기위한 다양한 설정 옵션이 있습니다. 모든 사용자 정의는 jQuery 옵션, HTML 5
                                             데이터 속성 및 CSS를 통해 처리 할 수 있습니다!</p>
@@ -3457,7 +3744,7 @@ var PageComingSoon = function () {
                                 </div>
                                 <div id="collapse-1" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p> 동적인 크기 조정이 가능한 슬라이드 쇼 가능 배경 이미지를 모든 페이지 또는 요소에 추가 할 수있는 간단한 jQuery
+                                        <p> 동적인 크기 조정이 가능한 슬라이드 쇼 가능 배경 이미지를 모든 페이지 또는 요소에 추가 할 수 있는 간단한 jQuery
                                             플러그인입니다.</p>
                                         <h4>CSS Installation</h4>
                                         <pre><code class="language-php">No CSS required</code></pre>
@@ -3585,7 +3872,7 @@ jQuery(document).ready(function () {
                         <h2>Fonts <span class="label label-dark">Updated v1.9</span><a href="#top">top <i
                                 class="fa fa-angle-up"></i></a></h2>
                         <hr>
-                        <p>Unify Template은 제목 및 Google 웹 글꼴의 일부 요소에 Open Sans 글꼴을 사용합니다.
+                        <p>Unify은 제목 및 Google 웹 글꼴의 일부 요소에 Open Sans 글꼴을 사용합니다.
                             <a target="_blank" href="https://www.google.com/fonts">Google
                                 Web Fonts</a>에서 600 개가 넘는 글꼴 중에서 선택할 수 있습니다. 글꼴은 <code>&lt;head&gt;</code>
                             섹션의 모든 HTML 파일에 연결됩니다.</p>
@@ -3663,14 +3950,14 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>OWL Carousel</td>
-                                <td class="hidden-sm">민감한 회전식 슬라이드 슬라이더를 만들 수있는 터치 가능한 jQuery 플러그인.
+                                <td class="hidden-sm">민감한 회전식 슬라이드 슬라이더를 만들 수 있는 터치 가능한 jQuery 플러그인.
                                 </td>
                                 <td><a target="_blank" href="http://owlgraphic.com/owlcarousel">http://owlgraphic.com/owlcarousel</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Backstretch</td>
-                                <td class="hidden-sm">동적인 크기가 조정 된 슬라이드 쇼 가능 배경 이미지를 페이지 나 요소에 추가 할 수있는 간단한 jQuery
+                                <td class="hidden-sm">동적인 크기가 조정 된 슬라이드 쇼 가능 배경 이미지를 페이지 나 요소에 추가 할 수 있는 간단한 jQuery
                                     플러그인입니다.
                                 </td>
                                 <td><a target="_blank" href="http://srobbin.com/jquery-plugins/backstretch">http://srobbin.com/jquery-plugins/backstretch</a>
@@ -3748,7 +4035,7 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Hover Effects</td>
-                                <td class="hidden-sm">링크, 버튼, 로고, SVG, 추천 이미지 등에 적용 할 수있는 CSS3 구동 호버 효과 모음입니다. 자신의 요소에
+                                <td class="hidden-sm">링크, 버튼, 로고, SVG, 추천 이미지 등에 적용 할 수 있는 CSS3 구동 호버 효과 모음입니다. 자신의 요소에
                                     쉽게 적용하거나, 수정하거나, 영감을 얻기 위해 사용하십시오. CSS, Sass 및 LESS로 제공됩니다.
                                 </td>
                                 <td><a target="_blank" href="http://ianlunn.github.io/Hover/">http://ianlunn.github.io/Hover/</a>
@@ -3793,7 +4080,7 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Modernizr</td>
-                                <td class="hidden-sm">그것은 초고속 테스트의 모음입니다. 또는 우리가 호출하기를 원하는대로 "탐지"합니다. 웹 페이지가로드 될 때 실행되며,
+                                <td class="hidden-sm">그것은 초고속 테스트의 모음입니다. 또는 제가 호출하기를 원하는대로 "탐지"합니다. 웹 페이지가로드 될 때 실행되며,
                                     그 결과를 사용하여 사용자에게 경험을 맞출 수 있습니다.
                                 </td>
                                 <td><a target="_blank" href="https://modernizr.com/">https://modernizr.com/</a></td>
@@ -3825,7 +4112,7 @@ jQuery(document).ready(function () {
                                 <td>Master Slider</td>
                                 <td class="hidden-sm">마스터 슬라이더는 최고급 부드러운 하드웨어 가속 전환 효과가있는 프리미엄 이미지 및 콘텐츠 슬라이더입니다. 이전에 경험
                                     해보지 못한 순수 스와이프 제스처로 터치 탐색을 지원합니다. 모든 주요 장치에서 완벽하게 작동하는 진정으로 반응적이고 장치 친화적 인 슬라이더입니다.
-                                    마스터 슬라이더는 레이어의 모든 HTML 내용 (텍스트, 이미지 등)을 추가 할 수있는 멋진 슬라이더입니다. 사용하기 쉽고 25 개 이상의 템플릿을
+                                    마스터 슬라이더는 레이어의 모든 HTML 내용 (텍스트, 이미지 등)을 추가 할 수 있는 멋진 슬라이더입니다. 사용하기 쉽고 25 개 이상의 템플릿을
                                     사용할 준비가되어 있습니다. 마스터 슬라이더의 모든 항목은 거의 최고, 핫스팟, 축소판, 다양한 효과, 비디오 지원 등에서 가장 완벽합니다.
                                 </td>
                                 <td><a target="_blank"
@@ -3835,7 +4122,7 @@ jQuery(document).ready(function () {
                             <tr>
                                 <td>Revolution Slider</td>
                                 <td class="hidden-sm"> Slider Revolution은 이미지, 비디오 및 캡션을 단순하고 현대적이고 멋진 3D 전환과 함께 표시 할
-                                    수있는
+                                    수 있는
                                     기능을 제공하는 완전히 개발 된 슬라이드 표시 시스템입니다. 이 플러그인에는 독특한 전환 효과, 이미지 프리 로더, 비디오 퍼가기, 사용자 상호
                                     작용에서 멈추는 자동 재생 및 자신 만의 효과를 만들기위한 다양한 설정 옵션이 있습니다. 모든 사용자 정의는 jQuery 옵션, HTML 5 데이터
                                     속성 및 CSS를 통해 처리 할 수 있습니다!
@@ -3890,84 +4177,85 @@ jQuery(document).ready(function () {
                         <ul class="list-unstyled margin-bottom-20">
                             <li>- Google Fonts: <a target="_blank" href="http://www.google.com/fonts">http://www.google.com/fonts</a>
                             </li>
-                            <li>- Photo by DAVID ILIFF. License: CC-BY-SA 3.0: <a href="http://bit.ly/ZhuJG1">http://bit.ly/ZhuJG1</a>
-                            </li>
-                            <li>- Showcase: <a target="_blank"
-                                               href="http://www.pixeden.com/psd-web-elements/responsive-showcase-psd">http://www.pixeden.com/psd-web-elements/responsive-showcase-psd</a>
-                            </li>
+                            <%--<li>- Photo by DAVID ILIFF. License: CC-BY-SA 3.0: <a href="http://bit.ly/ZhuJG1">http://bit.ly/ZhuJG1</a>--%>
+                            <%--</li>--%>
+                            <%--<li>- Showcase: <a target="_blank"--%>
+                            <%--href="http://www.pixeden.com/psd-web-elements/responsive-showcase-psd">http://www.pixeden.com/psd-web-elements/responsive-showcase-psd</a>--%>
+                            <%--</li>--%>
                             <li>- Blurred backgrounds: <a target="_blank"
                                                           href="http://www.cssauthor.com/10-beautiful-collection-of-blurred-backgrounds">http://www.cssauthor.com/10-beautiful-collection-of-blurred-backgrounds</a>
                             </li>
-                            <li>- <strong>Unsplash</strong> free hi-resolution photos: <a target="_blank"
-                                                                                          href="http://unsplash.com">http://unsplash.com</a>
+                            <li>- <strong>Unsplash</strong> 무료 고해상도 사진 <a target="_blank"
+                                                                          href="http://unsplash.com">http://unsplash.com</a>
                             </li>
-                            <li>- <strong>Picjumbo</strong> totally free photos for your commercial &amp; personal
-                                works: <a target="_blank" href="http://picjumbo.com">http://picjumbo.com</a></li>
-                            <li>- <strong>IM FREE</strong> A curated collection of free resources, all for commercial
-                                use.: <a target="_blank" href="http://imcreator.com/free">http://imcreator.com/free</a>
+                            <li>- <strong>Picjumbo</strong> 상업 및 개인 작품을위한 완전한 무료 사진 <a target="_blank"
+                                                                                       href="http://picjumbo.com">http://picjumbo.com</a>
+                            </li>
+                            <li>- <strong>IM FREE</strong> 상업적 용도로 사용되는 큐레이팅 된 무료 자료 모음 <a target="_blank"
+                                                                                           href="http://imcreator.com/free">http://imcreator.com/free</a>
                             </li>
                         </ul>
                         <div class="clearfix margin-bottom-10"></div>
 
                         <h3>Premium Image Credits</h3>
-                        <p>라이센싱 권한으로 인해 이미지는 데모 용도로만 데모 용으로 사용되며 다음 위치에서 구입할 수 있습니다.
+                        <p>라이센싱 권한으로 인해 이미지는 데모 용도로만 데모 용으로 사용되며 다음 위치에서 구입할 수 있습니다.<br/>
                             <a target="_blank" href="http://photodune.net?ref=htmlstream">wwww.photodune.net</a>, <a
                                     target="_blank" href="http://peopleimages.com">http://peopleimages.com</a> and <a
                                     target="_blank" href="http://deathtothestockphoto.com">http://deathtothestockphoto.com</a>
                         </p>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <ul class="list-unstyled">
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/little-girl-with-schoolbag/8968061?ref=htmlstream">
-                                        Demo-Image-1</a></li>
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/beautiful-woman-with-long-sexy-legs-dressed-elegant-posing-in-the-studio-full-body/8905143?ref=htmlstream">
-                                        Demo-Image-2</a></li>
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/beautiful-woman-with-long-sexy-legs-dressed-elegant-posing-in-the-studio-full-body/8905128?ref=htmlstream">
-                                        Demo-Image-3</a></li>
+                        <%--<div class="row">--%>
+                        <%--<div class="col-md-3">--%>
+                        <%--<ul class="list-unstyled">--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/little-girl-with-schoolbag/8968061?ref=htmlstream">--%>
+                        <%--Demo-Image-1</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/beautiful-woman-with-long-sexy-legs-dressed-elegant-posing-in-the-studio-full-body/8905143?ref=htmlstream">--%>
+                        <%--Demo-Image-2</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/beautiful-woman-with-long-sexy-legs-dressed-elegant-posing-in-the-studio-full-body/8905128?ref=htmlstream">--%>
+                        <%--Demo-Image-3</a></li>--%>
 
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <ul class="list-unstyled">
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/beautiful-woman-with-long-sexy-legs-dressed-elegant-posing-in-the-studio-full-body/8905133?ref=htmlstream">
-                                        Demo-Image-4</a></li>
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/pretty-woman-in-white-dress-isolated-studio-shot/3044372?ref=htmlstream">
-                                        Demo-Image-5</a></li>
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/fasionable-beautiful-woman-in-white-dress-standing/3092313?ref=htmlstream">
-                                        Demo-Image-6</a></li>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--<div class="col-md-3">--%>
+                        <%--<ul class="list-unstyled">--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/beautiful-woman-with-long-sexy-legs-dressed-elegant-posing-in-the-studio-full-body/8905133?ref=htmlstream">--%>
+                        <%--Demo-Image-4</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/pretty-woman-in-white-dress-isolated-studio-shot/3044372?ref=htmlstream">--%>
+                        <%--Demo-Image-5</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/fasionable-beautiful-woman-in-white-dress-standing/3092313?ref=htmlstream">--%>
+                        <%--Demo-Image-6</a></li>--%>
 
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <ul class="list-unstyled">
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/casual-male-fashion/4061088?ref=htmlstream">
-                                        Demo-Image-7</a></li>
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/male-model-against-white-background/4298787?ref=htmlstream">
-                                        Demo-Image-8</a></li>
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/smiling-portraits/4276142?ref=htmlstream">
-                                        Demo-Image-9</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <ul class="list-unstyled">
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/pretty-woman-wearing-short-jeans-and-summer-shirt-smiling/5310015?ref=htmlstream">
-                                        Demo-Image-10</a></li>
-                                    <li><a target="_blank"
-                                           href="http://photodune.net/item/handsome-male-fashion-model-smiling-dressed-casual-outdoor/2426017?ref=htmlstream">
-                                        Demo-Image-11</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--<div class="col-md-3">--%>
+                        <%--<ul class="list-unstyled">--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/casual-male-fashion/4061088?ref=htmlstream">--%>
+                        <%--Demo-Image-7</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/male-model-against-white-background/4298787?ref=htmlstream">--%>
+                        <%--Demo-Image-8</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/smiling-portraits/4276142?ref=htmlstream">--%>
+                        <%--Demo-Image-9</a></li>--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--<div class="col-md-3">--%>
+                        <%--<ul class="list-unstyled">--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/pretty-woman-wearing-short-jeans-and-summer-shirt-smiling/5310015?ref=htmlstream">--%>
+                        <%--Demo-Image-10</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                        <%--href="http://photodune.net/item/handsome-male-fashion-model-smiling-dressed-casual-outdoor/2426017?ref=htmlstream">--%>
+                        <%--Demo-Image-11</a></li>--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
                     </div>
                     <!-- End Credits -->
 
@@ -4965,9 +5253,8 @@ jQuery(document).ready(function () {
                             <li>Deleted tag <code>&lt;div id="body"&gt;</code> in all HTML files</li>
                             <li>Added favicon icon <code>&lt;link rel="shortcut icon" href="favicon.ico"&gt;</code></li>
                         </ul>
-                        <p><span class="label label-info">Info</span> We will improve Unify Documentation in the future
-                            updates with more detailed structures. Meanwhile, If you come across any problem during the
-                            upgrade please contact to our support at <a href="mailto:support@htmlstream.com">support@htmlstream.com</a>
+                        <p><span class="label label-info">Info</span>보다 자세한 구조로 향후 업데이트에서 Unify 문서를 향상시킬 것입니다. 업그레이드하는
+                            동안 문제가 발생하면 <a href="mailto:support@htmlstream.com">support@htmlstream.com</a>으로 문의하십시오.
                         </p>
                         <!-- End v1.2 Upgrade -->
                     </div>
@@ -4983,11 +5270,9 @@ jQuery(document).ready(function () {
                         <hr>
                         <!-- Bootsrap  -->
                         <h3>Bootstrap</h3>
-                        <p>Starting with version 3.0, Bootstrap adopted a mobile first design philosophy, emphasizing
-                            responsive design by default.</p>
+                        <p>버전 3.0부터 Bootstrap은 기본적으로 응답 성이 뛰어난 디자인을 강조하면서 모바일 첫 디자인 철학을 채택했습니다.</p>
                         <h4>Bootstrap Translations</h4>
-                        <p> If you like to learn more about Bootstrap in diffirent languages please click on eof the
-                            link below</p>
+                        <p> 부트 스트랩에 대해 더 자세히 알고 싶으시면 아래 링크를 클릭하십시오.</p>
                         <ul>
                             <li><a target="_blank" href="http://holdirbootstrap.de/" hreflang="de">Bootstrap auf Deutsch
                                 (German)</a></li>
@@ -5008,9 +5293,8 @@ jQuery(document).ready(function () {
                         </ul>
 
                         <h4>Supported Browsers</h4>
-                        <p>Specifically, Bootstrap supports the latest versions of the following browsers and platforms.
-                            On Windows, Bootstrap supports Internet Explorer 8-11. More specific support information is
-                            provided below.</p>
+                        <p>특히 부트 스트랩은 다음 브라우저와 플랫폼의 최신 버전을 지원합니다. Windows에서 부트 스트랩은 Internet Explorer 8-11을 지원합니다. 보다
+                            구체적인 지원 정보는 아래에 제공됩니다.</p>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
                                 <thead>
@@ -5072,17 +5356,14 @@ jQuery(document).ready(function () {
                                 </tbody>
                             </table>
                         </div>
-                        <p>Unofficially, Bootstrap should look and behave well enough in Chromium and Chrome for Linux,
-                            Firefox for Linux, and Internet Explorer 7, though they are not officially supported. For a
-                            list of some of the browser bugs that Bootstrap has to grapple with, see Bootstrap <a
-                                    target="_blank" href="http://getbootstrap.com/browser-bugs/">Wall of browser
-                                bugs.</a></p>
+                        <p>공식적으로 지원되지는 않지만 비공식적으로 부트 스트랩은 Chromium 및 Linux 용 Chrome, Linux 용 Firefox 및 Internet Explorer
+                            7에서 제대로 작동하고 올바르게 작동해야합니다. 부트 스트랩이 해결해야하는 일부 브라우저 버그 목록은 부트 스트랩 <a
+                                    target="_blank" href="http://getbootstrap.com/browser-bugs/">을 참조하십시오.</a></p>
                         <h4>Internet Explorer 8 and 9</h4>
-                        <p>Internet Explorer 8 and 9 are also supported, however, please be aware that some CSS3
-                            properties and HTML5 elements are not fully supported by these browsers. In addition,
-                            Internet Explorer 8 requires the use of <a target="_blank"
-                                                                       href="https://github.com/scottjehl/Respond">Respond.js </a>
-                            to enable media query support.</p>
+                        <p>Internet Explorer 8 및 9도 지원되지만 일부 CSS3 속성과 HTML5 요소는이 브라우저에서 완전히 지원되지 않습니다. 또한 Internet
+                            Explorer 8에서는 미디어 쿼리 지원을 활성화하기 위해 <a target="_blank"
+                                                                 href="https://github.com/scottjehl/Respond">Respond.js </a>
+                            를 사용해야합니다.</p>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
                                 <thead>
@@ -5131,32 +5412,30 @@ jQuery(document).ready(function () {
                                 </tbody>
                             </table>
                         </div>
-                        <p>Visit Can <a target="_blank" href="http://caniuse.com/">I use... </a>for details on browser
-                            support of CSS3 and HTML5 features.</p>
+                        <p>CSS3 및 HTML5 기능의 브라우저 지원에 대한 자세한 내용은 <a target="_blank" href="http://caniuse.com/">사용법</a>을
+                            참조하십시오.</p>
 
                         <h4>Internet Explorer 8 and Respond.js</h4>
-                        <p>Beware of the following caveats when using Respond.js in your development and production
-                            environments for Internet Explorer 8.</p>
+                        <p>Internet Explorer 8의 개발 환경 및 프로덕션 환경에서 Respond.js를 사용할 때는 다음주의 사항을주의하십시오.</p>
                         <h5><strong>Respond.js and cross-domain CSS</strong></h5>
-                        <p>Using Respond.js with CSS hosted on a different (sub)domain (for example, on a CDN) requires
-                            some additional setup. <a target="_blank"
-                                                      href="https://github.com/scottjehl/Respond/blob/master/README.md#cdnx-domain-setup">See
-                                the Respond.js docs </a>for details.</p>
+                        <p>다른 하위 도메인 (예 : CDN)에서 호스팅되는 CSS와 함께 Respond.js를 사용하려면 몇 가지 추가 설정이 필요합니다. 자세한 내용은 <a
+                                target="_blank"
+                                href="https://github.com/scottjehl/Respond/blob/master/README.md#cdnx-domain-setup">See
+                            the Respond.js docs </a>문서를 참조하십시오.</p>
                         <h5><strong>Respond.js and <code>file://</code></strong></h5>
-                        <p>Due to browser security rules, Respond.js doesn't work with pages viewed via the file://
-                            protocol (like when opening a local HTML file). To test responsive features in IE8, view
-                            your pages over HTTP(S). <a target="_blank"
-                                                        href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See
-                                the Respond.js docs </a>for details.</p>
+                        <p>브라우저 보안 규칙으로 인해 Respond.js는 file : // 프로토콜을 통해 (로컬 HTML 파일을 열 때와 마찬가지로) 볼 수 있는 페이지에서는 작동하지
+                            않습니다. IE8에서 반응 형 기능을 테스트하려면 HTTP (S)를 통해 페이지를보십시오. 자세한 내용은 <a target="_blank"
+                                                                                          href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See
+                                the Respond.js docs </a>문서를 참조하십시오.</p>
                         <h5><strong>Respond.js and <code>@import</code></strong></h5>
-                        <p>Respond.js doesn't work with CSS that's referenced via @import. In particular, some Drupal
-                            configurations are known to use @import. See the <a target="_blank"
-                                                                                href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Respond.js
-                                docs</a> for details.</p>
+                        <p>Respond.js는 @import를 통해 참조 된 CSS에서 작동하지 않습니다. 특히, 일부 드루팔 구성은 @import를 사용하는 것으로 알려져 있습니다. 자세한
+                            내용은 <a target="_blank"
+                                   href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Respond.js
+                                docs</a> 문서를 참조하십시오.</p>
                         <h4>Internet Explorer 8 and box-sizing</h4>
-                        <p>IE8 does not fully support <code>box-sizing: border-box;</code> when combined with <code>min-width</code>,
-                            <code>max-width</code>, <code>min-height</code>, or <code>max-height</code>. For that
-                            reason, as of v3.0.1, we no longer use <code>max-width</code> on <code>.container</code>s.
+                        <p>IE8은 <code>box-sizing: border-box;</code>를 완전히 지원하지 않습니다. <code>min-width</code>,
+                            <code>max-width</code>, <code>min-height</code>, 또는 <code>max-height</code>와 결합 된 경우 이러한 이유
+                            때문에 v3.0.1부터 <code>max-width</code>에 <code>.container</code>를 더 이상 사용하지 않습니다.
                         </p>
                         <h4>Internet Explorer 8 and @font-face</h4>
                         <p>
@@ -5171,18 +5450,18 @@ jQuery(document).ready(function () {
 
                         <!-- Sublime text editor  -->
                         <h3>IntelliJ IDE</h3>
-                        <p>우리는 코딩을 위해 "IntelliJ"를 사용합니다. Sublime 텍스트 편집기를 사용 하시려면 여기를 클릭하십시오. <a
+                        <p>저는 코딩을 위해 "IntelliJ"를 사용합니다. Sublime 텍스트 편집기를 사용 하시려면 여기를 클릭하십시오. <a
                                 target="_blank" href="http://www.jetbrains.com ">click here "IntelliJ IDE"</a>
                             를 클릭하시면 더 자세한 정보를 얻을 수 있습니다.</p><br>
                         <!-- End Sublime text editor -->
-                    </div>
+                    <%--</div>--%>
 
                     <!-- Documentation -->
-                    <div id="scroll_end">
+                    <%--<div id="scroll_end">--%>
                         <h2>End of Documentation <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                         <hr>
-                        <p>다시 한번 Unify Template을 구입해 주셔서 감사합니다.</p>
-                        <p>언제나 행복합시다<i class="fa fa-heart color-red"></i> <strong> 김진국^^ </strong></p>
+                        <p>다시 한번 제 포트폴리오를 지금까지 봐주셔서 감사합니다.</p>
+                        <p>언제나 행복합시다 <i class="fa fa-heart color-red"></i> <strong> 김진국^^ </strong></p>
                     </div><!--/end-->
                     <!-- End of Documentation -->
                 </div><!--/content-->
