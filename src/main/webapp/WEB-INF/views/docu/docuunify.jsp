@@ -103,7 +103,7 @@
 
                     <hr>
 
-                    <p>안녕하십니까, 먼저 제 포트폴리오에 손수 방문해 주셔서 감사드립니다!</p>
+                    <p>안녕하십니까, 먼저 제 <code>포트폴리오</code>에 손수 방문해 주셔서 감사드립니다!</p>
 
                     <p>제 포트폴리오가 기대에 부응할 것을 진심으로 바랍니다. 다큐멘테이션이지만 포트폴리오에 적용했던 기술들의 보고서 형식으로 나열합니다.</p>
 
@@ -118,7 +118,7 @@
 
                     <p>잘 아시다시피 MVW 프레임워크(AngularJS)라는 기술이 있는데 제가 풀어야 했던 문제는 기본에 충실한 기능 구현이 목표였으므로 Spring MVC 방식으로 구현 시도를
                         했습니다.
-                        그러면서 배운 거라면 위에 나열한 것들이며 마이바티스와 메이븐이 Spring MVC 프레임워크와 가장 최적화되어 좋은 결과를 만들었던 것 같고
+                        그러면서 배운 거라면 위에 나열한 것들이며 마이바티스와 메이븐이 <code>Spring MVC 프레임워크</code>와 가장 최적화되어 좋은 결과를 만들었던 것 같고
                         AWS는 개발서버와 실제로 운영하는 서버에서 Run 할 때 처음 접하는 버그들이 많이 발생하여 많은 괴리감과 간극을 느꼈습니다. 그래서 포트폴리오로 제출할
                         최소한의 문제들을 즉각 대처할 수 있게 서버 인스턴스를 Ubuntu에서 amazon Linux API로 변경하여 사용하고 있습니다.
                     </p>
@@ -215,7 +215,8 @@
                             <span>|</span>
                             <a target="_blank" href="https://twitter.com/jingug1004">Twitter</a>
                             <span>|</span>
-                            <a target="_blank" href="https://www.facebook.com/jingug1004?ref=hl">Facebook</a>
+                            <a class="color-dark-blue" target="_blank"
+                               href="https://www.facebook.com/jingug1004?ref=hl">Facebook</a>
                         </li>
                         <li>Created on: 2013/02/05</li>
                         <li>Latest Update on: 2017/03/10 ~</li>
@@ -226,8 +227,8 @@
                     <h2>Main Structure <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                     <hr>
                     <h3> Files Structure <span class="label label-dark">Updated v1.9.2</span></h3>
-                    <p>UNIFY에는 <strong>기본적인 스프링 MVC</strong>폴더 경로로 작성 되었습니다. (기본적인 스프링 MVC - STS Legacy Project, Spring
-                        MVC로 프로젝트 작성시 자동 빌드되는 폴더링 기준)
+                    <p>UNIFY에는 <strong>기본적인 스프링 MVC</strong>폴더 경로로 작성 되었습니다. (기본적인 스프링 MVC - STS, Legacy Project, Spring
+                        MVC로 프로젝트 작성시 자동 빌드되는 폴더링 기준)</p>
                         <%--다운로드 패키지에서 HTML 포더 내부에는 기본--%>
                         <%--<code>UNIFY Main (Default)</code> 템플리트 및 자산 파일, <code>E-commerce (Shop UI)</code> , <code>Blog--%>
                         <%--&amp; Template</code>, <code>One--%>
@@ -274,13 +275,45 @@
                         <%--</li>--%>
                         <%--</ul>--%>
 
-                    <div class="block-center margin-bottom-30">
-                        <img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>
-                        <img class="img-responsive" src="/resources/docu/img/mainstructure02.png" alt=""/>
-                        <img class="img-responsive" src="/resources/docu/img/mainstructure03.png" alt=""/>
-                        <img class="img-responsive" src="/resources/docu/img/mainstructure04.png" alt=""/>
-                        <img class="img-responsive" src="/resources/docu/img/mainstructure05.png" alt=""/>
+                    <p>자세한 내용을 보려면 아래 링크를 클릭하십시오.</p>
+                    <div class="panel-group acc-v1" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion-header" href="#header">
+                                        Project Folder, File Structure(path)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="header" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <%--<div class="block-center">--%>
+                                        <%--<img class="img-responsive header-img-bordered padding-top-10" src="/resources/docu/img/header01.png" alt="Default Header"></div>--%>
+                                    <%--<div class="clearfix margin-bottom-40"></div>--%>
+
+                                        <div class="block-center margin-bottom-30">
+                                            <img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>
+                                            <img class="img-responsive" src="/resources/docu/img/mainstructure02.png" alt=""/>
+                                            <img class="img-responsive" src="/resources/docu/img/mainstructure03.png" alt=""/>
+                                            <img class="img-responsive" src="/resources/docu/img/mainstructure04.png" alt=""/>
+                                            <img class="img-responsive" src="/resources/docu/img/mainstructure05.png" alt=""/>
+                                        </div>
+
+                                    <p><span class="label label-info">Info</span> 출처:
+                                        <small><code>IntelliJ Project Explorer</code></small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <%--<div class="block-center margin-bottom-30">--%>
+                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>--%>
+                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure02.png" alt=""/>--%>
+                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure03.png" alt=""/>--%>
+                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure04.png" alt=""/>--%>
+                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure05.png" alt=""/>--%>
+                    <%--</div>--%>
 
                     <br>
 
@@ -451,7 +484,8 @@ jQuery(document).ready(function() {
                     <p>스프링에서 중요한 보안 기능을 자체적으로 가지고 있는 Spring Security가 있습니다. 제가 도전하고 풀고 싶었던 이슈는 SSL 인증과 RSA 암호화 방식이었습니다.
                         그래서 RSA 방식으로 구현시도를 해봤습니다.</p>
 
-                    <p>그 와중에 리눅스 OS 운영체계와 여러 명령어들을 배우게 되었습니다. 리눅스의 기본적인 부분을 필요에 의해서 습득하게 되어 좋은 결과를 냈던 것에 만족합니다. 그리고 RSA의
+                    <p>그 와중에 <code>리눅스 OS 운영체계</code>와 여러 명령어들을 배우게 되었습니다. 리눅스의 기본적인 부분을 필요에 의해서 습득하게 되어 좋은 결과를 냈던 것에
+                        만족합니다. 그리고 RSA의
                         기능 구현에 여러 에로사항을 느껴 스프링 시큐리티 - 하이버네이트 프로퍼티로 대처를 하였습니다.</p>
 
                     <p>결론은 스프링 시큐리티로도 기능을 구현하지 못 하였습니다. 그 원인으로는 로그인 페이지와 회원가입 페이지의 비지니스 로직에 오류가 발생하는데 그 원인을 제대로 파악하지 못
@@ -521,7 +555,9 @@ jQuery(document).ready(function() {
 
                     <ul>
                         <li>프로젝트의 빌드가 정상적으로 되고 있는지 체크할 때</li>
-                        <li>자동으로 유닛 테스트와 통합 테스트 (Integration Test)들의 정기적인 실행. 만약 테스트 결과에 문제가 있을 때 이메일을 통해 리포트</li>
+                        <li>자동으로 유닛 테스트와 <code>통합 테스트 (Integration Test)</code>들의 정기적인 실행. 만약 테스트 결과에 문제가 있을 때 이메일을 통해
+                            리포트
+                        </li>
                         <li>PMD 같은 코드의 질을 확인할 수 있는 모니터링 시스템과의 연동으로 코드의 질을 조절</li>
                     </ul>
 
@@ -545,7 +581,8 @@ jQuery(document).ready(function() {
                         팀 멤버들로부터 Submit된 소스코드들을 정기적으로 통합하는 것으로서 큰 효과를 누릴 수 있을 것입니다.</p>
 
                     <p>Jenkins 서버는 현재 진행 중인 프로젝트가 정상적으로 빌드가 되고 있는지를 정기적으로 체크해서 결과를 팀원들한테 알려주고 문제가 발생했을 때 조기에 알려줄 수 있게
-                        해줌으로써 여러 팀 멤버들이 큰 문제없이 각자의 맡은 부분만을 작업할 수 있도록 도와줍니다. 또한 프로젝트 빌드시 자동으로 유닛 테스트와 통합 테스트를 실행해줘서 잘 못된
+                        해줌으로써 여러 팀 멤버들이 큰 문제없이 각자의 맡은 부분만을 작업할 수 있도록 도와줍니다. 또한 프로젝트 빌드시 자동으로 <code>유닛 테스트</code>와 <code>통합
+                            테스트</code>를 실행해줘서 잘 못된
                         점이 있으면 알려주고 또한 현재 얼마만큼의 소스코드를 유닛 테스트가 커버하고 있는지 및 어떤 부분에 문제가 있을 수 있는지 등의 정보도 SonarQube와 같이 연동시
                         모니터링 할 수 있도록 도와줍니다.
                     </p>
@@ -575,6 +612,7 @@ jQuery(document).ready(function() {
                             <li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>
                         </ul>
                         <li>Jenkins 보안을 더욱 강화해야 한다.</li>
+                        <li>IntelliJ 자체적으로 Jenkins Plug-In을 설치하여 바로 접근할 수 있는 방법과 권한을 획득하도록 한다.</li>
                     </ul>
 
                 </div><!--/end-->
@@ -590,10 +628,11 @@ jQuery(document).ready(function() {
                     <!-- Bootsrap  -->
                     <h3>amazon Web Service</h3>
 
-                    <p>amazon Web Service(이하:AWS)는 안전한 클라우드 서비스 플랫폼으로서, 컴퓨팅 파워, 데이터베이스 스토리지, 콘텐츠 전송 및 기타 기능을 제공하여 기업이
+                    <p>amazon Web Service(이하:AWS)는 안전한 <code>클라우드 서비스 플랫폼</code>으로서, 컴퓨팅 파워, 데이터베이스 스토리지, 콘텐츠 전송 및 기타
+                        기능을 제공하여 기업이
                         확장하고 성장하도록 지원합니다. 무엇보다 1개의 인스턴스에 대하여 1년간 무료로 사용할 수 있다는 점에 대하여 선택을 하게 되었습니다.</p>
 
-                    <p>okky.kr에서 신입 포트폴리오로 1년간 무료니깐 AWS에서 호스팅 하는 기능도 넣으면 장점이 된다는 기사를 본적이 있어서 기능을 구현하게 되었습니다.</p>
+                    <p>okky.kr에서 신입 포트폴리오로 1년간 무료로 AWS에서 호스팅 하는 기능도 넣으면 강점이 된다는 기사를 본적이 있어서 기능을 구현하게 되었습니다.</p>
 
                     <h4>Effect of Use</h4>
 
@@ -623,7 +662,8 @@ jQuery(document).ready(function() {
                         1개의 SSH / RSA 방식의 보안키(1 Key Pairs)를 부여받고 저장하고 있습니다. 그 모든 Resources들은 Security Groups에 저장 및 관리하고
                         있습니다.</p>
 
-                    <p>구현 와중에 LINUX 운영체계와 명령어를 숙지할 수 있었고 여러 각도로 AWS를 확장하여 사용하면 무궁무진한 서비스를 제공할 수 있을 것으로 판단 되었습니다.</p>
+                    <p>구현 와중에 <code>Linux 운영체계</code>와 명령어를 숙지할 수 있었고 여러 각도로 AWS를 확장하여 사용하면 무궁무진한 서비스를 제공할 수 있을 것으로 판단
+                        되었습니다.</p>
 
                     <p>한국 대표 포털사이트 중의 하나인 Daum도 AWS를 사용하고 있다고 합니다.</p>
 
@@ -665,7 +705,7 @@ jQuery(document).ready(function() {
                     </div>
                     <ul>
                         <li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>
-                        <li>스택 트레이스 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>
+                        <li><code>스택 트레이스</code> 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>
                     </ul>
 
                     <h4>Improvement Point</h4>
@@ -681,6 +721,7 @@ jQuery(document).ready(function() {
                         </ul>
                         <li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>
                         <li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>
+                        <li>IntelliJ 자체적으로 AWS Plug-In을 설치하여 바로 접근할 수 있는 방법과 권한을 획득하도록 한다.</li>
                     </ul>
 
                 </div><!--/end-->
@@ -699,48 +740,46 @@ jQuery(document).ready(function() {
                     <p>VCS는 GitHub만 사용하였습니다. 다른 VCS 중에 하나인 SVN이 있는데 차후 사용하여 GitHub의 장단점을 비교할 수 있는 시간을 가져야 할 것 입니다.</p>
 
                     <p>제 GitHub 주소는 <a target="_blank" href="https://gist.github.com/jingug1004">https://gist.github.com/jingug1004</a>이며
-                        학원 교육기간 중 첫번째 Mini-Project로 비디오 대여 시스템과 두번째 Semi-Project인 JSP로 커뮤니티 구현한 소스를 Repo에 Push 해놨습니다.</p>
+                        학원 교육기간 중 첫번째 Mini-Project로 비디오 대여 시스템과 두번째 Semi-Project인 JSP로 커뮤니티 구현한 소스를 Repo에 Push 해놨습니다.
+                    </p>
 
                     <h4>Effect of Use</h4>
 
-                    <p>분산 버전 관리 툴을 사용하여 협업하는 프로젝트를 수행해야 하는 이유는 절대적입니다.</p>
+                    <p>잘 아시다시피 <code>분산 버전 관리 툴</code>을 사용하여 협업하는 프로젝트를 수행해야 하는 이유는 절대적입니다.</p>
 
                     <%--<ul>--%>
-                        <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
-                        <%--<li><a target="_blank"--%>
-                               <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
-                        <%--</li>--%>
-                        <%--<li><a target="_blank"--%>
-                               <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
-                        <%--</li>--%>
-                        <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
-                        <%--</li>--%>
-                        <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+                    <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
 
                     <%--</ul>--%>
 
                     <div class="block-center margin-bottom-30">
-                        <img class="img-responsive" src="/resources/docu/img/rds01.png" alt=""/><br/>
-                        <img class="img-responsive" src="/resources/docu/img/rds02.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/github01.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/github02.png" alt=""/><br/>
                     </div>
 
-                    <p>총 1개의 인스턴스(1 Running Instances : 무료)와 1개의 IP를 할당 받아 고정시키고(1 Elastic IPs), 1개의 웹 서버(Volumes :
-                        Amazone LINUX API, RDS : MariaDB)의 볼륨을 가지고
-                        1개의 SSH / RSA 방식의 보안키(1 Key Pairs)를 부여받고 저장하고 있습니다. 그 모든 Resources들은 Security Groups에 저장 및 관리하고
-                        있습니다.</p>
+                    <p>버전이 변경될 때마다 새로운 Repositories를 만들었으며 각 Repository에 Issue 등록 Assignment 할당과 Branch 사용법을 알고 있습니다. 실제
+                        학원에서 팀 프로젝트 진행할 때 팀장으로서 <code>Branch 기능</code>을 주문하여 Fetch 후 Merge 하였습니다.</p>
 
-                    <p>구현 와중에 LINUX 운영체계와 명령어를 숙지할 수 있었고 여러 각도로 AWS를 확장하여 사용하면 무궁무진한 서비스를 제공할 수 있을 것으로 판단 되었습니다.</p>
-
-                    <p>한국 대표 포털사이트 중의 하나인 Daum도 AWS를 사용하고 있다고 합니다.</p>
+                    <p>IntelliJ 에디터에도 기본적으로 VCS plug-in이 모두 내장되어 있으며 UI는 이클립스보다 더욱 유용합니다. VCS를 이용하는데 아무런 불편함이나 에로사항이
+                        없습니다.</p>
 
                     <h4>Expectation Effectiveness</h4>
 
-                    <p>저렴한 비용으로 서버를 구축할 수 있기에 스타트업이나 다른 기업들에게 적합합니다.</p>
+                    <p>공통의 이슈 해결 및 Docu 공유로 목적달성에 더욱 효율적으로 작동할 것 입니다. 소스나 이슈에 대하여 활발한 커뮤니케이션을 할 수 있습니다.</p>
 
-                    <p>다큐멘트나 API가 한국어로 번역해서 제공되기 때문에 쉽게 접할 수 있다는 장점이 있습니다. 현지화가 잘 되어 있어서 누구나 쉽게 서버를 구축할 수 있습니다.</p>
+                    <p>실제 업무시 일일보고까지 따로 작성하지 않고 GitHub을 이용하면 어떨까 라는 궁금증을 가져봅니다</p>
 
-                    <p>서비스를 가장 빨리 출시하여 끈끈한 개발자 생태계를 통하여 개발자들이 AWS 서비스를 사용하는데 불편함이 없도록 많은 지원을 해주고 있습니다.</p>
-
+                    <p>젠킨스를 이용하며 느낀 것이 GitHub에도 여러 기능을 확장할 수 있다는 것에 놀랬습니다. AWS처럼 GitHub도 아직 알지 못한 기능들이 무궁무진하게 많이 있을 것
+                        같습니다.</p>
 
                     <%--<ul>--%>
                     <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
@@ -750,43 +789,152 @@ jQuery(document).ready(function() {
 
                     <p>여러 이슈와 오류가 발견될 수 있습니다. 보다 구체적으로 발견될 오류들은 아래에 추가됩니다.</p>
 
-                    <div class="block-center margin-bottom-30">
-                        <img class="img-responsive" src="/resources/docu/img/awserror01.png" alt=""/>
-                    </div>
+                    <%--<div class="block-center margin-bottom-30">--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/awserror01.png" alt=""/>--%>
+                    <%--</div>--%>
 
-                    <ul>
-                        <li>Ubuntu로 Root 접속을 하려고 하면 Permission Denied 되는데 권한문제가 아닌 서버 인스턴스에 RSA 암호화 방식이 제대로 설정되지 않아서 접근
-                            거부가 일어납니다.
-                        </li>
-                        <li>인스턴스가 이미 만들어져 Running 하고 있기 때문에 웹에서 접속이나 이용은 에러가 없으나 내무적으로 파일 관리나 다른 설정에서는 항상 변경되는 RSA 암호화
-                            방식 때문에 접근 어려움이 생깁니다.
-                        </li>
-                        <li>그로 인하여 RSA 암호화 방식을 더욱 익혀야 할 필요가 있습니다.</li>
-                    </ul>
+                    <%--<ul>--%>
+                    <%--<li>Ubuntu로 Root 접속을 하려고 하면 Permission Denied 되는데 권한문제가 아닌 서버 인스턴스에 RSA 암호화 방식이 제대로 설정되지 않아서 접근--%>
+                    <%--거부가 일어납니다.--%>
+                    <%--</li>--%>
+                    <%--<li>인스턴스가 이미 만들어져 Running 하고 있기 때문에 웹에서 접속이나 이용은 에러가 없으나 내무적으로 파일 관리나 다른 설정에서는 항상 변경되는 RSA 암호화--%>
+                    <%--방식 때문에 접근 어려움이 생깁니다.--%>
+                    <%--</li>--%>
+                    <%--<li>그로 인하여 RSA 암호화 방식을 더욱 익혀야 할 필요가 있습니다.</li>--%>
+                    <%--</ul>--%>
 
-                    <br/>
+                    <%--<br/>--%>
 
-                    <div class="block-center margin-bottom-30">
-                        <img class="img-responsive" src="/resources/docu/img/awserror02.png" alt=""/>
-                    </div>
-                    <ul>
-                        <li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>
-                        <li>스택 트레이스 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>
-                    </ul>
+                    <%--<div class="block-center margin-bottom-30">--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/awserror02.png" alt=""/>--%>
+                    <%--</div>--%>
+                    <%--<ul>--%>
+                    <%--<li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>--%>
+                    <%--<li>스택 트레이스 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>--%>
+                    <%--</ul>--%>
 
                     <h4>Improvement Point</h4>
 
                     <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
 
                     <ul>
-                        <li>Jenkins 부분에서 언급했듯이 Jenkins에서 AWS 바로 인스턴스에 접근할 수 있도록 해야 한다.</li>
-                        <ul>
-                            <li>소스 변경에 대한 즉각적인 변경사항 적용</li>
-                            <li>변화에 대한 더욱 능동적 신속한 대응</li>
-                            <li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>
-                        </ul>
-                        <li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>
-                        <li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>
+                        <li>Stars나 다른 사용하지 않은 기능을 사용함으로서 GitHub를 더 익혀야 한다.</li>
+                        <%--<ul>--%>
+                        <%--<li>소스 변경에 대한 즉각적인 변경사항 적용</li>--%>
+                        <%--<li>변화에 대한 더욱 능동적 신속한 대응</li>--%>
+                        <%--<li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>--%>
+                        <%--</ul>--%>
+                        <%--<li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>--%>
+                        <%--<li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>--%>
+                    </ul>
+
+                </div><!--/end-->
+
+
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_sql">
+                    <h2>SQL<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+                    <!-- Bootsrap  -->
+                    <h3>MariaDB</h3>
+
+                    <p>MySQL과 동일한 베이스인 MariaDB를 사용하였습니다. 잘 아시다시피 미래 Oracle의 횡포에 미리 대비하기 위한 목적으로 사용하였으며, 성능이 MySQL보다 더욱
+                        뛰어나다고 알고 있습니다. Client GUI Tool은 맥북에 최적화된 Sequel Pro를 사용하였습니다.</p>
+
+                    <p>ORM은 <code>MyBatis</code>를 사용하였습니다. Hibernate도 사용할 예정입니다. src/main/resouces/mappers 폴더 이하 DB와 VO로
+                        접근할 수 있는
+                        Mapper파일을 만들어 모아놨습니다.</p>
+
+                    <pre>
+    Type : InnoDB
+    Encoding : UTF-8 Unicode(utf8)
+    Collation : utf8_general_ci
+</pre>
+
+                    <h4>Effect of Use</h4>
+
+                    <p>MariaDB를 사용하여 MySQL보다 성능 개선이 되었음은 물론입니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+
+                    <%--</ul>--%>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/sql01.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/sql02.png" alt=""/><br/>
+                    </div>
+
+                    <p>UML이 단순한 구조지만 기능을 더욱 많이 구현함으로서 가장 효율적인 구조로 테이블을 확장시켜나갈 예정입니다.</p>
+                    <p>DB에는 회원정보, 게시판 내용, 댓글이 등록됩니다. 게시판 글 등록과 함께 파일첨부시 파일 경로를 중복하지 않을 UUID를 파일명 앞에 붙여 DB에 저장합니다.</p>
+                    <p>파일은 비지니스 로직을 구현하여 servlet-context.xml에 설정한 빈(Bean) 경로에 저장됩니다. 게시판 파일 첨부 삭제 및 게시판 글 삭제시 DB와 경로에
+                        저장한 임시파일도 함께 삭제됩니다.</p>
+
+                    <h4>Expectation Effectiveness</h4>
+                    <p>ORM(MyBatis)을 통하여 기본적인 SQL 기능 구현을 함으로서 직접 복잡한 쿼리문을 날리지 않는 수고를 줄일 수 있습니다. </p>
+                    <p>TDD가 아닌 <code>DDD</code>에 대해서도 한번 생각해보는 기회를 가지게 됩니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Issue Detection</h4>
+
+                    <p>여러 이슈와 오류가 발견될 수 있습니다. 보다 구체적으로 발견될 오류들은 아래에 추가됩니다.</p>
+
+                    <%--<div class="block-center margin-bottom-30">--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/awserror01.png" alt=""/>--%>
+                    <%--</div>--%>
+
+                    <%--<ul>--%>
+                    <%--<li>Ubuntu로 Root 접속을 하려고 하면 Permission Denied 되는데 권한문제가 아닌 서버 인스턴스에 RSA 암호화 방식이 제대로 설정되지 않아서 접근--%>
+                    <%--거부가 일어납니다.--%>
+                    <%--</li>--%>
+                    <%--<li>인스턴스가 이미 만들어져 Running 하고 있기 때문에 웹에서 접속이나 이용은 에러가 없으나 내무적으로 파일 관리나 다른 설정에서는 항상 변경되는 RSA 암호화--%>
+                    <%--방식 때문에 접근 어려움이 생깁니다.--%>
+                    <%--</li>--%>
+                    <%--<li>그로 인하여 RSA 암호화 방식을 더욱 익혀야 할 필요가 있습니다.</li>--%>
+                    <%--</ul>--%>
+
+                    <%--<br/>--%>
+
+                    <%--<div class="block-center margin-bottom-30">--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/awserror02.png" alt=""/>--%>
+                    <%--</div>--%>
+                    <%--<ul>--%>
+                    <%--<li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>--%>
+                    <%--<li>스택 트레이스 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>스프링 시큐리티나 SSL & RSA 방식 구현과 관련하여 DB를 더욱 심도있게 공부해야 한다.</li>
+                        <li>보안 방식 구현했을 때의 DB에 등록되는 내용을 보안적인 측면으로 예상해야 하며 유저 등록시에 개인정보도 스프링 시큐리티의 관점으로 접근하여 해결해야한다.</li>
+                        <li>각 카테고리에 상품 올릴 때 연동되는 DB 내용을 어떻게 하면 재생산 안 하고 효율적으로 재사용 할 수 있을지 고민을 많이 해야한다.</li>
+                        <li>어떤 특정 페이지에서는 로딩이 늦어지는 이유가 비지니스 로직 문제인지 DB의 성능 비개선으로 인한 원인인지 찾아야한다.</li>
+                        <li>DB와 관계있는 VO, DTO 개념을 더욱 익혀야하며 마이바티스와 하이버네이트의 차이점과 장단점을 손수 구현하여 몸으로 익혀야한다.</li>
+                        <%--<ul>--%>
+                        <%--<li>소스 변경에 대한 즉각적인 변경사항 적용</li>--%>
+                        <%--<li>변화에 대한 더욱 능동적 신속한 대응</li>--%>
+                        <%--<li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>--%>
+                        <%--</ul>--%>
+                        <%--<li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>--%>
+                        <%--<li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>--%>
                     </ul>
 
                 </div><!--/end-->
@@ -866,36 +1014,37 @@ jQuery(document).ready(function() {
                                     <div class="clearfix margin-bottom-40"></div>
 
                                     <pre class="line-numbers"><code class="language-php">&lt;!--=== Header ===--&gt;
-                        &lt;div class="header"&gt;
-                        &lt;div class="container"&gt;
-                        &lt;!-- Logo --&gt;
-                        &lt;a class="logo" href="index.html"&gt;
-                        &lt;img src="assets/img/logo1-default.png" alt="Logo"&gt;
-                        &lt;/a&gt;
-                        &lt;!--  End Logo --&gt;
+&lt;div class="header"&gt;
+&lt;div class="container"&gt;
+&lt;!-- Logo --&gt;
+&lt;a class="logo" href="index.html"&gt;
+&lt;img src="assets/img/logo1-default.png" alt="Logo"&gt;
+&lt;/a&gt;
+&lt;!--  End Logo --&gt;
 
-                        &lt;!-- Topbar --&gt;
-                        &lt;div class="topbar"&gt;
-                        ...
-                        ...
-                        &lt;/div&gt;
-                        &lt;!--  End Topbar --&gt;
+&lt;!-- Topbar --&gt;
+&lt;div class="topbar"&gt;
+...
+...
+&lt;/div&gt;
+&lt;!--  End Topbar --&gt;
 
-                        &lt;!-- Toggle get grouped for better mobile display --&gt;
-                        &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"&gt;
-                        ...
-                        ...
-                        &lt;/button&gt;&lt;!-- /end container --&gt;
-                        &lt;!--  End Toggle --&gt;
-                        &lt;/div&gt;
+&lt;!-- Toggle get grouped for better mobile display --&gt;
+&lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"&gt;
+...
+...
+&lt;/button&gt;&lt;!-- /end container --&gt;
+&lt;!--  End Toggle --&gt;
+&lt;/div&gt;
 
-                        &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
-                        &lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;
-                        ...
-                        ...
-                        &lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
-                        &lt;/div&gt;
-                        &lt;!--=== End Header ===--&gt;</code></pre>
+&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+&lt;div class="collapse navbar-collapse mega-menu navbar-responsive-collapse"&gt;
+...
+...
+&lt;/div&gt;&lt;!-- /navbar-collapse --&gt;
+&lt;/div&gt;
+&lt;!--=== End Header ===--&gt;</code>
+                                    </pre>
                                     <p><span class="label label-info">Info</span> 예시:
                                         <small><code>header.jsp</code></small>
                                     </p>
