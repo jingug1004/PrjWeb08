@@ -58,7 +58,7 @@
 <!-- Sidebar -->
 <div class="page-wrap">
     <div class="aside" id="sidebar">
-    <%--<div class="aside" id="sidebar">--%>
+        <%--<div class="aside" id="sidebar">--%>
         <h1>UNIFY - Shopping Website by <a href="https://www.facebook.com/jingug1004">김진국</a></h1>
         <p>Documentation v1.9.4</p>
 
@@ -67,10 +67,10 @@
         <ul class="list-unstyled">
             <li><a href="#scroll_overview">Overview</a></li>
             <li><a href="#scroll_main">Main Structure</a></li>
-            <li><a href="#scroll_ssl">SSL & RSH</a></li>
+            <li><a href="#scroll_ssl">SSL & RSA</a></li>
             <li><a href="#scroll_jenkins">Jenkins</a></li>
             <li><a href="#scroll_aws">AWS</a></li>
-            <li><a href="#scroll_vcs">VCS</a></li>
+            <li><a href="#scroll_github">GitHub</a></li>
             <li><a href="#scroll_sql">SQL</a></li>
             <li><a href="#scroll_interceptor">Interceptor</a></li>
             <li><a href="#scroll_fileupload">File Upload</a></li>
@@ -112,13 +112,15 @@
                     <%--<br>--%>
 
                     <p>제 포트폴리오는 "UNIFY"라는 이름의 여성 쇼핑몰로서 어린 여아부터 중장년 여성까지 모든 아이템을 다룰 수 있게 카테고리화 하였습니다.
-                        주 포인트는 게시판 작성(조회수 증가, 댓글 달기, 파일 업로드 등) 및 로그인 세션 유지, 보안으로 스프링 MVC 프레임워크(4.3.1)개념과 비지니스 로직 프로세스를 익히는데 초점을 두었으며 그 과정에
+                        주 포인트는 게시판 작성(조회수 증가, 댓글 달기, 파일 업로드 등) 및 로그인 세션 유지, 보안으로 스프링 MVC 프레임워크(4.3.1)개념과 비지니스 로직 프로세스를
+                        익히는데 초점을 두었으며 그 과정에
                         TDD, 마이바티스, 메이븐, CI(젠킨스), WS(AWS), Ajax, JQuery 등 여러 플랫폼, 엔진, 스크립트 언어까지 부가적으로 익힐 수 있었습니다.</p>
 
-                    <p>잘 아시다시피 MVW 프레임워크(AngularJS)라는 기술이 있는데 제가 풀어야 했던 문제는 기본에 충실한 기능 구현이 목표였으므로 Spring MVC 방식으로 구현 시도를 했습니다.
-                    그러면서 배운 거라면 위에 나열한 것들이며 마이바티스와 메이븐이 Spring MVC 프레임워크와 가장 최적화되어 좋은 결과를 만들었던 것 같고
-                    AWS는 개발서버와 실제로 운영하는 서버에서 Run 할 때 처음 접하는 버그들이 많이 발생하여 많은 괴리감과 간극을 느꼈습니다. 그래서 포트폴리오로 제출할
-                        최소한의 문제들을 즉각 대처할 수 있게 서버 인스턴스를 Ubuntu에서 Amazone Linux API로 변경하여 사용하고 있습니다.
+                    <p>잘 아시다시피 MVW 프레임워크(AngularJS)라는 기술이 있는데 제가 풀어야 했던 문제는 기본에 충실한 기능 구현이 목표였으므로 Spring MVC 방식으로 구현 시도를
+                        했습니다.
+                        그러면서 배운 거라면 위에 나열한 것들이며 마이바티스와 메이븐이 Spring MVC 프레임워크와 가장 최적화되어 좋은 결과를 만들었던 것 같고
+                        AWS는 개발서버와 실제로 운영하는 서버에서 Run 할 때 처음 접하는 버그들이 많이 발생하여 많은 괴리감과 간극을 느꼈습니다. 그래서 포트폴리오로 제출할
+                        최소한의 문제들을 즉각 대처할 수 있게 서버 인스턴스를 Ubuntu에서 amazon Linux API로 변경하여 사용하고 있습니다.
                     </p>
 
                     <p>
@@ -136,31 +138,31 @@
 
                     <%--<p>그러나 다른 한편으로는 라이센스 업그레이드가 불가능하다는 사실을 알려드립니다. 라이센스를 업그레이드하려면 새로운 구매가 이루어져야합니다.</p>--%>
 
-                    <p>현재 업데이트 된 버전은 v1.9 +로 서버(AWS)에서의 고정 버그, 개발 서버가 아닌 운영 서버에서의 오류 등 여러 가지 개선 사항을 제공합니다.
+                    <p>현재 업데이트 된 버전은 v1.9 +로 웹서버(AWS)에서의 고정 버그, 개발 서버가 아닌 운영 서버에서의 오류 등 여러 가지 개선 사항을 제공합니다.
                         UNIFY는 다음 업데이트에서 더 많은 새로운 놀라운 기능이 곧 출시 될 예정이어서 스스로의 공부를 멈추지 않습니다.</p>
-                        <%--항상 UNIFY를 사용하고 성공의 중요한 부분을 담당해 주셔서 감사합니다.</p><br>--%>
+                    <%--항상 UNIFY를 사용하고 성공의 중요한 부분을 담당해 주셔서 감사합니다.</p><br>--%>
 
                     <br/>
 
                     <h4>Support</h4>
 
                     <%--<p>우리는 UNIFY가 지원이 성공적인 제품의 중요한 측면이라고 믿습니다. 따라서 우리는 가장 우수한 지원을 제공하기 위해 최선을 다하며--%>
-                        <%--항상 우리의 소중한 고객을 돕기 위해 무엇이든 시도합니다. 우리의 지원은 완전한 사용자 정의 작업이 아닌 한 프론트 엔드 관련--%>
-                        <%--문제 이외에 발생할 수 있는 모든 설계 문제를 주로 다루고 있음을 알아 두십시오.</p>--%>
+                    <%--항상 우리의 소중한 고객을 돕기 위해 무엇이든 시도합니다. 우리의 지원은 완전한 사용자 정의 작업이 아닌 한 프론트 엔드 관련--%>
+                    <%--문제 이외에 발생할 수 있는 모든 설계 문제를 주로 다루고 있음을 알아 두십시오.</p>--%>
 
                     <p>저의 지원은 완전한 사용자 정의 작업이 아닌 백엔드 관련 문제 이외에 발생할 수 있는 모든 설계 문제를 주로 다루고 있습니다.</p>
 
                     <%--<p><strong> "요즘 업계 최고의 기술인 XX 를 도입해서 YY 를 구현하였는데 그것이 아주 성공적이어서 유저들에게 ZZ 한 반응과 함께 $$ 의 매출을..." => 이것도--%>
-                        <%--좀.--%>
-                        <%--말하는 게 우선 너무 매니저스러움.--%>
+                    <%--좀.--%>
+                    <%--말하는 게 우선 너무 매니저스러움.--%>
 
-                        <%--개발자스러운 답변은--%>
-                        <%--"아실지 모르겠지만 XX 라는 기술이 있는데 저희가 풀어야 했던 문제는 YY 였으므로 ZZ 방식으로 구현 시도를 했습니다. 그러면서 배운 거라면 AA 는--%>
-                        <%--이런 면이 좋아서 어느 정도 좋은 결과였던 것 같고 BB 는 이러이러한 문제가 있어서 저러저러하게 대처를 하였음" => 이상적인 답변.--%>
-                        <%--여러 각도로 문제를 바라볼 수 있으며 객관적으로 좋은 점 나쁜 점을 나열 할 수 있고, 나쁜 점은 어떻게 극복하였는지도 디테일 말할 수 있음 플러스. </strong>--%>
+                    <%--개발자스러운 답변은--%>
+                    <%--"아실지 모르겠지만 XX 라는 기술이 있는데 저희가 풀어야 했던 문제는 YY 였으므로 ZZ 방식으로 구현 시도를 했습니다. 그러면서 배운 거라면 AA 는--%>
+                    <%--이런 면이 좋아서 어느 정도 좋은 결과였던 것 같고 BB 는 이러이러한 문제가 있어서 저러저러하게 대처를 하였음" => 이상적인 답변.--%>
+                    <%--여러 각도로 문제를 바라볼 수 있으며 객관적으로 좋은 점 나쁜 점을 나열 할 수 있고, 나쁜 점은 어떻게 극복하였는지도 디테일 말할 수 있음 플러스. </strong>--%>
                     <%--</p>--%>
 
-<pre>
+                    <pre>
     자가(주) Development Environment(Server * Client, H/W * S/W)
         Processor : Intel Core™ i5
         RAM : 4GB
@@ -177,14 +179,14 @@
         Client GUI Tool : Sequel Pro
         Test Browser : Chrome, Safari
         CI : Jenkins
-        Online Web Service : AWS(Amazone Web Service)
+        Online Web Service : AWS(amazon Web Service)
         Accesible DNS : www.unifyshop.ga (Instability : Not Recommend)
                         ec2-13-124-8-223.ap-northeast-2.compute.amazonaws.com
                         13.124.8.223
         FTP S/W : FileZilla
 </pre>
 
-<pre>
+                    <pre>
     학원(부) Development Environment(Server * Client, H/W * S/W)
         Processor : Intel Core™ i7
         RAM : 16GB
@@ -224,52 +226,53 @@
                     <h2>Main Structure <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                     <hr>
                     <h3> Files Structure <span class="label label-dark">Updated v1.9.2</span></h3>
-                    <p>UNIFY에는 <strong>기본적인 스프링 MVC</strong>폴더 경로로 작성 되었습니다. (기본적인 스프링 MVC - STS Legacy Project, Spring MVC로 프로젝트 작성시 자동 빌드되는 폴더링 기준)
+                    <p>UNIFY에는 <strong>기본적인 스프링 MVC</strong>폴더 경로로 작성 되었습니다. (기본적인 스프링 MVC - STS Legacy Project, Spring
+                        MVC로 프로젝트 작성시 자동 빌드되는 폴더링 기준)
                         <%--다운로드 패키지에서 HTML 포더 내부에는 기본--%>
                         <%--<code>UNIFY Main (Default)</code> 템플리트 및 자산 파일, <code>E-commerce (Shop UI)</code> , <code>Blog--%>
-                            <%--&amp; Template</code>, <code>One--%>
-                            <%--Pages</code>, <code>Landing Pages</code> 및 <code>Email Templates</code> 패키지. 또한 PSD 파일도--%>
+                        <%--&amp; Template</code>, <code>One--%>
+                        <%--Pages</code>, <code>Landing Pages</code> 및 <code>Email Templates</code> 패키지. 또한 PSD 파일도--%>
                         <%--포함됩니다. --%>
                         <%--사용 가능한 PSD 파일의 전체 버전을 다운로드하려면 PSD 폴더의 <strong>README.txt</strong> 파일을 확인하십시오. <strong>README.txt</strong>--%>
                         <%--파일에는 다운로드 링크와 암호가 포함되어 있습니다.</p><br>--%>
 
-                    <%--<h4><i class="fa fa-folder fa-2x color-blue"></i> DOWNLOAD PACKAGE</h4>--%>
-                    <%--<ul class="list-unstyled css-files">--%>
+                        <%--<h4><i class="fa fa-folder fa-2x color-blue"></i> DOWNLOAD PACKAGE</h4>--%>
+                        <%--<ul class="list-unstyled css-files">--%>
                         <%--<li>----<i class="fa fa-folder"></i> <span>Documentation</span></li>--%>
                         <%--<li>----<i class="fa fa-folder"></i> <span>PSD</span></li>--%>
                         <%--<li>----<i class="fa fa-folder"></i> <span>HTML</span>--%>
-                            <%--<ul class="list-unstyled css-files css-v1">--%>
-                                <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
-                                <%--<li>----<i class="fa fa-folder"></i> <span>E-Commerce</span></li>--%>
-                                <%--<li>----<i class="fa fa-folder"></i> <span>Blog-Magazine</span></li>--%>
-                                <%--<li>----<i class="fa fa-folder"></i>--%>
-                                    <%--<span>One-Pages</span>--%>
-                                    <%--<ul class="list-unstyled css-files css-v1">--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Classic</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Agency</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>App</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Architecture</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Business</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Lawyer</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Shipping</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Spa</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Travel</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Wedding</span></li>--%>
-                                        <%--<li>----<i class="fa fa-folder"></i> <span>Courses</span></li>--%>
-                                        <%--<li>---- &nbsp;<code>..</code></li>--%>
-                                        <%--<li>---- &nbsp;<code>..</code></li>--%>
-                                    <%--</ul>--%>
+                        <%--<ul class="list-unstyled css-files css-v1">--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>E-Commerce</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Blog-Magazine</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i>--%>
+                        <%--<span>One-Pages</span>--%>
+                        <%--<ul class="list-unstyled css-files css-v1">--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Classic</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Agency</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>App</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Architecture</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Business</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Lawyer</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Shipping</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Spa</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Travel</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Wedding</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Courses</span></li>--%>
+                        <%--<li>---- &nbsp;<code>..</code></li>--%>
+                        <%--<li>---- &nbsp;<code>..</code></li>--%>
+                        <%--</ul>--%>
 
-                                <%--</li>--%>
-                                <%--<li>----<i class="fa fa-folder"></i> <span>Landing-Pages</span></li>--%>
-                                <%--<li>----<i class="fa fa-folder"></i> <span>Email-Templates</span></li>--%>
-                                <%--<li>---- &nbsp;<code>index.html</code></li>--%>
-                                <%--<li>---- &nbsp;<code>..</code></li>--%>
-                                <%--<li>---- &nbsp;<code>..</code></li>--%>
-                            <%--</ul>--%>
                         <%--</li>--%>
-                    <%--</ul>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Landing-Pages</span></li>--%>
+                        <%--<li>----<i class="fa fa-folder"></i> <span>Email-Templates</span></li>--%>
+                        <%--<li>---- &nbsp;<code>index.html</code></li>--%>
+                        <%--<li>---- &nbsp;<code>..</code></li>--%>
+                        <%--<li>---- &nbsp;<code>..</code></li>--%>
+                        <%--</ul>--%>
+                        <%--</li>--%>
+                        <%--</ul>--%>
 
                     <div class="block-center margin-bottom-30">
                         <img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>
@@ -434,234 +437,359 @@ jQuery(document).ready(function() {
 &lt;![endif]--&gt;</code></pre>
                 </div>
 
+
+                <div class="clearfix margin-bottom-50"></div>
+
                 <div id="scroll_ssl">
                     <h2>SSL & RSA <span class="label label-dark">Update v1.6</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
                     <!-- Bootsrap  -->
-                    <h3>Bootstrap</h3>
-                    <p>버전 3.0부터 Bootstrap은 기본적으로 응답 성이 뛰어난 디자인을 강조하면서 모바일 첫 디자인 철학을 채택했습니다.</p>
-                    <h4>Bootstrap Translations</h4>
-                    <p> 부트 스트랩에 대해 더 자세히 알고 싶으시면 아래 링크를 클릭하십시오.</p>
+                    <h3>SSL Authentication & RSA Encryption</h3>
+
+                    <p>스프링에서 중요한 보안 기능을 자체적으로 가지고 있는 Spring Security가 있습니다. 제가 도전하고 풀고 싶었던 이슈는 SSL 인증과 RSA 암호화 방식이었습니다.
+                        그래서 RSA 방식으로 구현시도를 해봤습니다.</p>
+
+                    <p>그 와중에 리눅스 OS 운영체계와 여러 명령어들을 배우게 되었습니다. 리눅스의 기본적인 부분을 필요에 의해서 습득하게 되어 좋은 결과를 냈던 것에 만족합니다. 그리고 RSA의
+                        기능 구현에 여러 에로사항을 느껴 스프링 시큐리티 - 하이버네이트 프로퍼티로 대처를 하였습니다.</p>
+
+                    <p>결론은 스프링 시큐리티로도 기능을 구현하지 못 하였습니다. 그 원인으로는 로그인 페이지와 회원가입 페이지의 비지니스 로직에 오류가 발생하는데 그 원인을 제대로 파악하지 못
+                        했기 때문입니다.</p>
+
+                    <p>그 와중에 스프링 시큐리티의 인증과 권한의 여러 각도로 이슈를 바라볼 수 있었으며 인증과 권한에 대해서 숙지할 수 있었습니다.</p>
+
+                    <h4>SSL & RSA Specify</h4>
+                    <p> SSL & RSA에 대해 더 자세히 알고 싶으시면 아래 링크를 클릭하십시오.</p>
+
                     <ul>
-                        <li><a target="_blank" href="http://holdirbootstrap.de/" hreflang="de">Bootstrap auf Deutsch
-                            (German)</a></li>
-                        <li><a target="_blank" href="http://www.hackerstribe.com/guide/IT-bootstrap-3.1.1/"
-                               hreflang="it">Bootstrap in Italiano (Italian)</a></li>
-                        <li><a target="_blank" href="http://www.oneskyapp.com/docs/bootstrap/fr" hreflang="fr">Bootstrap
-                            en Français (French)</a></li>
-                        <li><a target="_blank" href="http://v3.bootcss.com/" hreflang="zh">Bootstrap 中文文档
-                            (Chinese)</a></li>
-                        <li><a target="_blank" href="http://bootstrapk.com/BS3/" hreflang="ko">Bootstrap 한국어
-                            (Korean)</a></li>
-                        <li><a target="_blank" href="http://www.oneskyapp.com/docs/bootstrap/ru" hreflang="ru">Bootstrap
-                            по-русски (Russian)</a></li>
-                        <li><a target="_blank" href="http://www.oneskyapp.com/docs/bootstrap/es" hreflang="es">Bootstrap
-                            en Español (Spanish)</a></li>
-                        <li><a target="_blank" href="http://twbs.site-konstruktor.com.ua" hreflang="uk">Bootstrap ua
-                            Українською (Ukrainian)</a></li>
+                        <li><a target="_blank"
+                               href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER
+                            지식백과 IT 용어사전</a></li>
+                        <li><a target="_blank" href="https://ko.wikipedia.org/wiki/RSA_암호">위키백과</a></li>
+                        <li><a target="_blank" href="https://namu.wiki/w/공개키%20암호화%20방식">나무위키</a></li>
+                        <li><a target="_blank"
+                               href="http://stackoverflow.com/questions/12471999/rsa-encryption-decryption-in-android">Stack
+                            Overflow</a></li>
+                        <li><a target="_blank" href="http://http://okky.kr/article/261064">okky.kr</a></li>
+                        <li><a target="_blank" href="http://rhammer.tistory.com/24">rhammer tistory</a></li>
+                        <li><a target="_blank" href="http://reinliebe.tistory.com/79">reinliebe tistory</a></li>
+                        <li><a target="_blank" href="http://pulsebeat.tistory.com/56">pulsebeat tistory</a></li>
                     </ul>
 
-                    <h4>Supported Browsers</h4>
-                    <p>특히 부트 스트랩은 다음 브라우저와 플랫폼의 최신 버전을 지원합니다. Windows에서 부트 스트랩은 Internet Explorer 8-11을 지원합니다. 보다
-                        구체적인 지원 정보는 아래에 제공됩니다.</p>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <td></td>
-                                <th>Chrome</th>
-                                <th>Firefox</th>
-                                <th>Internet Explorer</th>
-                                <th>Opera</th>
-                                <th>Safari</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th>Android</th>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-muted" rowspan="3" style="vertical-align: middle;">N/A</td>
-                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span
-                                        class="sr-only">Not Supported</span></td>
-                                <td class="text-muted">N/A</td>
-                            </tr>
-                            <tr>
-                                <th>iOS</th>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-muted">N/A</td>
-                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span
-                                        class="sr-only">Not Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                            </tr>
-                            <tr>
-                                <th>Mac OS X</th>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                            </tr>
-                            <tr>
-                                <th>Windows</th>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span
-                                        class="sr-only">Supported</span></td>
-                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span
-                                        class="sr-only">Not Supported</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p>공식적으로 지원되지는 않지만 비공식적으로 부트 스트랩은 Chromium 및 Linux 용 Chrome, Linux 용 Firefox 및 Internet Explorer
-                        7에서 제대로 작동하고 올바르게 작동해야합니다. 부트 스트랩이 해결해야하는 일부 브라우저 버그 목록은 부트 스트랩 <a
-                                target="_blank" href="http://getbootstrap.com/browser-bugs/">을 참조하십시오.</a></p>
-                    <h4>Internet Explorer 8 and 9</h4>
-                    <p>Internet Explorer 8 및 9도 지원되지만 일부 CSS3 속성과 HTML5 요소는이 브라우저에서 완전히 지원되지 않습니다. 또한 Internet
-                        Explorer 8에서는 미디어 쿼리 지원을 활성화하기 위해 <a target="_blank"
-                                                             href="https://github.com/scottjehl/Respond">Respond.js </a>
-                        를 사용해야합니다.</p>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <th scope="col" class="col-xs-4">Feature</th>
-                                <th scope="col" class="col-xs-4">Internet Explorer 8</th>
-                                <th scope="col" class="col-xs-4">Internet Explorer 9</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row"><code>border-radius</code></th>
-                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not
-                                    supported
-                                </td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><code>box-shadow</code></th>
-                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not
-                                    supported
-                                </td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><code>transform</code></th>
-                                <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Not
-                                    supported
-                                </td>
-                                <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Supported,
-                                    with <code>-ms</code> prefix
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><code>transition</code></th>
-                                <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span>
-                                    Not supported
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><code>placeholder</code></th>
-                                <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span>
-                                    Not supported
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p>CSS3 및 HTML5 기능의 브라우저 지원에 대한 자세한 내용은 <a target="_blank" href="http://caniuse.com/">사용법</a>을
-                        참조하십시오.</p>
+                    <h4>Debug Prediction</h4>
 
-                    <h4>Internet Explorer 8 and Respond.js</h4>
-                    <p>Internet Explorer 8의 개발 환경 및 프로덕션 환경에서 Respond.js를 사용할 때는 다음주의 사항을주의하십시오.</p>
-                    <h5><strong>Respond.js and cross-domain CSS</strong></h5>
-                    <p>다른 하위 도메인 (예 : CDN)에서 호스팅되는 CSS와 함께 Respond.js를 사용하려면 몇 가지 추가 설정이 필요합니다. 자세한 내용은 <a
-                            target="_blank"
-                            href="https://github.com/scottjehl/Respond/blob/master/README.md#cdnx-domain-setup">See
-                        the Respond.js docs </a>문서를 참조하십시오.</p>
-                    <h5><strong>Respond.js and <code>file://</code></strong></h5>
-                    <p>브라우저 보안 규칙으로 인해 Respond.js는 file : // 프로토콜을 통해 (로컬 HTML 파일을 열 때와 마찬가지로) 볼 수 있는 페이지에서는 작동하지
-                        않습니다. IE8에서 반응 형 기능을 테스트하려면 HTTP (S)를 통해 페이지를보십시오. 자세한 내용은 <a target="_blank"
-                                                                                      href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See
-                            the Respond.js docs </a>문서를 참조하십시오.</p>
-                    <h5><strong>Respond.js and <code>@import</code></strong></h5>
-                    <p>Respond.js는 @import를 통해 참조 된 CSS에서 작동하지 않습니다. 특히, 일부 드루팔 구성은 @import를 사용하는 것으로 알려져 있습니다. 자세한
-                        내용은 <a target="_blank"
-                               href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Respond.js
-                            docs</a> 문서를 참조하십시오.</p>
-                    <h4>Internet Explorer 8 and box-sizing</h4>
-                    <p>IE8은 <code>box-sizing: border-box;</code>를 완전히 지원하지 않습니다. <code>min-width</code>,
-                        <code>max-width</code>, <code>min-height</code>, 또는 <code>max-height</code>와 결합 된 경우 이러한 이유
-                        때문에 v3.0.1부터 <code>max-width</code>에 <code>.container</code>를 더 이상 사용하지 않습니다.
-                    </p>
-                    <h4>Internet Explorer 8 and @font-face</h4>
-                    <p>
-                    <p>IE8은 <code>:before</code>와 결합 할 때 <code>@font-face</code> 에 몇 가지 문제가 있습니다. 부트 스트랩은 Glyphicon과
-                        그 조합을 사용합니다. 페이지가 캐싱되어 마우스없이 창 위에로드 된 경우 (즉, 새로 고침 버튼을 누르거나 iframe에서 무언가를로드하면) 글꼴로드 전에 페이지가
-                        렌더링됩니다. 페이지 (본체) 위로 마우스를 가져 가면 아이콘 중 일부가 표시되고 나머지 아이콘 위로 마우스를 올리면 해당 아이콘이 표시됩니다. 자세한 내용은 <a
-                                target="_blank" href="https://github.com/twbs/bootstrap/issues/13863">See issue
-                            #13863</a></p></p>
-                    <!-- End Bootsrap -->
+                    <p>여러 보안 기능들이 있습니다. 보다 구체적인 풀어나가야 할 의문점들은 아래에 추가됩니다.</p>
 
-                    <hr>
+                    <ul>
+                        <li>스프링 시큐리티를 Hibernate로 구현하려고 하는데 Mybatis와의 충돌로 인한 충격을 최소화할 수 있는 방법이 있을까?</li>
+                    </ul>
 
-                    <!-- Sublime text editor  -->
-                    <h3>IntelliJ IDE</h3>
-                    <p>저는 코딩을 위해 "IntelliJ"를 사용합니다. Sublime 텍스트 편집기를 사용 하시려면 여기를 클릭하십시오. <a
-                            target="_blank" href="http://www.jetbrains.com ">click here "IntelliJ IDE"</a>
-                        를 클릭하시면 더 자세한 정보를 얻을 수 있습니다.</p><br>
-                    <!-- End Sublime text editor -->
-                    <%--</div>--%>
+                    <h4>Resolution Strategy</h4>
 
-                    <!-- Documentation -->
-                    <%--<div id="scroll_end">--%>
-                    <h2>End of Documentation <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
-                    <hr>
-                    <p>다시 한번 제 포트폴리오를 지금까지 봐주셔서 감사합니다.</p>
-                    <p>언제나 행복합시다 <i class="fa fa-heart color-red"></i> <strong> 김진국^^ </strong></p>
+                    <p>여러 해결 전략들이 있습니다. 해결해나가기 위하여 필요한 보다 구체적으로 숙지해야할 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>인증과 권한에 대하여 메모리와 DB를 이용해 사용자 인증을 더 숙지해야 한다.</li>
+                        <li>스프링 시큐리티의 패스워드 암호화 지원에 더 숙지해야 한다.</li>
+                    </ul>
+
                 </div><!--/end-->
 
 
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_jenkins">
+                    <h2>Jenkins<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+                    <!-- Bootsrap  -->
+                    <h3>Jenkins Server</h3>
+
+                    <p>젠킨스 서버는 CI(Continuous Integration) Tool로서 여기서 CI란 팀의 구성원들이 작업한 내용을 정기적으로 통합하는 것을 의미합니다.</p>
+
+                    <p>개인 프로젝트를 제외하고 팀단위 중대형 프로젝트를 맡게 된다면 무조건 CI를 통하여
+                        통합 빌드 관리를 해야 한다는 기사를 읽은 적이 있습니다.</p>
+
+                    <p>젠킨스는 웹 사이트에 localhost로 접속하여 관리 가능하기 때문에 개발서버 포트 충돌 방지를 위하여 개발서버 HTTP 포트번호를 8081로 톰캣 서버
+                        세팅하였습니다.</p>
+
+                    <h4>Effect of Use</h4>
+
+                    <p>Jenkins 서버를 사용하는 이유는 여러가지인데 제 개인적인 사견으로 봤을 때 가장 큰 이유는 아래와 같습니다.</p>
+
+                    <ul>
+                        <li>프로젝트의 빌드가 정상적으로 되고 있는지 체크할 때</li>
+                        <li>자동으로 유닛 테스트와 통합 테스트 (Integration Test)들의 정기적인 실행. 만약 테스트 결과에 문제가 있을 때 이메일을 통해 리포트</li>
+                        <li>PMD 같은 코드의 질을 확인할 수 있는 모니터링 시스템과의 연동으로 코드의 질을 조절</li>
+                    </ul>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/jenkins01.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/jenkins02.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/jenkins03.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/jenkins04.png" alt=""/><br/>
+                    </div>
+
+                    <p>VCS의 GitHub의 소스가 Push되면 Jenkins에서 Pull하여 자동으로 통합 빌드를 실행합니다.</p>
+
+                    <p>구현 와중에 CI의 개념을 접하게 되어 숙지할 수 있었고 여러 각도로 팀의 목적에 적합한 효율적인 방법을 바라볼 수 있었습니다.</p>
+
+                    <h4>Expectation Effectiveness</h4>
+
+                    <p> 하나의 프로젝트를 여러 명으로 구성된 한 팀이 작업할 때 프로젝트를 리드하는 매니저가 일을 여러가지로 나눠서 팀 멤버들한테 분배하고 팀 멤버들은 각각 할당된 부분만 작업을
+                        하게
+                        됩니다. 그리고 팀 멤버들은 자신이 담당해서 하고 있는 부분의 소스코드를 정기적으로 GitHub나 SVN과 같은 Version Control System에 Push 하는데
+                        이 각각의
+                        팀 멤버들로부터 Submit된 소스코드들을 정기적으로 통합하는 것으로서 큰 효과를 누릴 수 있을 것입니다.</p>
+
+                    <p>Jenkins 서버는 현재 진행 중인 프로젝트가 정상적으로 빌드가 되고 있는지를 정기적으로 체크해서 결과를 팀원들한테 알려주고 문제가 발생했을 때 조기에 알려줄 수 있게
+                        해줌으로써 여러 팀 멤버들이 큰 문제없이 각자의 맡은 부분만을 작업할 수 있도록 도와줍니다. 또한 프로젝트 빌드시 자동으로 유닛 테스트와 통합 테스트를 실행해줘서 잘 못된
+                        점이 있으면 알려주고 또한 현재 얼마만큼의 소스코드를 유닛 테스트가 커버하고 있는지 및 어떤 부분에 문제가 있을 수 있는지 등의 정보도 SonarQube와 같이 연동시
+                        모니터링 할 수 있도록 도와줍니다.
+                    </p>
 
 
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Issue Detection</h4>
+
+                    <p>여러 이슈와 오류가 발견될 수 있습니다. 보다 구체적으로 발견될 오류들은 아래에 추가됩니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li>스프링 시큐리티를 Hibernate로 구현하려고 하는데 Mybatis와의 충돌로 인한 충격을 최소화할 수 있는 방법이 있을까?</li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>Jenkins에서 AWS 바로 인스턴스에 접근할 수 있도록 해야 한다.</li>
+                        <ul>
+                            <li>소스 변경에 대한 즉각적인 변경사항 적용</li>
+                            <li>변화에 대한 더욱 능동적 신속한 대응</li>
+                            <li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>
+                        </ul>
+                        <li>Jenkins 보안을 더욱 강화해야 한다.</li>
+                    </ul>
+
+                </div><!--/end-->
 
 
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_aws">
+                    <h2>AWS<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+                    <!-- Bootsrap  -->
+                    <h3>amazon Web Service</h3>
+
+                    <p>amazon Web Service(이하:AWS)는 안전한 클라우드 서비스 플랫폼으로서, 컴퓨팅 파워, 데이터베이스 스토리지, 콘텐츠 전송 및 기타 기능을 제공하여 기업이
+                        확장하고 성장하도록 지원합니다. 무엇보다 1개의 인스턴스에 대하여 1년간 무료로 사용할 수 있다는 점에 대하여 선택을 하게 되었습니다.</p>
+
+                    <p>okky.kr에서 신입 포트폴리오로 1년간 무료니깐 AWS에서 호스팅 하는 기능도 넣으면 장점이 된다는 기사를 본적이 있어서 기능을 구현하게 되었습니다.</p>
+
+                    <h4>Effect of Use</h4>
+
+                    <p>Docker나 Azure보다 AWS를 사용하는 이유는 아래와 같습니다.</p>
+
+                    <ul>
+                        <li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>
+                        <li><a target="_blank"
+                               href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>
+                        </li>
+                        <li><a target="_blank"
+                               href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>
+                        </li>
+                        <li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>
+                        </li>
+                        <li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>
+
+                    </ul>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/rds01.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/rds02.png" alt=""/><br/>
+                    </div>
+
+                    <p>총 1개의 인스턴스(1 Running Instances : 무료)와 1개의 IP를 할당 받아 고정시키고(1 Elastic IPs), 1개의 웹 서버(Volumes :
+                        Amazone LINUX API, RDS : MariaDB)의 볼륨을 가지고
+                        1개의 SSH / RSA 방식의 보안키(1 Key Pairs)를 부여받고 저장하고 있습니다. 그 모든 Resources들은 Security Groups에 저장 및 관리하고
+                        있습니다.</p>
+
+                    <p>구현 와중에 LINUX 운영체계와 명령어를 숙지할 수 있었고 여러 각도로 AWS를 확장하여 사용하면 무궁무진한 서비스를 제공할 수 있을 것으로 판단 되었습니다.</p>
+
+                    <p>한국 대표 포털사이트 중의 하나인 Daum도 AWS를 사용하고 있다고 합니다.</p>
+
+                    <h4>Expectation Effectiveness</h4>
+
+                    <p>저렴한 비용으로 서버를 구축할 수 있기에 스타트업이나 다른 기업들에게 적합합니다.</p>
+
+                    <p>다큐멘트나 API가 한국어로 번역해서 제공되기 때문에 쉽게 접할 수 있다는 장점이 있습니다. 현지화가 잘 되어 있어서 누구나 쉽게 서버를 구축할 수 있습니다.</p>
+
+                    <p>서비스를 가장 빨리 출시하여 끈끈한 개발자 생태계를 통하여 개발자들이 AWS 서비스를 사용하는데 불편함이 없도록 많은 지원을 해주고 있습니다.</p>
 
 
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Issue Detection</h4>
+
+                    <p>여러 이슈와 오류가 발견될 수 있습니다. 보다 구체적으로 발견될 오류들은 아래에 추가됩니다.</p>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/awserror01.png" alt=""/>
+                    </div>
+
+                    <ul>
+                        <li>Ubuntu로 Root 접속을 하려고 하면 Permission Denied 되는데 권한문제가 아닌 서버 인스턴스에 RSA 암호화 방식이 제대로 설정되지 않아서 접근
+                            거부가 일어납니다.
+                        </li>
+                        <li>인스턴스가 이미 만들어져 Running 하고 있기 때문에 웹에서 접속이나 이용은 에러가 없으나 내무적으로 파일 관리나 다른 설정에서는 항상 변경되는 RSA 암호화
+                            방식 때문에 접근 어려움이 생깁니다.
+                        </li>
+                        <li>그로 인하여 RSA 암호화 방식을 더욱 익혀야 할 필요가 있습니다.</li>
+                    </ul>
+
+                    <br/>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/awserror02.png" alt=""/>
+                    </div>
+                    <ul>
+                        <li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>
+                        <li>스택 트레이스 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>
+                    </ul>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>Jenkins 부분에서 언급했듯이 Jenkins에서 AWS 바로 인스턴스에 접근할 수 있도록 해야 한다.</li>
+                        <ul>
+                            <li>소스 변경에 대한 즉각적인 변경사항 적용</li>
+                            <li>변화에 대한 더욱 능동적 신속한 대응</li>
+                            <li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>
+                        </ul>
+                        <li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>
+                        <li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>
+                    </ul>
+
+                </div><!--/end-->
 
 
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_github">
+                    <h2>GitHub<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+                    <!-- Bootsrap  -->
+                    <h3>VCS</h3>
+
+                    <p>VCS는 GitHub만 사용하였습니다. 다른 VCS 중에 하나인 SVN이 있는데 차후 사용하여 GitHub의 장단점을 비교할 수 있는 시간을 가져야 할 것 입니다.</p>
+
+                    <p>제 GitHub 주소는 <a target="_blank" href="https://gist.github.com/jingug1004">https://gist.github.com/jingug1004</a>이며
+                        학원 교육기간 중 첫번째 Mini-Project로 비디오 대여 시스템과 두번째 Semi-Project인 JSP로 커뮤니티 구현한 소스를 Repo에 Push 해놨습니다.</p>
+
+                    <h4>Effect of Use</h4>
+
+                    <p>분산 버전 관리 툴을 사용하여 협업하는 프로젝트를 수행해야 하는 이유는 절대적입니다.</p>
+
+                    <%--<ul>--%>
+                        <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                        <%--<li><a target="_blank"--%>
+                               <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                        <%--</li>--%>
+                        <%--<li><a target="_blank"--%>
+                               <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                        <%--</li>--%>
+                        <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                        <%--</li>--%>
+                        <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+
+                    <%--</ul>--%>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/rds01.png" alt=""/><br/>
+                        <img class="img-responsive" src="/resources/docu/img/rds02.png" alt=""/><br/>
+                    </div>
+
+                    <p>총 1개의 인스턴스(1 Running Instances : 무료)와 1개의 IP를 할당 받아 고정시키고(1 Elastic IPs), 1개의 웹 서버(Volumes :
+                        Amazone LINUX API, RDS : MariaDB)의 볼륨을 가지고
+                        1개의 SSH / RSA 방식의 보안키(1 Key Pairs)를 부여받고 저장하고 있습니다. 그 모든 Resources들은 Security Groups에 저장 및 관리하고
+                        있습니다.</p>
+
+                    <p>구현 와중에 LINUX 운영체계와 명령어를 숙지할 수 있었고 여러 각도로 AWS를 확장하여 사용하면 무궁무진한 서비스를 제공할 수 있을 것으로 판단 되었습니다.</p>
+
+                    <p>한국 대표 포털사이트 중의 하나인 Daum도 AWS를 사용하고 있다고 합니다.</p>
+
+                    <h4>Expectation Effectiveness</h4>
+
+                    <p>저렴한 비용으로 서버를 구축할 수 있기에 스타트업이나 다른 기업들에게 적합합니다.</p>
+
+                    <p>다큐멘트나 API가 한국어로 번역해서 제공되기 때문에 쉽게 접할 수 있다는 장점이 있습니다. 현지화가 잘 되어 있어서 누구나 쉽게 서버를 구축할 수 있습니다.</p>
+
+                    <p>서비스를 가장 빨리 출시하여 끈끈한 개발자 생태계를 통하여 개발자들이 AWS 서비스를 사용하는데 불편함이 없도록 많은 지원을 해주고 있습니다.</p>
 
 
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
 
+                    <h4>Issue Detection</h4>
 
+                    <p>여러 이슈와 오류가 발견될 수 있습니다. 보다 구체적으로 발견될 오류들은 아래에 추가됩니다.</p>
 
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/awserror01.png" alt=""/>
+                    </div>
 
+                    <ul>
+                        <li>Ubuntu로 Root 접속을 하려고 하면 Permission Denied 되는데 권한문제가 아닌 서버 인스턴스에 RSA 암호화 방식이 제대로 설정되지 않아서 접근
+                            거부가 일어납니다.
+                        </li>
+                        <li>인스턴스가 이미 만들어져 Running 하고 있기 때문에 웹에서 접속이나 이용은 에러가 없으나 내무적으로 파일 관리나 다른 설정에서는 항상 변경되는 RSA 암호화
+                            방식 때문에 접근 어려움이 생깁니다.
+                        </li>
+                        <li>그로 인하여 RSA 암호화 방식을 더욱 익혀야 할 필요가 있습니다.</li>
+                    </ul>
 
+                    <br/>
 
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/awserror02.png" alt=""/>
+                    </div>
+                    <ul>
+                        <li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>
+                        <li>스택 트레이스 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>
+                    </ul>
 
+                    <h4>Improvement Point</h4>
 
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
 
+                    <ul>
+                        <li>Jenkins 부분에서 언급했듯이 Jenkins에서 AWS 바로 인스턴스에 접근할 수 있도록 해야 한다.</li>
+                        <ul>
+                            <li>소스 변경에 대한 즉각적인 변경사항 적용</li>
+                            <li>변화에 대한 더욱 능동적 신속한 대응</li>
+                            <li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>
+                        </ul>
+                        <li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>
+                        <li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>
+                    </ul>
 
-
-
-
-
-
-
+                </div><!--/end-->
 
 
                 <div class="clearfix margin-bottom-50"></div>
@@ -672,21 +800,21 @@ jQuery(document).ready(function() {
                     <p>기타 페이지는 의도적으로 페이지의 주요 부분만으로 만들어 졌으므로 개발자가 직접 내용을 직접 추가 할 수 있습니다.
                         다음 페이지를 사용하여 새 프로젝트를 시작하십시오.</p>
                     <%--<ol>--%>
-                        <%--<li><code>page_misc_blank.html</code>&nbsp;&nbsp; 이미 연결된 모든 주요 구성 요소가있는 빈 페이지가 비어 있습니다.--%>
-                        <%--</li>--%>
-                        <%--<li><code>page_misc_boxed.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>--%>
-                        <%--<li><code>page_misc_boxed_img.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>--%>
-                        <%--<li><code>page_misc_boxed_fixed_header.html</code>&nbsp;&nbsp; 템플릿의 박스형 레이아웃의 고정 헤더--%>
-                        <%--</li>--%>
-                        <%--<li><code>page_misc_fixed_header.html</code>&nbsp;&nbsp; 통합 템플릿의 고정 헤더</li>--%>
-                        <%--<li><code>page_misc_dark.html</code>&nbsp;&nbsp; Unify의 어두운 버전--%>
-                        <%--</li>--%>
-                        <%--<li><code>page_misc_dark_boxed.html</code>&nbsp;&nbsp; 통일 템플릿의 박스형 레이아웃의 어두운 버전--%>
-                        <%--</li>--%>
-                        <%--<li><code>page_misc_dark_other_color.html</code>&nbsp;&nbsp; Unify Template의 다른 테마 색이있는 어두운 버전--%>
-                        <%--</li>--%>
-                        <%--<li><code>page_misc_sticky_footer.html.html</code>&nbsp;&nbsp; 저작권 섹션이 있는 바닥 글--%>
-                        <%--</li>--%>
+                    <%--<li><code>page_misc_blank.html</code>&nbsp;&nbsp; 이미 연결된 모든 주요 구성 요소가있는 빈 페이지가 비어 있습니다.--%>
+                    <%--</li>--%>
+                    <%--<li><code>page_misc_boxed.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>--%>
+                    <%--<li><code>page_misc_boxed_img.html</code>&nbsp;&nbsp; 통합 서식 파일의 박스형 레이아웃</li>--%>
+                    <%--<li><code>page_misc_boxed_fixed_header.html</code>&nbsp;&nbsp; 템플릿의 박스형 레이아웃의 고정 헤더--%>
+                    <%--</li>--%>
+                    <%--<li><code>page_misc_fixed_header.html</code>&nbsp;&nbsp; 통합 템플릿의 고정 헤더</li>--%>
+                    <%--<li><code>page_misc_dark.html</code>&nbsp;&nbsp; Unify의 어두운 버전--%>
+                    <%--</li>--%>
+                    <%--<li><code>page_misc_dark_boxed.html</code>&nbsp;&nbsp; 통일 템플릿의 박스형 레이아웃의 어두운 버전--%>
+                    <%--</li>--%>
+                    <%--<li><code>page_misc_dark_other_color.html</code>&nbsp;&nbsp; Unify Template의 다른 테마 색이있는 어두운 버전--%>
+                    <%--</li>--%>
+                    <%--<li><code>page_misc_sticky_footer.html.html</code>&nbsp;&nbsp; 저작권 섹션이 있는 바닥 글--%>
+                    <%--</li>--%>
                     <%--</ol>--%>
                 </div>
 
@@ -3178,7 +3306,8 @@ jQuery(document).ready(function () {
                                 </div>
                                 <div id="collapse-9" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Font Awesome은 크기, 색상, 그림자 및 기타 CSS 기능을 사용하여 수행 할 수 있는 모든 작업을 즉시 사용자 지정할 수 있는 확장
+                                        <p>Font Awesome은 크기, 색상, 그림자 및 기타 CSS 기능을 사용하여 수행 할 수 있는 모든 작업을 즉시 사용자 지정할 수 있는
+                                            확장
                                             가능한 벡터 아이콘을 제공합니다.</p>
 
                                         <div class="margin-bottom-20"></div>
@@ -5454,10 +5583,10 @@ jQuery(document).ready(function () {
                                 target="_blank" href="http://www.jetbrains.com ">click here "IntelliJ IDE"</a>
                             를 클릭하시면 더 자세한 정보를 얻을 수 있습니다.</p><br>
                         <!-- End Sublime text editor -->
-                    <%--</div>--%>
+                        <%--</div>--%>
 
-                    <!-- Documentation -->
-                    <%--<div id="scroll_end">--%>
+                        <!-- Documentation -->
+                        <%--<div id="scroll_end">--%>
                         <h2>End of Documentation <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                         <hr>
                         <p>다시 한번 제 포트폴리오를 지금까지 봐주셔서 감사합니다.</p>
