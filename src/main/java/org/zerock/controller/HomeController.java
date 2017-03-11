@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.inject.Inject;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -25,8 +24,6 @@ public class HomeController {
      * Simply selects the home view to render by returning its name.
      */
 
-    @Inject
-    private LoginTService service;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
@@ -64,13 +61,6 @@ public class HomeController {
         model.addAttribute("result", "DOB RESULT");
 
         return "home";
-    }
-
-
-
-    @RequestMapping(value = "/loginT")
-    public String logintT() {
-        return "shop-ui-login";
     }
 
     @RequestMapping(value = "/shop-ui-register")
