@@ -77,7 +77,7 @@
             <li><a href="#scroll_aop">AOP & Transaction</a></li>
             <li><a href="#scroll_board">Board</a></li>
             <li><a href="#scroll_spring">Spring Framework</a></li>
-            <li><a href="#scroll_ajax">Ajax & Front-End</a></li>
+            <li><a href="#scroll_frontend">Front-End</a></li>
             <%--<li><a href="#scroll_misc">Misc Pages</a></li>--%>
             <%--<li><a href="#scroll_nav">Headers &amp; Footers</a></li>--%>
             <%--<li><a href="#scroll_theme">Theme Configuration</a></li>--%>
@@ -209,7 +209,7 @@
                     <div class="margin-bottom-30"></div>
 
                     <ul class="list-unstyled overview-details list-style margin-bottom-40">
-                        <li>Author: <a target="_blank" href="http://htmlstream.com">김진국</a></li>
+                        <li>Author: <a target="_blank" href="https://twitter.com/jingug1004">김진국</a></li>
                         <li>Contact:
                             <a href="mailto:jingug1004@naver.com">jingug1004@naver.com</a>
                             <span>|</span>
@@ -219,7 +219,7 @@
                                href="https://www.facebook.com/jingug1004?ref=hl">Facebook</a>
                         </li>
                         <li>Created on: 2017/02/05</li>
-                        <li>Latest Update on: 2017/03/10 ~</li>
+                        <li>Latest Update on: 2017/03/13 ~</li>
                     </ul>
                 </div><!--/overview-->
 
@@ -522,6 +522,7 @@ jQuery(document).ready(function() {
 
                     <ul>
                         <li>스프링 시큐리티를 Hibernate로 구현하려고 하는데 Mybatis와의 충돌로 인한 충격을 최소화할 수 있는 방법이 있을까?</li>
+                        <li>AWS 웹 서비스와 스프링 시큐리티와의 충돌은 어떤 것들이 있을까?</li>
                     </ul>
 
                     <h4>Resolution Strategy</h4>
@@ -531,6 +532,7 @@ jQuery(document).ready(function() {
                     <ul>
                         <li>인증과 권한에 대하여 메모리와 DB를 이용해 사용자 인증을 더 숙지해야 한다.</li>
                         <li>스프링 시큐리티의 패스워드 암호화 지원에 더 숙지해야 한다.</li>
+                        <li>BCrypt를 적용하여 User들의 개인정보를 보호해야 하는 일이 시급하다.</li>
                     </ul>
 
                 </div><!--/end-->
@@ -953,7 +955,7 @@ jQuery(document).ready(function() {
                     <div class="margin-bottom-30"></div>
                     <hr>
                     <!-- Bootsrap  -->
-                    <h3>Login handling utilizing "Interceptor".</h3>
+                    <h3>Login handling utilizing "Interceptor"</h3>
 
                     <p>세션 트래킹이라 불리는 로그인 처리는 웹 페이지에서 필수적으로 적용돼야 하는 기능입니다.</p>
 
@@ -1076,10 +1078,397 @@ jQuery(document).ready(function() {
 
                 <div class="clearfix margin-bottom-50"></div>
 
-                <div id="scroll_ajax" class="margin-bottom-60">
-                    <h2>Ajax & Front-End Pages <span class="label label-dark">Updated v1.9.1</span></h2>
+                <div id="scroll_fileupload">
+                    <h2>File Upload<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
                     <hr>
-                    <p>구현한 Ajax와 여러 프론트 엔드 페이지에 대하여 간략하게 소개합니다.</p>
+                    <!-- Bootsrap  -->
+                    <h3>Attachments feature of post</h3>
+
+                    <p>게시물을 작성할 때 가장 필수적인 기능은 첨부파일을 추가하고 이를 화면에서 보여주거나 다운로드 할 수 있는 기능입니다.</p>
+
+                    <p>첨부파일 업로드 처리. Ajax를 이용한 파일 업로드. 첨부파일의 저장. 파일 조회 및 다운로드.
+                    </p>
+
+
+                    <h4>Effect of Use</h4>
+
+                    <p>게시물과 댓글에 대한 처리가 끝났다면 첨부파일에 대한 처리를 통해서 좀 더 다양한 기능이 있는 게시물 관리 기능을 구현할 수 있습니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+
+                    <%--</ul>--%>
+                    <p>Ajax를 이용해서(/WEB-INF/views/uploadAjax.jsp) 정상적으로 실행되면 게시물에 파일을 등록할 수 있는 박스 화면이 보여집니다.</p>
+                    <p>파일 첨부하는 단추를 클릭하여 화면이 전환되는 형식이 아닌 화면전환없이 파일을 끌어다 회색 박스에 넣어 파일을 첨부합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/fileupload01.png" alt=""/><br/>
+                    </div>
+
+                    <p>이미지 파일과 이미지 파일을 제외한 모든 확장자의 파일(ex:Excel) 화면입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/fileupload02.png" alt=""/><br/>
+                    </div>
+
+                    <p>정상적으로 파일이 올라간 스택트레이스 입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/fileupload03.png" alt=""/><br/>
+                    </div>
+
+                    <p>로그인하여 자기가 파일 첨부한 게시글을 보면 올린 내용 그대로 올라가 있는 것을 확인할 수 있습니다.</p>
+                    <p>이미지 파일을 제외한 첨부파일을 클릭했을 때는 컴퓨터에 저장되며 이미지 파일들(jpg, jpeg, png, gif)은 모달 효과를 사용하여 원본 파일을 볼 수 있도록 이벤트 처리되었습니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/fileupload04.png" alt=""/><br/>
+                    </div>
+
+                    <p>정상적으로 등록되었을 때의 스택트레이스 입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/fileupload05.png" alt=""/><br/>
+                    </div>
+
+                    <p>정상적으로 등록되었을 때의 DB 입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/fileupload06.png" alt=""/><br/>
+                    </div>
+
+                    <p>정상적으로 등록되었을 때의 컴퓨터 폴더 경로 입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/fileupload07.png" alt=""/><br/>
+                    </div>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Issue Detection</h4>
+
+                    <p>여러 이슈와 오류가 발견될 수 있습니다. 보다 구체적으로 발견될 오류들은 아래에 추가됩니다.</p>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/awserror01.png" alt=""/>
+                    </div>
+
+                    <ul>
+                        <li>Ubuntu로 Root 접속을 하려고 하면 Permission Denied 되는데 권한문제가 아닌 서버 인스턴스에 RSA 암호화 방식이 제대로 설정되지 않아서 접근
+                            거부가 일어납니다.
+                        </li>
+                        <li>인스턴스가 이미 만들어져 Running 하고 있기 때문에 웹에서 접속이나 이용은 에러가 없으나 내무적으로 파일 관리나 다른 설정에서는 항상 변경되는 RSA 암호화
+                            방식 때문에 접근 어려움이 생깁니다.
+                        </li>
+                        <li>그로 인하여 RSA 암호화 방식을 더욱 익혀야 할 필요가 있습니다.</li>
+                    </ul>
+
+                    <br/>
+
+
+                    <h4>Expectation Effectiveness</h4>
+                    <p>JS가 아닌 Ajax를 이용하여 검색창의 연관검색어 및 네이버지도나 구글지도를 구현 할 수 있습니다.</p>
+                    <p>AngularJS나 다른 프론트엔드 쪽의 공부에 큰 거부감이 없습니다.</p>
+
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/awserror02.png" alt=""/>
+                    </div>
+                    <ul>
+                        <li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>
+                        <li><code>스택 트레이스</code> 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>
+                    </ul>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>JS를 JQuery로 변환하는 방법을 모색한다.</li>
+                        <%--<ul>--%>
+                        <%--<li>소스 변경에 대한 즉각적인 변경사항 적용</li>--%>
+                        <%--<li>변화에 대한 더욱 능동적 신속한 대응</li>--%>
+                        <%--<li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>--%>
+                        <%--</ul>--%>
+                        <%--<li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>--%>
+                        <%--<li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>--%>
+                    </ul>
+
+                </div><!--/end-->
+
+
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_aop">
+                    <h2>AOP & Transaction<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+                    <!-- Bootsrap  -->
+                    <h3>Processing AOP and Transaction</h3>
+
+                    <p>크롬의 확장 프로그램 Advanced REST Client를 이용하는 방법을 익혀 테스트 합니다.</p>
+
+                    <p>비지니스 로직에만 전념할 수 있는 다양한 기법을 이용합니다.</p>
+
+                    <p>AOP에 대한 숙지가 확실치 않아 최소한의 기능만 적용시켜 보았습니다.</p>
+
+                    <p>AOP용어 이해하고 적용. 트랜잭션이 필요한 상황 이해. 댓글 처리에 필요한 트랜잭션 처리. 컨트롤러의 메소드 실행 시간 체크.</p>
+
+                    <h4>Effect of Use</h4>
+
+                    <p></p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+
+                    <%--</ul>--%>
+                    <p>Rest 방식으로 연결하여 테스트 하기위해 구글 크롬 확장프로그램에서 Advaced REST Client를 설치합니다.</p>
+                    <p>user01이 user03에게 메세지를 보냄으로서 AOP 및 Transaction 설정이 제대로 되어있는지 확인합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/aop01.png" alt=""/><br/>
+                    </div>
+
+                    <p>200번으로 정상적으로 처리되었음을 확인합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/aop02.png" alt=""/><br/>
+                    </div>
+
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Expectation Effectiveness</h4>
+
+                    <p>개발자가 원하는 코드를 실행하는데 얼마의 시간이 소모되는지 쉽게 알 수 있습니다.</p>
+                    <p>개발자가 메소드에 전달되는 파라미터나 리턴 값에 대해서 로그를 기록할 수 있습니다.</p>
+                    <p>데이터베이스 상에서 트랜잭션 처리를 설정하여 성공하는 경우에만 모든 데이터가 완전하게 처리되는 방법을 적용할 수 있습니다.</p>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>스프링의 중요한 특징으로 뽑히는 의존성 주입과 관련된 내용 다음으로 AOP가 있는데 많은 숙지가 필요하다.</li>
+                        <li>중요한만큼 더욱 실제적으로 활용할 수 있는 방법을 모색한다.</li>
+                        <li>Advice의 종류 중에 가장 많이 이용하는 Around를 더욱 이해해야 한다.</li>
+                        <%--<ul>--%>
+                        <%--<li>소스 변경에 대한 즉각적인 변경사항 적용</li>--%>
+                        <%--<li>변화에 대한 더욱 능동적 신속한 대응</li>--%>
+                        <%--<li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>--%>
+                        <%--</ul>--%>
+                        <%--<li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>--%>
+                        <%--<li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>--%>
+                    </ul>
+
+                </div><!--/end-->
+
+
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_board">
+                    <h2>Board<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+
+                    <h3>Managing post of basic features</h3>
+
+                    <p>실제로 아주 단순한 CRUD(등록, 수정, 삭제, 조회) 게시물 관리를 제작했습니다. </p>
+
+                    <p>개발 순서는 '뒤에서 앞으로'의 순서로 DB관련 부분을 개발하고 컨트롤러와 비지니스 영역을 개발 후 화면 쪽으로 개발하였습니다.</p>
+
+                    <p>/main/java/ 폴더의 프로젝트 폴더는 Controller.클래스들은 controller 패키지 폴더에 넣었습니다. </p>
+
+                    <p>외부 변화에 유연하게 대응하기 위하여 컨트롤러와 DAO 사이에 Service 인터페이스와 인터페이스를 implemetns(구현)한 클래스를 만들 service 패키지 폴더명으로 하였습니다</p>
+
+                    <p>DB에 접근할 수 있는 B/L이 있는 DAO 클래스들과 인터페이스들은 persistence 패키지 폴더에 있습니다.</p>
+
+                    <p>DAO인터페이스를 구현한(오버라이드) DAOImpl 클래스에 MyBatis를 사용하여 DB 쿼리문을 따로 작성하지 않고 쿼리요청 작업을 수행할 수 있습니다.</p>
+
+                    <p>DB와 DAO를 연결할 수 있는 VO 클래스들은 domain 패키지 폴더에 있습니다.</p>
+
+                    <p>게시판 UI 레이아웃은 Admin LTE 기본 템플릿을 이용하였습니다.</p>
+
+                    <p>더 자세한 내용은 파일첨부한 javadoc.zip을 참고하여 주시기 바랍니다.</p>
+
+                    <h4>Effect of Use</h4>
+
+                    <p>스프링 MVC를 기본적으로 익힐 수 있는 것이 게시판 기능 구현하는 것이라고 생각합니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+
+                    <%--</ul>--%>
+                    <p>한 페이지당 10개의 게시물로서 10페이지가 넘어가면 다른 10단위로 넘어갈 수 있도록 페이징 처리하였습니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/board01.png" alt=""/><br/>
+                    </div>
+
+                    <p>tbl_board 테이블의 DB content 내용입니다. </p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/board02.png" alt=""/><br/>
+                    </div>
+
+                    <p>tbl_board 테이블의 DB Structure 내용입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/board03.png" alt=""/><br/>
+                    </div>
+
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Expectation Effectiveness</h4>
+
+                    <p>실제로 작업을 진행함으로서 예상치 못한 문제들을 풀어나감으로서 디버깅 및 프로그래밍 능력을 향상시킵니다.</p>
+                    <p>간단하지만 기본이 되는 프로젝트를 직접 만들어보고 구현함으로서 본인만의 노하우를 쌓을 수 있습니다.</p>
+                    <p>MyBatis 및 XML, 프론트엔드와 관련한 부수적인 것들을 익힐 수 있습니다.</p>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>글을 쓸 수 있는 register.jsp를 네이버 스마트 에디터로 개선 적용시켜 본다.</li>
+                        <li>게시판 글 등록 및 조회 댓글 등록에 대하여 User의 포인트 점수를 플러스 시킨다.</li>
+                        <li>여러 카테고리에 게시판을 재생산하지 않고 어떻게 DB와 서버에 연동하여 게시판을 재활용할 수 있는지 방법을 모색해본다.</li>
+                        <%--<ul>--%>
+                        <%--<li>소스 변경에 대한 즉각적인 변경사항 적용</li>--%>
+                        <%--<li>변화에 대한 더욱 능동적 신속한 대응</li>--%>
+                        <%--<li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>--%>
+                        <%--</ul>--%>
+                        <%--<li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>--%>
+                        <%--<li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>--%>
+                    </ul>
+
+                </div><!--/end-->
+
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_spring">
+                    <h2>Spring Framework<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
+                    <hr>
+
+                    <h3>Basic structure and composition of Spring Framework</h3>
+
+                    <p>TDD(slf4j)를 통하여 무리한 Server Run을 줄임으로 반복적이고 단순한 테스트를 직관적으로 처리됨을 확인할 수 있습니다.</p>
+                    <p>스프링 프레임워크에 메이븐 플랫폼이 어떻게 라이브러리 관리를 해주고 Dependency 기능과 Lifecycle을 알 수 있습니다.</p>
+                    <p>기본적인 스프링 프레임워크의 강점과 장점을 익히는데 중점을 둡니다.</p>
+
+
+                    <h4>Effect of Use</h4>
+
+                    <p>스프링 MVC를 기본적으로 익힐 수 있는 것이 게시판 기능 구현하는 것이라고 생각합니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+
+                    <%--</ul>--%>
+                    <p>root-context.xml에 설정되어 있는 클래스들의 다이어그램입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/spring01.png" alt=""/><br/>
+                    </div>
+
+                    <p>servlet-context.xml에 설정되어 있는 클래스들의 다이어그램입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/spring02.png" alt=""/><br/>
+                    </div>
+
+                    <p>프로젝트에 스프링 설정 맵핑되어 있는 다이어그램입니다. 스프링 시큐리티를 구현함으로서 새로운 독립적인 스프링 설정파일을 만들어야 합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/spring03.png" alt=""/><br/>
+                    </div>
+
+                    <p>프로젝트의 기본적인 테스트 클래스입니다.  DataSource, MemberDAO, MyBatis, MySQLConnection(MariaDB), SampleController 기능들의 연결 또는 정상적인 설정이 완료되었는지 확인합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/spring04.png" alt=""/><br/>
+                    </div>
+
+                    <p>테스트 클래스들의 Coverage를 분석합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/spring05.png" alt=""/><br/>
+                    </div>
+
+                    <p>프로젝트 중 게시판 기능(Board)의 테스트 클래스입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/spring06.png" alt=""/><br/>
+                    </div>
+
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Expectation Effectiveness</h4>
+
+                    <p>미약하게나마 TDD 주도로 개발함으로서 불필요한 시간 낭비 예방과 서버에 부하를 주지 않음으로서 효율적인 개발방식을 익히게 됩니다.</p>
+                    <p>JSP의 MVC2와 스프링 MVC의 프로세스를 더욱 효과적으로 익힐 수 있습니다.</p>
+                    <p>기본적인 스프링 MVC 설정을 배움으로서 실무에서도 스프링 설정에 많은 시간을 할애하지 않을 것 입니다.</p>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>Eclipse에서 사용하였던 여러 기능 등을 IntelliJ에서 거부감없이 소화해낼 수 있게 IDE 툴을 더욱 파헤쳐야한다.</li>
+                        <li>MyBatis와 동적 SQL을 익혀 Hibernate와 비교할 수 있도록 한다.</li>
+                        <li>실제적으로 흔히 운영되고 있는 웹 사이트들의 기능을 적용시킬 수 있도록 한다.</li>
+                        <%--<ul>--%>
+                        <%--<li>소스 변경에 대한 즉각적인 변경사항 적용</li>--%>
+                        <%--<li>변화에 대한 더욱 능동적 신속한 대응</li>--%>
+                        <%--<li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>--%>
+                        <%--</ul>--%>
+                        <%--<li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>--%>
+                        <%--<li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>--%>
+                    </ul>
+
+                </div><!--/end-->
+
+
+
+
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_frontend" class="margin-bottom-60">
+                    <h2>Front-End Pages <span class="label label-dark">Updated v1.9.1</span></h2>
+                    <hr>
+                    <p>구현한 여러 프론트 엔드 페이지에 대하여 간략하게 소개합니다.</p>
                     <%--<ol>--%>
                     <%--<li><code>page_misc_blank.html</code>&nbsp;&nbsp; 이미 연결된 모든 주요 구성 요소가있는 빈 페이지가 비어 있습니다.--%>
                     <%--</li>--%>
@@ -2441,7 +2830,7 @@ jQuery(document).ready(function() {
     ....
     ....
 &lt;/body&gt;</code></pre>
-                    <p><span class="label label-info">Info</span> 예제 페이지 : <code>page_misc_boxed.html</code></p>
+                    <p><span class="label label-info">Info</span> 예시 : <code>page_misc_boxed.html</code></p>
                 </div>
                 <!-- End Theme Configuration -->
 
@@ -2652,7 +3041,7 @@ jQuery(document).ready(function() {
                                     </br>
                                     <h4 class="no-top-space">For medium device modern @media (max-width: 992px)</h4>
                                     <p>이러한 클래스는 화면 크기가 너비가 992px 미만일 때 유효합니다. 예를 들어 요소가 더 큰 장치에 수평으로 배치되고 더 작은 장치에 수직으로
-                                        배치되는 경우 요소 사이에 충분한 간격이 없기 때문에 서로 붙어있게됩니다. 그래서 다음과 같은 수업이 매우 유용 할 것입니다.</p>
+                                        배치되는 경우 요소 사이에 충분한 간격이 없기 때문에 서로 붙어있게됩니다. 그래서 다음과 같은 클래스가 매우 유용 할 것입니다.</p>
                                     <table class="table table-hover table-striped table-bordered">
                                         <thead>
                                         <tr>
@@ -2710,7 +3099,7 @@ jQuery(document).ready(function() {
                                     </br>
                                     <h4 class="no-top-space">For small device mode @media (max-width: 768px)</h4>
                                     <p>화면 크기가 너비가 768px보다 작으면 효과적입니다. 예를 들어 요소가 더 큰 장치에 수평으로 배치되고 더 작은 장치에 수직으로 배치되는 경우
-                                        요소 사이에 충분한 간격이 없기 때문에 서로 붙어있게됩니다. 그래서 다음과 같은 수업이 매우 유용 할 것입니다.</p>
+                                        요소 사이에 충분한 간격이 없기 때문에 서로 붙어있게됩니다. 그래서 다음과 같은 클래스가 매우 유용 할 것입니다.</p>
                                     <table class="table table-hover table-striped table-bordered">
                                         <thead>
                                         <tr>
@@ -4679,692 +5068,236 @@ jQuery(document).ready(function () {
                         <p><label class="label label-danger">Important!</label> 업그레이드하기 전에 파일을 백업하는 것을 잊지 마십시오.</p>
                         <br>
 
-                        <h4><span>Version 1.9.4 – 19 April 2016</span></h4>
+                        <h4><span>Version 1.9.4 – 2017/03/12</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: <strong>Construction Layout</strong> (One-Pages/Construction/index.html)</li>
-                            <li>UPDATED: Font Awesome Icons v4.5.0</li>
+                            <li>NEW: <strong>JavaDoc</strong> 생성 및 압축 파일 Export</li>
+                            <li>UPDATED: Document 수정 및 보완</li>
                         </ul>
 
-                        <h4><span>Version 1.9.3 – 01 April 2016</span></h4>
+                        <h4><span>Version 1.9.3 – 2017/03/10</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>FIXED: Version name (typo error) in the download package</li>
-                            <li>UPDATED: Animate CSS v4.5.1</li>
+                            <li>UPDATED: Document 수정 및 보완</li>
                         </ul>
 
-                        <h4><span>Version 1.9.2 – 29 March 2016</span></h4>
+                        <h4><span>Version 1.9.2 – 2017/03/07</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: <strong>Courses Layout</strong> (One-Pages/Courses/index.html)</li>
-                            <li>NEW: <strong>Wedding Layout</strong> (One-Pages/Wedding/index.html)</li>
-                            <li>IMPROVEMENT: Documentation</li>
-                            <li>IMPROVEMENT: Busines Layout - promo and equal height blocks (One-Pages/Business/..)</li>
-                            <li>IMPROVEMENT: Spa Layout - vertical align texts in some blocks (One-Pages/Spa/..)</li>
-                            <li>IMPROVEMENT: Equal Height javascript codes (app.js)</li>
-                            <li>IMPROVEMENT: Header v8 for iPhones (app.js)</li>
-                            <li>FIXED: Google Maps for IE in Thematic Layouts</li>
-                            <li>FIXED: Different slips in (blocks.css)</li>
-                            <li>FIXED: Equal Height issue on Home Allure (page_home17.html)</li>
+                            <li>IMPROVEMENT: Document 수정 및 보완</li>
+                            <li>UPDATED: Document 수정 및 보완</li>
+                            <li>FIXED: FileZila, SSH 서버 접속 불가</li>
                         </ul>
 
-                        <h4><span>Version 1.9.1 – 07 February 2016</span></h4>
+                        <h4><span>Version 1.9.1 – 2017/03/05</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: <strong>Business Layout</strong> (One-Pages/Business/index.html)</li>
-                            <li>NEW: <strong>Wealth Landing Page</strong> (Landing-Pages/Wealth/index.html)</li>
-                            <li>NEW: <strong>Consulting Landing Page</strong> (One-Pages/Consulting/index.html)</li>
-                            <li>NEW: Login and Registration Page (page_login_and_registration.html)</li>
-                            <li>NEW: Login Page Option 2 (page_login2.html)</li>
-                            <li>NEW: Registration Page Option 2 (page_registration2.html)</li>
-                            <li>NEW: 404 Error Page 4 (page_404_error4.html)</li>
-                            <li>NEW: 404 Error Page 5 (page_404_error5.html)</li>
-                            <li>NEW: 404 Error Page 6 (page_404_error6.html)</li>
-                            <li>NEW: Coming Soon Page v2 (page_coming_soon2.html)</li>
-                            <li>NEW: Coming Soon Page v3 (page_coming_soon3.html)</li>
-                            <li>NEW: Coming Soon Page v4 (page_coming_soon4.html)</li>
-                            <li>NEW: Coming Soon Page v5 (page_coming_soon5.html)</li>
-                            <li>NEW: Coming Soon Page v6 (page_coming_soon6.html)</li>
-                            <li>NEW: RTL Business</li>
-                            <li>NEW: RTL Agency</li>
-                            <li>NEW: RTL Travel</li>
-                            <li>NEW: RTL Lawyer</li>
-                            <li>NEW: RTL Architecture</li>
-                            <li>NEW: RTL Mobile App</li>
-                            <li>NEW: RTL Spa</li>
-                            <li>NEW: RTL Shipping</li>
-                            <li>IMPROVEMENT: Older version of Coming Soon, 404 Error pages pages</li>
-                            <li>IMPROVEMENT: Equal Height codes in app.js</li>
-                            <li>FIXED: Links for Breadcrumb options (blocks.css)</li>
-                            <li>FIXED: Multiple Progressbar issue (app.css)</li>
-                            <li>UPDATED: Layer Slider v5.6.0</li>
-                            <li>UPDATED: Cube Portfolio v3.5.1</li>
+                            <li>NEW: FTP툴 FileZila 설치 후 SSH 서버 접속</li>
+                            <li>IMPROVEMENT: EC2 서버 Ubuntu에서 Amazone Linux Api로 수정</li>
+                            <li>FIXED: AWS BeansTalk 접속 시 RSA public 키 접근 불가</li>
+                            <li>UPDATED: Document 수정 및 보완</li>
                         </ul>
 
-                        <h4><span>Version 1.9 – 31 December 2015</span></h4>
+                        <h4><span>Version 1.9 – 31 2017/03/03</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: <strong>Agency Layout</strong></li>
-                            <li>NEW: <strong>Lawyer Layout</strong></li>
-                            <li>NEW: <strong>Travel Layout</strong></li>
-                            <li>NEW: <strong>Architecture Layout</strong></li>
-                            <li>NEW: <strong>Mobile App Layout</strong></li>
-                            <li>NEW: <strong>Spa Layout</strong></li>
-                            <li>NEW: <strong>Shipping Layout</strong></li>
-                            <li>NEW: Hero Fashion</li>
-                            <li>NEW: Hero Gym</li>
-                            <li>NEW: Hero Photography</li>
-                            <li>NEW: Hero Restaurant</li>
-                            <li>NEW: Hero Web App Dark</li>
-                            <li>NEW: Hero Web App Light</li>
-                            <li>NEW: Home Aspire</li>
-                            <li>NEW: Home Allure</li>
-                            <li>NEW: Animated Titles (demo on promo block in the page: page_home15.html)</li>
-                            <li>NEW: CTA - Call to Actions (feature_call_to_actions.html)</li>
-                            <li>NEW: full-height statix text image bg slider (page_home2.html)</li>
-                            <li>NEW: full-height statix animated texts (page_home4.html)</li>
-                            <li>NEW: full-height Youtube video background (page_home5.html)</li>
-                            <li>NEW: on click sidebar navigation left and right (page_home17.html and
-                                page_home18.html)
-                            </li>
-                            <li>NEW: Blog Page Layout v4</li>
-                            <li>NEW: Modal Popups</li>
-                            <li>NEW: 2000+ Pro Line Icons</li>
-                            <li>UPDATED: Bootstrap v3.3.6</li>
-                            <li>UPDATED: Animate.css - v3.5.0</li>
-                            <li>UPDATED: WOW.js - v1.1.2</li>
-                            <li>UPDATED: Cube Portfolio v3.4.2</li>
-                            <li>UPDATED: Font Awesome 4.5.0</li>
-                            <li>UPDATED: Master Slider v2.16.3</li>
-                            <li>UPDATED/NEW: Revolution Slider v5+</li>
-                            <li>IMPROVEMENT: Documentation</li>
-                            <li>IMPROVEMENT: Shopping cart for mobile devices</li>
-                            <li>IMPROVEMENT: Default fixed header for Safari</li>
-                            <li>IMPROVEMENT: Default header language hover issue for iOS devices</li>
-                            <li>FIXED: One Page focus issue after click and scroll</li>
-                            <li>FIXED: Many reported minor bugs</li>
+                            <li>NEW: AWS 공인 IP 무료도메인 .ga 연결</li>
+                            <li>NEW: Jenkins 정기적 빌드 설정</li>
+
+                            <li>UPDATED: AWS Security Group 인스턴스 연결</li>
+                            <li>UPDATED: Document 수정 및 보완</li>
                         </ul>
 
-                        <h4><span>Version 1.8 – 03 July 2015</span></h4>
+                        <h4><span>Version 1.8 – 2017/03/01</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: <strong>Blog Template</strong></li>
-                            <li>NEW: RTL Unify Main</li>
-                            <li>NEW: RTL Unify Blog Template</li>
-                            <li>NEW: RTL Unify Shop UI Template</li>
-                            <li>NEW: RTL Unify One Page Template</li>
-                            <li>NEW: 60+ PSD files</li>
-                            <li>NEW: Master Slider Examples</li>
-                            <li>NEW: Incredible Home Page (page_home16.html)</li>
-                            <li>NEW: Static full-screen block in One Page (one_page_home1.html)</li>
-                            <li>NEW: Popup login/registration for One Page (one_page_home2.html)</li>
-                            <li>NEW: Language bar in One Page (one_page_home3.html)</li>
-                            <li>NEW: Centered logo - header v4 (feature_header_v4_logo_centered.html)</li>
-                            <li>NEW: Defaul Header without Topbar (feature_header_default_no_topbar.html)</li>
-                            <li>NEW: Defaul Centered Header (feature_header_default_centered.html)</li>
-                            <li>NEW: Header Login/Reg Popup (feature_header_default_login_popup.html)</li>
-                            <li>NEW: Header v8 (feature_header_v8.html)</li>
-                            <li>NEW: Footer v8 (feature_footer_v8.html)</li>
-                            <li>NEW: Feature Icon Blocks (feature_icon_blocks.html)</li>
-                            <li>NEW: Feature Team Blocks (feature_team_blocks.html)</li>
-                            <li>NEW: Feature Testimonials and Quotes (feature_testimonials_quotes.html)</li>
-                            <li>NEW: Feature News Blocks (feature_news_blocks.html)</li>
-                            <li>NEW: Blog Home Page (blog/index.html)</li>
-                            <li>NEW: Blog Page Layouts v1 (blog_page_layouts1.html)</li>
-                            <li>NEW: Blog Page Layouts v2 (blog_page_layouts2.html)</li>
-                            <li>NEW: Blog Page Layouts v3 (blog_page_layouts4.html)</li>
-                            <li>NEW: Blog Post Layout v1 (blog_post_layouts1.html)</li>
-                            <li>NEW: Blog Post Layout v2 (blog_post_layouts2.html)</li>
-                            <li>NEW: Blog Post Layout v3 (blog_post_layouts3.html)</li>
-                            <li>NEW: Blog Post Layout v4 (blog_post_layouts4.html)</li>
-                            <li>NEW: Blog Post Layout v5 (blog_post_layouts5.html)</li>
-                            <li>NEW: Blog Post Layout v6 (blog_post_layouts6.html)</li>
-                            <li>NEW: Blog Post Layout v7 (blog_post_layouts7.html)</li>
-                            <li>NEW: Blog Post Layout v8 (blog_post_layouts8.html)</li>
-                            <li>NEW: Blog Post Layout v9 (blog_post_layouts9.html)</li>
-                            <li>NEW: Blog Left Sidebar Example (blog_post_layouts_ls.html)</li>
-                            <li>NEW: Blog Full Width Example (blog_post_layouts_fw.html)</li>
-                            <li>NEW: Blog Grid: 1 Col (blog_grid_1.html)</li>
-                            <li>NEW: Blog Grid: 2 Col (blog_grid_2.html)</li>
-                            <li>NEW: Blog Grid: 3 Col (blog_grid_3.html)</li>
-                            <li>NEW: Blog Grid: 4 Col (blog_grid_4.html)</li>
-                            <li>NEW: Blog Grid: Full Width - 4 Col (blog_grid_4_fw.html)</li>
-                            <li>NEW: Blog Grid: Right Sidebar - 2 Col (blog_grid_2_rs.html)</li>
-                            <li>NEW: Blog Grid: Left Sidebar - 2 Col (blog_grid_2_ls.html)</li>
-                            <li>NEW: Blog Single Page (blog_single.html)</li>
-                            <li>NEW: Blog Home Boxed Page (blog_home_boxed.html)</li>
-                            <li>NEW: Blog Home Boxed Space Page (blog_home_boxed_space.html)</li>
-                            <li>UPGRADE: Bootstrap v3.3.5</li>
-                            <li>UPGRADE: jQuery v1.11.3</li>
-                            <li>UPGRADE: Master Slider v2.15.0</li>
-                            <li>UPGRADE: Cube Portfolio v2.3.3</li>
-                            <li>DROPPED: Glyphicons Pro (due to lincese changes)</li>
-                            <li>FIXED: Navigation alignemtn and search box in page_home6.html page</li>
-                            <li>FIXED: Footer logo in page_home9.html page</li>
-                            <li>FIXED: Default header z-index issue with FancyBox</li>
-                            <li>FIXED: Thumbnail FancyBox in the shorcodes page (Thanks to "Harald Meyer")</li>
-                            <li>FIXED: Header v3 spacing issue on hover (Thanks to "Dario")</li>
-                            <li>FIXED: Some design issues on dark layout styles</li>
-                            <li>FIXED: Header v7 (sidebar header) - content onclick with ajax call issue</li>
-                            <li>FIXED: Revolution Slider loading issue</li>
-                            <li>IMPROVEMENT: "Timeline v2" tag
-                                <time> replaced with</time>
-                                <div> and added equal height columns (Thanks to Stefan Kreckwitz)</div>
-                            </li>
-                            <li>IMPROVEMENT: Header v7 (sidebar header) - added submenu option</li>
-                            <li>IMPROVEMENT: One Page navigation - added submenu option</li>
-                            <li>IMPROVEMENT: One Page navigation hides on scroll in mobile/tablet devices</li>
+                            <li>NEW: Jenkins 계정 생성</li>
+                            <li>NEW: GitHub와 Hook 설정</li>
+                            <li>NEW: AWS 계정 생성 후 EC2 생성</li>
+                            <li>NEW: RDS 인스턴스 EC2와 연결</li>
+
+                            <li>UPGRADE: HandlerInterceptorAdapter 클래스</li>
+                            <li>UPGRADE: 패키지의 생성과 SampleInterceptor 설정</li>
+                            <li>UPGRADE: UserDAO의 생성과 SQL 처리</li>
+                            <li>UPGRADE: UserController의 작성</li>
+
+                            <li>IMPROVEMENT: 도메인 객체의 변화</li>
+                            <li>IMPROVEMENT: 파일 업로드를 위한 register.jsp 페이지 수정하기</li>
+                            <li>IMPROVEMENT: 파일 삭제 후 화면에서의 제거</li>
+                            <li>IMPROVEMENT: 파일 링크 처리</li>
+
+                            <li>FIXED: EC2 다른 모듈과 연결 오류</li>
+                            <li>FIXED: Jenkins, GitHub 연결 RSA 오류</li>
+                            <li>FIXED: Jenkins 즉시 Build 수정</li>
+                            <li>FIXED: Jenkins HTTP 포트 변경</li>
                         </ul>
 
-                        <h4><span>Version 1.7 – 08 March 2015</span></h4>
+                        <h4><span>Version 1.7 – 2017/02/26</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>UPGRADE: Bootstrap v3.3.2</li>
-                            <li>UPGRADE: Countdown for jQuery v2.0.1</li>
-                            <li>UPGRADE: jQuery v1.11.2</li>
-                            <li>UPGRADE: Font Awesome 4.3.0</li>
-                            <li>UPGRADE: Revolution Slider v4.6.4</li>
-                            <li>UPGRADE: Sky Forms Pro v2.0.5</li>
-                            <li>UPGRADE: Cube Portfolio v2.0.1</li>
-                            <li>UPGRADE: Master Slider v2.9.3</li>
-                            <li>NEW: Added working contact form to all contact pages</li>
-                            <li>NEW: Sticky Footer (page_misc_sticky_footer.html)</li>
-                            <li>NEW: Transparent Header with 9 Header Styles (header-v6)</li>
-                            <li>NEW: Left/Right Sidebar Headers (header-v7)</li>
-                            <li>NEW: WoW.js</li>
-                            <li>NEW: Equal Height Columns</li>
-                            <li>NEW: Smooth Scrolling "smoothScroll.js" (used in all pages)</li>
-                            <li>NEW: Vertical Progress Bars</li>
-                            <li>NEW: Animated Progress Bars on scroll</li>
-                            <li>NEW: Light version of Parallax Quote</li>
-                            <li>NEW: Clients v1 with Owl Carousel</li>
-                            <li>NEW: Video iFrame (Modal) with Owl Carousel</li>
-                            <li>NEW: Quote v1 with Parallax</li>
-                            <li>NEW: Quote v2</li>
-                            <li>NEW: News v2 Blocks (News/Blog Post)</li>
-                            <li>NEW: News v3 Blocks (News/Blog Post)</li>
-                            <li>NEW: Process v1 Section</li>
-                            <li>NEW: Headline v2 (Title Heading)</li>
-                            <li>NEW: Featured Blog (News Post)</li>
-                            <li>NEW: Blog Trending (News/Blog Post)</li>
-                            <li>NEW: Social Icons v1</li>
-                            <li>NEW: Tags v2 (Sidebar Tags)</li>
-                            <li>NEW: Pager v2 (Pagination)</li>
-                            <li>NEW: Blog Photostream with Lightbox</li>
-                            <li>NEW: Image Hover v1 Effects (Scale on Hover)</li>
-                            <li>NEW: Image Hover v2 Effects (Black and White)</li>
-                            <li>NEW: Call Action v2 with Parallax</li>
-                            <li>NEW: Blog Comments with validation</li>
-                            <li>NEW: Blog Comments</li>
-                            <li>NEW: Dark/Light Option for default Breadcrumbs</li>
-                            <li>NEW: Breadcrumbs v1</li>
-                            <li>NEW: Breadcrumbs v3</li>
-                            <li>NEW: Testimonials v4</li>
-                            <li>NEW: Testimonials v6</li>
-                            <li>NEW: Parallax Counter v3</li>
-                            <li>NEW: Parallax Counter v4</li>
-                            <li>NEW: Service Block v4</li>
-                            <li>NEW: Service Block v5</li>
-                            <li>NEW: Service Block v6</li>
-                            <li>NEW: Service Block v7</li>
-                            <li>NEW: Service Block v8</li>
-                            <li>NEW: Team v3 Blocks</li>
-                            <li>NEW: Team v4 Blocks</li>
-                            <li>NEW: Team v5 Blocks</li>
-                            <li>NEW: Team v6 Blocks</li>
-                            <li>NEW: Team v7 Blocks</li>
-                            <li>NEW: Home Page with Left sidebar navigation (page_home12.html)</li>
-                            <li>NEW: Home Page with Right sidebar navigation (page_home13.html)</li>
-                            <li>NEW: About Us v1 Page (page_about2.html)</li>
-                            <li>NEW: About Us v2 Page (page_about3.html)</li>
-                            <li>NEW: About Me v1 Page (page_about_me.html)</li>
-                            <li>NEW: About Me v2 Page (page_about_me1.html)</li>
-                            <li>NEW: About Me v3 Page (page_about_me2.html)</li>
-                            <li>NEW: About Our Team v1 Page (page_about_our_team.html)</li>
-                            <li>NEW: About Our Team v2 Page (page_about_our_team1.html)</li>
-                            <li>NEW: About Our Team v3 Page (page_about_our_team2.html)</li>
-                            <li>NEW: Services Page v1 (page_services.html)</li>
-                            <li>NEW: Services Page v2 (page_services1.html)</li>
-                            <li>NEW: Services Page v3 (page_services2.html)</li>
-                            <li>NEW: Services Page v4 (page_services3.html)</li>
-                            <li>NEW: Coming Soon Page (page_coming_soon1.html)</li>
-                            <li>NEW: Gallery Examples Page (feature_gallery.html)</li>
-                            <li>NEW: Animation on Scroll Page (feature_animations.html)</li>
-                            <li>NEW: Parallax Counters Page (feature_parallax_counters.html)</li>
-                            <li>NEW: Parallax Boxes Page (feature_parallax_blocks.html)</li>
-                            <li>NEW: Blog Large Image Right Sidebar Page (blog_large_right_sidebar1.html)</li>
-                            <li>NEW: Blog Large Image Left Sidebar Page (blog_large_left_sidebar1.html)</li>
-                            <li>NEW: Blog Large Image Full Width Sidebar Page (blog_large_full_width1.html)</li>
-                            <li>NEW: Blog Medium Image Right Sidebar Page (blog_medium_right_sidebar1.html)</li>
-                            <li>NEW: Blog Medium Image Left Sidebar Page (blog_medium_left_sidebar1.html)</li>
-                            <li>NEW: Blog Medium Image Full Width Sidebar Page (blog_medium_full_width1.html)</li>
-                            <li>NEW: Blog Item Right Sidebar Page (blog_large_right_sidebar_item1.html)</li>
-                            <li>NEW: Blog Item Left Sidebar Page (blog_large_left_sidebar_item1.html)</li>
-                            <li>NEW: Blog Item Full Width Page (blog_large_full_width_item1.html)</li>
-                            <li>NEW: Portfolio Hover Colors Page (portfolio_hover_colors.html)</li>
-                            <li>NEW: Portfolio 2 Columns Full Width No Space Page
-                                (portfolio_2_columns_fullwidth_no_space.html)
-                            </li>
-                            <li>NEW: Portfolio 2 Columns Full Width Grid Page (portfolio_2_columns_fullwidth.html)</li>
-                            <li>NEW: Portfolio 2 Columns Full Width Grid With Text Page
-                                (portfolio_2_columns_fullwidth_text.html)
-                            </li>
-                            <li>NEW: Portfolio 3 Columns Full Width No Space Page
-                                (portfolio_3_columns_fullwidth_no_space.html)
-                            </li>
-                            <li>NEW: Portfolio 3 Columns Full Width Grid Page (portfolio_3_columns_fullwidth.html)</li>
-                            <li>NEW: Portfolio 3 Columns Full Width Grid With Text Page
-                                (portfolio_3_columns_fullwidth_text.html)
-                            </li>
-                            <li>NEW: Header v6 Transparent (feature_header_v6_transparent.html)</li>
-                            <li>NEW: Header v6 Dark Semi Transparent (feature_header_v6_semi_dark_transparent.html)</li>
-                            <li>NEW: Header v6 White Semi Transparent (feature_header_v6_semi_white_transparent.html)
-                            </li>
-                            <li>NEW: Header v6 Transparent Border Bottom (feature_header_v6_border_bottom.html)</li>
-                            <li>NEW: Header v6 Classic Dark (feature_header_v6_classic_dark.html)</li>
-                            <li>NEW: Header v6 Classic White (feature_header_v6_classic_white.html)</li>
-                            <li>NEW: Header v6 Dark Dropdown (feature_header_v6_dark_dropdown.html)</li>
-                            <li>NEW: Header v6 Dark Navigation on Scroll (feature_header_v6_dark_scroll.html)</li>
-                            <li>NEW: Header v6 Dark Search (feature_header_v6_dark_search.html)</li>
-                            <li>NEW: Header v6 Dark Navigation in Responsive mode
-                                (feature_header_v6_dark_res_nav.html)
-                            </li>
-                            <li>IMPROVEMENT: Background images for high resolution screens in (paralalx counters,
-                                clients block etc.)
-                            </li>
-                            <li>IMPROVEMENT: Default Header for large logo images (most wanted feature by users
-                                request)
-                            </li>
-                            <li>IMPROVEMENT: Header CSS code structure (added new comment structure with tabel of
-                                content)
-                            </li>
-                            <li>IMPROVEMENT: Portfolio Pages (all portfolio pages)</li>
-                            <li>IMPROVEMENT: Smooth Content Scroller for blocks in Shop UI (header cart) and Profile
-                                (notes, events, notification etc.) pages
-                            </li>
-                            <li>IMPROVEMENT: File structure (all detailed information written in the documentation)</li>
-                            <li>IMPROVEMENT: Coming Soon Page (page_coming_soon.html) - added sticky footer, updated
-                                countdown jquery plugin and enhanced some code structure.
-                            </li>
-                            <li>IMPROVEMENT: Redesigned About Us (page_about1.html)</li>
-                            <li>IMPROVEMENT: Search Pages</li>
-                            <li>IMPROVEMENT: Invoice Page</li>
-                            <li>IMPROVEMENT: Documentation (Headers, Footers and Plugin sections)</li>
-                            <li>FIXED: Language Bar in Default Header for iOS touch devices</li>
-                            <li>FIXED: FancyBox overlay issue</li>
-                            <li>FIXED: Scrollspy Reference for One Page Template</li>
-                            <li>FIXED: Theme colors of border-bottom in Default Header</li>
-                            <li>FIXED: Some theme color issues has fixed in Shop UI</li>
-                            <li>FIXED: Typo Errors in the Documentation</li>
+                            <li>NEW: MVC의 인터셉터</li>
+                            <li>NEW: HttpSession을 이용하는 로그인 처리</li>
+                            <li>NEW: 게시물의 세부 기능 적용</li>
+                            <li>NEW: 자동 로그인과 쿠키</li>
+
+                            <li>UPGRADE: postHandle()을 이용해서 추가적인 작업하기</li>
+                            <li>UPGRADE: LoginInterceptor의 설정</li>
+                            <li>UPGRADE: AuthInterceptor의 설정</li>
+                            <li>UPGRADE: servlet-context.xml의 설정</li>
+                            <li>UPGRADE: LoginInterceptor에서의 쿠키 생성하기</li>
+
+                            <li>IMPROVEMENT: 자동 로그인 테스트</li>
+                            <li>IMPROVEMENT: 브라우저 종료 후 다시 접속하기</li>
+                            <li>IMPROVEMENT: jsp별 로그인 처리</li>
+                            <li>IMPROVEMENT: UserController의 작성</li>
+                            <li>IMPROVEMENT: 패키지의 생성과 SampleInterceptor</li>
+
+                            <li>FIXED: HomeController의 수정</li>
+                            <li>FIXED: preHandle()의 Object 파라미터</li>
+                            <li>FIXED: BoardService의 처리</li>
+                            <li>FIXED: 업로드 된 파일 이름의 처리를 위한 JavaScript</li>
+                            <li>FIXED: form 태그의 submit 처리</li>
                         </ul>
 
-                        <h4><span>Version 1.6 – 29 October 2014</span></h4>
+                        <h4><span>Version 1.6 – 2017/02/23</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>New: Master Slider <strong>(value $17)</strong></li>
-                            <li>New: Shop UI Home Page</li>
-                            <li>New: Shop UI Product Page</li>
-                            <li>New: Shop UI Filter Grid Page</li>
-                            <li>New: Shop UI Filter List Page</li>
-                            <li>New: Shop UI Checkout Page</li>
-                            <li>New: Shop UI Login Page</li>
-                            <li>New: Shop UI Registration Page</li>
-                            <li>New: One Page (Added Dark Layout)</li>
-                            <li>New: One Page (Added all Theme Colors)</li>
-                            <li>New: Discover Home Page (Totally Redesigned)</li>
-                            <li>New: Creative Home Page</li>
-                            <li>New: Inspire Home Page</li>
-                            <li>New: Desire Home Page</li>
-                            <li>New: Contacts Advanced Page (with working PHP contact forms)</li>
-                            <li>New: Contacts Option 3 Page (Classic Style)</li>
-                            <li>New: Colourful Pricing Tables Page (Added 4 types of Pricing Tables)</li>
-                            <li>New: Flat Pricing Tables (Added 2 types of Pricing Tables)</li>
-                            <li>New: Icon Page (Glyphicons Pro IconsHome)</li>
-                            <li>New: Portfolio Single Item Page</li>
-                            <li>New: Portfolio 2 Columns (Grid)</li>
-                            <li>New: Portfolio 2 Columns (Grid Text)</li>
-                            <li>New: Portfolio 2 Columns (Grid No Space)</li>
-                            <li>New: Portfolio 3 Columns (Grid)</li>
-                            <li>New: Portfolio 3 Columns (Grid Text)</li>
-                            <li>New: Portfolio 3 Columns (Grid No Space)</li>
-                            <li>New: Portfolio 4 Columns (Grid)</li>
-                            <li>New: Portfolio 4 Columns (Grid Text)</li>
-                            <li>New: Portfolio 4 Columns (Grid No Space)</li>
-                            <li>New: Portfolio 4 Columns (Fullwidth Grid)</li>
-                            <li>New: Portfolio 4 Columns (Fullwidth Grid Text)</li>
-                            <li>New: Portfolio 4 Columns (Fullwidth Grid No Space)</li>
-                            <li>New: Portfolio 5 Columns (Grid)</li>
-                            <li>New: Portfolio 5 Columns (Grid Text)</li>
-                            <li>New: Portfolio 5 Columns (Grid No Space)</li>
-                            <li>New: Portfolio 6 Columns (Grid)</li>
-                            <li>New: Portfolio 6 Columns (Grid Text)</li>
-                            <li>New: Portfolio 6 Columns (Grid No Space)</li>
-                            <li>New: Footer Options (Added 3 new options. Can be found all options in
-                                feature_footers.html)
-                            </li>
-                            <li>New: Header Options (Added 2 new header options Transparent and Shop UI. Can be found
-                                all options in feature_headers.html)
-                            </li>
-                            <li>New: Mega Menu (Added 3 types of Mega Menu, one in default headers and 2 demos in Shop
-                                pages)
-                            </li>
-                            <li>New: Two Theme Colors (Added dark-red and teal colors)</li>
-                            <li>New: Misc Blank Page</li>
-                            <li>New: Misc Boxed Fixed Menu Page</li>
-                            <li>New: Misc Dark Page</li>
-                            <li>New: Misc Dark Boxed Page</li>
-                            <li>New: Misc Dark Page With Different Theme Color</li>
-                            <li>New: PSD Files (All Shop UI pages, One Page with dark layout, all other new pages)</li>
-                            <li>New: Owl Slider (Added diversity new options))</li>
-                            <li>New: Revolution Slider (Added new slides and option with full screen header offset)</li>
-                            <li>New: Content Boxes (Added variety options)</li>
-                            <li>New: Thumbnail Blocks</li>
-                            <li>New: Parallax Counters</li>
-                            <li>New: Background Image Blocks/sections (with parallax effect)</li>
-                            <li>New: Portfolio Boxes (Added different types)</li>
-                            <li>New: Flat Background Block</li>
-                            <li>New: Flat Testimonials</li>
-                            <li>New: Service Block</li>
-                            <li>UPGRADE: Bootstrap 3.2</li>
-                            <li>UPGRADE: jQuery 1.11.1</li>
-                            <li>UPGRADE: Glyphicons Pro v1.8.1</li>
-                            <li>UPGRADE: Font Awesome Icons v4.2</li>
-                            <li>UPGRADE: Revolution Slider v4.6.3</li>
-                            <li>UPGRADE: Cube Portfolio v1.5.1</li>
-                            <li>UPGRADE: Layer Slider v5.3</li>
-                            <li>UPGRADE: Sky Forms v2.0.3</li>
-                            <li>UPGRADE: Pace.js v0.5.6</li>
-                            <li>UPGRADE: GMaps.js v0.4.15</li>
-                            <li>IMPROVEMENT: Documentation (Major Enhancement)</li>
-                            <li>IMPROVEMENT: All Navigations (Headers)</li>
-                            <li>IMPROVEMENT: Main Parallax Slider</li>
-                            <li>IMPROVEMENT: Amazing Home Page</li>
-                            <li>IMPROVEMENT: All Footer Options</li>
-                            <li>IMPROVEMENT: CSS code structure</li>
-                            <li>IMPROVEMENT: JavaScript code structure</li>
-                            <li>IMPROVEMENT: Dark Version</li>
-                            <li>IMPROVEMENT: Google Map scrolling - added “scrollwheel: false” to page_contacts.js</li>
-                            <li>IMPROVEMENT: Footer v1 (social icons replaced withfont-awesome icon tooltips)</li>
-                            <li>IMPROVEMENT: Pagination page (added rounded pager examples)</li>
-                            <li>IMPROVEMENT: custom.js (added new javascript file to write all custom js changes)</li>
-                            <li>IMPROVEMENT: Parallax Backgrounds</li>
-                            <li>IMPROVEMENT: "Back To Top" Button image replaced with CSS code</li>
-                            <li>FIXED: Navigation Mobile Devices (One Page Template)</li>
-                            <li>FIXED: Our Clients Carousel (One Page Template)</li>
-                            <li>FIXED: Pricing Pages (Theme color issues)</li>
-                            <li>FIXED: Fixed Navigation Colours for Tablets and others devices</li>
-                            <li>FIXED: Ladda Buttons (Added missed file laddaButtons.js)</li>
-                            <li>FIXED: Profile Theme Colors (added missed 9 theme color files)</li>
-                            <li>FIXED: Padding space (Bordered Buttons)</li>
-                            <li>FIXED: Navigation Tablet Mode Colors</li>
-                            <li>FIXED: Fixed sky-forms datepicker responsive issue on resolution 1024x768</li>
-                            <li>FIXED: Page Profile Settings Tab</li>
+                            <li>New: MVC의 파일 업로드</li>
+                            <li>New: 전송된 파일의 저장</li>
+                            <li>New: UploadController의 재구성</li>
+                            <li>New: 전송된 파일을 화면에 표시</li>
+                            <li>New: 첨부파일의 삭제</li>
+                            <li>New: 게시물 등록의 파일 업로드</li>
+                            <li>New: 조회 페이지와 파일 업로드</li>
+                            <li>New: 게시물 수정, 삭제 작업의 파일 업로드</li>
+
+                            <li>UPGRADE: UploadController의 파일 전송 기능 구현</li>
+                            <li>UPGRADE: jsp에서의 첨부파일 삭제 처리</li>
+                            <li>UPGRADE: BoardService의 변경과 트랜잭션의 처리</li>
+                            <li>UPGRADE: 원본 이미지의 조회와 다운로드 처리</li>
+                            <li>UPGRADE: 수정 작업에 대한 서비스의 트랜잭션 관리</li>
+                            <li>UPGRADE: iframe을 이용한 파일 업로드의 결과 처리</li>
+                            <li>UPGRADE: 업로드 폴더의 생성 처리</li>
+
+                            <li>IMPROVEMENT: BoardDao, ReplyDAO 변경</li>
+                            <li>IMPROVEMENT: MessageService의 트랜잭션 처리 후 테스트</li>
+                            <li>IMPROVEMENT: 실행시에 전달되는 파라미터 파악하기</li>
+                            <li>IMPROVEMENT: 도메인 객체 MessageVO 재설정</li>
+                            <li>IMPROVEMENT: 댓글 등록의 이벤트 처리</li>
+                            <li>IMPROVEMENT: 전체 목록에 대한 함수 처리</li>
+
+                            <li>FIXED: HiddenMethod의 활용 오류</li>
+                            <li>FIXED: Ajax 댓글 전달 방식과 처리 방식의 결정</li>
+                            <li>FIXED: Ajax 루트 컨텍스트로 실행하기</li>
                         </ul>
 
-                        <h4><span>Version 1.5 – 24 June 2014</span></h4>
+                        <h4><span>Version 1.5 – 2017/02/18</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: <strong>One Page Template</strong></li>
-                            <li>NEW: Flat Pricing Tables</li>
-                            <li>NEW: 40+ PSD Pages</li>
-                            <li>NEW: <strong>Dark Layout</strong> Option</li>
-                            <li>NEW: Cube Portfolio (<strong>value $8</strong>)</li>
-                            <li>NEW: Blog (Grid) Masonry</li>
-                            <li>NEW: 3 Footer Options</li>
-                            <li>NEW: 3 Header Options</li>
-                            <li>NEW: Instagram Icon</li>
-                            <li>NEW: Profile Dashboard</li>
-                            <li>NEW: Profile Overview</li>
-                            <li>NEW: Profile Users</li>
-                            <li>NEW: Profile Projects</li>
-                            <li>NEW: Profile Comments</li>
-                            <li>NEW: Profile History</li>
-                            <li>NEW: Profile Settings</li>
+                            <li>NEW: <strong>AOP와 트랜잭션 관리</strong></li>
+                            <li>NEW: 테스트 프로젝트의 생성과 AOP의 적용 준비</li>
+                            <li>NEW: AOP Test</li>
+                            <li>NEW: <strong>트랜잭션</strong>처리</li>
+                            <li>NEW: 게시물의 댓글에 따른 트랜잭션 처리</li>
 
-                            <li>NEW FEATURES (Profile Pages)
+                            <li>NEW FEATURES (AOP)
                                 <ul>
-                                    <li>NEW: 4 Tab Form Sections (Edit Profile, Change Password, Payment Options and
-                                        Notification Settings)
-                                    </li>
-                                    <li>NEW: 2 Social Blocks</li>
-                                    <li>NEW: Profile Timeline Block</li>
-                                    <li>NEW: Scrollbar</li>
-                                    <li>NEW: Sidebar Calendar</li>
-                                    <li>NEW: Notifications</li>
-                                    <li>NEW: Notes Block</li>
-                                    <li>NEW: Events Block</li>
-                                    <li>NEW: Colorful Info Blocks (with counters)</li>
-                                    <li>NEW: User Info Blocks</li>
-                                    <li>NEW: Discussions Blocks</li>
+                                    <li>NEW: 샘플용 도메인 객체 DAO, XML Mapper, 서비스</li>
+                                    <li>NEW: 도메인 객체 MessageVO</li>
+                                    <li>NEW: DAO 재설정</li>
                                     <li>NEW: Alarm Notifications</li>
                                 </ul>
                             </li>
-                            <li>NEW FEATURES (One Page Template)
+                            <li>NEW FEATURES (Transaction)
                                 <ul>
-                                    <li>NEW: Full Screen Revolution Slider</li>
-                                    <li>NEW: AJAX Portfolio</li>
-                                    <li>NEW: Quote Parallax Block</li>
-                                    <li>NEW: Beautiful Team Blocks</li>
-                                    <li>NEW: Parallax Counter</li>
-                                    <li>NEW: Serive Blocks</li>
-                                    <li>NEW: News Blocks</li>
-                                    <li>NEW: Parallax Twitter Block</li>
-                                    <li>NEW: Parallax Clients Section</li>
-                                    <li>NEW: Testimonial Carousel</li>
-                                    <li>NEW: Contact Forms</li>
+                                    <li>NEW: root-context.xml의 재처리</li>
+                                    <li>NEW: MessageService의 트랜잭션 처리 후 테스트</li>
+                                    <li>NEW: 조회 화면에서 댓글의 숫자 출력</li>
                                 </ul>
                             </li>
 
-                            <li>UPGRADE: Layer Slider <strong>v5.1.0</strong></li>
-                            <li>UPGRADE: Revolution Slider <strong>v4.5 SkyWood</strong></li>
-                            <li>UPGRADE: Font Awesome Icons <strong>v4.1.0</strong></li>
+                            <li>UPGRADE: Header & Footer</li>
+                            <li>UPGRADE: Slide Bar</li>
 
-                            <li>IMPROVEMENT: Unify Buttons</li>
-                            <li>IMPROVEMENT: Main Parallax Slider</li>
-                            <li>IMPROVEMENT: Jobs Page (Clients Logos)</li>
-                            <li>IMPROVEMENT: Navigation</li>
-                            <li>IMPROVEMENT: Blog Magazine</li>
-                            <li>IMPROVEMENT: Blog Large (Sidebar News)</li>
-                            <li>IMPROVEMENT: Font Awesome Icon Page</li>
-                            <li>IMPROVEMENT: Our Work Carousel with "Owl Carousel"</li>
+                            <li>IMPROVEMENT: MessageService의 트랜잭션 처리 후 테스트</li>
+                            <li>IMPROVEMENT: boardMapper.xml의 SQL문 변경</li>
+                            <li>IMPROVEMENT: ReplyServiceImpl의 수정</li>
+                            <li>IMPROVEMENT: 조회 화면의 댓글 수 출력</li>
 
-                            <li>FIXED: Navigation for Mobile and Tablet Devices</li>
-                            <li>FIXED: Many bugs are fixed in IE8:
+                            <li>FIXED: Advanced REST Client
                                 <ul>
-                                    <li>FIXED: Fixed Header Background</li>
-                                    <li>FIXED: Twitter Blog</li>
-                                    <li>FIXED: Pricing Stickers</li>
-                                    <li>FIXED: Easy Block Sections</li>
-                                    <li>FIXED: Sky Form Icons</li>
-                                    <li>FIXED: Carousel-v1</li>
-                                    <li>FIXED: Service Blocks</li>
-                                    <li>FIXED: Search blocks</li>
-                                    <li>FIXED: Parallax Team Section</li>
-                                    <li>FIXED: Parallax Counter</li>
-                                    <li>FIXED: Job Banner and Image Inputs</li>
+                                    <li>FIXED: targetid 전달 불가</li>
+                                    <li>FIXED: 400 오류</li>
+                                    <li>FIXED: json 문법 오류</li>
                                 </ul>
                             </li>
                         </ul>
 
-                        <h4><span>Version 1.4 – 06 April 2014</span></h4>
+                        <h4><span>Version 1.4 – 2017/02/15</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: 5 Theme Colors</li>
-                            <li>NEW: Discover Page</li>
-                            <li>NEW: Jobs Page</li>
-                            <li>NEW: Jobs Inner v1 Page</li>
-                            <li>NEW: Jobs Inner v2 Page</li>
-                            <li>NEW: Jobs Inner v3 Page</li>
-                            <li>NEW: About Us Page</li>
-                            <li>NEW: About Me Page</li>
-                            <li>NEW: Responsive Corporate Email</li>
-                            <li>NEW: Responsive Flat Email</li>
-                            <li>NEW: Responsive Modern Email</li>
-                            <li>NEW: Pricing Tabels</li>
-                            <li>NEW: Light Pricing Tabels</li>
-                            <li>NEW: Mega Pricing Tabels</li>
-                            <li>NEW: Search Results Page</li>
-                            <li>NEW: Search Table Results Page</li>
-                            <li>NEW: FAQs Page</li>
-                            <li>NEW: 404 Eror v1 Page</li>
-                            <li>NEW: 404 Eror v2 Page</li>
-                            <li>NEW: Blog Timeline Page</li>
-                            <li>NEW: Boxed Pages</li>
-                            <li>NEW: Parallax Background</li>
-                            <li>NEW: Fixed Header</li>
-                            <li>NEW: Static Footer</li>
-                            <li>NEW: Sub Menu in Dropdown Navigation</li>
-                            <li>NEW: Dropcaps</li>
-                            <li>NEW: Bordered Texts</li>
-                            <li>NEW: Tooltips</li>
-                            <li>NEW: Color Texts</li>
-                            <li>NEW: Popovers</li>
-                            <li>NEW: Highlights</li>
-                            <li>NEW: Heading Options</li>
-                            <li>NEW: Deviders</li>
-                            <li>NEW: Blockquote Styles</li>
-                            <li>NEW: Box Shadows</li>
-                            <li>NEW: Testimonials Styles</li>
-                            <li>NEW: 7 New Button Colors</li>
-                            <li>NEW: Icon Button</li>
-                            <li>NEW: Outline Buttons</li>
-                            <li>NEW: Rounded Buttons</li>
-                            <li>NEW: Dropdown Buttons</li>
-                            <li>NEW: Split Dropdowns Button</li>
-                            <li>NEW: Collection of Brand and Social Buttons</li>
-                            <li>NEW: Button Loading &amp; Hover Effects</li>
-                            <li>NEW: Icon Sizes</li>
-                            <li>NEW: 10+ Icon Color Styles</li>
-                            <li>NEW: Rounded Icons</li>
-                            <li>NEW: Circle Icons</li>
-                            <li>NEW: Rounded and Circle Social Icons</li>
-                            <li>NEW: Line Icons</li>
-                            <li>NEW: Unlimited Content Boxes</li>
-                            <li>NEW: Colored Content Boxes</li>
-                            <li>NEW: Tons of Labels &amp; Badges Styles</li>
-                            <li>NEW: Progress Bars</li>
-                            <li>NEW: Image Styles</li>
-                            <li>NEW: Vimeo &amp; Youtube Video Examples</li>
-                            <li>NEW: Soundcloud Music</li>
-                            <li>NEW: 5+ Panels</li>
-                            <li>NEW: Timeline v1</li>
-                            <li>NEW: Timeline v2</li>
-                            <li>NEW: Responsive Carousel Examples</li>
-                            <li>NEW: General Unify Forms</li>
-                            <li>NEW: Datepickers</li>
-                            <li>NEW: Validation Forms</li>
-                            <li>NEW: Masking Forms</li>
-                            <li>NEW: Form Layouts</li>
-                            <li>NEW: Checkout Form</li>
-                            <li>NEW: Review Form</li>
-                            <li>NEW: Order Form</li>
-                            <li>NEW: Form States</li>
-                            <li>NEW: Form Sliders</li>
-                            <li>NEW: Modals</li>
-                            <li>NEW: Google Maps Examples</li>
-                            <li>NEW: Vector Maps</li>
-                            <li>NEW: Animated Pie Charts</li>
-                            <li>NEW: Counters</li>
-                            <li>NEW: Image Breadcrumbs</li>
-                            <li>NEW: Animate CSS</li>
-                            <li>NEW: Sub Menu on Sidebar Navigation</li>
+                            <li>NEW: RestController와 Ajax</li>
+                            <li>NEW: 댓글 처리와 REST</li>
+                            <li>NEW: REST 방식의 ReplyController 작성</li>
+                            <li>NEW: 화면에서의 Ajax 호출</li>
+                            <li>NEW: 게시물 관리의 댓글 적용</li>
 
-                            <li>IMPROVEMENT: Typography Page</li>
-                            <li>IMPROVEMENT: About Our Team</li>
-                            <li>IMPROVEMENT: Clients Page</li>
-                            <li>IMPROVEMENT: Gallery Page</li>
-                            <li>IMPROVEMENT: Button Sisez</li>
-                            <li>IMPROVEMENT: Disabled State</li>
-                            <li>IMPROVEMENT: Icon Styles</li>
-                            <li>IMPROVEMENT: Bootstrap Forms</li>
-                            <li>IMPROVEMENT: Navigation</li>
-                            <li>IMPROVEMENT: Documentation</li>
+                            <li>IMPROVEMENT: @RestController</li>
+                            <li>IMPROVEMENT: ReplyService/ReplyServiceImpl 개선</li>
+                            <li>IMPROVEMENT: ReplyController에서의 페이징 처리</li>
+                            <li>IMPROVEMENT: 테스트를 위한 컨트롤러와 jsp</li>
+                            <li>IMPROVEMENT: handlebars를 이용한 템플릿</li>
+                            <li>IMPROVEMENT: searchType과 keywork 링크 처리</li>
+                            <li>IMPROVEMENT: 게시물의 수정 처리</li>
+                            <li>IMPROVEMENT: 스프링 MVC의 UriComponentsBuilder</li>
+                            <li>IMPROVEMENT: 게시판 목록 페이징</li>
+                            <li>IMPROVEMENT: Exception 화면으로 전달</li>
 
-                            <li>FIXED: Mobile Navigation</li>
-                            <li>FIXED: Searchbox for Smaller Width Browser</li>
-                            <li>FIXED: FancyBox For Mobile</li>
-                            <li>FIXED: Button Sizes</li>
-                            <li>FIXED: Button Disable States</li>
-                            <li>FIXED: Boxed Layout Issue with FancyBox</li>
+                            <li>FIXED: UTF-8 처리 필터 등록</li>
+                            <li>FIXED: CSS, Javascript 준비</li>
+                            <li>FIXED: SessionFactory, SqlSessionTemplate의 수정</li>
+                            <li>FIXED: Redirect와 결과 데이터</li>
+                            <li>FIXED: MyBatis의 로그 log4jdbc-log4j2</li>
+                            <li>FIXED: XML Mapper Debugging</li>
 
-                            <li>UPDATED: Bootstrap 3.1.1</li>
-                            <li>UPDATED: Awesome Icons 4.0.3</li>
+                            <li>UPDATED: 게시판 Dummy Data</li>
                         </ul>
 
-                        <h4><span>Version 1.3 – 19 October 2013</span></h4>
+                        <h4><span>Version 1.3 – 2017/02/09</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: Layer Slider (<strong>value $10</strong>)</li>
-                            <li>NEW: Flatty Home Page</li>
-                            <li>NEW: Portfolio Home Page</li>
-                            <li>NEW: About Us Option Page</li>
-                            <li>NEW: Services Option Page</li>
-                            <li>NEW: Invoice Page</li>
-                            <li>NEW: Funny Boxes</li>
-                            <li>NEW: Meet Our Teamm Page</li>
-                            <li>NEW: Registration Option Page</li>
-                            <li>NEW: Login Option Page</li>
-                            <li>NEW: 3 Column Page</li>
-                            <li>NEW: Blog/Magazine Page</li>
-                            <li>NEW: Blog Medium Page</li>
-                            <li>NEW: Blog Full Width Page</li>
-                            <li>NEW: Blog Item Option</li>
-                            <li>NEW: Contact Option Page</li>
-                            <li>NEW: 404 Error Option Page</li>
-                            <li>NEW: Soring Plugin</li>
-                            <li>NEW: Tweet Blocks</li>
-                            <li>NEW: Tab Styles</li>
-                            <li>NEW: Header Option</li>
-                            <li>NEW: Content Boxes</li>
-                            <li>NEW: Rounded Icon Styles</li>
-                            <li>NEW: Colored Social Icon</li>
-                            <li>NEW: 12 Different Color Panels</li>
-                            <li>NEW: Testimonial Blocks</li>
-                            <li>NEW: Boxed Layout</li>
-                            <li>NEW: Blog Posts</li>
-                            <li>NEW: Blog Quick Links</li>
-                            <li>NEW: Panel Tabs</li>
-                            <li>NEW: Panel Forms</li>
-                            <li>NEW: Responsive Video Class</li>
-                            <li>NEW: Youtube Video Example</li>
-                            <li>NEW: Info Blocks with Icons</li>
-                            <li>NEW: Sidebar Navigation</li>
-                            <li>NEW: Hover Dropdown Menu</li>
+                            <li>NEW: 등록, 수정, 삭제, 조회 기능의 구현</li>
+                            <li>NEW: 영속(persistence)계층, 비지니스 계층</li>
+                            <li>NEW: 등록 구현 - 컨트롤러와 프레젠테이션 계층</li>
+                            <li>NEW: 전체 목록 구현</li>
+                            <li>NEW: 조회 구현</li>
+                            <li>NEW: 삭제/수정 처리</li>
+                            <li>NEW: 예외 처리</li>
+                            <li>NEW: 페이징 처리 - 영속(persistence)계층, 비지니스 계층</li>
+                            <li>NEW: 페이징 처리 - 컨트롤러와 프레젠테이션 계층</li>
+                            <li>NEW: 검색 처리와 동적 SQL</li>
 
-                            <li>UPGRADE: <strong>Twitter Bootstrap 3</strong></li>
-                            <li>UPGRADE: jQuery <strong>1.10.2</strong></li>
-                            <li>UPGRADE: Revolution Slider <strong>3.0.8</strong></li>
-                            <li>UPGRADE: Font Awesome <strong>v3.2.1</strong></li>
-                            <li>UPGRADE: Glyphicons Pro Icons</li>
+                            <li>UPGRADE: <strong>프로젝트 컨셉 및 구상</strong></li>
+                            <li>UPGRADE: MariaDB <strong>10.1.21</strong></li>
+                            <li>UPGRADE: SequelPro <strong>1.1.2</strong></li>
 
-                            <li>IMPROVEMENT: Redesigned All Feature Pages</li>
-                            <li>IMPROVEMENT: Redesigned Vertical Parallax Slider</li>
-                            <li>IMPROVEMENT: Redesigned Service Page</li>
-                            <li>IMPROVEMENT: Navigation (Menu)</li>
-                            <li>IMPROVEMENT: Blog Spacing</li>
-                            <li>IMPROVEMENT: Blog Tags</li>
-                            <li>IMPROVEMENT: Tabs/Accordions</li>
-                            <li>IMPROVEMENT: Parallax Slider Arrows</li>
+                            <li>IMPROVEMENT: 프로젝트 컨셉 및 구상</li>
+                            <li>IMPROVEMENT: 데이터베이스의 테이블 수정</li>
+                            <li>IMPROVEMENT: Mapper 파일의 저장 경로</li>
+                            <li>IMPROVEMENT: SqlSessionTemplate 설정</li>
 
-                            <li>FIXED: Navigation for Mobile Devices</li>
-                            <li>FIXED: Google Map zoom in/out</li>
-                            <li>FIXED: Navigation Toggle Color</li>
-                            <li>FIXED: Pricing Tables Color</li>
-                            <li>FIXED: IE8 Parallax Arrows</li>
+                            <li>FIXED: 프로젝트 컨셉 및 구상</li>
+                            <li>FIXED: MyBatis의 "#"문법</li>
                         </ul>
 
                         <div class="clearfix"></div>
 
-                        <h4><span>Version 1.2 – 27 May 2013</span></h4>
+                        <h4><span>Version 1.2 – 2017/02/07</span></h4>
                         <ul class="margin-bottom-40">
-                            <li>NEW: Revolution Slider (<strong>value $12</strong>)</li>
-                            <li>NEW: Coming Soon Page <code>page_coming_soon.html</code></li>
-                            <li>NEW: Glyphicons Pro (<strong>value $59</strong>)</li>
-                            <li>NEW: Four Theme Color Options</li>
-                            <li>NEW: Button Styles <code>feature_button.html</code></li>
-                            <li>NEW: Boxed Contact Page <code>page_contact1.html</code></li>
-                            <li>NEW: Search Page <code>page_search.html</code></li>
-                            <li>NEW: Amazing Alternative Home Page <code>page_home5.html</code></li>
+                            <li>NEW: 개발 환경의 설정 <code>IntelliJ Project Structure</code></li>
+                            <li>NEW: MariaDB의 설정과 스프링 테스트 <code>MySQLConnectionTest.class</code></li>
+                            <li>NEW: 스프링 + MyBatis + MariaDB의 설정 <code>MyBatisTest.class</code></li>
+                            <li>NEW: 모델 방식과 스프링 MVC 비교</li>
+                            <li>NEW: 스프링 + MyBatis <code>mappers.xml</code></li>
                             <li>IMPROVEMENT: Documentation</li>
-                            <li>IMPROVEMENT: Paralax Slider (High Resolution)</li>
-                            <li>IMPROVEMENT: HTML/CSS & JS code structures</li>
-                            <li>UPGRADE: Twitter Bootstrap v2.3.2</li>
-                            <li>UPGRADE: Font Awesome v3.1.1</li>
+                            <li>IMPROVEMENT: 프로젝트 컨셉 개선</li>
+                            <li>IMPROVEMENT: MariaDB 테이블 수정</li>
+                            <li>UPGRADE: 프로젝트 구상 후 추가 및 수정</li>
+                            <li>UPGRADE: 프로세스 목적 및 방법 재설정</li>
                             <li>
                                 FIXED:
                                 <ul>
-                                    <li>Header Search Block (for responsive)</li>
-                                    <li>Footer Subscribe Form (for IE8)</li>
-                                    <li>Accardion and Tabs in Firefox browser (added some default bootstrap classes)
+                                    <li>프로젝트 컨셉 수정</li>
+                                    <li>MySQL에서 MariaDB로 변경</li>
                                     </li>
                                 </ul>
                             </li>
@@ -5372,17 +5305,17 @@ jQuery(document).ready(function () {
 
                         <div class="clearfix"></div>
 
-                        <h4><span>Version 1.1 – 24 April 2013</span></h4>
+                        <h4><span>Version 1.1 – 2017/02/06</span></h4>
                         <ul>
-                            <li>UPGRADE: Twitter Bootstrap v2.3.1</li>
-                            <li>FIXED: Some page issues in <code>login.html</code> and <code>registration.html</code>
-                            </li>
+                            <li>CHOICE: Responsive Template(<strong>value &#8361;0</strong>)</li>
+                            <li>UPGRADE: 프로젝트 구상</li>
+                            <li>FIXED: </li>
                         </ul>
                         <br>
 
-                        <h4><span>Version 1.0 – 23 April 2013</span></h4>
+                        <h4><span>Version 1.0 – 2017/02/05</span></h4>
                         <ul>
-                            <li>Initial release</li>
+                            <li>프로젝트 구상</li>
                         </ul>
                     </div><!--/end-->
 
@@ -5393,17 +5326,13 @@ jQuery(document).ready(function () {
                         <h2>Upgrade <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                         <hr>
                         <p><span class="label label-blue">Info</span> 업그레이드하기 전에 파일을 <strong>백업</strong>하는 것을 잊지 마십시오.
-                            업그레이드 중에 문제가 발생하면
-                            <a
-                                    href="mailto:jingug1004@naver.com.com">jingug1004@naver.com</a>업그레이드하기 전에 파일을 백업하는
-                            것을 잊지 마십시오. 업그레이드 중에 문제가 발생하면 </p><br>
+                            <a href="mailto:jingug1004@naver.com.com">jingug1004@naver.com</a>업그레이드하기 전에 파일을 백업하는
+                            것을 잊지 마십시오. </p><br>
 
-                        <p><span class="label label-red">Important!</span> 최신 버전으로 업그레이드하기 전에 모든 custom CSS 및 JavaScript
-                            코드를 <code>custom.css</code> 및 <code>custom.js</code> 에 포함하십시오. 그렇지 않으면 업그레이드 중 사용자 정의 스타일이
-                            손실 될 수 있습니다.</p>
-                        <p>파일은 <code>assets/css/custom.css</code> 및
-                            <code>assets/js/custom.js</code> 에 있습니다. 모든 css / js 사용자 정의 코드를
-                            <code>custom.css</code> 및 <code>custom.js</code> 파일에 작성하는 것이 좋습니다.</p><br>
+                        <p><span class="label label-red">Important!</span> 최신 버전으로 업그레이드하기 전에 모든 코드를 <code>VCS</code> 및 <code>프로젝트</code> 에 포함하십시오.
+                            그렇지 않으면 업그레이드 중 원본이 손실 될 수 있습니다.</p>
+                        <p>파일은 <code>UNIFY 프로젝트</code> 및
+                            <code>GitHub</code> 에 있습니다. </p><br>
 
                         <div class="margin-bottom-30"></div>
 
@@ -5411,263 +5340,120 @@ jQuery(document).ready(function () {
 
                         <!-- v1.9+ Upgrade -->
                         <h4>v1.9+ Upgrade</h4>
-                        <p></p>
-                        <ul class="margin-bottom-20">
-                            <li>Merged <code>plugins.css</code> into <code>blocks.css</code>, now main global CSS files
-                                are <strong>app.css</strong> and <strong>blocks.css</strong>. Now, all packages contain
-                                <strong>app.css</strong> and <strong>blocks.css</strong> files by default. It helps to
-                                use any default elements, blocks etc. in any Unify packages. <a href="#scroll_main">Click
-                                    here</a> to learn more about the packages.
-                            </li>
-                            <li>Once Page default pages moved into <code>Classic</code> folder in the One Pages package
-                            </li>
-                            <li>Hero-Themes moved to <code>One Pages</code> folder (package) e.g.
-                                <code>Hero-Fashion</code>, <code>Hero-WebApp</code> etc.
-                            </li>
-                            <li><code>Shop-UI</code> folder name changed to <code>E-Commerce</code></li>
-                            <li><code>Blog</code> folder name changed to <code>Blog-Magazine</code>, the package will be
-                                extended in future updates with other blog and magazine design options.
-                            </li>
-                            <li><code>One-Page</code> folder name changed to <code>One-Pages</code>, now the package
-                                contains dozens thematic design options and counting new demos with each update.
-                            </li>
-                            <li><code class="bg-color-dark-blue">tab-v5</code> class changed to <code
-                                    class="bg-color-dark-blue">tab-v6</code> in E-Commerce CSS folder in order to use
-                                other global tabs
-                            </li>
-                            <li>Removed <code>ie8.css</code> file, Unify does not support anymore IE8 and any older
-                                version of browsers
+                        <p>Document</p>
+                        <ul>
+                            <li>
+                                Java Doc 및 Document 작성
                             </li>
                         </ul>
-                        <p>Please check <a href="#scroll_changelog">changelog</a> section for more information.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_overview"> Overview </a> 섹션을 확인하십시오.</p>
 
                         <div class="margin-bottom-30 clearfix"></div>
 
                         <!-- v1.8 Upgrade -->
                         <h4>v1.8 Upgrade</h4>
-                        <ul class="margin-bottom-20">
-                            <li>added class name <code>bg-color-white</code> to <code>news-v3</code> in HTML files and
-                                removed <code>background: #fff;</code> for <strong>.news-v3</strong> from its CSS file.
+                        <p>Jenkins, AWS</p>
+                        <ul>
+                            <li>서버 인스터스 생성 후 서버 Depoly 활용하는 웹 사이트 오픈
                             </li>
                         </ul>
-                        <p>Please check <a href="#scroll_changelog">changelog</a> section for more information.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_aws"> AWS </a> 섹션을 확인하십시오.</p>
 
                         <div class="margin-bottom-30 clearfix"></div>
 
                         <!-- v1.7 Upgrade -->
                         <h4>v1.7 Upgrade</h4>
 
-                        <p>These files were linked (imported) via CSS in older versions of Unify, starting from <strong>v1.7
-                            Unify</strong> all these files are linked in each HTML files in the <code>
-                            &lt;head&gt;</code> section:</p>
-                        <ol class="margin-bottom-20">
-                            <li>Header File <code>header-default.css</code></li>
-                            <li>Footer File <code>footer-v1.css</code></li>
-                            <li>CSS Plugin <code>animate.css</code></li>
-                            <li>Google Fonts</li>
-                        </ol>
-                        <p class="margin-bottom-40"><span class="label label-blue">Info</span> You may find linked CSS
-                            files <a href="#scroll_page_head">here</a></p>
-
-                        <p>Here is the changes made during the v1.7 Unify development:</p>
+                        <p>인터셉터를 활용하는 로그인 처리</p>
                         <ul>
-                            <li>changed <code>handleScrollBar</code> to <code>initScrollBar</code> (shop.app.js)</li>
-                            <li>removed/replaced <code>initMouseWheel</code> from shop.app.js to
-                                <code>mouse-wheel.js</code> (assets/js/plugins/..)
+                            <li>HttpSession, 자동 로그인 쿠키를 활용하는 로그인 처리
                             </li>
-                            <li>removed <code>blog_right_sidebar.html</code> and <code>blog_left_sidebar.html</code>
-                            </li>
-                            <li>removed <code>Breadcrumbs v3</code> and replaced with new design style</li>
-                            <li>changed <strong>class name</strong>: <code
-                                    class="bg-color-dark-blue">grid-block-v2</code> to <code class="bg-color-dark-blue">block-grid-v2</code>
-                                (blocks.css)
-                            </li>
-                            <li>added <code>custom-cubeportfolio.css</code> to <code>assets/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css</code>
-                            </li>
-                            <li>changed path: <code>assets/plugins/sky-forms/version-2.0.1</code> to <code>assets/plugins/sky-forms-pro/skyforms</code>
-                            </li>
-                            <li>changed path:
-                                <code>assets/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css</code> to <code>assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css</code>
-                            </li>
-                            <li>changed path: <code>assets/ajax/..</code> to <code>assets/ajax/cube-portfolio/..</code>
-                            </li>
-                            <li>changed path: <code>assets/php/..</code> to <code>assets/php/sky-forms-pro/..</code>
-                            </li>
-                            <li>changed path: <code>assets/css/plugins/animate.css</code> to <code>assets/plugins/animate.css</code>
-                            </li>
-                            <li>changed path: <code>assets/css/plugins/hover-effect/..</code> to <code>assets/plugins/hover-effects/..</code>
-                            </li>
-                            <li>changed path: <code>assets/css/plugins/style-switcher.css</code> to <code>assets/plugins/style-switcher/style-switcher.css</code>
-                            </li>
-                            <li>changed path: <code>assets/css/plugins/brand-buttons/..</code> to <code>assets/plugins/brand-buttons/..</code>
-                            </li>
-                            <li>changed path: <code>assets/js/plugins/placeholder-IE-fixes.js</code> to <code>assets/plugins/placeholder-IE-fixes.js</code>
-                            </li>
-                            <li>changed HTML files name: <code>profile_*</code> to <code>page_profile_*</code></li>
-                            <li>changed file name <code>feature_*.hmtl</code> to <code>shortcode_*.hmtl</code></li>
                         </ul>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_interceptor"> Interceptor </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.7 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
 
                         <!-- v1.6 Upgrade -->
                         <h4>v1.6 Upgrade</h4>
+                        <p>게시물의 첨부파일 기능</p>
                         <ul>
-                            <li>Almost all plugins are seperated into js files such as Main Parallax Slider, Revolution
-                                Slider, Layer Slider etc. to make them easy for controling.
+                            <li>게시물의 첨부 파일 등록시 Ajax 및 UploadController 재구성
                             </li>
-                            <li>Changed <code>themes</code> fodler name to <code>theme-colors</code> which is located in
-                                <code>assets/css/</code></li>
-                            <li>Created <code>blocks.css</code> and added verity of css codes of blocks to use them
-                                globally.
-                            </li>
-                            <li>
-                                Divided Header Options to separate css files <code>assets/css/headers</code>
-                                <ul>
-                                    <li>Totaly rewrited (improved) almost all header options:</li>
-                                    <li><code>header-default.css</code></li>
-                                    <li><code>header-v1.css</code></li>
-                                    <li><code>header-v2.css</code></li>
-                                    <li><code>header-v3.css</code></li>
-                                    <li><code>header-v4.css</code></li>
-                                    <li><code>header-v5.css</code></li>
-                                    <li>You may find more detailed information in the <a href="#scroll_headerDemos">header</a>
-                                        section.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Divided Footer Options to separate css files <code>assets/css/footers</code>. Moreover
-                                we added <code>default-footer</code> for the old main footer.
-                                <ul>
-                                    <li><code>footer-default.css</code></li>
-                                    <li><code>footer-v1.css</code></li>
-                                    <li><code>footer-v2.css</code></li>
-                                    <li><code>footer-v3.css</code></li>
-                                    <li><code>footer-v4.css</code></li>
-                                    <li><code>footer-v5.css</code></li>
-                                    <li><code>footer-v6.css</code></li>
-                                    <li><code>footer-v7.css</code></li>
-                                    <li>You may find more detailed information in the <a href="#scroll_footerDemos">footer</a>
-                                        section.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>One Page:</strong> changed classes <code
-                                    class="bg-color-light-green">inner</code> to <code class="bg-color-light-green">call-action-v1-box</code>,
-                                <code class="bg-color-dark-blue">inner1</code> to <code class="bg-color-dark-blue">call-action-v1-in</code>
-                                and <code class="bg-color-brown">team</code> to <code
-                                        class="bg-color-brown">team-v1</code></li>
-                            <li><strong>One Page:</strong> footer section code moved into <code>footer-v4.css</code> new
-                                file
-                            </li>
-                            <li><strong>One Page:</strong> Twits (Parallax), Out Clients, Testimonials blocks moved into
-                                <code>plugins.css</code></li>
-                            <li><strong>One Page:</strong> Quote (Parallax), Meet Our Team, Our Services, Portfolio,
-                                Call to Action, latest News blocks moved into <code>blocks.css</code></li>
-                            <li>Page <strong>Profile Settings</strong> js Tab id has been changed (fixed).</li>
                         </ul>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_fileupload"> File Upload </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.6 Upgrade -->
+
+                        <div class="margin-bottom-30 clearfix"></div>
+
+                        <!-- v1.5 Upgrade -->
+                        <h4>v1.5 Upgrade</h4>
+                        <p>AOP와 트랜잭션 처리</p>
+                        <ul>
+                            <li>AOP 연습 및 구현</li>
+                            <li>트랜잭션 처리</li>
+                        </ul>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_aop"> AOP & Transaction </a> 섹션을 확인하십시오.</p>
+                        <!-- End v1.5 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
 
                         <!-- v1.4 Upgrade -->
                         <h4>v1.4 Upgrade</h4>
+                        <p>Ajax 댓글 처리</p>
                         <ul>
-                            <li>Totaly rewrited almost all <code>feature pages</code> and changed their
-                                <code>.html</code> file names.
-                            </li>
-                            <li>Redesigned and improved <code>page_clients.html</code> page.</li>
-                            <li>Changed: <code>page_meet_our_team.html</code> to <code>page_about_our_team.html</code>
-                            </li>
-                            <li>Changed: <code>page_search.html</code> to <code>page_funny_boxes.html</code></li>
-                            <li>Rewrited class names for content boxes and funny boxes. More examples on pages: <code>feature_box_colored.html</code>
-                                and <code>feature_box_funny.html</code></li>
-                            <li>Created some new classes to round and circle elements/blocks. You can use these ready
-                                classes <code>.rounded</code>, <code>.rounded-x</code>, <code>.rounded-2x</code>, <code>.rounded-3x</code>,
-                                <code>.rounded-4x</code> to round any blocks or elements. <code>.rounded-x</code> used
-                                to circle elements and It gives 50% border-radius to any element.
-                            </li>
-                            <li>Now <code>app.css</code> is built as Unify framework's main stlye. It includes all
-                                featres of the Template such as Icons Styles, Buttons, Typography, Content Boxes etc.
-                            </li>
-                            <li>Redesigned almost all feature elements.</li>
-                            <li>Totaly changed <code>header</code> structure. Rewrited both <code>header</code> and
-                                <code>topbar</code> blocks. Now <code>topbar</code> is a part of <code>header</code>
-                                block.
-                            </li>
-                            <li><code>header</code> css files are integrated to <code>style.css</code></li>
-                            <li><code>responsive.css</code> is integrated to each css files and It's deleted from css
-                                folder. Now, no more required to link <code>responsive.css</code> in html files.
-                            </li>
-                            <li>Added <code>.twitter-time</code> class into <code>&lt;span&gt;</code> for sidebar
-                                twitter blocks.
-                            </li>
-                            <li>Removed <code>dropdown-hover</code> javascript plugin. Now, hover dropdowns work with
-                                just css codes.
-                            </li>
-                            <li>Removed <code>.btn-buy</code> button from the home pages. Instead used default button.
-                            </li>
-                            <li>Removed <strong>icon <i class="fa fa-angle-down color-red"></i></strong> from the
-                                navigation dropdown. Now, dropdown arrows were created from the css.
-                            </li>
+                            <li>프로트엔드 구현과 기본적인 게시판 기능의 댓글 처리</li>
+                            <li>댓글 처리와 REST 숙지</li>
                         </ul>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_frontend"> Front-End </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.4 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
 
                         <!-- v1.3 Upgrade -->
                         <h4>v1.3 Upgrade</h4>
-                        <p>Since latest version of Unify upgraded to <strong>Twitter Bootstrap 3</strong> all files
-                            comes with a huge JavaScript, HTML and CSS changes. <br> We suggest you to add the codes
-                            from previous version into v1.3 and use it as a base template.</p>
-                        <p>*Please visit the offecial Bootstrap 3 documentation page for more detalied info <a
-                                target="_blank" href="http://getbootstrap.com">http://getbootstrap.com</a></p>
+                        <p>구글링 및 okky.kr을 통한 기본적인 기능의 게시물 관리</p>
+                        <p>*자세한 정보는 공식 <a
+                                target="_blank" href="http://okky.kr">http://okky.kr</a> Q&A 문서 페이지를 방문하십시오.</p>
                         <!-- End v1.3 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
 
                         <!-- v1.2 Upgrade -->
                         <h4>v1.2 Upgrade</h4>
-                        <p>Here is breifly explained what we changed in v1.2:</p>
+                        <p>스프링 프로젝트의 기본 구조 구성</p>
                         <ul class="margin-bottom-40">
                             <li>
-                                File structures:
+                                기본 컨셉:
                                 <ul>
                                     <li>
-                                        Changed HTML file names. For example:
+                                        타겟:
                                         <ul>
-                                            <li><code>faq.html</code> to <code>page_faq.html</code></li>
-                                            <li><code>about.html</code> to <code>page_about.html</code></li>
-                                            <li><code>contact.html</code> to <code>page_contact.html</code></li>
-                                            <li><code>icons.html</code> to <code>feature_icons.html</code></li>
-                                            <li><code>table.html</code> to <code>feature_table</code></li>
-                                            <li>and others...</li>
+                                            <li>사이트: <code>여성 쇼핑몰</code></li>
+                                            <li>사이트명: <code>UNIFY</code></li>
+                                            <li>도메인: <code>unifyshop.</code>추후 무료 도메인</li>
+                                            <li>고객 타겟: <code>모든 여성</code></li>
+                                            <li>사이트 차별점: <code>명품 거래</code></li>
+                                            <li>기타사항</li>
                                         </ul>
                                     </li>
-                                    <li>We added all plugins to plugin folder and now all plugins located in <code>assets/plugins/..</code>
+                                    <li>무엇보다 습작으로 기본기를 다지는데 초점
                                     </li>
                                 </ul>
                             </li>
-                            <li>Parallax Slider now on autoplay. Modified file: <code>assets/plugins/parallax-slider/js/jquery.cslider.js</code>
+                            <li>File Structures <code>Eclipse</code> legacy project(Spring MVC)와 동일하게
                             </li>
-                            <li>Changed <strong>folder</strong> and <strong>file</strong> names from <code>menu</code>
-                                to <code>header</code> in CSS folder <code>assets/css/headers/header1.css</code> and
-                                <code>assets/css/headers/header2.css</code></li>
-                            <li>Changed Modernizr JS file name <code>assets/js/modernizr.custom.js</code></li>
-                            <li>
-                                Changed top and header ID names to CLASS names and now they are
-                                <code>&lt;div class="top"&gt;</code>
-                                and
-                                <code>&lt;div class="header"&gt;</code>
+                            <li>예상 소요 시간: 측정 불가(습작이기 때문에)</li>
+                            <li>사이트 구현시 걸림돌: </li>
+                            <li>예상 비용: 무조건 무비용
                             </li>
-                            <li>Changed Social Icons class names which is in footer and in other pages.</li>
-                            <li>Deleted tag <code>&lt;div id="body"&gt;</code> in all HTML files</li>
-                            <li>Added favicon icon <code>&lt;link rel="shortcut icon" href="favicon.ico"&gt;</code></li>
+                            <li>스프링 개발환경 설정
+                            </li>
+                            <li>테스트 클래스 구현
+                            </li>
+
                         </ul>
-                        <p><span class="label label-info">Info</span>보다 자세한 구조로 향후 업데이트에서 Unify 문서를 향상시킬 것입니다. 업그레이드하는
-                            동안 문제가 발생하면 <a href="mailto:support@htmlstream.com">support@htmlstream.com</a>으로 문의하십시오.
-                        </p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_main"> Main Structure </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.2 Upgrade -->
                     </div>
                     <!-- End Update -->
@@ -5682,7 +5468,7 @@ jQuery(document).ready(function () {
                         <hr>
                         <!-- Bootsrap  -->
                         <h3>Bootstrap</h3>
-                        <p>버전 3.0부터 Bootstrap은 기본적으로 응답 성이 뛰어난 디자인을 강조하면서 모바일 첫 디자인 철학을 채택했습니다.</p>
+                        <p>버전 3.0부터 Bootstrap은 기본적으로 응답성이 뛰어난 디자인을 강조하면서 모바일 첫 디자인 철학을 채택했습니다.</p>
                         <h4>Bootstrap Translations</h4>
                         <p> 부트 스트랩에 대해 더 자세히 알고 싶으시면 아래 링크를 클릭하십시오.</p>
                         <ul>
@@ -5862,7 +5648,7 @@ jQuery(document).ready(function () {
 
                         <!-- Sublime text editor  -->
                         <h3>IntelliJ IDE</h3>
-                        <p>저는 코딩을 위해 "IntelliJ"를 사용합니다. Sublime 텍스트 편집기를 사용 하시려면 여기를 클릭하십시오. <a
+                        <p>저는 코딩을 위해 "IntelliJ"를 사용합니다. IntelliJ 텍스트 편집기를 사용하시려면 여기를 클릭하십시오. <a
                                 target="_blank" href="http://www.jetbrains.com ">click here "IntelliJ IDE"</a>
                             를 클릭하시면 더 자세한 정보를 얻을 수 있습니다.</p><br>
                         <!-- End Sublime text editor -->

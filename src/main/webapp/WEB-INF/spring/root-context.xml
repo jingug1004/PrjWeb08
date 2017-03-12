@@ -36,8 +36,8 @@
         <property name="driverClassName"
                   value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
         <property name="url"
-                  value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>
-        <!--value="jdbc:log4jdbc:mysql://127.0.0.1:3306/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>-->
+                  value="jdbc:log4jdbc:mysql://127.0.0.1:3306/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>
+        <!--value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>-->
         <!--value="jdbc:log4jdbc:mysql://127.0.0.1:3306/book_ex"></property>-->
         <property name="username" value="Node"></property>
         <property name="password" value="kjg4989q"></property>
@@ -65,19 +65,17 @@
     </bean>
 
 
-
     <aop:config></aop:config>
 
 
-
     <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
-        <!--<property name="basenames">-->
-            <!--<list>-->
-                <!--<value>/resources/messages/spring_security_messages</value>-->
-                <!--&lt;!&ndash;됨&ndash;&gt;-->
-            <!--</list>-->
-        <!--</property>-->
-        <!--<property name="defaultEncoding" value="UTF-8"></property>  -->
+    <!--<property name="basenames">-->
+    <!--<list>-->
+    <!--<value>/resources/messages/spring_security_messages</value>-->
+    <!--&lt;!&ndash;됨&ndash;&gt;-->
+    <!--</list>-->
+    <!--</property>-->
+    <!--<property name="defaultEncoding" value="UTF-8"></property>  -->
     <!--</bean>-->
 
 </beans>
