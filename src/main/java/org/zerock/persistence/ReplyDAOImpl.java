@@ -15,7 +15,6 @@ import java.util.Map;
  * org.zerock.persistence / Web Ex02
  * Better late than never!
  */
-
 @Repository
 public class ReplyDAOImpl implements ReplyDAO{
 

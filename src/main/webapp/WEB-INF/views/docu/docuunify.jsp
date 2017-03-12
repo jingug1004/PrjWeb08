@@ -218,7 +218,7 @@
                             <a class="color-dark-blue" target="_blank"
                                href="https://www.facebook.com/jingug1004?ref=hl">Facebook</a>
                         </li>
-                        <li>Created on: 2013/02/05</li>
+                        <li>Created on: 2017/02/05</li>
                         <li>Latest Update on: 2017/03/10 ~</li>
                     </ul>
                 </div><!--/overview-->
@@ -229,51 +229,51 @@
                     <h3> Files Structure <span class="label label-dark">Updated v1.9.2</span></h3>
                     <p>UNIFY에는 <strong>기본적인 스프링 MVC</strong>폴더 경로로 작성 되었습니다. (기본적인 스프링 MVC - STS, Legacy Project, Spring
                         MVC로 프로젝트 작성시 자동 빌드되는 폴더링 기준)</p>
-                        <%--다운로드 패키지에서 HTML 포더 내부에는 기본--%>
-                        <%--<code>UNIFY Main (Default)</code> 템플리트 및 자산 파일, <code>E-commerce (Shop UI)</code> , <code>Blog--%>
-                        <%--&amp; Template</code>, <code>One--%>
-                        <%--Pages</code>, <code>Landing Pages</code> 및 <code>Email Templates</code> 패키지. 또한 PSD 파일도--%>
-                        <%--포함됩니다. --%>
-                        <%--사용 가능한 PSD 파일의 전체 버전을 다운로드하려면 PSD 폴더의 <strong>README.txt</strong> 파일을 확인하십시오. <strong>README.txt</strong>--%>
-                        <%--파일에는 다운로드 링크와 암호가 포함되어 있습니다.</p><br>--%>
+                    <%--다운로드 패키지에서 HTML 포더 내부에는 기본--%>
+                    <%--<code>UNIFY Main (Default)</code> 템플리트 및 자산 파일, <code>E-commerce (Shop UI)</code> , <code>Blog--%>
+                    <%--&amp; Template</code>, <code>One--%>
+                    <%--Pages</code>, <code>Landing Pages</code> 및 <code>Email Templates</code> 패키지. 또한 PSD 파일도--%>
+                    <%--포함됩니다. --%>
+                    <%--사용 가능한 PSD 파일의 전체 버전을 다운로드하려면 PSD 폴더의 <strong>README.txt</strong> 파일을 확인하십시오. <strong>README.txt</strong>--%>
+                    <%--파일에는 다운로드 링크와 암호가 포함되어 있습니다.</p><br>--%>
 
-                        <%--<h4><i class="fa fa-folder fa-2x color-blue"></i> DOWNLOAD PACKAGE</h4>--%>
-                        <%--<ul class="list-unstyled css-files">--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Documentation</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>PSD</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>HTML</span>--%>
-                        <%--<ul class="list-unstyled css-files css-v1">--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>E-Commerce</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Blog-Magazine</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i>--%>
-                        <%--<span>One-Pages</span>--%>
-                        <%--<ul class="list-unstyled css-files css-v1">--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Classic</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Agency</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>App</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Architecture</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Business</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Lawyer</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Shipping</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Spa</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Travel</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Wedding</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Courses</span></li>--%>
-                        <%--<li>---- &nbsp;<code>..</code></li>--%>
-                        <%--<li>---- &nbsp;<code>..</code></li>--%>
-                        <%--</ul>--%>
+                    <%--<h4><i class="fa fa-folder fa-2x color-blue"></i> DOWNLOAD PACKAGE</h4>--%>
+                    <%--<ul class="list-unstyled css-files">--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Documentation</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>PSD</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>HTML</span>--%>
+                    <%--<ul class="list-unstyled css-files css-v1">--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>E-Commerce</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Blog-Magazine</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i>--%>
+                    <%--<span>One-Pages</span>--%>
+                    <%--<ul class="list-unstyled css-files css-v1">--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>assets</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Classic</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Agency</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>App</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Architecture</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Business</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Lawyer</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Shipping</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Spa</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Travel</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Wedding</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Courses</span></li>--%>
+                    <%--<li>---- &nbsp;<code>..</code></li>--%>
+                    <%--<li>---- &nbsp;<code>..</code></li>--%>
+                    <%--</ul>--%>
 
-                        <%--</li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Landing-Pages</span></li>--%>
-                        <%--<li>----<i class="fa fa-folder"></i> <span>Email-Templates</span></li>--%>
-                        <%--<li>---- &nbsp;<code>index.html</code></li>--%>
-                        <%--<li>---- &nbsp;<code>..</code></li>--%>
-                        <%--<li>---- &nbsp;<code>..</code></li>--%>
-                        <%--</ul>--%>
-                        <%--</li>--%>
-                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Landing-Pages</span></li>--%>
+                    <%--<li>----<i class="fa fa-folder"></i> <span>Email-Templates</span></li>--%>
+                    <%--<li>---- &nbsp;<code>index.html</code></li>--%>
+                    <%--<li>---- &nbsp;<code>..</code></li>--%>
+                    <%--<li>---- &nbsp;<code>..</code></li>--%>
+                    <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--</ul>--%>
 
                     <p>자세한 내용을 보려면 아래 링크를 클릭하십시오.</p>
                     <div class="panel-group acc-v1" id="accordion">
@@ -288,16 +288,21 @@
                             <div id="header" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <%--<div class="block-center">--%>
-                                        <%--<img class="img-responsive header-img-bordered padding-top-10" src="/resources/docu/img/header01.png" alt="Default Header"></div>--%>
+                                    <%--<img class="img-responsive header-img-bordered padding-top-10" src="/resources/docu/img/header01.png" alt="Default Header"></div>--%>
                                     <%--<div class="clearfix margin-bottom-40"></div>--%>
 
-                                        <div class="block-center margin-bottom-30">
-                                            <img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>
-                                            <img class="img-responsive" src="/resources/docu/img/mainstructure02.png" alt=""/>
-                                            <img class="img-responsive" src="/resources/docu/img/mainstructure03.png" alt=""/>
-                                            <img class="img-responsive" src="/resources/docu/img/mainstructure04.png" alt=""/>
-                                            <img class="img-responsive" src="/resources/docu/img/mainstructure05.png" alt=""/>
-                                        </div>
+                                    <div class="block-center margin-bottom-30">
+                                        <img class="img-responsive" src="/resources/docu/img/mainstructure01.png"
+                                             alt=""/>
+                                        <img class="img-responsive" src="/resources/docu/img/mainstructure02.png"
+                                             alt=""/>
+                                        <img class="img-responsive" src="/resources/docu/img/mainstructure03.png"
+                                             alt=""/>
+                                        <img class="img-responsive" src="/resources/docu/img/mainstructure04.png"
+                                             alt=""/>
+                                        <img class="img-responsive" src="/resources/docu/img/mainstructure05.png"
+                                             alt=""/>
+                                    </div>
 
                                     <p><span class="label label-info">Info</span> 출처:
                                         <small><code>IntelliJ Project Explorer</code></small>
@@ -308,11 +313,11 @@
                     </div>
 
                     <%--<div class="block-center margin-bottom-30">--%>
-                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>--%>
-                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure02.png" alt=""/>--%>
-                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure03.png" alt=""/>--%>
-                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure04.png" alt=""/>--%>
-                        <%--<img class="img-responsive" src="/resources/docu/img/mainstructure05.png" alt=""/>--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/mainstructure01.png" alt=""/>--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/mainstructure02.png" alt=""/>--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/mainstructure03.png" alt=""/>--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/mainstructure04.png" alt=""/>--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/mainstructure05.png" alt=""/>--%>
                     <%--</div>--%>
 
                     <br>
@@ -841,7 +846,7 @@ jQuery(document).ready(function() {
                     <!-- Bootsrap  -->
                     <h3>MariaDB</h3>
 
-                    <p>MySQL과 동일한 베이스인 MariaDB를 사용하였습니다. 잘 아시다시피 미래 Oracle의 횡포에 미리 대비하기 위한 목적으로 사용하였으며, 성능이 MySQL보다 더욱
+                    <p>MySQL과 동일한 베이스인 MariaDB를 사용하였습니다. MariaDB가 MySQL과 별 차이가 없으며 성능이 MySQL보다 더욱
                         뛰어나다고 알고 있습니다. Client GUI Tool은 맥북에 최적화된 Sequel Pro를 사용하였습니다.</p>
 
                     <p>ORM은 <code>MyBatis</code>를 사용하였습니다. Hibernate도 사용할 예정입니다. src/main/resouces/mappers 폴더 이하 DB와 VO로
@@ -942,11 +947,139 @@ jQuery(document).ready(function() {
 
                 <div class="clearfix margin-bottom-50"></div>
 
-                <div id="scroll_misc" class="margin-bottom-60">
-                    <h2>Misc Pages <span class="label label-dark">Updated v1.9.1</span></h2>
+                <div id="scroll_interceptor">
+                    <h2>Interceptor<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                            class="fa fa-angle-up"></i></a></h2>
+                    <div class="margin-bottom-30"></div>
                     <hr>
-                    <p>기타 페이지는 의도적으로 페이지의 주요 부분만으로 만들어 졌으므로 개발자가 직접 내용을 직접 추가 할 수 있습니다.
-                        다음 페이지를 사용하여 새 프로젝트를 시작하십시오.</p>
+                    <!-- Bootsrap  -->
+                    <h3>Login handling utilizing "Interceptor".</h3>
+
+                    <p>세션 트래킹이라 불리는 로그인 처리는 웹 페이지에서 필수적으로 적용돼야 하는 기능입니다.</p>
+
+                    <p><code>HttpSession</code>을 이용한 로그인, <code>Cookie</code>와 HttpSession을 활용한 <strong>자동 로그인</strong>
+                    </p>
+
+
+                    <h4>Effect of Use</h4>
+
+                    <p>기본 기능의 개발이 끝난 후 인터셉터와 쿠키 등을 활용해서 로그인 처리를 해보았습니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="https://aws.amazon.com/ko/events/cloud/">aws.amazon.com</a></li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="http://www.datamation.com/cloud-computing/amazon-aws-vs.-microsoft-azure-buying-guide.html">Datamation.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank"--%>
+                    <%--href="https://blogs.endjin.com/2016/07/aws-vs-azure-vs-google-cloud-platform-compute/">blogs.endjin.com</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.naver.com/taek171/220761487824">http://blog.naver.com/taek171/</a>--%>
+                    <%--</li>--%>
+                    <%--<li><a target="_blank" href="https://blog.leedoing.com/48">http://blog.leedoing.com/</a></li>--%>
+
+                    <%--</ul>--%>
+                    <p>정상적으로 실행되면 브라우저의 화면에서는 아이디와 패스워드를 보관할 수 있는 화면이 보여집니다.</p>
+                    <p>AuthInterceptor.class를 이용해서 게시물 작성 페이지에서 "New Board"를 누르면 로그인 페이지로 이동하며 로그인 성공하면 직전 작성할 수 있는 페이지로 이동합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/interceptor01.png" alt=""/><br/>
+                    </div>
+
+                    <p>스택트레이스 화면입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/interceptor02.png" alt=""/><br/>
+                    </div>
+
+                    <p>로그인 하지 않았을 때는 자기가 작성한 글을 수정하거나 댓글을 남길 수가 없습니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/interceptor03.png" alt=""/><br/>
+                    </div>
+
+                    <p>로그인 하였을 때는 글 수정 및 삭제, 다른 글에 댓글을 남길 수가 있습니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/interceptor04.png" alt=""/><br/>
+                    </div>
+
+                    <p>로그인 하였을 때는 자기가 남긴 댓글을 수정하거나 삭제할 수 있습니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/interceptor05.png" alt=""/><br/>
+                    </div>
+
+                    <p>로그인 시 "Remember Me"를 체크하고 로그인하면 LoginInterceptor.class의 postHandle()을 이용해서 HttpSession에 UserVO 타입의 객체를 보관합니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/interceptor06.png" alt=""/><br/>
+                    </div>
+
+                    <p>브라우저의 개발자 도구에 들어가서 확인하면 loginCookie가 있는 것이 발견됩니다. 유효기간을 7일로 설정해놨기 때문에 그 이상의 시간이 지난 후에 접속하게 되면 loginCookie가 전송되지 않을 것입니다.</p>
+                    <div class="block-center margin-bottom-30">
+                        <img class="img-responsive" src="/resources/docu/img/interceptor07.png" alt=""/><br/>
+                    </div>
+
+
+
+
+                    <h4>Expectation Effectiveness</h4>
+                    <p>인터셉터를 이용해서 특정 컨트롤러의 동작 전과 후에 대한 처리를 할 수 있습니다.</p>
+                    <p>필터와 달리 인터셉터는 스프링의 영역에 속하므로 스프링의 기능들을 활용할 수 있습니다.</p>
+
+                    <%--<ul>--%>
+                    <%--<li><a target="_blank" href="http://terms.naver.com/entry.nhn?docId=862837&cid=42346&categoryId=42346">NAVER 지식백과 IT 용어사전</a></li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Issue Detection</h4>
+
+                    <p>여러 이슈와 오류가 발견될 수 있습니다. 보다 구체적으로 발견될 오류들은 아래에 추가됩니다.</p>
+
+                    <%--<div class="block-center margin-bottom-30">--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/awserror01.png" alt=""/>--%>
+                    <%--</div>--%>
+
+                    <%--<ul>--%>
+                    <%--<li>Ubuntu로 Root 접속을 하려고 하면 Permission Denied 되는데 권한문제가 아닌 서버 인스턴스에 RSA 암호화 방식이 제대로 설정되지 않아서 접근--%>
+                    <%--거부가 일어납니다.--%>
+                    <%--</li>--%>
+                    <%--<li>인스턴스가 이미 만들어져 Running 하고 있기 때문에 웹에서 접속이나 이용은 에러가 없으나 내무적으로 파일 관리나 다른 설정에서는 항상 변경되는 RSA 암호화--%>
+                    <%--방식 때문에 접근 어려움이 생깁니다.--%>
+                    <%--</li>--%>
+                    <%--<li>그로 인하여 RSA 암호화 방식을 더욱 익혀야 할 필요가 있습니다.</li>--%>
+                    <%--</ul>--%>
+
+                    <%--<br/>--%>
+
+                    <%--<div class="block-center margin-bottom-30">--%>
+                    <%--<img class="img-responsive" src="/resources/docu/img/awserror02.png" alt=""/>--%>
+                    <%--</div>--%>
+                    <%--<ul>--%>
+                    <%--<li>게시판 기능중 파일을 첨부하면 DB서버(RDS)에서 접근 거부 및 비지니스 로직에서 문제가 발생합니다.</li>--%>
+                    <%--<li>스택 트레이스 및 크롬 개발자 도구를 보면 400 오류로 잘못된 Request 요청으로 문제가 발생한다는 것을 발견할 수 있습니다.</li>--%>
+                    <%--</ul>--%>
+
+                    <h4>Improvement Point</h4>
+
+                    <p>더욱 나은 성능으로 개선점들이 있습니다. 개선해나가기 위하여 필요한 부분들은 아래에 추가됩니다.</p>
+
+                    <ul>
+                        <li>세션을 이용하는 경우 브라우저의 종료와 함께 사용자의 연결정보도 같이 잃어버리게 된다. 반면에 쿠키는 보안 상에 약점을 가지니 방법을 강구해야 한다.</li>
+                        <li>웹에서 세션을 사용하는 것 역시 수많은 사용자가 새로운 세션을 짧은 시간 내에 생성하면 서버에 많은 부하를 주게 될 것이다. 서버 과부하를 예방하는 쪽으로 유도해야 한다.</li>
+                        <li>인터셉터를 이용하면서 스프링 시큐리티를 더욱 숙지하여 결합시킬 수 있도록 하자.</li>
+                        <li>업무에 따른 권한이 복잡하다면, 인터셉터보다는 차라리 처음부터 스프링 시큐리티로 인증과 권한을 나누는 방법을 생각해야한다.</li>
+                        <%--<ul>--%>
+                        <%--<li>소스 변경에 대한 즉각적인 변경사항 적용</li>--%>
+                        <%--<li>변화에 대한 더욱 능동적 신속한 대응</li>--%>
+                        <%--<li>더욱 고차원적인 웹 서비스 구현 및 서포트</li>--%>
+                        <%--</ul>--%>
+                        <%--<li>Ubuntu 서버로 설정한 후 다른 기능들을 디플로이 시켜서 기능 확장시킬 수 있는 방법을 모색해야 한다.</li>--%>
+                        <%--<li>서버를 더욱 자유자재로 다루기 위해서 AWS 인스턴스 및 Linux OS에 대하여 더욱 숙지해야 한다.</li>--%>
+                    </ul>
+
+                </div><!--/end-->
+
+
+                <div class="clearfix margin-bottom-50"></div>
+
+                <div id="scroll_ajax" class="margin-bottom-60">
+                    <h2>Ajax & Front-End Pages <span class="label label-dark">Updated v1.9.1</span></h2>
+                    <hr>
+                    <p>구현한 Ajax와 여러 프론트 엔드 페이지에 대하여 간략하게 소개합니다.</p>
                     <%--<ol>--%>
                     <%--<li><code>page_misc_blank.html</code>&nbsp;&nbsp; 이미 연결된 모든 주요 구성 요소가있는 빈 페이지가 비어 있습니다.--%>
                     <%--</li>--%>
@@ -5259,17 +5392,18 @@ jQuery(document).ready(function () {
                     <div id="scroll_upgrade" class="upgrade margin-bottom-70">
                         <h2>Upgrade <a href="#top">top <i class="fa fa-angle-up"></i></a></h2>
                         <hr>
-                        <p><span class="label label-blue">Info</span> Please do not forget to <strong>backup</strong>
-                            your files before the upgrade. If you come across with any problems during the upgrade
-                            please contact our support at <a
-                                    href="mailto:support@htmlstream.com">support@htmlstream.com</a></p><br>
+                        <p><span class="label label-blue">Info</span> 업그레이드하기 전에 파일을 <strong>백업</strong>하는 것을 잊지 마십시오.
+                            업그레이드 중에 문제가 발생하면
+                            <a
+                                    href="mailto:jingug1004@naver.com.com">jingug1004@naver.com</a>업그레이드하기 전에 파일을 백업하는
+                            것을 잊지 마십시오. 업그레이드 중에 문제가 발생하면 </p><br>
 
-                        <p><span class="label label-red">Important!</span> Please include all your custom CSS and
-                            JavaScript codes to <code>custom.css</code> and <code>custom.js</code> before the upgrading
-                            to the latest version. Otherwise, you may lose your custom styles during the upgrade.</p>
-                        <p>The files are located in <code>assets/css/custom.css</code> and
-                            <code>assets/js/custom.js</code>. We suggest to write all css/js customizations codes into
-                            <code>custom.css</code> and <code>custom.js</code> files.</p><br>
+                        <p><span class="label label-red">Important!</span> 최신 버전으로 업그레이드하기 전에 모든 custom CSS 및 JavaScript
+                            코드를 <code>custom.css</code> 및 <code>custom.js</code> 에 포함하십시오. 그렇지 않으면 업그레이드 중 사용자 정의 스타일이
+                            손실 될 수 있습니다.</p>
+                        <p>파일은 <code>assets/css/custom.css</code> 및
+                            <code>assets/js/custom.js</code> 에 있습니다. 모든 css / js 사용자 정의 코드를
+                            <code>custom.css</code> 및 <code>custom.js</code> 파일에 작성하는 것이 좋습니다.</p><br>
 
                         <div class="margin-bottom-30"></div>
 

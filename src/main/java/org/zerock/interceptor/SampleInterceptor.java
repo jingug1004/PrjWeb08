@@ -12,6 +12,9 @@ import java.lang.reflect.Method;
  * Created by macbookpro on 2017. 2. 26. PM 3:00
  * sp4chap11-Project / org.zerock.interceptor
  * No pain, No gain!
+ * What : 'org.zerock.interceptor'패키지 안에 SampleInterceptor 클래스 작성
+ * Why : HandlerInterceptorAdaptor를 상속해서 사용하는 클래스들을 보관 @org.zerock.interceptor
+ * How : @org.zerock.interceptor 여러 로그인시 자기글의 삭제나 글 등록 가능한 권한 부여 가능한 클래스 작성
  */
 
 

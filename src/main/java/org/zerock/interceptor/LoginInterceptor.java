@@ -10,12 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Created by macbookpro on 2017. 2. 26. PM 8:16
- * sp4chap11-Project / org.zerock.interceptor
- * No pain, No gain!
- */
-
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 

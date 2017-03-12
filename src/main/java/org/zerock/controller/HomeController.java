@@ -73,5 +73,10 @@ public class HomeController {
         return "docu/docuunify";
     }
 
+    @RequestMapping(value = "/javadoc", method = RequestMethod.GET)
+    public String doc() {
+        return "redirect:/javadoc/index.html";
+    }
+
 
 }
