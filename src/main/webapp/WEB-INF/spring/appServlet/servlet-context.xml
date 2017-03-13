@@ -85,8 +85,8 @@
     </beans:bean>
 
     <beans:bean id="uploadPath" class="java.lang.String">
-        <!--<beans:constructor-arg value="/tmp/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
-        <beans:constructor-arg value="/Volumes/noname/zzz/upload"></beans:constructor-arg>
+        <beans:constructor-arg value="/tmp/Volumes/noname/zzz/upload"></beans:constructor-arg>
+        <!--<beans:constructor-arg value="/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
     </beans:bean>
     <!--<beans:bean id="uploadPath" class="java.lang.String">-->
     <!--<beans:constructor-arg value="C:\\zzz\\upload"></beans:constructor-arg>-->

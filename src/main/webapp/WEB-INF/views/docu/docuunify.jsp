@@ -394,7 +394,7 @@
 
 
                     <!--Header-->
-                    <h3>Header <span class="label label-dark">Updated v1.6</span></h3>
+                    <h3>Header <span class="label label-dark">Updated v1.3</span></h3>
                     <pre class="line-numbers"><code class="language-php">&lt;!--=== Header ===--&gt;
 &lt;div class=&quot;header&quot;&gt;
     &lt;!-- Topbar --&gt;
@@ -413,7 +413,7 @@
 &lt;/div&gt;
 &lt;!--=== End Header ===--&gt;</code></pre>
                     <!--Content-->
-                    <h3>Content <span class="label label-dark">Updated v1.6</span></h3>
+                    <h3>Content <span class="label label-dark">Updated v1.3</span></h3>
                     <p>컨테이너 블록은 페이지의 모든 내용을 포함합니다. 또한 <code>.content</code>
                         클래스는 v1.4에서 주 랩 컨테이너에 추가되어 내용에 공간 (패딩)을 제공합니다.</p>
                     <pre class="line-numbers"><code class="language-php">&lt;!--=== Content Part  ===--&gt;
@@ -479,7 +479,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_ssl">
-                    <h2>SSL & RSA <span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>SSL & RSA <span class="label label-dark">Update v1.7</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -541,7 +541,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_jenkins">
-                    <h2>Jenkins<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>Jenkins<span class="label label-dark">Update v1.8</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -628,7 +628,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_aws">
-                    <h2>AWS<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>AWS<span class="label label-dark">Update v1.8</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -737,7 +737,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_github">
-                    <h2>GitHub<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>GitHub<span class="label label-dark">Update v1.3</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -747,7 +747,7 @@ jQuery(document).ready(function() {
                     <p>VCS는 GitHub만 사용하였습니다. 다른 VCS 중에 하나인 SVN이 있는데 차후 사용하여 GitHub의 장단점을 비교할 수 있는 시간을 가져야 할 것 입니다.</p>
 
                     <p>제 GitHub 주소는 <a target="_blank" href="https://gist.github.com/jingug1004">https://gist.github.com/jingug1004</a>이며
-                        학원 교육기간 중 첫번째 Mini-Project로 비디오 대여 시스템과 두번째 Semi-Project인 JSP로 커뮤니티 구현한 소스를 Repo에 Push 해놨습니다.
+                        학원 교육기간 중 첫번째 Mini-Project로 자바 스윙을 이용하여 비디오 대여 시스템과 두번째 Semi-Project인 JSP로 커뮤니티 구현한 소스를 Repo에 Push 해놨습니다.
                     </p>
 
                     <h4>Effect of Use</h4>
@@ -841,7 +841,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_sql">
-                    <h2>SQL<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>SQL<span class="label label-dark">Update v1.3</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -950,7 +950,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_interceptor">
-                    <h2>Interceptor<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>Interceptor<span class="label label-dark">Update v1.7</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -981,7 +981,8 @@ jQuery(document).ready(function() {
 
                     <%--</ul>--%>
                     <p>정상적으로 실행되면 브라우저의 화면에서는 아이디와 패스워드를 보관할 수 있는 화면이 보여집니다.</p>
-                    <p>AuthInterceptor.class를 이용해서 게시물 작성 페이지에서 "New Board"를 누르면 로그인 페이지로 이동하며 로그인 성공하면 직전 작성할 수 있는 페이지로 이동합니다.</p>
+                    <p>AuthInterceptor.class를 이용해서 게시물 작성 페이지에서 "New Board"를 누르면 로그인 페이지로 이동하며 로그인 성공하면 직전 작성할 수 있는 페이지로
+                        이동합니다.</p>
                     <div class="block-center margin-bottom-30">
                         <img class="img-responsive" src="/resources/docu/img/interceptor01.png" alt=""/><br/>
                     </div>
@@ -1006,17 +1007,17 @@ jQuery(document).ready(function() {
                         <img class="img-responsive" src="/resources/docu/img/interceptor05.png" alt=""/><br/>
                     </div>
 
-                    <p>로그인 시 "Remember Me"를 체크하고 로그인하면 LoginInterceptor.class의 postHandle()을 이용해서 HttpSession에 UserVO 타입의 객체를 보관합니다.</p>
+                    <p>로그인 시 "Remember Me"를 체크하고 로그인하면 LoginInterceptor.class의 postHandle()을 이용해서 HttpSession에 UserVO
+                        타입의 객체를 보관합니다.</p>
                     <div class="block-center margin-bottom-30">
                         <img class="img-responsive" src="/resources/docu/img/interceptor06.png" alt=""/><br/>
                     </div>
 
-                    <p>브라우저의 개발자 도구에 들어가서 확인하면 loginCookie가 있는 것이 발견됩니다. 유효기간을 7일로 설정해놨기 때문에 그 이상의 시간이 지난 후에 접속하게 되면 loginCookie가 전송되지 않을 것입니다.</p>
+                    <p>브라우저의 개발자 도구에 들어가서 확인하면 loginCookie가 있는 것이 발견됩니다. 유효기간을 7일로 설정해놨기 때문에 그 이상의 시간이 지난 후에 접속하게 되면
+                        loginCookie가 전송되지 않을 것입니다.</p>
                     <div class="block-center margin-bottom-30">
                         <img class="img-responsive" src="/resources/docu/img/interceptor07.png" alt=""/><br/>
                     </div>
-
-
 
 
                     <h4>Expectation Effectiveness</h4>
@@ -1061,7 +1062,9 @@ jQuery(document).ready(function() {
 
                     <ul>
                         <li>세션을 이용하는 경우 브라우저의 종료와 함께 사용자의 연결정보도 같이 잃어버리게 된다. 반면에 쿠키는 보안 상에 약점을 가지니 방법을 강구해야 한다.</li>
-                        <li>웹에서 세션을 사용하는 것 역시 수많은 사용자가 새로운 세션을 짧은 시간 내에 생성하면 서버에 많은 부하를 주게 될 것이다. 서버 과부하를 예방하는 쪽으로 유도해야 한다.</li>
+                        <li>웹에서 세션을 사용하는 것 역시 수많은 사용자가 새로운 세션을 짧은 시간 내에 생성하면 서버에 많은 부하를 주게 될 것이다. 서버 과부하를 예방하는 쪽으로 유도해야
+                            한다.
+                        </li>
                         <li>인터셉터를 이용하면서 스프링 시큐리티를 더욱 숙지하여 결합시킬 수 있도록 하자.</li>
                         <li>업무에 따른 권한이 복잡하다면, 인터셉터보다는 차라리 처음부터 스프링 시큐리티로 인증과 권한을 나누는 방법을 생각해야한다.</li>
                         <%--<ul>--%>
@@ -1126,7 +1129,8 @@ jQuery(document).ready(function() {
                     </div>
 
                     <p>로그인하여 자기가 파일 첨부한 게시글을 보면 올린 내용 그대로 올라가 있는 것을 확인할 수 있습니다.</p>
-                    <p>이미지 파일을 제외한 첨부파일을 클릭했을 때는 컴퓨터에 저장되며 이미지 파일들(jpg, jpeg, png, gif)은 모달 효과를 사용하여 원본 파일을 볼 수 있도록 이벤트 처리되었습니다.</p>
+                    <p>이미지 파일을 제외한 첨부파일을 클릭했을 때는 컴퓨터에 저장되며 이미지 파일들(jpg, jpeg, png, gif)은 모달 효과를 사용하여 원본 파일을 볼 수 있도록 이벤트
+                        처리되었습니다.</p>
                     <div class="block-center margin-bottom-30">
                         <img class="img-responsive" src="/resources/docu/img/fileupload04.png" alt=""/><br/>
                     </div>
@@ -1204,7 +1208,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_aop">
-                    <h2>AOP & Transaction<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>AOP & Transaction<span class="label label-dark">Update v1.5</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -1281,7 +1285,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_board">
-                    <h2>Board<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>Board<span class="label label-dark">Update v1.3</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -1294,7 +1298,8 @@ jQuery(document).ready(function() {
 
                     <p>/main/java/ 폴더의 프로젝트 폴더는 Controller.클래스들은 controller 패키지 폴더에 넣었습니다. </p>
 
-                    <p>외부 변화에 유연하게 대응하기 위하여 컨트롤러와 DAO 사이에 Service 인터페이스와 인터페이스를 implemetns(구현)한 클래스를 만들 service 패키지 폴더명으로 하였습니다</p>
+                    <p>외부 변화에 유연하게 대응하기 위하여 컨트롤러와 DAO 사이에 Service 인터페이스와 인터페이스를 implemetns(구현)한 클래스를 만들 service 패키지
+                        폴더명으로 하였습니다</p>
 
                     <p>DB에 접근할 수 있는 B/L이 있는 DAO 클래스들과 인터페이스들은 persistence 패키지 폴더에 있습니다.</p>
 
@@ -1371,7 +1376,7 @@ jQuery(document).ready(function() {
                 <div class="clearfix margin-bottom-50"></div>
 
                 <div id="scroll_spring">
-                    <h2>Spring Framework<span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                    <h2>Spring Framework<span class="label label-dark">Update v1.2</span> <a href="#top">top <i
                             class="fa fa-angle-up"></i></a></h2>
                     <div class="margin-bottom-30"></div>
                     <hr>
@@ -1415,7 +1420,8 @@ jQuery(document).ready(function() {
                         <img class="img-responsive" src="/resources/docu/img/spring03.png" alt=""/><br/>
                     </div>
 
-                    <p>프로젝트의 기본적인 테스트 클래스입니다.  DataSource, MemberDAO, MyBatis, MySQLConnection(MariaDB), SampleController 기능들의 연결 또는 정상적인 설정이 완료되었는지 확인합니다.</p>
+                    <p>프로젝트의 기본적인 테스트 클래스입니다. DataSource, MemberDAO, MyBatis, MySQLConnection(MariaDB), SampleController
+                        기능들의 연결 또는 정상적인 설정이 완료되었는지 확인합니다.</p>
                     <div class="block-center margin-bottom-30">
                         <img class="img-responsive" src="/resources/docu/img/spring04.png" alt=""/><br/>
                     </div>
@@ -1459,8 +1465,6 @@ jQuery(document).ready(function() {
                     </ul>
 
                 </div><!--/end-->
-
-
 
 
                 <div class="clearfix margin-bottom-50"></div>
@@ -3684,7 +3688,7 @@ jQuery(document).ready(function() {
                                 </div>
                                 <div id="collapse-2" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>부트 스트랩은 반응형 모바일 첫 번째 프로젝트를 웹에서 개발하기위한 가장 널리 사용되는 HTML, CSS 및 JS 프레임
+                                        <p>부트스트랩은 반응형 모바일 첫 번째 프로젝트를 웹에서 개발하기위한 가장 널리 사용되는 HTML, CSS 및 JS 프레임
                                             워크입니다.</p>
 
                                         <h4>CSS Installation</h4>
@@ -4713,7 +4717,7 @@ jQuery(document).ready(function () {
                             <tbody>
                             <tr>
                                 <td>Bootstrap</td>
-                                <td class="hidden-sm">부트 스트랩은 반응 형 모바일 첫 번째 프로젝트를 웹에서 개발하기위한 가장 널리 사용되는 HTML, CSS 및 JS
+                                <td class="hidden-sm">부트스트랩은 반응형 모바일 첫 번째 프로젝트를 웹에서 개발하기위한 가장 널리 사용되는 HTML, CSS 및 JS
                                     프레임 워크입니다.
                                 </td>
                                 <td><a target="_blank" href="http://getbootstrap.com">http://getbootstrap.com</a></td>
@@ -4728,7 +4732,7 @@ jQuery(document).ready(function () {
                             </tr>
                             <tr>
                                 <td>Font Awesome</td>
-                                <td class="hidden-sm">Font Awesome 부트 스트랩을 위해 고안된 상징적 글꼴.</td>
+                                <td class="hidden-sm">Font Awesome 부트스트랩을 위해 고안된 상징적 글꼴.</td>
                                 <td><a target="_blank" href="http://fortawesome.github.io/Font-Awesome">http://fortawesome.github.io/Font-Awesome</a>
                                 </td>
                             </tr>
@@ -5309,7 +5313,7 @@ jQuery(document).ready(function () {
                         <ul>
                             <li>CHOICE: Responsive Template(<strong>value &#8361;0</strong>)</li>
                             <li>UPGRADE: 프로젝트 구상</li>
-                            <li>FIXED: </li>
+                            <li>FIXED:</li>
                         </ul>
                         <br>
 
@@ -5329,12 +5333,64 @@ jQuery(document).ready(function () {
                             <a href="mailto:jingug1004@naver.com.com">jingug1004@naver.com</a>업그레이드하기 전에 파일을 백업하는
                             것을 잊지 마십시오. </p><br>
 
-                        <p><span class="label label-red">Important!</span> 최신 버전으로 업그레이드하기 전에 모든 코드를 <code>VCS</code> 및 <code>프로젝트</code> 에 포함하십시오.
+                        <p><span class="label label-red">Important!</span> 최신 버전으로 업그레이드하기 전에 모든 코드를 <code>VCS</code> 및
+                            <code>프로젝트</code> 에 포함하십시오.
                             그렇지 않으면 업그레이드 중 원본이 손실 될 수 있습니다.</p>
-                        <p>파일은 <code>UNIFY 프로젝트</code> 및
-                            <code>GitHub</code> 에 있습니다. </p><br>
+                        <p>파일은 <code>UNIFY 프로젝트</code> 및 <code>GitHub</code> 에 있습니다. </p><br>
 
-                        <div class="margin-bottom-30"></div>
+
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th width="120">Task Matrix</th>
+                                <th class="hidden-sm" width="405">Urgent</th>
+                                <th <%--width=""--%>>Not Urgent</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Important</td>
+                                <td class="hidden-sm">
+                                    <ul>
+                                        <li>로그인 구현 후. 스프링 시큐리티 후 RSA 로그인 구현</li>
+                                        <li>파일 업로드 RDS 인스턴스 Re Deploy 체크</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>서버에 파일 업로드 시 400오류</li>
+                                        <li>내부적 컨트롤할 수 있는 관리자 페이지 작성</li>
+                                        <li>Find-Bug에 걸리지 않도록 모두 리팩토링</li>
+                                        <li>카테고리한 게시판 페이지 이동 가능하게 jsp 작성. 컨트롤러 URI 맵핑까지</li>
+                                        <li>회원 정보 수정 기능 추가</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Not Important</td>
+                                <td class="hidden-sm">
+                                    <ul>
+                                        <li></li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>글쓰기 창 네이버 스마트 에디터로 구현</li>
+                                        <li>Facebook, Twitter 로그인 기능 구현</li>
+                                        <li>error_common.jsp UI 통일 시켜 재구현</li>
+                                        <li>XML의 profile 설정으로 개발 서버와 시용 서버 쉽게 분리해서 돌리는 방법 숙지</li>
+                                        <li>home.jsp의 가운데 카테고리 CSS 코넥트 연결 안 되는 이슈 해결</li>
+                                        <li>새로운 배포방법 구현(Amazon Command Line Tool, maven plugin 사용,
+                                            beanstalk-maven-plugin, Jenkins 연동)
+                                        </li>
+                                        <li>장바구니 및 결제 시스템 도입</li>
+                                        <li>게시판 글 올렸을 때, 읽을 때, 댓글 쓸 때와 읽을 때 포인트 추가</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
 
                         <hr>
 
@@ -5346,7 +5402,8 @@ jQuery(document).ready(function () {
                                 Java Doc 및 Document 작성
                             </li>
                         </ul>
-                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_overview"> Overview </a> 섹션을 확인하십시오.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href="#scroll_overview"> Overview </a>
+                            섹션을 확인하십시오.</p>
 
                         <div class="margin-bottom-30 clearfix"></div>
 
@@ -5357,7 +5414,8 @@ jQuery(document).ready(function () {
                             <li>서버 인스터스 생성 후 서버 Depoly 활용하는 웹 사이트 오픈
                             </li>
                         </ul>
-                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_aws"> AWS </a> 섹션을 확인하십시오.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href="#scroll_aws"> AWS </a> 섹션을
+                            확인하십시오.</p>
 
                         <div class="margin-bottom-30 clearfix"></div>
 
@@ -5369,7 +5427,8 @@ jQuery(document).ready(function () {
                             <li>HttpSession, 자동 로그인 쿠키를 활용하는 로그인 처리
                             </li>
                         </ul>
-                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_interceptor"> Interceptor </a> 섹션을 확인하십시오.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href="#scroll_interceptor">
+                            Interceptor </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.7 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
@@ -5381,7 +5440,8 @@ jQuery(document).ready(function () {
                             <li>게시물의 첨부 파일 등록시 Ajax 및 UploadController 재구성
                             </li>
                         </ul>
-                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_fileupload"> File Upload </a> 섹션을 확인하십시오.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href="#scroll_fileupload"> File
+                            Upload </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.6 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
@@ -5393,7 +5453,8 @@ jQuery(document).ready(function () {
                             <li>AOP 연습 및 구현</li>
                             <li>트랜잭션 처리</li>
                         </ul>
-                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_aop"> AOP & Transaction </a> 섹션을 확인하십시오.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href="#scroll_aop"> AOP &
+                            Transaction </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.5 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
@@ -5405,7 +5466,8 @@ jQuery(document).ready(function () {
                             <li>프로트엔드 구현과 기본적인 게시판 기능의 댓글 처리</li>
                             <li>댓글 처리와 REST 숙지</li>
                         </ul>
-                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_frontend"> Front-End </a> 섹션을 확인하십시오.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href="#scroll_frontend"> Front-End </a>
+                            섹션을 확인하십시오.</p>
                         <!-- End v1.4 Upgrade -->
 
                         <div class="margin-bottom-30 clearfix"></div>
@@ -5444,7 +5506,7 @@ jQuery(document).ready(function () {
                             <li>File Structures <code>Eclipse</code> legacy project(Spring MVC)와 동일하게
                             </li>
                             <li>예상 소요 시간: 측정 불가(습작이기 때문에)</li>
-                            <li>사이트 구현시 걸림돌: </li>
+                            <li>사이트 구현시 걸림돌:</li>
                             <li>예상 비용: 무조건 무비용
                             </li>
                             <li>스프링 개발환경 설정
@@ -5453,7 +5515,8 @@ jQuery(document).ready(function () {
                             </li>
 
                         </ul>
-                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href ="#scroll_main"> Main Structure </a> 섹션을 확인하십시오.</p>
+                        <p><span class="label label-blue">Info</span> 자세한 내용은 <a href="#scroll_main"> Main
+                            Structure </a> 섹션을 확인하십시오.</p>
                         <!-- End v1.2 Upgrade -->
                     </div>
                     <!-- End Update -->
@@ -5462,7 +5525,7 @@ jQuery(document).ready(function () {
 
                     <!-- Others -->
                     <div id="scroll_others">
-                        <h2>Others <span class="label label-dark">Update v1.6</span> <a href="#top">top <i
+                        <h2>Others <span class="label label-dark">Update v1.9</span> <a href="#top">top <i
                                 class="fa fa-angle-up"></i></a></h2>
                         <div class="margin-bottom-30"></div>
                         <hr>
@@ -5470,7 +5533,7 @@ jQuery(document).ready(function () {
                         <h3>Bootstrap</h3>
                         <p>버전 3.0부터 Bootstrap은 기본적으로 응답성이 뛰어난 디자인을 강조하면서 모바일 첫 디자인 철학을 채택했습니다.</p>
                         <h4>Bootstrap Translations</h4>
-                        <p> 부트 스트랩에 대해 더 자세히 알고 싶으시면 아래 링크를 클릭하십시오.</p>
+                        <p> 부트스트랩에 대해 더 자세히 알고 싶으시면 아래 링크를 클릭하십시오.</p>
                         <ul>
                             <li><a target="_blank" href="http://holdirbootstrap.de/" hreflang="de">Bootstrap auf Deutsch
                                 (German)</a></li>
@@ -5491,7 +5554,7 @@ jQuery(document).ready(function () {
                         </ul>
 
                         <h4>Supported Browsers</h4>
-                        <p>특히 부트 스트랩은 다음 브라우저와 플랫폼의 최신 버전을 지원합니다. Windows에서 부트 스트랩은 Internet Explorer 8-11을 지원합니다. 보다
+                        <p>특히 부트스트랩은 다음 브라우저와 플랫폼의 최신 버전을 지원합니다. Windows에서 부트스트랩은 Internet Explorer 8-11을 지원합니다. 보다
                             구체적인 지원 정보는 아래에 제공됩니다.</p>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
@@ -5554,8 +5617,8 @@ jQuery(document).ready(function () {
                                 </tbody>
                             </table>
                         </div>
-                        <p>공식적으로 지원되지는 않지만 비공식적으로 부트 스트랩은 Chromium 및 Linux 용 Chrome, Linux 용 Firefox 및 Internet Explorer
-                            7에서 제대로 작동하고 올바르게 작동해야합니다. 부트 스트랩이 해결해야하는 일부 브라우저 버그 목록은 부트 스트랩 <a
+                        <p>공식적으로 지원되지는 않지만 비공식적으로 부트스트랩은 Chromium 및 Linux 용 Chrome, Linux 용 Firefox 및 Internet Explorer
+                            7에서 제대로 작동하고 올바르게 작동해야합니다. 부트스트랩이 해결해야하는 일부 브라우저 버그 목록은 부트스트랩 <a
                                     target="_blank" href="http://getbootstrap.com/browser-bugs/">을 참조하십시오.</a></p>
                         <h4>Internet Explorer 8 and 9</h4>
                         <p>Internet Explorer 8 및 9도 지원되지만 일부 CSS3 속성과 HTML5 요소는이 브라우저에서 완전히 지원되지 않습니다. 또한 Internet
@@ -5622,8 +5685,8 @@ jQuery(document).ready(function () {
                             the Respond.js docs </a>문서를 참조하십시오.</p>
                         <h5><strong>Respond.js and <code>file://</code></strong></h5>
                         <p>브라우저 보안 규칙으로 인해 Respond.js는 file : // 프로토콜을 통해 (로컬 HTML 파일을 열 때와 마찬가지로) 볼 수 있는 페이지에서는 작동하지
-                            않습니다. IE8에서 반응 형 기능을 테스트하려면 HTTP (S)를 통해 페이지를보십시오. 자세한 내용은 <a target="_blank"
-                                                                                          href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See
+                            않습니다. IE8에서 반응형 기능을 테스트하려면 HTTP (S)를 통해 페이지를보십시오. 자세한 내용은 <a target="_blank"
+                                                                                         href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">See
                                 the Respond.js docs </a>문서를 참조하십시오.</p>
                         <h5><strong>Respond.js and <code>@import</code></strong></h5>
                         <p>Respond.js는 @import를 통해 참조 된 CSS에서 작동하지 않습니다. 특히, 일부 드루팔 구성은 @import를 사용하는 것으로 알려져 있습니다. 자세한
@@ -5637,7 +5700,7 @@ jQuery(document).ready(function () {
                         </p>
                         <h4>Internet Explorer 8 and @font-face</h4>
                         <p>
-                        <p>IE8은 <code>:before</code>와 결합 할 때 <code>@font-face</code> 에 몇 가지 문제가 있습니다. 부트 스트랩은 Glyphicon과
+                        <p>IE8은 <code>:before</code>와 결합 할 때 <code>@font-face</code> 에 몇 가지 문제가 있습니다. 부트스트랩은 Glyphicon과
                             그 조합을 사용합니다. 페이지가 캐싱되어 마우스없이 창 위에로드 된 경우 (즉, 새로 고침 버튼을 누르거나 iframe에서 무언가를로드하면) 글꼴로드 전에 페이지가
                             렌더링됩니다. 페이지 (본체) 위로 마우스를 가져 가면 아이콘 중 일부가 표시되고 나머지 아이콘 위로 마우스를 올리면 해당 아이콘이 표시됩니다. 자세한 내용은 <a
                                     target="_blank" href="https://github.com/twbs/bootstrap/issues/13863">See issue
