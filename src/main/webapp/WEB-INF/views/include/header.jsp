@@ -82,7 +82,7 @@
     @RequestMapping("/board/") 가 있어서 모든 경로에 /board/... 가 붙어서 경로를 못 찾는듯 했다.
     그래서 assets/(상대경로)...가 아닌 /asssets/(절대경로)...를 쓰니 된다.
     -->
-
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/shop.style.css">
 
     <!-- CSS Header and Footer -->
@@ -93,9 +93,15 @@
     <link rel="stylesheet" href="/assets/plugins/animate.css">
     <link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/plugins/noUiSlider/jquery.nouislider.min.css">
+    <link rel="stylesheet" href="/assets/plugins/jquery-steps/css/custom-jquery.steps.css">
     <link rel="stylesheet" href="/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="/assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <link rel="stylesheet" href="/assets/plugins/master-slider/masterslider/style/masterslider.css">
+    <link rel='stylesheet' href="/assets/plugins/master-slider/masterslider/skins/default/style.css">
 
     <!-- CSS Page Style -->
     <link rel="stylesheet" href="/assets/css/pages/log-reg-v3.css">
@@ -190,7 +196,8 @@
                         <ul class="list-inline right-topbar pull-right">
                             <li><a href="#">Account</a></li>
                             <li><a href="shop-ui-add-to-cart.html">Wishlist (0)</a></li>
-                            <li><a href="<c:url value="/user/login"/>">Login</a> | <a href="<c:url value="/user/shop-ui-register"/>">Register</a>
+                            <li><a href="<c:url value="/user/login"/>">Login</a> | <a
+                                    href="<c:url value="/user/shop-ui-register"/>">Register</a>
                             </li>
                             <li><i class="search fa fa-search search-button"></i></li>
                         </ul>
@@ -329,7 +336,8 @@
                                             <div class="row">
                                                 <div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                     <h3 class="mega-menu-heading">고객 사은 할인 이벤트</h3>
-                                                    <p>언제나 저희 UNIFY를 이용해 주심에 고객의 성원에 보답하고자 365일 이월 재고 상품을 대폭 할인하고 있습니다</p>
+                                                    <p>언제나 저희 UNIFY를 이용해 주심에 고객의 성원에 보답하고자 365일 이월 재고 상품을 대폭 할인하고
+                                                        있습니다</p>
                                                     <button type="button" class="btn-u btn-u-dark">Read More</button>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
@@ -428,14 +436,6 @@
                                                         <li><a href="#">Tights</a></li>
                                                     </ul>
                                                 </div>
-
-
-
-
-
-
-
-
 
 
                                                 <div class="col-md-2 col-sm-6">
