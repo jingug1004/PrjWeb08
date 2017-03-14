@@ -26,7 +26,7 @@ public class SampleInterceptor extends HandlerInterceptorAdapter{
                            Object handler,
                            ModelAndView modelAndView) throws Exception {
 
-        System.out.println("post handle...........");
+        System.out.println("~~~ post handle........... ~~~");
 
         Object result = modelAndView.getModel().get("result");
 
@@ -34,26 +34,28 @@ public class SampleInterceptor extends HandlerInterceptorAdapter{
             request.getSession().setAttribute("result", result);
             response.sendRedirect("/doA");
         }
-
     }
 
+
+    /**
+     * What : preHandle()의 경우 리턴 타입이 boolean으로 설계
+     * Why : boolean을 이용해서 다음 Interceptor나 대상 컨트롤러를 호출하도록 할 것인지를 결정
+     * How : 데이터 타입이 boolean
+     */
     @Override
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
                              Object handler) throws Exception {
 
-        System.out.println("pre handle...............");
+        System.out.println("~~~ pre handle............... ~~~");
 
         HandlerMethod method = (HandlerMethod) handler;
         Method methodObj = method.getMethod();
 
-        System.out.println("Bean: " + method.getBean());
-        System.out.println("Method: " + methodObj);
+        System.out.println("~~~ Bean: " + method.getBean() + " ~~~");
+        System.out.println("~~~ Method: " + methodObj + " ~~~");
 
         return true;
 
     }
-
-
-
 }

@@ -1,5 +1,7 @@
 package org.zerock.domain;
 
+import java.sql.Timestamp;
+
 /**
  * Created by macbookpro on 2017. 2. 19. PM 2:09
  * sp4chap11-Project / org.zerock.domain
@@ -35,6 +37,8 @@ public class UserVO {
 
     private String umonth;
     private String ugender;
+
+    private Timestamp regdate;
 
     public UserVO () {
 
@@ -143,6 +147,14 @@ public class UserVO {
         this.ugender = ugender;
     }
 
+    public Timestamp getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(Timestamp regdate) {
+        this.regdate = regdate;
+    }
+
     @Override
     public String toString() {
         return "UserVO{" +
@@ -157,6 +169,7 @@ public class UserVO {
                 ", uyear='" + uyear + '\'' +
                 ", umonth='" + umonth + '\'' +
                 ", ugender='" + ugender + '\'' +
+                ", regdate=" + regdate +
                 '}';
     }
 }

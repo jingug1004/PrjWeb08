@@ -22,5 +22,9 @@
         VALUES (#{uid}, #{upw}, #{upwconfirm}, #{uname}, #{email}, #{nickname}, #{uday}, #{uyear}, #{umonth}, #{ugender})
     </insert>
 
+    <!--<select id="selectEmail" resultType="UserVO">-->
+        <!--select * from tbl_user where email = #{email}-->
+    <!--</select>-->
+
 
 </mapper>

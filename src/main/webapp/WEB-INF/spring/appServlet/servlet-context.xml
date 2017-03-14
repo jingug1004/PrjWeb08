@@ -35,8 +35,8 @@
     </beans:bean>
 
     <!--<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-        <!--<beans:property name="prefix" value="/javadoc/"/>-->
-        <!--<beans:property name="suffix" value=".html"/>-->
+    <!--<beans:property name="prefix" value="/javadoc/"/>-->
+    <!--<beans:property name="suffix" value=".html"/>-->
     <!--</beans:bean>-->
 
     <resources mapping="/resources/**" location="/resources/"/>
@@ -95,6 +95,7 @@
     <beans:bean id="sampleInterceptor" class="org.zerock.interceptor.SampleInterceptor"></beans:bean>
     <beans:bean id="loginInterceptor" class="org.zerock.interceptor.LoginInterceptor"></beans:bean>
     <beans:bean id="authInterceptor" class="org.zerock.interceptor.AuthInterceptor"></beans:bean>
+
 
     <interceptors>
         <interceptor>

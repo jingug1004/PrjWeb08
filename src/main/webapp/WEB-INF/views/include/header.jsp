@@ -196,9 +196,16 @@
                         <ul class="list-inline right-topbar pull-right">
                             <li><a href="#">Account</a></li>
                             <li><a href="shop-ui-add-to-cart.html">Wishlist (0)</a></li>
-                            <li><a href="<c:url value="/user/login"/>">Login</a> | <a
-                                    href="<c:url value="/user/shop-ui-register"/>">Register</a>
-                            </li>
+                            <c:if test="${empty login}">
+                                <li><a href="<c:url value="/user/login"/>">Login</a> | <a
+                                        href="<c:url value="/user/shop-ui-register"/>">Register</a>
+                                </li>
+                            </c:if>
+                            <c:if test="${not empty login}">
+                                <li><a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> | <a
+                                        href="<c:url value="/user/shop-ui-register"/>">Logout</a>
+                                </li>
+                            </c:if>
                             <li><i class="search fa fa-search search-button"></i></li>
                         </ul>
                     </div>

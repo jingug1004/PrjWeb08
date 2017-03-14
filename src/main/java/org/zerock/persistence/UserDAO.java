@@ -22,4 +22,6 @@ public interface UserDAO {
 
     public void create(UserVO uvo) throws Exception;
 
+//    public UserVO readEmail(String email) throws Exception;
+
 }
