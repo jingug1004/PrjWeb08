@@ -1,5 +1,6 @@
 package org.zerock.interceptor;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,11 +11,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * What : HttpSession을 이용하는 LoginInterceptor.class
+ * Why : UserController에서 HttpSession과 관련된 아무런 작업도 처리된 적이 없기 때문에, HttpSession에 관련된 모든 설정은 고스란히 인터셉터에서 처리 / '/loginPost'로 접근하도록 설정하는 것을 목적으로 작성
+ * How :
+ * UserController ("userVO") -> LoginInterceptor
+ */
 
+
+/**
+ * The type Login interceptor. servlet-context.xml에 연결되어 있음 beans:bean id="loginInterceptor" class="org.zerock.interceptor.LoginInterceptor"/beans:bean
+ */
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 
-    public static final String LOGIN = "login";
-    public static final org.slf4j.Logger logger =
+    /**
+     * The constant LOGIN.
+     */
+    public static final String LOGIN = "~~~ login ~~~";
+    /**
+     * The constant logger. constant 1.[주로 명사 앞에 씀] 끊임없는; 거듭되는 2.변함없는 3.(전문 용어) 정수, 항수
+     */
+    public static final Logger logger =
             LoggerFactory.getLogger(LoginInterceptor.class);
 
     @Override
@@ -33,7 +50,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             logger.info("~~~ new login success ~~~");
             session.setAttribute(LOGIN, userVO);
 
-            if(request.getParameter("useCookie") != null) {
+            if (request.getParameter("useCookie") != null) {
 
                 logger.info("~~~ remember me....................... ~~~");
                 Cookie loginCookie = new Cookie("loginCookie", session.getId());

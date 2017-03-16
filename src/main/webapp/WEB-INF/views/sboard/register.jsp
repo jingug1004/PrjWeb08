@@ -44,7 +44,7 @@
                             <label for="exampleInputEmail1">Writer</label>
                             <%--<input type="text" name="writer" class="form-control" placeholder="Enter Writer">--%>
                             <%--<input type="text" name="writer" class="form-control" value='${login.uid}' readonly>--%>
-                            <input type="text" name="writer" class="form-control" value='${login.nickname}' readonly>
+                            <input type="text" name="writer" class="form-control" value='${login.uid}' readonly>
                         </div>
 
                         <div class="form-group">

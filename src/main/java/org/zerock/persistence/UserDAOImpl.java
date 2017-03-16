@@ -14,8 +14,10 @@ import java.util.Map;
  * Created by macbookpro on 2017. 2. 26. PM 7:42
  * sp4chap11-Project / org.zerock.persistence
  * No pain, No gain!
+ * What : UserDAOImpl.java
+ * Why : UserDAO 인터페이스를 @Override해서 구현하기 위해
+ * How : UserDAO 인터페이스 만든 후 마이바티스 userMapper.xml 파일 만들고 UserDAOImpl 만듦
  */
-
 @Repository
 public class UserDAOImpl implements UserDAO{
 

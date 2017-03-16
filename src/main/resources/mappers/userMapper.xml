@@ -3,6 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!--
+/**
+* What : userMapper.xml
+* Why : 로그인 할 때 사용자의 아이디와 패스워드를 이용해서 사용자의 정보를 조회하는 SQL문을 처리
+* How : UserDAO 만들고 UserDAOImpl 만들기 전에 MyBatis 작성
+*/
+-->
+
 <mapper namespace="org.zerock.mapper.UserMapper">
 
     <select id="login" resultType="UserVO">

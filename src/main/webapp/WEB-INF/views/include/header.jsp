@@ -202,8 +202,8 @@
                                 </li>
                             </c:if>
                             <c:if test="${not empty login}">
-                                <li><a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> | <a
-                                        href="<c:url value="/user/shop-ui-register"/>">Logout</a>
+                                <li>${login.nickname}님! | <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> | <a
+                                        href="<c:url value="/user/logout"/>">Logout</a>
                                 </li>
                             </c:if>
                             <li><i class="search fa fa-search search-button"></i></li>

@@ -50,7 +50,7 @@ public class HomeController {
     }
 
     /**
-     * Do a string. servlet-context.xml에 설정되어 있는 <interceptors></interceptors>의 경로 호출에 대한 테스트 메소드
+     * Do a string. servlet-context.xml에 설정되어 있는 interceptors/interceptors의 경로 호출에 대한 테스트 메소드
      * 밑의 "/doB" 메소드와 동일
      *
      * @param locale the locale

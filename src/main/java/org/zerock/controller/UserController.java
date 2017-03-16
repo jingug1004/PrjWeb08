@@ -29,7 +29,14 @@ import java.util.List;
  * Created by wtime on 2017-02-21. 오후 1:28
  * org.zerock.controller / Web03
  * It's now or never!
+ * What : HttpSession을 이용하는 로그인 처리를 위한 UserController
+ * Why : 회원가입 및 로그인시 회원정보를 계속 유지하려고(HttpSession)
+ * How : 스프링 MVC는 컨트롤러에서 필요한 모든 자원을 파라미터에서 수집해서 처리하기 때문에 HttpServletRequest나 HttpSession과
+ * 같은 자원들 역시 파라미터로 처리해도 아무런 문제가 없다. 컨트롤러 패키지에 있는 controller는 좀 더 순수하게 데이터를 만들어 내는데 집중하고,
+ * 인터셉터를 이용해서 HttpSession을 처리하도록
+ * UserController - UserService - UserDAO - LoginDTO, UserVO
  */
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -82,11 +89,12 @@ public class UserController {
     }
 
     /**
-     * Login post.
+     * Login post. 기존의 컨트롤러 패키지의 controller들과 전혀 차이가 없이 POST 방식으로 파라미터를 이용해서 Model에 UserVO 객체 추가
      *
      * @param dto     the dto
      * @param session the session
-     * @param model   the model
+     * @param model   the model Model에 UserVO 객체 추가
+     *                model.addAttribute("userVO", vo); 실제로 로그인 처리가 이뤄지는 loginPost()에서는 Model 객체에 사용자가 존재하는 경우에 'userVO'라는 이름으로 저장
      * @throws Exception the exception
      */
     @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
@@ -135,15 +143,14 @@ public class UserController {
     }
 
     /**
-     * Register 02 post. Step01 약관 동의화면에서 <form 액션></form>으로 감싸서 여기로 post로 넘김
+     * Register 02 post. Step01 약관 동의화면에서 form 액션/form으로 감싸서 여기로 post로 넘김
      * 요청 파라마터(Request Parameter)에 접근하는 방법은 HttpservletRequest request를 이용해도
      * 되겠지만 요청 파라미터 개수가 얼마 안 될 때에는 @RequestParam 애노테이션을 사용해도 된다.
      * shop-ui-register.jsp(약관 동의)에서 agree 요청 파라미터의 값을
      * 읽어와 agreeVal 파라미터에 할당하고 요청 파라미터 값이 없으면
      * "false" 문자열을 사용한다.
      *
-     * @param agreeVal the agreeVal 스프링 MVC는 실제 파라미터의 타입에 맞게 String 값을 변환해준다 agree 요청  파라미터의 갑을 읽어와
-     *                 Boolean 타입으로 변환해서 agreeVal 파라미터에 전달한다.
+     * @param agreeVal the agreeVal 스프링 MVC는 실제 파라미터의 타입에 맞게 String 값을 변환해준다 agree 요청  파라미터의 갑을 읽어와                 Boolean 타입으로 변환해서 agreeVal 파라미터에 전달한다.
      * @return the string 약관에 동의했다면 입력 폼을 보여주기 위해 "user/shop-ui-register02"를 뷰 이름으로 리턴한다.
      */
     @RequestMapping(value = "/shop-ui-register02", method = RequestMethod.POST)
@@ -156,7 +163,7 @@ public class UserController {
     }
 
     /**
-     * Register post string. /shop-ui-register02 에서 <form action=/registPost></form> 태그로 감싸져 있는 회원 개인정보 등록.
+     * Register post string. /shop-ui-register02 에서 form action=/registPost /form 태그로 감싸져 있는 회원 개인정보 등록.
      *
      * @param userVO        the user vo
      * @param rttr          the rttr
@@ -192,11 +199,17 @@ public class UserController {
         return "user/shop-ui-register03";
     }
 
+    /**
+     * Modify get.
+     */
     @RequestMapping(value = "/shop-ui-modify", method = RequestMethod.GET)
     public void modifyGET() {
 
     }
 
+    /**
+     * Modify post.
+     */
     @RequestMapping(value = "/shop-ui-modify", method = RequestMethod.POST)
     public void modifyPOST() {
 
@@ -212,11 +225,11 @@ public class UserController {
      * @throws Exception the exception
      */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public void logout(HttpServletRequest request,
+    public String logout(HttpServletRequest request,
                        HttpServletResponse response,
                        HttpSession session) throws Exception {
 
-        logger.info("~~~ logout.................................1 ~~~");
+        logger.info("~~~ logout..................1 ~~~");
 
         Object obj = session.getAttribute("login");
 
@@ -224,12 +237,12 @@ public class UserController {
 
             UserVO vo = (UserVO) obj;
 
-            logger.info("~~~ logout.................................2 ~~~");
+            logger.info("~~~ logout.......................2 ~~~");
 
             session.removeAttribute("login");
             session.invalidate();
 
-            logger.info("~~~ logout.................................3 ~~~");
+            logger.info("~~~ logout............................3 ~~~");
 
             Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
 
@@ -243,6 +256,6 @@ public class UserController {
                 service.keepLogin(vo.getUid(), session.getId(), new Date());
             }
         }
-//        return "home";
+        return "/";
     }
 }
