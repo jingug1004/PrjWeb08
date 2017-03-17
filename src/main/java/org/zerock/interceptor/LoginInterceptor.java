@@ -27,7 +27,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     /**
      * The constant LOGIN.
      */
-    public static final String LOGIN = "~~~ login ~~~";
+    public static final String LOGIN = "login";
     /**
      * The constant logger. constant 1.[주로 명사 앞에 씀] 끊임없는; 거듭되는 2.변함없는 3.(전문 용어) 정수, 항수
      */
@@ -47,12 +47,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
         if (userVO != null) {
 
-            logger.info("~~~ new login success ~~~");
+            logger.info("lll new login success lll");
             session.setAttribute(LOGIN, userVO);
 
             if (request.getParameter("useCookie") != null) {
 
-                logger.info("~~~ remember me....................... ~~~");
+                logger.info("lll remember me....................... lll");
                 Cookie loginCookie = new Cookie("loginCookie", session.getId());
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(60 * 60 * 24 * 7);
@@ -75,7 +75,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         HttpSession session = request.getSession();
 
         if (session.getAttribute(LOGIN) != null) {
-            logger.info("~~~ clear login data before ~~~");
+            logger.info("lll clear login data before lll");
             session.removeAttribute(LOGIN);
         }
 

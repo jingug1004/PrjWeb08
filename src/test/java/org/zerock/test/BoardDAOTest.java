@@ -121,7 +121,7 @@ public class BoardDAOTest {
         cri.setKeyword("글");
         cri.setSearchType("t");
 
-        logger.info("~~~ ===================================== ~~~");
+        logger.info("lll ===================================== lll");
 
         List<BoardVO> list = dao.listSearch(cri);
 
@@ -129,9 +129,9 @@ public class BoardDAOTest {
             logger.info(boardVO.getBno() + ": " + boardVO.getTitle());
         }
 
-        logger.info("~~~ ===================================== ~~~");
+        logger.info("lll ===================================== lll");
 
-        logger.info("~~~ COUNT: " + dao.listSearchCount(cri) + " ~~~");
+        logger.info("lll COUNT: " + dao.listSearchCount(cri) + " lll");
     }
 
 }

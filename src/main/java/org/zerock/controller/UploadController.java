@@ -48,9 +48,9 @@ public class UploadController {
     @RequestMapping(value = "/uploadForm", method = RequestMethod.POST)
     public String uploadForm(MultipartFile file, Model model) throws Exception {
 
-        logger.info("~~~ originalName: " + file.getOriginalFilename() + " ~~~");
-        logger.info("~~~ size: " + file.getSize() + " ~~~");
-        logger.info("~~~ contentType: " + file.getContentType() + " ~~~");
+        logger.info("lll originalName: " + file.getOriginalFilename() + " lll");
+        logger.info("lll size: " + file.getSize() + " lll");
+        logger.info("lll contentType: " + file.getContentType() + " lll");
 
         String savedName = uploadFile(file.getOriginalFilename(), file.getBytes());
 
@@ -85,9 +85,9 @@ public class UploadController {
                     produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> uploadAjax(MultipartFile file) throws Exception {
 
-        logger.info("~~~ originalName: " + file.getOriginalFilename() + " ~~~");
-        logger.info("~~~ size: " + file.getSize() + " ~~~");
-        logger.info("~~~ contentType: " + file.getContentType() + " ~~~");
+        logger.info("lll originalName: " + file.getOriginalFilename() + " lll");
+        logger.info("lll size: " + file.getSize() + " lll");
+        logger.info("lll contentType: " + file.getContentType() + " lll");
 
         return new ResponseEntity<>(
                 UploadFileUtils.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes()),
@@ -102,7 +102,7 @@ public class UploadController {
         InputStream in = null;
         ResponseEntity<byte[]> entity = null;
 
-        logger.info("~~~ FILE NAME: " + fileName + " ~~~");
+        logger.info("lll FILE NAME: " + fileName + " lll");
 
         try {
 
@@ -140,7 +140,7 @@ public class UploadController {
     @RequestMapping(value = "/deleteFile", method = RequestMethod.POST)
     public ResponseEntity<String> deleteFile(String fileName) {
 
-        logger.info("~~~ delete file: " + fileName + " ~~~");
+        logger.info("lll delete file: " + fileName + " lll");
 
         String formatName = fileName.substring(fileName.lastIndexOf(".") + 1);
 
@@ -165,7 +165,7 @@ public class UploadController {
     @RequestMapping(value = "/deleteAllFiles", method = RequestMethod.POST)
     public ResponseEntity<String> deleteFile(@RequestParam("files[]") String[] files) {
 
-        logger.info("~~~ delete all files: " + files + " ~~~");
+        logger.info("lll delete all files: " + files + " lll");
 
         if (files == null || files.length == 0) {
             return new ResponseEntity<String>("deleted", HttpStatus.OK);

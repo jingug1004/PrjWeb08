@@ -105,14 +105,14 @@ public class SearchBoardController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public void registGET() throws Exception {
 
-        logger.info("~~~ regist get ........... ~~~");
+        logger.info("lll regist get ........... lll");
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registPOST(BoardVO board,
                              RedirectAttributes rttr) throws Exception {
 
-        logger.info("~~~ regist post ........... ~~~");
+        logger.info("lll regist post ........... lll");
         logger.info(board.toString());
 
         service.regist(board);

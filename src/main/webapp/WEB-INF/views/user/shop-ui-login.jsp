@@ -530,7 +530,6 @@
                     <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">--%>
                     <h2>Log in to your account</h2>
 
-
                     <%--<form action="${ctx}/j_spring_security_ckeck" method="post">--%>
                     <section>
                         <label class="input login-input">
@@ -573,33 +572,33 @@
                     <button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit" value="login">Log in
                     </button>
                     <%--<button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Log in</button>--%>
-
-                    <c:if test="${not empty param.fail}">
-                        <font class="bg-color-red">
-                            <p>Your login attempt was not successful, try again</p>
-                            <p>Reason:${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</p>
-                        </font>
-                        <c:remove scope="session" var="SPRING_SECURITY_LAST_EXCEPTION"/>
-                    </c:if>
-
-
-                    <%--<div class="border-wings">--%>
-                        <%--<span></span>--%>
-                    <%--</div>--%>
-
-                    <div class="row columns-space-removes">
-                        <div class="col-lg-6 margin-bottom-10">
-                            <button type="button" class="btn-u btn-u-md btn-u-fb btn-block"><i
-                                    class="fa fa-facebook"></i> Facebook Log In
-                            </button>
-                        </div>
-                        <div class="col-lg-6">
-                            <button type="button" class="btn-u btn-u-md btn-u-tw btn-block"><i
-                                    class="fa fa-twitter"></i> Twitter Log In
-                            </button>
-                        </div>
-                    </div>
                 </form>
+                <c:if test="${not empty param.fail}">
+                    <font class="bg-color-red">
+                        <p>Your login attempt was not successful, try again</p>
+                        <p>Reason:${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</p>
+                    </font>
+                    <c:remove scope="session" var="SPRING_SECURITY_LAST_EXCEPTION"/>
+                </c:if>
+
+
+                <%--<div class="border-wings">--%>
+                <%--<span></span>--%>
+                <%--</div>--%>
+
+                <div class="row columns-space-removes">
+                    <div class="col-lg-6 margin-bottom-10">
+                        <button type="button" class="btn-u btn-u-md btn-u-fb btn-block"><i
+                                class="fa fa-facebook"></i> Facebook Log In
+                        </button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button type="button" class="btn-u btn-u-md btn-u-tw btn-block"><i
+                                class="fa fa-twitter"></i> Twitter Log In
+                        </button>
+                    </div>
+                </div>
+
 
                 <div class="margin-bottom-20"></div>
                 <p class="text-center">회원이 아니십니까? 회원가입 <a href="<c:url value="/user/shop-ui-register"/>">Sign

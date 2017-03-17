@@ -28,7 +28,7 @@ public class HomeController {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
-        logger.info("~~~ Welcome home! The client locale is {}. ~~~", locale);
+        logger.info("lll Welcome home! The client locale is {}. lll", locale);
 
         Date date = new Date();
         DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -60,7 +60,7 @@ public class HomeController {
     @RequestMapping(value = "/doA", method = RequestMethod.GET)
     public String doA(Locale locale, Model model) {
 
-        System.out.println("~~~ doA..................... ~~~");
+        System.out.println("lll doA..................... lll");
 
         return "home";
     }
@@ -75,7 +75,7 @@ public class HomeController {
     @RequestMapping(value = "/doB", method = RequestMethod.GET)
     public String doB(Locale locale, Model model) {
 
-        System.out.println("~~~ doB..................... ~~~");
+        System.out.println("lll doB..................... lll");
 
         model.addAttribute("result", "DOB RESULT");
 

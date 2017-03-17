@@ -14,7 +14,7 @@
 <mapper namespace="org.zerock.mapper.UserMapper">
 
     <select id="login" resultType="UserVO">
-        SELECT uid, upw, uname FROM tbl_user WHERE uid = #{uid} and upw = #{upw}
+        SELECT uid, upw, uname, nickname FROM tbl_user WHERE uid = #{uid} and upw = #{upw}
     </select>
 
     <update id="keepLogin">

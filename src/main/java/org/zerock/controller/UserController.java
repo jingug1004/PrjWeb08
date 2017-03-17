@@ -164,6 +164,8 @@ public class UserController {
 
     /**
      * Register post string. /shop-ui-register02 에서 form action=/registPost /form 태그로 감싸져 있는 회원 개인정보 등록.
+     * ModelAttribute 애노테이션은 모델에서 사용할 속성 이름을 값으로 설정하며,
+     * 예를 들어, 뷰 코드에서 "formData"라는 이름을 사용해서 커맨드 객체에 접근할 수 있도록 만들어준다.
      *
      * @param userVO        the user vo
      * @param rttr          the rttr
@@ -176,15 +178,15 @@ public class UserController {
                                RedirectAttributes rttr,
                                BindingResult bindingResult) throws Exception {
 
-        logger.info("~~~ user regist post ........... ~~~");
+        logger.info("lll user regist post ........... lll");
         logger.info(userVO.toString());
 
         if (bindingResult.hasErrors()) {
-            logger.info("~~~ Binding Result has error! ~~~");
+            logger.info("lll Binding Result has error! lll");
             List<ObjectError> errors = bindingResult.getAllErrors();
 
             for (ObjectError error : errors) {
-                logger.info("~~~ error : {}, {}", error.getCode(), error.getDefaultMessage() + " ~~~");
+                logger.info("lll error : {}, {}", error.getCode(), error.getDefaultMessage() + " lll");
             }
 
 //            return "user/shop-ui-register";
@@ -229,7 +231,7 @@ public class UserController {
                        HttpServletResponse response,
                        HttpSession session) throws Exception {
 
-        logger.info("~~~ logout..................1 ~~~");
+        logger.info("lll logout..................1 lll");
 
         Object obj = session.getAttribute("login");
 
@@ -237,18 +239,18 @@ public class UserController {
 
             UserVO vo = (UserVO) obj;
 
-            logger.info("~~~ logout.......................2 ~~~");
+            logger.info("lll logout.......................2 lll");
 
             session.removeAttribute("login");
             session.invalidate();
 
-            logger.info("~~~ logout............................3 ~~~");
+            logger.info("lll logout............................3 lll");
 
             Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
 
             if (loginCookie != null) {
 
-                logger.info("~~~ logout.................................4 ~~~");
+                logger.info("lll logout.................................4 lll");
 
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(0);
@@ -256,6 +258,10 @@ public class UserController {
                 service.keepLogin(vo.getUid(), session.getId(), new Date());
             }
         }
-        return "/";
+//        밑의 리턴들은 모두 uri 맵핑오류 발생
+//        return "/";
+//        return "home";
+
+        return "redirect:/home";
     }
 }
