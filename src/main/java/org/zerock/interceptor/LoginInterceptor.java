@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 /**
  * What : HttpSession을 이용하는 LoginInterceptor.class
  * Why : UserController에서 HttpSession과 관련된 아무런 작업도 처리된 적이 없기 때문에, HttpSession에 관련된 모든 설정은 고스란히 인터셉터에서 처리 / '/loginPost'로 접근하도록 설정하는 것을 목적으로 작성
- * How :
+ * How : postHandle()을 이용해서 HttpSession에 UserVO 타입의 객체를 보관. 이를 수정해서 중간에 쿠키를 생성하고 HttpServletResponse에 같이 담아서 전송
  * UserController ("userVO") -> LoginInterceptor
  */
 
@@ -47,12 +47,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
         if (userVO != null) {
 
-            logger.info("lll new login success lll");
+            logger.info("lll~~~ new login success............ lll~~~");
             session.setAttribute(LOGIN, userVO);
 
             if (request.getParameter("useCookie") != null) {
 
-                logger.info("lll remember me....................... lll");
+                logger.info("lll~~~ remember me....................... lll~~~");
                 Cookie loginCookie = new Cookie("loginCookie", session.getId());
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(60 * 60 * 24 * 7);
@@ -75,7 +75,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         HttpSession session = request.getSession();
 
         if (session.getAttribute(LOGIN) != null) {
-            logger.info("lll clear login data before lll");
+            logger.info("lll~~~ clear login data before.......... lll~~~");
             session.removeAttribute(LOGIN);
         }
 

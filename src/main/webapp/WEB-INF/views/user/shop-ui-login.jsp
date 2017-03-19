@@ -562,7 +562,7 @@
 
                                 <input type="checkbox" name="useCookie">
                                 <i></i>
-                                Remember me
+                                자동 로그인
                             </label>
                         </div>
                         <div class="col-xs-6 text-right">

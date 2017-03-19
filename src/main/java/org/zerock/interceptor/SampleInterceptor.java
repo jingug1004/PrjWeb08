@@ -26,7 +26,7 @@ public class SampleInterceptor extends HandlerInterceptorAdapter{
                            Object handler,
                            ModelAndView modelAndView) throws Exception {
 
-        System.out.println("lll post handle........... lll");
+        System.out.println("lll~~~ post handle........... lll~~~");
 
         Object result = modelAndView.getModel().get("result");
 
@@ -47,13 +47,13 @@ public class SampleInterceptor extends HandlerInterceptorAdapter{
                              HttpServletResponse response,
                              Object handler) throws Exception {
 
-        System.out.println("lll pre handle............... lll");
+        System.out.println("lll~~~ pre handle............... lll~~~");
 
         HandlerMethod method = (HandlerMethod) handler;
         Method methodObj = method.getMethod();
 
-        System.out.println("lll Bean: " + method.getBean() + " lll");
-        System.out.println("lll Method: " + methodObj + " lll");
+        System.out.println("lll~~~ Bean: " + method.getBean() + " lll~~~");
+        System.out.println("lll~~~ Method: " + methodObj + " lll~~~");
 
         return true;
 

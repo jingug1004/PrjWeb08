@@ -37,14 +37,16 @@
                         <div class="form-group">
                             <%--@declare id="exampleinputpassword1"--%>
                             <label for="exampleInputPassword1">Content</label>
-                            <textarea class="form-control" name="content" rows="3"
+                            <textarea class="form-control" name="content" rows="20"
                                       placeholder="Enter ..."></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Writer</label>
                             <%--<input type="text" name="writer" class="form-control" placeholder="Enter Writer">--%>
                             <%--<input type="text" name="writer" class="form-control" value='${login.uid}' readonly>--%>
-                            <input type="text" name="writer" class="form-control" value='${login.uid}' readonly>
+                            <%--<input type="text" name="writer" class="form-control" value='${login.uid}' readonly>--%>
+                            <input type="text" name="writer" class="form-control" value='${login.nickname}' readonly>
+                            <%--JSP에서 사용하는 EL의 경우 자동으로 HttpSession에 있는 'login'을 찾아서 사용하므로 '${loogin.nickname}'와 같은 형태로 사용할 수 있음--%>
                         </div>
 
                         <div class="form-group">

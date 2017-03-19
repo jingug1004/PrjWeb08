@@ -18,8 +18,8 @@ public class SampleAdvice {
     //@Before("execution(* org.zerock.service.MessageService*.*(..))")
     public void startLog(JoinPoint jp) {
 
-        logger.info("lll ---------------------------- lll");
-        logger.info("lll ---------------------------- lll");
+        logger.info("lll~~~ ---------------------------- lll~~~");
+        logger.info("lll~~~ ---------------------------- lll~~~");
         logger.info(Arrays.toString(jp.getArgs()));
 
     }
@@ -35,7 +35,7 @@ public class SampleAdvice {
 
         long endTime = System.currentTimeMillis();
         logger.info(pjp.getSignature().getName() + " : " + (endTime - startTime));
-        logger.info("lll ============================================= lll");
+        logger.info("lll~~~ ============================================= lll~~~");
 
         return result;
     }

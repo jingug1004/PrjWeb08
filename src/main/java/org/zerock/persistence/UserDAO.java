@@ -21,14 +21,14 @@ public interface UserDAO {
      * Login user vo. 로그인할 때 사용자의 아이디와 패스워드를 이용해서 사용자의 정보를 조회
      * /resouces/mappers/userMapper.xml과 연결
      *
-     * @param dto the dto LoginDTO에는 uid, upw, useCookie 3개의 필드가 있다
+     * @param dto the dto LoginDTO에는 uid, upw, useCookie 3개의 필드가 있음
      * @return the user vo 사용자의 정보를 등록하거나 수정할 때의 데이터를 보관하는 UserVO 클래스
      * @throws Exception the exception
      */
     public UserVO login(LoginDTO dto) throws Exception;
 
     /**
-     * Keep login.
+     * Keep login. 로그인한 사용자의 sessionKey와 sessionLimit을 업데이트 하는 기능 / userMapper.xml의 keepLogin
      *
      * @param uid       the uid
      * @param sessionId the session id
@@ -37,7 +37,7 @@ public interface UserDAO {
     public void keepLogin(String uid, String sessionId, Date next);
 
     /**
-     * Check user with session key user vo.
+     * Check user with session key user vo. loginCookie에 기록된 값으로 사용자의 정보를 조회하는 기능을 추가
      *
      * @param value the value
      * @return the user vo

@@ -15,14 +15,14 @@ public class SampleController {
 	@RequestMapping("doA")
 	public void doA(){
 		
-		logger.info("lll doA called.................... lll");
+		logger.info("lll~~~ doA called.................... lll~~~");
 		
 	}
 
 	@RequestMapping("doB")
 	public void doB(){
 		
-		logger.info("lll doB called.................... lll");
+		logger.info("lll~~~ doB called.................... lll~~~");
 		
 	}
 	

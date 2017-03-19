@@ -82,7 +82,7 @@
                     <div class="form-group">
                         <%--@declare id="exampleinputpassword1"--%>
                         <label for="exampleInputPassword1">Content</label>
-                        <textarea class="form-control" name="content" rows="3"
+                        <textarea class="form-control" name="content" rows="25"
                                   readonly="readonly">${boardVO.content}</textarea>
                     </div>
                     <div class="form-group">
@@ -102,7 +102,7 @@
 
 
                     <ul class="mailbox-attachments clearfix uploadedList"></ul>
-                    <c:if test="${login.uid == boardVO.writer}">
+                    <c:if test="${login.nickname == boardVO.writer}">
                         <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
                         <button type="submit" class="btn btn-danger" id="removeBtn">Remove</button>
                     </c:if>
@@ -129,7 +129,7 @@
                             <%--@declare id="exampleinputemail1"--%>
                         <label for="exampleInputEmail1">Writer</label>
                         <input class="form-control" type="text" placeholder="USER ID" id="newReplyWriter"
-                               value="${login.uid }" readonly="readonly">
+                               value="${login.nickname}" readonly="readonly">
                         <label for="exampleInputEmail1">Reply Text</label>
                         <input class="form-control" type="text" placeholder="Reply TEXT" id="newReplyText">
                     </div>
@@ -268,7 +268,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
     Handlebars.registerHelper("eqReplyer", function (replyer, block) {
         var accum = '';
-        if (replyer == '${login.uid}') {
+        if (replyer == '${login.nickname}') {
             accum += block.fn();
         }
         return accum;
@@ -389,8 +389,11 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                     alert("등록 되었습니다.");
                     replyPage = 1;
                     getPage("/replies/" + bno + "/" + replyPage);
-                    replyerObj.val("");
+//                    replyerObj.val("");
+//                    replytextObj.val("");
+                    replyerObj.val("${login.nickname}");
                     replytextObj.val("");
+                    <%--replyerObj.val("${login.nickname}"); 이게 정확하게 잘 돌아감 -> 댓글의 댓글을 달아도 계속 Writer 유지 됨--%>
                 }
             }
         });

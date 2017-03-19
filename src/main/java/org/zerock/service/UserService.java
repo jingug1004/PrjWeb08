@@ -25,7 +25,7 @@ public interface UserService {
     public UserVO login(LoginDTO dto) throws Exception;
 
     /**
-     * Keep login.
+     * Keep login. 로그인 정보를 유지하는 keepLogin과 과거에 접속한 사용자인지를 확인하는 기능을 작성
      *
      * @param uid       the uid
      * @param sessionId the session id

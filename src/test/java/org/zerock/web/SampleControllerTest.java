@@ -32,7 +32,7 @@ public class SampleControllerTest {
     @Before
     public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-        logger.info("lll setup............ lll");
+        logger.info("lll~~~ setup............ lll~~~");
     }
     
     @Test

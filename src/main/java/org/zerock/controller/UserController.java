@@ -178,15 +178,15 @@ public class UserController {
                                RedirectAttributes rttr,
                                BindingResult bindingResult) throws Exception {
 
-        logger.info("lll user regist post ........... lll");
+        logger.info("lll~~~ user regist post ........... lll~~~");
         logger.info(userVO.toString());
 
         if (bindingResult.hasErrors()) {
-            logger.info("lll Binding Result has error! lll");
+            logger.info("lll~~~ Binding Result has error! lll~~~");
             List<ObjectError> errors = bindingResult.getAllErrors();
 
             for (ObjectError error : errors) {
-                logger.info("lll error : {}, {}", error.getCode(), error.getDefaultMessage() + " lll");
+                logger.info("lll~~~ error : {}, {}", error.getCode(), error.getDefaultMessage() + " lll~~~");
             }
 
 //            return "user/shop-ui-register";
@@ -219,7 +219,7 @@ public class UserController {
 
 
     /**
-     * Logout.
+     * Logout. HttpSession인 경우 login과 같이 저장된 정보를 삭제하고, invalidate()를 주는 작업과 쿠키의 유효시간을 변경하는 작업으로 이루어짐
      *
      * @param request  the request
      * @param response the response
@@ -231,7 +231,7 @@ public class UserController {
                        HttpServletResponse response,
                        HttpSession session) throws Exception {
 
-        logger.info("lll logout..................1 lll");
+        logger.info("lll~~~ logout..................1 lll~~~");
 
         Object obj = session.getAttribute("login");
 
@@ -239,18 +239,18 @@ public class UserController {
 
             UserVO vo = (UserVO) obj;
 
-            logger.info("lll logout.......................2 lll");
+            logger.info("lll~~~ logout.......................2 lll~~~");
 
             session.removeAttribute("login");
             session.invalidate();
 
-            logger.info("lll logout............................3 lll");
+            logger.info("lll~~~ logout............................3 lll~~~");
 
             Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
 
             if (loginCookie != null) {
 
-                logger.info("lll logout.................................4 lll");
+                logger.info("lll~~~ logout.................................4 lll~~~");
 
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(0);

@@ -28,8 +28,11 @@ import java.util.UUID;
  * Created by wtime on 2017-02-20. 오후 2:18
  * org.zerock.controller / Web Ex02
  * Better late than never!
+ * What : 게시물 첨부파일 기능을 가진 스프링 MVC의 파일 업로드할 수 있는 UploadController.class
+ * Why :
+ * How :
+ *
  */
-
 @Controller
 public class UploadController {
 
@@ -40,17 +43,28 @@ public class UploadController {
     private String uploadPath;
 
 
+    /**
+     * Upload form. 테스트용 /views/uploadForm.jsp
+     */
     @RequestMapping(value = "/uploadForm", method = RequestMethod.GET)
     public void uploadForm() {
 
     }
 
+    /**
+     * Upload form string. 테스트용
+     *
+     * @param file  MultipartFile은 POST 방식으로 들어온 파일 데이터를 의미
+     * @param model the model
+     * @return the string
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/uploadForm", method = RequestMethod.POST)
     public String uploadForm(MultipartFile file, Model model) throws Exception {
 
-        logger.info("lll originalName: " + file.getOriginalFilename() + " lll");
-        logger.info("lll size: " + file.getSize() + " lll");
-        logger.info("lll contentType: " + file.getContentType() + " lll");
+        logger.info("lll~~~ originalName: " + file.getOriginalFilename() + " lll~~~");
+        logger.info("lll~~~ size: " + file.getSize() + " lll~~~");
+        logger.info("lll~~~ contentType: " + file.getContentType() + " lll~~~");
 
         String savedName = uploadFile(file.getOriginalFilename(), file.getBytes());
 
@@ -59,6 +73,9 @@ public class UploadController {
         return "uploadResult";
     }
 
+    /**
+     * Upload ajax.
+     */
     @RequestMapping(value = "/uploadAjax", method = RequestMethod.GET)
     public void uploadAjax() {
 
@@ -79,15 +96,22 @@ public class UploadController {
     }
 
 
+    /**
+     * Upload ajax response entity.
+     *
+     * @param file the file
+     * @return the response entity
+     * @throws Exception the exception
+     */
     @ResponseBody
     @RequestMapping(value = "/uploadAjax",
                     method = RequestMethod.POST,
                     produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> uploadAjax(MultipartFile file) throws Exception {
 
-        logger.info("lll originalName: " + file.getOriginalFilename() + " lll");
-        logger.info("lll size: " + file.getSize() + " lll");
-        logger.info("lll contentType: " + file.getContentType() + " lll");
+        logger.info("lll~~~ originalName: " + file.getOriginalFilename() + " lll~~~");
+        logger.info("lll~~~ size: " + file.getSize() + " lll~~~");
+        logger.info("lll~~~ contentType: " + file.getContentType() + " lll~~~");
 
         return new ResponseEntity<>(
                 UploadFileUtils.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes()),
@@ -95,6 +119,13 @@ public class UploadController {
     }
 
 
+    /**
+     * Display file response entity.
+     *
+     * @param fileName the file name
+     * @return the response entity
+     * @throws Exception the exception
+     */
     @ResponseBody
     @RequestMapping("/displayFile")
     public ResponseEntity<byte[]> displayFile(String fileName) throws Exception {
@@ -102,7 +133,7 @@ public class UploadController {
         InputStream in = null;
         ResponseEntity<byte[]> entity = null;
 
-        logger.info("lll FILE NAME: " + fileName + " lll");
+        logger.info("lll~~~ FILE NAME: " + fileName + " lll~~~");
 
         try {
 
@@ -136,11 +167,17 @@ public class UploadController {
         return entity;
     }
 
+    /**
+     * Delete file response entity.
+     *
+     * @param fileName the file name
+     * @return the response entity
+     */
     @ResponseBody
     @RequestMapping(value = "/deleteFile", method = RequestMethod.POST)
     public ResponseEntity<String> deleteFile(String fileName) {
 
-        logger.info("lll delete file: " + fileName + " lll");
+        logger.info("lll~~~ delete file: " + fileName + " lll~~~");
 
         String formatName = fileName.substring(fileName.lastIndexOf(".") + 1);
 
@@ -161,11 +198,17 @@ public class UploadController {
         return new ResponseEntity<String>("deleted", HttpStatus.OK);
     }
 
+    /**
+     * Delete file response entity.
+     *
+     * @param files the files
+     * @return the response entity
+     */
     @ResponseBody
     @RequestMapping(value = "/deleteAllFiles", method = RequestMethod.POST)
     public ResponseEntity<String> deleteFile(@RequestParam("files[]") String[] files) {
 
-        logger.info("lll delete all files: " + files + " lll");
+        logger.info("lll~~~ delete all files: " + files + " lll~~~");
 
         if (files == null || files.length == 0) {
             return new ResponseEntity<String>("deleted", HttpStatus.OK);

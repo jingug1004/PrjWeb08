@@ -20,9 +20,9 @@
        http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd"> 이것도 추가했다. -->
 
-    <!-- URL 매핑 -->
-    <mvc:view-controller path="/admin/admin" view-name="admin/admin"/>
-    <mvc:view-controller path="/contents" view-name="contents"/>
+    <!--&lt;!&ndash; URL 매핑 &ndash;&gt;-->
+    <!--<mvc:view-controller path="/admin/admin" view-name="admin/admin"/>-->
+    <!--<mvc:view-controller path="/contents" view-name="contents"/>-->
 
     <mvc:annotation-driven/>
 
@@ -83,11 +83,16 @@
     <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <beans:property name="maxUploadSize" value="10485760"></beans:property>
     </beans:bean>
+    <!--
+    mulipartResolver : 파일 업로드를 처리하기 위해서는 파일 업로드로 들어오는 데이터를 처리하는 객체가 필요
+    10485760은 vkdlfdptj 10MB 정도의 크기
+    -->
+
 
     <beans:bean id="uploadPath" class="java.lang.String">
-        <beans:constructor-arg value="ec2-13-124-8-223.ap-northeast-2.compute.amazonaws.com:8080/tmp/Volumes/noname/zzz/upload"></beans:constructor-arg>
+        <!--<beans:constructor-arg value="ec2-13-124-8-223.ap-northeast-2.compute.amazonaws.com:8080/tmp/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
         <!--<beans:constructor-arg value="/tmp/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
-        <!--<beans:constructor-arg value="/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
+        <beans:constructor-arg value="/Volumes/noname/zzz/upload"></beans:constructor-arg>
     </beans:bean>
     <!--<beans:bean id="uploadPath" class="java.lang.String">-->
     <!--<beans:constructor-arg value="C:\\zzz\\upload"></beans:constructor-arg>-->

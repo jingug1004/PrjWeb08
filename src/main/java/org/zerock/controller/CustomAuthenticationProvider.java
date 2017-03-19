@@ -28,7 +28,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         String _id = (String)authentication.getPrincipal();
         String _pw = (String)authentication.getCredentials();
 
-        logger.info("lll Welcome authenticate! {}", _id + "/ " + _pw + " lll");
+        logger.info("lll~~~ Welcome authenticate! {}", _id + "/ " + _pw + " lll~~~");
 
         if(_id.equals("user1") && _pw.equals("1111")) {
             List<GrantedAuthority> roles = new ArrayList<>();
