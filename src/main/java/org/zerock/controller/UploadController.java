@@ -31,7 +31,7 @@ import java.util.UUID;
  * What : 게시물 첨부파일 기능을 가진 스프링 MVC의 파일 업로드할 수 있는 UploadController.class
  * Why :
  * How :
- *
+ * Resource(name = "uploadPath") => servlet-context.xml의 일부
  */
 @Controller
 public class UploadController {
@@ -56,7 +56,7 @@ public class UploadController {
      *
      * @param file  MultipartFile은 POST 방식으로 들어온 파일 데이터를 의미
      * @param model the model
-     * @return the string
+     * @return /views/uploadResult.jsp를 이용해서 결과를 보여줌
      * @throws Exception the exception
      */
     @RequestMapping(value = "/uploadForm", method = RequestMethod.POST)
@@ -74,13 +74,16 @@ public class UploadController {
     }
 
     /**
-     * Upload ajax.
+     * Upload ajax. 하나의 JSP 페이지를 보여주도록 작성
      */
     @RequestMapping(value = "/uploadAjax", method = RequestMethod.GET)
     public void uploadAjax() {
 
     }
 
+    /**
+     * Upload File 원본 파일의 이름과 파일 데이터를 byte[]로 변환한 정보를 파라미터로 처리해서 실제로 파일을 업로드
+     */
     private String uploadFile(String originalName, byte[] fileData) throws Exception {
 
         UUID uid = UUID.randomUUID();

@@ -7,7 +7,9 @@
  * What : 게시물 첨부파일 기능을 가진 스프링 MVC의 파일 업로드를 위한 테스트 jsp
  * Why :
  * How :
- * UploadController.class -> uploadForm.jsp
+ * UploadController.class -> uploadForm.jsp -> uploadResult.jsp -> uploadForm.jsp
+ * <iframe>을 사용하는 방식은 숨겨진 페이지를 이용해서 <form>의 submit()을 실행하고 숨겨진 페이지가 바깥쪽의 페이지 함수를 호출하는 형태
+ * <iframe>의 width와 height를 모두 '0'으로 지장하면 화면상에는 전혀 안 보이기 때문에, 이를 이용하면 Ajax를 사용하지 않고도 화면이 전환되지 않는 효과를 줄 수 있음
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -42,6 +44,7 @@
         document.getElementById("form1").reset();
     }
 </script>
+<%--addFilePath()는 uploadResult.jsp에서 호출하는 부모창(parent)의 함수--%>
 
 </body>
 </html>
