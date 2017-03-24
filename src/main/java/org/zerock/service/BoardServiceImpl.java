@@ -13,6 +13,9 @@ import java.util.List;
 
 /**
  * Created by macbookpro on 2017. 2. 4.. PM 1:04
+ * What :
+ * Why :
+ * How :
  */
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -27,6 +30,12 @@ public class BoardServiceImpl implements BoardService {
     }
     */
 
+    /**
+     * BoardDAO의 create()와 addAttach()를 연속으로 사용하기 때문에 코드는 아래와 같이 트랜잭션을 처리하는 방식으로 변경.
+     * 작업의 순서는 먼저 게시물을 등록하는 dao.create()를 호출한 후 첨부파일의 이름 배열을 이용해서 각각의 파일 이름을 데이터베이스에 추가하는 형태로 구현.
+     *
+     * @param board
+     */
     @Transactional
     @Override
     public void regist(BoardVO board) throws Exception {
@@ -65,6 +74,12 @@ public class BoardServiceImpl implements BoardService {
     }
     */
 
+
+    /**
+     * 첨부파일이 존재하는 경우 게시물의 수정은 '원래의 게시물 수정' + '기존 첨부파일 목록 삭제' + '새로운 첨부파일 정보 입력'의 세가지 작업이 함께 이뤄져야 하기 때문에 트랜잭션으로 처리.
+     *
+     * @param board
+     */
     @Transactional
     @Override
     public void modify(BoardVO board) throws Exception {
@@ -92,6 +107,12 @@ public class BoardServiceImpl implements BoardService {
     }
     */
 
+    /**
+     * 데이터베이스에 저장된 첨부파일의 정보와 게시물의 삭제 작업.
+     * 삭제 작업의 경우 tbl_attach가 tbl_board를 참조하기 때문에 반드시 첨부파일과 관련된 정보부터 삭제하고, 게시글을 삭제.
+     *
+     * @param bno
+     */
     @Transactional
     @Override
     public void remove(Integer bno) throws Exception {

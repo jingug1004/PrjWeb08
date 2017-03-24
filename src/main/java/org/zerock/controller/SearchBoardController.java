@@ -18,6 +18,9 @@ import java.util.List;
  * Created by macbookpro on 2017. 2. 12. PM 12:44
  * sp4chap11-Project / org.zerock.controller
  * No pain, No gain!
+ * What :
+ * Why :
+ * How :
  */
 
 
@@ -30,6 +33,13 @@ public class SearchBoardController {
     @Inject
     private BoardService service;
 
+    /**
+     * List page.
+     *
+     * @param cri   the cri
+     * @param model the model
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public void listPage(@ModelAttribute("cri") SearchCriteria cri,
                          Model model) throws Exception {
@@ -48,6 +58,14 @@ public class SearchBoardController {
         model.addAttribute("pageMaker", pageMaker);
     }
 
+    /**
+     * Read.
+     *
+     * @param bno   the bno
+     * @param cri   the cri
+     * @param model the model
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/readPage", method = RequestMethod.GET)
     public void read(@RequestParam("bno") int bno,
                      @ModelAttribute("cri") SearchCriteria cri,
@@ -57,6 +75,15 @@ public class SearchBoardController {
         model.addAttribute(service.read(bno));
     }
 
+    /**
+     * Remove string.
+     *
+     * @param bno  the bno
+     * @param cri  the cri
+     * @param rttr the rttr
+     * @return the string
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/removePage", method = RequestMethod.POST)
     public String remove(@RequestParam("bno") int bno,
                          SearchCriteria cri,
@@ -74,6 +101,14 @@ public class SearchBoardController {
         return "redirect:/sboard/list";
     }
 
+    /**
+     * Modify paging get.
+     *
+     * @param bno   the bno
+     * @param cri   the cri
+     * @param model the model
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
     public void modifyPagingGET(int bno,
                                 @ModelAttribute("cri") SearchCriteria cri,
@@ -82,6 +117,15 @@ public class SearchBoardController {
         model.addAttribute(service.read(bno));
     }
 
+    /**
+     * Modify paging post string.
+     *
+     * @param board the board
+     * @param cri   the cri
+     * @param rttr  the rttr
+     * @return the string
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
     public String modifyPagingPOST(BoardVO board,
                                    SearchCriteria cri,
@@ -102,12 +146,25 @@ public class SearchBoardController {
         return "redirect:/sboard/list";
     }
 
+    /**
+     * Regist get.
+     *
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public void registGET() throws Exception {
 
         logger.info("lll~~~ regist get ........... lll~~~");
     }
 
+    /**
+     * Regist post string.
+     *
+     * @param board the board
+     * @param rttr  the rttr
+     * @return the string
+     * @throws Exception the exception
+     */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registPOST(BoardVO board,
                              RedirectAttributes rttr) throws Exception {
@@ -122,6 +179,13 @@ public class SearchBoardController {
         return "redirect:/sboard/list";
     }
 
+    /**
+     * Ajax로 호출되는 특정 게시물의 첨부파일을 처리하는 메소드를 아래와 같이 작성.
+     *
+     * @param bno 호출하는 경로는 '/sboard/getAttach/게시물 번호'의 형태가 됨.
+     * @return 첨부파일의 문자열 리스트 형태로 작성.
+     * @throws Exception
+     */
     @RequestMapping("/getAttach/{bno}")
     @ResponseBody
     public List<String> getAttach(@PathVariable("bno") Integer bno) throws Exception {
@@ -143,8 +207,6 @@ public class SearchBoardController {
     // pageMaker.setTotalCount(service.listCountCriteria(cri));
     //
     // model.addAttribute("pageMaker", pageMaker);
-
-
 
     // }
 

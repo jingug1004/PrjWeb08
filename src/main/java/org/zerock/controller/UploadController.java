@@ -31,7 +31,7 @@ import java.util.UUID;
  * What : 게시물 첨부파일 기능을 가진 스프링 MVC의 파일 업로드할 수 있는 UploadController.class
  * Why :
  * How :
- * Resource(name = "uploadPath") => servlet-context.xml의 일부
+ * Resource(name = "uploadPath") - servlet-context.xml의 일부
  */
 @Controller
 public class UploadController {
@@ -100,10 +100,12 @@ public class UploadController {
 
 
     /**
-     * Upload ajax response entity.
+     * Upload ajax response entity. 실제로 파일을 업로드
+     * RequestMapping 속성으로 produces 속성을 지정하고 있는데 이것은 한국어를 정상적으로 전송하기 위한 간단한 설정
      *
      * @param file the file
-     * @return the response entity
+     * @return HttpStatus.CREATED - 원하는 리소스가 정상적으로 생성되었다는 상태코드(원한다면 HttpStatus.OK를 이용해도 무방)
+     * 최종적인 리턴값은 내부적으로 UploadFileUtils의 uploadFile()을 사용하도록 수정
      * @throws Exception the exception
      */
     @ResponseBody
@@ -123,7 +125,8 @@ public class UploadController {
 
 
     /**
-     * Display file response entity.
+     * displayFile()은 파라미터로 브라우저에서 전송받기를 원하는 파일의 이름을 '/년/월/일/파일명' 형식으로 받음.
+     * 메소드의 선언부에는 @ResponseBody를 이용해서 byte[] 데이터가 그대로 전송될 것임을 명시.
      *
      * @param fileName the file name
      * @return the response entity
@@ -143,6 +146,7 @@ public class UploadController {
             String formatName = fileName.substring(fileName.lastIndexOf(".") + 1);
 
             MediaType mType = MediaUtils.getMediaType(formatName);
+            // 파일 이름에서 확장자를 추출하고, 이미지 타입의 파일인 경우는 적절한 MIME 타입을 지정.
 
             HttpHeaders headers = new HttpHeaders();
 
@@ -154,11 +158,14 @@ public class UploadController {
 
                 fileName = fileName.substring(fileName.indexOf("_") + 1);
                 headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+                // 이미지가 아닌 경우에는 MIME 타입을 다운로드 용으로 사용되는 'application/octet-stream'으로 지정. 브라우저는 이 MIME 타입을 보고 사용자에게 자동으로 다운로드 창을 열어줌.
                 headers.add("Content-Disposition", "attachment; filename=\"" +
                         new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
+                        // 다운로드할 때 사용자에게 보이는 파일의 이름이므로 한글 처리를 해서 전송. 한글 파일의 경우 다운로드하면 파일의 이름이 깨져서 나오기 때문에 반드시 인코딩 처리를 할 필요가 있음.
             }
 
             entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(in),
+                    // IOUtils.toByteArray() - 실제로 데이터를 읽는 부분, commons 라이브러리의 기능을 활용해서 대상 파일에서 데이터를 읽어냄.
                     headers,
                     HttpStatus.CREATED);
         } catch (Exception e) {
@@ -171,10 +178,10 @@ public class UploadController {
     }
 
     /**
-     * Delete file response entity.
+     * deleteFile()은 파라미터로 삭제할 파일의 이름을 받아들임. 이미지의 경우 썸네일의 이름. 이미지 파일이 확인되면 원본 파일을 먼저 삭제하고, 이후에 파일을 삭제하는 방식으로 작성.
      *
-     * @param fileName the file name
-     * @return the response entity
+     * @param fileName 일반 파일은 실제 이름.
+     * @return
      */
     @ResponseBody
     @RequestMapping(value = "/deleteFile", method = RequestMethod.POST)
@@ -190,21 +197,18 @@ public class UploadController {
 
             String front = fileName.substring(0, 12);
             String end = fileName.substring(14);
-            new File(uploadPath + (front + end)
-                    .replace('/', File.separatorChar)).delete();
+            new File(uploadPath + (front + end).replace('/', File.separatorChar)).delete();
         }
 
-        new File(uploadPath + fileName
-                .replace('/', File.separatorChar)).delete();
-
+        new File(uploadPath + fileName.replace('/', File.separatorChar)).delete();
 
         return new ResponseEntity<String>("deleted", HttpStatus.OK);
     }
 
     /**
-     * Delete file response entity.
+     * 게시물의 삭제 처리 시 기존의 첨부파일을 함께 삭제해 주는 것이 좋기 때문에 UploadController를 이용해서 첨부파일에 대한 삭제 작업을 처리.
      *
-     * @param files the files
+     * @param files 첨부 파일의 삭제 작업 처리는 여러 개의 파일 이름을 받을 수 있도록 String[]로 작성.
      * @return the response entity
      */
     @ResponseBody

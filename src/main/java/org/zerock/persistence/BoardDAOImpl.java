@@ -13,6 +13,9 @@ import java.util.Map;
 
 /**
  * Created by macbookpro on 2017. 2. 3.. PM 8:24
+ * What :
+ * Why :
+ * How :
  */
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -50,7 +53,7 @@ public class BoardDAOImpl implements BoardDAO {
     @Override
     public List<BoardVO> listPage(int page) throws Exception {
 
-        if(page <= 0) {
+        if (page <= 0) {
             page = 1;
         }
 

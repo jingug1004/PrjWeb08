@@ -85,14 +85,17 @@
                 }else{
                     str = "<div><a href='displayFile?fileName="+data+"'>"
                         + getOriginalName(data)+"</a>"
-                        +"<small data-src="+data+">X</small></div></div>";
+//                        +"<small data-src="+data+">X</small></div></div>";
+                        +"<small data-src="+data+">X</small></div>";
                 }
 
                 $(".uploadedList").append(str);
             }
         });
     });
-
+// 코드에서 특이한 점은 Ajax를 POST 방식으로 이용하지만, $.post()를 사용하지 않고, 굳이 $.ajax()를 이용해서 여러가지 옵션을 지정한 것
+// jQuery의 $.ajax()를 이용해서 FormData 객체에 있는 파일 데이터를 전송하기 위해서는 위 코드에 나와있는 'processData'와 'contentType' 옵션을 반드시 false로 지정해야만 함
+// 이 두 개의 옵션은 데이터 전송을 <form> 태그를 이용하는 파일 업로드와 동일하게 해주는 역할
 
     $(".uploadedList").on("click", "small", function(event){
 
@@ -110,50 +113,8 @@
             }
         });
     });
-
-
-    /*
-     $(".fileDrop").on("drop", function(event) {
-     event.preventDefault();
-
-     var files = event.originalEvent.dataTransfer.files;
-
-     var file = files[0];
-
-     //console.log(file);
-     var formData = new FormData();
-
-     formData.append("file", file);
-
-
-     $.ajax({
-     url: '/uploadAjax',
-     data: formData,
-     dataType:'text',
-     processData: false,
-     contentType: false,
-     type: 'POST',
-     success: function(data){
-
-     var str ="";
-
-     console.log(data);
-     console.log(checkImageType(data));
-
-     if(checkImageType(data)){
-     str ="<div><a href='displayFile?fileName="+getImageLink(data)+"'>"
-     +"<img src='displayFile?fileName="+data+"'/></a>"
-     +data +"</div>";
-     }else{
-     str = "<div><a href='displayFile?fileName="+data+"'>"
-     + getOriginalName(data)+"</a></div>";
-     }
-
-     $(".uploadedList").append(str);
-     }
-     });
-     });	 */
-
+    // 사용자가 <small> 태그로 처리된 'x'를 클릭하면 'data-src' 속성값으로 사용된 파일의 이름을 얻어와서 POST방식으로 호출하게 됨.
+    //
 
     function getOriginalName(fileName){
 
@@ -165,6 +126,7 @@
         return fileName.substr(idx);
 
     }
+    // 첨부파일의 이름이 UUID와 첨부파일의 이름이 결합될 때 '_'가 사용되는 것을 이용해서 원래의 파일 이름만 추출.
 
 
     function getImageLink(fileName){
@@ -178,6 +140,8 @@
         return front + end;
 
     }
+    // fileName.substr(0, 12)는 '/년/월/일' 경로를 추출하는 용도.
+    // fileName.substr(14)는 파일 이름 앞의 's_'를 제거하는 용도로 사용.
 
 
 
@@ -218,6 +182,9 @@
         return fileName.match(pattern);
 
     }
+    // 전송받은 문자열이 이미지 파일인지를 확인하는 작업
+    // 정규표현식을 이용해서 파일의 확장자가 존재하는지를 검사(i의 의미는 대, 소문자의 구분이 없음).
+
 
 
 </script>

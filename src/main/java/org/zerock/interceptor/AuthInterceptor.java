@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
  * What : HttpSession을 이용하는 로그인 처리를 위한 AuthInterceptor
  * Why : LoginInterceptor가 로그인한 사용자에 대해서 postHandle()을 이용해서 HttpSession에 보관하는 처리를 담당한다면, 지금부터 작성하는 AuthInterceptor는 특정경로에 접근하는 경우 현재 사용자가 로그인한 상태의 사용자인지를 체크하는 역할을 처리하기 위해서 작성
  * How : preHandle()을 이용하여 현재 사용자가 로그인한 상태인지를 체크하고, 컨트롤러를 호출하게 할 것인지를 결정. 만일 사용자가 로그인하지 않은 상태라면 로그인하는 '/user/login'으로 이동
- * UserController ("userVO") -> LoginInterceptor -> AuthInterceptor -> @Inject UserService service
+ * UserController ("userVO") - LoginInterceptor - AuthInterceptor - @Inject UserService service
  */
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 

@@ -50,6 +50,7 @@
 <div id="popup_front" class='popup front' style="display:none;">
     <img id="popup_img">
 </div>
+<%-- 이미지를 보여주기 위해서 화면상에 숨겨져 있는 <div>를 작성하고, 이미지 파일명을 클릭하면 큰 크기로 보여주게 함. --%>
 
 <section class="content">
     <div class="row">
@@ -102,6 +103,8 @@
 
 
                     <ul class="mailbox-attachments clearfix uploadedList"></ul>
+                    <%--조회 페이지에서 기존에 업로드 된 파일들이 보여질 수 있는 영역을 작성하고, upload.js와 handlebars를 설정.--%>
+
                     <c:if test="${login.nickname == boardVO.writer}">
                         <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
                         <button type="submit" class="btn btn-danger" id="removeBtn">Remove</button>
@@ -212,14 +215,15 @@
 
 <script id="templateAttach" type="text/x-handlebars-template">
     <li data-src='{{fullName}}'>
-        <span class="mailbox-attachment-icon has-img">
-    <img src="{{imgsrc}}" alt="Attachment"></span>
+        <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
         <div class="mailbox-attachment-info">
             <a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
             </span>
         </div>
     </li>
 </script>
+
+
 
 
 <%--<script id="template" type="text/x-handlebars-template">
@@ -318,6 +322,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         });
     }
+
 
     var printPaging = function (pageMaker, target) {
 
@@ -511,6 +516,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             formObj.attr("action", "/sboard/removePage");
             formObj.submit();
         });
+        // 현재 첨부파일의 이름을 배열로 작성해서 UploadController에 Ajax 방식으로 첨부파일에 대한 삭제를 지시.
+        // 첨부파일 삭제 이후에 바로 <form> 태그를 이용해서 데이터베이스의 삭제를 처리할 것이므로, 성공이나 실패를 기다리지 않고, 바로 '/sboard/removePage'를 호출하는 형태로 작성.
 
         $("#goListBtn ").on("click", function () {
             formObj.attr("method", "get");
@@ -548,7 +555,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
             });
         });
-
+        // 컨트롤러에서 문자열의 리스트를 반환하기 때문에 JSON 형태의 데이터를 전송하게 되고 이를 getJSON()을 이용해서 처리.
+        // 데이터를 화면에 보여주는 부분은 등록하는 부분과 동일.
 
         $(".uploadedList").on("click", ".mailbox-attachment-info a", function (event) {
 
@@ -557,20 +565,24 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             if (checkImageType(fileLink)) {
 
                 event.preventDefault();
+                // 사용자가 첨부파일의 제목을 클릭한 경우 해당 파일이 이미지인지 체크하면, 화면 이동을 못하도록 event.preventDefault()로 처리.
 
                 var imgTag = $("#popup_img");
                 imgTag.attr("src", fileLink);
+                // 현재 클릭한 이미지의 경로를 id 속성값이 'popup_img'인 요소에 추가.
 
                 console.log(imgTag.attr("src"));
 
                 $(".popup").show('slow');
                 imgTag.addClass("show");
+                // 추가된 뒤에 화면에 보이도록 jQuery의 show()를 호출, 필요한 경우 CSS를 추가.
             }
         });
 
         $("#popup_img").on("click", function () {
 
             $(".popup").hide('slow');
+            // 화면에 원본 이미지가 보여진 후 다시 한번 사용자가 클릭하면 이미지가 사라지는 효과를 처리.
 
         });
 

@@ -52,6 +52,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">File DROP Here</label>
                             <div class="fileDrop"></div>
+                            <%--첨부파일을 추가할 수 있는 영역--%>
                         </div>
                     </div>
 
@@ -64,6 +65,7 @@
 
                         <ul class="mailbox-attachments clearfix uploadedList">
                         </ul>
+                        <%--업로드 된 파일이 보여줄 수 있는 <ul></ul> 태그--%>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
 
@@ -83,15 +85,17 @@
 <!-- /.content-wrapper -->
 
 <script type="text/javascript" src="/resources/js/upload.js"></script>
+<%-- /upload.js 마지막 리턴 값은 정보들을 JavaScript의 객체로 생성해서 반환해주고, register.jsp에서는 템플릿을 이용해서 화면에 보여지도록 함.--%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
 <script id="template" type="text/x-handlebars-template">
     <li>
         <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
+        <%--<li></li> 구성할 때 'imgsrc' 속성을 보여주는데, 'imgsrc'는 이미지 파일인 경우 썸네일 파일의 경로이고, 일반 파일인 경우는 단순히 파일 모양의 이미지(file.png)를 보여주는 경로.--%>
         <div class="mailbox-attachment-info">
             <a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
-            <a href="{{fullName}}"
-               class="btn btn-default btn-xs pull-right delbtn"><i class="fa fa-fw fa-remove"></i></a>
+            <a href="{{fullName}}" class="btn btn-default btn-xs pull-right delbtn">
+                <i class="fa fa-fw fa-remove"></i></a>
             </span>
         </div>
     </li>
@@ -135,6 +139,7 @@
             }
         });
     });
+//    파일이 Ajax로 전송되는 부분의 처리를 보면 getFileInfo() 함수를 이용해서 템플릿에 필요한 객체를 생성. 이후 템플릿을 적용해서 온전한 HTML을 구성한 후 첨부된 파일이 보여지는 $('.uploadedList')의 일부로 추가.
 
     $(".uploadedList").on("click", ".delbtn", function (event) {
 
@@ -165,13 +170,19 @@
         $(".uploadedList .delbtn").each(function (index) {
             str += "<input type='hidden' name='files[" + index + "]' value='" + $(this).attr("href") + "'> ";
         });
+        // <form> 태그의 submit은 먼저 기본 동작을 막고, 현재까지 업로드 된 파일들을 <form> 태그의 내부에 <input type='hidden'>으로 추가.
+        // 이 때 각 파일은 'files[0]'과 같은 이름으로 추가되는데, 이 배열 표시를 이용해서 컨트롤러에서는 BoardVO의 files 파라미터를 수집하게 됨.
+        // 모든 파일의 정보를 <input type='hidden'>으로 생성한 후에는 <form> 데이터의 submit()을 호출해서 서버를 호출.
 
         that.append(str);
 
         console.log(str);
 
         that.get(0).submit();
+        // jQuery의 get(0)은 순수한 DOM 객체를 얻어내기 위해서 사용.
     });
+    // 최종적인 submit이 일어나게 되면, 서버에는 사용자가 업로드 한 파일의 정보를 같이 전송해줘야 함.
+    // 이에 대한 처리는 업로드 된 파일의 이름을 <form> 태그의 내부로 포함시켜서 전송하는 방식을 이용.
 
 
 </script>
