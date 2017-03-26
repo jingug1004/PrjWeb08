@@ -6,6 +6,9 @@ import java.sql.Timestamp;
  * Created by macbookpro on 2017. 2. 19. PM 2:09
  * sp4chap11-Project / org.zerock.domain
  * No pain, No gain!
+ * What : AOP와 트랜잭션 처리를 위한 준비(테스트).
+ * Why :
+ * How :
  */
 
 

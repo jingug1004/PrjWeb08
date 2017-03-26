@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="org.zerock.mapper.MessageMapper">
 
 	<insert id="create">
-		insert into tbl_message (targetid, sender,message)
+		insert into tbl_message (targetid, sender, message)
 		values (#{targetid}, #{sender}, #{message})
 	</insert>
 

@@ -11,25 +11,40 @@ import org.zerock.service.MessageService;
 
 import javax.inject.Inject;
 
+/**
+ * What : AOP와 트랜잭션 처리를 위한 준비 후 연습 컨트롤러의 작성과 테스트.
+ * Why :
+ * How : MessageController는 @RestController로 작성되어 Ajax 등을 이용해서 메시지를 보낼 수 있게 작성.
+ */
+
+/**
+ * The type Message controller.
+ */
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
 
-  @Inject
-  private MessageService service;
+    @Inject
+    private MessageService service;
 
-  @RequestMapping(value = "/", method = RequestMethod.POST)
-  public ResponseEntity<String> addMessage(@RequestBody MessageVO vo) {
+    /**
+     * Add message response entity.
+     *
+     * @param vo the vo
+     * @return the response entity
+     */
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public ResponseEntity<String> addMessage(@RequestBody MessageVO vo) {
 
-    ResponseEntity<String> entity = null;
-    try {
-      service.addMessage(vo);
-      entity = new ResponseEntity<>("SUCCESS", HttpStatus.OK);
-    } catch (Exception e) {
-      e.printStackTrace();
-      entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        ResponseEntity<String> entity = null;
+        try {
+            service.addMessage(vo);
+            entity = new ResponseEntity<>("SUCCESS", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+        return entity;
     }
-    return entity;
-  }
 
 }

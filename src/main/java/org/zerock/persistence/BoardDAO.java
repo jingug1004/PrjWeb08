@@ -103,7 +103,8 @@ public interface BoardDAO {
     public int listSearchCount(SearchCriteria cri) throws Exception;
 
     /**
-     * Update reply cnt.
+     * 댓글의 숫자를 변경할 수 있는 updateReplyCnt()를 추가.
+     * BoardDAO - boardMapper.xml - BoardDAOImpl
      *
      * @param bno    the bno
      * @param amount the amount

@@ -10,8 +10,10 @@ import javax.inject.Inject;
  * Created by macbookpro on 2017. 2. 19. PM 2:13
  * sp4chap11-Project / org.zerock.persistence
  * No pain, No gain!
+ * What :
+ * Why :
+ * How :
  */
-
 @Repository
 public class MessageDAOImpl implements MessageDAO{
 

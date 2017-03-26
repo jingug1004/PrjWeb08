@@ -28,25 +28,27 @@
     <context:component-scan base-package="org.zerock.aop"></context:component-scan>
 
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <!--AOP의 설정을 통한 자동적인 Proxy 객체 생성을 위해서 다음과 같은 설정을 미리 추가. - <aop:aspectj-autoproxy>는 자동으로 AspectJ 라이브러리를 이용해서 Proxy 객체를 생성해내는 용도.-->
 
-    <tx:annotation-driven></tx:annotation-driven>
+    <aop:config></aop:config>
+    <!--root-context.xml에 AOP 기능을 설정할 수 있도록 <aop:config>를 추가할 수 있음. 이 설정은 향후 XML 방식으로 AOP 기능을 설정할 때 사용.-->
 
     <!-- 자체적인 DB 연결 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName"
                   value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
         <property name="url"
-                  value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>
+                  value="jdbc:log4jdbc:mysql://127.0.0.1:3306/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>
 
+        <!--value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>-->
         <!--value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?zeroDateTimeBehavior=convertToNull"></property>-->
-        <!--value="jdbc:log4jdbc:mysql://127.0.0.1:3306/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>-->
         <!--value="jdbc:log4jdbc:mysql://127.0.0.1:3306/book_ex"></property>-->
 
-        <property name="username" value="Node"></property>
-        <property name="password" value="kjg4989q"></property>
+        <!--<property name="username" value="Node"></property>-->
+        <!--<property name="password" value="kjg4989q"></property>-->
 
-        <!--<property name="username" value="root"></property>-->
-        <!--<property name="password" value="1111"></property>-->
+        <property name="username" value="root"></property>
+        <property name="password" value="1111"></property>
     </bean>
 
 
@@ -69,9 +71,12 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
+    <!-- 트랜잭션 매니저의 설정 - Spring Project를 이용해서 생성된 경우에 가장 간단한 설정은 DataSource의 설정이 존재하는 곳에 적용하는 것이 가장 편리. -->
+
+    <tx:annotation-driven></tx:annotation-driven>
+    <!-- @Transactional 애노테이션을 이용한 트랜잭션의 관리가 가능. -->
 
 
-    <aop:config></aop:config>
 
 
     <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->

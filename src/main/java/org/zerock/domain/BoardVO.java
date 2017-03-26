@@ -130,7 +130,7 @@ public class BoardVO {
     }
 
     /**
-     * Gets replycnt.
+     * 댓글의 숫자를 의미하는 replycnt 칼럼 추가.
      *
      * @return the replycnt
      */
@@ -139,7 +139,7 @@ public class BoardVO {
     }
 
     /**
-     * Sets replycnt.
+     * S댓글의 숫자를 의미하는 replycnt 칼럼 추가.
      *
      * @param replycnt the replycnt
      */
