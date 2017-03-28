@@ -103,6 +103,17 @@
     <link rel="stylesheet" href="/assets/plugins/master-slider/masterslider/style/masterslider.css">
     <link rel='stylesheet' href="/assets/plugins/master-slider/masterslider/skins/default/style.css">
 
+    <%-- jQuery 테스트 --%>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#accordion" ).accordion();
+        } );
+    </script>
+
     <!-- CSS Page Style -->
     <link rel="stylesheet" href="/assets/css/pages/log-reg-v3.css">
 
@@ -234,15 +245,15 @@
                 <!-- Shopping Cart -->
                 <div class="shop-badge badge-icons pull-right">
                     <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                    <span class="badge badge-sea rounded-x">3</span>
+                    <span class="badge badge-sea rounded-x">0</span>
                     <div class="badge-open">
                         <ul class="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
                             <li>
                                 <img src="/assets/img/thumb/05.jpg" alt="">
                                 <button type="button" class="close">×</button>
                                 <div class="overflow-h">
-                                    <span>Black Glasses</span>
-                                    <small>1 x $400.00</small>
+                                    <span>Black Watch</span>
+                                    <small>1 x 40,000</small>
                                 </div>
                             </li>
                             <li>
@@ -250,22 +261,22 @@
                                 <button type="button" class="close">×</button>
                                 <div class="overflow-h">
                                     <span>Black Glasses</span>
-                                    <small>1 x $400.00</small>
+                                    <small>1 x 57,000</small>
                                 </div>
                             </li>
                             <li>
                                 <img src="/assets/img/thumb/03.jpg" alt="">
                                 <button type="button" class="close">×</button>
                                 <div class="overflow-h">
-                                    <span>Black Glasses</span>
-                                    <small>1 x $400.00</small>
+                                    <span>Brown Belts</span>
+                                    <small>1 x 32,000</small>
                                 </div>
                             </li>
                         </ul>
                         <div class="subtotal">
                             <div class="overflow-h margin-bottom-10">
                                 <span>Subtotal</span>
-                                <span class="pull-right subtotal-cost">$1200.00</span>
+                                <span class="pull-right subtotal-cost">129,000</span>
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">

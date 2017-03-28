@@ -38,17 +38,17 @@
         <property name="driverClassName"
                   value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
         <property name="url"
-                  value="jdbc:log4jdbc:mysql://127.0.0.1:3306/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>
+                  value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>
 
-        <!--value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>-->
+        <!--value="jdbc:log4jdbc:mysql://127.0.0.1:3306/PrjWeb?verifyServerCertificate=false&amp;useSSL=true"></property>-->
         <!--value="jdbc:log4jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?zeroDateTimeBehavior=convertToNull"></property>-->
         <!--value="jdbc:log4jdbc:mysql://127.0.0.1:3306/book_ex"></property>-->
 
-        <!--<property name="username" value="Node"></property>-->
-        <!--<property name="password" value="kjg4989q"></property>-->
+        <property name="username" value="Node"></property>
+        <property name="password" value="kjg4989q"></property>
 
-        <property name="username" value="root"></property>
-        <property name="password" value="1111"></property>
+        <!--<property name="username" value="root"></property>-->
+        <!--<property name="password" value="1111"></property>-->
     </bean>
 
 

@@ -1,5 +1,10 @@
 package org.zerock.bank;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by macbookpro on 2017. 3. 26. PM 10:33
  * Project / org.zerock.bank
@@ -9,18 +14,65 @@ package org.zerock.bank;
  * How :
  */
 
+
 public class AccountTest {
 
-    public void testAccount() {
-        Account account = Account();
-        if (account == null) {
-            throw new Exception("계좌생성 실패");
-        }
+    private Account account;
+
+    /**
+     * Sets .
+     */
+    @Before
+    public void setup() {
+        account = new Account(10000);
     }
 
-    public static void main(String[] args) {
-        AccountTest test = new AccountTest();
-        test.testAccount();   // 테스트 케이스 실행.
+    /**
+     * Test account.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void testAccount() throws Exception {
+
+    }
+
+    /**
+     * Test get balance.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void testGetBalance() throws Exception {
+        assertEquals(10000, account.getBalance());
+
+        account = new Account(1000);
+        assertEquals(1000, account.getBalance());
+
+        account = new Account(0);
+        assertEquals(0, account.getBalance());
+    }
+
+    /**
+     * Test deposit.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void testDeposit() throws Exception {
+        account.deposit(1000);
+        assertEquals(11000, account.getBalance());
+    }
+
+    /**
+     * Test widthdraw.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void testWidthdraw() throws Exception {
+        account.withdraw(1000);
+        assertEquals(9000, account.getBalance());
     }
 
 }

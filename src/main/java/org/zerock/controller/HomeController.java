@@ -6,7 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -36,6 +39,13 @@ public class HomeController {
         String formattedDate = dateFormat.format(date);
 
         model.addAttribute("serverTime", formattedDate);
+
+        HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+        String ip = req.getHeader("X-FORWARDED-FOR");
+        if (ip == null)
+            ip = req.getRemoteAddr();
+
+        model.addAttribute("clientIP", ip);
 
         return "home";
     }
