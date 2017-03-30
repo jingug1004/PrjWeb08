@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by wtime on 2017-02-13. ${time}
  * org.zerock.persistence / Web Ex02
  * Better late than never!
- * What :
+ * What : Ajax 댓글 처리를 위한 REST와 도메인 객체 설계 ReplyDAO 인터페이스 구현한 자바 클래스.
  * Why :
  * How :
  */

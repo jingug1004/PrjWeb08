@@ -2,11 +2,7 @@ package org.zerock.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.PageMaker;
 import org.zerock.domain.ReplyVO;
@@ -21,15 +17,24 @@ import java.util.Map;
  * Created by wtime on 2017-02-13. ${time}
  * org.zerock.controller / Web Ex02
  * Better late than never!
+ * What : Ajax 댓글 처리를 위한 REST 방식의 ReplyController.
+ * Why :
+ * How :
  */
-
-@Controller
+//@Controller
+@RestController
 @RequestMapping("/replies")
 public class ReplyController {
 
     @Inject
     private ReplyService service;
 
+    /**
+     * 만일 새로운 댓글을 드옥하는데 실패하면 try~catch에 선언되었듯이 예외의 원인 메시지를 전송하고, 사용자에게는 BAD_REQUEST(400)를 결과로 전송.
+     *
+     * @param vo the vo
+     * @return
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<String> register(@RequestBody ReplyVO vo) {
 
@@ -44,6 +49,12 @@ public class ReplyController {
         return entity;
     }
 
+    /**
+     * List response entity.
+     *
+     * @param bno the bno
+     * @return the response entity
+     */
     @RequestMapping(value = "/all/{bno}", method = RequestMethod.GET)
     public ResponseEntity<List<ReplyVO>> list(@PathVariable("bno") Integer bno) {
 
@@ -58,6 +69,13 @@ public class ReplyController {
         return entity;
     }
 
+    /**
+     * Update response entity.
+     *
+     * @param rno the rno
+     * @param vo  the vo
+     * @return the response entity
+     */
     @RequestMapping(value = "/{rno}", method = {RequestMethod.PUT, RequestMethod.PATCH})
     public ResponseEntity<String> update(@PathVariable("rno") Integer rno,
                                          @RequestBody ReplyVO vo) {
@@ -75,6 +93,12 @@ public class ReplyController {
         return entity;
     }
 
+    /**
+     * Remove response entity.
+     *
+     * @param rno the rno
+     * @return the response entity
+     */
     @RequestMapping(value = "/{rno}", method = RequestMethod.DELETE)
     public ResponseEntity<String> remove(@PathVariable("rno") Integer rno) {
 
@@ -89,6 +113,13 @@ public class ReplyController {
         return entity;
     }
 
+    /**
+     * List page response entity.
+     *
+     * @param bno  the bno
+     * @param page the page
+     * @return the response entity
+     */
     @RequestMapping(value = "/{bno}/{page}", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> listPage(@PathVariable("bno") Integer bno,
                                                         @PathVariable("page") Integer page) {
