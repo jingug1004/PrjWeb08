@@ -12,6 +12,7 @@ import java.util.List;
  * What : Ajax 댓글 처리를 위한 REST와 도메인 객체 설계 인터페이스.
  * Why :
  * How :
+ *
  */
 
 
@@ -51,17 +52,17 @@ public interface ReplyDAO {
     public void delete(Integer rno) throws Exception;
 
     /**
-     * List page list.
+     * REST 방식의 경우 전통적인 Model 객체에 데이터를 담지 않고 객체를 처리할 수 있기 때문에 메소드의 파라미터 처리가 조금 달라지긴 해도 간단하게 처리 가능.
      *
-     * @param bno the bno
-     * @param cri the cri
+     * @param bno 기존 페이징 처리에 사용하는 Criteria를 그대로 활용하고, 추가로 게시물 번호에 맞는 데이터를 검색하기 위해서 'bno'를 추가해서 사용.
+     * @param cri 기존 페이징 처리에 사용하는 Criteria를 그대로 활용하고, 추가로 게시물 번호에 맞는 데이터를 검색하기 위해서 'bno'를 추가해서 사용.
      * @return the list
      * @throws Exception the exception
      */
     public List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception;
 
     /**
-     * Count int.
+     * 화면에 페이징 처리를 하기 위해서는 반드시 해당 게시물의 댓글 수가 필요하므로 count()를 작성.
      *
      * @param bno the bno
      * @return the int

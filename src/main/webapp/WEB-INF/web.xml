@@ -75,6 +75,9 @@
         <filter-name>hiddenHttpMethodFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <!-- HiddenHttpMethodFilter라는 것을 제공. HiddenHttpMethodFilter는 <form> 태그 내에서 <input type='hidden'
+     name="_method" value='PUT'>과 같은 형태로 사용해서 GET/POST 방식만을 지원하는 브라우저에서 REST 방식을 사용할 수 있도록 설정할 때 사용.
+     (Ajax 댓글 처리할 때, REST 방식의 ReplyController의 작성)-->
 
 
 </web-app>

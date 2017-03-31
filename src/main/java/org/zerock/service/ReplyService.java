@@ -26,7 +26,7 @@ public interface ReplyService {
     public void addReply(ReplyVO vo) throws Exception;
 
     /**
-     * List reply list.
+     * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.
      *
      * @param bno the bno
      * @return the list
@@ -51,7 +51,7 @@ public interface ReplyService {
     public void removeReply(Integer rno) throws Exception;
 
     /**
-     * List reply page list.
+     * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.
      *
      * @param bno the bno
      * @param cri the cri
@@ -61,7 +61,7 @@ public interface ReplyService {
     public List<ReplyVO> listReplyPage(Integer bno, Criteria cri) throws Exception;
 
     /**
-     * Count int.
+     * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.
      *
      * @param bno the bno
      * @return the int

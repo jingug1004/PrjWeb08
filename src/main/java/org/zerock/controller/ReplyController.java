@@ -50,10 +50,10 @@ public class ReplyController {
     }
 
     /**
-     * List response entity.
+     * 특정 게시물의 전체 댓글의 목록은 GET 방식으로 처리돼야 하고, 반드시 특정 게시물의 번호(bno)를 필요로 하기 때문에 다음과 같은 형태로 작성.
      *
-     * @param bno the bno
-     * @return the response entity
+     * @param bno URI 내의 경로 {bno}를 활용. {bno}는 메소드의 파라미터에서 @PathVariable("bno")로 활용.
+     * @return 메소드의 처리가 성공하는 경우에는 HttpStatus.OK 헤더를 전송하고, 데이터를 같이 전송.
      */
     @RequestMapping(value = "/all/{bno}", method = RequestMethod.GET)
     public ResponseEntity<List<ReplyVO>> list(@PathVariable("bno") Integer bno) {
@@ -70,7 +70,7 @@ public class ReplyController {
     }
 
     /**
-     * Update response entity.
+     * REST 방식에서 update 작업은 PUT, PATCH 방식을 이용해서 처리. 일반적으로 전체 데이터를 수정하는 경우에는 PUT을 이용. 일부의 데이터를 수정하는 경우에는 PATCH를 이용.
      *
      * @param rno the rno
      * @param vo  the vo
@@ -94,7 +94,7 @@ public class ReplyController {
     }
 
     /**
-     * Remove response entity.
+     * 댓글의 삭제에 대한 처리는 PUT과 유사. 다만, 추가적인 데이터가 없다는 부분 때문에 더 간단히 처리할 수 있음.
      *
      * @param rno the rno
      * @return the response entity
@@ -114,11 +114,12 @@ public class ReplyController {
     }
 
     /**
-     * List page response entity.
+     * listPage() 메소드는 페이징 처리를 위해서 '/게시물의 번호/페이지 번호'를 패턴으로 처리.
+     * 가장 신경써야 하는 점은 Ajax로 호출된 것이므로 Model을 사용하지 못한다는 점. 전달해야 하는 데이터들을 담기 위해서 Map 타입의 객체를 별도로 생성.
      *
      * @param bno  the bno
      * @param page the page
-     * @return the response entity
+     * @return 화면으로 전달되는 Map 데이터는 페이징 처리된 댓글의 목록(list)과 PageMaker 클래스의 객체를 담음(pageMaker).
      */
     @RequestMapping(value = "/{bno}/{page}", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> listPage(@PathVariable("bno") Integer bno,
@@ -151,6 +152,4 @@ public class ReplyController {
         }
         return entity;
     }
-
-
 }
