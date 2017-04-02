@@ -16,6 +16,9 @@ import java.util.Locale;
 
 /**
  * Handles requests for the application home page.
+ * What :
+ * Why :
+ * How :
  */
 @Controller
 public class HomeController {
@@ -51,7 +54,7 @@ public class HomeController {
     }
 
     /**
-     * Ajax test.
+     * Ajax 댓글 처리를 위한 화면에서의 Ajax 호출 테스트 컨트롤러와 JSP. /views/test.jsp와 연계.
      */
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public void ajaxTest() {

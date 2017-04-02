@@ -8,6 +8,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+<!-- handlebars를 사용하려면 반드시 jQuery 라이브러리가 필요하므로 먼저 jQuery 라이브러리를 로딩한 후 사용. -->
 
 <div id="displayDiv">
 
@@ -15,10 +16,15 @@
 
 <script>
     var source = "<h1><p>{{name}}</p> <p>{{userid}}</p> <p>{{addr}}</p></h1>";
+    // 적용될 HTML의 코드. handlebar의 경우 템플릿에서 대체되어야 하는 내용은 '{{}}' 문법을 이용해서 처리.
+
     var template = Handlebars.compile(source);
+    // complile이라는 기능을 이용해서 미리 처리하고 이를 template으로 활용.
+
     var data = {name: "홍길동", userid: "user00", addr: "조선 한양"};
 
     $("#displayDiv").html(template(data));
+    // 실제 데이터가 구성되어 있고, 이를 template(data)을 이용해서 처리하면 최종 HTML 코드가 완성. 이를 $("#displayDiv")에 반영.
 
 </script>
 </body>

@@ -70,7 +70,6 @@
                         type='hidden' name='perPageNum' value="${cri.perPageNum}">
                     <input type='hidden' name='searchType' value="${cri.searchType}">
                     <input type='hidden' name='keyword' value="${cri.keyword}">
-
                 </form>
 
                 <div class="box-body">
@@ -151,7 +150,7 @@
                     </div>
                 </c:if>
             </div>
-
+            <%--댓글의 등록에 필요한 <div>--%>
 
             <%--<!-- The time line -->--%>
             <%--<ul class="timeline">--%>
@@ -178,6 +177,7 @@
 
                 </ul>
             </div>
+            <%--댓글의 목록과 페이징 처리에 필요한 <div>--%>
 
         </div>
         <!-- /.col -->
@@ -252,6 +252,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         <div class="timeline-item">
                 <span class="time">
                   <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
+                    <%--'prettifyDate regdate'에는 handlebar의 기능을 확장하는 자바스크립트 방법의 예로 사용. --%>
                 </span>
             <h3 class="timeline-header"><strong>{{rno}}</strong> -{{replyer}}</h3>
             <div class="timeline-body">{{replytext}}</div>
@@ -264,6 +265,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
     </li>
     {{/each}}
 </script>
+<%-- handlebars를 사용해서 화면에 반복적으로 처리되는 템플릿 코드를 처리할 수 있고, 서버에서는 댓글의 목록과 댓글의 리스트 데이터를 한 번에 전송해 줄 수 있음. --%>
 
 <%--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>--%>
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
@@ -285,6 +287,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         var date = dateObj.getDate();
         return year + "/" + month + "/" + date;
     });
+    // handlebars는 helper라는 기능을 이용해서 데이터의 상세한 처리에 필요한 기능등을 처리.
 
     var printData = function (replyArr, target, templateObject) {
 
@@ -296,8 +299,10 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
     }
 
     var bno = ${boardVO.bno};
+    // 가장 먼저 선언된 var bno는 JSP에 처리되는 문자열로 해당 게시물의 번호를 의미.
 
     var replyPage = 1;
+    // 수정이나 삭제 작업 이후에 사용자가 보던 댓글의 페이지 번호를 가지고 다시 목록을 출력하기 위해서 유지되는 데이터.
 
     //    function getPage(pageInfo) {
     //
@@ -322,7 +327,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         });
     }
-
+    // getPage()는 특정한 게시물에 대한 페이징 처리를 위해서 호출되는 함수. 내부적으로 jQuery를 이용해서 JSON 타입의 데이터를 처리.
+    // getPage()는 페이지 번호를 파라미터로 전달받고, jQuery의 getJSON()을 이용해서 댓글의 목록 데이터를 처리. 댓글의 목록 데이터는 'pageMaker'와 'list'로 구성되므로 이를 printPaging()과 printData()에서 처리.
 
     var printPaging = function (pageMaker, target) {
 
@@ -354,7 +360,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         getPage("/replies/" + bno + "/1");
 
     });
-
+    // 목록의 size()를 체크하는 코드는 목록을 가져오는 버튼이 보여지는 <li>만 있는 경우에 1 페이지의 댓글 목록을 가져오기 위해서 처리한 코드.
 
     $(".pagination").on("click", "li a", function (event) {
 
@@ -365,7 +371,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         getPage("/replies/" + bno + "/" + replyPage);
 
     });
-
+    // 각 링크에는 <li> 태그와 <a> 태그로 구성되고, 이에 대한 이벤트 처리.
 
     $("#replyAddBtn").on("click", function () {
 
@@ -373,7 +379,6 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         var replytextObj = $("#newReplyText");
         var replyer = replyerObj.val();
         var replytext = replytextObj.val();
-
 
         $.ajax({
             type: 'post',
@@ -402,6 +407,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                 }
             }
         });
+        // 서버에서 등록 처리에 대한 결과를 문자열로 받고, 이를 보여주고 나서 사용자의 현재 페이지 번호는 1페이지로 변경하고, 댓글의 페이지를 조회.
     });
 
 
@@ -413,6 +419,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         $(".modal-title").html(reply.attr("data-rno"));
 
     });
+    // 'data-'로 시작하는 커스텀 속성을 활용해서 'modifyModal' 아이디에 속하는 <div>를 화면에 보이게 처리.
 
 
     $("#replyModBtn").on("click", function () {
