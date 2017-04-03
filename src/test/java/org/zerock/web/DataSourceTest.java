@@ -9,13 +9,21 @@ import javax.inject.Inject;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
+/**
+ * The type Data source test.
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations ={"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
 public class DataSourceTest {
 
 	@Inject
 	private DataSource ds;
-	
+
+	/**
+	 * Test conection.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test
 	public void testConection()throws Exception{
 		

@@ -219,7 +219,7 @@
         </dependency>
         <!--트랜잭션 처리를 위해서 필요.-->
 
-        <dependency>ㄴ
+        <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjtools</artifactId>
             <version>${org.aspectj-version}</version>
