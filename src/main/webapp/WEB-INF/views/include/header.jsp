@@ -104,15 +104,7 @@
     <link rel='stylesheet' href="/assets/plugins/master-slider/masterslider/skins/default/style.css">
 
     <%-- jQuery 테스트 --%>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( "#accordion" ).accordion();
-        } );
-    </script>
+
 
     <!-- CSS Page Style -->
     <link rel="stylesheet" href="/assets/css/pages/log-reg-v3.css">

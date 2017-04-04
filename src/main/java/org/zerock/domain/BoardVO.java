@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by macbookpro on 2017. 2. 3.. PM 7:10
  * What :
  * Why :
- * How :
+ * How : 팁! VO 클래스를 제작할 때 가장 간단한 팁은 가능하면 테이블의 칼럼 이름과 VO의 속성 이름을 동일하게 해주는 것이 읽기에 좋고, 코드를 작성하기도 편리하다는 것.
  */
 public class BoardVO {
 

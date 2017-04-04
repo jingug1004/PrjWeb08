@@ -28,6 +28,7 @@
                 <!-- /.box-header -->
 
                 <form id='registerForm' role="form" method="post">
+                    <%-- form의 action 속성이 지정되지 않으면 현재 경로를 그대로 action의 대상 경로로 잡음. --%>
                     <div class="box-body">
                         <div class="form-group">
                             <%--@declare id="exampleinputemail1"--%>
@@ -48,7 +49,6 @@
                             <input type="text" name="writer" class="form-control" value='${login.nickname}' readonly>
                             <%--JSP에서 사용하는 EL의 경우 자동으로 HttpSession에 있는 'login'을 찾아서 사용하므로 '${loogin.nickname}'와 같은 형태로 사용할 수 있음--%>
                         </div>
-
                         <div class="form-group">
                             <label for="exampleInputEmail1">File DROP Here</label>
                             <div class="fileDrop"></div>

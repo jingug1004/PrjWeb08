@@ -133,94 +133,51 @@
                             </ul>
                         </div>
 
-                        <%--<div class="col-sm-12 col-xs-6">--%>
-                            <%--<h2 class="thumb-headline">FAMILY SITE</h2>--%>
-                            <%--<ul class="list-unstyled simple-list">--%>
-                                <%--<li><a href="#">NEVER</a></li>--%>
-                                <%--<li><a href="#">Baum</a></li>--%>
-                                <%--<li><a href="#">MATE</a></li>--%>
-                                <%--<li><a href="#">GOGLE</a></li>--%>
-                                <%--<li><a href="#">HeapOverflow</a></li>--%>
-                                <%--<li><a href="#">NOKKKY</a></li>--%>
-                                <%--<li>...</li>--%>
-                            <%--</ul>--%>
-                        <%--</div>--%>
-                        <div id="accordion">
-                            <h3>Section 1</h3>
-                            <div>
-                                <p>
-                                    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                                    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                                    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                                    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-                                </p>
-                            </div>
-                            <h3>Section 2</h3>
-                            <div>
-                                <p>
-                                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-                                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-                                    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-                                    suscipit faucibus urna.
-                                </p>
-                            </div>
-                            <h3>Section 3</h3>
-                            <div>
-                                <p>
-                                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-                                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-                                    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-                                    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-                                </p>
-                                <ul>
-                                    <li>List item one</li>
-                                    <li>List item two</li>
-                                    <li>List item three</li>
-                                </ul>
-                            </div>
-                            <h3>Section 4</h3>
-                            <div>
-                                <p>
-                                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-                                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-                                    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-                                    mauris vel est.
-                                </p>
-                                <p>
-                                    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                                    inceptos himenaeos.
-                                </p>
-                            </div>
+                        <div class="col-sm-12 col-xs-6">
+                            <h2 class="thumb-headline">FAMILY SITE</h2>
+                            <ul class="list-unstyled simple-list">
+                                <li><a href="#">NEVER</a></li>
+                                <li><a href="#">Baum</a></li>
+                                <li><a href="#">MATE</a></li>
+                                <li><a href="#">GOGLE</a></li>
+                                <li><a href="#">HeapOverflow</a></li>
+                                <li><a href="#">NOKKKY</a></li>
+                                <li>...</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <!-- End Simple List -->
-            </div><!--/end row-->
-        </div><!--/end continer-->
-    </div><!--/footer-->
-
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>
-                        2017 &copy; UNIFY. ALL Rights Reserved.<br/>
-                        Sponsored by <a href="http://www.naver.com">heapoverflow.com</a> | <a href="#">Privacy
-                        Policy</a> | <a href="#">Terms of Service</a>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-inline sponsors-icons pull-right">
-                        <li><i class="fa fa-cc-paypal"></i></li>
-                        <li><i class="fa fa-cc-visa"></i></li>
-                        <li><i class="fa fa-cc-mastercard"></i></li>
-                        <li><i class="fa fa-cc-discover"></i></li>
-                    </ul>
-                </div>
             </div>
         </div>
-    </div><!--/copyright-->
+        <!-- End Simple List -->
+    </div><!--/end row-->
+</div>
+<!--/end continer-->
+</div>
+<!--/footer-->
+
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    2017 &copy; UNIFY. ALL Rights Reserved.<br/>
+                    Sponsored by <a href="http://www.naver.com">heapoverflow.com</a> | <a href="#">Privacy
+                    Policy</a> | <a href="#">Terms of Service</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-inline sponsors-icons pull-right">
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-discover"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/copyright-->
 </div>
 <!--=== End Footer v4 ===-->
 </div><!--/wrapper-->
@@ -299,6 +256,8 @@
         StyleSwitcher.initStyleSwitcher();
         MasterSliderShowcase2.initMasterSliderShowcase2();
     });
+
+
 </script>
 <!--[if lt IE 9]>
 <script src="/assets/plugins/respond.js"></script>
@@ -309,6 +268,8 @@
 <!--[if lt IE 10]>
 <script src="/assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
+
+
 
 </body>
 </html>

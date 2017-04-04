@@ -8,9 +8,9 @@ import java.util.List;
 
 /**
  * Created by macbookpro on 2017. 2. 3.. PM 7:32
- * What :
+ * What : 기본적인 게시물 관리 기능의 BoardDAO 인터페이스.
  * Why :
- * How :
+ * How : boardMapper.xml의 각 SQL 문의 id 속성 값은 BoardDAO 인터페이스와 동일하게 설정해주어서 혼란을 피하는 것이 좋음.
  */
 public interface BoardDAO {
 

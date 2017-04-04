@@ -4,6 +4,7 @@
   Date: 2017-02-15
   Time: 오후 1:46
   To change this template use File | Settings | File Templates.
+  조회를 처리하는 JSP의 경우 결과 데이터의 변수 이름이 'boardVO'라는 점을 주의하면서 작성.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -64,13 +65,15 @@
                 <!-- /.box-header -->
 
                 <form role="form" action="modifyPage" method="post">
-
-                    <input type='hidden' name='bno' value="${boardVO.bno}"> <input
-                        type='hidden' name='page' value="${cri.page}"> <input
-                        type='hidden' name='perPageNum' value="${cri.perPageNum}">
+                    <input type='hidden' name='bno' value="${boardVO.bno}">
+                    <%-- 조회 화면의 경우 나중에 수정이나 삭제 작업에서 사용되기 때문에 반드시 원래 게시물 번호인 bno를 가지고 있어야만 함.
+                    가장 먼저 선언된 <form> 태그를 보면 type='hidden'을 이용해서 bno 값을 처리하는 것을 볼 수 있음. --%>
+                    <input type='hidden' name='page' value="${cri.page}">
+                    <input type='hidden' name='perPageNum' value="${cri.perPageNum}">
                     <input type='hidden' name='searchType' value="${cri.searchType}">
                     <input type='hidden' name='keyword' value="${cri.keyword}">
                 </form>
+
 
                 <div class="box-body">
                     <div class="form-group">
@@ -78,6 +81,7 @@
                                                                              name='title' class="form-control"
                                                                              value="${boardVO.title}"
                                                                              readonly="readonly">
+                        <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                     </div>
                     <div class="form-group">
                         <%--@declare id="exampleinputpassword1"--%>
@@ -222,8 +226,6 @@
         </div>
     </li>
 </script>
-
-
 
 
 <%--<script id="template" type="text/x-handlebars-template">
@@ -478,6 +480,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
     $(document).ready(function () {
 
         var formObj = $("form[role='form']");
+//        formObj는 위에 선언된 <form> 태그를 의미하게 됨. <input type='hidden' name='bno' value="${boardVO.bno}~${cri.keyword}">
 
         console.log(formObj);
 

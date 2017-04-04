@@ -7,8 +7,9 @@
 
     <insert id="create">
         insert into tbl_board (title, content, writer)
-        values(#{title},#{content}, #{writer})
+        values(#{title}, #{content}, #{writer})
     </insert>
+    <!--boardMapper.xml의 각 SQL 문의 id 속성 값은 BoardDAO 인터페이스와 동일하게 설정해주어서 혼란을 피하는 것이 좋음.-->
 
     <!-- boardMapper.xml 에 'replycnt'칼럼을 select 쿼리문에 추가 안해서
 어느 한 게시물(readPage)들어가면 그 게시물의 전체 댓글수가 안 보여졌음요. -->

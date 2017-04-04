@@ -23,8 +23,9 @@
         <property name="password" value="zerock"></property>
     </bean>	 -->
 
-    <context:component-scan base-package="org.zerock.persistence"></context:component-scan>
     <context:component-scan base-package="org.zerock.service"></context:component-scan>
+    <!-- service 작업시 root-context.xml에 <context>를 사용해서 패키지를 자동으로 인식할 수 있도록 함. -->
+
     <context:component-scan base-package="org.zerock.aop"></context:component-scan>
 
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
@@ -68,6 +69,9 @@
         <!-- destory-method="clearChache" 자동으로 .close 해줘서 메모리 누수와 DB 과부하 막음 -->
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
     </bean>
+
+    <context:component-scan base-package="org.zerock.persistence"></context:component-scan>
+    <!-- DAO 작업시 dataSource, sqlSessionFactory, sqlSession의 persistence 패키지를 자동으로 인식하기 위한 <context:component-scan>이 사용된 것을 주의. -->
 
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

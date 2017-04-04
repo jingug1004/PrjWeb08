@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * Created by macbookpro on 2017. 2. 3.. PM 8:24
- * What :
+ * What : BoardDAO 인터페이스를 구현한 BoardDAOImpl 클래스.
  * Why :
  * How :
  */
@@ -24,6 +24,7 @@ public class BoardDAOImpl implements BoardDAO {
     private SqlSession session;
 
     private static String namespace = "org.zerock.mapper.BoardMapper";
+//    공통으로 사용하는 XML Mapper의 namespace를 지정하고 사용.
 
     @Override
     public void create(BoardVO vo) throws Exception {

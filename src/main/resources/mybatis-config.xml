@@ -9,5 +9,9 @@
     </typeAliases>
 
 </configuration>
-<!--설정과 관련된 파일.-->
+<!--설정과 관련된 파일.
+XML Mapper를 이용하는 데 있어서 매번 parameterType이나 resultType을 패키지까지 포함된 클래스명을 작성하는 일이 번거롭다면 MyBatis의 설정 파일인 mybatis-config.xml을 사용해서 <typeAliases>를 작성해 줄 수 있음.
+<typeAliases>는 하위요소로 <package>와 <typeAlias> 요소를 가질 수 있음.
+이 요소들을 이용하면 매번 parameterType이나 resultType에 사용하는 클래스의 이름을 'org.zerock.domain'은 생략한 채로 표현하는 것이 가능.
+-->
 

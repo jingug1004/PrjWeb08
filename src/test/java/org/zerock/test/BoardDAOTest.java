@@ -18,6 +18,9 @@ import java.util.List;
 
 /**
  * Created by macbookpro on 2017. 2. 4.. AM 10:18
+ * What :
+ * Why :
+ * How : 테스트 순서는 위의 테스트 코드부터 순차적으로 진행해주면 되고, 각 테스트 후에는 반드시 데이터베이스 상에서 올바르게 처리되었는지를 확인.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/**/*xml"})
@@ -27,6 +30,11 @@ public class BoardDAOTest {
 
     private static Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 
+    /**
+     * Test create.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testCreate() throws Exception {
 
@@ -37,12 +45,22 @@ public class BoardDAOTest {
         dao.create(board);
     }
 
+    /**
+     * Test read.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testRead() throws Exception {
 
-        logger.info(dao.read(15).toString());
+        logger.info("lll~~~" + dao.read(15).toString() + "lll~~~");
     }
 
+    /**
+     * Test update.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testUpdate() throws Exception {
 
@@ -53,19 +71,34 @@ public class BoardDAOTest {
         dao.update(board);
     }
 
+    /**
+     * Test delete.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testDelete() throws Exception {
 
         dao.delete(1);
     }
 
+    /**
+     * Test list all.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testListAll() throws Exception {
 
-        logger.info(dao.listAll().toString());
+        logger.info("lll~~~" + dao.listAll().toString() + "lll~~~");
 
     }
 
+    /**
+     * Test list page.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testListPage() throws Exception {
 
@@ -74,10 +107,15 @@ public class BoardDAOTest {
         List<BoardVO> list = dao.listPage(page);
 
         for (BoardVO boardVO : list) {
-            logger.info(boardVO.getBno() + ":" + boardVO.getTitle());
+            logger.info("lll~~~" + boardVO.getBno() + ":" + boardVO.getTitle() + "lll~~~");
         }
     }
 
+    /**
+     * Test list criteria.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testListCriteria() throws Exception {
 
@@ -88,31 +126,46 @@ public class BoardDAOTest {
         List<BoardVO> list = dao.listCriteria(cri);
 
         for (BoardVO boardVO : list) {
-            logger.info(boardVO.getBno() + ":" + boardVO.getTitle());
+            logger.info("lll~~~" + boardVO.getBno() + ":" + boardVO.getTitle() + "lll~~~");
         }
     }
 
+    /**
+     * Test uri.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testURI() throws Exception {
 
         UriComponents uriComponents = UriComponentsBuilder.newInstance().path("/board/read").queryParam("bno", 12)
                 .queryParam("perPageNum", 20).build();
 
-        logger.info("/board/read?bno=12&perPageNum=20");
-        logger.info(uriComponents.toString());
+        logger.info("lll~~~" + "/board/read?bno=12&perPageNum=20" + "lll~~~");
+        logger.info("lll~~~" + uriComponents.toString() + "lll~~~");
 
     }
 
+    /**
+     * Test uri 2.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testURI2() throws Exception {
 
         UriComponents uriComponents = UriComponentsBuilder.newInstance().path("/{module}/{page}").queryParam("bno", 12)
                 .queryParam("perPageNum", 20).build().expand("board", "read").encode();
 
-        logger.info("/board/read?bno=12&perPageNum=20");
-        logger.info(uriComponents.toString());
+        logger.info("lll~~~" + "/board/read?bno=12&perPageNum=20" + "lll~~~");
+        logger.info("lll~~~" + uriComponents.toString() + "lll~~~");
     }
 
+    /**
+     * Test dynamic 1.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testDynamic1() throws Exception {
 
@@ -126,7 +179,7 @@ public class BoardDAOTest {
         List<BoardVO> list = dao.listSearch(cri);
 
         for (BoardVO boardVO : list) {
-            logger.info(boardVO.getBno() + ": " + boardVO.getTitle());
+            logger.info("lll~~~" + boardVO.getBno() + ": " + boardVO.getTitle() + "lll~~~");
         }
 
         logger.info("lll~~~ ===================================== lll~~~");
