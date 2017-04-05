@@ -56,7 +56,7 @@ public interface BoardDAO {
     public List<BoardVO> listAll() throws Exception;
 
     /**
-     * List page list.
+     * 게시판 글 페이징 처리.
      *
      * @param page the page
      * @return the list

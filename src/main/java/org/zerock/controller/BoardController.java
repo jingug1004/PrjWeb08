@@ -107,7 +107,7 @@ public class BoardController {
     */
 
     /**
-     * Modify get.
+     * modifyGET()은 GET 방식으로 조회 페이지로 이동. 이때는 다시 원래의 게시물 데이터를 읽어와서 Model에 넣어서 전달.
      *
      * @param bno   the bno
      * @param model the model
@@ -120,11 +120,11 @@ public class BoardController {
     }
 
     /**
-     * Modify post string.
+     * modifyPOST()는 POST 방식으로 실제 수정 작업을 처리. 이때 리턴 타입은 등록이나 삭제와 동일하게 처리하는 것을 볼 수 있음.
      *
      * @param board the board
      * @param rttr  the rttr
-     * @return the string
+     * @return 이때 리턴 타입은 등록이나 삭제와 동일하게 처리하는 것을 볼 수 있음.
      * @throws Exception the exception
      */
     @RequestMapping(value = "/modify", method = RequestMethod.POST)

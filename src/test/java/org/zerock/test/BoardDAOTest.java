@@ -95,7 +95,8 @@ public class BoardDAOTest {
     }
 
     /**
-     * Test list page.
+     * 페이징 처리는 단순히 SQL만으로 결과를 확인할 수 있기 때문에 테스트 코드를 작성.
+     * 화면에 10개씩 데이터를 보여준다고 가정할 때, 사용자가 1페이지를 원한다면 limit 0, 10의 구문이 완성되어야 하고 2페이지를 원한다면 limit 10, 10, 3페이지를 원한다면 limit 20, 10과 같은 형태가 되어야 함.
      *
      * @throws Exception the exception
      */

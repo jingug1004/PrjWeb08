@@ -38,21 +38,26 @@
                     <div class="box-body">
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">BNO</label> <input type="text"
-                                                                               name='bno' class="form-control"
-                                                                               value="${boardVO.bno}"
-                                                                               readonly="readonly">
+                            <%--@declare id="exampleinputemail1"--%>
+                                <label for="exampleInputEmail1">BNO</label>
+                                <input type="text" name='bno' class="form-control"
+                                       value="${boardVO.bno}"
+                                       readonly="readonly">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Title</label> <input type="text"
-                                                                                 name='title' class="form-control"
-                                                                                 value="${boardVO.title}">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input type="text"
+                                   name='title' class="form-control"
+                                   value="${boardVO.title}">
                         </div>
+
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Content</label>
+                            <%--@declare id="exampleinputpassword1"--%>
+                                <label for="exampleInputPassword1">Content</label>
                             <textarea class="form-control" name="content" rows="3">${boardVO.content}</textarea>
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Writer</label> <input
                                 type="text" name="writer" class="form-control"
@@ -80,6 +85,7 @@
 
                     </div>
                 </form>
+                <%-- <form> 태그가 전체의 모든 내용을 감싸도록 선언. 이것은 수정 작업에 필요한 모든 데이터를 <form> 태그로 묶어서 전송해야 하기 때문. --%>
 
                 <script type="text/javascript" src="/resources/js/upload.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
@@ -117,7 +123,6 @@
 
                             that.get(0).submit();
                         });
-
 
                         $(".btn-warning").on("click", function () {
                             self.location = "/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}" +
