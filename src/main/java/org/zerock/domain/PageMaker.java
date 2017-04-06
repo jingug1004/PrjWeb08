@@ -5,6 +5,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 /**
  * Created by wtime on 2017-02-09.
+ * What : 페이징 처리용 클래스.
+ * Why : prev와 next의 계산을 매번 JSP 등에서 처리할 수도 있겠지만, 좀 더 편하게 사용하기 위해서는 별도의 클래스를 설계해서 처리하는 것이 좋음.
+ * How :
  */
 public class PageMaker {
 
@@ -18,10 +21,20 @@ public class PageMaker {
 
     private Criteria cri;
 
+    /**
+     * Sets cri.
+     *
+     * @param cri the cri
+     */
     public void setCri(Criteria cri) {
         this.cri = cri;
     }
 
+    /**
+     * Sets total count.
+     *
+     * @param totalCount 가장 중요한 계산은 totalCount가 설정되는 시점에 calcData()를 실행해서 계산.
+     */
     public void setTotalCount(int totalCount) {
         this.totalCount = totalCount;
 
@@ -46,34 +59,76 @@ public class PageMaker {
 
     }
 
+    /**
+     * Gets total count.
+     *
+     * @return the total count
+     */
     public int getTotalCount() {
         return totalCount;
     }
 
+    /**
+     * Gets start page.
+     *
+     * @return the start page
+     */
     public int getStartPage() {
         return startPage;
     }
 
+    /**
+     * Gets end page.
+     *
+     * @return the end page
+     */
     public int getEndPage() {
         return endPage;
     }
 
+    /**
+     * Is prev boolean.
+     *
+     * @return the boolean
+     */
     public boolean isPrev() {
         return prev;
     }
 
+    /**
+     * Is next boolean.
+     *
+     * @return the boolean
+     */
     public boolean isNext() {
         return next;
     }
 
+    /**
+     * displayPageNum은 화면에 보여지는 페이지 번호의 숫자를 의미하는 변수를 추가.
+     * 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
+     *
+     * @return the display page num
+     */
     public int getDisplayPageNum() {
         return displayPageNum;
     }
 
+    /**
+     * Gets cri.
+     *
+     * @return the cri
+     */
     public Criteria getCri() {
         return cri;
     }
 
+    /**
+     * Make query string.
+     *
+     * @param page the page
+     * @return the string
+     */
     public String makeQuery(int page) {
 
         UriComponents uriComponents =
@@ -86,6 +141,12 @@ public class PageMaker {
     }
 
 
+    /**
+     * Make search string.
+     *
+     * @param page the page
+     * @return the string
+     */
     public String makeSearch(int page){
 
         UriComponents uriComponents =

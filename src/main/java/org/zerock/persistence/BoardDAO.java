@@ -65,7 +65,8 @@ public interface BoardDAO {
     public List<BoardVO> listPage(int page) throws Exception;
 
     /**
-     * List criteria list.
+     * BoardDAO에 list를 출력하는 부분.
+     * listCriteria()는 Criteria 객체릂 파라미터로 전달받고, 필요한 getPageStart()와 getPerPageNum() 메소드를 호출한 결과를 사용.
      *
      * @param cri the cri
      * @return the list

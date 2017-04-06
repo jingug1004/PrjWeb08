@@ -140,9 +140,9 @@ public class BoardController {
     }
 
     /**
-     * List all.
+     * 페이징된 리스트 출력.
      *
-     * @param cri   the cri
+     * @param cri   스프링 MVC의 컨트롤러는 특정 URL에 해당하는 메소드를 실행할 때, 파라미터의 타입을 보고, 해당 객체를 자동으로 생성. 파라미터가 자동으로 수집되기 때문에, 바로 이전에 만든 Criteria라는 클래스를 그대로 사용할 수 있음.
      * @param model the model
      * @throws Exception the exception
      */
@@ -156,17 +156,17 @@ public class BoardController {
     }
 
     /**
-     * List page.
+     * 실제 화면에서 올바르게 동작하는지 확인하기 위해. listPage()에서는 크게 목록 데이터를 Model에 저장하는 작업과, PageMaker를 구성해서 Model에 담는 작업이 이루어짐.
      *
-     * @param cri   the cri
-     * @param model the model
+     * @param cri   Criteria cri를 파라미터로 사용하고, Model 객체를 이용해서 발생하는 PageMaker를 저장.
+     * @param model
      * @throws Exception the exception
      */
     @RequestMapping(value = "/listPage", method = RequestMethod.GET)
     public void listPage(@ModelAttribute("cri") Criteria cri,
                          Model model) throws Exception {
 
-        logger.info(cri.toString());
+        logger.info("lll~~~" + cri.toString() + "lll~~~");
 
         model.addAttribute("list", service.listCriteria(cri));
         PageMaker pageMaker = new PageMaker();

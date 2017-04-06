@@ -113,7 +113,8 @@ public class BoardDAOTest {
     }
 
     /**
-     * Test list criteria.
+     * MySQL의 결과와 JUnit에서의 테스트 결과가 같아야 한다.
+     * select * from tbl_board where bno > 0 order by bno desc limit 20, 20;
      *
      * @throws Exception the exception
      */

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by macbookpro on 2017. 2. 4.. PM 1:01
  * What :
- * Why :
+ * Why : 아직까지는 큰 역할이 없는 BoardController와 BoardDAO와의 연결 작업을 담당.
  * How :
  */
 public interface BoardService {

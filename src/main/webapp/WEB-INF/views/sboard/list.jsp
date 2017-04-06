@@ -117,25 +117,25 @@
                         <ul class="pagination">
 
                             <c:if test="${pageMaker.prev}">
-                                <li><a
-                                        href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+                                <li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
                             </c:if>
 
                             <c:forEach begin="${pageMaker.startPage }"
                                        end="${pageMaker.endPage }" var="idx">
-                                <li
-                                        <c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+                                <li<c:out value="${pageMaker.cri.page == idx?'class=active':''}"/>>
                                     <a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
                                 </li>
                             </c:forEach>
 
                             <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                                <li><a
-                                        href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+                                <li><a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
                             </c:if>
 
                         </ul>
                     </div>
+                    <%-- JSTL의 <c:if>는 boolean으로 나오는 결과를 확인하므로 ${pageMaker.prev}를 이용해서 이전 페이지로 가는 링크가 있어야 하는지를 판단. --%>
+                    <%-- 현재 페이지의 번호는 PageMaker 객체 내의 Criteria 객체에 존재하므로 ${pageMaker.cri.page}를 이용해서
+                     getCriteria(), getPage()를 호출하는 형태로 사용. 이를 이용해서 화면에 현재 페이지 번호만을 눈에 띄게 표현할 수 있음. --%>
 
                 </div>
                 <!-- /.box-footer-->
