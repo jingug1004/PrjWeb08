@@ -133,15 +133,21 @@ public class BoardDAOTest {
     }
 
     /**
-     * Test uri.
+     * 스프링 MVC의 경우 org.springframework.web.util 패키지에 웹 개발에 필요한 많은 유틸리티 클래스를 제공하는데 그 중에서 URI를 작성할 때 도움이 되는
+     * 클래스가 UriComponentsBuilder와 UriComponents 클래스.
+     * UriComponents 클래스는 path나 query에 해당하는 문자열들을 추가해서 원하는 URI를 생성할 때 사용.
+     * 원하는 데이터를 계속 추가해서 처리할 수 있고, 필요한 데이터를 설정. 코드에서 queryParam()의 경우 나중에는 GET 방식의 '?' 뒤에 붙는 데이터가 되는 것을 볼 수 있음.
      *
      * @throws Exception the exception
      */
     @Test
     public void testURI() throws Exception {
 
-        UriComponents uriComponents = UriComponentsBuilder.newInstance().path("/board/read").queryParam("bno", 12)
-                .queryParam("perPageNum", 20).build();
+        UriComponents uriComponents = UriComponentsBuilder.newInstance()
+                .path("/board/read")
+                .queryParam("bno", 12)
+                .queryParam("perPageNum", 20)
+                .build();
 
         logger.info("lll~~~" + "/board/read?bno=12&perPageNum=20" + "lll~~~");
         logger.info("lll~~~" + uriComponents.toString() + "lll~~~");
@@ -149,15 +155,21 @@ public class BoardDAOTest {
     }
 
     /**
-     * Test uri 2.
+     * UriComponentsBuilder는 특정 URI를 먼저 지정하고 작업하는 것도 가능.
+     * 미리 필요한 경로를 지정해 두고 '{module}'와 같은 경로를 'board'로, '{page}'를 'read'로 변경할 수 있음.
      *
      * @throws Exception the exception
      */
     @Test
     public void testURI2() throws Exception {
 
-        UriComponents uriComponents = UriComponentsBuilder.newInstance().path("/{module}/{page}").queryParam("bno", 12)
-                .queryParam("perPageNum", 20).build().expand("board", "read").encode();
+        UriComponents uriComponents = UriComponentsBuilder.newInstance()
+                .path("/{module}/{page}")
+                .queryParam("bno", 12)
+                .queryParam("perPageNum", 20)
+                .build()
+                .expand("board", "read")
+                .encode();
 
         logger.info("lll~~~" + "/board/read?bno=12&perPageNum=20" + "lll~~~");
         logger.info("lll~~~" + uriComponents.toString() + "lll~~~");

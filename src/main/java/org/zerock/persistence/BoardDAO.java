@@ -75,7 +75,7 @@ public interface BoardDAO {
     public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 
     /**
-     * Count paging int.
+     * 게시물의 BoardDAO에서 totalCount를 반환할 수 있게 처리하기 위해서.
      *
      * @param cri the cri
      * @return the int

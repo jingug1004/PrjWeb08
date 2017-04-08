@@ -145,7 +145,10 @@
         jobForm.attr("action", "/board/listPage").attr("method", "get");
         jobForm.submit();
     });
+//    페이지 번호가 클릭되면 event.preventDefault()를 이용해서 실제 화면의 이동을 막고, <a> 태그에 있는 페이지 번호를 찾아서
+//    <form> 태그를 전송하는 방식을 이용하는 것.
 
 </script>
+
 
 <%@include file="../include/footer.jsp" %>

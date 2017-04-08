@@ -65,7 +65,7 @@ public interface BoardService {
     public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 
     /**
-     * List count criteria int.
+     * Criteria를 이용해서 전체 게시물의 숫자를 계산하도록 변경이 필요.
      *
      * @param cri the cri
      * @return the int

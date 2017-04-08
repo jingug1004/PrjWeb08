@@ -122,7 +122,7 @@
 
                             <c:forEach begin="${pageMaker.startPage }"
                                        end="${pageMaker.endPage }" var="idx">
-                                <li<c:out value="${pageMaker.cri.page == idx?'class=active':''}"/>>
+                                <li<c:out value="${pageMaker.cri.page == idx?' class=active':''}"/>>
                                     <a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
                                 </li>
                             </c:forEach>
@@ -135,7 +135,8 @@
                     </div>
                     <%-- JSTL의 <c:if>는 boolean으로 나오는 결과를 확인하므로 ${pageMaker.prev}를 이용해서 이전 페이지로 가는 링크가 있어야 하는지를 판단. --%>
                     <%-- 현재 페이지의 번호는 PageMaker 객체 내의 Criteria 객체에 존재하므로 ${pageMaker.cri.page}를 이용해서
-                     getCriteria(), getPage()를 호출하는 형태로 사용. 이를 이용해서 화면에 현재 페이지 번호만을 눈에 띄게 표현할 수 있음. --%>
+                    getCriteria(), getPage()를 호출하는 형태로 사용. 이를 이용해서 화면에 현재 페이지 번호만을 눈에 띄게 표현할 수 있음. --%>
+                    <%-- 이전의 예제는 단순히 게시물의 번호를 전송하는 링크만 생성되었지만, 위와 같이 페이지 정보를 유지할 수 있도록 변경. --%>
 
                 </div>
                 <!-- /.box-footer-->
