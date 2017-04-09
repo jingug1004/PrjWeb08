@@ -49,8 +49,7 @@ public class BoardController {
      * 실제로 화면에서 입력되어 들어오는 데이터를 처리하는 registPOST() 메소드의 파라미터는 자동으로 모든 데이터를 BoardVO로 수지바도록 하는 부분과, 향후에 뷰로 데이터를 전달할 가능성이 있으므로 Model 클래스의 객체를 받도록 설계.
      *
      * @param board the board
-     * @param rttr  재전송의 문제는 막을 수 있었지만, 마지막에 같이 전송되는 'result=SUCCESS' 문자열은 지워지지 않고 남기 때문에 페이지를 '새로 고침'했을 때 계속 남는 문제점. RedirectAttributes 객체는 리다이렉트 시점에 한 번만 사용되는 데이터를 전송할 수 있는 addFlashAttribute()라는 기능을 지원.
-     *              addFlashAttribute()는 브라우저까지 전송되기는 하지만, URI 상에는 보이지 않는 숨겨진 데이터의 형태로 전달.
+     * @param rttr  재전송의 문제는 막을 수 있었지만, 마지막에 같이 전송되는 'result=SUCCESS' 문자열은 지워지지 않고 남기 때문에 페이지를 '새로 고침'했을 때 계속 남는 문제점. RedirectAttributes 객체는 리다이렉트 시점에 한 번만 사용되는 데이터를 전송할 수 있는 addFlashAttribute()라는 기능을 지원.              addFlashAttribute()는 브라우저까지 전송되기는 하지만, URI 상에는 보이지 않는 숨겨진 데이터의 형태로 전달.
      * @return the string
      * @throws Exception the exception
      */
@@ -159,7 +158,7 @@ public class BoardController {
      * 실제 화면에서 올바르게 동작하는지 확인하기 위해. listPage()에서는 크게 목록 데이터를 Model에 저장하는 작업과, PageMaker를 구성해서 Model에 담는 작업이 이루어짐.
      *
      * @param cri   Criteria cri를 파라미터로 사용하고, Model 객체를 이용해서 발생하는 PageMaker를 저장.
-     * @param model
+     * @param model the model
      * @throws Exception the exception
      */
     @RequestMapping(value = "/listPage", method = RequestMethod.GET)
@@ -183,7 +182,7 @@ public class BoardController {
      * '@RequestParam("bno")는 과거 request.getParameter("bno")처럼 동작. Servlet의 HttpServletRequest와 다른점은 문자열, 숫자, 날짜 등의 형 변환이 가능하다는 점.
      *
      * @param bno   파라미터는 외부에서 전달될 bno 값을 전달받음. 좀 더 명확하게 표현하기 위해서 '@RequestParam'을 이용해서 구성. 조회된 결과 게시물을 JSP로 전달해야 하기 때문에 Model 객체를 사용.
-     * @param cri   the cri
+     * @param cri   URI는 'readPage'로 설정했기 때문에 '/board/readPage?bno=xx&page=x&perPageNum=xxx'와 같은 식으로 접근하게 되는 상황. page와 perPageNum 파라미터의 경우 Criteria 타입의 객체로 처리. bno 파라미터만 별도로 처리해 주었음.
      * @param model 스프링의 Model은 addAttribute() 작업을 할 때 아무런 이름 없이 데이터를 넣으면 자동으로 클래스의 이름을 소문자로 시작해서 사용. 즉, 위의 코드에 들어가는 데이터는 BoardVO 클래스의 객체이므로, 'boardVO'라는 이름으로 저장.
      * @throws Exception the exception
      */
@@ -199,8 +198,8 @@ public class BoardController {
      * 삭제에 대한 처리는 POST 방식으로 조회 화면에서 처리. 삭제는 등록 기능과 유사한 부분이 많은데, 삭제 후 페이지의 이동을 제대로 처리하지 않으면 브라우저에서 '새로고침'을 통해 계속해서 동일한 데이터가 재전송될 수 있는 문제가 있음.
      *
      * @param bno  the bno
-     * @param cri  the cri
-     * @param rttr 삭제 결과는 RedirectAttributes의 addFlashAttribute()를 이용해서 처리.
+     * @param cri  파라미터로 Criteria를 사용하게 되었고, JSP로 전송되는 정보 역시 page와 perPageNum이 같이 전송되어야 함.
+     * @param rttr 삭제 결과는 RedirectAttributes의 addFlashAttribute()를 이용해서 처리. 삭제 결과는 임시로 사용하는 데이터이므로 addFlashAttribute()를 이용해서 처리.
      * @return 등록 작업과 마찬가지로 리다이렉트 방식으로 리스트 페이지로 이동시켜 버리는 것을 볼 수 있음.
      * @throws Exception the exception
      */
@@ -219,7 +218,7 @@ public class BoardController {
     }
 
     /**
-     * Modify paging get.
+     * 수정 처리 역시 삭제와 유사하지만 다른점은 수정으로 들어가는 화면이 하나 더 존재한다는 점. 사용자는 조회 페이지로 이동한 후 'MODIFY' 버튼을 클릭해서 수정화면으로 들어가고, 수정 작업이 완료되면 원래의 목록 페이지로 이동.
      *
      * @param bno   the bno
      * @param cri   the cri
@@ -232,6 +231,30 @@ public class BoardController {
                                 Model model) throws Exception {
 
         model.addAttribute(service.read(bno));
+    }
+
+    /**
+     * 수정이 가능한 화면에서는 POST 방식으로 수정을 요청하게 되고, 작업이 완료된 후에는 원래의 정보가 유지된 채로 목록 페이지로 이동하게 됨.
+     *
+     * @param boardVO the board vo
+     * @param cri     the cri
+     * @param rttr    the rttr
+     * @return 수정 작업 역시 삭제와 마찬가지로 모든 작업이 끝나면 다시 목록 페이지로 리다이렉트 되어야 하고, 수정된 결과에 대해서는 'msg'로 전송.
+     * @throws Exception the exception
+     */
+    @RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
+    public String modifyPagingPOST(BoardVO boardVO,
+                                   Criteria cri,
+                                   RedirectAttributes rttr) throws Exception {
+
+        service.modify(boardVO);
+
+        rttr.addAttribute("page", cri.getPage());
+        rttr.addAttribute("perPageNum", cri.getPerPageNum());
+        rttr.addFlashAttribute("msg", "success");
+
+        return "redirect:/board/listPage";
+
     }
 
 }

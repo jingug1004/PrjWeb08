@@ -32,6 +32,8 @@
 
                     <input type='hidden' name='page' value="${cri.page}">
                     <input type='hidden' name='perPageNum' value="${cri.perPageNum}">
+                    <%-- 수정 작업에 유지해야 하는 정보가 포함되어야 함. --%>
+
                     <input type='hidden' name='searchType' value="${cri.searchType}">
                     <input type='hidden' name='keyword' value="${cri.keyword}">
 
@@ -43,6 +45,8 @@
                                 <input type="text" name='bno' class="form-control"
                                        value="${boardVO.bno}"
                                        readonly="readonly">
+                            <%-- 수정 작업 내용의 핵심은 <form> 태그 내에 <input type='hidden'>으로 만들어진 태그를 이용해서
+                             페이징 처리에 대한 정보를 유지하도록 하는 것. --%>
                         </div>
 
                         <div class="form-group">
@@ -128,6 +132,11 @@
                             self.location = "/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}" +
                                 "&searchType=${cri.searchType}&keyword=${cri.keyword}";
                         });
+
+                        $(".btn-primary").on("click", function () {
+                            formObj.submit();
+                        });
+//                        수정 페이지에서는 화면상에서 '취소' 버튼을 클릭하면 원래의 목록 페이지로 이동하게 작성해야 함.
 
                     });
 
