@@ -1,5 +1,7 @@
 package org.zerock.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +21,9 @@ import java.util.List;
  */
 @Service
 public class BoardServiceImpl implements BoardService {
+
+    private static final Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
+
 
     @Inject
     private BoardDAO dao;
@@ -126,6 +131,7 @@ public class BoardServiceImpl implements BoardService {
         dao.delete(bno);
     }
 
+    // 정말 무시하자! 옛날 거!
     @Override
     public List<BoardVO> listAll() throws Exception {
         return dao.listAll();
@@ -141,8 +147,13 @@ public class BoardServiceImpl implements BoardService {
         return dao.countPaging(cri);
     }
 
+    // 글 목록 불러오기
     @Override
     public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+
+        logger.info("lll~~~ cri.toString() BoardServiceImpl : " + cri.toString() + " lll~~~");
+//        logger.info("lll~~~ cate BoardServiceImpl : " + cate + " lll~~~");
+
         return dao.listSearch(cri);
     }
 

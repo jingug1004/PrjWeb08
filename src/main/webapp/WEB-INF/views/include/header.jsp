@@ -198,7 +198,7 @@
                     <div class="col-sm-6">
                         <ul class="list-inline right-topbar pull-right">
                             <li><a href="#">Account</a></li>
-                            <li><a href="shop-ui-add-to-cart.html">Wishlist (0)</a></li>
+                            <li><a href="#">Wishlist (0)</a></li>
                             <c:if test="${empty login}">
                                 <li><a href="<c:url value="/user/login"/>">Login</a> | <a
                                         href="<c:url value="/user/shop-ui-register"/>">Register</a>
@@ -293,16 +293,24 @@
                         <li class="dropdown active">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
                                data-toggle="dropdown">
-                                Pages
+                                대통령
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="active"><a href="home.jsp">BEST</a></li>
-                                <li><a href="shop-ui-inner.html">기획전</a></li>
-                                <li><a href="shop-ui-filter-grid.html">이벤트</a></li>
-                                <li><a href="shop-ui-filter-list.html">포토리뷰/후기</a></li>
-                                <li><a href="shop-ui-add-to-cart.html">VIP 게시판</a></li>
-                                <li><a href="shop-ui-login.html">회원등급별 혜택</a></li>
-                                <li><a href="../include/shop-ui-register.jsp">득템샵</a></li>
+                            <ul id="cateNum" class="dropdown-menu">
+                                <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
+                                <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
+                                <li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>
+                                <li><a href="/sboard/list?cate=1104">가족관계</a></li>
+                                <li><a href="/sboard/list?cate=1105">인간관계</a></li>
+                                <li><a href="/sboard/list?cate=1106">반려 동물</a></li>
+                                <li><a href="/sboard/list?cate=1107">성격</a></li>
+                                <li><a href="/sboard/list?cate=1108">인기</a></li>
+                                <li><a href="/sboard/list?cate=1109">별명</a></li>
+                                <li><a href="/sboard/list?cate=1110">저서</a></li>
+                                <li><a href="/sboard/list?cate=1111">선거 이력</a></li>
+                                <li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>
+                                <li><a href="/sboard/list?cate=1113">비판과 논란</a></li>
+                                <li><a href="/sboard/list?cate=1114">재산</a></li>
+                                <li><a href="/sboard/list?cate=1115">기타</a></li>
                             </ul>
                         </li>
                         <!-- End Pages -->
@@ -311,22 +319,19 @@
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
                                data-toggle="dropdown">
-                                Promotion
+                                공약
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-submenu">
-                                    <a href="javascript:void(0);">Jeans</a>
+                                    <a href="javascript:void(0);">당선 전</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Skinny Jeans</a></li>
-                                        <li><a href="#">Bootcut Jeans</a></li>
-                                        <li><a href="#">Straight Cut Jeans</a></li>
+                                        <li><a href="#">당선 전 공약</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-submenu">
-                                    <a href="javascript:void(0);">Shoes</a>
+                                    <a href="javascript:void(0);">당선 후</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Sandals</a></li>
-                                        <li><a href="#">Heels</a></li>
+                                        <li><a href="#">공약 이행</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -337,7 +342,7 @@
                         <li class="dropdown mega-menu-fullwidth">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
                                data-toggle="dropdown">
-                                Gifts
+                                이슈
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -345,9 +350,8 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
-                                                    <h3 class="mega-menu-heading">고객 사은 할인 이벤트</h3>
-                                                    <p>언제나 저희 UNIFY를 이용해 주심에 고객의 성원에 보답하고자 365일 이월 재고 상품을 대폭 할인하고
-                                                        있습니다</p>
+                                                    <h3 class="mega-menu-heading">대국민 이벤트</h3>
+                                                    <p>언제나 저희 UNIFY를 이용해 주심에 따라 국민의 성원에 보답하고자 365일 항상 국민의 목소리에 귀기울이고 있습니다.</p>
                                                     <button type="button" class="btn-u btn-u-dark">Read More</button>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
@@ -374,7 +378,7 @@
                         <li class="dropdown mega-menu-fullwidth">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
                                data-toggle="dropdown">
-                                MENU
+                                국가행정조직
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -382,136 +386,126 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Clothes</h3>
+                                                    <h3 class="mega-menu-heading">대통령i</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a> <span
-                                                                class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-Shirts</a></li>
+                                                        <li><a href="#">대통령비서실</a></li>
+                                                        <li><a href="#">대통령경호실</a></li>
+                                                        <li><a href="#">국가안보실</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Shoes</h3>
+                                                    <h3 class="mega-menu-heading">국가인권위원회</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">Flats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
+                                                        <li><a href="#">국가인권위원회</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Accessories</h3>
+                                                    <h3 class="mega-menu-heading">대통령ii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">All accessories</a></li>
-                                                        <li><a href="#">Bags &amp; Purses</a></li>
-                                                        <li><a href="#">Scarvs &amp; Hats</a></li>
-                                                        <li><a href="#">Jewellery</a></li>
-                                                        <li><a href="#">Whatch &amp; Belt</a></li>
+                                                        <li><a href="#">감사원</a></li>
+                                                        <li><a href="#">국가정보원</a></li>
+                                                        <li><a href="#">방송통신위원회</a></li>
+
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Lingerie</h3>
+                                                    <h3 class="mega-menu-heading">대통령iii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Linger</a> <span
-                                                                class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Slippers</a></li>
+                                                        <li><a href="#">국가안전보장회의</a></li>
+                                                        <li><a href="#">민주평화통일자문회의</a></li>
+                                                        <li><a href="#">국민경제자문회의</a></li>
+                                                        <li><a href="#">국가과학기술자문회의</a></li>
+                                                        <li><a href="#">특별감찰관</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Nightwear</h3>
+                                                    <h3 class="mega-menu-heading">국무총리i</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Nightwear</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a></li>
+                                                        <li><a href="#">국무조정실</a></li>
+                                                        <li><a href="#">국무총리비서실</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Mixed</h3>
+                                                    <h3 class="mega-menu-heading">국무총리ii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a> <span
-                                                                class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-shirts</a></li>
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">Flats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a></li>
+                                                        <li><a href="#">기획재정부</a></li>
+                                                        <li><a href="#">교육부</a></li>
+                                                        <li><a href="#">미래창조과학부</a></li>
+                                                        <li><a href="#">외교부</a></li>
+                                                        <li><a href="#">통일부</a></li>
+                                                        <li><a href="#">법무부</a></li>
+                                                        <li><a href="#">국방부</a></li>
+                                                        <li><a href="#">행정자치부</a></li>
+                                                        <li><a href="#">문화체육관광부</a></li>
+                                                        <li><a href="#">농림축산식품부</a></li>
+                                                        <li><a href="#">산업통상자원부</a></li>
+                                                        <li><a href="#">보건복지부</a></li>
+                                                        <li><a href="#">환경부</a></li>
+                                                        <li><a href="#">고용노동부</a></li>
+                                                        <li><a href="#">여성가족부</a></li>
+                                                        <li><a href="#">국토교통부</a></li>
+                                                        <li><a href="#">해양수산부</a></li>
                                                     </ul>
                                                 </div>
 
 
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Beauty</h3>
+                                                    <h3 class="mega-menu-heading">국무총리iii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Cleansing &amp; Peeling</a></li>
-                                                        <li><a href="#">Skincare</a></li>
-                                                        <li><a href="#">Haircare</a></li>
-                                                        <li><a href="#">Bodycare</a> <span
-                                                                class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Nailcare</a></li>
-                                                        <li><a href="#">Soap</a></li>
-                                                    </ul>
-                                                    <h3 class="mega-menu-heading">Travel</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Package Tour</a></li>
-                                                        <li><a href="#">Free Travel</a></li>
-                                                        <li><a href="#">Hotel</a></li>
-                                                        <li><a href="#">Resort</a></li>
-                                                        <li><a href="#">Pension</a></li>
+                                                        <li><a href="#">국민안전처</a></li>
+                                                        <li><a href="#">인사혁신처</a></li>
+                                                        <li><a href="#">법제처</a></li>
+                                                        <li><a href="#">국가보훈처</a></li>
+                                                        <li><a href="#">식품의약품안전처</a></li>
+                                                        <li><a href="#">공정거래위원회</a></li>
+                                                        <li><a href="#">금융위원회</a></li>
+                                                        <li><a href="#">국민권익위원회</a></li>
+                                                        <li><a href="#">원자력안전위원회</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Food</h3>
+                                                    <h3 class="mega-menu-heading">기획재정부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">All Food</a></li>
-                                                        <li><a href="#">Agricultural &amp; Animal</a></li>
-                                                        <li><a href="#">Side Dish &amp; Processed Food</a></li>
-                                                        <li><a href="#">Fish</a></li>
-                                                        <li><a href="#">Snack &amp; Instant Food</a></li>
+                                                        <li><a href="#">국세청</a></li>
+                                                        <li><a href="#">관세청</a></li>
+                                                        <li><a href="#">조달청</a></li>
+                                                        <li><a href="#">통계청</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Interest</h3>
+                                                    <h3 class="mega-menu-heading">법무부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Pet</a> <span
-                                                                class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Flower</a></li>
+                                                        <li><a href="#">검찰청</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Goods</h3>
+                                                    <h3 class="mega-menu-heading">국방부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Notebook</a></li>
-                                                        <li><a href="#">Smartphone</a></li>
-                                                        <li><a href="#">Smart Device</a></li>
+                                                        <li><a href="#">병무청</a></li>
+                                                        <li><a href="#">방위사업청</a></li>
+                                                    </ul>
+                                                    <h3 class="mega-menu-heading">행정자치부</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">경찰청</a></li>
+                                                    </ul>
+                                                    <h3 class="mega-menu-heading">문화체육관광부</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">문화재청</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Infant care</h3>
+                                                    <h3 class="mega-menu-heading">농림축산식품부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Clothes &amp; Shoes</a> <span
-                                                                class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Diaper</a></li>
-                                                        <li><a href="#">Powdered Milk</a></li>
-                                                        <li><a href="#">Bath</a></li>
-                                                        <li><a href="#">Skincare</a></li>
-                                                        <li><a href="#">Oral Care</a></li>
-                                                        <li><a href="#">Dinnerware</a></li>
-                                                        <li><a href="#">Detergent for Baby</a></li>
-                                                        <li><a href="#">Toy</a></li>
-                                                        <li><a href="#">Nutritional Supplements</a></li>
-                                                        <li><a href="#">Maternity Dress</a></li>
-                                                        <li><a href="#">Return present</a></li>
-                                                        <li><a href="#">Childbirth DIY</a> <span
-                                                                class="label label-danger-shop">New</span></li>
+                                                        <li><a href="#">농촌진흥청</a></li>
+                                                        <li><a href="#">산림청</a></li>
+                                                    </ul>
+                                                    <h3 class="mega-menu-heading">산업통상자원부</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">중소기업청</a></li>
+                                                        <li><a href="#">특허청</a></li>
+                                                    </ul>
+                                                    <h3 class="mega-menu-heading">환경부</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">기상청</a></li>
+                                                    </ul>
+                                                    <h3 class="mega-menu-heading">국토교통부</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">행정중심복합도시건설청</a></li>
+                                                        <li><a href="#">새만금개발청</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!--/end row-->
@@ -526,18 +520,17 @@
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
                                data-toggle="dropdown" data-delay="1000">
-                                Clothes
+                                사람
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Jeans</a></li>
-                                <li><a href="#">T-shirts</a></li>
-                                <li><a href="#">Shorts</a></li>
+                                <li><a href="#">청와대</a></li>
+                                <li><a href="#">국회</a></li>
                             </ul>
                         </li>
                         <!-- End Clothes -->
 
                         <!-- Main Demo -->
-                        <li><a href="<c:url value="/sboard/list"/>">Free Board</a></li>
+                        <li><a href="<c:url value="/sboard/list"/>">건의사항</a></li>
                         <!-- Main Demo -->
                     </ul>
                     <!-- End Nav Menu -->

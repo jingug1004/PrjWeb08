@@ -460,7 +460,7 @@
         <h1>새로운 품격의 <span class="shop-green">시작</span> 입니다.</h1>
         <ul class="breadcrumb-v4-in">
             <li><a href="../home.jsp">Home</a></li>
-            <li><a href="">Product</a></li>
+            <li><a href="">Policy</a></li>
             <li class="active">Log In</li>
         </ul>
     </div><!--/end container-->
@@ -477,8 +477,8 @@
                 <div class="info-block-v2">
                     <i class="icon icon-layers"></i>
                     <div class="info-block-in">
-                        <h3>국내 최대의 규모</h3>
-                        <p>UNIFY는 국내 최대의 규모로서 여러 기업과의 상생과 공존을 통하여 매년 18%씩 시장 점유를 달성하고 있습니다.</p>
+                        <h3>국내 최소의 규모</h3>
+                        <p>UNIFY는 국내 최소의 규모로서 여러 기업과의 상생과 공존을 통하여 매년 18%씩 시장 점유를 달성하고 싶습니다.</p>
                     </div>
                 </div>
                 <div class="info-block-v2">

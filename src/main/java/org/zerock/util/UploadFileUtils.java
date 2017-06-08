@@ -122,8 +122,6 @@ public class UploadFileUtils {
     /**
      * BufferedImage는 실제 이미지가 아닌 메모리상의 이미지를 의미하는 객체 - 원본 파일을 메모리상으로 로딩 정해진 크기에 맞게 작은 이미지 파일에 원본 이미지 복사
      *
-     *
-     *
      * @param uploadPath 썸네일을 생성하는 작업은 메소드의 파라미터에 사용된 기본경로(uploadPath)와 년/월/일 폴더(path), 현재 업로드 된 파일의 이름을 이용
      * @param path
      * @param fileName

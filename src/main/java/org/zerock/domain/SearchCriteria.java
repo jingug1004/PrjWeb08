@@ -15,6 +15,16 @@ public class SearchCriteria extends Criteria{
     private String searchType;
     private String keyword;
 
+    private String cate;
+
+    public String getCate() {
+        return cate;
+    }
+
+    public void setCate(String cate) {
+        this.cate = cate;
+    }
+
     /**
      * Gets search type.
      *

@@ -18,6 +18,15 @@ public class BoardVO {
     private Date regdate;
     private int viewcnt;
     private int replycnt;
+    private Integer cnum;
+
+    public Integer getCnum() {
+        return cnum;
+    }
+
+    public void setCnum(Integer cnum) {
+        this.cnum = cnum;
+    }
 
     private String[] files;
 

@@ -125,7 +125,7 @@ public class PageMaker {
 
     /**
      * 모든 페이징 처리는 목록을 처리하기 위한 정보를 GET 방식으로 유지해야 하기 때문에 처리 과정이 복잡해질 때가 많음.
-     * 현재 목로 페이지의 경우 모든 정보는 Criteria에 있기 때문에 PageMaker를 아래와 같이 makeQuery() 메소드를 추가.
+     * 현재 목록 페이지의 경우 모든 정보는 Criteria에 있기 때문에 PageMaker를 아래와 같이 makeQuery() 메소드를 추가.
      *
      * @param page the page
      * @return the string

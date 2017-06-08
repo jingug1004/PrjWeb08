@@ -95,30 +95,33 @@
                         <label class="select margin-bottom-15">
                             <select name="ugender" class="form-control">
                                 <%--<option value="0" selected disabled--%>
-                                <option value="0" selected="" >Gender</option>
+                                <option value="0" selected="" >정치성향</option>
                                 <%--<option value="1">Male</option>--%>
-                                <option value="M" <c:if test="남자">selected</c:if>>Male</option>
+                                <option value="매우 보수적" <c:if test="남자">selected</c:if>>매우 보수적</option>
                                 <%--<option value="2" <c:if test="${여자}">selected</c:if>>Female</option>--%>
                                 <%--<option value="2" <c:if test="${"여자"}">selected</c:if>>Female</option>--%>
                                 <%--<option value="여자" <c:if test="${reg_gender == 2}">selected</c:if>>Female</option>--%>
                                 <%--바로 위 HTTP Status 500 오류 - "${여자}" contains invalid expression(s):
                                     javax.el.ELException: Failed to parse the expression [${여자}]--%>
-                                <option value="F" <c:if test="${reg_gender == 2}">selected</c:if>>Female</option>
-                                <option value="E" <c:if test="${reg_gender == 3}">selected</c:if>>Other</option>
+                                <option value="약간 보수적" <c:if test="${reg_gender == 2}">selected</c:if>>약간 보수적</option>
+                                <option value="중도적" <c:if test="${reg_gender == 3}">selected</c:if>>중도적</option>
+                                <option value="약간 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>약간 진보적</option>
+                                <option value="매우 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>매우 진보적</option>
                             </select>
                         </label>
+                        <%--
                         <div class="row margin-bottom-10">
                             </label>
                             <div class="col-xs-6">
                                 <label class="select">
                                     <select name="umonth" class="form-control">
                                         <option selected="" value="0">Month</option>
-                                        <%--<option>January</option>--%>
-                                        <option value="01" <%--<c:if test="${reg_month == 1}">selected</c:if>--%>>January
+                                        &lt;%&ndash;<option>January</option>&ndash;%&gt;
+                                        <option value="01" &lt;%&ndash;<c:if test="${reg_month == 1}">selected</c:if>&ndash;%&gt;>January
                                         </option>
                                         <option value="02" <c:if test="${reg_month == 2}">selected</c:if>>February
                                         </option>
-                                        <option value="03" <%--<c:if test="${reg_month == 3}">selected</c:if>--%>>March</option>
+                                        <option value="03" &lt;%&ndash;<c:if test="${reg_month == 3}">selected</c:if>&ndash;%&gt;>March</option>
                                         <option value="04" <c:if test="${reg_month == 4}">selected</c:if>>April</option>
                                         <option value="05" <c:if test="${reg_month == 5}">selected</c:if>>May</option>
                                         <option value="06" <c:if test="${reg_month == 6}">selected</c:if>>June</option>
@@ -126,22 +129,22 @@
                                         <option value="08" <c:if test="${reg_month == 8}">selected</c:if>>August</option>
                                         <option value="09" <c:if test="${reg_month == 9}">selected</c:if>>September
                                         </option>
-                                        <%--org.springframework.validation.BeanPropertyBindingResult:
+                                        &lt;%&ndash;org.springframework.validation.BeanPropertyBindingResult:
                                         1 errors Field error in object 'userVO' on field 'umonth':
                                         rejected value [10월]; codes [typeMismatch.userVO.umonth,typeMismatch.umonth,
                                         typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.
                                         DefaultMessageSourceResolvable: codes [userVO.umonth,umonth]; arguments [];
                                         default message [umonth]]; default message [Failed to convert property value of type
                                         [java.lang.String] to required type [int] for property 'umonth';
-                                        nested exception is java.lang.NumberFormatException: For input string: "10월"]--%>
-                                        <%--<option value="10월">October</option>--%>
-                                        <option value="10" <c:if test="${}">selected</c:if>>October
-                                            <%--<option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November--%>
+                                        nested exception is java.lang.NumberFormatException: For input string: "10월"]&ndash;%&gt;
+                                        &lt;%&ndash;<option value="10월">October</option>&ndash;%&gt;
+                                        <option value="10" <c:if test="${reg_month == 10}">selected</c:if>>October
+                                            &lt;%&ndash;<option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November&ndash;%&gt;
                                         <option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November
                                         </option>
-                                        <%--HTTP Status 500 오류 - "${reg_month == 12월}" contains invalid expression(s):
-                                        javax.el.ELException: Failed to parse the expression [${reg_month == 12월}]--%>
-                                        <%--<option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December--%>
+                                        &lt;%&ndash;HTTP Status 500 오류 - "${reg_month == 12월}" contains invalid expression(s):
+                                        javax.el.ELException: Failed to parse the expression [${reg_month == 12월}]&ndash;%&gt;
+                                        &lt;%&ndash;<option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December&ndash;%&gt;
                                         <option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December
                                         </option>
                                     </select>
@@ -154,6 +157,7 @@
                                 <input type="text" name="uyear" placeholder="Year" class="form-control" maxlength="4">
                             </div>
                         </div>
+                        --%>
                         <section>
                             <label class="input">
                                 <input type="text" name="nickname" placeholder="Nickname" class="form-control">

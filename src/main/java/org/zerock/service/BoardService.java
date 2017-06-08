@@ -15,7 +15,7 @@ import java.util.List;
 public interface BoardService {
 
     /**
-     * Regist.
+     * Regist. 글 등록 from SeachBoardController
      *
      * @param board the board
      * @throws Exception the exception
@@ -48,7 +48,7 @@ public interface BoardService {
     public void remove(Integer bno) throws Exception;
 
     /**
-     * List all list.
+     * List all list.     // 정말 무시하자! 옛날 거!
      *
      * @return the list
      * @throws Exception the exception
@@ -83,7 +83,7 @@ public interface BoardService {
     public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 
     /**
-     * List search count int.
+     * List search count int. 게시판 밑 1~10 페이징 버튼
      *
      * @param cri the cri
      * @return the int

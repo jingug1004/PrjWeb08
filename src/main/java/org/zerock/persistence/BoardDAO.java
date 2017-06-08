@@ -48,7 +48,7 @@ public interface BoardDAO {
     public void delete(Integer bno) throws Exception;
 
     /**
-     * List all list.
+     * List all list.     // 정말 무시하자! 옛날 거!
      *
      * @return the list
      * @throws Exception the exception
@@ -86,7 +86,7 @@ public interface BoardDAO {
     //use for dynamic sql
 
     /**
-     * List search list.
+     * List search list. 메인에서 건의사항(기본 자유게시판) 눌렀을 때.
      *
      * @param cri the cri
      * @return the list
@@ -95,7 +95,7 @@ public interface BoardDAO {
     public List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
 
     /**
-     * List search count int.
+     * List search count int. 페이징! 게시판 밑 1~10까지 버튼.
      *
      * @param cri the cri
      * @return the int

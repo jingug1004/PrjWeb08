@@ -188,6 +188,8 @@ public class BoardDAOTest {
         cri.setKeyword("글");
         cri.setSearchType("t");
 
+//        int cate = 1601;
+
         logger.info("lll~~~ ===================================== lll~~~");
 
         List<BoardVO> list = dao.listSearch(cri);

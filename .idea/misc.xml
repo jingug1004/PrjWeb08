@@ -39,16 +39,50 @@
     </properties>
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$USER_HOME$/Desktop/beauty/trunk" />
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$USER_HOME$/Desktop/beauty/trunk/pom.xml" />
+        <option value="$USER_HOME$/Desktop/beauty/Balgre/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="PDMPlugin">
+    <option name="skipTestSources" value="false" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$USER_HOME$/Desktop/beauty/Balgre">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="svn://digiserver.cafe24.com/repo/beauty/Balgre" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/beauty/trunk">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="svn://digiserver.cafe24.com/repo/beauty/Balgre" />
+                  <option value="svn://digiserver.cafe24.com/repo/beauty/branches" />
+                  <option value="svn://digiserver.cafe24.com/repo/beauty/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="svn://digiserver.cafe24.com/repo/beauty/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
 </project>

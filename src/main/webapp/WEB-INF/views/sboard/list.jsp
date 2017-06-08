@@ -16,7 +16,8 @@
             <!-- general form elements -->
             <div class='box'>
                 <div class="box-header with-border">
-                    <h3 class="box-title">Board List</h3>
+                    <%--<h3 class="box-title">Board List</h3>--%>
+                    <h3 class="box-title"></h3>
                 </div>
 
                 <div class='box-body'>
@@ -24,54 +25,52 @@
                     <select name="searchType">
                         <option value="n"
                                 <c:out value="${cri.searchType == null?'selected':''}"/>>
-                            ---
+                            -
                         </option>
                         <option value="t"
                                 <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-                            Title
+                            제목
                         </option>
                         <option value="c"
                                 <c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-                            Content
+                            내용
                         </option>
                         <option value="w"
                                 <c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-                            Writer
+                            작성자
                         </option>
                         <option value="tc"
                                 <c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
-                            Title OR Content
+                            제목 or 내용
                         </option>
                         <option value="cw"
                                 <c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
-                            Content OR Writer
+                            내용 or 작성자
                         </option>
                         <option value="tcw"
                                 <c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
-                            Title OR Content OR Writer
+                            제목 or 내용 or 작성자
                         </option>
                     </select>
 
                     <input type="text" name='keyword' id="keywordInput" value='${cri.keyword }'>
-                    <button id='searchBtn'>Search</button>
-                    <button id='newBtn'>New Board</button>
-
+                    <button id='searchBtn'>검색</button>
+                    <button id='newBtn'>글 쓰기</button>
                 </div>
-
             </div>
-
 
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">LIST PAGING</h3>
+                    <%--<h3 class="box-title">LIST</h3>--%>
+                    <h3 class="box-title"></h3>
                 </div>
                 <div class="box-body">
                     <table class="table table-bordered">
                         <tr>
                             <th style="width: 10px">BNO</th>
                             <th>TITLE</th>
-                            <th>WRITER</th>
-                            <th>REGDATE</th>
+                            <th style="width: 80px">WRITER</th>
+                            <th style="width: 160px">REGDATE</th>
                             <th style="width: 40px">VIEWCNT</th>
                         </tr>
 
@@ -159,7 +158,25 @@
 </script>
 
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
+<%--ex) www.profile.com?name=hyewon&age=25--%>
 <script>
+    function getQuerystring(paramName) {
+
+        var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제
+        var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기
+
+        for (var i = 0; _tempArray.length; i++) {
+            var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기
+
+            if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명
+                // _keyValuePair[1] : 파라미터 값
+                return _keyValuePair[1];
+            }
+        }
+    }
+//    console.log(getQuerystring('name')) // --> 'hyewon' 출력
+//    console.log(getQuerystring('age')) // --> '25' 출력
+
     $(document).ready(function () {
         $('#searchBtn').on("click",
             function (event) {
@@ -171,9 +188,11 @@
             });
 
         $('#newBtn').on("click", function (evt) {
-            self.location = "register";
+            self.location = 'register?cate='
+                + '${getQuerystring(cate)}';
         });
     });
 </script>
+
 
 <%@include file="../include/footer.jsp" %>

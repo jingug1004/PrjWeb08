@@ -24,7 +24,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">MODIFY BOARD</h3>
+                    <h3 class="box-title">MODIFY</h3>
                 </div>
                 <!-- /.box-header -->
 
@@ -68,10 +68,10 @@
                                 value="${boardVO.writer}">
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">File DROP Here</label>
-                            <div class="fileDrop"></div>
-                        </div>
+                        <%--<div class="form-group">--%>
+                            <%--<label for="exampleInputEmail1">File DROP Here</label>--%>
+                            <%--<div class="fileDrop"></div>--%>
+                        <%--</div>--%>
 
                     </div>
                     <!-- /.box-body -->
@@ -256,6 +256,7 @@
 </div>
 <!-- /.content-wrapper -->
 
+<%--
 <!-- Wait Block 메인 화면에서 뜨는 팝업!-->
 <div class="g-popup-wrapper">
     <div class="g-popup g-popup--discount2">
@@ -278,5 +279,7 @@
     </div>
 </div>
 <!-- End Wait Block -->
+--%>
+
 
 <%@include file="../include/footer.jsp" %>

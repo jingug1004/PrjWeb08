@@ -1,6 +1,8 @@
 package org.zerock.persistence;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
@@ -19,6 +21,8 @@ import java.util.Map;
  */
 @Repository
 public class BoardDAOImpl implements BoardDAO {
+
+    private static final Logger logger = LoggerFactory.getLogger(BoardDAOImpl.class);
 
     @Inject
     private SqlSession session;
@@ -46,6 +50,7 @@ public class BoardDAOImpl implements BoardDAO {
         session.delete(namespace + ".delete", bno);
     }
 
+    // 정말 무시하자! 옛날 거!
     @Override
     public List<BoardVO> listAll() throws Exception {
         return session.selectList(namespace + ".listAll");
@@ -65,6 +70,7 @@ public class BoardDAOImpl implements BoardDAO {
 
     @Override
     public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+
         return session.selectList(namespace + ".listCriteria", cri);
     }
 
@@ -73,12 +79,25 @@ public class BoardDAOImpl implements BoardDAO {
         return session.selectOne(namespace + ".countPaging", cri);
     }
 
+//        기본 게시판(건의사항 클릭하고 나서 보여주는 리스트
     @Override
     public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+
+//        Map<String, Object> paramMap = new HashMap<>();
+//
+//        paramMap.put("pageStart", cri.getPageStart());
+//        paramMap.put("perPageNum", cri.getPerPageNum());
+//        paramMap.put("cate", cate);
+
+        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + cri.getPageStart() + " lll~~~");
+        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + cri.getPerPageNum() + " lll~~~");
+        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + cri.getCate() + " lll~~~");
+//        logger.info("lll~~~ cate BoardDAOImpl : " + cate + " lll~~~");
 
         return session.selectList(namespace + ".listSearch", cri);
     }
 
+//    게시판 밑 페이징 (1~10버튼)
     @Override
     public int listSearchCount(SearchCriteria cri) throws Exception {
 

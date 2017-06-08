@@ -6,8 +6,8 @@
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
     <insert id="create">
-        insert into tbl_board (title, content, writer)
-        values(#{title}, #{content}, #{writer})
+        insert into tbl_board (title, content, writer, cnum)
+        values(#{title}, #{content}, #{writer}, 1101)
     </insert>
     <!--boardMapper.xml의 각 SQL 문의 id 속성 값은 BoardDAO 인터페이스와 동일하게 설정해주어서 혼란을 피하는 것이 좋음.-->
 
@@ -30,14 +30,17 @@
         delete from tbl_board where bno = #{bno}
     </delete>
 
+    <!-- 테스트용 무시하자! -->
     <select id="listAll" resultType="org.zerock.domain.BoardVO">
         <![CDATA[
+
          select
            bno, title, content, writer, regdate, viewcnt
          from
            tbl_board
          where bno > 0
          order by bno desc, regdate desc
+
 
         ]]>
     </select>
@@ -46,6 +49,7 @@
     <select id="listPage" resultType="BoardVO">
         <![CDATA[
 
+
          select
            bno, title, content, writer, regdate, viewcnt, replycnt
          from
@@ -53,6 +57,7 @@
          where bno > 0
          order by bno desc, regdate desc
          limit #{page}, 10
+
 
         ]]>
     </select>
@@ -74,6 +79,7 @@
 
     <select id="listCriteria" resultType="BoardVO">
         <![CDATA[
+
          select
            bno, title, content, writer, regdate, viewcnt, replycnt
          from
@@ -81,19 +87,21 @@
          where bno > 0
          order by bno desc, regdate desc
          limit #{pageStart}, #{perPageNum}
+
         ]]>
     </select>
     <!-- pageStart, perPageNum이라는 인라인 파라미터가 존재. 파라미터로 전달되는 객체는 getPageStart(), getPerPageNum()이라는 메소드를 가지면 됨. -->
 
-
     <select id="countPaging" resultType="int">
         <![CDATA[
+
          select
            count(bno)
          from
            tbl_board
          where
            bno > 0
+
         ]]>
     </select>
 
@@ -110,10 +118,12 @@
                 and writer like CONCAT('%', #{keyword}, '%')
             </if>
             <if test="searchType == 'tc'.toString()">
-                and ( title like CONCAT('%', #{keyword}, '%') OR content like CONCAT('%', #{keyword}, '%'))
+                and ( title like CONCAT('%', #{keyword}, '%') OR content like
+                CONCAT('%', #{keyword}, '%'))
             </if>
             <if test="searchType == 'cw'.toString()">
-                and ( content like CONCAT('%', #{keyword}, '%') OR writer like CONCAT('%', #{keyword}, '%'))
+                and ( content like CONCAT('%', #{keyword}, '%') OR writer like
+                CONCAT('%', #{keyword}, '%'))
             </if>
             <if test="searchType == 'tcw'.toString()">
                 and ( title like CONCAT('%', #{keyword}, '%')
@@ -125,26 +135,30 @@
         </if>
     </sql>
 
+    <!-- 기본 게시판(건의사항 클릭하고 나서 보여주는 리스트 -->
     <select id="listSearch" resultType="BoardVO">
         <![CDATA[
-          select *
-          from tbl_board
-          where bno > 0
-        ]]>
+  select *
+  from tbl_board
+  where bno > 0 AND cnum = #{cate}
+]]>
 
         <include refid="search"></include>
 
         <![CDATA[
-          order by bno desc
-          limit #{pageStart}, #{perPageNum}
-        ]]>
-    </select>
+  order by bno desc
+  limit #{pageStart}, #{perPageNum}
+]]>
 
+    </select>
+    <!-- 기본 게시판(건의사항 클릭하고 나서 보여주는 리스트 / cnum 구현 완료 -->
+
+    <!-- 게시판 밑 페이징 (1~10버튼) -->
     <select id="listSearchCount" resultType="int">
         <![CDATA[
           select count(bno)
           from tbl_board
-          where bno > 0
+          where bno > 0 AND cnum = #{cate}
         ]]>
 
         <include refid="search"></include>

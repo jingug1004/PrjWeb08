@@ -91,8 +91,8 @@
 
     <beans:bean id="uploadPath" class="java.lang.String">
         <!--<beans:constructor-arg value="ec2-13-124-8-223.ap-northeast-2.compute.amazonaws.com:8080/tmp/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
-        <!--<beans:constructor-arg value="/tmp/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
-        <beans:constructor-arg value="/Volumes/noname/zzz/upload"></beans:constructor-arg>
+        <beans:constructor-arg value="/Volumes/320G/calling/zzz/upload"></beans:constructor-arg>
+        <!--<beans:constructor-arg value="/Volumes/noname/zzz/upload"></beans:constructor-arg>-->
     </beans:bean>
     <!--<beans:bean id="uploadPath" class="java.lang.String">-->
     <!--<beans:constructor-arg value="C:\\zzz\\upload"></beans:constructor-arg>-->

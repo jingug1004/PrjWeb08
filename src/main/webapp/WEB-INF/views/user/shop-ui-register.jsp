@@ -85,7 +85,7 @@
                                 <DIV style="LINE-HEIGHT: 150%"><SPAN style="FONT-FAMILY: 돋움">&nbsp;</SPAN></DIV>
                                 <DIV style="LINE-HEIGHT: 150%"><SPAN style="FONT-FAMILY: 돋움"><B><FONT
                                         size=2>제1조 (목적)</FONT></B></SPAN></DIV>
-                                <DIV style="LINE-HEIGHT: 150%"><SPAN style="FONT-FAMILY: 돋움"><FONT size=2>이 약관은 김진국 주식회사(이하 "회사")가 운영하는 UNIFY(http://www.unifyshop.co.kr 및 m.unifyshop.co.kr, 이하 "UNIFY")에서 제공하는 전자상거래 관련 서비스(이하 "서비스")를 이용함에 있어 상품 또는 용역을 거래하는 자 간의 권리, 의무 등 기타 필요사항, 회원과 회사간의 권리, 의무, 책임사항 및 회원의 서비스 이용절차 등에 관한 사항을 규정함을 목적으로 합니다.</FONT></SPAN>
+                                <DIV style="LINE-HEIGHT: 150%"><SPAN style="FONT-FAMILY: 돋움"><FONT size=2>이 약관은 개인(이하 "회사")이 운영하는 UNIFY(http://www.unify.co.kr 및 m.unify.com, 이하 "UNIFY")에서 제공하는 전자상거래 관련 서비스(이하 "서비스")를 이용함에 있어 상품 또는 용역을 거래하는 자 간의 권리, 의무 등 기타 필요사항, 회원과 회사간의 권리, 의무, 책임사항 및 회원의 서비스 이용절차 등에 관한 사항을 규정함을 목적으로 합니다.</FONT></SPAN>
                                 </DIV>
                                 <DIV style="LINE-HEIGHT: 150%"><SPAN style="FONT-FAMILY: 돋움">&nbsp;</SPAN></DIV>
                                 <DIV style="LINE-HEIGHT: 150%"><SPAN style="FONT-FAMILY: 돋움"><B><FONT size=2>제2조 (용어의 정의)</FONT></B></SPAN>

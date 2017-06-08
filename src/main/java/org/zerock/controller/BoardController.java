@@ -113,7 +113,8 @@ public class BoardController {
      * @throws Exception the exception
      */
     @RequestMapping(value = "/modify", method = RequestMethod.GET)
-    public void modifyGET(int bno, Model model) throws Exception {
+    public void modifyGET(int bno,
+                          Model model) throws Exception {
 
         model.addAttribute(service.read(bno));
     }

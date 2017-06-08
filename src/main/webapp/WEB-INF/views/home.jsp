@@ -31,7 +31,7 @@ helloworld!
             <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
                 data-title="Slide 1">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/1.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                <img src="assets/img/president01.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
                      data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch1 sft start"
@@ -44,7 +44,7 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-endspeed="300">
                     The New <br>
-                    <strong>Collection</strong><br>
+                    <strong>KOREA</strong><br>
                     is here
                 </div>
 
@@ -69,7 +69,7 @@ helloworld!
             <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
                 data-title="Slide 2">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/5.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                <img src="assets/img/president02.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
                      data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch3 sft start"
@@ -81,7 +81,7 @@ helloworld!
                      data-easing="Back.easeInOut"
                      data-endeasing="Power1.easeIn"
                      data-endspeed="300">
-                    Latest <strong>Fashion</strong> Trends
+                    Latest <strong>LEADER</strong> Trends
                 </div>
 
                 <!-- LAYER -->
@@ -96,7 +96,7 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    새로운 개념의 시대를 앞서가는 패션 <br>
+                    새로운 개념의 시대를 앞서가는 리더 <br>
                     끝없는 도전으로 스스로의 한계 탈피
                 </div>
 
@@ -121,7 +121,7 @@ helloworld!
             <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
                 data-title="Slide 3">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/3.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
+                <img src="assets/img/president03.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
                      data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch3 sft start"
@@ -133,7 +133,7 @@ helloworld!
                      data-easing="Back.easeInOut"
                      data-endeasing="Power1.easeIn"
                      data-endspeed="300">
-                    <strong>Luxury</strong> Watches
+                    <strong>Luxury</strong> Government Administration
                 </div>
 
                 <!-- LAYER -->
@@ -148,8 +148,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    미세한 변화까지 최소화<br/>시계 본연의 멋과 가치,<br/><br/><br/><br/>
-                    원칙을 최대한 지켜 명품 본연의<br/>고귀함을 뼛속까지 그대로 전달<br/>
+                    미세한 소리까지 경청<br/>대통령 본연의 멋과 가치,<br/><br/><br/><br/>
+                    원칙을 최대한 지켜 대통령 본연의<br/>소통을 뼛속까지 그대로 전달<br/>
                 </div>
 
                 <!-- LAYER -->
@@ -173,7 +173,7 @@ helloworld!
             <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
                 data-title="Slide 4">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/2.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
+                <img src="assets/img/president04.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
                      data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch1 sft start"
@@ -185,7 +185,7 @@ helloworld!
                      data-easing="Back.easeInOut"
                      data-endeasing="Power1.easeIn"
                      data-endspeed="300">
-                    Girl's Accesories
+                    Power Accesories
                 </div>
 
                 <!-- LAYER -->
@@ -225,7 +225,7 @@ helloworld!
             <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000"
                 data-title="Slide 5">
                 <!-- MAIN IMAGE -->
-                <img src="assets/img/4.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
+                <img src="assets/img/president05.jpg" alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
                      data-bgrepeat="no-repeat">
 
                 <div class="tp-caption revolution-ch5 sft start"
@@ -237,7 +237,7 @@ helloworld!
                      data-easing="Back.easeInOut"
                      data-endeasing="Power1.easeIn"
                      data-endspeed="300">
-                    <strong>Jeans</strong> Collection
+                    <strong>People</strong> Collection
                 </div>
 
                 <!-- LAYER -->
@@ -252,8 +252,8 @@ helloworld!
                      data-endeasing="Power1.easeIn"
                      data-captionhidden="off"
                      style="z-index: 6">
-                    여러 패션용품으로 삶을 더 즐겁게<br/>바꿀 준비 되셨나요?<br><br/><br/><br/>
-                    단지 입고 세탁하던 모든 것들이<br/>이야기가 넘치는 소재로 바뀝니다.<br/>
+                    여러 목소리로 삶을 더 즐겁게<br/>바꿀 준비 되셨나요?<br><br/><br/><br/>
+                    단지 보고 들었던 모든 것들이<br/>이야기가 넘치는 소재로 바뀝니다.<br/>
                 </div>
 
                 <!-- LAYER -->
@@ -311,7 +311,7 @@ helloworld!
 
     <div class="heading heading-v1 margin-bottom-20">
         <h2>Featured products</h2>
-        <p>새로운 개념의 패션! 혁신적인 방식으로 기존의 고정관념에서 벗어난 디자인과 기능을 선보입니다.<br/>일상 속에 자연스럽게 스며드는 디자인에 실용적인 사용성까지 더한 패션들, 우리가 기다렸던 바로
+        <p>새로운 개념의 정치! 혁신적인 방식으로 기존의 고정관념에서 벗어난 철학과 소통을 선보입니다.<br/>일상 속에 자연스럽게 스며드는 복지에 실용적인 사용성까지 더한 원칙들, 우리가 기다렸던 바로
             그 새로운 시작입니다.
         <p>
     </div>
@@ -724,10 +724,10 @@ helloworld!
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <p>UNIFY는 매출액이 100억에 이르렀으며 UNIFY의 성공에 참여해 주신 모든 고객 여러분께 감사드리고 싶습니다.<br/> <br/><a
+                    <p>UNIFY는 매출액이 목표치에 이르렀으며 UNIFY의 성공에 참여해 주신 모든 고객 여러분께 감사드리고 싶습니다.<br/> <br/><a
                             href="https://youtu.be/VCX5tPdGpmg">https://youtu.be/VCX5tPdGpmg</a>
                     <p>
-                    <p><a href="https://twitter.com/jingug1004">@jingug1004</a></p>
+                    <%--<p><a href="https://twitter.com/jingug1004">@jingug1004</a></p>--%>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -746,7 +746,7 @@ helloworld!
                 <div class="item">
                     <p>21c 새로운 창의적인 것들에 대하여 필요한 모든 것을 보여줍니다. <br/><br/><a href="#">http://publicdomainarchive.com</a>
                     </p>
-                    <p><a href="https://youtu.be/UlqNxG95CRE">@Pope Kim</a></p>
+                    <p><a href="https://youtu.be/UlqNxG95CRE">@Kim</a></p>
                     <ul class="list-inline twitter-icons">
                         <li><a href="#"><i class="fa fa-reply"></i></a></li>
                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -776,9 +776,9 @@ helloworld!
                 <i class="fa fa-truck"></i>
             </div>
             <div class="product-service-in">
-                <h3>Free Delivery</h3>
-                <p>1등 쇼핑은 달라야 합니다.<br/>눈에 보이는 상품,<br/>서비스 혜택은 물론<br/>
-                    보이지 않는 문화, 사랑, 스타일까지<br/>누구나 원하는 것을<br/>얻을 수 있어야 합니다.<br/></p>
+                <h3>Reasonable Delivery</h3>
+                <p>1등 정치는 달라야 합니다.<br/>눈에 보이는 복지,<br/>서비스 혜택은 물론<br/>
+                    보이지 않는 분위기, 안정감, 신뢰까지<br/>누구나 원하는 것을<br/>얻을 수 있어야 합니다.<br/></p>
                 <a href="#">+Read More</a>
             </div>
         </div>
@@ -788,8 +788,8 @@ helloworld!
             </div>
             <div class="product-service-in">
                 <h3>Customer Service</h3>
-                <p>고객이 원하는 것은 무엇이든<br/>만족하고 쇼핑할 수 있도록<br/>UNIFY는 외형의 성장을 넘어<br/>
-                    투명경영, 윤리경영을 바탕으로<br/> 더 큰 고객만족을 위해<br/>최선을 다하고 있습니다.</p>
+                <p>국민이 원하는 것은 무엇이든<br/>만족하고 소통할 수 있도록<br/>UNIFY는 외형의 성장을 넘어<br/>
+                    투명경영, 윤리경영을 바탕으로<br/> 더 큰 만족을 위해<br/>최선을 다하고 있습니다.</p>
                 <a href="#">+Read More</a>
             </div>
         </div>
@@ -799,7 +799,7 @@ helloworld!
             </div>
             <div class="product-service-in">
                 <h3>Free Returns</h3>
-                <p>앞으로도 UNIFY는 보다 가치있는<br/>서비스를 통해 상거래 서비스의<br/>
+                <p>앞으로도 UNIFY는 보다 가치있는<br/>서비스를 통해 사회 무형 서비스의<br/>
                     리더로서 지속적인 혁신을<br/>이루어 나가겠습니다.</p>
                 <a href="#">+Read More</a>
             </div>
@@ -944,8 +944,8 @@ helloworld!
 <div class="collection-banner">
     <div class="container">
         <div class="col-md-7 md-margin-bottom-50">
-            <h2>Makeup collection</h2>
-            <p>특별한 날을 위한 특별한 선택! 주인공은 바로 나!<br>UNIFY는 다양한 스타일과 노하우로 유행에 앞선 Collection을 제공합니다.</p><br>
+            <h2>Life collection</h2>
+            <p>특별한 날을 위한 특별한 선택! 주인공은 바로 나!<br>UNIFY는 다양한 목소리와 소식으로 유행에 앞선 Collection을 제공합니다.</p><br>
             <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Shop Now</a>
         </div>
         <div class="col-md-5">

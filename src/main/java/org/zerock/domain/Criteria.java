@@ -13,6 +13,16 @@ public class Criteria {
 
     private int page;
     private int perPageNum;
+//    private int cate; // 카테고리 넘버
+
+
+//    public int getCate() {
+//        return cate;
+//    }
+//
+//    public void setCate(int cate) {
+//        this.cate = cate;
+//    }
 
     /**
      * 특이한 점은 기본값으로 페이지 번호는 1페이지로 지정하고, 리스트당 데이터의 수는 10으로 지정해서 강제로 부여.
@@ -22,6 +32,7 @@ public class Criteria {
 
         this.page = 1;
         this.perPageNum = 10;
+//        this.cate = 1601;
     }
 
     /**
