@@ -43,18 +43,18 @@
                                       placeholder="Enter ..."></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Writer</label>
+                            <label for="exampleInputEmail1">Writer6</label>
                             <%--<input type="text" name="writer" class="form-control" placeholder="Enter Writer">--%>
                             <%--<input type="text" name="writer" class="form-control" value='${login.uid}' readonly>--%>
                             <%--<input type="text" name="writer" class="form-control" value='${login.uid}' readonly>--%>
                             <input type="text" name="writer" class="form-control" value='${login.nickname}' readonly>
                             <%--JSP에서 사용하는 EL의 경우 자동으로 HttpSession에 있는 'login'을 찾아서 사용하므로 '${loogin.nickname}'와 같은 형태로 사용할 수 있음--%>
                         </div>
-                        <input type="hidden" name="cnum" value="">
+                        <input id="cnumInput" type="hidden" name="cnum" value="1101">
                         <%--<div class="form-group">--%>
-                            <%--<label for="exampleInputEmail1">File DROP Here</label>--%>
-                            <%--<div class="fileDrop"></div>--%>
-                            <%--&lt;%&ndash;첨부파일을 추가할 수 있는 영역&ndash;%&gt;--%>
+                        <%--<label for="exampleInputEmail1">File DROP Here</label>--%>
+                        <%--<div class="fileDrop"></div>--%>
+                        <%--&lt;%&ndash;첨부파일을 추가할 수 있는 영역&ndash;%&gt;--%>
                         <%--</div>--%>
                     </div>
 
@@ -141,7 +141,7 @@
             }
         });
     });
-//    파일이 Ajax로 전송되는 부분의 처리를 보면 getFileInfo() 함수를 이용해서 템플릿에 필요한 객체를 생성. 이후 템플릿을 적용해서 온전한 HTML을 구성한 후 첨부된 파일이 보여지는 $('.uploadedList')의 일부로 추가.
+    //    파일이 Ajax로 전송되는 부분의 처리를 보면 getFileInfo() 함수를 이용해서 템플릿에 필요한 객체를 생성. 이후 템플릿을 적용해서 온전한 HTML을 구성한 후 첨부된 파일이 보여지는 $('.uploadedList')의 일부로 추가.
 
     $(".uploadedList").on("click", ".delbtn", function (event) {
 
@@ -187,6 +187,26 @@
     // 이에 대한 처리는 업로드 된 파일의 이름을 <form> 태그의 내부로 포함시켜서 전송하는 방식을 이용.
 
 
+</script>
+
+<script>
+//    $(document).ready(function () {
+        function getUrlParams() {
+//            var casting = 1;
+            var params = {};
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+                params[key] = value;
+            });
+            return params;
+//            return parseInt("params", 10);
+//            return params * casting;
+        }
+
+        $('#cnumInput').val(getUrlParams().cate);
+//        parseInt($('#cnumInput').val(getUrlParams()), 10);
+//        val 없애도 되는지??????????????? 위의 53라인의 val 없어도 잘 됨.
+        // console.log("cnumInput: " + $('#cnumInput').val('getUrlParams().cate'));
+//    });
 </script>
 
 

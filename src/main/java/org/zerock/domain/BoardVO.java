@@ -18,13 +18,13 @@ public class BoardVO {
     private Date regdate;
     private int viewcnt;
     private int replycnt;
-    private Integer cnum;
+    private int cnum;
 
-    public Integer getCnum() {
+    public int getCnum() {
         return cnum;
     }
 
-    public void setCnum(Integer cnum) {
+    public void setCnum(int cnum) {
         this.cnum = cnum;
     }
 
