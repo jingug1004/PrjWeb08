@@ -10,7 +10,6 @@
         <module name="Balgre (2)" />
         <module name="Web03" />
         <module name="Web06" />
-        <module name="Web07" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
