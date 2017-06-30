@@ -21,6 +21,9 @@ public class PageMaker {
 
     private Criteria cri;
 
+//    private BoardVO boardVO;
+
+
     /**
      * Sets cri.
      *
@@ -153,6 +156,7 @@ public class PageMaker {
         UriComponents uriComponents =
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
+//                        .queryParam("cate", boardVO.getCnum())
                         .queryParam("perPageNum", cri.getPerPageNum())
                         .queryParam("searchType", ((SearchCriteria)cri).getSearchType())
                         .queryParam("keyword", ((SearchCriteria)cri).getKeyword())

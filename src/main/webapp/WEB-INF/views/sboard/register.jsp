@@ -43,7 +43,7 @@
                                       placeholder="Enter ..."></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Writer6</label>
+                            <label for="exampleInputEmail1">Writer</label>
                             <%--<input type="text" name="writer" class="form-control" placeholder="Enter Writer">--%>
                             <%--<input type="text" name="writer" class="form-control" value='${login.uid}' readonly>--%>
                             <%--<input type="text" name="writer" class="form-control" value='${login.uid}' readonly>--%>
@@ -162,6 +162,12 @@
         });
     });
 
+    function getUrlParams() {
+        var params = {};
+        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+        return params;
+    }
+
 
     $("#registerForm").submit(function (event) {
         event.preventDefault();
@@ -182,6 +188,13 @@
 
         that.get(0).submit();
         // jQuery의 get(0)은 순수한 DOM 객체를 얻어내기 위해서 사용.
+
+//        window.onLoad = function() {
+//            oParams = getUrlParams();
+//        }
+
+        self.location = 'list?cate='
+            + getUrlParams().cate;
     });
     // 최종적인 submit이 일어나게 되면, 서버에는 사용자가 업로드 한 파일의 정보를 같이 전송해줘야 함.
     // 이에 대한 처리는 업로드 된 파일의 이름을 <form> 태그의 내부로 포함시켜서 전송하는 방식을 이용.

@@ -12,6 +12,7 @@ import org.zerock.domain.SearchCriteria;
 import org.zerock.service.BoardService;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -169,16 +170,20 @@ public class SearchBoardController {
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registPOST(BoardVO board,
-                             RedirectAttributes rttr) throws Exception {
+                             RedirectAttributes rttr,
+                             HttpServletRequest httpServletRequest) throws Exception {
 
         logger.info("lll~~~ regist post ........... lll~~~");
         logger.info(board.toString());
 
         service.regist(board);
 
-        rttr.addFlashAttribute("msg", "SUCCESS");
+        rttr.addFlashAttribute("msg", "success");
 
-        return "redirect:/sboard/list";
+        int cateInt = Integer.parseInt(httpServletRequest.getParameter("cate"));
+
+
+        return "redirect:/sboard/list?cate=" + cateInt;
     }
 
     /**
