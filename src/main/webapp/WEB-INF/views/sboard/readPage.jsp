@@ -68,6 +68,10 @@
                     <input type='hidden' name='bno' value="${boardVO.bno}">
                     <%-- 조회 화면의 경우 나중에 수정이나 삭제 작업에서 사용되기 때문에 반드시 원래 게시물 번호인 bno를 가지고 있어야만 함.
                     가장 먼저 선언된 <form> 태그를 보면 type='hidden'을 이용해서 bno 값을 처리하는 것을 볼 수 있음. --%>
+
+                    <input id='cnumToList' type='hidden' name='cate' value="">
+                    <%-- URL 전달하기 위한 jQuery().value(); 사용! --%>
+
                     <input type='hidden' name='page' value="${cri.page}">
                     <input type='hidden' name='perPageNum' value="${cri.perPageNum}">
                     <%-- BoardController의 read 메소드 파라미터를 받아서 뿌려줄 <input>태그. 세 개의 정보를 다 가짐. --%>
@@ -75,7 +79,6 @@
                     <input type='hidden' name='searchType' value="${cri.searchType}">
                     <input type='hidden' name='keyword' value="${cri.keyword}">
                 </form>
-
 
                 <div class="box-body">
                     <div class="form-group">
@@ -479,6 +482,13 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
 
 <script>
+
+//    function getUrlParams() {
+//        var params = {};
+//        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+//        return params;
+//    };
+
     $(document).ready(function () {
 
         var formObj = $("form[role='form']");
@@ -486,12 +496,25 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         console.log(formObj);
 
-
         <%--Tip01.게시물 댓글 페이지(리스트) 클릭 안하고 바로 보여주고 싶을 때 --%>
         <%--var bno = ${boardVO.bno};--%>
 
         <%--getPage("/replies/"+bno+"/1");--%>
         <%-- --------------------------------------------------- --%>
+
+        function getUrlParams() {
+            var params = {};
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+            return params;
+        };
+
+        $("#cnumToList").val(getUrlParams().cate);
+
+//        window.onload = function() {
+//            var oParams = getUrlParams();
+//        };
+
+        console.log("lll~~~ oParams : " + getUrlParams().cate );
 
         $("#modifyBtn").on("click", function () {
             formObj.attr("action", "/sboard/modifyPage");
@@ -503,7 +526,6 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
          formObj.attr("action", "/sboard/removePage");
          formObj.submit();
          }); */
-
 
         $("#removeBtn").on("click", function () {
 
@@ -532,11 +554,13 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         // 첨부파일 삭제 이후에 바로 <form> 태그를 이용해서 데이터베이스의 삭제를 처리할 것이므로, 성공이나 실패를 기다리지 않고, 바로 '/sboard/removePage'를 호출하는 형태로 작성.
 
         $("#goListBtn ").on("click", function () {
+
             formObj.attr("method", "get");
             formObj.attr("action", "/sboard/list");
+//            formObj.attr("action", "/sboard/list?cate=" + oParams.cate);
             formObj.submit();
         });
-//        "${boardVO.bno}", "${cri.page}", "${cri.perPageNum}" 의 정보를 이용하는 방식으로 변경 되었음.
+//        "{boardVO.bno}", "{cri.page}", "{cri.perPageNum}" 의 정보를 이용하는 방식으로 변경 되었음.
 
 //        $.getJSON("/replies/all/" + bno, function (data) {
 //            //console.log(data.length);

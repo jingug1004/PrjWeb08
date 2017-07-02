@@ -44,16 +44,24 @@ public class SearchBoardController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public void listPage(@ModelAttribute("cri") SearchCriteria cri,
 //                         @RequestParam("cate") int cate,
-                         Model model) throws Exception {
+                         Model model,
+                         BoardVO boardVO,
+                         @RequestParam("cate") int cateNum) throws Exception {
 
         logger.info("lll~~~ cri.toString() : " + cri.toString() + " lll~~~");
 //        logger.info("lll~~~ cate : " + cate + " lll~~~");
+
+        // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
+        boardVO.setCnum(cateNum);
 
         // model.addAttribute("list", service.listCriteria(cri));
         model.addAttribute("list", service.listSearchCriteria(cri));
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(cri);
+
+        // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
+        pageMaker.setCnumFromBoardVO(boardVO.getCnum());
 
         // pageMaker.setTotalCount(service.listCountCriteria(cri));
         pageMaker.setTotalCount(service.listSearchCount(cri));
@@ -89,12 +97,17 @@ public class SearchBoardController {
      */
     @RequestMapping(value = "/removePage", method = RequestMethod.POST)
     public String remove(@RequestParam("bno") int bno,
+                         @RequestParam("cate") int cateNum,
                          SearchCriteria cri,
                          RedirectAttributes rttr) throws Exception {
 
         service.remove(bno);
 
         rttr.addAttribute("page", cri.getPage());
+
+        // RedirectAttributes 추가하면 URL 전달 가능 => 밑의 리턴값 "redirect: ... " 와 같겠지?
+        rttr.addAttribute("cate", cateNum);
+
         rttr.addAttribute("perPageNum", cri.getPerPageNum());
         rttr.addAttribute("searchType", cri.getSearchType());
         rttr.addAttribute("keyword", cri.getKeyword());
@@ -132,12 +145,17 @@ public class SearchBoardController {
     @RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
     public String modifyPagingPOST(BoardVO board,
                                    SearchCriteria cri,
-                                   RedirectAttributes rttr) throws Exception {
+                                   RedirectAttributes rttr,
+                                   @RequestParam("cate") int cateNum) throws Exception {
 
         logger.info(cri.toString());
         service.modify(board);
 
         rttr.addAttribute("page", cri.getPage());
+
+        // remove 메서드와 같이 RedirectAttributes의 GET 형식으로 URL을 전달하기 위해서. cate 어트리뷰트 추가!
+        rttr.addAttribute("cate", cateNum);
+
         rttr.addAttribute("perPageNum", cri.getPerPageNum());
         rttr.addAttribute("searchType", cri.getSearchType());
         rttr.addAttribute("keyword", cri.getKeyword());

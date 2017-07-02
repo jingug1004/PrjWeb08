@@ -55,7 +55,7 @@
 
                     <input type="text" name='keyword' id="keywordInput" value='${cri.keyword }'>
                     <button id='searchBtn'>검색</button>
-                    <button id='newBtn'>글 쓰기</button>
+                    <button id='newBtn'>글 쓰기0</button>
                 </div>
             </div>
 
