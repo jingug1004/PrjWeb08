@@ -63,7 +63,7 @@
                         <div class="form-group">
                             <%--@declare id="exampleinputpassword1"--%>
                             <label for="exampleInputPassword1">Content</label>
-                            <textarea class="form-control" name="content" rows="3">${boardVO.content}</textarea>
+                            <textarea class="form-control" name="content" rows="20">${boardVO.content}</textarea>
                         </div>
 
                         <div class="form-group">
