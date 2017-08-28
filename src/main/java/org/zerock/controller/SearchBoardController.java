@@ -69,6 +69,23 @@ public class SearchBoardController {
         model.addAttribute("pageMaker", pageMaker);
     }
 
+    @RequestMapping(value = "/listAny", method = RequestMethod.GET)
+    public void listAnyPage(@ModelAttribute("cri") SearchCriteria criteria,
+                            Model model) throws Exception {
+
+        logger.info(criteria.toString());
+
+        model.addAttribute("listAny", service.listSearchCriteria(criteria));
+
+        PageMaker pageMaker = new PageMaker();
+        pageMaker.setCri(criteria);
+
+        pageMaker.setTotalCount(service.listSearchCount(criteria));
+
+        model.addAttribute("pageMakerAny", pageMaker);
+
+    }
+
     /**
      * Read.
      *

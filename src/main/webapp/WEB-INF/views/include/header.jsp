@@ -555,10 +555,10 @@
 
         $(document).ready(function () {
             $('#searchBtn').on("click", function (e) {
-                self.location = "list"
+                self.location = "listAny"
                     + '${pageMaker.makeQuery(1)}'
-                    + '&searchType=tcw'
-//                    + $().val()
+                    // + '&searchType=tcw'
+                    // + $().val()
                     + '&keyword=' + $('#keywordInput').val();
             });
 

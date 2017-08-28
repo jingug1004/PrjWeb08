@@ -24,8 +24,6 @@ public class PageMaker {
     private int cnumFromBoardVO;
 
 
-
-
     public int getCnumFromBoardVO() {
         return cnumFromBoardVO;
     }
@@ -161,7 +159,7 @@ public class PageMaker {
      * @param page the page
      * @return the string
      */
-    public String makeSearch(int page){
+    public String makeSearch(int page) {
 
         UriComponents uriComponents =
                 UriComponentsBuilder.newInstance()
@@ -169,8 +167,20 @@ public class PageMaker {
                         .queryParam("cate", getCnumFromBoardVO())
 //                        .queryParam("cate", 1101)
                         .queryParam("perPageNum", cri.getPerPageNum())
-                        .queryParam("searchType", ((SearchCriteria)cri).getSearchType())
-                        .queryParam("keyword", ((SearchCriteria)cri).getKeyword())
+                        .queryParam("searchType", ((SearchCriteria) cri).getSearchType())
+                        .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
+                        .build();
+
+        return uriComponents.toUriString();
+    }
+
+    public String makeSearchAll(int page) {
+
+        UriComponents uriComponents =
+                UriComponentsBuilder.newInstance()
+                        .queryParam("page", page)
+                        .queryParam("perPageNum", cri.getPerPageNum())
+                        .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
                         .build();
 
         return uriComponents.toUriString();

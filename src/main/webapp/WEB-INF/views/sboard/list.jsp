@@ -163,7 +163,9 @@
 <script>
     function getUrlParams() {
         var params = {};
-        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+            params[key] = value;
+        });
         return params;
     }
 
@@ -177,14 +179,14 @@
                     + "&keyword=" + $('#keywordInput').val();
             });
 
-        window.onload = function() {
+        window.onload = function () {
             oParams = getUrlParams();
         }
 
         $('#newBtn').on("click", function (evt) {
             self.location = 'register?cate='
                 + oParams.cate;
-                <%--+ '${getQuerystring(cate)}';--%>
+            <%--+ '${getQuerystring(cate)}';--%>
         });
     });
 </script>
