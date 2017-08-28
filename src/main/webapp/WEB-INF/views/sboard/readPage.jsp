@@ -103,7 +103,7 @@
                 </div>
 
                 <!-- /.box-body -->
-                <div class="box-footer">
+                <div class="box-footer text-right">
 
                     <div>
                         <hr/>
@@ -114,10 +114,10 @@
                     <%--조회 페이지에서 기존에 업로드 된 파일들이 보여질 수 있는 영역을 작성하고, upload.js와 handlebars를 설정.--%>
 
                     <c:if test="${login.nickname == boardVO.writer}">
-                        <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
-                        <button type="submit" class="btn btn-danger" id="removeBtn">Remove</button>
+                        <button type="submit" class="btn btn-warning" id="modifyBtn">수정</button>
+                        <button type="submit" class="btn btn-danger" id="removeBtn">삭제</button>
                     </c:if>
-                    <button type="submit" class="btn btn-primary" id="goListBtn">Go List</button>
+                    <button type="submit" class="btn btn-primary" id="goListBtn">메뉴</button>
                 </div>
 
             </div>
@@ -133,22 +133,22 @@
 
             <div class="box box-success">
                 <div class="box-header">
-                    <h3 class="box-title">ADD NEW REPLY</h3>
+                    <h3 class="box-title">댓글</h3>
                 </div>
                 <c:if test="${not empty login}">
                     <div class="box-body">
                             <%--@declare id="exampleinputemail1"--%>
-                        <label for="exampleInputEmail1">Writer</label>
+                        <label for="exampleInputEmail1">작성자</label>
                         <input class="form-control" type="text" placeholder="USER ID" id="newReplyWriter"
                                value="${login.nickname}" readonly="readonly">
-                        <label for="exampleInputEmail1">Reply Text</label>
+                        <label for="exampleInputEmail1">댓글</label>
                         <input class="form-control" type="text" placeholder="Reply TEXT" id="newReplyText">
                     </div>
                     <!--/.box-body-->
 
-                    <div class="box-footer">
+                    <div class="box-footer text-right">
                         <button type="submit" class="btn btn-primary" id="replyAddBtn">
-                            Add Reply
+                            댓글 추가
                         </button>
                     </div>
                 </c:if>
@@ -176,7 +176,7 @@
                 <!-- timeline time label -->
                 <li class="time-label" id="repliesDiv">
                     <span class="bg-green">
-                        Replies List <small id='replycntSmall'> [ ${boardVO.replycnt} ]
+                        댓글 리스트 <small id='replycntSmall'> [ ${boardVO.replycnt} ]
                     </small></span>
                 </li>
             </ul>
@@ -205,10 +205,10 @@
                 <div class="modal-body" data-rno>
                     <p><input type="text" id="replytext" class="form-control"></p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-info" id="replyModBtn">Modify</button>
-                    <button type="button" class="btn btn-danger" id="replyDelBtn">Delete</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-footer text-right">
+                    <button type="button" class="btn btn-info" id="replyModBtn">수정</button>
+                    <button type="button" class="btn btn-danger" id="replyDelBtn">삭제</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
                 </div>
             </div>
         </div>
@@ -265,7 +265,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             <div class="timeline-body">{{replytext}}</div>
             <div class="timeline-footer">
                 {{#eqReplyer replyer }}
-                <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modifyModal">Modify</a>
+                <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modifyModal">댓글 수정</a>
                 {{/eqReplyer}}
             </div>
         </div>

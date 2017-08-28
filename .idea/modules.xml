@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Desktop/beauty/Balgre/Balgre (1).iml" filepath="$USER_HOME$/Desktop/beauty/Balgre/Balgre (1).iml" />
-      <module fileurl="file://$USER_HOME$/Desktop/beauty/trunk/Balgre (2).iml" filepath="$USER_HOME$/Desktop/beauty/trunk/Balgre (2).iml" />
-      <module fileurl="file://$PROJECT_DIR$/Web06.iml" filepath="$PROJECT_DIR$/Web06.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/downedGit/PrjWeb07-master/PrjWeb07-master/Web07.iml" filepath="$USER_HOME$/Desktop/downedGit/PrjWeb07-master/PrjWeb07-master/Web07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Web08.iml" filepath="$PROJECT_DIR$/Web08.iml" />
     </modules>
   </component>
 </project>

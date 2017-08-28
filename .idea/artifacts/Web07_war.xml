@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="Web07:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
+    <output-path>$USER_HOME$/Desktop/downedGit/PrjWeb07-master/PrjWeb07-master/target</output-path>
     <root id="archive" name="Web07-1.0.0-BUILD-SNAPSHOT.war">
       <element id="artifact" artifact-name="Web07:war exploded" />
     </root>

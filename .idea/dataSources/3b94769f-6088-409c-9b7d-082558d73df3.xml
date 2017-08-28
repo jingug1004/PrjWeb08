@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="book_ex@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
     <root id="1"/>
     <schema id="2" parent="1" name="book_ex">
       <Current>1</Current>
@@ -424,7 +424,7 @@
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>city</RefTableName>
       <RefColNames>city_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="115" parent="18" name="category_id">
       <Position>1</Position>
@@ -481,7 +481,7 @@
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>country</RefTableName>
       <RefColNames>country_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="126" parent="20" name="country_id">
       <Position>1</Position>
@@ -569,14 +569,14 @@
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>store</RefTableName>
       <RefColNames>store_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="144" parent="21" name="fk_customer_address">
       <ColNames>address_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>address</RefTableName>
       <RefColNames>address_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <trigger id="145" parent="21" name="customer_create_date">
       <Turn>before-row</Turn>
@@ -665,14 +665,14 @@
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>language</RefTableName>
       <RefColNames>language_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="164" parent="22" name="fk_film_language_original">
       <ColNames>original_language_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>language</RefTableName>
       <RefColNames>language_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <trigger id="165" parent="22" name="ins_film">
       <Turn>after-row</Turn>
@@ -715,14 +715,14 @@ film_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>actor</RefTableName>
       <RefColNames>actor_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="174" parent="23" name="fk_film_actor_film">
       <ColNames>film_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>film</RefTableName>
       <RefColNames>film_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="175" parent="24" name="film_id">
       <Position>1</Position>
@@ -753,14 +753,14 @@ category_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>film</RefTableName>
       <RefColNames>film_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="181" parent="24" name="fk_film_category_category">
       <ColNames>category_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>category</RefTableName>
       <RefColNames>category_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="182" parent="25" name="film_id">
       <Position>1</Position>
@@ -822,14 +822,14 @@ film_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>film</RefTableName>
       <RefColNames>film_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="195" parent="26" name="fk_inventory_store">
       <ColNames>store_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>store</RefTableName>
       <RefColNames>store_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="196" parent="27" name="language_id">
       <Position>1</Position>
@@ -906,21 +906,21 @@ film_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>customer</RefTableName>
       <RefColNames>customer_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="212" parent="28" name="fk_payment_staff">
       <ColNames>staff_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>staff</RefTableName>
       <RefColNames>staff_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="213" parent="28" name="fk_payment_rental">
       <ColNames>rental_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>rental</RefTableName>
       <RefColNames>rental_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
     <trigger id="214" parent="28" name="payment_date">
@@ -993,21 +993,21 @@ customer_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>inventory</RefTableName>
       <RefColNames>inventory_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="229" parent="29" name="fk_rental_customer">
       <ColNames>customer_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>customer</RefTableName>
       <RefColNames>customer_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="230" parent="29" name="fk_rental_staff">
       <ColNames>staff_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>staff</RefTableName>
       <RefColNames>staff_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <trigger id="231" parent="29" name="rental_date">
       <Turn>before-row</Turn>
@@ -1083,14 +1083,14 @@ customer_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>address</RefTableName>
       <RefColNames>address_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="247" parent="30" name="fk_staff_store">
       <ColNames>store_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>store</RefTableName>
       <RefColNames>store_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="248" parent="31" name="store_id">
       <Position>1</Position>
@@ -1134,14 +1134,14 @@ customer_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>staff</RefTableName>
       <RefColNames>staff_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <foreign-key id="257" parent="31" name="fk_store_address">
       <ColNames>address_id</ColNames>
       <RefSchemaName>sakila</RefSchemaName>
       <RefTableName>address</RefTableName>
       <RefColNames>address_id</RefColNames>
-      <OnUpdate>update</OnUpdate>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="258" parent="32" name="actor_id">
       <Position>1</Position>

@@ -10,8 +10,6 @@
 <section class="content">
     <div class="row">
         <!-- left column -->
-
-
         <div class="col-md-12">
             <!-- general form elements -->
             <div class='box'>
@@ -20,12 +18,12 @@
                     <h3 class="box-title"></h3>
                 </div>
 
-                <div class='box-body'>
+                <div class='box-body text-right'>
 
                     <select name="searchType">
                         <option value="n"
                                 <c:out value="${cri.searchType == null?'selected':''}"/>>
-                            -
+                            검색 옵션
                         </option>
                         <option value="t"
                                 <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
@@ -53,9 +51,9 @@
                         </option>
                     </select>
 
-                    <input type="text" name='keyword' id="keywordInput" value='${cri.keyword }'>
-                    <button id='searchBtn'>검색</button>
-                    <button id='newBtn'>글 쓰기0</button>
+                    <input type="text" name='keyword' id="keywordInput" value='${cri.keyword}'>
+                    <button id='searchBtn' class="btn btn-primary">검색</button>
+                    <%--<button id='newBtn'>글 쓰기0</button>--%>
                 </div>
             </div>
 
@@ -71,7 +69,7 @@
                             <th>TITLE</th>
                             <th style="width: 80px">WRITER</th>
                             <th style="width: 160px">REGDATE</th>
-                            <th style="width: 40px">VIEWCNT</th>
+                            <th style="width: 40px">VIEW</th>
                         </tr>
 
                         <%--<c:forEach items="${list}" var="boardVO">--%>
@@ -100,7 +98,7 @@
                                 <td>${boardVO.writer}</td>
                                 <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
                                                     value="${boardVO.regdate}"/></td>
-                                <td><span class="badge bg-red">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
                             </tr>
 
                         </c:forEach>
@@ -109,6 +107,9 @@
                 </div>
                 <!-- /.box-body -->
 
+                <div>
+                    <button id='newBtn' class="btn btn-primary pull-right">글 쓰기</button>
+                </div>
 
                 <div class="box-footer">
 

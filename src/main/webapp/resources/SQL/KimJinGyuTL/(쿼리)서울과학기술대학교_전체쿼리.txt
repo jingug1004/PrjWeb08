@@ -1,0 +1,598 @@
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100087} Connection
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100087} Preparing Statement:    SELECT COUNT(*)    FROM   (   SELECT       NVL(REAL_SURP_AMT1,0) SCHL_SURP_AMT1    , NVL(REAL_SURP_AMT2,0) SCHL_SURP_AMT2    , NVL(REAL_SURP_AMT3,0) SCHL_SURP_AMT3    , NVL(REAL_SURP_AMT4,0) SCHL_SURP_AMT4    , NVL(REAL_SURP_AMT5,0) SCHL_SURP_AMT5     FROM T_BIZ_INFO     A          , T_BIZ_MNG_INFO B         , (       SELECT DISTINCT (A.BIZ_YR) BIZ_YR, (A.BIZ_CD)BIZ_CD        FROM T_BIZ_SURP_TRGT_INFO A            , T_INSTN_INFO         B        , T_SCH_INFO           C      WHERE A.EXE_INSTN_CD = B.INSTN_CD           AND B.BLN_SCHL_CD  = C.INSTN_CD           AND A.BIZ_EXE_END_YN = 'Y'            AND A.BIZ_YR       = ?                        ) C        ,(      SELECT A.BIZ_YR              BIZ_YR           , A.BIZ_CD              BIZ_CD           , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT        FROM T_BIZ_SURP_TRGT_INFO A           , T_BIZT_INFO          B       WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID          AND A.BIZ_EXE_END_YN = 'Y'         AND A.BIZ_YR           = ?       GROUP BY A.BIZ_YR, A.BIZ_CD          )F         ,(               SELECT BIZ_YR, BIZ_CD                 , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1                 , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2                 , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3                 , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4                 , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5               FROM (                    SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                        , B.REAL_SURP_AMT  REAL_SURP_AMT1                        , 0 REAL_SURP_AMT2                        , 0 REAL_SURP_AMT3                        , 0 REAL_SURP_AMT4                        , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , B.REAL_SURP_AMT  REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , B.REAL_SURP_AMT  REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , B.REAL_SURP_AMT  REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , B.REAL_SURP_AMT  REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                )                GROUP BY BIZ_YR, BIZ_CD              ) G    WHERE A.BIZ_CD             = B.BIZ_CD           AND B.BIZ_CD   = C.BIZ_CD       AND B.BIZ_YR      = C.BIZ_YR       AND B.BIZ_CD   = F.BIZ_CD(+)       AND B.BIZ_YR   = F.BIZ_YR(+)          AND B.BIZ_CD   = G.BIZ_CD       AND B.BIZ_YR   = G.BIZ_YR                AND NVL(B.PNOTI_YN,'N') = 'Y'            AND            A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */                            AND B.BIZ_YR         =  ?             AND                 F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = ?                                          )   WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {pstm-100088} Executing Statement:
+
+		SELECT COUNT(*)
+		FROM
+		(
+		SELECT
+			  NVL(REAL_SURP_AMT1,0) SCHL_SURP_AMT1
+			, NVL(REAL_SURP_AMT2,0) SCHL_SURP_AMT2
+			, NVL(REAL_SURP_AMT3,0) SCHL_SURP_AMT3
+			, NVL(REAL_SURP_AMT4,0) SCHL_SURP_AMT4
+			, NVL(REAL_SURP_AMT5,0) SCHL_SURP_AMT5
+		  FROM T_BIZ_INFO     A
+		     , T_BIZ_MNG_INFO B
+		     , (
+					SELECT DISTINCT (A.BIZ_YR) BIZ_YR, (A.BIZ_CD)BIZ_CD
+					  FROM T_BIZ_SURP_TRGT_INFO A
+					     , T_INSTN_INFO         B
+						 , T_SCH_INFO           C
+					WHERE A.EXE_INSTN_CD = B.INSTN_CD
+				      AND B.BLN_SCHL_CD  = C.INSTN_CD
+				      AND A.BIZ_EXE_END_YN = 'Y'
+				      AND A.BIZ_YR       = '2012'
+		       ) C
+		     ,(
+					SELECT A.BIZ_YR              BIZ_YR
+					     , A.BIZ_CD              BIZ_CD
+					     , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT
+					  FROM T_BIZ_SURP_TRGT_INFO A
+					     , T_BIZT_INFO          B
+					 WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID
+					   AND A.BIZ_EXE_END_YN = 'Y'
+					   AND A.BIZ_YR           = '2012'
+					 GROUP BY A.BIZ_YR, A.BIZ_CD
+		       )F
+		      ,(
+              SELECT BIZ_YR, BIZ_CD
+                , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1
+                , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2
+                , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3
+                , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4
+                , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5
+              FROM (
+                   SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                       , B.REAL_SURP_AMT  REAL_SURP_AMT1
+                       , 0 REAL_SURP_AMT2
+                       , 0 REAL_SURP_AMT3
+                       , 0 REAL_SURP_AMT4
+                       , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('51027000',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+               )
+               GROUP BY BIZ_YR, BIZ_CD
+             ) G
+		 WHERE A.BIZ_CD             = B.BIZ_CD
+			   AND B.BIZ_CD 		= C.BIZ_CD
+			   AND B.BIZ_YR 	    = C.BIZ_YR
+			   AND B.BIZ_CD 		= F.BIZ_CD(+)
+			   AND B.BIZ_YR 		= F.BIZ_YR(+)
+			   AND B.BIZ_CD 		= G.BIZ_CD
+			   AND B.BIZ_YR 		= G.BIZ_YR
+	   	       AND NVL(B.PNOTI_YN,'N') = 'Y'
+	   	      AND
+			  	   A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */
+	   	       AND B.BIZ_YR 	       =  '2012'
+		   AND
+			       F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = 'K010001'
+		)
+		WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')
+
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100090} Connection
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100090} Preparing Statement:        /*   페이징 상단 시작  */    SELECT     *     FROM     ( SELECT /*+ FIRST_ROWS(n) */        PAGING_A.*        , ROWNUM AS PAGING_RNUM       FROM       (    /*  페이징 상단 끝  */        SELECT *   FROM   (    SELECT            B.BIZ_YR                                       BIZ_YR         , A.BIZ_CD                                       BIZ_CD         , A.BIZ_NM                                       BIZ_NM                     , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD)        GVM_INSTN_NM          , F_GET_INSTN_NM('BF_INSTN', A.BF_GVM_INSTN_CD)                  BF_GVM_INSTN_NM                     , F_GET_COMMN_NM(BIZ_PRPS_TYP)                                     BIZ_PRPS_TYP         , F_GET_SURP_TYP_NM(B.BIZ_YR, A.BIZ_CD)           SURP_UNIT_TYP_NM         , F_GET_COMMN_NM(SURP_AMT_DCISN_WAY)                               SURP_AMT_DCISN_WAY         , TRIM(TO_CHAR(NVL(F.REAL_SURP_AMT,'0'),'9,999,999,999,999'))   REAL_SURP_AMT      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT1,0),'9,999,999,999,999'))         SCHL_SURP_AMT1      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT2,0),'9,999,999,999,999'))         SCHL_SURP_AMT2      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT3,0),'9,999,999,999,999'))         SCHL_SURP_AMT3      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT4,0),'9,999,999,999,999'))         SCHL_SURP_AMT4      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT5,0),'9,999,999,999,999'))         SCHL_SURP_AMT5      FROM T_BIZ_INFO A         , T_BIZ_MNG_INFO B         , (            SELECT BIZ_YR, BIZ_CD              FROM (                    SELECT BIZ_YR, BIZ_CD                      FROM (                               SELECT A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP                               FROM T_BIZ_SURP_TRGT_INFO A              , T_INSTN_INFO         B             , T_SCH_INFO           C            WHERE A.EXE_INSTN_CD  = B.INSTN_CD            AND B.BLN_SCHL_CD  = C.INSTN_CD            AND A.BIZ_EXE_END_YN = 'Y'             AND A.BIZ_YR       = ?                                            GROUP BY A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP                             )                        GROUP BY BIZ_YR, BIZ_CD                    )           ) C         ,(       SELECT A.BIZ_YR              BIZ_YR            , A.BIZ_CD              BIZ_CD            , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT         FROM T_BIZ_SURP_TRGT_INFO A            , T_BIZT_INFO          B        WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID           AND A.BIZ_EXE_END_YN = 'Y'          AND BIZ_YR             = ?        GROUP BY A.BIZ_YR, A.BIZ_CD           )F          ,(               SELECT BIZ_YR, BIZ_CD                 , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1                 , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2                 , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3                 , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4                 , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5               FROM (                    SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                        , B.REAL_SURP_AMT  REAL_SURP_AMT1                        , 0 REAL_SURP_AMT2                        , 0 REAL_SURP_AMT3                        , 0 REAL_SURP_AMT4                        , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , B.REAL_SURP_AMT  REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , B.REAL_SURP_AMT  REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                       AND A.BIZ_EXE_END_YN = 'Y'                      AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , B.REAL_SURP_AMT  REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                       AND A.BIZ_EXE_END_YN = 'Y'                      AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , B.REAL_SURP_AMT  REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                       AND A.BIZ_EXE_END_YN = 'Y'                      AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                )                GROUP BY BIZ_YR, BIZ_CD              ) G     WHERE A.BIZ_CD   = B.BIZ_CD        AND B.BIZ_CD   = C.BIZ_CD       AND B.BIZ_YR      = C.BIZ_YR       AND B.BIZ_CD   = F.BIZ_CD(+)       AND B.BIZ_YR   = F.BIZ_YR(+)           AND B.BIZ_CD   = G.BIZ_CD       AND B.BIZ_YR   = G.BIZ_YR             AND NVL(B.PNOTI_YN,'N') = 'Y'            AND            A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */                      AND B.BIZ_YR      =  ?                 AND                 F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = ?                                            ORDER BY A.BIZ_NM, A.BIZ_CD     )    WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')      /*  페이징 하단 시작  */      ) PAGING_A           WHERE                ROWNUM <= ?*?    ) PAGING_B   WHERE PAGING_RNUM > ?*(?-1)   /*  페이징 하단 끝  */
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {pstm-100091} Executing Statement:
+
+			/*   페이징 상단 시작  */
+			SELECT
+			 *
+			FROM
+			 ( SELECT /*+ FIRST_ROWS(n) */
+			   PAGING_A.*
+			   , ROWNUM AS PAGING_RNUM
+			  FROM
+			   (
+			/*  페이징 상단 끝  */
+		SELECT *
+		FROM
+		(
+			SELECT
+			       B.BIZ_YR                                 						BIZ_YR
+			     , A.BIZ_CD                                 						BIZ_CD
+			     , A.BIZ_NM                                 						BIZ_NM
+			  	   , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD)  						GVM_INSTN_NM
+			  	   , F_GET_INSTN_NM('BF_INSTN', A.BF_GVM_INSTN_CD)                  BF_GVM_INSTN_NM
+			     , F_GET_COMMN_NM(BIZ_PRPS_TYP)                                     BIZ_PRPS_TYP
+			     , F_GET_SURP_TYP_NM(B.BIZ_YR, A.BIZ_CD)     						SURP_UNIT_TYP_NM
+			     , F_GET_COMMN_NM(SURP_AMT_DCISN_WAY)                               SURP_AMT_DCISN_WAY
+			     , TRIM(TO_CHAR(NVL(F.REAL_SURP_AMT,'0'),'9,999,999,999,999')) 		REAL_SURP_AMT
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT1,0),'9,999,999,999,999'))         SCHL_SURP_AMT1
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT2,0),'9,999,999,999,999'))         SCHL_SURP_AMT2
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT3,0),'9,999,999,999,999'))         SCHL_SURP_AMT3
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT4,0),'9,999,999,999,999'))         SCHL_SURP_AMT4
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT5,0),'9,999,999,999,999'))         SCHL_SURP_AMT5
+			  FROM T_BIZ_INFO A
+			     , T_BIZ_MNG_INFO B
+			     , (
+			        SELECT BIZ_YR, BIZ_CD
+			          FROM (
+			                SELECT BIZ_YR, BIZ_CD
+			                  FROM (
+			                           SELECT A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP
+			                           FROM T_BIZ_SURP_TRGT_INFO A
+										  , T_INSTN_INFO         B
+										  , T_SCH_INFO           C
+									  WHERE A.EXE_INSTN_CD  = B.INSTN_CD
+										 AND B.BLN_SCHL_CD  = C.INSTN_CD
+										 AND A.BIZ_EXE_END_YN = 'Y'
+										 AND A.BIZ_YR       = '2012'
+			                          GROUP BY A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP
+			                        )
+			                    GROUP BY BIZ_YR, BIZ_CD
+			                )
+			       ) C
+			     ,(
+						SELECT A.BIZ_YR              BIZ_YR
+						     , A.BIZ_CD              BIZ_CD
+						     , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT
+						  FROM T_BIZ_SURP_TRGT_INFO A
+						     , T_BIZT_INFO          B
+						 WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID
+						   AND A.BIZ_EXE_END_YN = 'Y'
+						   AND BIZ_YR             = '2012'
+						 GROUP BY A.BIZ_YR, A.BIZ_CD
+			       )F
+			      ,(
+              SELECT BIZ_YR, BIZ_CD
+                , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1
+                , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2
+                , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3
+                , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4
+                , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5
+              FROM (
+                   SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                       , B.REAL_SURP_AMT  REAL_SURP_AMT1
+                       , 0 REAL_SURP_AMT2
+                       , 0 REAL_SURP_AMT3
+                       , 0 REAL_SURP_AMT4
+                       , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('51027000',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+               )
+               GROUP BY BIZ_YR, BIZ_CD
+             ) G
+			 WHERE A.BIZ_CD 		= B.BIZ_CD
+			   AND B.BIZ_CD 		= C.BIZ_CD
+			   AND B.BIZ_YR 	    = C.BIZ_YR
+			   AND B.BIZ_CD 		= F.BIZ_CD(+)
+			   AND B.BIZ_YR 		= F.BIZ_YR(+)
+			   AND B.BIZ_CD 		= G.BIZ_CD
+			   AND B.BIZ_YR 		= G.BIZ_YR
+		   	   AND NVL(B.PNOTI_YN,'N') = 'Y'
+		   	    AND
+			  	   A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */
+		      AND B.BIZ_YR 		   =  '2012'
+		   AND
+			       F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = 'K010001'
+			 ORDER BY A.BIZ_NM, A.BIZ_CD
+		 )
+		 WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')
+		/*  페이징 하단 시작  */
+		   ) PAGING_A
+		        WHERE
+		            ROWNUM <= '10'*'1'
+		 ) PAGING_B
+		WHERE PAGING_RNUM > '10'*('1'-1)
+		/*  페이징 하단 끝  */
+
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100093} Connection
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100093} Preparing Statement:    SELECT COUNT(*)    FROM   (   SELECT       NVL(REAL_SURP_AMT1,0) SCHL_SURP_AMT1    , NVL(REAL_SURP_AMT2,0) SCHL_SURP_AMT2    , NVL(REAL_SURP_AMT3,0) SCHL_SURP_AMT3    , NVL(REAL_SURP_AMT4,0) SCHL_SURP_AMT4    , NVL(REAL_SURP_AMT5,0) SCHL_SURP_AMT5     FROM T_BIZ_INFO     A          , T_BIZ_MNG_INFO B         , (       SELECT DISTINCT (A.BIZ_YR) BIZ_YR, (A.BIZ_CD)BIZ_CD        FROM T_BIZ_SURP_TRGT_INFO A            , T_INSTN_INFO         B        , T_SCH_INFO           C      WHERE A.EXE_INSTN_CD = B.INSTN_CD           AND B.BLN_SCHL_CD  = C.INSTN_CD           AND A.BIZ_EXE_END_YN = 'Y'            AND A.BIZ_YR       = ?                        ) C        ,(      SELECT A.BIZ_YR              BIZ_YR           , A.BIZ_CD              BIZ_CD           , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT        FROM T_BIZ_SURP_TRGT_INFO A           , T_BIZT_INFO          B       WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID          AND A.BIZ_EXE_END_YN = 'Y'         AND A.BIZ_YR           = ?       GROUP BY A.BIZ_YR, A.BIZ_CD          )F         ,(               SELECT BIZ_YR, BIZ_CD                 , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1                 , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2                 , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3                 , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4                 , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5               FROM (                    SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                        , B.REAL_SURP_AMT  REAL_SURP_AMT1                        , 0 REAL_SURP_AMT2                        , 0 REAL_SURP_AMT3                        , 0 REAL_SURP_AMT4                        , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , B.REAL_SURP_AMT  REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , B.REAL_SURP_AMT  REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , B.REAL_SURP_AMT  REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , B.REAL_SURP_AMT  REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                )                GROUP BY BIZ_YR, BIZ_CD              ) G    WHERE A.BIZ_CD             = B.BIZ_CD           AND B.BIZ_CD   = C.BIZ_CD       AND B.BIZ_YR      = C.BIZ_YR       AND B.BIZ_CD   = F.BIZ_CD(+)       AND B.BIZ_YR   = F.BIZ_YR(+)          AND B.BIZ_CD   = G.BIZ_CD       AND B.BIZ_YR   = G.BIZ_YR                AND NVL(B.PNOTI_YN,'N') = 'Y'            AND            A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */                            AND B.BIZ_YR         =  ?             AND                 F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = ?                                          )   WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {pstm-100094} Executing Statement:
+
+		SELECT COUNT(*)
+		FROM
+		(
+		SELECT
+			  NVL(REAL_SURP_AMT1,0) SCHL_SURP_AMT1
+			, NVL(REAL_SURP_AMT2,0) SCHL_SURP_AMT2
+			, NVL(REAL_SURP_AMT3,0) SCHL_SURP_AMT3
+			, NVL(REAL_SURP_AMT4,0) SCHL_SURP_AMT4
+			, NVL(REAL_SURP_AMT5,0) SCHL_SURP_AMT5
+		  FROM T_BIZ_INFO     A
+		     , T_BIZ_MNG_INFO B
+		     , (
+					SELECT DISTINCT (A.BIZ_YR) BIZ_YR, (A.BIZ_CD)BIZ_CD
+					  FROM T_BIZ_SURP_TRGT_INFO A
+					     , T_INSTN_INFO         B
+						 , T_SCH_INFO           C
+					WHERE A.EXE_INSTN_CD = B.INSTN_CD
+				      AND B.BLN_SCHL_CD  = C.INSTN_CD
+				      AND A.BIZ_EXE_END_YN = 'Y'
+				      AND A.BIZ_YR       = '2012'
+		       ) C
+		     ,(
+					SELECT A.BIZ_YR              BIZ_YR
+					     , A.BIZ_CD              BIZ_CD
+					     , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT
+					  FROM T_BIZ_SURP_TRGT_INFO A
+					     , T_BIZT_INFO          B
+					 WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID
+					   AND A.BIZ_EXE_END_YN = 'Y'
+					   AND A.BIZ_YR           = '2012'
+					 GROUP BY A.BIZ_YR, A.BIZ_CD
+		       )F
+		      ,(
+              SELECT BIZ_YR, BIZ_CD
+                , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1
+                , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2
+                , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3
+                , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4
+                , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5
+              FROM (
+                   SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                       , B.REAL_SURP_AMT  REAL_SURP_AMT1
+                       , 0 REAL_SURP_AMT2
+                       , 0 REAL_SURP_AMT3
+                       , 0 REAL_SURP_AMT4
+                       , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('51027000',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+               )
+               GROUP BY BIZ_YR, BIZ_CD
+             ) G
+		 WHERE A.BIZ_CD             = B.BIZ_CD
+			   AND B.BIZ_CD 		= C.BIZ_CD
+			   AND B.BIZ_YR 	    = C.BIZ_YR
+			   AND B.BIZ_CD 		= F.BIZ_CD(+)
+			   AND B.BIZ_YR 		= F.BIZ_YR(+)
+			   AND B.BIZ_CD 		= G.BIZ_CD
+			   AND B.BIZ_YR 		= G.BIZ_YR
+	   	       AND NVL(B.PNOTI_YN,'N') = 'Y'
+	   	      AND
+			  	   A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */
+	   	       AND B.BIZ_YR 	       =  '2012'
+		   AND
+			       F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = 'K010001'
+		)
+		WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')
+
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100096} Connection
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {conn-100096} Preparing Statement:        /*   페이징 상단 시작  */    SELECT     *     FROM     ( SELECT /*+ FIRST_ROWS(n) */        PAGING_A.*        , ROWNUM AS PAGING_RNUM       FROM       (    /*  페이징 상단 끝  */        SELECT *   FROM   (    SELECT            B.BIZ_YR                                       BIZ_YR         , A.BIZ_CD                                       BIZ_CD         , A.BIZ_NM                                       BIZ_NM                     , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD)        GVM_INSTN_NM          , F_GET_INSTN_NM('BF_INSTN', A.BF_GVM_INSTN_CD)                  BF_GVM_INSTN_NM                     , F_GET_COMMN_NM(BIZ_PRPS_TYP)                                     BIZ_PRPS_TYP         , F_GET_SURP_TYP_NM(B.BIZ_YR, A.BIZ_CD)           SURP_UNIT_TYP_NM         , F_GET_COMMN_NM(SURP_AMT_DCISN_WAY)                               SURP_AMT_DCISN_WAY         , TRIM(TO_CHAR(NVL(F.REAL_SURP_AMT,'0'),'9,999,999,999,999'))   REAL_SURP_AMT      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT1,0),'9,999,999,999,999'))         SCHL_SURP_AMT1      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT2,0),'9,999,999,999,999'))         SCHL_SURP_AMT2      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT3,0),'9,999,999,999,999'))         SCHL_SURP_AMT3      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT4,0),'9,999,999,999,999'))         SCHL_SURP_AMT4      , TRIM(TO_CHAR(NVL(REAL_SURP_AMT5,0),'9,999,999,999,999'))         SCHL_SURP_AMT5      FROM T_BIZ_INFO A         , T_BIZ_MNG_INFO B         , (            SELECT BIZ_YR, BIZ_CD              FROM (                    SELECT BIZ_YR, BIZ_CD                      FROM (                               SELECT A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP                               FROM T_BIZ_SURP_TRGT_INFO A              , T_INSTN_INFO         B             , T_SCH_INFO           C            WHERE A.EXE_INSTN_CD  = B.INSTN_CD            AND B.BLN_SCHL_CD  = C.INSTN_CD            AND A.BIZ_EXE_END_YN = 'Y'             AND A.BIZ_YR       = ?                                            GROUP BY A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP                             )                        GROUP BY BIZ_YR, BIZ_CD                    )           ) C         ,(       SELECT A.BIZ_YR              BIZ_YR            , A.BIZ_CD              BIZ_CD            , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT         FROM T_BIZ_SURP_TRGT_INFO A            , T_BIZT_INFO          B        WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID           AND A.BIZ_EXE_END_YN = 'Y'          AND BIZ_YR             = ?        GROUP BY A.BIZ_YR, A.BIZ_CD           )F          ,(               SELECT BIZ_YR, BIZ_CD                 , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1                 , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2                 , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3                 , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4                 , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5               FROM (                    SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                        , B.REAL_SURP_AMT  REAL_SURP_AMT1                        , 0 REAL_SURP_AMT2                        , 0 REAL_SURP_AMT3                        , 0 REAL_SURP_AMT4                        , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , B.REAL_SURP_AMT  REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                      AND A.BIZ_EXE_END_YN = 'Y'                       AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , B.REAL_SURP_AMT  REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                       AND A.BIZ_EXE_END_YN = 'Y'                      AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , B.REAL_SURP_AMT  REAL_SURP_AMT4                      , 0 REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                       AND A.BIZ_EXE_END_YN = 'Y'                      AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                   union all                  SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'                      , 0 REAL_SURP_AMT1                      , 0 REAL_SURP_AMT2                      , 0 REAL_SURP_AMT3                      , 0 REAL_SURP_AMT4                      , B.REAL_SURP_AMT  REAL_SURP_AMT5                     FROM T_BIZ_SURP_TRGT_INFO A                        , T_BIZT_INFO          B                        , T_SCH_INFO           C                    WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID                       AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD                       AND A.BIZ_EXE_END_YN = 'Y'                      AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR(?,1,5) ||'000'                )                GROUP BY BIZ_YR, BIZ_CD              ) G     WHERE A.BIZ_CD   = B.BIZ_CD        AND B.BIZ_CD   = C.BIZ_CD       AND B.BIZ_YR      = C.BIZ_YR       AND B.BIZ_CD   = F.BIZ_CD(+)       AND B.BIZ_YR   = F.BIZ_YR(+)           AND B.BIZ_CD   = G.BIZ_CD       AND B.BIZ_YR   = G.BIZ_YR             AND NVL(B.PNOTI_YN,'N') = 'Y'            AND            A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */                      AND B.BIZ_YR      =  ?                 AND                 F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = ?                                            ORDER BY A.BIZ_NM, A.BIZ_CD     )    WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')      /*  페이징 하단 시작  */      ) PAGING_A           WHERE                ROWNUM <= ?*?    ) PAGING_B   WHERE PAGING_RNUM > ?*(?-1)   /*  페이징 하단 끝  */
+20140704 15:17:56 [DEBUG] JakartaCommonsLoggingImpl.debug (27) | {pstm-100097} Executing Statement:
+
+			/*   페이징 상단 시작  */
+			SELECT
+			 *
+			FROM
+			 ( SELECT /*+ FIRST_ROWS(n) */
+			   PAGING_A.*
+			   , ROWNUM AS PAGING_RNUM
+			  FROM
+			   (
+			/*  페이징 상단 끝  */
+		SELECT *
+		FROM
+		(
+			SELECT
+			       B.BIZ_YR                                 						BIZ_YR
+			     , A.BIZ_CD                                 						BIZ_CD
+			     , A.BIZ_NM                                 						BIZ_NM
+			  	   , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD)  						GVM_INSTN_NM
+			  	   , F_GET_INSTN_NM('BF_INSTN', A.BF_GVM_INSTN_CD)                  BF_GVM_INSTN_NM
+			     , F_GET_COMMN_NM(BIZ_PRPS_TYP)                                     BIZ_PRPS_TYP
+			     , F_GET_SURP_TYP_NM(B.BIZ_YR, A.BIZ_CD)     						SURP_UNIT_TYP_NM
+			     , F_GET_COMMN_NM(SURP_AMT_DCISN_WAY)                               SURP_AMT_DCISN_WAY
+			     , TRIM(TO_CHAR(NVL(F.REAL_SURP_AMT,'0'),'9,999,999,999,999')) 		REAL_SURP_AMT
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT1,0),'9,999,999,999,999'))         SCHL_SURP_AMT1
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT2,0),'9,999,999,999,999'))         SCHL_SURP_AMT2
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT3,0),'9,999,999,999,999'))         SCHL_SURP_AMT3
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT4,0),'9,999,999,999,999'))         SCHL_SURP_AMT4
+				 , TRIM(TO_CHAR(NVL(REAL_SURP_AMT5,0),'9,999,999,999,999'))         SCHL_SURP_AMT5
+			  FROM T_BIZ_INFO A
+			     , T_BIZ_MNG_INFO B
+			     , (
+			        SELECT BIZ_YR, BIZ_CD
+			          FROM (
+			                SELECT BIZ_YR, BIZ_CD
+			                  FROM (
+			                           SELECT A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP
+			                           FROM T_BIZ_SURP_TRGT_INFO A
+										  , T_INSTN_INFO         B
+										  , T_SCH_INFO           C
+									  WHERE A.EXE_INSTN_CD  = B.INSTN_CD
+										 AND B.BLN_SCHL_CD  = C.INSTN_CD
+										 AND A.BIZ_EXE_END_YN = 'Y'
+										 AND A.BIZ_YR       = '2012'
+			                          GROUP BY A.BIZ_YR, A.BIZ_CD, A.SURP_UNIT_TYP
+			                        )
+			                    GROUP BY BIZ_YR, BIZ_CD
+			                )
+			       ) C
+			     ,(
+						SELECT A.BIZ_YR              BIZ_YR
+						     , A.BIZ_CD              BIZ_CD
+						     , SUM(B.REAL_SURP_AMT)  REAL_SURP_AMT
+						  FROM T_BIZ_SURP_TRGT_INFO A
+						     , T_BIZT_INFO          B
+						 WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID
+						   AND A.BIZ_EXE_END_YN = 'Y'
+						   AND BIZ_YR             = '2012'
+						 GROUP BY A.BIZ_YR, A.BIZ_CD
+			       )F
+			      ,(
+              SELECT BIZ_YR, BIZ_CD
+                , SUM(REAL_SURP_AMT1) REAL_SURP_AMT1
+                , SUM(REAL_SURP_AMT2) REAL_SURP_AMT2
+                , SUM(REAL_SURP_AMT3) REAL_SURP_AMT3
+                , SUM(REAL_SURP_AMT4) REAL_SURP_AMT4
+                , SUM(REAL_SURP_AMT5) REAL_SURP_AMT5
+              FROM (
+                   SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                       , B.REAL_SURP_AMT  REAL_SURP_AMT1
+                       , 0 REAL_SURP_AMT2
+                       , 0 REAL_SURP_AMT3
+                       , 0 REAL_SURP_AMT4
+                       , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('51027000',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT4
+                     , 0 REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+                 union all
+                 SELECT A.BIZ_YR, A.BIZ_CD, SUBSTR(C.SCHL_CD,1,5) ||'000'
+                     , 0 REAL_SURP_AMT1
+                     , 0 REAL_SURP_AMT2
+                     , 0 REAL_SURP_AMT3
+                     , 0 REAL_SURP_AMT4
+                     , B.REAL_SURP_AMT  REAL_SURP_AMT5
+                    FROM T_BIZ_SURP_TRGT_INFO A
+                       , T_BIZT_INFO          B
+                       , T_SCH_INFO           C
+                   WHERE A.BIZ_SURP_INFO_ID                = B.BIZ_SURP_INFO_ID
+                     AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = C.INSTN_CD
+                     AND A.BIZ_EXE_END_YN = 'Y'
+                     AND SUBSTR(C.SCHL_CD,1,5) ||'000'     = SUBSTR('',1,5) ||'000'
+               )
+               GROUP BY BIZ_YR, BIZ_CD
+             ) G
+			 WHERE A.BIZ_CD 		= B.BIZ_CD
+			   AND B.BIZ_CD 		= C.BIZ_CD
+			   AND B.BIZ_YR 	    = C.BIZ_YR
+			   AND B.BIZ_CD 		= F.BIZ_CD(+)
+			   AND B.BIZ_YR 		= F.BIZ_YR(+)
+			   AND B.BIZ_CD 		= G.BIZ_CD
+			   AND B.BIZ_YR 		= G.BIZ_YR
+		   	   AND NVL(B.PNOTI_YN,'N') = 'Y'
+		   	    AND
+			  	   A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* 지자체 사업 제외 */
+		      AND B.BIZ_YR 		   =  '2012'
+		   AND
+			       F_GET_INSTN_NM('TYPE',A.GVM_INSTN_CD) = 'K010001'
+			 ORDER BY A.BIZ_NM, A.BIZ_CD
+		 )
+		 WHERE (SCHL_SURP_AMT1 <> '0' OR SCHL_SURP_AMT2 <> '0' OR SCHL_SURP_AMT3 <> '0' OR SCHL_SURP_AMT4 <> '0' OR SCHL_SURP_AMT5 <> '0')
+		/*  페이징 하단 시작  */
+		   ) PAGING_A
+		        WHERE
+		            ROWNUM <= '10'*'0'
+		 ) PAGING_B
+		WHERE PAGING_RNUM > '10'*('0'-1)
+		/*  페이징 하단 끝  */
+

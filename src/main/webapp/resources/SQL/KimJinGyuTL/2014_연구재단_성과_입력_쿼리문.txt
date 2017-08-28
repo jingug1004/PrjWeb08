@@ -1,0 +1,21 @@
+/* 연계테이블에서 과제정보 추출 */
+/* T_BIZ_SURP_TRGT_INFO 테이블에 인서트 할 내용 */
+select TO_CHAR(SYSDATE,'YYYYMMDD') || LPAD(A.SEQ, 5,0) BIZ_SURP_INFO_ID
+, a.biz_cd
+, s.INSTN_CD
+, '2013' RGST_DT
+, (select surp_unit_typ from T_BIZ_SURP_TRGT_INFO where biz_cd = a.biz_cd and RGST_DT='2013' group by surp_unit_typ) surp_unit_typ
+, '2013' SLCT_DT
+, 'Y' BIZ_EXE_END_YN 
+, 'admin' RGSTR_ID
+, '2013' BIZ_YR
+, a.ASGM_NM BIZ_SURP_ASGM_NM
+from T_IF_BIZ_SURP a, t_if_sch_map s
+where 1=1
+and s.if_schl_cd = a.schl_cd
+and s.sry_yy ='2013'
+;
+
+
+
+

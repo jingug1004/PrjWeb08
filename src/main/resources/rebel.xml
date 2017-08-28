@@ -10,14 +10,16 @@
 
     <classpath>
         <!--<dir name="C:/Users/wtime/Desktop/Intelli/PrjWeb02/PrjWeb02/target/classes">-->
-        <dir name="/Volumes/320G/calling/prj/PrjWeb07/target/classes">
+        <!--<dir name="/Volumes/320G/calling/prj/PrjWeb07/target/classes">-->
+            <dir name="C:/Users/Emiya/IdeaProjects/unify/PrjWeb08/target/classes">
         </dir>
     </classpath>
 
     <web>
         <link target="/">
             <!--<dir name="C:/Users/wtime/Desktop/Intelli/PrjWeb02/PrjWeb02/src/main/webapp">-->
-            <dir name="/Volumes/320G/calling/prj/PrjWeb07/src/main/webapp">
+            <!--<dir name="/Volumes/320G/calling/prj/PrjWeb07/src/main/webapp">-->
+                <dir name="C:/Users/Emiya/IdeaProjects/unify/PrjWeb08/src/main/webapp">
             </dir>
         </link>
     </web>

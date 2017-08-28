@@ -156,7 +156,8 @@
         <div class="topbar-v3">
             <div class="search-open">
                 <div class="container">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" name="keyword" id="keywordInput" value="${cri.keyword}"
+                           class="form-control" placeholder="Search">
                     <div class="search-close"><i class="icon-close"></i></div>
                 </div>
             </div>
@@ -205,11 +206,12 @@
                                 </li>
                             </c:if>
                             <c:if test="${not empty login}">
-                                <li>${login.nickname}님! | <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> | <a
-                                        href="<c:url value="/user/logout"/>">Logout</a>
+                                <li>${login.nickname}님! | <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |
+                                    <a
+                                            href="<c:url value="/user/logout"/>">Logout</a>
                                 </li>
                             </c:if>
-                            <li><i class="search fa fa-search search-button"></i></li>
+                            <li><i id="searchBtn" class="search fa fa-search search-button"></i></li>
                         </ul>
                     </div>
                 </div>
@@ -325,13 +327,13 @@
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">당선 전</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">당선 전 공약</a></li>
+                                        <li><a href="/sboard/list?cate=1201">당선 전 공약</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">당선 후</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">공약 이행</a></li>
+                                        <li><a href="/sboard/list?cate=1202">공약 이행</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -351,7 +353,8 @@
                                             <div class="row">
                                                 <div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                     <h3 class="mega-menu-heading">대국민 이벤트</h3>
-                                                    <p>언제나 저희 UNIFY를 이용해 주심에 따라 국민의 성원에 보답하고자 365일 항상 국민의 목소리에 귀기울이고 있습니다.</p>
+                                                    <p>언제나 저희 UNIFY를 이용해 주심에 따라 국민의 성원에 보답하고자 365일 항상 국민의 목소리에 귀기울이고
+                                                        있습니다.</p>
                                                     <button type="button" class="btn-u btn-u-dark">Read More</button>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
@@ -541,5 +544,29 @@
     </div>
     <!--=== End Header v5 ===-->
 
+    <script>
+        function getUrlParams() {
+            var params = {};
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+                params[key] = value;
+            });
+            return params;
+        }
+
+        $(document).ready(function () {
+            $('#searchBtn').on("click", function (e) {
+                self.location = "list"
+                    + '${pageMaker.makeQuery(1)}'
+                    + '&searchType=tcw'
+//                    + $().val()
+                    + '&keyword=' + $('#keywordInput').val();
+            });
+
+            window.onload = function () {
+                oParams = getUrlParams();
+            }
+        });
+
+    </script>
 
 
