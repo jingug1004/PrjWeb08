@@ -555,10 +555,11 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         $("#goListBtn ").on("click", function () {
 
-            formObj.attr("method", "get");
-            formObj.attr("action", "/sboard/list");
+//            formObj.attr("method", "get");
+//            formObj.attr("action", "/sboard/list");
 //            formObj.attr("action", "/sboard/list?cate=" + oParams.cate);
-            formObj.submit();
+//            formObj.submit();
+              history.back();
         });
 //        "{boardVO.bno}", "{cri.page}", "{cri.perPageNum}" 의 정보를 이용하는 방식으로 변경 되었음.
 

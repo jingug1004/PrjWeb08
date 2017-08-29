@@ -84,7 +84,8 @@
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.15</version>
+            <!--<version>1.2.15</version>-->
+            <version>LATEST</version>
             <exclusions>
                 <exclusion>
                     <groupId>javax.mail</groupId>
@@ -199,7 +200,8 @@
         <dependency>
             <groupId>org.bgee.log4jdbc-log4j2</groupId>
             <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
-            <version>1.16</version>
+            <!--<version>1.16</version>-->
+            <version>LATEST</version>
         </dependency>
 
         <dependency>

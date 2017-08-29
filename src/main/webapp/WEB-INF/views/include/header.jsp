@@ -211,7 +211,7 @@
                                             href="<c:url value="/user/logout"/>">Logout</a>
                                 </li>
                             </c:if>
-                            <li><i id="searchBtn" class="search fa fa-search search-button"></i></li>
+                            <li><i id="searchBtnAny" class="search fa fa-search search-button"></i></li>
                         </ul>
                     </div>
                 </div>
@@ -545,25 +545,50 @@
     <!--=== End Header v5 ===-->
 
     <script>
-        function getUrlParams() {
-            var params = {};
-            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
-                params[key] = value;
-            });
-            return params;
-        }
+        <%--function getUrlParams() {--%>
+            <%--var params = {};--%>
+            <%--window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {--%>
+                <%--params[key] = value;--%>
+            <%--});--%>
+            <%--return params;--%>
+        <%--}--%>
+
+        <%--/* 바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.  */--%>
+        <%--$(document).ready(function () {--%>
+            <%--$('#searchBtnAny').on("click", function (e) {--%>
+                <%--self.location = "listAny"--%>
+                    <%--+ '${pageMaker.makeQuery(1)}'--%>
+                    <%--// + '&searchType=tcw'--%>
+                    <%--// + $().val()--%>
+                    <%--+ '&keyword=' + $('#keywordInput').val();--%>
+            <%--});--%>
+
+            <%--window.onload = function () {--%>
+                <%--oParams = getUrlParams();--%>
+            <%--}--%>
+        <%--});--%>
 
         $(document).ready(function () {
-            $('#searchBtn').on("click", function (e) {
-                self.location = "listAny"
-                    + '${pageMaker.makeQuery(1)}'
-                    // + '&searchType=tcw'
-                    // + $().val()
-                    + '&keyword=' + $('#keywordInput').val();
+            $('input[name=keyword]').on("keydown", function (key) {
+
+                if (key.keyCode == 13) { /* 키가 13이면 실행(엔터는 13) */
+                    keywordSearchAny();
+                }
             });
 
-            window.onload = function () {
-                oParams = getUrlParams();
+            function keywordSearchAny() {
+                alert($('input[name=keyword]').val());
+
+                self.location = 'sboard/listAny?'
+                + '${pageMakerAny.makeQuery(1)}'
+                // + '&searchType=tcw'
+                // + $().val()
+                + '&keyword='
+                + $('#keywordInput').val();
+
+                console.log($('#keywordInput').val());
+
+                console.log(${pageMakerAny.makeQuery(1)});
             }
         });
 

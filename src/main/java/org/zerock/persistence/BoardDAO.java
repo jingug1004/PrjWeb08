@@ -103,6 +103,12 @@ public interface BoardDAO {
      */
     public int listSearchCount(SearchCriteria cri) throws Exception;
 
+
+    public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception;
+
+    public int listSearchAnyCount(SearchCriteria criteria) throws Exception;
+
+
     /**
      * 댓글의 숫자를 변경할 수 있는 updateReplyCnt()를 추가.
      * BoardDAO - boardMapper.xml - BoardDAOImpl

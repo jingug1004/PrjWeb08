@@ -87,8 +87,8 @@
 
                         <%--</c:forEach>--%>
 
+                        <%-- cate에 맞는 검색 / 반복문을 통한 리스트 목록 --%>
                         <c:forEach items="${list}" var="boardVO">
-
                             <tr>
                                 <td>${boardVO.bno}</td>
                                 <td>
@@ -100,9 +100,24 @@
                                                     value="${boardVO.regdate}"/></td>
                                 <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
                             </tr>
-
                         </c:forEach>
 
+
+
+                        <%-- 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
+                        <c:forEach items="${listAny}" var="boardVO">
+                            <tr>
+                                <td>${boardVO.bno}</td>
+                                <td>
+                                    <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.cri.page)}&bno=${boardVO.bno}'>
+                                            ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
+                                    </a></td>
+                                <td>${boardVO.writer}</td>
+                                <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+                                                    value="${boardVO.regdate}"/></td>
+                                <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
+                            </tr>
+                        </c:forEach>
                     </table>
                 </div>
                 <!-- /.box-body -->
@@ -116,21 +131,47 @@
                     <div class="text-center">
                         <ul class="pagination">
 
-                            <c:if test="${pageMaker.prev}">
-                                <li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
-                            </c:if>
+                            <c:choose>
+                                <%-- cate에 맞는 검색 (페이징 기능) --%>
+                                <c:when test="${not empty pageMaker}">
+                                    <c:if test="${pageMaker.prev}">
+                                        <li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a>
+                                        </li>
+                                    </c:if>
 
-                            <c:forEach begin="${pageMaker.startPage }"
-                                       end="${pageMaker.endPage }" var="idx">
-                                <li<c:out value="${pageMaker.cri.page == idx?' class=active':''}"/>>
-                                    <a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
-                                </li>
-                            </c:forEach>
+                                    <c:forEach begin="${pageMaker.startPage }"
+                                               end="${pageMaker.endPage }" var="idx">
+                                        <li<c:out value="${pageMaker.cri.page == idx?' class=active':''}"/>>
+                                            <a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
+                                        </li>
+                                    </c:forEach>
 
-                            <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                                <li><a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
-                            </c:if>
+                                    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                                        <li><a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a>
+                                        </li>
+                                    </c:if>
+                                </c:when>
 
+                                <%-- 전체 아이템 검색 (페이징 기능) --%>
+                                <c:when test="${not empty pageMakerAny}">
+                                    <c:if test="${pageMakerAny.prev}">
+                                        <li><a href="list${pageMakerAny.makeSearchAll(pageMakerAny.startPage - 1) }">&laquo;</a>
+                                        </li>
+                                    </c:if>
+
+                                    <c:forEach begin="${pageMakerAny.startPage }"
+                                               end="${pageMakerAny.endPage }" var="idx">
+                                        <li<c:out value="${pageMakerAny.criteria.page == idx?' class=active':''}"/>>
+                                            <a href="list${pageMakerAny.makeSearchAll(idx)}">${idx}123</a>
+                                        </li>
+                                    </c:forEach>
+
+                                    <c:if test="${pageMakerAny.next && pageMakerAny.endPage > 0}">
+                                        <li><a href="list${pageMakerAny.makeSearchAll(pageMakerAny.endPage +1) }">&raquo;</a>
+                                        </li>
+                                    </c:if>
+                                </c:when>
+                            </c:choose>
                         </ul>
                     </div>
                     <%-- JSTL의 <c:if>는 boolean으로 나오는 결과를 확인하므로 ${pageMaker.prev}를 이용해서 이전 페이지로 가는 링크가 있어야 하는지를 판단. --%>
@@ -143,7 +184,6 @@
             </div>
         </div>
         <!--/.col (left) -->
-
     </div>
     <!-- /.row -->
 </section>
@@ -176,7 +216,8 @@
                     + '${pageMaker.makeQuery(1)}'
                     + "&searchType="
                     + $("select option:selected").val()
-                    + "&keyword=" + $('#keywordInput').val();
+                    + "&keyword="
+                    + $('#keywordInput').val();
             });
 
         window.onload = function () {

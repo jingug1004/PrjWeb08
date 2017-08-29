@@ -50,9 +50,6 @@
     <!-- 여기에 'replycnt' select 에 추가 안 해서 readPage 들어가면 그 게시물의 전체 댓글수가 안 보여졌음. -->
     <select id="listPage" resultType="BoardVO">
         <![CDATA[
-
-
-
          select
            bno, title, content, writer, regdate, viewcnt, replycnt
          from
@@ -60,9 +57,6 @@
          where bno > 0
          order by bno desc, regdate desc
          limit #{page}, 10
-
-
-
         ]]>
     </select>
     <!-- resultType은 <typeAliases> 설정을 이용해서 축약해서 사용할 수 있음. -->
@@ -83,8 +77,6 @@
 
     <select id="listCriteria" resultType="BoardVO">
         <![CDATA[
-
-
          select
            bno, title, content, writer, regdate, viewcnt, replycnt
          from
@@ -92,24 +84,18 @@
          where bno > 0
          order by bno desc, regdate desc
          limit #{pageStart}, #{perPageNum}
-
-
         ]]>
     </select>
     <!-- pageStart, perPageNum이라는 인라인 파라미터가 존재. 파라미터로 전달되는 객체는 getPageStart(), getPerPageNum()이라는 메소드를 가지면 됨. -->
 
     <select id="countPaging" resultType="int">
         <![CDATA[
-
-
          select
            count(bno)
          from
            tbl_board
          where
            bno > 0
-
-
         ]]>
     </select>
 
@@ -146,18 +132,17 @@
     <!-- 기본 게시판(건의사항 클릭하고 나서 보여주는 리스트 -->
     <select id="listSearch" resultType="BoardVO">
         <![CDATA[
-  select *
-  from tbl_board
-  where bno > 0 AND cnum = #{cate}
-]]>
+              select *
+              from tbl_board
+              where bno > 0 AND cnum = #{cate}
+        ]]>
 
         <include refid="search"></include>
 
         <![CDATA[
-  order by bno desc
-  limit #{pageStart}, #{perPageNum}
-]]>
-
+              order by bno desc
+              limit #{pageStart}, #{perPageNum}
+        ]]>
     </select>
     <!-- 기본 게시판(건의사항 클릭하고 나서 보여주는 리스트 / cnum 구현 완료 -->
 
@@ -168,10 +153,35 @@
           from tbl_board
           where bno > 0 AND cnum = #{cate}
         ]]>
-
         <include refid="search"></include>
-
     </select>
+
+    <!-- 전체 검색 기능 구현 -->
+    <select id="listSearchAny" resultType="BoardVO">
+        SELECT * FROM tbl_board
+        WHERE bno > 0
+        AND (title LIKE concat('%', #{keyword}, '%')
+        OR content LIKE concat('%', #{keyword}, '%')
+        OR writer LIKE concat('%', #{keyword}, '%'))
+        ORDER BY regdate DESC;
+    </select>
+    <!-- 전체 검색 기능 구현 -->
+
+    <select id="listSearchAnyCount" resultType="int">
+        <![CDATA[
+        SELECT COUNT(bno)
+        FROM tbl_board
+        WHERE bno > 0
+        ]]>
+        AND (
+        title LIKE concat('%', #{keyword}, '%')
+        OR content LIKE concat('%', #{keyword}, '%')
+        OR writer LIKE concat('%', #{keyword}, '%')
+        )
+    </select>
+
+
+
 
 
     <update id="updateReplyCnt">
@@ -201,14 +211,5 @@
     <insert id="replaceAttach">
         INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, #{bno})
     </insert>
-
-    <select id="searchAll">
-        SELECT * FROM tbl_board
-        WHERE bno > 0
-        AND (title LIKE concat('%', #{keyword}, '%')
-        OR content LIKE concat('%', #{keyword}, '%')
-        OR writer LIKE concat('%', #{keyword}, '%'));
-    </select>
-
 
 </mapper>

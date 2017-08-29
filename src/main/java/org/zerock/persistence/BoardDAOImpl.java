@@ -97,12 +97,30 @@ public class BoardDAOImpl implements BoardDAO {
         return session.selectList(namespace + ".listSearch", cri);
     }
 
-//    게시판 밑 페이징 (1~10버튼)
+    //    게시판 밑 페이징 (1~10버튼) // 게시판 전체 몇 개인지 카운트 불러오는 메소드
     @Override
     public int listSearchCount(SearchCriteria cri) throws Exception {
 
         return session.selectOne(namespace + ".listSearchCount", cri);
     }
+
+    /* 전체 검색 기능 구현 */
+    @Override
+    public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception {
+
+        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + criteria.getPageStart() + " lll~~~");
+
+        return session.selectList(namespace + ".listSearchAny", criteria);
+    }
+
+    @Override
+    public int listSearchAnyCount(SearchCriteria criteria) throws Exception {
+
+        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + criteria.getPageStart() + " lll~~~");
+
+        return session.selectOne(namespace + ".listSearchAnyCount", criteria);
+    }
+
 
     @Override
     public void updateReplyCnt(Integer bno, int amount) throws Exception {

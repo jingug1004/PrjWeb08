@@ -74,13 +74,15 @@ public interface BoardService {
     public int listCountCriteria(Criteria cri) throws Exception;
 
     /**
-     * List search criteria list.
+     * BoardDAO 의 listSearch 메소드로 전달(BoardDAOImpl 의 listSearch 로 전달.).
      *
      * @param cri the cri
      * @return the list
      * @throws Exception the exception
      */
     public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+
+    public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception;
 
     /**
      * List search count int. 게시판 밑 1~10 페이징 버튼
@@ -90,6 +92,9 @@ public interface BoardService {
      * @throws Exception the exception
      */
     public int listSearchCount(SearchCriteria cri) throws Exception;
+
+    public int listSearchAnyCount(SearchCriteria criteria) throws Exception;
+
 
     /**
      * 첨부 파일을 조회하는 기능.

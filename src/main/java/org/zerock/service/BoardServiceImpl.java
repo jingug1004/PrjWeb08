@@ -158,8 +158,21 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception {
+
+        logger.info("lll~~~ cri.toString() BoardServiceImpl : " + criteria.toString() + " lll~~~");
+
+        return dao.listSearchAny(criteria);
+    }
+
+    @Override
     public int listSearchCount(SearchCriteria cri) throws Exception {
         return dao.listSearchCount(cri);
+    }
+
+    @Override
+    public int listSearchAnyCount(SearchCriteria criteria) throws Exception {
+        return dao.listSearchAnyCount(criteria);
     }
 
     @Override

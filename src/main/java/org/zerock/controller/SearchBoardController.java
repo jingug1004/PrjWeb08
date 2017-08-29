@@ -35,14 +35,15 @@ public class SearchBoardController {
     private BoardService service;
 
     /**
-     * List page.
+     * 게시판 리스트 페이지가 cate의 기준에 따라 나뉘어짐.
      *
      * @param cri   the cri
      * @param model the model
+     * @param cateNum 카테고리 - 넘버 기준으로 나뉨.
      * @throws Exception the exception
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public void listPage(@ModelAttribute("cri") SearchCriteria cri,
+    public String listPage(@ModelAttribute("cri") SearchCriteria cri,
 //                         @RequestParam("cate") int cate,
                          Model model,
                          BoardVO boardVO,
@@ -67,23 +68,33 @@ public class SearchBoardController {
         pageMaker.setTotalCount(service.listSearchCount(cri));
 
         model.addAttribute("pageMaker", pageMaker);
+
+        return "sboard/list";
     }
 
     @RequestMapping(value = "/listAny", method = RequestMethod.GET)
-    public void listAnyPage(@ModelAttribute("cri") SearchCriteria criteria,
-                            Model model) throws Exception {
+    public String listAnyPage(@ModelAttribute("criteria") SearchCriteria criteria,
+                            Model model,
+                            RedirectAttributes redirectAttributes) throws Exception {
 
-        logger.info(criteria.toString());
+        logger.info("lll~~~ criteria.toString() listAny : " + criteria.toString() + " lll~~~");
 
-        model.addAttribute("listAny", service.listSearchCriteria(criteria));
+        model.addAttribute("listAny", service.listSearchAny(criteria));
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(criteria);
 
-        pageMaker.setTotalCount(service.listSearchCount(criteria));
+        pageMaker.setTotalCount(service.listSearchAnyCount(criteria));
 
         model.addAttribute("pageMakerAny", pageMaker);
 
+        logger.info("lll~~~ pageMaker.setCri(criteria) listAny : " + pageMaker.getCri() + " lll~~~");
+        logger.info("lll~~~ pageMaker.setTotalCount(service.listSearchAnyCount(criteria)) listAny : "
+                + pageMaker.getTotalCount() + " lll~~~");
+
+//        redirectAttributes.addAttribute("msg", "SUCCESS");
+
+        return "sboard/list";
     }
 
     /**
