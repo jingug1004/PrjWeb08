@@ -18,7 +18,6 @@ $(function () {
     });
     $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
 
-    //jQuery UI sortable for the todo list
     $(".todo-list").sortable({
         placeholder: "sort-highlight",
         handle: ".handle",
@@ -221,7 +220,6 @@ $(function () {
         }
     });
 
-  /* The todo list plugin */
     $(".todo-list").todolist({
         onCheck: function (ele) {
             console.log("The element has been checked")

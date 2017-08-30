@@ -329,6 +329,7 @@
             <version>2.2.4</version>
         </dependency>
 
+        <!-- Amazon Web Service에서 지원하는 Java 용 SDK 라이브러리 추가 170830 -->
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk</artifactId>

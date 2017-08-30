@@ -70,6 +70,9 @@
     <resources location="/WEB-INF/views/assets/plugins/, classpath=/WEB-INF/views/assets/plugins/" mapping="assets/plugins/**" />
     -->
 
+    <context:component-scan base-package="org.zerock.awsController"/>
+
+
     <context:component-scan base-package="org.zerock.controller"/>
     <!--
     WARN : org.springframework.web.servlet.PageNotFound - No mapping found for HTTP request with URI [/board/success]

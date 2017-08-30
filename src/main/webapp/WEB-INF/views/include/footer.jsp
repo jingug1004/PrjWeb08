@@ -14,7 +14,7 @@
                         소통의 장을 열려는 '커뮤니티' 입니다.<br/></p>
                     <br>
                     <ul class="list-unstyled address-list margin-bottom-20">
-                        <li><i class="fa fa-angle-right"></i>Korea</li>
+                        <li><i class="fa fa-angle-right"></i>South Korea</li>
                         <li><i class="fa fa-angle-right"></i>Phone: 010 123 3456</li>
                         <li><i class="fa fa-angle-right"></i>Fax: 02 123 3456</li>
                         <li><i class="fa fa-angle-right"></i>Email: info@unify.com</li>
@@ -36,9 +36,9 @@
                             <h2 class="thumb-headline">GUIDE</h2>
                             <ul class="list-unstyled simple-list margin-bottom-20">
                                 <li><a href="#">커뮤니티 소개</a></li>
-                                <li><a href="#">개인정보처리방침</a></li>
-                                <li><a href="#">이용약관</a></li>
-                                <li><a href="#">이용안내</a></li>
+                                <%--<li><a href="#">개인정보처리방침</a></li>--%>
+                                <%--<li><a href="#">이용약관</a></li>--%>
+                                <%--<li><a href="#">이용안내</a></li>--%>
                                 <%--<li><a href="#">인재채용</a></li>--%>
                                 <%--<li><a href="#">도매/제휴 문의</a></li>--%>
                                 <%--<li><a href="#">모델지원</a></li>--%>
@@ -98,8 +98,8 @@
                             <h2 class="thumb-headline">SERVICE</h2>
                             <ul class="list-unstyled simple-list margin-bottom-20">
                                 <li><a href="#">공지사항</a></li>
-                                <li><a href="#">자주 묻는 질문</a></li>
-                                <li><a href="#">이벤트</a></li>
+                                <%--<li><a href="#">자주 묻는 질문</a></li>--%>
+                                <%--<li><a href="#">이벤트</a></li>--%>
                                 <%--<li><a href="#">배송조회</a></li>--%>
                                 <%--<li><a href="#">출석체크</a></li>--%>
                                 <%--<li><a href="#">UNIFY 119</a></li>--%>
@@ -127,8 +127,8 @@
                         <div class="col-sm-12 col-xs-6">
                             <h2 class="thumb-headline">Download</h2>
                             <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">가이드 라인</a></li>
-                                <li><a href="#">표준약관</a></li>
+                                <%--<li><a href="#">가이드 라인</a></li>--%>
+                                <%--<li><a href="#">표준약관</a></li>--%>
                                 <li><a href="#">Tip & KnowHow</a></li>
                                 <li>...</li>
                             </ul>
@@ -137,12 +137,12 @@
                         <div class="col-sm-12 col-xs-6">
                             <h2 class="thumb-headline">FAMILY SITE</h2>
                             <ul class="list-unstyled simple-list">
-                                <li><a href="#">NEVER</a></li>
-                                <li><a href="#">Baum</a></li>
-                                <li><a href="#">MATE</a></li>
-                                <li><a href="#">GOGLE</a></li>
+                                <%--<li><a href="#">NEVER</a></li>--%>
+                                <%--<li><a href="#">Baum</a></li>--%>
+                                <%--<li><a href="#">MATE</a></li>--%>
+                                <%--<li><a href="#">GOGLE</a></li>--%>
                                 <li><a href="#">HeapOverflow</a></li>
-                                <li><a href="#">NOKKKY</a></li>
+                                <%--<li><a href="#">NOKKKY</a></li>--%>
                                 <li>...</li>
                             </ul>
                         </div>

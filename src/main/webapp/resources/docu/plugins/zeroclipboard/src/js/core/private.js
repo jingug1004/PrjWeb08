@@ -32,7 +32,6 @@ var _config = function(options) {
 
   if (typeof options === "string" && options) {
     if (_hasOwn.call(_globalConfig, options)) {
-      // TODO: MAYBE do a `_deepCopy` of this as well? It is convenient to NOT
       // do a `_deepCopy` if we want to allow consumers to, for example, be
       // able to update the `trustedDomains` array on their own terms rather
       // than having to send in a whole new array.

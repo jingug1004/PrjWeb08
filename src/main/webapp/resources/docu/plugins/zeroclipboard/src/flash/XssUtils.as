@@ -28,7 +28,6 @@ package {
       parameters:Object  // NOPMD
     ): Object {  // NOPMD
       //
-      // TODO: Implement this for real
       // See:  https://github.com/zeroclipboard/zeroclipboard/pull/336
       //
       return parameters;

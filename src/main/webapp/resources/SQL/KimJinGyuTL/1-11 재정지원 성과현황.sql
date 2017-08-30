@@ -1,19 +1,19 @@
-/* »®∆‰¿Ã¡ˆøÎ -º∫∞˙ «ˆ»≤(±≥∞˙∫Œ∏∏) */
+/* ÌôàÌéòÏù¥ÏßÄÏö© -ÏÑ±Í≥º ÌòÑÌô©(ÍµêÍ≥ºÎ∂ÄÎßå) */
 -- SELECT * FROM T_STATS_STS WHERE STATS_FLAG = 'K0560113' and stats_yr = '2011';
 -- DELETE FROM T_STATS_STS WHERE STATS_FLAG = 'K0560113' and stats_yr = '2011';
 
 
 INSERT INTO T_STATS_STS
     ( STATS_YR, STATS_SNO, STATS_FLAG , ATTR1_VAL
-    , ATTR2_VAL, ATTR3_VAL, ATTR4_VAL,  ATTR5_VAL, 
-    ATTR6_VAL, ATTR7_VAL, ATTR8_VAL, ATTR9_VAL, 
+    , ATTR2_VAL, ATTR3_VAL, ATTR4_VAL,  ATTR5_VAL,
+    ATTR6_VAL, ATTR7_VAL, ATTR8_VAL, ATTR9_VAL,
     ATTR10_VAL, ATTR11_VAL, ATTR43_VAL
     , RGSTR_ID, RGST_DTTM
-    )    
-WITH TMP_A AS 
+    )
+WITH TMP_A AS
 (
        SELECT GVM_INSTN_CD
-           , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD) ATTR_VAL1 
+           , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD) ATTR_VAL1
            , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT1
            , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032002' THEN 1 ELSE 0 END)  AS CNT2
            , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031002' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT3
@@ -45,26 +45,26 @@ WITH TMP_A AS
               WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                AND TRGT.BIZ_YR = SCH.SRY_YY
-               AND SCH.PNOTI_YN = 'Y'      /* ∫Ò∞¯Ω√¥ÎªÛ ¥Î«– ¡¶ø‹ */
-               AND SCH.UNIV_GUBUN <> 'H'   /* ¥Î«–ø¯¥Î«– ¡¶ø‹ */
+               AND SCH.PNOTI_YN = 'Y'      /* ÎπÑÍ≥µÏãúÎåÄÏÉÅ ÎåÄÌïô Ï†úÏô∏ */
+               AND SCH.UNIV_GUBUN <> 'H'   /* ÎåÄÌïôÏõêÎåÄÌïô Ï†úÏô∏ */
                AND TRGT.BIZ_CD = BIZM.BIZ_CD
                AND TRGT.BIZ_YR = BIZM.BIZ_YR
                AND BIZM.BIZ_CD = BIZ.BIZ_CD
-               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ¿œπ›¡ˆø¯ ªÁæ˜∏∏ ∆˜«‘ */
-               AND BIZ.GVM_INSTN_CD = '1341000'  /* ±≥¿∞∞˙«–±‚º˙∫Œ∏∏ */
-               AND BIZM.pnoti_yn     = 'Y'  /* ∞¯Ω√¥ÎªÛ ªÁæ˜∏∏ */
+               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÏùºÎ∞òÏßÄÏõê ÏÇ¨ÏóÖÎßå Ìè¨Ìï® */
+               AND BIZ.GVM_INSTN_CD = '1341000'  /* ÍµêÏú°Í≥ºÌïôÍ∏∞Ïà†Î∂ÄÎßå */
+               AND BIZM.pnoti_yn     = 'Y'  /* Í≥µÏãúÎåÄÏÉÅ ÏÇ¨ÏóÖÎßå */
                AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                AND ACMMT.ACMMT_FLAG(+)   in ( 'K030001' ,  'K030002' )
                AND BIZ.GVM_INSTN_CD = INSTN.INSTN_CD
            ) A
      WHERE A.BIZ_YR = '2011'
-     GROUP BY  GVM_INSTN_CD      
+     GROUP BY  GVM_INSTN_CD
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560113'
-     , NVL(A.ATTR_VAL1,'«’∞Ë') ATTR_VAL1
+     , NVL(A.ATTR_VAL1,'Ìï©Í≥Ñ') ATTR_VAL1
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.TOT_AMT,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999')) ATTR_VAL4
@@ -79,24 +79,24 @@ SELECT '2011'
      , 'SQL'
      , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
    FROM TMP_A A
-     ;   
+     ;
 
-/* »®∆‰¿Ã¡ˆøÎ -º∫∞˙ «ˆ»≤(±≥∞˙∫Œ∏∏, ∞¯Ω√¥ÎªÛ) */
+/* ÌôàÌéòÏù¥ÏßÄÏö© -ÏÑ±Í≥º ÌòÑÌô©(ÍµêÍ≥ºÎ∂ÄÎßå, Í≥µÏãúÎåÄÏÉÅ) */
 -- SELECT * FROM T_STATS_STS WHERE STATS_FLAG = 'K0560113' and stats_yr = '2011';
 -- DELETE FROM T_STATS_STS WHERE STATS_FLAG = 'K0560113' and stats_yr = '2011';
 
 
 INSERT INTO T_STATS_STS
     ( STATS_YR, STATS_SNO, STATS_FLAG , ATTR1_VAL
-    , ATTR2_VAL, ATTR3_VAL, ATTR4_VAL,  ATTR5_VAL, 
-    ATTR6_VAL, ATTR7_VAL, ATTR8_VAL, ATTR9_VAL, 
+    , ATTR2_VAL, ATTR3_VAL, ATTR4_VAL,  ATTR5_VAL,
+    ATTR6_VAL, ATTR7_VAL, ATTR8_VAL, ATTR9_VAL,
     ATTR10_VAL, ATTR11_VAL, ATTR43_VAL
     , RGSTR_ID, RGST_DTTM
-    )    
-WITH TMP_A AS 
+    )
+WITH TMP_A AS
 (
        SELECT GVM_INSTN_CD
-           , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD) ATTR_VAL1 
+           , F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD) ATTR_VAL1
            , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT1
            , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032002' THEN 1 ELSE 0 END)  AS CNT2
            , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031002' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT3
@@ -128,26 +128,26 @@ WITH TMP_A AS
               WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                AND TRGT.BIZ_YR = SCH.SRY_YY
-               AND SCH.PNOTI_YN = 'Y'      /* ∫Ò∞¯Ω√¥ÎªÛ ¥Î«– ¡¶ø‹ */
-               --AND SCH.UNIV_GUBUN <> 'H'   /* ¥Î«–ø¯¥Î«– ¡¶ø‹ */
+               AND SCH.PNOTI_YN = 'Y'      /* ÎπÑÍ≥µÏãúÎåÄÏÉÅ ÎåÄÌïô Ï†úÏô∏ */
+               --AND SCH.UNIV_GUBUN <> 'H'   /* ÎåÄÌïôÏõêÎåÄÌïô Ï†úÏô∏ */
                AND TRGT.BIZ_CD = BIZM.BIZ_CD
                AND TRGT.BIZ_YR = BIZM.BIZ_YR
                AND BIZM.BIZ_CD = BIZ.BIZ_CD
-               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ¿œπ›¡ˆø¯ ªÁæ˜∏∏ ∆˜«‘ */
-               AND BIZ.GVM_INSTN_CD = '1341000'  /* ±≥¿∞∞˙«–±‚º˙∫Œ∏∏ */
-               AND BIZM.pnoti_yn     = 'Y'  /* ∞¯Ω√¥ÎªÛ ªÁæ˜∏∏ */
+               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÏùºÎ∞òÏßÄÏõê ÏÇ¨ÏóÖÎßå Ìè¨Ìï® */
+               AND BIZ.GVM_INSTN_CD = '1341000'  /* ÍµêÏú°Í≥ºÌïôÍ∏∞Ïà†Î∂ÄÎßå */
+               AND BIZM.pnoti_yn     = 'Y'  /* Í≥µÏãúÎåÄÏÉÅ ÏÇ¨ÏóÖÎßå */
                AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                AND ACMMT.ACMMT_FLAG(+)   in ( 'K030001' ,  'K030002' )
                AND BIZ.GVM_INSTN_CD = INSTN.INSTN_CD
            ) A
      WHERE A.BIZ_YR = '2011'
-     GROUP BY  GVM_INSTN_CD      
+     GROUP BY  GVM_INSTN_CD
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560113'
-     , NVL(A.ATTR_VAL1,'«’∞Ë') ATTR_VAL1
+     , NVL(A.ATTR_VAL1,'Ìï©Í≥Ñ') ATTR_VAL1
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.TOT_AMT,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999')) ATTR_VAL4
@@ -162,29 +162,29 @@ SELECT '2011'
      , 'SQL'
      , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
    FROM TMP_A A
-     ;   
+     ;
 
 
 
 
 
-/* ∏Ò¿˚∫∞ «ˆ»≤-«ˆ»≤∫–ºÆ(1)ø°º≠∏∏ ªÁøÎ */
+/* Î™©Ï†ÅÎ≥Ñ ÌòÑÌô©-ÌòÑÌô©Î∂ÑÏÑù(1)ÏóêÏÑúÎßå ÏÇ¨Ïö© */
 --    SELECT * FROM T_STATS_STS WHERE STATS_FLAG = 'K0560112' and stats_yr = '2011';
 --    DELETE FROM T_STATS_STS WHERE STATS_FLAG = 'K0560112' and stats_yr = '2011';
 
 INSERT INTO T_STATS_STS
-    ( STATS_YR, STATS_SNO, STATS_FLAG 
+    ( STATS_YR, STATS_SNO, STATS_FLAG
     , ATTR1_VAL, ATTR2_VAL, ATTR3_VAL , ATTR4_VAL, ATTR5_VAL
     , ATTR6_VAL, ATTR7_VAL , ATTR8_VAL, ATTR9_VAL, ATTR10_VAL
     , ATTR11_VAL, ATTR12_VAL, ATTR13_VAL , ATTR14_VAL, ATTR15_VAL
     , ATTR43_VAL
     , RGSTR_ID
-    ) 
-WITH TMP_A AS 
+    )
+WITH TMP_A AS
 (
-     SELECT GROUPING_ID(A.BIZ_PRPS_TYP) RN 
+     SELECT GROUPING_ID(A.BIZ_PRPS_TYP) RN
           , F_GET_COMMN_NM(A.BIZ_PRPS_TYP)   ATTR_VAL1
-          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2 
+          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2
           , SUM(SURP_UNIT_AMT)                 ATTR_VAL3
           , SUM(C.CNT1)                             ATTR_VAL4
           , SUM(C.CNT2)                             ATTR_VAL5
@@ -196,9 +196,9 @@ WITH TMP_A AS
           , SUM(C.CNT8)                             ATTR_VAL11
           , ROW_NUMBER() OVER(ORDER BY A.BIZ_PRPS_TYP) ORDERED
        FROM T_BIZ_INFO      A
-          , T_BIZ_MNG_INFO  B  
+          , T_BIZ_MNG_INFO  B
           , (
-                    SELECT BIZ_CD 
+                    SELECT BIZ_CD
                          , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT1
                          , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032002' THEN 1 ELSE 0 END)  AS CNT2
                          , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031002' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT3
@@ -211,19 +211,19 @@ WITH TMP_A AS
                      WHERE ACMMT_FLAG   in ( 'K030001' , 'K030002')
                        AND ACMMT_YR     = '2010'
                        AND C.BIZ_SURP_INFO_ID  = D.BIZ_SURP_INFO_ID
-                       AND F_GET_BLN_SCHL_CD(C.EXE_INSTN_CD)       = E.INSTN_CD 
+                       AND F_GET_BLN_SCHL_CD(C.EXE_INSTN_CD)       = E.INSTN_CD
                        AND E.UNIV_GUBUN        IN  ('U','G')
                        AND E.SCHL_CD  <> '99999999'
                        AND E.SCHL_CD  <> '00000000'
                      GROUP BY BIZ_CD
             ) C
-            , ( 
-                    SELECT A.BIZ_CD 
+            , (
+                    SELECT A.BIZ_CD
                          , SUM(REAL_SURP_AMT) SURP_UNIT_AMT
                       FROM T_BIZ_SURP_TRGT_INFO A
                          , T_BIZT_INFO          B
                          , T_SCH_INFO           D
-                     WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID 
+                     WHERE A.BIZ_SURP_INFO_ID = B.BIZ_SURP_INFO_ID
                        AND B.SURP_DT = '2010'
                        AND F_GET_BLN_SCHL_CD(A.EXE_INSTN_CD) = D.INSTN_CD
                        AND D.UNIV_GUBUN in ('U','G')
@@ -231,19 +231,19 @@ WITH TMP_A AS
                        AND D.SCHL_CD  <> '00000000'
                      GROUP BY A.BIZ_CD
                 )D
-      WHERE A.BIZ_CD         = B.BIZ_CD 
+      WHERE A.BIZ_CD         = B.BIZ_CD
         AND A.BIZ_CD         = C.BIZ_CD(+)
         AND A.BIZ_CD         = D.BIZ_CD(+)
         AND A.BIZ_EFCT_YN    = 'Y'
-        AND B.BIZ_YR         = '2010'  
+        AND B.BIZ_YR         = '2010'
         AND A.BIZ_PRPS_TYP IS NOT NULL
-        AND F_GET_BIZ_TP(A.BIZ_CD) = '¿œπ›¡ˆø¯ªÁæ˜'
+        AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÏùºÎ∞òÏßÄÏõêÏÇ¨ÏóÖ'
       GROUP BY ROLLUP(A.BIZ_PRPS_TYP)
 )
 SELECT '2010'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560112'
-     , NVL(A.ATTR_VAL1,'«’∞Ë')
+     , NVL(A.ATTR_VAL1,'Ìï©Í≥Ñ')
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.ATTR_VAL4,'9,999,999,999,999')) ATTR_VAL4
@@ -262,7 +262,7 @@ SELECT '2010'
      , 'SQL'
    FROM TMP_A A
        , (SELECT * FROM TMP_A WHERE RN=1) B
-     ;   
+     ;
 
 
 
@@ -274,7 +274,7 @@ SELECT '2010'
 
 /***
 
---ªÁæ˜ º∫∞˙∏ÆΩ∫∆Æ
+--ÏÇ¨ÏóÖ ÏÑ±Í≥ºÎ¶¨Ïä§Ìä∏
 
 
 SELECT ROW_NUMBER() OVER(ORDER BY A.BIZ_NM) ORDERED
@@ -291,9 +291,9 @@ SELECT ROW_NUMBER() OVER(ORDER BY A.BIZ_NM) ORDERED
     , C.CNT7                             ATTR_VAL10
     , C.CNT8                             ATTR_VAL11
  FROM T_BIZ_INFO      A
-    , T_BIZ_MNG_INFO  B  
+    , T_BIZ_MNG_INFO  B
     , (
-              SELECT BIZ_CD 
+              SELECT BIZ_CD
                    , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT1
                    , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032002' THEN 1 ELSE 0 END)  AS CNT2
                    , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031002' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT3
@@ -308,21 +308,21 @@ SELECT ROW_NUMBER() OVER(ORDER BY A.BIZ_NM) ORDERED
                  AND C.BIZ_SURP_INFO_ID  = D.BIZ_SURP_INFO_ID
                GROUP BY BIZ_CD
       ) C
-WHERE A.BIZ_CD         = B.BIZ_CD 
+WHERE A.BIZ_CD         = B.BIZ_CD
   AND A.BIZ_CD         = C.BIZ_CD
   AND A.BIZ_EFCT_YN    = 'Y'
-  AND B.BIZ_YR         = '2010'  
+  AND B.BIZ_YR         = '2010'
   --AND A.BIZ_PRPS_TYP IS NOT NULL
-  AND F_GET_BIZ_TP(A.BIZ_CD) = '¿œπ›¡ˆø¯ªÁæ˜'
-  
+  AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÏùºÎ∞òÏßÄÏõêÏÇ¨ÏóÖ'
+
   */
-  
-  
-  
-WITH TMP_A AS 
+
+
+
+WITH TMP_A AS
 (
-     SELECT F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD) ATTR_VAL1 
-          , COUNT(A.BIZ_CD)                ATTR_VAL2 
+     SELECT F_GET_INSTN_NM('INSTN', A.GVM_INSTN_CD) ATTR_VAL1
+          , COUNT(A.BIZ_CD)                ATTR_VAL2
           , SUM(REAL_SURP_AMT)                 ATTR_VAL3
           , SUM(C.CNT1)                             ATTR_VAL4
           , SUM(C.CNT2)                             ATTR_VAL5
@@ -334,9 +334,9 @@ WITH TMP_A AS
           , SUM(C.CNT8)                             ATTR_VAL11
           , ROW_NUMBER() OVER(ORDER BY A.GVM_INSTN_CD) ORDERED
        FROM T_BIZ_INFO      A
-          , T_BIZ_MNG_INFO  B  
+          , T_BIZ_MNG_INFO  B
           , (
-                    SELECT ACMMT_YR, BIZ_CD 
+                    SELECT ACMMT_YR, BIZ_CD
                          , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT1
                          , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031001' AND  ATTR2_VAL = 'K032002' THEN 1 ELSE 0 END)  AS CNT2
                          , SUM(CASE WHEN  ACMMT_FLAG = 'K030001' AND ATTR1_VAL='K031002' AND  ATTR2_VAL = 'K032001' THEN 1 ELSE 0 END)  AS CNT3
@@ -351,37 +351,37 @@ WITH TMP_A AS
                        AND C.BIZ_SURP_INFO_ID  = D.BIZ_SURP_INFO_ID
                      GROUP BY ACMMT_YR, BIZ_CD
             ) C
-            , ( 
+            , (
                     SELECT TRGT.BIZ_CD
                          , TRGT.BIZ_YR
                          , SUM(REAL_SURP_AMT) REAL_SURP_AMT
                       FROM T_BIZ_SURP_TRGT_INFO TRGT
-                         , T_BIZT_INFO BIZT 
+                         , T_BIZT_INFO BIZT
                          , T_SCH_INFO_HIST SCH
-                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
+                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND SCH.PNOTI_YN = 'Y'      /* ∫Ò∞¯Ω√¥ÎªÛ ¥Î«– ¡¶ø‹ */
-                       AND SCH.UNIV_GUBUN <> 'H'   /* ¥Î«–ø¯¥Î«– ¡¶ø‹ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ÎπÑÍ≥µÏãúÎåÄÏÉÅ ÎåÄÌïô Ï†úÏô∏ */
+                       AND SCH.UNIV_GUBUN <> 'H'   /* ÎåÄÌïôÏõêÎåÄÌïô Ï†úÏô∏ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
                 )D
                 , T_INSTN_INFO E
-      WHERE A.BIZ_CD         = B.BIZ_CD 
+      WHERE A.BIZ_CD         = B.BIZ_CD
         AND B.BIZ_YR         = C.ACMMT_YR(+)
         AND B.BIZ_CD         = C.BIZ_CD(+)
         AND B.BIZ_YR         = D.BIZ_YR(+)
         AND B.BIZ_CD         = D.BIZ_CD(+)
         AND A.GVM_INSTN_CD = E.INSTN_CD
-        AND A.BIZ_FLAG in ( 'K042001')  /* ¿œπ›¡ˆø¯ªÁæ˜ ∏∏ ∆˜«‘ */
-        AND B.BIZ_YR         = '2011'   /* 2011≥‚ ªÁæ˜∏∏ */
-        AND B.pnoti_yn       = 'Y'      /* ∞¯Ω√¥ÎªÛ ªÁæ˜∏∏ */
-        AND A.GVM_INSTN_CD = '1341000'  /* ±≥¿∞∞˙«–±‚º˙∫Œ∏∏ */
+        AND A.BIZ_FLAG in ( 'K042001')  /* ÏùºÎ∞òÏßÄÏõêÏÇ¨ÏóÖ Îßå Ìè¨Ìï® */
+        AND B.BIZ_YR         = '2011'   /* 2011ÎÖÑ ÏÇ¨ÏóÖÎßå */
+        AND B.pnoti_yn       = 'Y'      /* Í≥µÏãúÎåÄÏÉÅ ÏÇ¨ÏóÖÎßå */
+        AND A.GVM_INSTN_CD = '1341000'  /* ÍµêÏú°Í≥ºÌïôÍ∏∞Ïà†Î∂ÄÎßå */
       GROUP BY (A.GVM_INSTN_CD)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560113'
-     , NVL(A.ATTR_VAL1,'«’∞Ë')
+     , NVL(A.ATTR_VAL1,'Ìï©Í≥Ñ')
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.ATTR_VAL4,'9,999,999,999,999')) ATTR_VAL4
@@ -400,6 +400,6 @@ SELECT '2011'
      , 'SQL'
      , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
    FROM TMP_A A
-     ;   
+     ;
 
 

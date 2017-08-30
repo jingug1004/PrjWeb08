@@ -617,7 +617,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.__esModule = true;
 	exports.checkRevision = checkRevision;
 
-	// TODO: Remove this line and break up compilePartial
 
 	exports.template = template;
 	exports.wrapProgram = wrapProgram;

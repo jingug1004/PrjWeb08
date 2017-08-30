@@ -1,4 +1,4 @@
-/*** ½ÇÁö¿ø¾× Åë°è **/
+/*** ì‹¤ì§€ì›ì•¡ í†µê³„ **/
 --    SELECT * FROM T_STATS_STS WHERE STATS_FLAG = 'K0560105' and stats_yr = '2011';
 --    DELETE FROM T_STATS_STS WHERE STATS_FLAG = 'K0560105' and stats_yr = '2011';
 
@@ -8,12 +8,12 @@ INSERT INTO T_STATS_STS
     , ATTR2_VAL, ATTR3_VAL , ATTR4_VAL
     , ATTR43_VAL
     , RGSTR_ID, RGST_DTTM
-    )   
-WITH TMP_A AS 
+    )
+WITH TMP_A AS
 (
-     SELECT GROUPING_ID(A.TM_FLAG) RN 
+     SELECT GROUPING_ID(A.TM_FLAG) RN
           , F_GET_COMMN_NM(A.TM_FLAG)               ATTR_VAL1
-          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2 
+          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2
           , NVL(SUM(SURP_UNIT_AMT),0)          ATTR_VAL3
           , ROW_NUMBER() OVER(ORDER BY A.TM_FLAG) ORDERED
     FROM
@@ -22,31 +22,31 @@ WITH TMP_A AS
             , A.BIZ_CD
             , SURP_UNIT_AMT
          FROM T_BIZ_INFO      A
-            , T_BIZ_MNG_INFO  B  
-            , ( 
+            , T_BIZ_MNG_INFO  B
+            , (
                     SELECT TRGT.BIZ_CD, TRGT.BIZ_YR, SUM(REAL_SURP_AMT) SURP_UNIT_AMT
                       FROM T_BIZ_SURP_TRGT_INFO TRGT, T_BIZT_INFO BIZT , T_SCH_INFO_HIST SCH
-                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
+                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
-                )C 
-        WHERE A.BIZ_CD         = B.BIZ_CD 
+                )C
+        WHERE A.BIZ_CD         = B.BIZ_CD
           AND B.BIZ_CD         = C.BIZ_CD(+)
           AND B.BIZ_YR         = C.BIZ_YR(+)
-          AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-          AND B.BIZ_YR         = '2011'   /* 2011³â »ç¾÷¸¸ */
-          AND B.pnoti_yn       = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+          AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+          AND B.BIZ_YR         = '2011'   /* 2011ë…„ ì‚¬ì—…ë§Œ */
+          AND B.pnoti_yn       = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
       ) A
       GROUP BY ROLLUP(A.TM_FLAG)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560105'
-     , case when A.ORDERED = 4 then NVL(A.ATTR_VAL1,'¹ÌÁ¤') else NVL(A.ATTR_VAL1,'ÇÕ°è') end ATTR_VAL1
+     , case when A.ORDERED = 4 then NVL(A.ATTR_VAL1,'ë¯¸ì •') else NVL(A.ATTR_VAL1,'í•©ê³„') end ATTR_VAL1
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999'))ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999'))ATTR_VAL3
      , DECODE(B.ATTR_VAL3,0,0,ROUND(A.ATTR_VAL3/B.ATTR_VAL3*100,1)) ATTR4_VAL
@@ -55,12 +55,12 @@ SELECT '2011'
      , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
    FROM TMP_A A
        , (SELECT * FROM TMP_A WHERE RN=1) B
-     ;   
+     ;
 
 
 
 /**
-*** ÀÏ¹ÝÁö¿ø»ç¾÷ Áß ´ëÇÐ¿¡ ½Ç Áö¿øÀÌ µÇÁö ¾ÊÀ¸³ª °íµî±³À°¹ßÀüÀ» À§ÇØ °èÈ¹µÈ 14°³ »ç¾÷Àº ´çÇØ¿¬µµÁö¿ø¾×À» Æ÷ÇÔÇÏ¿´À½
+*** ì¼ë°˜ì§€ì›ì‚¬ì—… ì¤‘ ëŒ€í•™ì— ì‹¤ ì§€ì›ì´ ë˜ì§€ ì•Šìœ¼ë‚˜ ê³ ë“±êµìœ¡ë°œì „ì„ ìœ„í•´ ê³„íšëœ 14ê°œ ì‚¬ì—…ì€ ë‹¹í•´ì—°ë„ì§€ì›ì•¡ì„ í¬í•¨í•˜ì˜€ìŒ
 **/
 
 
@@ -69,12 +69,12 @@ INSERT INTO T_STATS_STS
     , ATTR2_VAL, ATTR3_VAL , ATTR4_VAL
     , ATTR43_VAL
     , RGSTR_ID, RGST_DTTM
-    )   
-WITH TMP_A AS 
+    )
+WITH TMP_A AS
 (
-     SELECT GROUPING_ID(A.TM_FLAG) RN 
+     SELECT GROUPING_ID(A.TM_FLAG) RN
           , F_GET_COMMN_NM(A.TM_FLAG)               ATTR_VAL1
-          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2 
+          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2
           , NVL(SUM(SURP_UNIT_AMT),0)          ATTR_VAL3
           , ROW_NUMBER() OVER(ORDER BY A.TM_FLAG) ORDERED
     FROM
@@ -85,38 +85,38 @@ WITH TMP_A AS
                     then E.BIZT_MNPV_AMT
                     else SURP_UNIT_AMT end SURP_UNIT_AMT
          FROM T_BIZ_INFO      A
-            , T_BIZ_MNG_INFO  B  
-            , ( 
+            , T_BIZ_MNG_INFO  B
+            , (
                     SELECT TRGT.BIZ_CD, TRGT.BIZ_YR, SUM(REAL_SURP_AMT) SURP_UNIT_AMT
                       FROM T_BIZ_SURP_TRGT_INFO TRGT, T_BIZT_INFO BIZT , T_SCH_INFO_HIST SCH
-                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
+                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
-                )C 
+                )C
               , (
                     SELECT BIZ_YR, BIZ_CD, SUM(BIZT_MNPV_AMT) BIZT_MNPV_AMT
                      FROM T_BIZ_MNPV_INFO
-                    GROUP BY BIZ_YR, BIZ_CD 
+                    GROUP BY BIZ_YR, BIZ_CD
                   ) E
-        WHERE A.BIZ_CD         = B.BIZ_CD 
+        WHERE A.BIZ_CD         = B.BIZ_CD
           AND B.BIZ_CD         = C.BIZ_CD(+)
           AND B.BIZ_YR         = C.BIZ_YR(+)
           AND B.BIZ_CD         = E.BIZ_CD(+)
           AND B.BIZ_YR         = E.BIZ_YR(+)
-          AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-          AND B.BIZ_YR         = '2011'   /* 2011³â »ç¾÷¸¸ */
-          AND B.pnoti_yn       = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+          AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+          AND B.BIZ_YR         = '2011'   /* 2011ë…„ ì‚¬ì—…ë§Œ */
+          AND B.pnoti_yn       = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
       ) A
       GROUP BY ROLLUP(A.TM_FLAG)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560105'
-     , case when A.ORDERED = 4 then NVL(A.ATTR_VAL1,'¹ÌÁ¤') else NVL(A.ATTR_VAL1,'ÇÕ°è') end ATTR_VAL1
+     , case when A.ORDERED = 4 then NVL(A.ATTR_VAL1,'ë¯¸ì •') else NVL(A.ATTR_VAL1,'í•©ê³„') end ATTR_VAL1
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999'))ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999'))ATTR_VAL3
      , DECODE(B.ATTR_VAL3,0,0,ROUND(A.ATTR_VAL3/B.ATTR_VAL3*100,1)) ATTR4_VAL
@@ -125,10 +125,10 @@ SELECT '2011'
      , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
    FROM TMP_A A
        , (SELECT * FROM TMP_A WHERE RN=1) B
-     ;   
+     ;
 
 /**
-*** ÀÏ¹ÝÁö¿ø»ç¾÷ Áß ´ëÇÐ¿¡ ½Ç Áö¿øÀÌ µÇÁö ¾ÊÀ¸³ª °íµî±³À°¹ßÀüÀ» À§ÇØ °èÈ¹µÈ 14°³ »ç¾÷Àº ´çÇØ¿¬µµÁö¿ø¾×À» Æ÷ÇÔÇÏ¿´À½(°ø½Ã´ëÇÐ)
+*** ì¼ë°˜ì§€ì›ì‚¬ì—… ì¤‘ ëŒ€í•™ì— ì‹¤ ì§€ì›ì´ ë˜ì§€ ì•Šìœ¼ë‚˜ ê³ ë“±êµìœ¡ë°œì „ì„ ìœ„í•´ ê³„íšëœ 14ê°œ ì‚¬ì—…ì€ ë‹¹í•´ì—°ë„ì§€ì›ì•¡ì„ í¬í•¨í•˜ì˜€ìŒ(ê³µì‹œëŒ€í•™)
 **/
 
 
@@ -137,12 +137,12 @@ INSERT INTO T_STATS_STS
     , ATTR2_VAL, ATTR3_VAL , ATTR4_VAL
     , ATTR43_VAL
     , RGSTR_ID, RGST_DTTM
-    )   
-WITH TMP_A AS 
+    )
+WITH TMP_A AS
 (
-     SELECT GROUPING_ID(A.TM_FLAG) RN 
+     SELECT GROUPING_ID(A.TM_FLAG) RN
           , F_GET_COMMN_NM(A.TM_FLAG)               ATTR_VAL1
-          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2 
+          , COUNT(DISTINCT A.BIZ_CD)                ATTR_VAL2
           , NVL(SUM(SURP_UNIT_AMT),0)          ATTR_VAL3
           , ROW_NUMBER() OVER(ORDER BY A.TM_FLAG) ORDERED
     FROM
@@ -153,38 +153,38 @@ WITH TMP_A AS
                     then E.BIZT_MNPV_AMT
                     else SURP_UNIT_AMT end SURP_UNIT_AMT
          FROM T_BIZ_INFO      A
-            , T_BIZ_MNG_INFO  B  
-            , ( 
+            , T_BIZ_MNG_INFO  B
+            , (
                     SELECT TRGT.BIZ_CD, TRGT.BIZ_YR, SUM(REAL_SURP_AMT) SURP_UNIT_AMT
                       FROM T_BIZ_SURP_TRGT_INFO TRGT, T_BIZT_INFO BIZT , T_SCH_INFO_HIST SCH
-                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
+                     WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       --AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       --AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
-                )C 
+                )C
               , (
                     SELECT BIZ_YR, BIZ_CD, SUM(BIZT_MNPV_AMT) BIZT_MNPV_AMT
                      FROM T_BIZ_MNPV_INFO
-                    GROUP BY BIZ_YR, BIZ_CD 
+                    GROUP BY BIZ_YR, BIZ_CD
                   ) E
-        WHERE A.BIZ_CD         = B.BIZ_CD 
+        WHERE A.BIZ_CD         = B.BIZ_CD
           AND B.BIZ_CD         = C.BIZ_CD(+)
           AND B.BIZ_YR         = C.BIZ_YR(+)
           AND B.BIZ_CD         = E.BIZ_CD(+)
           AND B.BIZ_YR         = E.BIZ_YR(+)
-          AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-          AND B.BIZ_YR         = '2011'   /* 2011³â »ç¾÷¸¸ */
-          AND B.pnoti_yn       = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+          AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+          AND B.BIZ_YR         = '2011'   /* 2011ë…„ ì‚¬ì—…ë§Œ */
+          AND B.pnoti_yn       = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
       ) A
       GROUP BY ROLLUP(A.TM_FLAG)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560105'
-     , case when A.ORDERED = 4 then NVL(A.ATTR_VAL1,'¹ÌÁ¤') else NVL(A.ATTR_VAL1,'ÇÕ°è') end ATTR_VAL1
+     , case when A.ORDERED = 4 then NVL(A.ATTR_VAL1,'ë¯¸ì •') else NVL(A.ATTR_VAL1,'í•©ê³„') end ATTR_VAL1
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999'))ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999'))ATTR_VAL3
      , DECODE(B.ATTR_VAL3,0,0,ROUND(A.ATTR_VAL3/B.ATTR_VAL3*100,1)) ATTR4_VAL
@@ -193,6 +193,6 @@ SELECT '2011'
      , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')
    FROM TMP_A A
        , (SELECT * FROM TMP_A WHERE RN=1) B
-     ;   
+     ;
 
 
