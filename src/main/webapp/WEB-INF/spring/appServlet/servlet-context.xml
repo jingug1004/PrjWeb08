@@ -71,7 +71,7 @@
     -->
 
     <context:component-scan base-package="org.zerock.awsController"/>
-
+    <context:component-scan base-package="org.zerock.util"/>
 
     <context:component-scan base-package="org.zerock.controller"/>
     <!--
