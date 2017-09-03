@@ -58,4 +58,22 @@ public class AmazoneWebServiceUtil {
             }
         }
     }
+
+    public void uploadFileNewFolder(File file) {
+        if (amazonS3 != null) {
+            try {
+                PutObjectRequest putObjectRequest =
+                        new PutObjectRequest(BUCKET_NAME + "/Volumes"/*sub directory*/, file.getName(), file);
+//                        new PutObjectRequest(BUCKET_NAME + "/NewFolder"/*sub directory*/, file.getName(), file);
+                putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead); // file permission
+                amazonS3.putObject(putObjectRequest); // upload file
+
+            } catch (AmazonServiceException ase) {
+                ase.printStackTrace();
+            } finally {
+                amazonS3 = null;
+            }
+        }
+    }
+
 }

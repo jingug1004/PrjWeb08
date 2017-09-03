@@ -1,7 +1,7 @@
 --SELECT * FROM T_STATS_STS WHERE STATS_FLAG = 'K0560201' and stats_yr = '2011';
 --DELETE FROM T_STATS_STS WHERE STATS_FLAG = 'K0560201' and stats_yr = '2011';
 
-/*** ½ÇÁö¿ø¾× Åë°è(°ø½Ã´ë»ó)
+/*** ì‹¤ì§€ì›ì•¡ í†µê³„(ê³µì‹œëŒ€ìƒ)
 
 INSERT INTO T_STATS_STS
     ( STATS_YR, STATS_SNO, STATS_FLAG , ATTR1_VAL
@@ -39,24 +39,24 @@ WITH TMP_A AS
                      WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       --AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       --AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
                 )C 
             WHERE A.BIZ_CD         = B.BIZ_CD 
               AND B.BIZ_CD         = C.BIZ_CD(+)
               AND B.BIZ_YR         = C.BIZ_YR(+)
-              AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-              AND B.BIZ_YR         = '2011'   /* 2011³â »ç¾÷¸¸ */
-              AND B.pnoti_yn       = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+              AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+              AND B.BIZ_YR         = '2011'   /* 2011ë…„ ì‚¬ì—…ë§Œ */
+              AND B.pnoti_yn       = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
             )      D
       GROUP BY ROLLUP (D.GVM_INSTN_CD)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560201'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.ATTR_VAL4,'9,999,999,999,999')) ATTR_VAL4
@@ -71,7 +71,7 @@ SELECT '2011'
    FROM TMP_A A
  ;   
 
-/*** ½ÇÁö¿ø¾× Åë°è
+/*** ì‹¤ì§€ì›ì•¡ í†µê³„
 
 INSERT INTO T_STATS_STS
     ( STATS_YR, STATS_SNO, STATS_FLAG , ATTR1_VAL
@@ -109,24 +109,24 @@ WITH TMP_A AS
                      WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
                 )C 
             WHERE A.BIZ_CD         = B.BIZ_CD 
               AND B.BIZ_CD         = C.BIZ_CD(+)
               AND B.BIZ_YR         = C.BIZ_YR(+)
-              AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-              AND B.BIZ_YR         = '2011'   /* 2011³â »ç¾÷¸¸ */
-              AND B.pnoti_yn       = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+              AND A.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+              AND B.BIZ_YR         = '2011'   /* 2011ë…„ ì‚¬ì—…ë§Œ */
+              AND B.pnoti_yn       = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
             )      D
       GROUP BY ROLLUP (D.GVM_INSTN_CD)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560201'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.ATTR_VAL4,'9,999,999,999,999')) ATTR_VAL4

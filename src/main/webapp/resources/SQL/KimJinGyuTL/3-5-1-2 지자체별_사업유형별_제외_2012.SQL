@@ -30,7 +30,7 @@ SELECT GROUPING_ID(D.UNIV_ZON, D.BLN_PROV)   RN
                  FROM (
                    SELECT TRGT.BIZ_YR
                       , TRGT.BIZ_CD
-                      , CASE WHEN INSTR(F_GET_INSTN_NM('INSTN', PROV_INSTN_CD),'±³À°','1','1') = 0 THEN 'ÀÏ¹Ý' ELSE '±³À°' END UNIV_ZON  
+                      , CASE WHEN INSTR(F_GET_INSTN_NM('INSTN', PROV_INSTN_CD),'êµìœ¡','1','1') = 0 THEN 'ì¼ë°˜' ELSE 'êµìœ¡' END UNIV_ZON  
                       , F_GET_INSTN_NM('ZON', PROV_INSTN_CD)BLN_PROV
                       , BIZ.BIZ_FLAG
                       , REAL_SURP_AMT
@@ -43,16 +43,16 @@ SELECT GROUPING_ID(D.UNIV_ZON, D.BLN_PROV)   RN
                   WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                      AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                      AND TRGT.BIZ_YR = SCH.SRY_YY
-                     AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                     AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                    -- AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                     AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                     AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                    -- AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      AND TRGT.BIZ_CD = BIZM.BIZ_CD
                      AND TRGT.BIZ_YR = BIZM.BIZ_YR
                      AND BIZM.BIZ_CD = BIZ.BIZ_CD
                     -- AND BIZ.BIZ_CD  = PROV.BIZ_CD
-                     AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ÁöÀÚÃ¼ »ç¾÷ */
-                     AND BIZM.pnoti_yn     = 'Y'  /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                     AND BIZ.BIZ_PRPS_TYP <> 'K027004'/* ±¹°ø¸³´ë°æ»ó¿î¿µºñ Á¦¿Ü */
+                     AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ì§€ìžì²´ ì‚¬ì—… */
+                     AND BIZM.pnoti_yn     = 'Y'  /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                     AND BIZ.BIZ_PRPS_TYP <> 'K027004'/* êµ­ê³µë¦½ëŒ€ê²½ìƒìš´ì˜ë¹„ ì œì™¸ */
                      AND TRGT.BIZ_YR = '2012'
                      --AND PROV.BLN_PROV not in ('7010000','7150000','7240000','7310000','7380000','7430000','7480000','7530000','7800000','8000000','8140000','8320000','8490000','8750000','9010000','9290000')
                 ) A
@@ -64,7 +64,7 @@ SELECT   '2012'
    ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560601012'
      , A.UNIV_ZON  
-     , DECODE(A.RN,'0', A.ATTR_VAL1, '1','¼Ò°è','3', 'ÇÕ°è')    
+     , DECODE(A.RN,'0', A.ATTR_VAL1, '1','ì†Œê³„','3', 'í•©ê³„')    
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))CNT1
      , TRIM(TO_CHAR(A.AMT1,'9,999,999,999,999'))AMT1
      , TO_CHAR(DECODE(B.AMT1,0,0,ROUND(A.AMT1/B.AMT1*100,1)),'FM999,990.0') PER1

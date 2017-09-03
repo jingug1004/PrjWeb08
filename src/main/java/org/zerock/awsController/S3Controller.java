@@ -43,7 +43,7 @@ public class S3Controller {
 
         logger.info("lll~~~ postTest 01  lll~~~");
 
-        String fileName = "c:\\01.jpg";
+        String fileName = "c:\\02.jpg";
         File tempFile = new File(fileName);
 
         amazoneWebServiceUtil.uploadFile(tempFile);
@@ -53,13 +53,27 @@ public class S3Controller {
         return "aws/s3/viewTest";
     }
 
+
+    @RequestMapping(value = "/view02", method = RequestMethod.GET)
+    public String viewTest02() {
+
+        logger.info("lll~~~ postTest 01-02  lll~~~");
+
+        String fileName = "c:\\eng02복사본.txt";
+        File tempFile = new File(fileName);
+
+        amazoneWebServiceUtil.uploadFileNewFolder(tempFile);
+
+        logger.info("lll~~~ postTest 02-02 lll~~~");
+
+        return "aws/s3/viewTest";
+    }
+
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public void postTest() {
 
-
-
+        //tests
 
     }
-
 
 }

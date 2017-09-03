@@ -16,21 +16,21 @@ SELECT GROUPING_ID(A.UNIV_ESTB, A.UNIV_ZON, A.UNIV_SIZE) RN
    , NVL(SUM(TOT_AMT),0)   TOT_AMT
    , ROW_NUMBER() OVER(ORDER BY A.UNIV_ESTB, NVL(A.UNIV_ZON,'1') DESC, A.UNIV_SIZE) ORDERED
 FROM (
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
            UNION 
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
      ) A
     , (
           SELECT B.UNIV_ESTB, B.UNIV_ZON, B.UNIV_SIZE
@@ -50,22 +50,22 @@ FROM (
                       WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                        AND TRGT.BIZ_CD = BIZM.BIZ_CD
                        AND TRGT.BIZ_YR = BIZM.BIZ_YR
                        AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                       AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ÁöÀÚÃ¼  */
-                       AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                       AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ì§€ìžì²´  */
+                       AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                        AND SURP_UNIT_TYP IS NOT NULL
                        AND BIZ_PRPS_TYP IS NOT NULL
                  )A
                , (
                         SELECT SRY_YY, SCHL_CD
-                             , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                             , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                             , CASE WHEN SUM(STD_NUM) >= 10000            THEN '´ë±Ô¸ð' ELSE 'Áß¡¤¼Ò±Ô¸ð'END        UNIV_SIZE
+                             , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                             , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                             , CASE WHEN SUM(STD_NUM) >= 10000            THEN 'ëŒ€ê·œëª¨' ELSE 'ì¤‘Â·ì†Œê·œëª¨'END        UNIV_SIZE
                           FROM (
                                     SELECT SRY_YY, SCHL_HG_NM
                                          , SUBSTR(SCHL_CD,1,5) || '000' SCHL_CD
@@ -79,7 +79,7 @@ FROM (
                                          , STD_NUM
                                       FROM T_SCH_INFO_HIST
                                      WHERE UNIV_GUBUN in ('U', 'G')
-                                       AND PNOTI_YN = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                                       AND PNOTI_YN = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                                 )
                          GROUP BY SRY_YY, SCHL_CD
                    )B
@@ -98,9 +98,9 @@ FROM (
                    , MAX(ESTB_SC_DIV)       RE_ESTB_SC_DIV
                    , MAX(ZON_CD)            RE_ZON_CD
                    , SUM(STD_NUM)           RE_STD_NUM
-                   , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                   , CASE WHEN SUM(STD_NUM) >= 10000            THEN '´ë±Ô¸ð' ELSE 'Áß¡¤¼Ò±Ô¸ð'END        UNIV_SIZE
+                   , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                   , CASE WHEN SUM(STD_NUM) >= 10000            THEN 'ëŒ€ê·œëª¨' ELSE 'ì¤‘Â·ì†Œê·œëª¨'END        UNIV_SIZE
                 FROM (
                           SELECT SRY_YY, SCHL_HG_NM
                                , SUBSTR(SCHL_CD,1,5) || '000' SCHL_CD
@@ -113,8 +113,8 @@ FROM (
                                   END ZON_CD
                                , STD_NUM
                             FROM T_SCH_INFO_HIST
-                           WHERE UNIV_GUBUN IN ('U','G')  /* ´ëÇÐ¸¸ */
-                             AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                           WHERE UNIV_GUBUN IN ('U','G')  /* ëŒ€í•™ë§Œ */
+                             AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
                       )
                 GROUP BY SRY_YY, SCHL_CD
                 )
@@ -132,9 +132,9 @@ GROUP BY ROLLUP(A.UNIV_ESTB, A.UNIV_ZON, A.UNIV_SIZE)
 SELECT '2012'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'UK0560603021'
-      , DECODE(A.RN,'´ëÇÐ','ÇÕ°è','´ëÇÐ')
-     , DECODE(A.RN,'7','ÇÕ°è',A.UNIV_ESTB)UNIV_ESTB
-     , DECODE(A.RN,'3','¼Ò°è','7','',A.UNIV_ZON)UNIV_ZON
+      , DECODE(A.RN,'ëŒ€í•™','í•©ê³„','ëŒ€í•™')
+     , DECODE(A.RN,'7','í•©ê³„',A.UNIV_ESTB)UNIV_ESTB
+     , DECODE(A.RN,'3','ì†Œê³„','7','',A.UNIV_ZON)UNIV_ZON
      , DECODE(A.RN,'3','','7','',A.UNIV_SIZE)UNIV_SIZE
      , TRIM(TO_CHAR(A.SCHL_CNT,'9,999,999,999,999')) SCHL_CNT
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999'))   TOT_CNT
@@ -148,7 +148,7 @@ SELECT '2012'
  WHERE A.RN IN ('0','3','7')
  ;
  
- --Àü¹®´ëÇÐ
+ --ì „ë¬¸ëŒ€í•™
  
  INSERT INTO T_STATS_STS
     ( STATS_YR, STATS_SNO, STATS_FLAG , ATTR1_VAL
@@ -168,21 +168,21 @@ SELECT GROUPING_ID(A.UNIV_ESTB, A.UNIV_ZON, A.UNIV_SIZE) RN
    , NVL(SUM(TOT_AMT),0)   TOT_AMT
    , ROW_NUMBER() OVER(ORDER BY A.UNIV_ESTB, NVL(A.UNIV_ZON,'1') DESC, A.UNIV_SIZE) ORDERED
 FROM (
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
            UNION 
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '±¹¡¤°ø¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'êµ­Â·ê³µë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, '¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, '´ë±Ô¸ð' UNIV_SIZE FROM DUAL
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ëŒ€ê·œëª¨' UNIV_SIZE FROM DUAL
            UNION 
-          SELECT '»ç¸³' UNIV_ESTB, 'ºñ¼öµµ±Ç' UNIV_ZON, 'Áß¡¤¼Ò±Ô¸ð' UNIV_SIZE FROM DUAL 
+          SELECT 'ì‚¬ë¦½' UNIV_ESTB, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON, 'ì¤‘Â·ì†Œê·œëª¨' UNIV_SIZE FROM DUAL 
      ) A
     , (
           SELECT B.UNIV_ESTB, B.UNIV_ZON, B.UNIV_SIZE
@@ -202,22 +202,22 @@ FROM (
                       WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                        AND TRGT.BIZ_CD = BIZM.BIZ_CD
                        AND TRGT.BIZ_YR = BIZM.BIZ_YR
                        AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                       AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ÁöÀÚÃ¼ »ç¾÷ */
-                       AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó */
+                       AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ì§€ìžì²´ ì‚¬ì—… */
+                       AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ */
                        AND SURP_UNIT_TYP IS NOT NULL
                        AND BIZ_PRPS_TYP IS NOT NULL
                  )A
                , (
                         SELECT SRY_YY, SCHL_CD
-                             , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                             , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                             , CASE WHEN SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' ELSE 'Áß¡¤¼Ò±Ô¸ð'END        UNIV_SIZE
+                             , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                             , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                             , CASE WHEN SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' ELSE 'ì¤‘Â·ì†Œê·œëª¨'END        UNIV_SIZE
                           FROM (
                                     SELECT SRY_YY, SCHL_HG_NM
                                          , SUBSTR(SCHL_CD,1,5) || '000' SCHL_CD
@@ -231,7 +231,7 @@ FROM (
                                          , STD_NUM
                                       FROM T_SCH_INFO_HIST
                                      WHERE UNIV_GUBUN in ('C')
-                                       AND PNOTI_YN = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                                       AND PNOTI_YN = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                                 )
                          GROUP BY SRY_YY, SCHL_CD
                    )B
@@ -250,9 +250,9 @@ FROM (
                    , MAX(ESTB_SC_DIV)       RE_ESTB_SC_DIV
                    , MAX(ZON_CD)            RE_ZON_CD
                    , SUM(STD_NUM)           RE_STD_NUM
-                   , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                   , CASE WHEN SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' ELSE 'Áß¡¤¼Ò±Ô¸ð'END        UNIV_SIZE
+                   , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                   , CASE WHEN SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' ELSE 'ì¤‘Â·ì†Œê·œëª¨'END        UNIV_SIZE
                 FROM (
                           SELECT SRY_YY, SCHL_HG_NM
                                , SUBSTR(SCHL_CD,1,5) || '000' SCHL_CD
@@ -265,8 +265,8 @@ FROM (
                                   END ZON_CD
                                , STD_NUM
                             FROM T_SCH_INFO_HIST
-                           WHERE UNIV_GUBUN IN ('C')  /* Àü¹®´ëÇÐ */
-                             AND PNOTI_YN = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                           WHERE UNIV_GUBUN IN ('C')  /* ì „ë¬¸ëŒ€í•™ */
+                             AND PNOTI_YN = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                       )
                 GROUP BY SRY_YY, SCHL_CD
                 )
@@ -284,9 +284,9 @@ GROUP BY ROLLUP(A.UNIV_ESTB, A.UNIV_ZON, A.UNIV_SIZE)
 SELECT '2012'
   ,  STATS_SNO_SQ.NEXTVAL
      , 'CK0560603022'
-     , DECODE(A.RN,'Àü¹®´ëÇÐ','ÇÕ°è','Àü¹®´ëÇÐ')
-     , DECODE(A.RN,'7','ÇÕ°è',A.UNIV_ESTB)UNIV_ESTB
-     , DECODE(A.RN,'3','¼Ò°è','7','',A.UNIV_ZON)UNIV_ZON
+     , DECODE(A.RN,'ì „ë¬¸ëŒ€í•™','í•©ê³„','ì „ë¬¸ëŒ€í•™')
+     , DECODE(A.RN,'7','í•©ê³„',A.UNIV_ESTB)UNIV_ESTB
+     , DECODE(A.RN,'3','ì†Œê³„','7','',A.UNIV_ZON)UNIV_ZON
      , DECODE(A.RN,'3','','7','',A.UNIV_SIZE)UNIV_SIZE
      , TRIM(TO_CHAR(A.SCHL_CNT,'9,999,999,999,999')) SCHL_CNT
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999'))   TOT_CNT

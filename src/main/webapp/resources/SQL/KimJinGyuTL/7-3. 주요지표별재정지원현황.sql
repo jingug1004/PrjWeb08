@@ -1,16 +1,16 @@
 /*
-3)°íµî±³À°ÀçÁ¤Áö¿øÀÇ Æò°¡
-¨ç È¿°ú¼º
+3)ê³ ë“±êµìœ¡ìž¬ì •ì§€ì›ì˜ í‰ê°€
+â‘  íš¨ê³¼ì„±
 HRD
-(1) ÀÎ·Â¾ç¼º¡¤Áö¿ø ¼º°ú
+(1) ì¸ë ¥ì–‘ì„±Â·ì§€ì› ì„±ê³¼
 */
 
---*ÇÐÁ¦º°(ÇÐ¼ú, ±â¼ú)
+--*í•™ì œë³„(í•™ìˆ , ê¸°ìˆ )
 
 WITH TMP_A AS 
 (          
         SELECT GROUPING_ID(UNIV_GUBUN)RN
-             , DECODE(UNIV_GUBUN,'U','´ëÇÐ','C','Àü¹®´ë') UNIV_GUBUN
+             , DECODE(UNIV_GUBUN,'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€') UNIV_GUBUN
              , NVL(SUM(BIZ_CNT),0)              BIZ_CNT
              , NVL(SUM(BIZ_AMT),0)              BIZ_AMT
              , NVL(SUM(CNT1),0)                 CNT1
@@ -76,14 +76,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                          AND ACMMT.ACMMT_FLAG(+)   = 'K030007' 
@@ -95,7 +95,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'1','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -118,7 +118,7 @@ SELECT '2011'
 
 
 
---*´ëÇÐÆ¯¼ºº°(ÇÐ¼ú,±â¼ú)
+--*ëŒ€í•™íŠ¹ì„±ë³„(í•™ìˆ ,ê¸°ìˆ )
 WITH TMP_A AS
 (
       SELECT SRY_YY, SCHL_CD
@@ -127,11 +127,11 @@ WITH TMP_A AS
            , MAX(ZON_CD)            ZON_CD
            , SUM(STD_NUM)           STD_NUM
            , MAX(UNIV_GUBUN)        UNIV_GUBUN
-           , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-           , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-           , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN '´ë±Ô¸ð' 
-                  WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' 
-                  ELSE 'Áß¡¤¼Ò±Ô¸ð'
+           , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+           , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+           , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN 'ëŒ€ê·œëª¨' 
+                  WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' 
+                  ELSE 'ì¤‘Â·ì†Œê·œëª¨'
              END        UNIV_SIZE 
         FROM (
                   SELECT SRY_YY, SCHL_HG_NM
@@ -146,8 +146,8 @@ WITH TMP_A AS
                           END ZON_CD 
                        , STD_NUM
                     FROM T_SCH_INFO_HIST
-                   WHERE UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
-                     AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                   WHERE UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
+                     AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
               )
        WHERE SRY_YY = '2011'
        GROUP BY SRY_YY, SCHL_CD
@@ -197,25 +197,25 @@ WITH TMP_A AS
                   WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                    AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                    AND TRGT.BIZ_YR = SCH.SRY_YY
-                   AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                   AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                   AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                   AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                    AND TRGT.BIZ_CD = BIZM.BIZ_CD
                    AND TRGT.BIZ_YR = BIZM.BIZ_YR
                    AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                   AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                   AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                   AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                   AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                   AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                   AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                    AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                    AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                    AND ACMMT.ACMMT_FLAG(+)   = 'K030007' 
              )A
            , ( 
                     SELECT SRY_YY, SCHL_CD
-                       , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                       , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                       , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN '´ë±Ô¸ð' 
-                              WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' 
-                              ELSE 'Áß¡¤¼Ò±Ô¸ð'
+                       , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                       , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                       , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN 'ëŒ€ê·œëª¨' 
+                              WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' 
+                              ELSE 'ì¤‘Â·ì†Œê·œëª¨'
                          END        UNIV_SIZE 
                     FROM (
                               SELECT SRY_YY, SCHL_HG_NM
@@ -230,8 +230,8 @@ WITH TMP_A AS
                                       END ZON_CD 
                                    , STD_NUM
                                 FROM T_SCH_INFO_HIST
-                               WHERE UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
-                                 AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                               WHERE UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
+                                 AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
                           )
                    GROUP BY SRY_YY, SCHL_CD
                )B
@@ -242,7 +242,7 @@ WITH TMP_A AS
 SELECT '2011'
      , 'K05601111'
      , ATTR1
-     , NVL(ATTR2,'¼Ò°è') ATTR2
+     , NVL(ATTR2,'ì†Œê³„') ATTR2
      , TRIM(TO_CHAR(ATTR3,'9,999,999,999,999')) ATTR3
      , TRIM(TO_CHAR(ATTR4,'9,999,999,999,999')) ATTR4
      , TRIM(TO_CHAR(CNT1,'9,999,999,999,999')) CNT1
@@ -262,7 +262,7 @@ SELECT '2011'
   FROM (
             SELECT 'A'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY A.UNIV_ESTB)  ORDERED
-                 , '¼³¸³'                                 ATTR1
+                 , 'ì„¤ë¦½'                                 ATTR1
                  , A.UNIV_ESTB                            ATTR2
                  --, NVL(SUM(A.RE_SCHL_CD),0)               ATTR3
                  --, NVL(SUM(A.RE_STD_NUM),0)               ATTR4
@@ -287,8 +287,8 @@ SELECT '2011'
              GROUP BY ROLLUP(A.UNIV_ESTB) 
              UNION 
             SELECT 'B'                                    RN 
-                 , ROW_NUMBER() OVER(ORDER BY NVL(A.UNIV_ZON,'¤¾') DESC)   ORDERED
-                 , '¼ÒÀçÁö'                               ATTR1
+                 , ROW_NUMBER() OVER(ORDER BY NVL(A.UNIV_ZON,'ã…Ž') DESC)   ORDERED
+                 , 'ì†Œìž¬ì§€'                               ATTR1
                  , A.UNIV_ZON                              ATTR2
                  --, NVL(SUM(A.RE_SCHL_CD),0)               ATTR3
                  --, NVL(SUM(A.RE_STD_NUM),0)               ATTR4
@@ -314,7 +314,7 @@ SELECT '2011'
              UNION 
             SELECT 'C'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY A.UNIV_SIZE)  ORDERED
-                 , '±Ô¸ð'                                 ATTR1
+                 , 'ê·œëª¨'                                 ATTR1
                  , A.UNIV_SIZE                              ATTR2
                  --, NVL(SUM(A.RE_SCHL_CD),0)               ATTR3
                  --, NVL(SUM(A.RE_STD_NUM),0)               ATTR4
@@ -341,19 +341,19 @@ SELECT '2011'
  ;
 
 
--------------ÀÌ°ÅºÎÅÍ´Â Äõ¸® ´Ù½Ã Â¥±â.....
+-------------ì´ê±°ë¶€í„°ëŠ” ì¿¼ë¦¬ ë‹¤ì‹œ ì§œê¸°.....
 
 /*
 R&D
-(1) ³í¹®¼º°ú
+(1) ë…¼ë¬¸ì„±ê³¼
 */
 
---*ÇÐÁ¦º°(±¹³», ±¹¿Ü)
+--*í•™ì œë³„(êµ­ë‚´, êµ­ì™¸)
 
 WITH TMP_A AS 
 (          
         SELECT GROUPING_ID(A.UNIV_GUBUN)RN
-             , DECODE(A.UNIV_GUBUN,'U','´ëÇÐ','C','Àü¹®´ë') UNIV_GUBUN
+             , DECODE(A.UNIV_GUBUN,'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€') UNIV_GUBUN
              , NVL(SUM(BIZ_CNT),0)              BIZ_CNT
              , NVL(SUM(BIZ_AMT),0)              BIZ_AMT
              , NVL(SUM(CNT1),0)                 CNT1
@@ -386,14 +386,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                          AND ACMMT.ACMMT_FLAG(+)   = 'K030001' 
@@ -405,7 +405,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'1','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -424,7 +424,7 @@ SELECT '2011'
  
  
 
---*´ëÇÐÆ¯¼ºº°(±¹³», ±¹¿Ü)
+--*ëŒ€í•™íŠ¹ì„±ë³„(êµ­ë‚´, êµ­ì™¸)
 
 WITH TMP_A AS 
 (        
@@ -458,14 +458,14 @@ WITH TMP_A AS
                           WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                            AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                            AND TRGT.BIZ_YR = SCH.SRY_YY
-                           AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                           AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                           AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                           AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                            AND TRGT.BIZ_CD = BIZM.BIZ_CD
                            AND TRGT.BIZ_YR = BIZM.BIZ_YR
                            AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                           AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                           AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                           AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                           AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                           AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                           AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                            AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                            AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                            AND ACMMT.ACMMT_FLAG(+)   = 'K030001' 
@@ -474,11 +474,11 @@ WITH TMP_A AS
              ) A
              , ( 
                     SELECT SRY_YY, SCHL_CD
-                       , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                       , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                       , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN '´ë±Ô¸ð' 
-                              WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' 
-                              ELSE 'Áß¡¤¼Ò±Ô¸ð'
+                       , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                       , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                       , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN 'ëŒ€ê·œëª¨' 
+                              WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' 
+                              ELSE 'ì¤‘Â·ì†Œê·œëª¨'
                          END        UNIV_SIZE 
                     FROM (
                               SELECT SRY_YY, SCHL_HG_NM
@@ -493,8 +493,8 @@ WITH TMP_A AS
                                       END ZON_CD 
                                    , STD_NUM
                                 FROM T_SCH_INFO_HIST
-                               WHERE UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
-                                 AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                               WHERE UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
+                                 AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
                           )
                    GROUP BY SRY_YY, SCHL_CD
                )B
@@ -505,7 +505,7 @@ WITH TMP_A AS
 SELECT '2011'
      , 'K0560111'
      , ATTR1
-     , NVL(ATTR2,'¼Ò°è') ATTR2
+     , NVL(ATTR2,'ì†Œê³„') ATTR2
      , TRIM(TO_CHAR(ATTR3,'9,999,999,999,999')) ATTR3
      , TRIM(TO_CHAR(ATTR4,'9,999,999,999,999')) ATTR4
      , TRIM(TO_CHAR(CNT1,'9,999,999,999,999')) CNT1
@@ -517,7 +517,7 @@ SELECT '2011'
   FROM (
             SELECT 'A'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_ESTB)  ORDERED
-                 , '¼³¸³'                                  ATTR1
+                 , 'ì„¤ë¦½'                                  ATTR1
                  , UNIV_ESTB                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -529,8 +529,8 @@ SELECT '2011'
              GROUP BY ROLLUP(UNIV_ESTB) 
              UNION 
               SELECT 'B'                                    RN 
-                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'¤¾') DESC)   ORDERED
-                 , '¼ÒÀçÁö'                                ATTR1
+                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'ã…Ž') DESC)   ORDERED
+                 , 'ì†Œìž¬ì§€'                                ATTR1
                  , UNIV_ZON                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -543,7 +543,7 @@ SELECT '2011'
              UNION 
               SELECT 'C'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_SIZE)   ORDERED
-                 , '±Ô¸ð'                                ATTR1
+                 , 'ê·œëª¨'                                ATTR1
                  , UNIV_SIZE                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -557,16 +557,16 @@ SELECT '2011'
  ;
 
 /*
-(2) Æ¯Çã¼º°ú
+(2) íŠ¹í—ˆì„±ê³¼
 */
 
 
---*ÇÐÁ¦º°(±¹³»,±¹¿Ü)
+--*í•™ì œë³„(êµ­ë‚´,êµ­ì™¸)
 
 WITH TMP_A AS 
 (          
         SELECT GROUPING_ID(A.UNIV_GUBUN)RN
-             , DECODE(A.UNIV_GUBUN,'U','´ëÇÐ','C','Àü¹®´ë') UNIV_GUBUN
+             , DECODE(A.UNIV_GUBUN,'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€') UNIV_GUBUN
              , NVL(SUM(BIZ_CNT),0)              BIZ_CNT
              , NVL(SUM(BIZ_AMT),0)              BIZ_AMT
              , NVL(SUM(CNT1),0)                 CNT1
@@ -599,14 +599,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                          AND ACMMT.ACMMT_FLAG(+)   = 'K030002' 
@@ -618,7 +618,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'1','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -636,7 +636,7 @@ SELECT '2011'
  ;
  
 
---*´ëÇÐÆ¯¼ºº°(±¹³», ±¹¿Ü)
+--*ëŒ€í•™íŠ¹ì„±ë³„(êµ­ë‚´, êµ­ì™¸)
 
 WITH TMP_A AS 
 (        
@@ -670,14 +670,14 @@ WITH TMP_A AS
                           WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                            AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                            AND TRGT.BIZ_YR = SCH.SRY_YY
-                           AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                           AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                           AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                           AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                            AND TRGT.BIZ_CD = BIZM.BIZ_CD
                            AND TRGT.BIZ_YR = BIZM.BIZ_YR
                            AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                           AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                           AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                           AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                           AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                           AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                           AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                            AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                            AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                            AND ACMMT.ACMMT_FLAG(+)   = 'K030002' 
@@ -686,11 +686,11 @@ WITH TMP_A AS
              ) A
              , ( 
                     SELECT SRY_YY, SCHL_CD
-                       , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                       , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                       , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN '´ë±Ô¸ð' 
-                              WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' 
-                              ELSE 'Áß¡¤¼Ò±Ô¸ð'
+                       , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                       , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                       , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN 'ëŒ€ê·œëª¨' 
+                              WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' 
+                              ELSE 'ì¤‘Â·ì†Œê·œëª¨'
                          END        UNIV_SIZE 
                     FROM (
                               SELECT SRY_YY, SCHL_HG_NM
@@ -705,8 +705,8 @@ WITH TMP_A AS
                                       END ZON_CD 
                                    , STD_NUM
                                 FROM T_SCH_INFO_HIST
-                               WHERE UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
-                                 AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                               WHERE UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
+                                 AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
                           )
                    GROUP BY SRY_YY, SCHL_CD
                )B
@@ -717,7 +717,7 @@ WITH TMP_A AS
 SELECT '2011'
      , 'K0560111'
      , ATTR1
-     , NVL(ATTR2,'¼Ò°è') ATTR2
+     , NVL(ATTR2,'ì†Œê³„') ATTR2
      , TRIM(TO_CHAR(ATTR3,'9,999,999,999,999')) ATTR3
      , TRIM(TO_CHAR(ATTR4,'9,999,999,999,999')) ATTR4
      , TRIM(TO_CHAR(CNT1,'9,999,999,999,999')) CNT1
@@ -729,7 +729,7 @@ SELECT '2011'
   FROM (
             SELECT 'A'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_ESTB)  ORDERED
-                 , '¼³¸³'                                  ATTR1
+                 , 'ì„¤ë¦½'                                  ATTR1
                  , UNIV_ESTB                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -741,8 +741,8 @@ SELECT '2011'
              GROUP BY ROLLUP(UNIV_ESTB) 
              UNION 
               SELECT 'B'                                    RN 
-                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'¤¾') DESC)   ORDERED
-                 , '¼ÒÀçÁö'                                ATTR1
+                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'ã…Ž') DESC)   ORDERED
+                 , 'ì†Œìž¬ì§€'                                ATTR1
                  , UNIV_ZON                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -755,7 +755,7 @@ SELECT '2011'
              UNION 
               SELECT 'C'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_SIZE)   ORDERED
-                 , '±Ô¸ð'                                ATTR1
+                 , 'ê·œëª¨'                                ATTR1
                  , UNIV_SIZE                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -768,11 +768,11 @@ SELECT '2011'
 )
  ;
  
--------------------------- ¿©±âºÎÅÍ´Â Äõ¸® ´Ù½Ã Â¥¾ßÇÔ
+-------------------------- ì—¬ê¸°ë¶€í„°ëŠ” ì¿¼ë¦¬ ë‹¤ì‹œ ì§œì•¼í•¨
 
 /*
-	(3) ±â¼ú·á ¼º°ú(ÀÔ·Âµ¥ÀÌÅÍ ¾çÀÌ Àû¾î ºÐ¼® ºÒ°¡´É)-(Á¦¿Ü)
-	*ºÎÃ³º°
+	(3) ê¸°ìˆ ë£Œ ì„±ê³¼(ìž…ë ¥ë°ì´í„° ì–‘ì´ ì ì–´ ë¶„ì„ ë¶ˆê°€ëŠ¥)-(ì œì™¸)
+	*ë¶€ì²˜ë³„
 */
 
 WITH TMP_A AS 
@@ -829,7 +829,7 @@ WITH TMP_A AS
                                 AND C.BIZ_SURP_INFO_ID  = D.BIZ_SURP_INFO_ID
                                 AND B.BIZ_YR        = '2011'
                                 AND A.BIZ_EFCT_YN   = 'Y'  
-                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÀÏ¹ÝÁö¿ø»ç¾÷'
+                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ì¼ë°˜ì§€ì›ì‚¬ì—…'
                      ) A
                    GROUP BY GVM_INSTN_CD
                )
@@ -837,7 +837,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.GVM_INSTN_CD)GVM_INSTN_CD 
+     , DECODE(A.RN,'1','í•©ê³„',A.GVM_INSTN_CD)GVM_INSTN_CD 
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -850,12 +850,12 @@ SELECT '2011'
      , (SELECT * FROM TMP_A WHERE RN = 1) B
  ;
 
---*ÇÐÁ¦º°(Á¦¿Ü)
+--*í•™ì œë³„(ì œì™¸)
 
 WITH TMP_A AS 
 (          
         SELECT GROUPING_ID(A.UNIV_GUBUN)RN
-             , DECODE(A.UNIV_GUBUN,'U','´ëÇÐ','C','Àü¹®´ë') UNIV_GUBUN
+             , DECODE(A.UNIV_GUBUN,'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€') UNIV_GUBUN
              , NVL(SUM(BIZ_CNT),0)              BIZ_CNT
              , NVL(SUM(BIZ_AMT),0)              BIZ_AMT
              , NVL(SUM(CNT1),0)                 CNT1
@@ -913,7 +913,7 @@ WITH TMP_A AS
                                 AND C.BIZ_SURP_INFO_ID  = D.BIZ_SURP_INFO_ID
                                 AND B.BIZ_YR        = '2011'
                                 AND A.BIZ_EFCT_YN   = 'Y'  
-                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÀÏ¹ÝÁö¿ø»ç¾÷'
+                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ì¼ë°˜ì§€ì›ì‚¬ì—…'
                      ) A
                    GROUP BY UNIV_GUBUN
                )B
@@ -922,7 +922,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'1','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -936,7 +936,7 @@ SELECT '2011'
  ;
 
 
---*´ëÇÐÆ¯¼ºº°(Á¦¿Ü)
+--*ëŒ€í•™íŠ¹ì„±ë³„(ì œì™¸)
 
 WITH TMP_A AS 
 (       
@@ -983,11 +983,11 @@ WITH TMP_A AS
                          , MAX(ZON_CD)            RE_ZON_CD
                          , SUM(STD_NUM)           RE_STD_NUM
                          , MAX(UNIV_GUBUN)        UNIV_GUBUN
-                         , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                         , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                         , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN '´ë±Ô¸ð' 
-                                WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' 
-                                ELSE 'Áß¡¤¼Ò±Ô¸ð'
+                         , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                         , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                         , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN 'ëŒ€ê·œëª¨' 
+                                WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' 
+                                ELSE 'ì¤‘Â·ì†Œê·œëª¨'
                            END        UNIV_SIZE 
                       FROM (
                                 SELECT SCHL_HG_NM
@@ -1016,12 +1016,12 @@ WITH TMP_A AS
           AND C.SCHL_CD = E.SCHL_CD
           AND B.BIZ_YR        = '2011'
           AND A.BIZ_EFCT_YN   = 'Y'  
-          AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÀÏ¹ÝÁö¿ø»ç¾÷'
+          AND F_GET_BIZ_TP(A.BIZ_CD) = 'ì¼ë°˜ì§€ì›ì‚¬ì—…'
 )
 SELECT '2011'
      , 'K0560111'
      , ATTR1
-     , NVL(ATTR2,'¼Ò°è') ATTR2
+     , NVL(ATTR2,'ì†Œê³„') ATTR2
      , TRIM(TO_CHAR(ATTR3,'9,999,999,999,999')) ATTR3
      , TRIM(TO_CHAR(ATTR4,'9,999,999,999,999')) ATTR4
      , TRIM(TO_CHAR(CNT1,'9,999,999,999,999')) CNT1
@@ -1031,7 +1031,7 @@ SELECT '2011'
   FROM (
             SELECT 'A'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_ESTB)  ORDERED
-                 , '¼³¸³'                                  ATTR1
+                 , 'ì„¤ë¦½'                                  ATTR1
                  , UNIV_ESTB                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -1041,8 +1041,8 @@ SELECT '2011'
              GROUP BY ROLLUP(UNIV_ESTB) 
              UNION 
               SELECT 'B'                                    RN 
-                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'¤¾') DESC)   ORDERED
-                 , '¼ÒÀçÁö'                                ATTR1
+                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'ã…Ž') DESC)   ORDERED
+                 , 'ì†Œìž¬ì§€'                                ATTR1
                  , UNIV_ZON                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -1053,7 +1053,7 @@ SELECT '2011'
              UNION 
               SELECT 'C'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_SIZE)   ORDERED
-                 , '±Ô¸ð'                                ATTR1
+                 , 'ê·œëª¨'                                ATTR1
                  , UNIV_SIZE                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -1066,16 +1066,16 @@ SELECT '2011'
 
 
 /*
-	(4) »ç¾÷È­ ÇöÈ²(ÀÔ·Âµ¥ÀÌÅÍ ¾çÀÌ Àû¾î ºÐ¼® ºÒ°¡´É)-Á¦¿Ü
-	*ºÎÃ³º°
-	*ÇÐÁ¦º°
-*´ëÇÐÆ¯¼ºº°
-==> »ó´Ü¿¡ Äõ¸® ÀÖÀ½
+	(4) ì‚¬ì—…í™” í˜„í™©(ìž…ë ¥ë°ì´í„° ì–‘ì´ ì ì–´ ë¶„ì„ ë¶ˆê°€ëŠ¥)-ì œì™¸
+	*ë¶€ì²˜ë³„
+	*í•™ì œë³„
+*ëŒ€í•™íŠ¹ì„±ë³„
+==> ìƒë‹¨ì— ì¿¼ë¦¬ ìžˆìŒ
 */
 
 /*
-(5) ¿¬¼öÁö¿ø ¼º°ú-Á¦¿Ü
-*ºÎÃ³º°(±¹³», ÇÐ¼ú)
+(5) ì—°ìˆ˜ì§€ì› ì„±ê³¼-ì œì™¸
+*ë¶€ì²˜ë³„(êµ­ë‚´, í•™ìˆ )
 */
 
 WITH TMP_A AS 
@@ -1156,7 +1156,7 @@ WITH TMP_A AS
                                 AND C.BIZ_SURP_INFO_ID  = D.BIZ_SURP_INFO_ID
                                 AND B.BIZ_YR        = '2011'
                                 AND A.BIZ_EFCT_YN   = 'Y'  
-                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÀÏ¹ÝÁö¿ø»ç¾÷'
+                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ì¼ë°˜ì§€ì›ì‚¬ì—…'
                      ) A
                    GROUP BY GVM_INSTN_CD
                )
@@ -1164,7 +1164,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.GVM_INSTN_CD)GVM_INSTN_CD 
+     , DECODE(A.RN,'1','í•©ê³„',A.GVM_INSTN_CD)GVM_INSTN_CD 
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -1189,12 +1189,12 @@ SELECT '2011'
      , (SELECT * FROM TMP_A WHERE RN = 1) B
  ;
 
---*ÇÐÁ¦º°(±¹³», ÇÐ¼ú)-Á¦¿Ü
+--*í•™ì œë³„(êµ­ë‚´, í•™ìˆ )-ì œì™¸
 
 WITH TMP_A AS 
 (          
         SELECT GROUPING_ID(A.UNIV_GUBUN)RN
-             , DECODE(A.UNIV_GUBUN,'U','´ëÇÐ','C','Àü¹®´ë') UNIV_GUBUN
+             , DECODE(A.UNIV_GUBUN,'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€') UNIV_GUBUN
              , NVL(SUM(BIZ_CNT),0)              BIZ_CNT
              , NVL(SUM(BIZ_AMT),0)              BIZ_AMT
              , NVL(SUM(CNT1),0)                 CNT1
@@ -1276,7 +1276,7 @@ WITH TMP_A AS
                                 AND C.BIZ_SURP_INFO_ID  = D.BIZ_SURP_INFO_ID
                                 AND B.BIZ_YR        = '2011'
                                 AND A.BIZ_EFCT_YN   = 'Y'  
-                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÀÏ¹ÝÁö¿ø»ç¾÷'
+                                AND F_GET_BIZ_TP(A.BIZ_CD) = 'ì¼ë°˜ì§€ì›ì‚¬ì—…'
                      ) A
                    GROUP BY UNIV_GUBUN
                )B
@@ -1285,7 +1285,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'1','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -1311,7 +1311,7 @@ SELECT '2011'
  ;
 
 
---*´ëÇÐÆ¯¼ºº°(±¹³», ÇÐ¼ú)-Á¦¿Ü
+--*ëŒ€í•™íŠ¹ì„±ë³„(êµ­ë‚´, í•™ìˆ )-ì œì™¸
 
 WITH TMP_A AS 
 (       
@@ -1370,11 +1370,11 @@ WITH TMP_A AS
                          , MAX(ZON_CD)            RE_ZON_CD
                          , SUM(STD_NUM)           RE_STD_NUM
                          , MAX(UNIV_GUBUN)        UNIV_GUBUN
-                         , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN '»ç¸³'   ELSE '±¹¡¤°ø¸³'    END        UNIV_ESTB
-                         , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
-                         , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN '´ë±Ô¸ð' 
-                                WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN '´ë±Ô¸ð' 
-                                ELSE 'Áß¡¤¼Ò±Ô¸ð'
+                         , CASE WHEN MAX(ESTB_SC_DIV) = '3'           THEN 'ì‚¬ë¦½'   ELSE 'êµ­Â·ê³µë¦½'    END        UNIV_ESTB
+                         , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
+                         , CASE WHEN MAX(UNIV_GUBUN) = 'U' AND SUM(STD_NUM) >= 10000           THEN 'ëŒ€ê·œëª¨' 
+                                WHEN MAX(UNIV_GUBUN) = 'C' AND SUM(STD_NUM) >= 4000            THEN 'ëŒ€ê·œëª¨' 
+                                ELSE 'ì¤‘Â·ì†Œê·œëª¨'
                            END        UNIV_SIZE 
                       FROM (
                                 SELECT SCHL_HG_NM
@@ -1403,12 +1403,12 @@ WITH TMP_A AS
           AND C.SCHL_CD = E.SCHL_CD
           AND B.BIZ_YR        = '2011'
           AND A.BIZ_EFCT_YN   = 'Y'  
-          AND F_GET_BIZ_TP(A.BIZ_CD) = 'ÀÏ¹ÝÁö¿ø»ç¾÷'
+          AND F_GET_BIZ_TP(A.BIZ_CD) = 'ì¼ë°˜ì§€ì›ì‚¬ì—…'
 )
 SELECT '2011'
      , 'K0560111'
      , ATTR1
-     , NVL(ATTR2,'¼Ò°è') ATTR2
+     , NVL(ATTR2,'ì†Œê³„') ATTR2
      , TRIM(TO_CHAR(ATTR3,'9,999,999,999,999')) ATTR3
      , TRIM(TO_CHAR(ATTR4,'9,999,999,999,999')) ATTR4
      , TRIM(TO_CHAR(CNT1,'9,999,999,999,999')) CNT1
@@ -1424,7 +1424,7 @@ SELECT '2011'
   FROM (
             SELECT 'A'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_ESTB)  ORDERED
-                 , '¼³¸³'                                  ATTR1
+                 , 'ì„¤ë¦½'                                  ATTR1
                  , UNIV_ESTB                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -1440,8 +1440,8 @@ SELECT '2011'
              GROUP BY ROLLUP(UNIV_ESTB) 
              UNION 
               SELECT 'B'                                    RN 
-                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'¤¾') DESC)   ORDERED
-                 , '¼ÒÀçÁö'                                ATTR1
+                 , ROW_NUMBER() OVER(ORDER BY NVL(UNIV_ZON,'ã…Ž') DESC)   ORDERED
+                 , 'ì†Œìž¬ì§€'                                ATTR1
                  , UNIV_ZON                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 
@@ -1458,7 +1458,7 @@ SELECT '2011'
              UNION 
               SELECT 'C'                                    RN 
                  , ROW_NUMBER() OVER(ORDER BY UNIV_SIZE)   ORDERED
-                 , '±Ô¸ð'                                ATTR1
+                 , 'ê·œëª¨'                                ATTR1
                  , UNIV_SIZE                              ATTR2
                  , NVL(COUNT(DISTINCT A.BIZ_CD) ,0)       ATTR3
                  , NVL(SUM(REAL_SURP_AMT),0)              ATTR4 

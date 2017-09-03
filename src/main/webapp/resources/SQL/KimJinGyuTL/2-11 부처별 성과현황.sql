@@ -1,4 +1,4 @@
-/* ºÎÃ³º° ÀçÁ¤Áö¿ø ÇöÈ²(°ø½Ã´ë»ó) */
+/* ë¶€ì²˜ë³„ ìž¬ì •ì§€ì› í˜„í™©(ê³µì‹œëŒ€ìƒ) */
 
 INSERT INTO T_STATS_STS
     ( STATS_YR, STATS_SNO, STATS_FLAG , ATTR1_VAL
@@ -51,8 +51,8 @@ WITH TMP_A AS
                      WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       --AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       --AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
                 )D
       WHERE A.BIZ_CD         = B.BIZ_CD 
@@ -60,15 +60,15 @@ WITH TMP_A AS
         AND B.BIZ_CD         = C.BIZ_CD(+)
         AND B.BIZ_YR         = D.BIZ_YR(+)
         AND B.BIZ_CD         = D.BIZ_CD(+)
-        AND A.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø»ç¾÷ ¸¸ Æ÷ÇÔ */
-        AND B.BIZ_YR         = '2011'   /* 2011³â »ç¾÷¸¸ */
-        AND B.pnoti_yn       = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+        AND A.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì›ì‚¬ì—… ë§Œ í¬í•¨ */
+        AND B.BIZ_YR         = '2011'   /* 2011ë…„ ì‚¬ì—…ë§Œ */
+        AND B.pnoti_yn       = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
       GROUP BY ROLLUP (A.GVM_INSTN_CD)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560113'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.ATTR_VAL4,'9,999,999,999,999')) ATTR_VAL4
@@ -90,7 +90,7 @@ SELECT '2011'
      ;   
 
 
-/* ºÎÃ³º° ÀçÁ¤Áö¿ø ÇöÈ² */
+/* ë¶€ì²˜ë³„ ìž¬ì •ì§€ì› í˜„í™© */
 
 INSERT INTO T_STATS_STS
     ( STATS_YR, STATS_SNO, STATS_FLAG , ATTR1_VAL
@@ -143,8 +143,8 @@ WITH TMP_A AS
                      WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
                        AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                        AND TRGT.BIZ_YR = SCH.SRY_YY
-                       AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                       AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                       AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                       AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                      GROUP BY TRGT.BIZ_CD, TRGT.BIZ_YR
                 )D
       WHERE A.BIZ_CD         = B.BIZ_CD 
@@ -152,15 +152,15 @@ WITH TMP_A AS
         AND B.BIZ_CD         = C.BIZ_CD(+)
         AND B.BIZ_YR         = D.BIZ_YR(+)
         AND B.BIZ_CD         = D.BIZ_CD(+)
-        AND A.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø»ç¾÷ ¸¸ Æ÷ÇÔ */
-        AND B.BIZ_YR         = '2011'   /* 2011³â »ç¾÷¸¸ */
-        AND B.pnoti_yn       = 'Y'      /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+        AND A.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì›ì‚¬ì—… ë§Œ í¬í•¨ */
+        AND B.BIZ_YR         = '2011'   /* 2011ë…„ ì‚¬ì—…ë§Œ */
+        AND B.pnoti_yn       = 'Y'      /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
       GROUP BY ROLLUP (A.GVM_INSTN_CD)
 )
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560113'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999')) ATTR_VAL3
      , TRIM(TO_CHAR(A.ATTR_VAL4,'9,999,999,999,999')) ATTR_VAL4

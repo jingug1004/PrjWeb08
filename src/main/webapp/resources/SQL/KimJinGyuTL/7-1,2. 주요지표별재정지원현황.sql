@@ -1,10 +1,10 @@
 /******************************************************************************
-¥³. ÁÖ¿ä ÁöÇ¥º° ÀçÁ¤Áö¿ø ÇöÈ²
+â…£. ì£¼ìš” ì§€í‘œë³„ ìž¬ì •ì§€ì› í˜„í™©
 
-1) °íµî±³À° ÀçÁ¤Áö¿øÀÇ È®º¸ - Á¦¿ÜÃ³¸®µÊ
+1) ê³ ë“±êµìœ¡ ìž¬ì •ì§€ì›ì˜ í™•ë³´ - ì œì™¸ì²˜ë¦¬ë¨
 ******************************************************************************/
 
--- À¯Çüº° °íµî±³À° ÀçÁ¤Áö¿øÀÇ ±Ô¸ð
+-- ìœ í˜•ë³„ ê³ ë“±êµìœ¡ ìž¬ì •ì§€ì›ì˜ ê·œëª¨
 
 WITH TMP_A AS 
 (
@@ -29,14 +29,14 @@ WITH TMP_A AS
                          WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
                            AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                            AND TRGT.BIZ_YR = SCH.SRY_YY
-                           AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                           AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                           AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                           AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                           AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                           AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                            AND TRGT.BIZ_CD = BIZM.BIZ_CD
                            AND TRGT.BIZ_YR = BIZM.BIZ_YR
                            AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                           AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                           AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                           AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                           AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                            AND TRGT.BIZ_YR = '2011'
                         ) A
                    GROUP BY A.SURP_UNIT_TYP
@@ -46,7 +46,7 @@ WITH TMP_A AS
 SELECT '2011'
      ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560106'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.ATTR_VAL2,'9,999,999,999,999')) ATTR_VAL2
      , TRIM(TO_CHAR(A.ATTR_VAL3,'9,999,999,999,999')) ATTR_VAL3
      , DECODE(B.ATTR_VAL3,0,0,ROUND(A.ATTR_VAL3/B.ATTR_VAL3*100,1)) ATTR4_VAL
@@ -58,7 +58,7 @@ SELECT '2011'
 
 
 
--- ¿¬±¸°³¹ßÁö¿øºñÀ²(Á¤ºÎ°íµî±³À°ÀçÁ¤ ´ëºñ R&D Áö¿ø¾×) 
+-- ì—°êµ¬ê°œë°œì§€ì›ë¹„ìœ¨(ì •ë¶€ê³ ë“±êµìœ¡ìž¬ì • ëŒ€ë¹„ R&D ì§€ì›ì•¡) 
 SELECT '' BDG
      , MAX(DECODE(ORDERED,1,ATTR_VAL2)) ATTR1
      , MAX(DECODE(ORDERED,1,ATTR_VAL3)) ATTR2
@@ -89,14 +89,14 @@ FROM
           WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+) 
              AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
              AND TRGT.BIZ_YR = SCH.SRY_YY
-             AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-             AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-             AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+             AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+             AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+             AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
              AND TRGT.BIZ_CD = BIZM.BIZ_CD
              AND TRGT.BIZ_YR = BIZM.BIZ_YR
              AND BIZM.BIZ_CD = BIZ.BIZ_CD
-             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-             AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+             AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
              AND BIZ.BIZ_PRPS_TYP IS NOT NULL
              AND TRGT.BIZ_YR = '2011'
         ) A
@@ -106,14 +106,14 @@ FROM
 
 
 /******************************************************************************
-¥³. ÁÖ¿ä ÁöÇ¥º° ÀçÁ¤Áö¿ø ÇöÈ²
+â…£. ì£¼ìš” ì§€í‘œë³„ ìž¬ì •ì§€ì› í˜„í™©
 
-2)°íµî±³À°ÀçÁ¤Áö¿øÀÇ ¹èºÐ ¹× ÁöÃâ
-¨ç È¿À²¼º
-Áö¿ø¾×´ç °íµî±³À° ÀçÁ¤Áö¿øÀÇ ¼º°ú(³ë¶õ»ö ºÎºÐ ¸Â´ÂÁö È®ÀÎ!)
+2)ê³ ë“±êµìœ¡ìž¬ì •ì§€ì›ì˜ ë°°ë¶„ ë° ì§€ì¶œ
+â‘  íš¨ìœ¨ì„±
+ì§€ì›ì•¡ë‹¹ ê³ ë“±êµìœ¡ ìž¬ì •ì§€ì›ì˜ ì„±ê³¼(ë…¸ëž€ìƒ‰ ë¶€ë¶„ ë§žëŠ”ì§€ í™•ì¸!)
 ******************************************************************************/
 
--- ³í¹®(±¹³»), ³í¹®(±¹¿Ü)
+-- ë…¼ë¬¸(êµ­ë‚´), ë…¼ë¬¸(êµ­ì™¸)
 
 WITH TMP_A AS 
 (       
@@ -152,14 +152,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND BIZ_PRPS_TYP is not null
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
@@ -171,7 +171,7 @@ WITH TMP_A AS
      GROUP BY ROLLUP(T.BIZ_PRPS_TYP) 
 )
 SELECT '2011'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.IN_CNT1,'9,999,999,999,999'))   IN_CNT1
@@ -191,7 +191,7 @@ SELECT '2011'
 
 
 
--- Æ¯Çã(±¹³»), Æ¯Çã(±¹¿Ü)
+-- íŠ¹í—ˆ(êµ­ë‚´), íŠ¹í—ˆ(êµ­ì™¸)
 
 WITH TMP_A AS 
 (       
@@ -230,14 +230,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND BIZ_PRPS_TYP is not null
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
@@ -249,7 +249,7 @@ WITH TMP_A AS
      GROUP BY ROLLUP(T.BIZ_PRPS_TYP) 
 )
 SELECT '2011'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.IN_CNT1,'9,999,999,999,999'))   IN_CNT1
@@ -268,7 +268,7 @@ SELECT '2011'
 
 
 
--- ±â¼ú·á ¼º°ú
+-- ê¸°ìˆ ë£Œ ì„±ê³¼
 
 WITH TMP_A AS 
 (       
@@ -305,14 +305,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND BIZ_PRPS_TYP is not null
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
@@ -324,7 +324,7 @@ WITH TMP_A AS
      GROUP BY ROLLUP(T.BIZ_PRPS_TYP) 
 )
 SELECT '2011'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.IN_CNT1,'9,999,999,999,999'))   IN_CNT1
@@ -339,7 +339,7 @@ SELECT '2011'
 
 
 
--- »ç¾÷È­ ÇöÈ²
+-- ì‚¬ì—…í™” í˜„í™©
 
 WITH TMP_A AS 
 (       
@@ -378,14 +378,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND BIZ_PRPS_TYP is not null
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
@@ -397,7 +397,7 @@ WITH TMP_A AS
      GROUP BY ROLLUP(T.BIZ_PRPS_TYP) 
 )
 SELECT '2011'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.IN_CNT1,'9,999,999,999,999'))   IN_CNT1
@@ -413,7 +413,7 @@ SELECT '2011'
 ;
 
 
--- ¿¬¼öÁö¿ø¼º°ú(Á¦¿Ü)
+-- ì—°ìˆ˜ì§€ì›ì„±ê³¼(ì œì™¸)
 
 WITH TMP_A AS 
 (       
@@ -467,14 +467,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND BIZ_PRPS_TYP is not null
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
@@ -486,7 +486,7 @@ WITH TMP_A AS
      GROUP BY ROLLUP(T.BIZ_PRPS_TYP) 
 )
 SELECT '2011'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -513,7 +513,7 @@ SELECT '2011'
 
 
 
--- ÀÎ·Â¾ç¼º¡¤Áö¿ø¼º°ú(Á¦¿Ü)
+-- ì¸ë ¥ì–‘ì„±Â·ì§€ì›ì„±ê³¼(ì œì™¸)
 
 WITH TMP_A AS 
 (       
@@ -584,14 +584,14 @@ WITH TMP_A AS
                         WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                          AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                          AND TRGT.BIZ_YR = SCH.SRY_YY
-                         AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                         AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                         AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                         AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                          AND TRGT.BIZ_CD = BIZM.BIZ_CD
                          AND TRGT.BIZ_YR = BIZM.BIZ_YR
                          AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-                         AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
-                         AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
+                         AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+                         AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
+                         AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
                          AND BIZ_PRPS_TYP is not null
                          AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                          AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
@@ -603,7 +603,7 @@ WITH TMP_A AS
      GROUP BY ROLLUP(T.BIZ_PRPS_TYP) 
 )
 SELECT '2011'
-     , NVL(A.ATTR_VAL1,'ÇÕ°è')
+     , NVL(A.ATTR_VAL1,'í•©ê³„')
      , TRIM(TO_CHAR(A.BIZ_CNT,'9,999,999,999,999'))   BIZ_CNT 
      , TRIM(TO_CHAR(A.BIZ_AMT,'9,999,999,999,999'))   BIZ_AMT
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))      CNT1 
@@ -627,10 +627,10 @@ SELECT '2011'
 
 
 /* 
-¨è °øÁ¤¼º
-ÇÐÁ¦º° À¯Çüº° °íµî±³À°ÀçÁ¤Áö¿øÀÇ ±Ô¸ð
+â‘¡ ê³µì •ì„±
+í•™ì œë³„ ìœ í˜•ë³„ ê³ ë“±êµìœ¡ìž¬ì •ì§€ì›ì˜ ê·œëª¨
 */
--- »ç¾÷¸ñÀû
+-- ì‚¬ì—…ëª©ì 
 
 WITH TMP_A AS 
 (          
@@ -645,7 +645,7 @@ WITH TMP_A AS
        , NVL(SUM(HRD_AMT3),0) AMT3
        , NVL(SUM(TOT_CNT),0)  CNT4
        , NVL(SUM(TOT_AMT),0)  AMT4
-       , ROW_NUMBER() OVER(ORDER BY DECODE(UNIV_GUBUN,'´ëÇÐ','Ãß',UNIV_GUBUN), NVL(UNIV_ZON,'1') DESC) ORDERED
+       , ROW_NUMBER() OVER(ORDER BY DECODE(UNIV_GUBUN,'ëŒ€í•™','ì¶”',UNIV_GUBUN), NVL(UNIV_ZON,'1') DESC) ORDERED
     FROM (
               SELECT A.UNIV_GUBUN, A.UNIV_ZON
                    , DECODE(B.UNIV_GUBUN,'',0, HRD_CNT1)HRD_CNT1
@@ -657,13 +657,13 @@ WITH TMP_A AS
                    , DECODE(B.UNIV_GUBUN,'',0, TOT_CNT)TOT_CNT
                    , DECODE(B.UNIV_GUBUN,'',0, TOT_AMT)TOT_AMT
                 FROM (
-                          SELECT 'Àü¹®´ë' UNIV_GUBUN, '¼öµµ±Ç' UNIV_ZON FROM DUAL
+                          SELECT 'ì „ë¬¸ëŒ€' UNIV_GUBUN, 'ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL
                            UNION 
-                          SELECT 'Àü¹®´ë' UNIV_GUBUN, 'ºñ¼öµµ±Ç' UNIV_ZON FROM DUAL 
+                          SELECT 'ì „ë¬¸ëŒ€' UNIV_GUBUN, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL 
                            UNION 
-                          SELECT '´ëÇÐ' UNIV_GUBUN, '¼öµµ±Ç' UNIV_ZON FROM DUAL
+                          SELECT 'ëŒ€í•™' UNIV_GUBUN, 'ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL
                            UNION 
-                          SELECT '´ëÇÐ' UNIV_GUBUN, 'ºñ¼öµµ±Ç' UNIV_ZON FROM DUAL 
+                          SELECT 'ëŒ€í•™' UNIV_GUBUN, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL 
                      ) A
                    , ( 
                     SELECT B.UNIV_GUBUN, B.UNIV_ZON
@@ -689,20 +689,20 @@ WITH TMP_A AS
                                 WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                                  AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                                  AND TRGT.BIZ_YR = SCH.SRY_YY
-                                 AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                                 AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                                 AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                                 AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                                 AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                                 AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                                  AND TRGT.BIZ_CD = BIZM.BIZ_CD
                                  AND TRGT.BIZ_YR = BIZM.BIZ_YR
                                  AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                                 AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                                 AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                                 AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                                 AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                                  --AND BIZ.BIZ_PRPS_TYP IS NOT NULL
                            )A
                          , ( 
                               SELECT SRY_YY, SCHL_CD
-                                   , DECODE(MAX(UNIV_GUBUN),'U','´ëÇÐ','C','Àü¹®´ë')    UNIV_GUBUN
-                                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
+                                   , DECODE(MAX(UNIV_GUBUN),'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€')    UNIV_GUBUN
+                                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
                                 FROM (
                                           SELECT SRY_YY, SCHL_HG_NM
                                                , SUBSTR(SCHL_CD,1,5) || '000' SCHL_CD
@@ -719,7 +719,7 @@ WITH TMP_A AS
                                                , STD_NUM
                                             FROM T_SCH_INFO_HIST
                                            WHERE UNIV_GUBUN <> 'H'
-                                             AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                                             AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
                                       )
                                GROUP BY SRY_YY, SCHL_CD
                              )B
@@ -735,7 +735,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'3','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'3','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , DECODE(A.RN,'3','',A.UNIV_ZON)UNIV_ZON
      , TRIM(TO_CHAR(A.CNT4,'9,999,999,999,999')) CNT4
      , TRIM(TO_CHAR(A.AMT4,'9,999,999,999,999')) AMT4
@@ -759,7 +759,7 @@ SELECT '2011'
  ;
 
 
--- Áö¿ø¾× °áÁ¤¹æ½Ä
+-- ì§€ì›ì•¡ ê²°ì •ë°©ì‹
 
 WITH TMP_A AS 
 (          
@@ -774,7 +774,7 @@ WITH TMP_A AS
        , NVL(SUM(BIZ_AMT3),0)  BIZ_AMT3
        , NVL(SUM(TOT_CNT),0)   TOT_CNT
        , NVL(SUM(TOT_AMT),0)   TOT_AMT
-       , ROW_NUMBER() OVER(ORDER BY DECODE(UNIV_GUBUN,'´ëÇÐ','Ãß',UNIV_GUBUN), NVL(UNIV_ZON,'1') DESC) ORDERED
+       , ROW_NUMBER() OVER(ORDER BY DECODE(UNIV_GUBUN,'ëŒ€í•™','ì¶”',UNIV_GUBUN), NVL(UNIV_ZON,'1') DESC) ORDERED
     FROM (
               SELECT A.UNIV_GUBUN, A.UNIV_ZON
                    , BIZ_CNT1
@@ -786,13 +786,13 @@ WITH TMP_A AS
                    , TOT_CNT
                    , TOT_AMT
                 FROM (
-                          SELECT 'Àü¹®´ë' UNIV_GUBUN, '¼öµµ±Ç' UNIV_ZON FROM DUAL
+                          SELECT 'ì „ë¬¸ëŒ€' UNIV_GUBUN, 'ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL
                            UNION 
-                          SELECT 'Àü¹®´ë' UNIV_GUBUN, 'ºñ¼öµµ±Ç' UNIV_ZON FROM DUAL 
+                          SELECT 'ì „ë¬¸ëŒ€' UNIV_GUBUN, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL 
                            UNION 
-                          SELECT '´ëÇÐ' UNIV_GUBUN, '¼öµµ±Ç' UNIV_ZON FROM DUAL
+                          SELECT 'ëŒ€í•™' UNIV_GUBUN, 'ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL
                            UNION 
-                          SELECT '´ëÇÐ' UNIV_GUBUN, 'ºñ¼öµµ±Ç' UNIV_ZON FROM DUAL 
+                          SELECT 'ëŒ€í•™' UNIV_GUBUN, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL 
                      ) A
                    , ( 
                     SELECT B.UNIV_GUBUN, B.UNIV_ZON
@@ -818,20 +818,20 @@ WITH TMP_A AS
                                 WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                                  AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                                  AND TRGT.BIZ_YR = SCH.SRY_YY
-                                 AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                                 AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                                 AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                                 AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                                 AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                                 AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                                  AND TRGT.BIZ_CD = BIZM.BIZ_CD
                                  AND TRGT.BIZ_YR = BIZM.BIZ_YR
                                  AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                                 AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                                 AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                                 AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                                 AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                                  --AND SURP_AMT_DCISN_WAY IS NOT NULL
                            )A
                          , ( 
                               SELECT SRY_YY, SCHL_CD
-                                   , DECODE(MAX(UNIV_GUBUN),'U','´ëÇÐ','C','Àü¹®´ë')    UNIV_GUBUN
-                                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
+                                   , DECODE(MAX(UNIV_GUBUN),'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€')    UNIV_GUBUN
+                                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
                                 FROM (
                                           SELECT SRY_YY, SCHL_HG_NM
                                                , SUBSTR(SCHL_CD,1,5) || '000' SCHL_CD
@@ -848,7 +848,7 @@ WITH TMP_A AS
                                                , STD_NUM
                                             FROM T_SCH_INFO_HIST
                                            WHERE UNIV_GUBUN <> 'H'
-                                             AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                                             AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
                                       )
                                GROUP BY SRY_YY, SCHL_CD
                              )B
@@ -864,7 +864,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'3','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'3','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , DECODE(A.RN,'3','',A.UNIV_ZON)UNIV_ZON
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999'))   TOT_CNT 
      , TRIM(TO_CHAR(A.TOT_AMT,'9,999,999,999,999'))   TOT_AMT 
@@ -888,7 +888,7 @@ SELECT '2011'
  ;
 
 
--- Áö¿ø¾× ±³ºÎ¹æ½Ä
+-- ì§€ì›ì•¡ êµë¶€ë°©ì‹
 
 WITH TMP_A AS 
 (          
@@ -901,7 +901,7 @@ WITH TMP_A AS
        , NVL(SUM(BIZ_AMT2),0)  BIZ_AMT2
        , NVL(SUM(TOT_CNT),0)   TOT_CNT
        , NVL(SUM(TOT_AMT),0)   TOT_AMT
-       , ROW_NUMBER() OVER(ORDER BY DECODE(UNIV_GUBUN,'´ëÇÐ','Ãß',UNIV_GUBUN), NVL(UNIV_ZON,'1') DESC) ORDERED
+       , ROW_NUMBER() OVER(ORDER BY DECODE(UNIV_GUBUN,'ëŒ€í•™','ì¶”',UNIV_GUBUN), NVL(UNIV_ZON,'1') DESC) ORDERED
     FROM (
               SELECT A.UNIV_GUBUN, A.UNIV_ZON
                    , BIZ_CNT1
@@ -911,13 +911,13 @@ WITH TMP_A AS
                    , TOT_CNT
                    , TOT_AMT
                 FROM (
-                          SELECT 'Àü¹®´ë' UNIV_GUBUN, '¼öµµ±Ç' UNIV_ZON FROM DUAL
+                          SELECT 'ì „ë¬¸ëŒ€' UNIV_GUBUN, 'ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL
                            UNION 
-                          SELECT 'Àü¹®´ë' UNIV_GUBUN, 'ºñ¼öµµ±Ç' UNIV_ZON FROM DUAL 
+                          SELECT 'ì „ë¬¸ëŒ€' UNIV_GUBUN, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL 
                            UNION 
-                          SELECT '´ëÇÐ' UNIV_GUBUN, '¼öµµ±Ç' UNIV_ZON FROM DUAL
+                          SELECT 'ëŒ€í•™' UNIV_GUBUN, 'ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL
                            UNION 
-                          SELECT '´ëÇÐ' UNIV_GUBUN, 'ºñ¼öµµ±Ç' UNIV_ZON FROM DUAL 
+                          SELECT 'ëŒ€í•™' UNIV_GUBUN, 'ë¹„ìˆ˜ë„ê¶Œ' UNIV_ZON FROM DUAL 
                      ) A
                    , ( 
                     SELECT B.UNIV_GUBUN, B.UNIV_ZON
@@ -941,20 +941,20 @@ WITH TMP_A AS
                                 WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                                  AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                                  AND TRGT.BIZ_YR = SCH.SRY_YY
-                                 AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                                 AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                                 AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                                 AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                                 AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                                 AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                                  AND TRGT.BIZ_CD = BIZM.BIZ_CD
                                  AND TRGT.BIZ_YR = BIZM.BIZ_YR
                                  AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                                 AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                                 AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                                 AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                                 AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                                  --AND SURP_AMT_DELV_WAY IS NOT NULL
                            )A
                          , ( 
                               SELECT SRY_YY, SCHL_CD
-                                   , DECODE(MAX(UNIV_GUBUN),'U','´ëÇÐ','C','Àü¹®´ë')    UNIV_GUBUN
-                                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN '¼öµµ±Ç' ELSE 'ºñ¼öµµ±Ç'  END        UNIV_ZON
+                                   , DECODE(MAX(UNIV_GUBUN),'U','ëŒ€í•™','C','ì „ë¬¸ëŒ€')    UNIV_GUBUN
+                                   , CASE WHEN MAX(ZON_CD) IN ('11','23','41')  THEN 'ìˆ˜ë„ê¶Œ' ELSE 'ë¹„ìˆ˜ë„ê¶Œ'  END        UNIV_ZON
                                 FROM (
                                           SELECT SRY_YY, SCHL_HG_NM
                                                , SUBSTR(SCHL_CD,1,5) || '000' SCHL_CD
@@ -971,7 +971,7 @@ WITH TMP_A AS
                                                , STD_NUM
                                             FROM T_SCH_INFO_HIST
                                            WHERE UNIV_GUBUN <> 'H'
-                                             AND PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
+                                             AND PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
                                       )
                                GROUP BY SRY_YY, SCHL_CD
                              )B
@@ -987,7 +987,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'3','ÇÕ°è',A.UNIV_GUBUN)UNIV_GUBUN 
+     , DECODE(A.RN,'3','í•©ê³„',A.UNIV_GUBUN)UNIV_GUBUN 
      , DECODE(A.RN,'3','',A.UNIV_ZON)UNIV_ZON
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999'))   TOT_CNT 
      , TRIM(TO_CHAR(A.TOT_AMT,'9,999,999,999,999'))   TOT_AMT 
@@ -1007,8 +1007,8 @@ SELECT '2011'
  ;
 
 
-/* Áö¿ø¾× °áÁ¤¹æ½Äº° °íµî±³À° ÀçÁ¤Áö¿øÀÇ ±Ô¸ð  */
--- »ç¾÷¸ñÀû
+/* ì§€ì›ì•¡ ê²°ì •ë°©ì‹ë³„ ê³ ë“±êµìœ¡ ìž¬ì •ì§€ì›ì˜ ê·œëª¨  */
+-- ì‚¬ì—…ëª©ì 
 
 WITH TMP_A AS 
 (          
@@ -1048,14 +1048,14 @@ WITH TMP_A AS
                             WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                              AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                              AND TRGT.BIZ_YR = SCH.SRY_YY
-                             AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                             AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                             AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                             AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                             AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                             AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                              AND TRGT.BIZ_CD = BIZM.BIZ_CD
                              AND TRGT.BIZ_YR = BIZM.BIZ_YR
                              AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                             AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                             AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                              AND SURP_AMT_DELV_WAY IS NOT NULL
                          ) A
                    WHERE A.BIZ_YR = '2011'
@@ -1065,7 +1065,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.SURP_AMT_DELV_WAY)SURP_AMT_DELV_WAY 
+     , DECODE(A.RN,'1','í•©ê³„',A.SURP_AMT_DELV_WAY)SURP_AMT_DELV_WAY 
      , TRIM(TO_CHAR(A.CNT4,'9,999,999,999,999')) CNT4
      , TRIM(TO_CHAR(A.AMT4,'9,999,999,999,999')) AMT4
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))CNT1
@@ -1087,7 +1087,7 @@ SELECT '2011'
  ;
 
 
--- Áö¿ø±â°£º° ÇöÈ²
+-- ì§€ì›ê¸°ê°„ë³„ í˜„í™©
 
 WITH TMP_A AS 
 (          
@@ -1112,15 +1112,15 @@ WITH TMP_A AS
                        , SUM(DECODE(TM_FLAG, 'K014002', REAL_SURP_AMT))  BIZ_AMT2
                        , COUNT (DISTINCT DECODE(TM_FLAG, 'K014003', BIZ_CD))        BIZ_CNT3
                        , SUM(DECODE(TM_FLAG, 'K014003', REAL_SURP_AMT))  BIZ_AMT3
-                       , COUNT (DISTINCT DECODE(TM_FLAG, '¹ÌÁ¤', BIZ_CD))        BIZ_CNT4
-                       , SUM(DECODE(TM_FLAG, '¹ÌÁ¤', REAL_SURP_AMT))  BIZ_AMT4
+                       , COUNT (DISTINCT DECODE(TM_FLAG, 'ë¯¸ì •', BIZ_CD))        BIZ_CNT4
+                       , SUM(DECODE(TM_FLAG, 'ë¯¸ì •', REAL_SURP_AMT))  BIZ_AMT4
                        , COUNT (DISTINCT BIZ_CD)                              TOT_CNT
                        , SUM(REAL_SURP_AMT)                                   TOT_AMT
                     FROM (
                             SELECT TRGT.BIZ_YR
                                  , TRGT.BIZ_CD
                                  , SURP_AMT_DELV_WAY
-                                 , NVL(TM_FLAG,'¹ÌÁ¤') TM_FLAG
+                                 , NVL(TM_FLAG,'ë¯¸ì •') TM_FLAG
                                  , SUBSTR(SCHL_CD,1,5) ||'000' SCHL_CD
                                  , REAL_SURP_AMT    
                               FROM T_BIZ_SURP_TRGT_INFO TRGT
@@ -1131,14 +1131,14 @@ WITH TMP_A AS
                             WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                              AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                              AND TRGT.BIZ_YR = SCH.SRY_YY
-                             AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                             AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                             AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                             AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                             AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                             AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                              AND TRGT.BIZ_CD = BIZM.BIZ_CD
                              AND TRGT.BIZ_YR = BIZM.BIZ_YR
                              AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                             AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                             AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                              AND SURP_AMT_DELV_WAY IS NOT NULL
                          ) A
                    WHERE A.BIZ_YR = '2011'
@@ -1148,7 +1148,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.SURP_AMT_DELV_WAY)SURP_AMT_DELV_WAY 
+     , DECODE(A.RN,'1','í•©ê³„',A.SURP_AMT_DELV_WAY)SURP_AMT_DELV_WAY 
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999')) TOT_CNT
      , TRIM(TO_CHAR(A.TOT_AMT,'9,999,999,999,999')) TOT_AMT
      , TRIM(TO_CHAR(A.BIZ_CNT1,'9,999,999,999,999'))CNT1
@@ -1174,7 +1174,7 @@ SELECT '2011'
  ;
 
 
--- *Áö¿ø´ë»ó À¯Çü
+-- *ì§€ì›ëŒ€ìƒ ìœ í˜•
 
 WITH TMP_A AS 
 (          
@@ -1214,14 +1214,14 @@ WITH TMP_A AS
                             WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                              AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                              AND TRGT.BIZ_YR = SCH.SRY_YY
-                             AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                             AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                             AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                             AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                             AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                             AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                              AND TRGT.BIZ_CD = BIZM.BIZ_CD
                              AND TRGT.BIZ_YR = BIZM.BIZ_YR
                              AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                             AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                             AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                              AND SURP_AMT_DELV_WAY IS NOT NULL
                          ) A
                    WHERE A.BIZ_YR = '2011'
@@ -1231,7 +1231,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.SURP_AMT_DELV_WAY)SURP_AMT_DELV_WAY 
+     , DECODE(A.RN,'1','í•©ê³„',A.SURP_AMT_DELV_WAY)SURP_AMT_DELV_WAY 
      , TRIM(TO_CHAR(A.TOT_CNT,'9,999,999,999,999')) TOT_CNT
      , TRIM(TO_CHAR(A.TOT_AMT,'9,999,999,999,999')) TOT_AMT
      , TRIM(TO_CHAR(A.BIZ_CNT1,'9,999,999,999,999'))CNT1
@@ -1255,8 +1255,8 @@ SELECT '2011'
 
 
 
-/*ºÎÃ³º° Áö¿ø¾× ±³ºÎ¹æ½Ä*/
---*ºÎÃ³º° Áö¿ø¾× ±³ºÎ¹æ½Ä(Á¦¿Ü)
+/*ë¶€ì²˜ë³„ ì§€ì›ì•¡ êµë¶€ë°©ì‹*/
+--*ë¶€ì²˜ë³„ ì§€ì›ì•¡ êµë¶€ë°©ì‹(ì œì™¸)
 
 WITH TMP_A AS 
 (          
@@ -1293,14 +1293,14 @@ WITH TMP_A AS
                             WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                              AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                              AND TRGT.BIZ_YR = SCH.SRY_YY
-                             AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                             AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                             AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                             AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                             AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                             AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                              AND TRGT.BIZ_CD = BIZM.BIZ_CD
                              AND TRGT.BIZ_YR = BIZM.BIZ_YR
                              AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                             AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                             AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                          ) A
                    WHERE A.BIZ_YR = '2011'
                    GROUP BY GVM_INSTN_CD
@@ -1309,7 +1309,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.GVM_INSTN_CD)GVM_INSTN_CD 
+     , DECODE(A.RN,'1','í•©ê³„',A.GVM_INSTN_CD)GVM_INSTN_CD 
      , TRIM(TO_CHAR(A.CNT4,'9,999,999,999,999')) CNT4
      , TRIM(TO_CHAR(A.AMT4,'9,999,999,999,999')) AMT4
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))CNT1
@@ -1328,7 +1328,7 @@ SELECT '2011'
 
 
 
---*»ç¾÷¸ñÀûº° Áö¿ø¾× ±³ºÎ¹æ½Ä
+--*ì‚¬ì—…ëª©ì ë³„ ì§€ì›ì•¡ êµë¶€ë°©ì‹
 
 WITH TMP_A AS 
 (          
@@ -1365,14 +1365,14 @@ WITH TMP_A AS
                             WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID
                              AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                              AND TRGT.BIZ_YR = SCH.SRY_YY
-                             AND BIZ_EXE_END_YN = 'Y'    /* ¼º°úµî·Ï¿ë °úÁ¦ Á¦¿Ü */
-                             AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-                             AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+                             AND BIZ_EXE_END_YN = 'Y'    /* ì„±ê³¼ë“±ë¡ìš© ê³¼ì œ ì œì™¸ */
+                             AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+                             AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                              AND TRGT.BIZ_CD = BIZM.BIZ_CD
                              AND TRGT.BIZ_YR = BIZM.BIZ_YR
                              AND BIZM.BIZ_CD = BIZ.BIZ_CD
-                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ÁöÀÚÃ¼ »ç¾÷ Á¦¿Ü */
-                             AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+                             AND BIZ.BIZ_FLAG in ( 'K042001','K042002','K042003')  /* ì§€ìžì²´ ì‚¬ì—… ì œì™¸ */
+                             AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                              AND BIZ_PRPS_TYP IS NOT NULL
                          ) A
                    WHERE A.BIZ_YR = '2011'
@@ -1382,7 +1382,7 @@ WITH TMP_A AS
 )
 SELECT '2011'
      , 'UK0560301'
-     , DECODE(A.RN,'1','ÇÕ°è',A.BIZ_PRPS_TYP)BIZ_PRPS_TYP 
+     , DECODE(A.RN,'1','í•©ê³„',A.BIZ_PRPS_TYP)BIZ_PRPS_TYP 
      , TRIM(TO_CHAR(A.CNT4,'9,999,999,999,999')) CNT4
      , TRIM(TO_CHAR(A.AMT4,'9,999,999,999,999')) AMT4
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))CNT1

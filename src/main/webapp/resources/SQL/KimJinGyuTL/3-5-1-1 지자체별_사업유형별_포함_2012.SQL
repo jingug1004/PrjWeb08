@@ -30,7 +30,7 @@ SELECT GROUPING_ID(D.UNIV_ZON, D.BLN_PROV)   RN
                  FROM (
                    SELECT TRGT.BIZ_YR
                       , TRGT.BIZ_CD
-                      , CASE WHEN INSTR(F_GET_INSTN_NM('INSTN', PROV_INSTN_CD),'±≥¿∞','1','1') = 0 THEN '¿œπ›' ELSE '±≥¿∞' END UNIV_ZON  
+                      , CASE WHEN INSTR(F_GET_INSTN_NM('INSTN', PROV_INSTN_CD),'ÍµêÏú°','1','1') = 0 THEN 'ÏùºÎ∞ò' ELSE 'ÍµêÏú°' END UNIV_ZON  
                       , F_GET_INSTN_NM('ZON', PROV_INSTN_CD)BLN_PROV
                       , BIZ.BIZ_FLAG
                       , REAL_SURP_AMT
@@ -43,15 +43,15 @@ SELECT GROUPING_ID(D.UNIV_ZON, D.BLN_PROV)   RN
                   WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                      AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                      AND TRGT.BIZ_YR = SCH.SRY_YY
-                     AND BIZ_EXE_END_YN = 'Y'    /* º∫∞˙µÓ∑œøÎ ∞˙¡¶ ¡¶ø‹ */
-                     AND SCH.PNOTI_YN = 'Y'      /* ∫Ò∞¯Ω√¥ÎªÛ ¥Î«– ¡¶ø‹ */
-                    -- AND SCH.UNIV_GUBUN <> 'H'   /* ¥Î«–ø¯¥Î«– ¡¶ø‹ */
+                     AND BIZ_EXE_END_YN = 'Y'    /* ÏÑ±Í≥ºÎì±Î°ùÏö© Í≥ºÏ†ú Ï†úÏô∏ */
+                     AND SCH.PNOTI_YN = 'Y'      /* ÎπÑÍ≥µÏãúÎåÄÏÉÅ ÎåÄÌïô Ï†úÏô∏ */
+                    -- AND SCH.UNIV_GUBUN <> 'H'   /* ÎåÄÌïôÏõêÎåÄÌïô Ï†úÏô∏ */
                      AND TRGT.BIZ_CD = BIZM.BIZ_CD
                      AND TRGT.BIZ_YR = BIZM.BIZ_YR
                      AND BIZM.BIZ_CD = BIZ.BIZ_CD
                     -- AND BIZ.BIZ_CD  = PROV.BIZ_CD
-                     AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ¡ˆ¿⁄√º ªÁæ˜ */
-                     AND BIZM.pnoti_yn     = 'Y'  /* ∫Ò∞¯Ω√¥ÎªÛ ¥Î«– ¡¶ø‹ */
+                     AND BIZ.BIZ_FLAG in ( 'K042004','K042005')  /* ÏßÄÏûêÏ≤¥ ÏÇ¨ÏóÖ */
+                     AND BIZM.pnoti_yn     = 'Y'  /* ÎπÑÍ≥µÏãúÎåÄÏÉÅ ÎåÄÌïô Ï†úÏô∏ */
                      AND TRGT.BIZ_YR = '2012'
                      --AND PROV.BLN_PROV not in ('7010000','7150000','7240000','7310000','7380000','7430000','7480000','7530000','7800000','8000000','8140000','8320000','8490000','8750000','9010000','9290000')
                 ) A
@@ -65,7 +65,7 @@ SELECT
    ,  STATS_SNO_SQ.NEXTVAL
      , 'K0560601011'
      , A.UNIV_ZON  
-     , DECODE(A.RN,'0', A.ATTR_VAL1, '1','º“∞Ë','3', '«’∞Ë')    
+     , DECODE(A.RN,'0', A.ATTR_VAL1, '1','ÏÜåÍ≥Ñ','3', 'Ìï©Í≥Ñ')    
      , TRIM(TO_CHAR(A.CNT1,'9,999,999,999,999'))CNT1
      , TRIM(TO_CHAR(A.AMT1,'9,999,999,999,999'))AMT1
      , TO_CHAR(DECODE(B.AMT1,0,0,ROUND(A.AMT1/B.AMT1*100,1)),'FM999,990.0') PER1

@@ -1,4 +1,4 @@
-/* ³í¹® ¼º°ú */
+/* ë…¼ë¬¸ ì„±ê³¼ */
 
 WITH TMP_A AS 
 (
@@ -28,14 +28,14 @@ WITH TMP_A AS
               WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                AND TRGT.BIZ_YR = SCH.SRY_YY
-               AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-               AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+               AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+               AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                AND TRGT.BIZ_CD = BIZM.BIZ_CD
                AND TRGT.BIZ_YR = BIZM.BIZ_YR
                AND BIZM.BIZ_CD = BIZ.BIZ_CD
-               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-               AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
-               AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+               AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
+               AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                AND ACMMT.ACMMT_FLAG(+)   = 'K030001' 
@@ -58,7 +58,7 @@ SELECT '2011'
      ;   
 
 
-/* Æ¯Çã ¼º°ú */
+/* íŠ¹í—ˆ ì„±ê³¼ */
 
 WITH TMP_A AS 
 (
@@ -88,14 +88,14 @@ WITH TMP_A AS
               WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                AND TRGT.BIZ_YR = SCH.SRY_YY
-               AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-               AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+               AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+               AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                AND TRGT.BIZ_CD = BIZM.BIZ_CD
                AND TRGT.BIZ_YR = BIZM.BIZ_YR
                AND BIZM.BIZ_CD = BIZ.BIZ_CD
-               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-               AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
-               AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+               AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
+               AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                AND ACMMT.ACMMT_FLAG(+)   = 'K030002' 
@@ -119,7 +119,7 @@ SELECT '2011'
 
 
 
-/* ±â¼ú·á ¼º°ú */
+/* ê¸°ìˆ ë£Œ ì„±ê³¼ */
 
 WITH TMP_A AS 
 (
@@ -149,14 +149,14 @@ WITH TMP_A AS
               WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                AND TRGT.BIZ_YR = SCH.SRY_YY
-               AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-               AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+               AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+               AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                AND TRGT.BIZ_CD = BIZM.BIZ_CD
                AND TRGT.BIZ_YR = BIZM.BIZ_YR
                AND BIZM.BIZ_CD = BIZ.BIZ_CD
-               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-               AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
-               AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+               AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
+               AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                AND ACMMT.ACMMT_FLAG(+)   = 'K030003' 
@@ -179,7 +179,7 @@ SELECT '2011'
 
 
 
-/* »ç¾÷È­ ¼º°ú */
+/* ì‚¬ì—…í™” ì„±ê³¼ */
 
 WITH TMP_A AS 
 (
@@ -210,14 +210,14 @@ WITH TMP_A AS
               WHERE TRGT.BIZ_SURP_INFO_ID = BIZT.BIZ_SURP_INFO_ID(+)
                AND F_GET_BLN_SCHL_CD(TRGT.EXE_INSTN_CD) = SCH.INSTN_CD
                AND TRGT.BIZ_YR = SCH.SRY_YY
-               AND SCH.PNOTI_YN = 'Y'      /* ºñ°ø½Ã´ë»ó ´ëÇÐ Á¦¿Ü */
-               AND SCH.UNIV_GUBUN <> 'H'   /* ´ëÇÐ¿ø´ëÇÐ Á¦¿Ü */
+               AND SCH.PNOTI_YN = 'Y'      /* ë¹„ê³µì‹œëŒ€ìƒ ëŒ€í•™ ì œì™¸ */
+               AND SCH.UNIV_GUBUN <> 'H'   /* ëŒ€í•™ì›ëŒ€í•™ ì œì™¸ */
                AND TRGT.BIZ_CD = BIZM.BIZ_CD
                AND TRGT.BIZ_YR = BIZM.BIZ_YR
                AND BIZM.BIZ_CD = BIZ.BIZ_CD
-               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ÀÏ¹ÝÁö¿ø »ç¾÷¸¸ Æ÷ÇÔ */
-               AND BIZ.GVM_INSTN_CD = '1341000'  /* ±³À°°úÇÐ±â¼úºÎ¸¸ */
-               AND BIZM.pnoti_yn     = 'Y'  /* °ø½Ã´ë»ó »ç¾÷¸¸ */
+               AND BIZ.BIZ_FLAG in ( 'K042001')  /* ì¼ë°˜ì§€ì› ì‚¬ì—…ë§Œ í¬í•¨ */
+               AND BIZ.GVM_INSTN_CD = '1341000'  /* êµìœ¡ê³¼í•™ê¸°ìˆ ë¶€ë§Œ */
+               AND BIZM.pnoti_yn     = 'Y'  /* ê³µì‹œëŒ€ìƒ ì‚¬ì—…ë§Œ */
                AND TRGT.BIZ_SURP_INFO_ID = ACMMT.BIZ_SURP_INFO_ID(+)
                AND TRGT.BIZ_YR = ACMMT.ACMMT_YR(+)
                AND ACMMT.ACMMT_FLAG(+)   = 'K030004' 
