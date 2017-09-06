@@ -291,40 +291,61 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <!-- Nav Menu -->
                     <ul class="nav navbar-nav">
-                        <!-- Pages -->
-                        <li class="dropdown active">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
-                               data-toggle="dropdown">
-                                대통령
-                            </a>
-                            <ul id="cateNum" class="dropdown-menu">
-                                <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
-                                <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
-                                <li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>
-                                <li><a href="/sboard/list?cate=1104">가족관계</a></li>
-                                <li><a href="/sboard/list?cate=1105">인간관계</a></li>
-                                <li><a href="/sboard/list?cate=1106">반려 동물</a></li>
-                                <li><a href="/sboard/list?cate=1107">성격</a></li>
-                                <li><a href="/sboard/list?cate=1108">인기</a></li>
-                                <li><a href="/sboard/list?cate=1109">별명</a></li>
-                                <li><a href="/sboard/list?cate=1110">저서</a></li>
-                                <li><a href="/sboard/list?cate=1111">선거 이력</a></li>
-                                <li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>
-                                <li><a href="/sboard/list?cate=1113">비판과 논란</a></li>
-                                <li><a href="/sboard/list?cate=1114">재산</a></li>
-                                <li><a href="/sboard/list?cate=1115">기타</a></li>
-                            </ul>
-                        </li>
-                        <!-- End Pages -->
+                        <%--<!-- Pages -->--%>
+                        <%--<li class="dropdown active">--%>
+                            <%--<a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"--%>
+                               <%--data-toggle="dropdown">--%>
+                                <%--대통령--%>
+                            <%--</a>--%>
+                            <%--<ul id="cateNum" class="dropdown-menu">--%>
+                                <%--<li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>--%>
+                                <%--<li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>--%>
+                                <%--<li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1104">가족관계</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1105">인간관계</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1106">반려 동물</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1107">성격</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1108">인기</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1109">별명</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1110">저서</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1111">선거 이력</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1113">비판과 논란</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1114">재산</a></li>--%>
+                                <%--<li><a href="/sboard/list?cate=1115">기타</a></li>--%>
+                            <%--</ul>--%>
+                        <%--</li>--%>
+                        <%--<!-- End Pages -->--%>
 
                         <!-- Promotion -->
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
                                data-toggle="dropdown">
-                                공약
+                                대통령
                             </a>
+
                             <ul class="dropdown-menu">
+
                                 <li class="dropdown-submenu">
+
+                                    <%--<ul id="cateNum" class="dropdown-menu">--%>
+                                        <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
+                                        <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
+                                        <li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>
+                                        <li><a href="/sboard/list?cate=1104">가족관계</a></li>
+                                        <li><a href="/sboard/list?cate=1105">인간관계</a></li>
+                                        <li><a href="/sboard/list?cate=1106">반려 동물</a></li>
+                                        <li><a href="/sboard/list?cate=1107">성격</a></li>
+                                        <li><a href="/sboard/list?cate=1108">인기</a></li>
+                                        <li><a href="/sboard/list?cate=1109">별명</a></li>
+                                        <li><a href="/sboard/list?cate=1110">저서</a></li>
+                                        <li><a href="/sboard/list?cate=1111">선거 이력</a></li>
+                                        <li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>
+                                        <li><a href="/sboard/list?cate=1113">비판과 논란</a></li>
+                                        <li><a href="/sboard/list?cate=1114">재산</a></li>
+                                        <li><a href="/sboard/list?cate=1115">기타</a></li>
+                                    <%--</ul>--%>
+
                                     <a href="javascript:void(0);">당선 전</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="/sboard/list?cate=1201">당선 전 공약</a></li>
@@ -546,26 +567,26 @@
 
     <script>
         <%--function getUrlParams() {--%>
-            <%--var params = {};--%>
-            <%--window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {--%>
-                <%--params[key] = value;--%>
-            <%--});--%>
-            <%--return params;--%>
+        <%--var params = {};--%>
+        <%--window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {--%>
+        <%--params[key] = value;--%>
+        <%--});--%>
+        <%--return params;--%>
         <%--}--%>
 
         <%--/* 바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.  */--%>
         <%--$(document).ready(function () {--%>
-            <%--$('#searchBtnAny').on("click", function (e) {--%>
-                <%--self.location = "listAny"--%>
-                    <%--+ '${pageMaker.makeQuery(1)}'--%>
-                    <%--// + '&searchType=tcw'--%>
-                    <%--// + $().val()--%>
-                    <%--+ '&keyword=' + $('#keywordInput').val();--%>
-            <%--});--%>
+        <%--$('#searchBtnAny').on("click", function (e) {--%>
+        <%--self.location = "listAny"--%>
+        <%--+ '${pageMaker.makeQuery(1)}'--%>
+        <%--// + '&searchType=tcw'--%>
+        <%--// + $().val()--%>
+        <%--+ '&keyword=' + $('#keywordInput').val();--%>
+        <%--});--%>
 
-            <%--window.onload = function () {--%>
-                <%--oParams = getUrlParams();--%>
-            <%--}--%>
+        <%--window.onload = function () {--%>
+        <%--oParams = getUrlParams();--%>
+        <%--}--%>
         <%--});--%>
 
         $(document).ready(function () {
@@ -580,11 +601,11 @@
                 alert($('input[name=keyword]').val());
 
                 self.location = 'sboard/listAny?'
-                + '${pageMakerAny.makeQuery(1)}'
-                // + '&searchType=tcw'
-                // + $().val()
-                + '&keyword='
-                + $('#keywordInput').val();
+                    + '${pageMakerAny.makeQuery(1)}'
+                    // + '&searchType=tcw'
+                    // + $().val()
+                    + '&keyword='
+                    + $('#keywordInput').val();
 
                 console.log($('#keywordInput').val());
 
