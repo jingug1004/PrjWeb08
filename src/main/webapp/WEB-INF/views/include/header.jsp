@@ -291,31 +291,6 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <!-- Nav Menu -->
                     <ul class="nav navbar-nav">
-                        <%--<!-- Pages -->--%>
-                        <%--<li class="dropdown active">--%>
-                            <%--<a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"--%>
-                               <%--data-toggle="dropdown">--%>
-                                <%--대통령--%>
-                            <%--</a>--%>
-                            <%--<ul id="cateNum" class="dropdown-menu">--%>
-                                <%--<li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>--%>
-                                <%--<li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>--%>
-                                <%--<li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1104">가족관계</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1105">인간관계</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1106">반려 동물</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1107">성격</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1108">인기</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1109">별명</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1110">저서</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1111">선거 이력</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1113">비판과 논란</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1114">재산</a></li>--%>
-                                <%--<li><a href="/sboard/list?cate=1115">기타</a></li>--%>
-                            <%--</ul>--%>
-                        <%--</li>--%>
-                        <%--<!-- End Pages -->--%>
 
                         <!-- Promotion -->
                         <li class="dropdown">
@@ -327,7 +302,6 @@
                             <ul class="dropdown-menu">
 
                                 <li class="dropdown-submenu">
-
                                     <%--<ul id="cateNum" class="dropdown-menu">--%>
                                         <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
                                         <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
@@ -345,16 +319,27 @@
                                         <li><a href="/sboard/list?cate=1114">재산</a></li>
                                         <li><a href="/sboard/list?cate=1115">기타</a></li>
                                     <%--</ul>--%>
+                                </li>
 
+                                <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">당선 전</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="/sboard/list?cate=1201">당선 전 공약</a></li>
+                                        <li><a href="/sboard/list?cate=1202">공약 이행</a></li>
                                     </ul>
                                 </li>
+
+                                <%--<li class="dropdown-submenu">--%>
+                                    <%--<a href="javascript:void(0);">당선 후</a>--%>
+                                    <%--<ul class="dropdown-menu">--%>
+                                     <%----%>
+                                    <%--</ul>--%>
+                                <%--</li>--%>
                                 <li class="dropdown-submenu">
-                                    <a href="javascript:void(0);">당선 후</a>
+                                    <a href="javascript:void(0);">사람</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/sboard/list?cate=1202">공약 이행</a></li>
+                                        <li><a href="/sboard/list?cate=1501">청와대</a></li>
+                                        <li><a href="/sboard/list?cate=1502">국회</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -412,59 +397,59 @@
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">대통령i</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">대통령비서실</a></li>
-                                                        <li><a href="#">대통령경호실</a></li>
-                                                        <li><a href="#">국가안보실</a></li>
+                                                        <li><a href="/sboard/list?cate=1401">대통령비서실</a></li>
+                                                        <li><a href="/sboard/list?cate=1402">대통령경호실</a></li>
+                                                        <li><a href="/sboard/list?cate=1403">국가안보실</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국가인권위원회</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">국가인권위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1404">국가인권위원회</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">대통령ii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">감사원</a></li>
-                                                        <li><a href="#">국가정보원</a></li>
-                                                        <li><a href="#">방송통신위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1405">감사원</a></li>
+                                                        <li><a href="/sboard/list?cate=1406">국가정보원</a></li>
+                                                        <li><a href="/sboard/list?cate=1407">방송통신위원회</a></li>
 
                                                     </ul>
                                                     <h3 class="mega-menu-heading">대통령iii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">국가안전보장회의</a></li>
-                                                        <li><a href="#">민주평화통일자문회의</a></li>
-                                                        <li><a href="#">국민경제자문회의</a></li>
-                                                        <li><a href="#">국가과학기술자문회의</a></li>
-                                                        <li><a href="#">특별감찰관</a></li>
+                                                        <li><a href="/sboard/list?cate=1408">국가안전보장회의</a></li>
+                                                        <li><a href="/sboard/list?cate=1409">민주평화통일자문회의</a></li>
+                                                        <li><a href="/sboard/list?cate=1410">국민경제자문회의</a></li>
+                                                        <li><a href="/sboard/list?cate=1411">국가과학기술자문회의</a></li>
+                                                        <li><a href="/sboard/list?cate=1412">특별감찰관</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국무총리i</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">국무조정실</a></li>
-                                                        <li><a href="#">국무총리비서실</a></li>
+                                                        <li><a href="/sboard/list?cate=1413">국무조정실</a></li>
+                                                        <li><a href="/sboard/list?cate=1414">국무총리비서실</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">국무총리ii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">기획재정부</a></li>
-                                                        <li><a href="#">교육부</a></li>
-                                                        <li><a href="#">미래창조과학부</a></li>
-                                                        <li><a href="#">외교부</a></li>
-                                                        <li><a href="#">통일부</a></li>
-                                                        <li><a href="#">법무부</a></li>
-                                                        <li><a href="#">국방부</a></li>
-                                                        <li><a href="#">행정자치부</a></li>
-                                                        <li><a href="#">문화체육관광부</a></li>
-                                                        <li><a href="#">농림축산식품부</a></li>
-                                                        <li><a href="#">산업통상자원부</a></li>
-                                                        <li><a href="#">보건복지부</a></li>
-                                                        <li><a href="#">환경부</a></li>
-                                                        <li><a href="#">고용노동부</a></li>
-                                                        <li><a href="#">여성가족부</a></li>
-                                                        <li><a href="#">국토교통부</a></li>
-                                                        <li><a href="#">해양수산부</a></li>
+                                                        <li><a href="/sboard/list?cate=1415">기획재정부</a></li>
+                                                        <li><a href="/sboard/list?cate=1416">교육부</a></li>
+                                                        <li><a href="/sboard/list?cate=1417">미래창조과학부</a></li>
+                                                        <li><a href="/sboard/list?cate=1418">외교부</a></li>
+                                                        <li><a href="/sboard/list?cate=1419">통일부</a></li>
+                                                        <li><a href="/sboard/list?cate=1420">법무부</a></li>
+                                                        <li><a href="/sboard/list?cate=1421">국방부</a></li>
+                                                        <li><a href="/sboard/list?cate=1422">행정자치부</a></li>
+                                                        <li><a href="/sboard/list?cate=1423">문화체육관광부</a></li>
+                                                        <li><a href="/sboard/list?cate=1424">농림축산식품부</a></li>
+                                                        <li><a href="/sboard/list?cate=1425">산업통상자원부</a></li>
+                                                        <li><a href="/sboard/list?cate=1426">보건복지부</a></li>
+                                                        <li><a href="/sboard/list?cate=1427">환경부</a></li>
+                                                        <li><a href="/sboard/list?cate=1428">고용노동부</a></li>
+                                                        <li><a href="/sboard/list?cate=1429">여성가족부</a></li>
+                                                        <li><a href="/sboard/list?cate=1430">국토교통부</a></li>
+                                                        <li><a href="/sboard/list?cate=1431">해양수산부</a></li>
                                                     </ul>
                                                 </div>
 
@@ -472,64 +457,64 @@
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">국무총리iii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">국민안전처</a></li>
-                                                        <li><a href="#">인사혁신처</a></li>
-                                                        <li><a href="#">법제처</a></li>
-                                                        <li><a href="#">국가보훈처</a></li>
-                                                        <li><a href="#">식품의약품안전처</a></li>
-                                                        <li><a href="#">공정거래위원회</a></li>
-                                                        <li><a href="#">금융위원회</a></li>
-                                                        <li><a href="#">국민권익위원회</a></li>
-                                                        <li><a href="#">원자력안전위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1432">국민안전처</a></li>
+                                                        <li><a href="/sboard/list?cate=1433">인사혁신처</a></li>
+                                                        <li><a href="/sboard/list?cate=1434">법제처</a></li>
+                                                        <li><a href="/sboard/list?cate=1435">국가보훈처</a></li>
+                                                        <li><a href="/sboard/list?cate=1436">식품의약품안전처</a></li>
+                                                        <li><a href="/sboard/list?cate=1437">공정거래위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1438">금융위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1439">국민권익위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1440">원자력안전위원회</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">기획재정부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">국세청</a></li>
-                                                        <li><a href="#">관세청</a></li>
-                                                        <li><a href="#">조달청</a></li>
-                                                        <li><a href="#">통계청</a></li>
+                                                        <li><a href="/sboard/list?cate=1441">국세청</a></li>
+                                                        <li><a href="/sboard/list?cate=1442">관세청</a></li>
+                                                        <li><a href="/sboard/list?cate=1443">조달청</a></li>
+                                                        <li><a href="/sboard/list?cate=1444">통계청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">법무부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">검찰청</a></li>
+                                                        <li><a href="/sboard/list?cate=1445">검찰청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국방부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">병무청</a></li>
-                                                        <li><a href="#">방위사업청</a></li>
+                                                        <li><a href="/sboard/list?cate=1446">병무청</a></li>
+                                                        <li><a href="/sboard/list?cate=1447">방위사업청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">행정자치부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">경찰청</a></li>
+                                                        <li><a href="/sboard/list?cate=1448">경찰청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">문화체육관광부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">문화재청</a></li>
+                                                        <li><a href="/sboard/list?cate=1449">문화재청</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">농림축산식품부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">농촌진흥청</a></li>
-                                                        <li><a href="#">산림청</a></li>
+                                                        <li><a href="/sboard/list?cate=1450">농촌진흥청</a></li>
+                                                        <li><a href="/sboard/list?cate=1451">산림청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">산업통상자원부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">중소기업청</a></li>
-                                                        <li><a href="#">특허청</a></li>
+                                                        <li><a href="/sboard/list?cate=1452">중소기업청</a></li>
+                                                        <li><a href="/sboard/list?cate=1453">특허청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">환경부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">기상청</a></li>
+                                                        <li><a href="/sboard/list?cate=1454">기상청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국토교통부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">행정중심복합도시건설청</a></li>
-                                                        <li><a href="#">새만금개발청</a></li>
+                                                        <li><a href="/sboard/list?cate=1455">행정중심복합도시건설청</a></li>
+                                                        <li><a href="/sboard/list?cate=1456">새만금개발청</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!--/end row-->
@@ -539,19 +524,6 @@
                             </ul><!--/end dropdown-menu-->
                         </li>
                         <!-- End Books -->
-
-                        <!-- Clothes -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
-                               data-toggle="dropdown" data-delay="1000">
-                                사람
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">청와대</a></li>
-                                <li><a href="#">국회</a></li>
-                            </ul>
-                        </li>
-                        <!-- End Clothes -->
 
                         <!-- Main Demo -->
                         <li><a href="<c:url value="/sboard/list"/>">건의사항</a></li>

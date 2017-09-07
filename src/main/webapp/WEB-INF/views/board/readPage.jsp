@@ -18,7 +18,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">READ BOARD</h3>
+                    <h3 class="box-title">READ BOARD22</h3>
                 </div>
                 <!-- /.box-header -->
 
@@ -52,9 +52,9 @@
                 <!-- /.box-body -->
 
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-warning">Modify</button>
-                    <button type="submit" class="btn btn-danger">REMOVE</button>
-                    <button type="submit" class="btn btn-primary">LIST ALL</button>
+                    <button type="submit" class="btn btn-warning">수정</button>
+                    <button type="submit" class="btn btn-danger">삭제</button>
+                    <button type="submit" class="btn btn-primary">목록</button>
                 </div>
 
                 <script src="http://code.jquery.com/jquery-latest.js"></script>

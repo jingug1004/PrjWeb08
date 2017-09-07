@@ -88,8 +88,8 @@
                         <ul class="mailbox-attachments clearfix uploadedList">
                         </ul>
                     </div>
-                    <button type="submit" class="btn btn-primary">SAVE</button>
-                    <button id="cancelWarning" class="btn btn-warning">CANCEL</button>
+                    <button type="submit" class="btn btn-primary">저장</button>
+                    <button id="cancelWarning" class="btn btn-warning">취소</button>
                     <%-- type이 submit이라서 수정페이지에서 cancel을 눌러도 save와 똑같이 처리되었음. --%>
                 </form>
                 <%--<form> 태그가 전체의 모든 내용을 감싸도록 선언. 이것은 수정 작업에 필요한 모든 데이터를 <form> 태그로 묶어서 전송해야 하기 때문. --%>
