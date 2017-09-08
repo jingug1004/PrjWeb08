@@ -67,16 +67,27 @@ public class BoardServiceImpl implements BoardService {
     /**
      * 트랜잭션의 격리 수준은 사실 데이터베이스가 기본으로 사용하는 수준으로 다른 연결이 커밋하지 않은 데이터는 볼 수 없도록 함.
      *
-     * @param bno
+     * @param bno 게시판 상세 글 조회를 위한 게시글 번호
      */
     @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
     public BoardVO read(Integer bno) throws Exception {
 
+        /* 조회수 증가(업데이트) */
         dao.updateViewCnt(bno);
 
         return dao.read(bno);
     }
+
+    @Override
+    public String callCateName(int bno) throws Exception {
+
+        /* 게시판 상세 글의 카테고리 이름 출력 */
+        return dao.callCateName(bno);
+
+    }
+
+
 
     /*
     @Override

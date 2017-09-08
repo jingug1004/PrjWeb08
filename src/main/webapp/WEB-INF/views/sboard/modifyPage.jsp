@@ -157,9 +157,7 @@
                         formObj.submit();
                     });
 //                        수정 페이지에서는 화면상에서 '취소' 버튼을 클릭하면 원래의 목록 페이지로 이동하게 작성해야 함.
-
                 });
-
 
                 var template = Handlebars.compile($("#template").html());
 

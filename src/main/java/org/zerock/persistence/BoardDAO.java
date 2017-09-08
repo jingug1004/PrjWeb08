@@ -128,6 +128,14 @@ public interface BoardDAO {
     public void updateViewCnt(Integer bno) throws Exception;
 
     /**
+     * 게시판 글의 카테고리 이름 출력
+     *
+     * @param bno the bno
+     * @throws Exception the exception
+     */
+    public String callCateName(Integer bno) throws Exception;
+
+    /**
      * 새로운 첨부파일이 추가될 수 있는 기능이 추가 - '새롭게 생성된 게시물의 번호가 필요하다는 점'.
      * BoardDAO - boardMapper.xml - BoardDAOImpl
      *

@@ -134,11 +134,19 @@ public class BoardDAOImpl implements BoardDAO {
 
     }
 
+    /* 게시판 글 클릭 시 조회 수 증가 */
     @Override
     public void updateViewCnt(Integer bno) throws Exception {
 
         session.update(namespace + ".updateViewCnt", bno);
     }
+
+    /* 게시판 글의 카테고리 이름 출력 */
+    @Override
+    public String callCateName(Integer bno) throws Exception {
+        return session.selectOne(namespace + ".callCateName", bno);
+    }
+
 
     @Override
     public void addAttach(String fullName) throws Exception {

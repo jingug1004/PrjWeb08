@@ -31,6 +31,15 @@ public interface BoardService {
      */
     public BoardVO read(Integer bno) throws Exception;
 
+
+
+
+
+
+    public String callCateName(int bno) throws Exception;
+
+
+
     /**
      * Modify.
      *
@@ -73,6 +82,8 @@ public interface BoardService {
      */
     public int listCountCriteria(Criteria cri) throws Exception;
 
+
+
     /**
      * BoardDAO 의 listSearch 메소드로 전달(BoardDAOImpl 의 listSearch 로 전달.).
      *
@@ -84,6 +95,8 @@ public interface BoardService {
 
     public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception;
 
+
+
     /**
      * List search count int. 게시판 밑 1~10 페이징 버튼
      *
@@ -94,6 +107,7 @@ public interface BoardService {
     public int listSearchCount(SearchCriteria cri) throws Exception;
 
     public int listSearchAnyCount(SearchCriteria criteria) throws Exception;
+
 
 
     /**

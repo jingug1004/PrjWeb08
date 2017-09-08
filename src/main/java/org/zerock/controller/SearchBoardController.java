@@ -37,17 +37,17 @@ public class SearchBoardController {
     /**
      * 게시판 리스트 페이지가 cate의 기준에 따라 나뉘어짐.
      *
-     * @param cri   the cri
-     * @param model the model
+     * @param cri     the cri
+     * @param model   the model
      * @param cateNum 카테고리 - 넘버 기준으로 나뉨.
      * @throws Exception the exception
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String listPage(@ModelAttribute("cri") SearchCriteria cri,
 //                         @RequestParam("cate") int cate,
-                         Model model,
-                         BoardVO boardVO,
-                         @RequestParam("cate") int cateNum) throws Exception {
+                           Model model,
+                           BoardVO boardVO,
+                           @RequestParam("cate") int cateNum) throws Exception {
 
         logger.info("lll~~~ cri.toString() : " + cri.toString() + " lll~~~");
 //        logger.info("lll~~~ cate : " + cate + " lll~~~");
@@ -74,8 +74,8 @@ public class SearchBoardController {
 
     @RequestMapping(value = "/listAny", method = RequestMethod.GET)
     public String listAnyPage(@ModelAttribute("criteria") SearchCriteria criteria,
-                            Model model,
-                            RedirectAttributes redirectAttributes) throws Exception {
+                              Model model,
+                              RedirectAttributes redirectAttributes) throws Exception {
 
         logger.info("lll~~~ criteria.toString() listAny : " + criteria.toString() + " lll~~~");
 
@@ -111,7 +111,19 @@ public class SearchBoardController {
                      Model model)
             throws Exception {
 
+//        Map<String, Object> paramMap = new HashMap<>();
+//
+//        paramMap.put("cateNum", cri);
+//        paramMap.put("bno", bno);
+//
+//        logger.info("lll~~~ cri : " + cri);
+//        logger.info("lll~~~ bno : " + bno);
+
         model.addAttribute(service.read(bno));
+        model.addAttribute("cateName", service.callCateName(bno));
+
+        logger.info("lll~~~ service.callCateName(bno) : " + service.callCateName(bno));
+
     }
 
     /**

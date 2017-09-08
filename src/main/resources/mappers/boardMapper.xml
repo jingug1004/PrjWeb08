@@ -180,19 +180,20 @@
         )
     </select>
 
-
-
-
-
     <update id="updateReplyCnt">
         UPDATE tbl_board SET replycnt = replycnt + #{amount} WHERE bno = #{bno}
     </update>
 
-
+    <!-- 게시판 글 클릭시 조회수 증가 -->
     <update id="updateViewCnt">
         UPDATE tbl_board SET viewcnt = viewcnt + 1 WHERE bno = #{bno}
     </update>
 
+    <!-- 게시판 글의 카테고리 이름 출력 -->
+    <select id="callCateName" resultType="String">
+        SELECT cname FROM tbl_cate WHERE cnum =
+                             (SELECT cnum FROM tbl_board WHERE bno = #{bno});
+    </select>
 
     <insert id="addAttach">
         INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, LAST_INSERT_ID())
