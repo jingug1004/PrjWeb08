@@ -60,7 +60,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">READ BOARD / ${cateName}</h3>
+                    <h3 class="box-title">${cateName}</h3>
                 </div>
                 <!-- /.box-header -->
 
