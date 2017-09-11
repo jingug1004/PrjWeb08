@@ -528,6 +528,10 @@
                         <!-- Main Demo -->
                         <li><a href="<c:url value="/sboard/list"/>">건의사항</a></li>
                         <!-- Main Demo -->
+
+                        <!-- Main Demo -->
+                        <li><a href="<c:url value="/ck/viewGo"/>">ck view</a></li>
+                        <!-- Main Demo -->
                     </ul>
                     <!-- End Nav Menu -->
                 </div>
@@ -565,6 +569,9 @@
             $('input[name=keyword]').on("keydown", function (key) {
 
                 if (key.keyCode == 13) { /* 키가 13이면 실행(엔터는 13) */
+
+                    textCounter(, 10)
+
                     keywordSearchAny();
                 }
             });
@@ -584,6 +591,8 @@
                 console.log(${pageMakerAny.makeQuery(1)});
             }
         });
+
+        //Todo 170911(월) input 글자수 제한 -> 몇 글자 이상 무조건 필수 입력 / 몇 글자 초과 금지 ex) 2글자 이상 10글자 이하
 
     </script>
 

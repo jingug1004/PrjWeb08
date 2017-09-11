@@ -60,7 +60,7 @@
 
                     <!-- /.box-body -->
 
-                    <div class="box-footer">
+                    <div class="box-footer text-right">
                         <div>
                             <hr>
                         </div>
@@ -69,7 +69,7 @@
                         </ul>
                         <%--업로드 된 파일이 보여줄 수 있는 <ul></ul> 태그--%>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">등록</button>
 
                     </div>
                 </form>

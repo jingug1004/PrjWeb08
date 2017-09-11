@@ -1,0 +1,42 @@
+SELECT cname FROM tbl_cate WHERE cnum = 1102;
+
+SELECT * FROM tbl_board WHERE 1106 =
+                              (SELECT cnum FROM tbl_cate);
+
+SELECT cname FROM tbl_cate WHERE cnum =
+                             (SELECT cnum FROM tbl_board WHERE bno = 4272);
+
+-- MySQL 현재시간을 prefix 로 하고 랜덤한 7자리 postfix를 붙여서 절대(???) 중복되지 않는 유일키
+SELECT concat(date_format(now(), '%Y%m%d%h%i%s'), cast(cast(rand()*10000000 AS UNSIGNED)AS char));
+
+-- rand함수를 이용하면 무작위 실수를 리턴 받을수 있다. rand()함수는 0.0 ~1.0 사이의 실수를 리턴 한다.
+select concat('ID_', cast( cast( rand()*10 as unsigned) as char) );
+
+-- mysql 랜덤 문자열 -> 소문자, 숫자 -> 그런데 16진수임. g ~ z 안 나옴. ㅠ_ㅠ
+SELECT SUBSTR(CONCAT(MD5(RAND()),MD5(RAND())),1,36);
+
+INSERT INTO tbl_board(title, content, writer, regdate, viewcnt, replycnt, cnum) VALUES (
+  (SELECT SUBSTR(CONCAT(MD5(RAND()),MD5(RAND())),1,36)),
+  (SELECT SUBSTR(CONCAT(MD5(RAND()),MD5(RAND())),1,36)),
+  (SELECT SUBSTR(CONCAT(MD5(RAND()),MD5(RAND())),1,8)),
+  now(),
+  (select concat(cast( cast( rand()*100 as unsigned) as char) )),
+  0,
+  1701);
+
+select count(bno)
+from tbl_board
+where bno > 0 AND cnum = 1101;
+
+select count(bno)
+from tbl_board
+where bno > 0;
+
+SELECT * FROM tbl_board
+WHERE bno > 0
+      AND (title LIKE concat('%', 'a1', '%')
+           OR content LIKE concat('%', 'a1', '%')
+           OR writer LIKE concat('%', 'a1', '%'))
+ORDER BY regdate DESC;
+
+SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 6) AS password;

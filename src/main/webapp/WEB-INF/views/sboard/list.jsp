@@ -18,6 +18,8 @@
                     <h3 class="box-title"></h3>
                 </div>
 
+                <%-- Todo : Good, Bad, Want, Out 웹단 구현 --%>
+
                 <div class='box-body text-right'>
 
                     <select name="searchType">
@@ -67,6 +69,10 @@
                         <tr>
                             <th style="width: 10px">BNO</th>
                             <th>TITLE</th>
+                            <%--<th style="width: 40px">Good</th>--%>
+                            <%--<th style="width: 40px">Bad</th>--%>
+                            <%--<th style="width: 40px">Want</th>--%>
+                            <%--<th style="width: 40px">Out</th>--%>
                             <th style="width: 80px">WRITER</th>
                             <th style="width: 160px">REGDATE</th>
                             <th style="width: 40px">VIEW</th>
@@ -102,8 +108,6 @@
                             </tr>
                         </c:forEach>
 
-
-
                         <%-- 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
                         <c:forEach items="${listAny}" var="boardVO">
                             <tr>
@@ -112,9 +116,13 @@
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
+                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
+                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
+                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
+                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
                                 <td>${boardVO.writer}</td>
-                                <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-                                                    value="${boardVO.regdate}"/></td>
+                                <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
+                                <td><fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd" /></td>
                                 <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
