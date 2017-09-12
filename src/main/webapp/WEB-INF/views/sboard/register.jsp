@@ -39,8 +39,18 @@
                         <div class="form-group">
                             <%--@declare id="exampleinputpassword1"--%>
                             <label for="exampleInputPassword1">Content</label>
-                            <textarea class="form-control" name="content" rows="20"
-                                      placeholder="Enter ..."></textarea>
+                            <%--<textarea class="form-control" name="content" rows="20"--%>
+                            <%--placeholder="Enter ..."></textarea>--%>
+                            <%--
+                            textarea의 name은 boardVO(VO) 필드와 같아야 한다.
+                            ex) boardVO의 private String content; = <textarea name="content'
+                            --%>
+                            <textarea name="content" class="form-control" placeholder="Enter ..." rows="50"></textarea>
+                            <script>
+                                CKEDITOR.replace('content');
+                                CKEDITOR.config.height = 450;
+                                CKEDITOR.config.width = 'auto';
+                            </script>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Writer</label>
@@ -164,7 +174,9 @@
 
     function getUrlParams() {
         var params = {};
-        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+            params[key] = value;
+        });
         return params;
     }
 
@@ -203,23 +215,23 @@
 </script>
 
 <script>
-//    $(document).ready(function () {
-        function getUrlParams() {
+    //    $(document).ready(function () {
+    function getUrlParams() {
 //            var casting = 1;
-            var params = {};
-            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
-                params[key] = value;
-            });
-            return params;
+        var params = {};
+        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+            params[key] = value;
+        });
+        return params;
 //            return parseInt("params", 10);
 //            return params * casting;
-        }
+    }
 
-        $('#cnumInput').val(getUrlParams().cate);
-//        parseInt($('#cnumInput').val(getUrlParams()), 10);
-//        val 없애도 되는지??????????????? 위의 53라인의 val 없어도 잘 됨.
-        // console.log("cnumInput: " + $('#cnumInput').val('getUrlParams().cate'));
-//    });
+    $('#cnumInput').val(getUrlParams().cate);
+    //        parseInt($('#cnumInput').val(getUrlParams()), 10);
+    //        val 없애도 되는지??????????????? 위의 53라인의 val 없어도 잘 됨.
+    // console.log("cnumInput: " + $('#cnumInput').val('getUrlParams().cate'));
+    //    });
 </script>
 
 

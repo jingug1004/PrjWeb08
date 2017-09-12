@@ -30,7 +30,7 @@ public class ReplyController {
     private ReplyService service;
 
     /**
-     * 만일 새로운 댓글을 드옥하는데 실패하면 try~catch에 선언되었듯이 예외의 원인 메시지를 전송하고, 사용자에게는 BAD_REQUEST(400)를 결과로 전송.
+     * 만일 새로운 댓글을 등록하는데 실패하면 try~catch에 선언되었듯이 예외의 원인 메시지를 전송하고, 사용자에게는 BAD_REQUEST(400)를 결과로 전송.
      *
      * @param vo @RequestBody의 경우 JSON으로 전송된 데이터를 ReplyVO 타입의 객체로 변환해주는 역할을 하는데, 이때의 데이터는 일반적인 데이터가 아닌 JSON으로 구성된 문자열 데이터.
      * @return

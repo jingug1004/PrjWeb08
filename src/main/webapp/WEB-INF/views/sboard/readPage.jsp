@@ -91,8 +91,19 @@
                     <div class="form-group">
                         <%--@declare id="exampleinputpassword1"--%>
                         <label for="exampleInputPassword1">Content</label>
-                        <textarea class="form-control" name="content" rows="25"
-                                  readonly="readonly">${boardVO.content}</textarea>
+                        <%--<textarea class="form-control" name="content" rows="25"--%>
+                                  <%--readonly="readonly">${boardVO.content}</textarea>--%>
+
+                        <%-- CKEditor 사용 --%>
+                            <textarea name="content" readonly="readonly" class="form-control" rows="200">
+                                ${boardVO.content}</textarea>
+                            <script>
+                                CKEDITOR.replace( 'content' );
+                                CKEDITOR.config.height = 550;
+                                CKEDITOR.config.width = 'auto';
+                            </script>
+
+
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Writer</label> <input type="text"

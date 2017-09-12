@@ -15,7 +15,8 @@
 <%@include file="../include/header.jsp" %>
 <script type="text/javascript" src="/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
-<script src="//cdn.ckeditor.com/4.7.2/basic/ckeditor.js"></script>
+<%--<script src="//cdn.ckeditor.com/4.7.2/basic/ckeditor.js"></script>--%>
+<script src="/resources/ckeditor/ckeditor.js"></script>
 
 <h3>테스트 성공!</h3>
 
