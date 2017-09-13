@@ -44,7 +44,6 @@
         max-height: 800px;
         overflow: auto;
     }
-
 </style>
 
 <div class='popup back' style="display:none;"></div>

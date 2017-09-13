@@ -13,7 +13,7 @@ public class Criteria {
 
     private int page;
     private int perPageNum;
-//    private int cate; // 카테고리 넘버
+//    private int cate; // 카테고리 넘버 - SearchCriteria에 String으로 만듦.
 
 
 //    public int getCate() {

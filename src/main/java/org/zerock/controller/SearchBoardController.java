@@ -50,7 +50,6 @@ public class SearchBoardController {
                            @RequestParam("cate") int cateNum) throws Exception {
 
         logger.info("lll~~~ cri.toString() : " + cri.toString() + " lll~~~");
-//        logger.info("lll~~~ cate : " + cate + " lll~~~");
 
         // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
         boardVO.setCnum(cateNum);

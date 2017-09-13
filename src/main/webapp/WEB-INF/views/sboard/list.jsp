@@ -23,10 +23,11 @@
                 <div class='box-body text-right'>
 
                     <select name="searchType">
-                        <option value="n"
-                                <c:out value="${cri.searchType == null?'selected':''}"/>>
-                            검색 옵션
-                        </option>
+                        <%-- 옵션 기본값으로 하고 싶을 때 맨 상위를 주석으로 처리해서 제목이 기본값으로 보이게! --%>
+                        <%--<option value="n"--%>
+                                <%--<c:out value="${cri.searchType == null?'selected':''}"/>>--%>
+                            <%--검색 옵션--%>
+                        <%--</option>--%>
                         <option value="t"
                                 <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
                             제목
@@ -53,7 +54,7 @@
                         </option>
                     </select>
 
-                    <input type="text" name='keyword' id="keywordInput" value='${cri.keyword}'>
+                    <input type="text" name='keyword' id="keywordInputCate" value='${cri.keyword}'>
                     <button id='searchBtn' class="btn btn-primary">검색</button>
                     <%--<button id='newBtn'>글 쓰기0</button>--%>
                 </div>
@@ -74,7 +75,8 @@
                             <%--<th style="width: 40px">Want</th>--%>
                             <%--<th style="width: 40px">Out</th>--%>
                             <th style="width: 80px">WRITER</th>
-                            <th style="width: 160px">REGDATE</th>
+                            <%--<th style="width: 160px">REGDATE</th>--%>
+                            <th style="width: 100px">REGDATE</th>
                             <th style="width: 40px">VIEW</th>
                         </tr>
 
@@ -93,7 +95,7 @@
 
                         <%--</c:forEach>--%>
 
-                        <%-- cate에 맞는 검색 / 반복문을 통한 리스트 목록 --%>
+                        <%-- list cate에 맞는 검색 / 반복문을 통한 리스트 목록 --%>
                         <c:forEach items="${list}" var="boardVO">
                             <tr>
                                 <td>${boardVO.bno}</td>
@@ -102,13 +104,13 @@
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
                                 <td>${boardVO.writer}</td>
-                                <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+                                <td><fmt:formatDate pattern="yyyy-MM-dd"
                                                     value="${boardVO.regdate}"/></td>
                                 <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
 
-                        <%-- 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
+                        <%-- listAny 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
                         <c:forEach items="${listAny}" var="boardVO">
                             <tr>
                                 <td>${boardVO.bno}</td>
@@ -121,6 +123,7 @@
                                 <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
                                 <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
                                 <td>${boardVO.writer}</td>
+
                                 <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td><fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd" /></td>
                                 <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
@@ -217,6 +220,7 @@
         return params;
     }
 
+    /*      <li><a href="/sboard/list?cate=1111">선거 이력</a></li> */
     $(document).ready(function () {
         $('#searchBtn').on("click",
             function (event) {
@@ -225,7 +229,9 @@
                     + "&searchType="
                     + $("select option:selected").val()
                     + "&keyword="
-                    + $('#keywordInput').val();
+                    + $('#keywordInputCate').val()
+                    + "&cate="
+                    + oParams.cate;
             });
 
         window.onload = function () {

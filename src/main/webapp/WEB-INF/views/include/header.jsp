@@ -305,22 +305,22 @@
 
                                 <li class="dropdown-submenu">
                                     <%--<ul id="cateNum" class="dropdown-menu">--%>
-                                        <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
-                                        <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
-                                        <li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>
-                                        <li><a href="/sboard/list?cate=1104">가족관계</a></li>
-                                        <li><a href="/sboard/list?cate=1105">인간관계</a></li>
-                                        <li><a href="/sboard/list?cate=1106">반려 동물</a></li>
-                                        <li><a href="/sboard/list?cate=1107">성격</a></li>
-                                        <li><a href="/sboard/list?cate=1108">인기</a></li>
-                                        <li><a href="/sboard/list?cate=1109">별명</a></li>
-                                        <li><a href="/sboard/list?cate=1110">저서</a></li>
-                                        <li><a href="/sboard/list?cate=1111">선거 이력</a></li>
-                                        <li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>
-                                        <li><a href="/sboard/list?cate=1113">비판과 논란</a></li>
-                                        <li><a href="/sboard/list?cate=1114">재산</a></li>
-                                        <li><a href="/sboard/list?cate=1115">기타</a></li>
-                                    <%--</ul>--%>
+                                <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
+                                <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
+                                <li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>
+                                <li><a href="/sboard/list?cate=1104">가족관계</a></li>
+                                <li><a href="/sboard/list?cate=1105">인간관계</a></li>
+                                <li><a href="/sboard/list?cate=1106">반려 동물</a></li>
+                                <li><a href="/sboard/list?cate=1107">성격</a></li>
+                                <li><a href="/sboard/list?cate=1108">인기</a></li>
+                                <li><a href="/sboard/list?cate=1109">별명</a></li>
+                                <li><a href="/sboard/list?cate=1110">저서</a></li>
+                                <li><a href="/sboard/list?cate=1111">선거 이력</a></li>
+                                <li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>
+                                <li><a href="/sboard/list?cate=1113">비판과 논란</a></li>
+                                <li><a href="/sboard/list?cate=1114">재산</a></li>
+                                <li><a href="/sboard/list?cate=1115">기타</a></li>
+                                <%--</ul>--%>
                                 </li>
 
                                 <li class="dropdown-submenu">
@@ -332,10 +332,10 @@
                                 </li>
 
                                 <%--<li class="dropdown-submenu">--%>
-                                    <%--<a href="javascript:void(0);">당선 후</a>--%>
-                                    <%--<ul class="dropdown-menu">--%>
-                                     <%----%>
-                                    <%--</ul>--%>
+                                <%--<a href="javascript:void(0);">당선 후</a>--%>
+                                <%--<ul class="dropdown-menu">--%>
+                                <%----%>
+                                <%--</ul>--%>
                                 <%--</li>--%>
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">사람</a>
@@ -544,13 +544,13 @@
     <!--=== End Header v5 ===-->
 
     <script>
-        <%--function getUrlParams() {--%>
-        <%--var params = {};--%>
-        <%--window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {--%>
-        <%--params[key] = value;--%>
-        <%--});--%>
-        <%--return params;--%>
-        <%--}--%>
+        function getUrlParams() {
+            var params = {};
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+                params[key] = value;
+            });
+            return params;
+        }
 
         <%--/* 바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.  */--%>
         <%--$(document).ready(function () {--%>
@@ -578,19 +578,47 @@
                 }
             });
 
-            function keywordSearchAny() {
-                alert($('input[name=keyword]').val());
+            window.onload = function () {
+                oParams = getUrlParams();
+            }
 
-                self.location = 'sboard/listAny?'
+            function keywordSearchAny() {
+                alert("window.location.hostname : " + window.location.hostname);
+                alert("window.location.port : " + window.location.port);
+                alert("window.location.hostname : + window.location.port : " + window.location.hostname + ":" + window.location.port);
+                alert("$('input[name=keyword]').val() : " + $('input[name=keyword]').val());
+
+                /*
+                    실제로 배포할 때(AWS에 BeansTalk에 Deploy할 때, 포트명 검토 필요!
+                    window.location.hostname
+                    + ":"
+                    + window.location.port
+                    + "/"
+                */
+
+                /*
+                self.location =
+                    'sboard/listAny?'
                     + '${pageMakerAny.makeQuery(1)}'
                     // + '&searchType=tcw'
                     // + $().val()
                     + '&keyword='
                     + $('#keywordInput').val();
+                */
 
-                console.log($('#keywordInput').val());
+                if (!oParams) {
+                    alert("url 파라미터 안 걸렸다!" + oParams);
 
-                console.log(${pageMakerAny.makeQuery(1)});
+                    self.location =
+                        'sboard/listAny?'
+                        + '${pageMakerAny.makeQuery(1)}'
+                        // + '&searchType=tcw'
+                        // + $().val()
+                        + '&keyword='
+                        + $('#keywordInput').val();
+                } else {
+                    alert("url 파라미터 찾았다!" + oParams);
+                }
             }
         });
 
