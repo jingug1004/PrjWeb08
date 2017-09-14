@@ -93,6 +93,10 @@ public class SearchBoardController {
 
 //        redirectAttributes.addAttribute("msg", "SUCCESS");
 
+        /*
+         * 전체 리스트 조회된 후에 카테 검색과 다시 전체검색 돋보기 버튼, 글쓰기 버튼이 동작되지 않는다.
+         * list02 그대로 만들어서 그냥 지워버려도 될 듯.
+         */
         return "sboard/list";
     }
 

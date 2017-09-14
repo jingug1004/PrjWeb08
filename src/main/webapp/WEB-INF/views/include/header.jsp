@@ -158,8 +158,17 @@
         <div class="topbar-v3">
             <div class="search-open">
                 <div class="container">
+                    <%--
                     <input type="text" name="keyword" id="keywordInput" value="${cri.keyword}"
                            class="form-control" placeholder="Search">
+                    <div class="search-close"><i class="icon-close"></i></div>
+                    --%>
+                    <form id="searchForm" method="get" action="/sboard/listAny">
+                        <input type="text" name="keyword" id="keywordInput" value="${cri.keyword}"
+                               class="form-control" placeholder="Search (2글자 이상 입력 후 Enter!)"
+                               onkeydown="submit" onblur="validate(this, 2, 100)">
+                        <%--<input type="hidden" id="searchBtn" value="검색">--%>
+                    </form>
                     <div class="search-close"><i class="icon-close"></i></div>
                 </div>
             </div>
@@ -552,75 +561,56 @@
             return params;
         }
 
-        <%--/* 바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.  */--%>
-        <%--$(document).ready(function () {--%>
-        <%--$('#searchBtnAny').on("click", function (e) {--%>
-        <%--self.location = "listAny"--%>
-        <%--+ '${pageMaker.makeQuery(1)}'--%>
-        <%--// + '&searchType=tcw'--%>
-        <%--// + $().val()--%>
-        <%--+ '&keyword=' + $('#keywordInput').val();--%>
-        <%--});--%>
+        // Todo : input에 최소값 넣자.
+        function validate(element, min, max) {
+            var len = element.value.length;
+            if ((len < min) || (len > max)) {
+                alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
+                // element.style.borderColor = "#FF0000";
+                // 입력 필드의 경계선을 빨강으로 설정함
 
-        <%--window.onload = function () {--%>
-        <%--oParams = getUrlParams();--%>
-        <%--}--%>
-        <%--});--%>
+                if ((len < min) && (keyCode == 13 || event.keyCode == 0X0D)) {
+
+                    alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
+
+                }
+
+                element.focus();
+                // 입력 필드로 포커스를 이동
+
+//                element.preventDefault();
+            }
+            else {
+                // element.style.borderColor = "#ffffff";
+                // 입력 필드의 경계선을 흰색으로 설정
+            }
+        }
 
         $(document).ready(function () {
-            $('input[name=keyword]').on("keydown", function (key) {
+            window.onload = function () {
+                oParams = getUrlParams();
+            }
 
-                if (key.keyCode == 13) { /* 키가 13이면 실행(엔터는 13) */
+//            $('#searchBtnAny');
+            $('.search-button');
 
-//                    textCounter(, 10)
+        });
 
-                    keywordSearchAny();
-                }
+        /* 바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.
+        $(document).ready(function () {
+            $('#searchBtnAny').on("click", function (e) {
+                self.location = "listAny"
+                    + '${pageMaker.makeQuery(1)}'
+                    // + '&searchType=tcw'
+                    // + $().val()
+                    + '&keyword=' + $('#keywordInput').val();
             });
 
             window.onload = function () {
                 oParams = getUrlParams();
             }
-
-            function keywordSearchAny() {
-                alert("window.location.hostname : " + window.location.hostname);
-                alert("window.location.port : " + window.location.port);
-                alert("window.location.hostname : + window.location.port : " + window.location.hostname + ":" + window.location.port);
-                alert("$('input[name=keyword]').val() : " + $('input[name=keyword]').val());
-
-                /*
-                    실제로 배포할 때(AWS에 BeansTalk에 Deploy할 때, 포트명 검토 필요!
-                    window.location.hostname
-                    + ":"
-                    + window.location.port
-                    + "/"
-                */
-
-                /*
-                self.location =
-                    'sboard/listAny?'
-                    + '${pageMakerAny.makeQuery(1)}'
-                    // + '&searchType=tcw'
-                    // + $().val()
-                    + '&keyword='
-                    + $('#keywordInput').val();
-                */
-
-                if (!oParams) {
-                    alert("url 파라미터 안 걸렸다!" + oParams);
-
-                    self.location =
-                        'sboard/listAny?'
-                        + '${pageMakerAny.makeQuery(1)}'
-                        // + '&searchType=tcw'
-                        // + $().val()
-                        + '&keyword='
-                        + $('#keywordInput').val();
-                } else {
-                    alert("url 파라미터 찾았다!" + oParams);
-                }
-            }
         });
+        */
 
         //Todo 170911(월) input 글자수 제한 -> 몇 글자 이상 무조건 필수 입력 / 몇 글자 초과 금지 ex) 2글자 이상 10글자 이하
 
