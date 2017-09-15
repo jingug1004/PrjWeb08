@@ -43,11 +43,12 @@ public class AmazoneWebServiceUtil {
         amazonS3 = new AmazonS3Client(awsCredentials);
     }
 
+    // Todo : 파일 올리기 구현 - input 박스로도 추가
     public void uploadFile(File file) {
         if (amazonS3 != null) {
             try {
                 PutObjectRequest putObjectRequest =
-                        new PutObjectRequest(BUCKET_NAME + "/Volumes"/*sub directory*/, file.getName(), file);
+                        new PutObjectRequest(BUCKET_NAME + "/Volumes/noname/zzz"/*sub directory*/, file.getName(), file);
                 putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead); // file permission
                 amazonS3.putObject(putObjectRequest); // upload file
 
@@ -63,8 +64,8 @@ public class AmazoneWebServiceUtil {
         if (amazonS3 != null) {
             try {
                 PutObjectRequest putObjectRequest =
-                        new PutObjectRequest(BUCKET_NAME + "/Volumes"/*sub directory*/, file.getName(), file);
-//                        new PutObjectRequest(BUCKET_NAME + "/NewFolder"/*sub directory*/, file.getName(), file);
+//                        new PutObjectRequest(BUCKET_NAME + "/Volumes"/*sub directory*/, file.getName(), file);
+                        new PutObjectRequest(BUCKET_NAME + "/NewFolder"/*sub directory*/, file.getName(), file);
                 putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead); // file permission
                 amazonS3.putObject(putObjectRequest); // upload file
 
@@ -75,5 +76,4 @@ public class AmazoneWebServiceUtil {
             }
         }
     }
-
 }

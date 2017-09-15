@@ -166,7 +166,8 @@
                     <form id="searchForm" method="get" action="/sboard/listAny">
                         <input type="text" name="keyword" id="keywordInput" value="${cri.keyword}"
                                class="form-control" placeholder="Search (2글자 이상 입력 후 Enter!)"
-                               onkeydown="submit" onblur="validate(this, 2, 100)">
+                        <%-- onkeydown="listAnySubmit()"--%> onblur="validate(this, 2, 100)"
+                               <%--onkeypress="javascript:codeCheck(event)"--%>>
                         <%--<input type="hidden" id="searchBtn" value="검색">--%>
                     </form>
                     <div class="search-close"><i class="icon-close"></i></div>
@@ -553,6 +554,29 @@
     <!--=== End Header v5 ===-->
 
     <script>
+        $(document).ready(function () {
+
+            /* url 쿼리 스트링 구하기 */
+            window.onload = function () {
+                oParams = getUrlParams();
+            }
+
+            /* 정규식이용 input박스 한글 숫자 영문만 입력되도록 */
+            $("#keywordInput").on("keypress", function (event) {
+                var keyValue = event.key; // jQuery로 눌러진 값을 가져온다
+
+                var input_char = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\s]+$/; //\s 가 공백  한글, 숫자, 영문 가능
+
+                if (input_char.test(keyValue)) {
+                    return true;
+                } else {
+                    event.key.value = "";
+                    return false;
+                }
+            });
+        });
+
+        /* url 쿼리 스트링 구하기 */
         function getUrlParams() {
             var params = {};
             window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
@@ -561,19 +585,13 @@
             return params;
         }
 
-        // Todo : input에 최소값 넣자.
+        /* 몇 글자 이상, 몇 글자 이하로 입력해야 함. */
         function validate(element, min, max) {
             var len = element.value.length;
             if ((len < min) || (len > max)) {
                 alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
                 // element.style.borderColor = "#FF0000";
                 // 입력 필드의 경계선을 빨강으로 설정함
-
-                if ((len < min) && (keyCode == 13 || event.keyCode == 0X0D)) {
-
-                    alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
-
-                }
 
                 element.focus();
                 // 입력 필드로 포커스를 이동
@@ -586,15 +604,51 @@
             }
         }
 
-        $(document).ready(function () {
-            window.onload = function () {
-                oParams = getUrlParams();
-            }
+        /* FIXME : onfocus에 문자 스페이스 넣으면 오류 뜨는 걸로 접근해볼까나 */
+        /* form 전체 검색시 submit jQuery */
+        function listAnySubmit() {
 
-//            $('#searchBtnAny');
-            $('.search-button');
+//            var i = $(input[name="keyword"]).length;
+//            $(input[name="keyword"]).each(function (i) {
+//               if(this.value == "") {
+//                   alert("그만하세요");
+//                   return false;
+//               }
+//            });
+//            if ((len < min) && (keyCode == 13 || event.keyCode == 0X0D)) {
+//                alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
+//            }
 
-        });
+            var keywordSearch = $(input[name = "keyword"]).attr('val');
+
+            console.log("keywordSearch" + keywordSearch);
+
+            var trimKeywordSearch = $.trim(keywordSearch);
+
+            console.log("trimKeywordSearch" + trimKeywordSearch);
+
+//            $(input[name="keyword"]).val(trimKeywordSearch).submit();
+        }
+
+
+//        function codeCheck(event) {
+//            if (isFirst(event)) {
+//                alert("시작글자는 공백이면 안 됩니다.");
+//                return false;
+//            }
+//        }
+//
+//        function isFirst(input) //첫글짜만 체크
+//        {
+//            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//            if(chars.indexOf(input.value.charAt(0))==-1)
+//            {
+//                return false;
+//            }else{
+//                return true;
+//            }
+//        }
+
 
         /* 바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.
         $(document).ready(function () {
@@ -611,8 +665,6 @@
             }
         });
         */
-
-        //Todo 170911(월) input 글자수 제한 -> 몇 글자 이상 무조건 필수 입력 / 몇 글자 초과 금지 ex) 2글자 이상 10글자 이하
 
     </script>
 

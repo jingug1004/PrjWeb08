@@ -565,6 +565,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         $("#goListBtn ").on("click", function () {
 
+            // 전체 검색 했을 때 뒤로가기 누르면 /sboard/list 로 매핑 호출되면 안 되기 때문에.
 //            formObj.attr("method", "get");
 //            formObj.attr("action", "/sboard/list");
 //            formObj.attr("action", "/sboard/list?cate=" + oParams.cate);

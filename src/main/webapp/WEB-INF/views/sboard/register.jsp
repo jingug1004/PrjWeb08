@@ -61,11 +61,18 @@
                             <%--JSP에서 사용하는 EL의 경우 자동으로 HttpSession에 있는 'login'을 찾아서 사용하므로 '${loogin.nickname}'와 같은 형태로 사용할 수 있음--%>
                         </div>
                         <input id="cnumInput" type="hidden" name="cnum" value="1101">
-                        <%--<div class="form-group">--%>
-                        <%--<label for="exampleInputEmail1">File DROP Here</label>--%>
-                        <%--<div class="fileDrop"></div>--%>
-                        <%--&lt;%&ndash;첨부파일을 추가할 수 있는 영역&ndash;%&gt;--%>
-                        <%--</div>--%>
+
+
+
+                        <%-- Todo : 첨부파일 추가할 수 있는 영역 --%>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">File DROP Here</label>
+                            <div class="fileDrop"></div>
+                            <%--첨부파일을 추가할 수 있는 영역--%>
+                        </div>
+
+
+
                     </div>
 
                     <!-- /.box-body -->
