@@ -70,12 +70,11 @@
                         <tr>
                             <th style="width: 10px">BNO</th>
                             <th>TITLE</th>
-                            <%--<th style="width: 40px">Good</th>--%>
-                            <%--<th style="width: 40px">Bad</th>--%>
-                            <%--<th style="width: 40px">Want</th>--%>
-                            <%--<th style="width: 40px">Out</th>--%>
+                            <th style="width: 40px">Good</th>
+                            <th style="width: 40px">Bad</th>
+                            <th style="width: 40px">Want</th>
+                            <th style="width: 40px">Out</th>
                             <th style="width: 80px">WRITER</th>
-                            <%--<th style="width: 160px">REGDATE</th>--%>
                             <th style="width: 100px">REGDATE</th>
                             <th style="width: 40px">VIEW</th>
                         </tr>
@@ -96,6 +95,7 @@
                         <%--</c:forEach>--%>
 
                         <%-- list cate에 맞는 검색 / 반복문을 통한 리스트 목록 --%>
+                        <%-- Todo : Good 카테고리 눌렀을 때, 오름차순, 내림차순 구현 --%>
                         <c:forEach items="${list}" var="boardVO">
                             <tr>
                                 <td>${boardVO.bno}</td>
@@ -103,6 +103,10 @@
                                     <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
+                                <td><span class="badge bg-aqua center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-light-blue center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-aqua-gradient center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-light-blue-gradient center">${boardVO.viewcnt}</span></td>
                                 <td>${boardVO.writer}</td>
                                 <td><fmt:formatDate pattern="yyyy-MM-dd"
                                                     value="${boardVO.regdate}"/></td>
@@ -118,10 +122,10 @@
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
-                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
-                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
-                                <%--<td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>--%>
+                                <td><span class="badge bg-aqua center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-light-blue center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-aqua-gradient center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-light-blue-gradient center">${boardVO.viewcnt}</span></td>
                                 <td>${boardVO.writer}</td>
 
                                 <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
