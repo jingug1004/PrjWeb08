@@ -15,7 +15,7 @@ public class SearchCriteria extends Criteria{
     private String searchType;
     private String keyword;
 
-    private String cate;
+    private String cate;            // 카테고리
 
     public String getCate() {
         return cate;

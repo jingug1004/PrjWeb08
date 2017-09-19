@@ -390,6 +390,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
     });
     // 각 링크에는 <li> 태그와 <a> 태그로 구성되고, 이에 대한 이벤트 처리.
 
+    // 댓글에 대한 Ajax 및 모달 처리
     $("#replyAddBtn").on("click", function () {
 
         var replyerObj = $("#newReplyWriter");

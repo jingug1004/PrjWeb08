@@ -70,7 +70,7 @@
                         <tr>
                             <th style="width: 10px">BNO</th>
                             <th>TITLE</th>
-                            <th style="width: 40px">Good</th>
+                            <th style="width: 40px" id="goodSort">Good</th>
                             <th style="width: 40px">Bad</th>
                             <th style="width: 40px">Want</th>
                             <th style="width: 40px">Out</th>
@@ -249,5 +249,23 @@
         });
     });
 </script>
+
+<%-- 테이블 정렬 Ajax --%>
+<%--<script>--%>
+    <%--$("#goodSort").on("click", function (event) {--%>
+
+
+        <%--$.ajax({--%>
+            <%--type: 'post',--%>
+            <%--url:--%>
+
+
+
+        <%--})--%>
+
+    <%--});--%>
+
+
+<%--</script>--%>
 
 <%@include file="../include/footer.jsp" %>
