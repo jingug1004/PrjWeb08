@@ -89,9 +89,6 @@ public class BoardDAOImpl implements BoardDAO {
 //        paramMap.put("perPageNum", cri.getPerPageNum());
 //        paramMap.put("cate", cate);
 
-        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + cri.getPageStart() + " lll~~~");
-        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + cri.getPerPageNum() + " lll~~~");
-        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + cri.getCate() + " lll~~~");
 //        logger.info("lll~~~ cate BoardDAOImpl : " + cate + " lll~~~");
 
         return session.selectList(namespace + ".listSearch", cri);

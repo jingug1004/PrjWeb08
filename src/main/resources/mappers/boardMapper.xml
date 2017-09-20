@@ -163,7 +163,10 @@
         AND (title LIKE concat('%', #{keyword}, '%')
         OR content LIKE concat('%', #{keyword}, '%')
         OR writer LIKE concat('%', #{keyword}, '%'))
-        ORDER BY regdate DESC;
+        ORDER BY regdate DESC
+        <![CDATA[
+              limit #{pageStart}, #{perPageNum}
+        ]]>;
     </select>
 
     <!-- 전체 검색 기능 구현시 총 몇개 카운트 -->

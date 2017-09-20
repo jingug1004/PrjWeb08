@@ -47,7 +47,7 @@ public class SearchBoardController {
 //                         @RequestParam("cate") int cate,
                            Model model,
                            BoardVO boardVO,
-                           @RequestParam("cate") int cateNum) throws Exception {
+                           @RequestParam(required = false, value = "cate") int cateNum) throws Exception {
 
         logger.info("lll~~~ cri.toString() : " + cri.toString() + " lll~~~");
 
@@ -68,13 +68,15 @@ public class SearchBoardController {
 
         model.addAttribute("pageMaker", pageMaker);
 
+        // Todo : 카테고리 넘버에 따라 카테고리 이름 출력!
+        // model.addAttribute("cateName", cateNum); // 리스트 목록 상단에 카테고리 이름 출력!
+
         return "sboard/list";
     }
 
     @RequestMapping(value = "/listAny", method = RequestMethod.GET)
     public String listAnyPage(@ModelAttribute("criteria") SearchCriteria criteria,
-                              Model model,
-                              RedirectAttributes redirectAttributes) throws Exception {
+                              Model model) throws Exception {
 
         logger.info("lll~~~ criteria.toString() listAny : " + criteria.toString() + " lll~~~");
 
@@ -86,10 +88,6 @@ public class SearchBoardController {
         pageMaker.setTotalCount(service.listSearchAnyCount(criteria));
 
         model.addAttribute("pageMakerAny", pageMaker);
-
-        logger.info("lll~~~ pageMaker.setCri(criteria) listAny : " + pageMaker.getCri() + " lll~~~");
-        logger.info("lll~~~ pageMaker.setTotalCount(service.listSearchAnyCount(criteria)) listAny : "
-                + pageMaker.getTotalCount() + " lll~~~");
 
 //        redirectAttributes.addAttribute("msg", "SUCCESS");
 

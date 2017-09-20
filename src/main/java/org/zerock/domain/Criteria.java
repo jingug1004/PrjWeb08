@@ -32,7 +32,6 @@ public class Criteria {
 
         this.page = 1;
         this.perPageNum = 10;
-//        this.cate = 1601;
     }
 
     /**
@@ -81,7 +80,8 @@ public class Criteria {
      *
      * @return the page start
      */
-// method for MyBatis SQL Mapper -
+    // method for MyBatis SQL Mapper - boardMapper.xml에서 limit #{pageStart}해도 작동 됨
+    // boardMapper.xml에서 getPageStart가 아닌 pageStart 써도 됨.
     public int getPageStart() {
 
         return (this.page - 1) * perPageNum;
@@ -92,7 +92,7 @@ public class Criteria {
      *
      * @return the per page num
      */
-// method for MyBatis SQL Mapper -
+    // method for MyBatis SQL Mapper -
     public int getPerPageNum() {
 
         return this.perPageNum;

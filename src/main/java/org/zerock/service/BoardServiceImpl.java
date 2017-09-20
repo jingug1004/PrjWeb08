@@ -162,7 +162,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
 
-        logger.info("lll~~~ cri.toString() BoardServiceImpl : " + cri.toString() + " lll~~~");
+//        logger.info("lll~~~ cri.toString() BoardServiceImpl : " + cri.toString() + " lll~~~");
 //        logger.info("lll~~~ cate BoardServiceImpl : " + cate + " lll~~~");
 
         return dao.listSearch(cri);

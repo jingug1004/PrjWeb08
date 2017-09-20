@@ -174,6 +174,12 @@ public class PageMaker {
         return uriComponents.toUriString();
     }
 
+    /**
+     * 전체 검색
+     *
+     * @param page the page
+     * @return the string
+     */
     public String makeSearchAll(int page) {
 
         UriComponents uriComponents =

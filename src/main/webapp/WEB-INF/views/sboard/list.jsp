@@ -15,18 +15,17 @@
             <div class='box'>
                 <div class="box-header with-border">
                     <%--<h3 class="box-title">Board List</h3>--%>
-                    <h3 class="box-title"></h3>
+                    <h3 class="box-title">${cateName}</h3>
                 </div>
 
                 <%-- Todo : Good, Bad, Want, Out 웹단 구현 --%>
 
                 <div class='box-body text-right'>
-
                     <select name="searchType">
                         <%-- 옵션 기본값으로 하고 싶을 때 맨 상위를 주석으로 처리해서 제목이 기본값으로 보이게! --%>
                         <%--<option value="n"--%>
-                                <%--<c:out value="${cri.searchType == null?'selected':''}"/>>--%>
-                            <%--검색 옵션--%>
+                        <%--<c:out value="${cri.searchType == null?'selected':''}"/>>--%>
+                        <%--검색 옵션--%>
                         <%--</option>--%>
                         <option value="t"
                                 <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
@@ -71,12 +70,12 @@
                             <th style="width: 10px">BNO</th>
                             <th>TITLE</th>
                             <th style="width: 40px" id="goodSort">Good</th>
-                            <th style="width: 40px">Bad</th>
-                            <th style="width: 40px">Want</th>
-                            <th style="width: 40px">Out</th>
+                            <th style="width: 40px" id="badSort">Bad</th>
+                            <th style="width: 40px" id="wantSort">Want</th>
+                            <th style="width: 40px" id="outSort">Out</th>
                             <th style="width: 80px">WRITER</th>
                             <th style="width: 100px">REGDATE</th>
-                            <th style="width: 40px">VIEW</th>
+                            <th style="width: 40px" id="viewSort">VIEW</th>
                         </tr>
 
                         <%--<c:forEach items="${list}" var="boardVO">--%>
@@ -128,8 +127,8 @@
                                 <td><span class="badge bg-light-blue-gradient center">${boardVO.viewcnt}</span></td>
                                 <td>${boardVO.writer}</td>
 
-                                <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
-                                <td><fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd" /></td>
+                                    <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
+                                <td><fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd"/></td>
                                 <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
@@ -162,7 +161,7 @@
                                     </c:forEach>
 
                                     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                                        <li><a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a>
+                                        <li><a href="list${pageMaker.makeSearch(pageMaker.endPage + 1) }">&raquo;</a>
                                         </li>
                                     </c:if>
                                 </c:when>
@@ -170,19 +169,19 @@
                                 <%-- 전체 아이템 검색 (페이징 기능) --%>
                                 <c:when test="${not empty pageMakerAny}">
                                     <c:if test="${pageMakerAny.prev}">
-                                        <li><a href="list${pageMakerAny.makeSearchAll(pageMakerAny.startPage - 1) }">&laquo;</a>
+                                        <li><a href="listAny${pageMakerAny.makeSearchAll(pageMakerAny.startPage - 1) }">&laquo;</a>
                                         </li>
                                     </c:if>
 
                                     <c:forEach begin="${pageMakerAny.startPage }"
                                                end="${pageMakerAny.endPage }" var="idx">
-                                        <li<c:out value="${pageMakerAny.criteria.page == idx?' class=active':''}"/>>
-                                            <a href="list${pageMakerAny.makeSearchAll(idx)}">${idx}123</a>
+                                        <li<c:out value="${pageMakerAny.cri.page == idx?' class=active':''}"/>>
+                                            <a href="listAny${pageMakerAny.makeSearchAll(idx)}">${idx}</a>
                                         </li>
                                     </c:forEach>
 
                                     <c:if test="${pageMakerAny.next && pageMakerAny.endPage > 0}">
-                                        <li><a href="list${pageMakerAny.makeSearchAll(pageMakerAny.endPage +1) }">&raquo;</a>
+                                        <li><a href="listAny${pageMakerAny.makeSearchAll(pageMakerAny.endPage + 1) }">&raquo;</a>
                                         </li>
                                     </c:if>
                                 </c:when>
@@ -226,44 +225,69 @@
 
     /*      <li><a href="/sboard/list?cate=1111">선거 이력</a></li> */
     $(document).ready(function () {
-        $('#searchBtn').on("click",
-            function (event) {
-                self.location = "list"
-                    + '${pageMaker.makeQuery(1)}'
-                    + "&searchType="
-                    + $("select option:selected").val()
-                    + "&keyword="
-                    + $('#keywordInputCate').val()
-                    + "&cate="
-                    + oParams.cate;
-            });
+        $('#searchBtn').on("click", function (event) {
+            self.location = "list"
+                + '${pageMaker.makeQuery(1)}'
+                + "&searchType="
+                + $("select option:selected").val()
+                + "&keyword="
+                + $('#keywordInputCate').val()
+                + "&cate="
+                + oParams.cate;
+        });
 
         window.onload = function () {
             oParams = getUrlParams();
         }
 
+        // 새 글 등록
         $('#newBtn').on("click", function (evt) {
             self.location = 'register?cate='
                 + oParams.cate;
             <%--+ '${getQuerystring(cate)}';--%>
+        });
+
+        $('#goodSort').on("click", function (event) {
+
+            alert("goodSort 클릭 됨");
+
+        });
+        $('#badSort').on("click", function (event) {
+
+            alert("badSort 클릭 됨");
+
+        });
+        $('#wantSort').on("click", function (event) {
+
+            alert("wantSort 클릭 됨");
+
+        });
+        $('#outSort').on("click", function (event) {
+
+            alert("outSort 클릭 됨");
+
+        });
+        $('#viewSort').on("click", function (event) {
+
+            alert("viewSort 클릭 됨");
+
         });
     });
 </script>
 
 <%-- 테이블 정렬 Ajax --%>
 <%--<script>--%>
-    <%--$("#goodSort").on("click", function (event) {--%>
+<%--$("#goodSort").on("click", function (event) {--%>
 
 
-        <%--$.ajax({--%>
-            <%--type: 'post',--%>
-            <%--url:--%>
+<%--$.ajax({--%>
+<%--type: 'post',--%>
+<%--url:--%>
 
 
+<%--})--%>
 
-        <%--})--%>
-
-    <%--});--%>
+<%--});--%>
 
 
 <%--</script>--%>
