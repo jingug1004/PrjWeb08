@@ -12,52 +12,56 @@
         <!-- left column -->
         <div class="col-md-12">
             <!-- general form elements -->
-            <div class='box'>
-                <div class="box-header with-border">
-                    <%--<h3 class="box-title">Board List</h3>--%>
-                    <h3 class="box-title">${cateName}</h3>
+
+            <%-- 전체 검색하면 검색 버튼 및 기능 안보임 --%>
+            <c:if test="${not empty pageMaker}">
+                <div class='box'>
+                    <div class="box-header with-border">
+                            <%--<h3 class="box-title">Board List</h3>--%>
+                        <h3 class="box-title">${cateName}</h3>
+                    </div>
+
+                        <%-- Todo : Good, Bad, Want, Out 웹단 구현 --%>
+
+                    <div class='box-body text-right'>
+                        <select name="searchType">
+                                <%-- 옵션 기본값으로 하고 싶을 때 맨 상위를 주석으로 처리해서 제목이 기본값으로 보이게! --%>
+                                <%--<option value="n"--%>
+                                <%--<c:out value="${cri.searchType == null?'selected':''}"/>>--%>
+                                <%--검색 옵션--%>
+                                <%--</option>--%>
+                            <option value="t"
+                                    <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
+                                제목
+                            </option>
+                            <option value="c"
+                                    <c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
+                                내용
+                            </option>
+                            <option value="w"
+                                    <c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
+                                작성자
+                            </option>
+                            <option value="tc"
+                                    <c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
+                                제목 or 내용
+                            </option>
+                            <option value="cw"
+                                    <c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
+                                내용 or 작성자
+                            </option>
+                            <option value="tcw"
+                                    <c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
+                                제목 or 내용 or 작성자
+                            </option>
+                        </select>
+
+                        <input type="text" name='keyword' id="keywordInputCate" value='${cri.keyword}'>
+                            <%--<button id='newBtn'>글 쓰기0</button>--%>
+                        <button id='searchBtn01' class="btn btn-primary">검색</button>
+                    </div>
                 </div>
-
-                <%-- Todo : Good, Bad, Want, Out 웹단 구현 --%>
-
-                <div class='box-body text-right'>
-                    <select name="searchType">
-                        <%-- 옵션 기본값으로 하고 싶을 때 맨 상위를 주석으로 처리해서 제목이 기본값으로 보이게! --%>
-                        <%--<option value="n"--%>
-                        <%--<c:out value="${cri.searchType == null?'selected':''}"/>>--%>
-                        <%--검색 옵션--%>
-                        <%--</option>--%>
-                        <option value="t"
-                                <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-                            제목
-                        </option>
-                        <option value="c"
-                                <c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-                            내용
-                        </option>
-                        <option value="w"
-                                <c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-                            작성자
-                        </option>
-                        <option value="tc"
-                                <c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
-                            제목 or 내용
-                        </option>
-                        <option value="cw"
-                                <c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
-                            내용 or 작성자
-                        </option>
-                        <option value="tcw"
-                                <c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
-                            제목 or 내용 or 작성자
-                        </option>
-                    </select>
-
-                    <input type="text" name='keyword' id="keywordInputCate" value='${cri.keyword}'>
-                    <button id='searchBtn' class="btn btn-primary">검색</button>
-                    <%--<button id='newBtn'>글 쓰기0</button>--%>
-                </div>
-            </div>
+            </c:if>
 
             <div class="box">
                 <div class="box-header with-border">
@@ -225,7 +229,7 @@
 
     /*      <li><a href="/sboard/list?cate=1111">선거 이력</a></li> */
     $(document).ready(function () {
-        $('#searchBtn').on("click", function (event) {
+        $('#searchBtn01').on("click", function (event) {
             self.location = "list"
                 + '${pageMaker.makeQuery(1)}'
                 + "&searchType="
@@ -234,6 +238,17 @@
                 + $('#keywordInputCate').val()
                 + "&cate="
                 + oParams.cate;
+        });
+
+        $('#searchBtn02').on("click", function (event) {
+            self.location = "listAny"
+                + '${pageMaker.makeQuery(1)}'
+                //                + "&searchType="
+                //                + $("select option:selected").val()
+                + "&keyword="
+                + $('#keywordInputCate').val();
+//                + "&cate="
+//                + oParams.cate;
         });
 
         window.onload = function () {

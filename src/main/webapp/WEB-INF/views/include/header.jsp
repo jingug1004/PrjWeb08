@@ -649,8 +649,8 @@
 //            }
 //        }
 
-
-        /* 바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.
+        <%--
+        바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.
         $(document).ready(function () {
             $('#searchBtnAny').on("click", function (e) {
                 self.location = "listAny"
@@ -664,7 +664,8 @@
                 oParams = getUrlParams();
             }
         });
-        */
+        --%>
+
 
     </script>
 
