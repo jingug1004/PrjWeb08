@@ -10,7 +10,7 @@ package org.zerock.domain;
  */
 
 
-public class SearchCriteria extends Criteria{
+public class SearchCriteriaListAny extends CriteriaListAny{
 
     private String searchType;      // 검색 타입
     private String keyword;         // 검색 키워드

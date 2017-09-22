@@ -21,8 +21,6 @@
                         <h3 class="box-title">${cateName}</h3>
                     </div>
 
-                        <%-- Todo : Good, Bad, Want, Out 웹단 구현 --%>
-
                     <div class='box-body text-right'>
                         <select name="searchType">
                                 <%-- 옵션 기본값으로 하고 싶을 때 맨 상위를 주석으로 처리해서 제목이 기본값으로 보이게! --%>
@@ -75,8 +73,8 @@
                             <th>TITLE</th>
                             <th style="width: 40px" id="goodSort">Good</th>
                             <th style="width: 40px" id="badSort">Bad</th>
-                            <th style="width: 40px" id="wantSort">Want</th>
-                            <th style="width: 40px" id="outSort">Out</th>
+                            <th style="width: 40px" id="wantSort">G/B</th>
+                            <th style="width: 40px" id="outSort">Spam</th>
                             <th style="width: 80px">WRITER</th>
                             <th style="width: 100px">REGDATE</th>
                             <th style="width: 40px" id="viewSort">VIEW</th>
@@ -106,14 +104,14 @@
                                     <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td><span class="badge bg-aqua center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-light-blue center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-aqua-gradient center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-light-blue-gradient center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-green-gradient center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-red-gradient center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-color-orange center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-color-red center">${boardVO.viewcnt}</span></td>
                                 <td>${boardVO.writer}</td>
                                 <td><fmt:formatDate pattern="yyyy-MM-dd"
                                                     value="${boardVO.regdate}"/></td>
-                                <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
 
@@ -122,7 +120,7 @@
                             <tr>
                                 <td>${boardVO.bno}</td>
                                 <td>
-                                    <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.cri.page)}&bno=${boardVO.bno}'>
+                                    <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
                                 <td><span class="badge bg-aqua center">${boardVO.viewcnt}</span></td>
@@ -179,7 +177,7 @@
 
                                     <c:forEach begin="${pageMakerAny.startPage }"
                                                end="${pageMakerAny.endPage }" var="idx">
-                                        <li<c:out value="${pageMakerAny.cri.page == idx?' class=active':''}"/>>
+                                        <li<c:out value="${pageMakerAny.criListAny.page == idx?' class=active':''}"/>>
                                             <a href="listAny${pageMakerAny.makeSearchAll(idx)}">${idx}</a>
                                         </li>
                                     </c:forEach>

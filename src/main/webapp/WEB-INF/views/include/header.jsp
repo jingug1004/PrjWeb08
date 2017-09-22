@@ -164,7 +164,7 @@
                     <div class="search-close"><i class="icon-close"></i></div>
                     --%>
                     <form id="searchForm" method="get" action="/sboard/listAny">
-                        <input type="text" name="keyword" id="keywordInput" value="${cri.keyword}"
+                        <input type="text" name="keyword" id="keywordInput" value="${criteria.keyword}"
                                class="form-control" placeholder="Search (2글자 이상 입력 후 Enter!)"
                         <%-- onkeydown="listAnySubmit()"--%> onblur="validate(this, 2, 100)"
                                <%--onkeypress="javascript:codeCheck(event)"--%>>

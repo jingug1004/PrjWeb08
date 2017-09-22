@@ -70,9 +70,6 @@
                             <div class="fileDrop"></div>
                             <%--첨부파일을 추가할 수 있는 영역--%>
                         </div>
-
-
-
                     </div>
 
                     <!-- /.box-body -->
@@ -87,10 +84,8 @@
                         <%--업로드 된 파일이 보여줄 수 있는 <ul></ul> 태그--%>
 
                         <button type="submit" class="btn btn-primary">등록</button>
-
                     </div>
                 </form>
-
             </div>
             <!-- /.box -->
         </div>

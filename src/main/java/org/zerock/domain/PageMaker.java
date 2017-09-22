@@ -1,5 +1,7 @@
 package org.zerock.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -11,17 +13,20 @@ import org.springframework.web.util.UriComponentsBuilder;
  */
 public class PageMaker {
 
+    private static final Logger logger = LoggerFactory.getLogger(PageMaker.class);
+
+
     private int totalCount;
     private int startPage;
     private int endPage;
     private boolean prev;
     private boolean next;
+    private int displayPageNum = 10;        // displayPageNum은 화면에 보여지는 페이지 번호의 숫자를 의미하는 변수를 추가.
+                                            // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
+    private Criteria cri;                   // SearchCriteria에 상속하는 Criteria
+    private CriteriaListAny criListAny;     // SearchCriteria에 상속하는 Criteria
 
-    private int displayPageNum = 10;
-
-    private Criteria cri;
-
-    private int cnumFromBoardVO;
+    private int cnumFromBoardVO;            // BoardVO 에서 cnum(카테고리 넘버) 가져오는 필드
 
 
     public int getCnumFromBoardVO() {
@@ -39,6 +44,23 @@ public class PageMaker {
      */
     public void setCri(Criteria cri) {
         this.cri = cri;
+    }
+
+    /**
+     * Gets cri.
+     *
+     * @return the cri
+     */
+    public Criteria getCri() {
+        return cri;
+    }
+
+    public CriteriaListAny getCriListAny() {
+        return criListAny;
+    }
+
+    public void setCriListAny(CriteriaListAny criListAny) {
+        this.criListAny = criListAny;
     }
 
     /**
@@ -67,6 +89,37 @@ public class PageMaker {
         prev = startPage == 1 ? false : true;
 
         next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
+
+    }
+
+    /**
+     * 전체검색(ListAny)으로 실행될 전체 게시글 카운트 갯수. 위와 구분.
+     *
+     * @param totalCount
+     */
+    public void setTotalCountListAny(int totalCount) {
+        this.totalCount = totalCount;
+
+        calcDataListAny();
+    }
+
+    private void calcDataListAny() {
+
+        logger.info("lll~~~ calcDataListAny()");
+
+        endPage = (int) (Math.ceil(criListAny.getPage() / (double) displayPageNum) * displayPageNum);
+
+        startPage = (endPage - displayPageNum) + 1;
+
+        int tempEndPage = (int) (Math.ceil(totalCount / (double) criListAny.getPerPageNum()));
+
+        if (endPage > tempEndPage) {
+            endPage = tempEndPage;
+        }
+
+        prev = startPage == 1 ? false : true;
+
+        next = endPage * criListAny.getPerPageNum() >= totalCount ? false : true;
 
     }
 
@@ -126,15 +179,6 @@ public class PageMaker {
     }
 
     /**
-     * Gets cri.
-     *
-     * @return the cri
-     */
-    public Criteria getCri() {
-        return cri;
-    }
-
-    /**
      * 모든 페이징 처리는 목록을 처리하기 위한 정보를 GET 방식으로 유지해야 하기 때문에 처리 과정이 복잡해질 때가 많음.
      * 현재 목록 페이지의 경우 모든 정보는 Criteria에 있기 때문에 PageMaker를 아래와 같이 makeQuery() 메소드를 추가.
      *
@@ -154,7 +198,7 @@ public class PageMaker {
 
 
     /**
-     * Make search string.
+     * 카테고리 검색
      *
      * @param page the page
      * @return the string
@@ -175,9 +219,8 @@ public class PageMaker {
     }
 
     /**
-     * 전체 검색
+     * 전체 검색(ListAny)
      *
-     * @param page the page
      * @return the string
      */
     public String makeSearchAll(int page) {
@@ -185,8 +228,8 @@ public class PageMaker {
         UriComponents uriComponents =
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
-                        .queryParam("perPageNum", cri.getPerPageNum())
-                        .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
+                        .queryParam("perPageNum", criListAny.getPerPageNum())
+                        .queryParam("keyword", ((SearchCriteriaListAny) criListAny).getKeyword())
                         .build();
 
         return uriComponents.toUriString();
@@ -202,6 +245,8 @@ public class PageMaker {
                 ", next=" + next +
                 ", displayPageNum=" + displayPageNum +
                 ", cri=" + cri +
+                ", criListAny=" + criListAny +
+                ", cnumFromBoardVO=" + cnumFromBoardVO +
                 '}';
     }
 }

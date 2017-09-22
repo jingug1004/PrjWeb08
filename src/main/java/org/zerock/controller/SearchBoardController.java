@@ -9,6 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.PageMaker;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.SearchCriteriaListAny;
 import org.zerock.service.BoardService;
 
 import javax.inject.Inject;
@@ -75,17 +76,22 @@ public class SearchBoardController {
     }
 
     @RequestMapping(value = "/listAny", method = RequestMethod.GET)
-    public String listAnyPage(@ModelAttribute("criteria") SearchCriteria criteria,
+    public String listAnyPage(@ModelAttribute("criteria") SearchCriteriaListAny searchCriteriaListAny,
                               Model model) throws Exception {
 
-        logger.info("lll~~~ criteria.toString() listAny : " + criteria.toString() + " lll~~~");
+        logger.info("lll~~~ criteria.toString() listAny : " + searchCriteriaListAny.toString() + " lll~~~");
 
-        model.addAttribute("listAny", service.listSearchAny(criteria));
+        model.addAttribute("listAny", service.listSearchAny(searchCriteriaListAny));
 
         PageMaker pageMaker = new PageMaker();
-        pageMaker.setCri(criteria);
+        pageMaker.setCriListAny(searchCriteriaListAny);
 
-        pageMaker.setTotalCount(service.listSearchAnyCount(criteria));
+        logger.info("lll~~~ pageMaker.setCriListAny(searchCriteria) : " + pageMaker.getCriListAny());
+        logger.info("lll~~~ pageMaker.setCriListAny(searchCriteria) : " + pageMaker.toString());
+
+        pageMaker.setTotalCountListAny(service.listSearchAnyCount(searchCriteriaListAny));
+
+        logger.info("lll~~~ p " + pageMaker.getTotalCount());
 
         model.addAttribute("pageMakerAny", pageMaker);
 

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.SearchCriteriaListAny;
 import org.zerock.persistence.BoardDAO;
 
 import javax.inject.Inject;
@@ -169,7 +170,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception {
+    public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception {
 
         logger.info("lll~~~ cri.toString() BoardServiceImpl : " + criteria.toString() + " lll~~~");
 
@@ -182,7 +183,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public int listSearchAnyCount(SearchCriteria criteria) throws Exception {
+    public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception {
         return dao.listSearchAnyCount(criteria);
     }
 

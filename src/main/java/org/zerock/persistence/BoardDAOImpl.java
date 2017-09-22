@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.SearchCriteriaListAny;
 
 import javax.inject.Inject;
 import java.util.HashMap;
@@ -103,7 +104,7 @@ public class BoardDAOImpl implements BoardDAO {
 
     /* 전체 검색 기능 구현 */
     @Override
-    public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception {
+    public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception {
 
         logger.info("lll~~~ cri.toString() BoardDAOImpl : " + criteria.getPageStart() + " lll~~~");
 
@@ -111,7 +112,7 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public int listSearchAnyCount(SearchCriteria criteria) throws Exception {
+    public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception {
 
         logger.info("lll~~~ cri.toString() BoardDAOImpl : " + criteria.getPageStart() + " lll~~~");
 

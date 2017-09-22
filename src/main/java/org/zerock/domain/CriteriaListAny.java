@@ -9,7 +9,7 @@ package org.zerock.domain;
  * 스프링 MVC는 파라미터를 수집하는 기능이 강력하기 때문에 여러 종류의 필요한 데이터를 하나의 클래스로 구성해도 작업의 양이 많이 늘어나지 않음. 작성한 Criteria는 필요한 경우 확장해서 사용할 수도 있음.
  * 굳이 Criteria를 작성하고 싶지 않다면, 파라미터를 두 개 이상 받도록 설계하면 됨. 하지만, 검색과 같은 기능이 붙게 되면 점점 전달되는 파라미터의 양이 늘어나게 되므로, 관리가 복잡해질 수 있음.
  */
-public class Criteria {
+public class CriteriaListAny {
 
     private int page;
     private int perPageNum;
@@ -28,10 +28,10 @@ public class Criteria {
      * 특이한 점은 기본값으로 페이지 번호는 1페이지로 지정하고, 리스트당 데이터의 수는 10으로 지정해서 강제로 부여.
      * 이후에 set 메소드를 이용하면서 사용자가 고의로 잘못 입력할 수 있는 값에 대해 필요한 데이터를 조정.
      */
-    public Criteria() {
+    public CriteriaListAny() {
 
         this.page = 1;
-        this.perPageNum = 10;
+        this.perPageNum = 100;
     }
 
     /**
@@ -62,8 +62,8 @@ public class Criteria {
      */
     public void setPerPageNum(int perPageNum) {
 
-        if (perPageNum <= 0 || perPageNum > 100) {
-            this.perPageNum = 10;
+        if (perPageNum <= 0 || perPageNum > 1000) {
+            this.perPageNum = 100;
             return;
         }
 

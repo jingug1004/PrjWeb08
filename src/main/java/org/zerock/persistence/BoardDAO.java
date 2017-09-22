@@ -3,6 +3,7 @@ package org.zerock.persistence;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
+import org.zerock.domain.SearchCriteriaListAny;
 
 import java.util.List;
 
@@ -104,9 +105,9 @@ public interface BoardDAO {
     public int listSearchCount(SearchCriteria cri) throws Exception;
 
 
-    public List<BoardVO> listSearchAny(SearchCriteria criteria) throws Exception;
+    public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception;
 
-    public int listSearchAnyCount(SearchCriteria criteria) throws Exception;
+    public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception;
 
 
     /**
