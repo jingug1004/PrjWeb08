@@ -6,14 +6,23 @@
 
 <style>
     .fileDrop {
-        width: 80%;
+        width: 100%;
         height: 100px;
-        border: 1px dotted gray;
-        background-color: lightslategrey;
+        border: 5px dotted #7BD4CC;
+        background-color: #f5f5f5;
         margin: auto;
 
+        display: table;
     }
 </style>
+
+<%--
+#7BD4CC AQUAPOISE
+#BEA42E HONEY
+#7B895B ARMY
+#037367 CELADON
+#00281F SANGRIA
+--%>
 
 <!-- Main content -->
 <section class="content">
@@ -67,7 +76,9 @@
                         <%-- Todo : 첨부파일 추가할 수 있는 영역 --%>
                         <div class="form-group">
                             <label for="exampleInputEmail1">File DROP Here</label>
-                            <div class="fileDrop"></div>
+                            <div class="fileDrop" >
+                                <p style="display: table-cell; text-align: center; vertical-align: middle;">첨부할 파일을 드래그 하거나 직접 파일찾기</p>
+                            </div>
                             <%--첨부파일을 추가할 수 있는 영역--%>
                         </div>
                     </div>
@@ -102,6 +113,7 @@
 <%-- /upload.js 마지막 리턴 값은 정보들을 JavaScript의 객체로 생성해서 반환해주고, register.jsp에서는 템플릿을 이용해서 화면에 보여지도록 함.--%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
+<%-- 첨부파일 추가할 때 생기는 아이콘 --%>
 <script id="template" type="text/x-handlebars-template">
     <li>
         <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>

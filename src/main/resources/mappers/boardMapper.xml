@@ -192,11 +192,25 @@
         UPDATE tbl_board SET viewcnt = viewcnt + 1 WHERE bno = #{bno}
     </update>
 
-    <!-- 게시판 글의 카테고리 이름 출력 -->
+    <!-- 게시판 글(읽기 - readPage)의 카테고리 이름 출력 -->
+    <select id="callCateName" resultType="String">
+        SELECT cname FROM tbl_cate
+        LEFT JOIN tbl_board
+        ON tbl_cate.cnum = tbl_board.cnum
+        WHERE tbl_board.bno = #{bno};
+    </select>
+    <!--
     <select id="callCateName" resultType="String">
         SELECT cname FROM tbl_cate WHERE cnum =
                              (SELECT cnum FROM tbl_board WHERE bno = #{bno});
     </select>
+    -->
+
+    <!-- 게시판 리스트(목록 - List)의 카테고리 이름 출력 -->
+    <select id="callCateNameInList" resultType="String">
+        SELECT cname FROM tbl_cate WHERE cnum = #{cateNum};
+    </select>
+
 
     <insert id="addAttach">
         INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, LAST_INSERT_ID())

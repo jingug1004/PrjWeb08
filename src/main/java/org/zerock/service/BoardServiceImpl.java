@@ -82,13 +82,13 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public String callCateName(int bno) throws Exception {
-
-        /* 게시판 상세 글의 카테고리 이름 출력 */
-        return dao.callCateName(bno);
-
+        return dao.callCateName(bno);               // 게시판 상세 글의 카테고리 이름 출력
     }
 
-
+    @Override
+    public String callCateNameInList(int cateNum) throws Exception {
+        return dao.callCateNameInList(cateNum);     // 게시판 리스트(목록 - List)의 카테고리 이름 출력
+    }
 
     /*
     @Override

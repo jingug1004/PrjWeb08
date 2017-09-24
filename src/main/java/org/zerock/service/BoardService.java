@@ -32,14 +32,22 @@ public interface BoardService {
      */
     public BoardVO read(Integer bno) throws Exception;
 
-
-
-
-
-
+    /**
+     * 게시판 글의 카테고리 이름 출력
+     *
+     * @param bno the bno
+     * @throws Exception the exception
+     */
     public String callCateName(int bno) throws Exception;
 
 
+    /**
+     * 게시판 리스트(목록 - List)의 카테고리 이름 출력
+     *
+     * @param cateNum 카테고리 번호
+     * @throws Exception the exception
+     */
+    public String callCateNameInList(int cateNum) throws Exception;
 
     /**
      * Modify.

@@ -69,8 +69,10 @@ public class SearchBoardController {
 
         model.addAttribute("pageMaker", pageMaker);
 
-        // Todo : 카테고리 넘버에 따라 카테고리 이름 출력!
-        // model.addAttribute("cateName", cateNum); // 리스트 목록 상단에 카테고리 이름 출력!
+
+        model.addAttribute("cateName", cateNum);                               // 리스트 목록 상단에 카테고리 이름 출력!
+        model.addAttribute("cateName", service.callCateNameInList(cateNum));   // 게시판 상세 글의 카테고리 이름 출력
+
 
         return "sboard/list";
     }

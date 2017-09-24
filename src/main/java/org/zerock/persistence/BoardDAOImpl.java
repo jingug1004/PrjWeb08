@@ -145,6 +145,12 @@ public class BoardDAOImpl implements BoardDAO {
         return session.selectOne(namespace + ".callCateName", bno);
     }
 
+    /* 게시판 리스트의 카테고리 이름 출력 */
+    @Override
+    public String callCateNameInList(Integer cateNum) throws Exception {
+        return session.selectOne(namespace + ".callCateNameInList", cateNum);
+    }
+
 
     @Override
     public void addAttach(String fullName) throws Exception {
