@@ -72,12 +72,15 @@
                         <input id="cnumInput" type="hidden" name="cnum" value="1101">
 
 
-
                         <%-- Todo : 첨부파일 추가할 수 있는 영역 --%>
                         <div class="form-group">
                             <label for="exampleInputEmail1">File DROP Here</label>
-                            <div class="fileDrop" >
-                                <p style="display: table-cell; text-align: center; vertical-align: middle;">첨부할 파일을 드래그 하거나 직접 파일찾기</p>
+                            <div class="fileDrop">
+                                <p style="display: table-cell; text-align: center; vertical-align: middle;">
+                                    첨부할 파일을 드래그 하거나 직접 <a id="btn-upload">파일찾기</a>
+                                    <input style="display: none" type="file" id="file" name="file"
+                                           onchange="changeValue(this)"/>
+                                </p>
                             </div>
                             <%--첨부파일을 추가할 수 있는 영역--%>
                         </div>
@@ -165,7 +168,7 @@
             }
         });
     });
-    //    파일이 Ajax로 전송되는 부분의 처리를 보면 getFileInfo() 함수를 이용해서 템플릿에 필요한 객체를 생성. 이후 템플릿을 적용해서 온전한 HTML을 구성한 후 첨부된 파일이 보여지는 $('.uploadedList')의 일부로 추가.
+    // 파일이 Ajax로 전송되는 부분의 처리를 보면 getFileInfo() 함수를 이용해서 템플릿에 필요한 객체를 생성. 이후 템플릿을 적용해서 온전한 HTML을 구성한 후 첨부된 파일이 보여지는 $('.uploadedList')의 일부로 추가.
 
     $(".uploadedList").on("click", ".delbtn", function (event) {
 
@@ -215,9 +218,9 @@
         that.get(0).submit();
         // jQuery의 get(0)은 순수한 DOM 객체를 얻어내기 위해서 사용.
 
-//        window.onLoad = function() {
-//            oParams = getUrlParams();
-//        }
+        // window.onLoad = function() {
+        //     oParams = getUrlParams();
+        // }
 
         self.location = 'list?cate='
             + getUrlParams().cate;
@@ -229,23 +232,34 @@
 </script>
 
 <script>
-    //    $(document).ready(function () {
+    // $(document).ready(function () {
     function getUrlParams() {
-//            var casting = 1;
+        // var casting = 1;
         var params = {};
         window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
             params[key] = value;
         });
         return params;
-//            return parseInt("params", 10);
-//            return params * casting;
+        // return parseInt("params", 10);
+        // return params * casting;
     }
 
     $('#cnumInput').val(getUrlParams().cate);
-    //        parseInt($('#cnumInput').val(getUrlParams()), 10);
-    //        val 없애도 되는지??????????????? 위의 53라인의 val 없어도 잘 됨.
+    // parseInt($('#cnumInput').val(getUrlParams()), 10);
+    // val 없애도 되는지??????????????? 위의 53라인의 val 없어도 잘 됨.
     // console.log("cnumInput: " + $('#cnumInput').val('getUrlParams().cate'));
-    //    });
+    // });
+
+    // Input TYPE=“File” 을 히든으로 하고 외부 버튼을 눌러서 파일을 선택
+    $('#btn-upload').on('click', function (event) {
+
+        $('#file').click();
+
+        function changeValue(obj) {
+            alert(obj.value);
+        }
+    });
+
 </script>
 
 

@@ -72,11 +72,11 @@
                             <th style="width: 10px">BNO</th>
                             <th>TITLE</th>
                             <th style="width: 40px" id="goodSort">Good</th>
+                            <th style="width: 40px" id="gbSort">G/B</th>
                             <th style="width: 40px" id="badSort">Bad</th>
-                            <th style="width: 40px" id="wantSort">G/B</th>
-                            <th style="width: 40px" id="outSort">Spam</th>
                             <th style="width: 80px">WRITER</th>
                             <th style="width: 100px">REGDATE</th>
+                            <th style="width: 40px" id="spamSort">Spam</th>
                             <th style="width: 40px" id="viewSort">VIEW</th>
                         </tr>
 
@@ -104,13 +104,13 @@
                                     <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td><span class="badge bg-green-gradient center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-red-gradient center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-color-orange center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-color-red center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
+                                <td><span class="badge bg-yellow-gradient center">${boardVO.gbcnt}</span></td>
+                                <td><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
                                 <td>${boardVO.writer}</td>
                                 <td><fmt:formatDate pattern="yyyy-MM-dd"
                                                     value="${boardVO.regdate}"/></td>
+                                <td><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
                                 <td><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
@@ -123,15 +123,16 @@
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td><span class="badge bg-aqua center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-light-blue center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-aqua-gradient center">${boardVO.viewcnt}</span></td>
-                                <td><span class="badge bg-light-blue-gradient center">${boardVO.viewcnt}</span></td>
+                                <td><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
+                                <td><span class="badge bg-yellow-gradient center">${boardVO.gbcnt}</span></td>
+                                <td><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
                                 <td>${boardVO.writer}</td>
 
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
-                                <td><fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd"/></td>
-                                <td><span class="badge bg-red center">${boardVO.viewcnt}</span></td>
+                                <td><fmt:formatDate value="${boardVO.regdate}"
+                                                    pattern="yyyy-MM-dd"/></td>
+                                <td><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
+                                <td><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -261,29 +262,20 @@
         });
 
         $('#goodSort').on("click", function (event) {
-
             alert("goodSort 클릭 됨");
-
+        });
+        $('#gbSort').on("click", function (event) {
+            alert("wantSort 클릭 됨");
         });
         $('#badSort').on("click", function (event) {
-
             alert("badSort 클릭 됨");
-
         });
-        $('#wantSort').on("click", function (event) {
 
-            alert("wantSort 클릭 됨");
-
-        });
-        $('#outSort').on("click", function (event) {
-
+        $('#spamSort').on("click", function (event) {
             alert("outSort 클릭 됨");
-
         });
         $('#viewSort').on("click", function (event) {
-
             alert("viewSort 클릭 됨");
-
         });
     });
 </script>

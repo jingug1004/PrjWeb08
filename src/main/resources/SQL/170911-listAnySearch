@@ -34,9 +34,32 @@ where bno > 0;
 
 SELECT * FROM tbl_board
 WHERE bno > 0
-      AND (title LIKE concat('%', 'a1', '%')
-           OR content LIKE concat('%', 'a1', '%')
-           OR writer LIKE concat('%', 'a1', '%'))
+      AND (title LIKE concat('%', '1', '%')
+           OR content LIKE concat('%', '1', '%')
+           OR writer LIKE concat('%', '1', '%'))
+ORDER BY regdate DESC;
+
+SELECT * FROM tbl_board
+WHERE bno > 0
+      AND (writer LIKE concat('%', '1', '%')
+           OR title LIKE concat('%', '1', '%')
+           OR content LIKE concat('%', '1', '%'))
 ORDER BY regdate DESC;
 
 SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 6) AS password;
+
+SELECT * FROM tbl_cate WHERE cnum =
+                                 (SELECT cnum FROM tbl_board WHERE bno = 4272);
+
+EXPLAIN
+SELECT * FROM tbl_cate
+LEFT JOIN tbl_board
+  ON tbl_cate.cnum = tbl_board.cnum /*WHERE bno = 4272*/;
+
+EXPLAIN
+SELECT * FROM tbl_cate
+  LEFT JOIN tbl_board
+    ON tbl_board.cnum = tbl_cate.cnum /*WHERE bno = 4272*/;
+
+# select * into OUTFILE "" fields terminated by ',' from tbl_cate;
+

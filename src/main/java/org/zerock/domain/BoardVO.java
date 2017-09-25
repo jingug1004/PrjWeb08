@@ -11,11 +11,19 @@ import java.util.Date;
  */
 public class BoardVO {
 
+    // Todo: good, bad, g/b, spam 추가
+
     private Integer bno;
     private String title;
     private String content;
     private String writer;
     private Date regdate;
+
+    private int goodcnt;
+    private int badcnt;
+    private int gbcnt;
+    private int spamcnt;
+
     private int viewcnt;
     private int replycnt;
     private int cnum;
@@ -174,6 +182,38 @@ public class BoardVO {
         this.files = files;
     }
 
+    public int getGoodcnt() {
+        return goodcnt;
+    }
+
+    public void setGoodcnt(int goodcnt) {
+        this.goodcnt = goodcnt;
+    }
+
+    public int getBadcnt() {
+        return badcnt;
+    }
+
+    public void setBadcnt(int badcnt) {
+        this.badcnt = badcnt;
+    }
+
+    public int getGbcnt() {
+        return gbcnt;
+    }
+
+    public void setGbcnt(int gbcnt) {
+        this.gbcnt = gbcnt;
+    }
+
+    public int getSpamcnt() {
+        return spamcnt;
+    }
+
+    public void setSpamcnt(int spamcnt) {
+        this.spamcnt = spamcnt;
+    }
+
     @Override
     public String toString() {
         return "BoardVO{" +
@@ -182,11 +222,14 @@ public class BoardVO {
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
                 ", regdate=" + regdate +
+                ", goodcnt=" + goodcnt +
+                ", badcnt=" + badcnt +
+                ", gbcnt=" + gbcnt +
+                ", spamcnt=" + spamcnt +
                 ", viewcnt=" + viewcnt +
                 ", replycnt=" + replycnt +
+                ", cnum=" + cnum +
                 ", files=" + Arrays.toString(files) +
                 '}';
     }
-
-
 }

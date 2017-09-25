@@ -81,34 +81,66 @@
 
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label> <input type="text"
-                                                                             name='title' class="form-control"
-                                                                             value="${boardVO.title}"
-                                                                             readonly="readonly">
-                        <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
+                        <div style="display: inline; float: left; width: 100%;">
+                            <div style="display: inline; float: left; width: 65%; margin-right: 1%">
+                                <label for="exampleInputEmail1">Title</label>
+                                <input type="text" name='title' class="form-control" value="${boardVO.title}"
+                                       readonly="readonly">
+                                <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
+                            </div>
+                            <div style="display: inline; float: left; width: 16%; margin-right: 1%">
+                                <label for="exampleInputEmail1">G/B</label>
+                                <input type="text" name='title' class="form-control" value="${boardVO.gbcnt}"
+                                       readonly="readonly">
+                                <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
+                            </div>
+                            <div style="display: inline; float: left; width: 16%; margin-right: 1%">
+                                <label for="exampleInputEmail1">View</label>
+                                <input type="text" name='title' class="form-control" value="${boardVO.viewcnt}"
+                                       readonly="readonly">
+                                <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <%--@declare id="exampleinputpassword1"--%>
                         <label for="exampleInputPassword1">Content</label>
                         <%--<textarea class="form-control" name="content" rows="25"--%>
-                                  <%--readonly="readonly">${boardVO.content}</textarea>--%>
+                        <%--readonly="readonly">${boardVO.content}</textarea>--%>
 
                         <%-- CKEditor 사용 --%>
-                            <textarea name="content" readonly="readonly" class="form-control" rows="200">
-                                ${boardVO.content}</textarea>
-                            <script>
-                                CKEDITOR.replace( 'content' );
-                                CKEDITOR.config.height = 550;
-                                CKEDITOR.config.width = 'auto';
-                            </script>
-
+                        <textarea name="content" readonly="readonly" class="form-control" rows="200">
+                            ${boardVO.content}</textarea>
+                        <script>
+                            CKEDITOR.replace('content');
+                            CKEDITOR.config.height = 550;
+                            CKEDITOR.config.width = 'auto';
+                        </script>
 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Writer</label> <input type="text"
-                                                                              name="writer" class="form-control"
-                                                                              value="${boardVO.writer}"
-                                                                              readonly="readonly">
+                        <div style="display:inline; float: left; width: 100%;">
+                            <div style="display: inline; float: left; width: 49%; margin-right: 1%;">
+                                <label for="exampleInputEmail1">작성자</label>
+                                <input type="text" name="writer" class="form-control"
+                                       value="${boardVO.writer}" readonly="readonly">
+                            </div>
+                            <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <label for="exampleInputEmail1">Good</label>
+                                <input type="text" name="writer" class="form-control"
+                                       value="${boardVO.goodcnt}" readonly="readonly" style="color: green;">
+                            </div>
+                            <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <label for="exampleInputEmail1">Bad</label>
+                                <input type="text" name="writer" class="form-control"
+                                       value="${boardVO.badcnt}" readonly="readonly" style="color: red;">
+                            </div>
+                            <div style="display: inline; float: left; width: 16%">
+                                <label for="exampleInputEmail1">Spam</label>
+                                <input type="text" name="writer" class="form-control"
+                                       value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -129,7 +161,6 @@
                     </c:if>
                     <button type="submit" class="btn btn-primary" id="goListBtn">메뉴</button>
                 </div>
-
             </div>
             <!-- /.box -->
         </div>
@@ -191,9 +222,9 @@
                 </li>
             </ul>
 
+            <%-- 페이징 --%>
             <div class='text-center'>
                 <ul id="pagination" class="pagination pagination-sm no-margin ">
-
                 </ul>
             </div>
             <%--댓글의 목록과 페이징 처리에 필요한 <div>--%>
@@ -203,7 +234,7 @@
     </div>
     <!-- /.row -->
 
-    <!-- Modal -->
+    <!-- 글 수정 Modal -->
     <div id="modifyModal" class="modal modal-primary fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content -->
@@ -223,8 +254,6 @@
             </div>
         </div>
     </div>
-
-
 </section>
 <!-- /.content -->
 
@@ -232,6 +261,7 @@
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
 <%--<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>--%>
 
+<%-- 첨부파일 보이게 하는 스크립트 --%>
 <script id="templateAttach" type="text/x-handlebars-template">
     <li data-src='{{fullName}}'>
         <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
@@ -262,6 +292,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 {{/each}}
 </script>--%>
 
+<%-- 댓글 리스트 보이게 하는 스크립트 --%>
 <script id="template" type="text/x-handlebars-template">
     {{#each .}}
     <li class="replyLi" data-rno={{rno}}>
@@ -344,6 +375,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         });
     }
+
     // getPage()는 특정한 게시물에 대한 페이징 처리를 위해서 호출되는 함수. 내부적으로 jQuery를 이용해서 JSON 타입의 데이터를 처리.
     // getPage()는 페이지 번호를 파라미터로 전달받고, jQuery의 getJSON()을 이용해서 댓글의 목록 데이터를 처리. 댓글의 목록 데이터는 'pageMaker'와 'list'로 구성되므로 이를 printPaging()과 printData()에서 처리.
 
@@ -494,16 +526,16 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
 <script>
 
-//    function getUrlParams() {
-//        var params = {};
-//        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
-//        return params;
-//    };
+    //    function getUrlParams() {
+    //        var params = {};
+    //        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+    //        return params;
+    //    };
 
     $(document).ready(function () {
 
         var formObj = $("form[role='form']");
-//        formObj는 위에 선언된 <form> 태그를 의미하게 됨. <input type='hidden' name='bno' value="${boardVO.bno}~${cri.keyword}">
+        // formObj는 위에 선언된 <form> 태그를 의미하게 됨. <input type='hidden' name='bno' value="${boardVO.bno}~${cri.keyword}">
 
         console.log(formObj);
 
@@ -515,18 +547,21 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         function getUrlParams() {
             var params = {};
-            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+                params[key] = value;
+            });
             return params;
         };
 
         $("#cnumToList").val(getUrlParams().cate);
 
-//        window.onload = function() {
-//            var oParams = getUrlParams();
-//        };
+        // window.onload = function() {
+        //     var oParams = getUrlParams();
+        // };
 
-        console.log("lll~~~ oParams : " + getUrlParams().cate );
+        console.log("lll~~~ oParams : " + getUrlParams().cate);
 
+        // 수정버튼 클릭
         $("#modifyBtn").on("click", function () {
             formObj.attr("action", "/sboard/modifyPage");
             formObj.attr("method", "get");
@@ -567,11 +602,11 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         $("#goListBtn ").on("click", function () {
 
             // 전체 검색 했을 때 뒤로가기 누르면 /sboard/list 로 매핑 호출되면 안 되기 때문에.
-//            formObj.attr("method", "get");
-//            formObj.attr("action", "/sboard/list");
-//            formObj.attr("action", "/sboard/list?cate=" + oParams.cate);
-//            formObj.submit();
-              history.back();
+            // formObj.attr("method", "get");
+            // formObj.attr("action", "/sboard/list");
+            // formObj.attr("action", "/sboard/list?cate=" + oParams.cate);
+            // formObj.submit();
+            history.back();
         });
 //        "{boardVO.bno}", "{cri.page}", "{cri.perPageNum}" 의 정보를 이용하는 방식으로 변경 되었음.
 
