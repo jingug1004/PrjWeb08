@@ -73,7 +73,6 @@ public class SearchBoardController {
         model.addAttribute("cateName", cateNum);                               // 리스트 목록 상단에 카테고리 이름 출력!
         model.addAttribute("cateName", service.callCateNameInList(cateNum));   // 게시판 상세 글의 카테고리 이름 출력
 
-
         return "sboard/list";
     }
 
@@ -197,7 +196,6 @@ public class SearchBoardController {
                                    RedirectAttributes rttr,
                                    @RequestParam("cate") int cateNum) throws Exception {
 
-        logger.info(cri.toString());
         service.modify(board);
 
         rttr.addAttribute("page", cri.getPage());
@@ -210,8 +208,6 @@ public class SearchBoardController {
         rttr.addAttribute("keyword", cri.getKeyword());
 
         rttr.addFlashAttribute("msg", "SUCCESS");
-
-        logger.info(rttr.toString());
 
         return "redirect:/sboard/list";
     }

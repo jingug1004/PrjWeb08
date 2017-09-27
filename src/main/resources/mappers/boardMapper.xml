@@ -6,8 +6,8 @@
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
     <insert id="create">
-        insert into tbl_board (title, content, writer, cnum)
-        values(#{title}, #{content}, #{writer}, #{cnum})
+        insert into tbl_board (title, content, writer, cnum, regdate)
+        values(#{title}, #{content}, #{writer}, #{cnum}, NOW())
     </insert>
     <!--boardMapper.xml의 각 SQL 문의 id 속성 값은 BoardDAO 인터페이스와 동일하게 설정해주어서 혼란을 피하는 것이 좋음.-->
 
@@ -15,14 +15,14 @@
 어느 한 게시물(readPage)들어가면 그 게시물의 전체 댓글수가 안 보여졌음요. -->
     <select id="read" resultType="org.zerock.domain.BoardVO">
         select
-        bno, title, content, writer, regdate, viewcnt, replycnt
+        *
         from
         tbl_board
         where bno = #{bno}
     </select>
 
     <update id="update">
-        update tbl_board set title =#{title}, content =#{content}
+        update tbl_board set title =#{title}, content =#{content}, updatedate = NOW()
         where bno = #{bno}
     </update>
 
@@ -183,6 +183,7 @@
         )
     </select>
 
+    <!-- 게시판 댓글 작성 수 증가 -->
     <update id="updateReplyCnt">
         UPDATE tbl_board SET replycnt = replycnt + #{amount} WHERE bno = #{bno}
     </update>
@@ -229,5 +230,10 @@
     <insert id="replaceAttach">
         INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, #{bno})
     </insert>
+
+    <update id="goodCntPush">
+
+
+    </update>
 
 </mapper>

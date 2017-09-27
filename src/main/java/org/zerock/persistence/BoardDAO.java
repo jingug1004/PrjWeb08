@@ -181,4 +181,7 @@ public interface BoardDAO {
      * @throws Exception the exception
      */
     public void replaceAttach(String fullName, Integer bno)throws Exception;
+
+//    public void goodCntPush(String uid) throws Exception;
+
 }

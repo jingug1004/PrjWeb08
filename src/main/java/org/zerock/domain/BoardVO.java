@@ -18,6 +18,7 @@ public class BoardVO {
     private String content;
     private String writer;
     private Date regdate;
+    private Date updatedate;
 
     private int goodcnt;
     private int badcnt;
@@ -214,6 +215,14 @@ public class BoardVO {
         this.spamcnt = spamcnt;
     }
 
+    public Date getUpdatedate() {
+        return updatedate;
+    }
+
+    public void setUpdatedate(Date updatedate) {
+        this.updatedate = updatedate;
+    }
+
     @Override
     public String toString() {
         return "BoardVO{" +
@@ -222,6 +231,7 @@ public class BoardVO {
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
                 ", regdate=" + regdate +
+                ", updatedate=" + updatedate +
                 ", goodcnt=" + goodcnt +
                 ", badcnt=" + badcnt +
                 ", gbcnt=" + gbcnt +

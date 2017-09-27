@@ -129,6 +129,11 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="/resources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css"/>
 
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <%--<script src="/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>--%>
+    <%--일일이 자바스크립트에 선언하지 않아도 된다. 헤드와 바디 사이에 미리 자바스크립트 선언을 해놓으며.--%>
+    <%--풋터 끝까지 적용됨! ^^--%>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -139,19 +144,24 @@
     <%-- CKEditor 스크립트 선언 --%>
     <script src="/resources/ckeditor/ckeditor.js"></script>
 
-
 </head>
 
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<%--<script src="/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>--%>
-<%--일일이 자바스크립트에 선언하지 않아도 된다. 헤드와 바디 사이에 미리 자바스크립트 선언을 해놓으며.--%>
-<%--풋터 끝까지 적용됨! ^^--%>
+<style type="text/css">
+
+    <%-- 게시판 글 또는 리스트 간격 조정 --%>
+    .content {
+        /*position: absolute;*/
+        width: 1170px;
+    }
+
+
+</style>
+
+<%--<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>--%>
 
 <body class="header-fixed">
 
 <div class="wrapper">
-
-
     <!--=== Header v5 ===-->
     <div class="header-v5 header-static">
         <!-- Topbar v3 -->
@@ -167,7 +177,7 @@
                         <input type="text" name="keyword" id="keywordInput" value="${criteria.keyword}"
                                class="form-control" placeholder="Search (2글자 이상 입력 후 Enter!)"
                         <%-- onkeydown="listAnySubmit()"--%> onblur="validate(this, 2, 100)"
-                               <%--onkeypress="javascript:codeCheck(event)"--%>>
+                        <%--onkeypress="javascript:codeCheck(event)"--%>>
                         <%--<input type="hidden" id="searchBtn" value="검색">--%>
                     </form>
                     <div class="search-close"><i class="icon-close"></i></div>
@@ -631,23 +641,23 @@
         }
 
 
-//        function codeCheck(event) {
-//            if (isFirst(event)) {
-//                alert("시작글자는 공백이면 안 됩니다.");
-//                return false;
-//            }
-//        }
-//
-//        function isFirst(input) //첫글짜만 체크
-//        {
-//            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//            if(chars.indexOf(input.value.charAt(0))==-1)
-//            {
-//                return false;
-//            }else{
-//                return true;
-//            }
-//        }
+        //        function codeCheck(event) {
+        //            if (isFirst(event)) {
+        //                alert("시작글자는 공백이면 안 됩니다.");
+        //                return false;
+        //            }
+        //        }
+        //
+        //        function isFirst(input) //첫글짜만 체크
+        //        {
+        //            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //            if(chars.indexOf(input.value.charAt(0))==-1)
+        //            {
+        //                return false;
+        //            }else{
+        //                return true;
+        //            }
+        //        }
 
         <%--
         바로 검색 누르면 화면이 검색 기능이 바로 작동되어 오류가 뜸.

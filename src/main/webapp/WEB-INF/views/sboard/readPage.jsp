@@ -13,8 +13,10 @@
 
 
 <%@include file="../include/header.jsp" %>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+
 
 <!-- Main content -->
 <style type="text/css">
@@ -91,13 +93,13 @@
                             <div style="display: inline; float: left; width: 16%; margin-right: 1%">
                                 <label for="exampleInputEmail1">G/B</label>
                                 <input type="text" name='title' class="form-control" value="${boardVO.gbcnt}"
-                                       readonly="readonly">
+                                       readonly="readonly" style="color: darkorange">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
-                            <div style="display: inline; float: left; width: 16%; margin-right: 1%">
+                            <div style="display: inline; float: left; width: 17%;">
                                 <label for="exampleInputEmail1">View</label>
                                 <input type="text" name='title' class="form-control" value="${boardVO.viewcnt}"
-                                       readonly="readonly">
+                                       readonly="readonly" style="color: darkgray">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
                         </div>
@@ -121,24 +123,27 @@
                     <div class="form-group">
                         <div style="display:inline; float: left; width: 100%;">
                             <div style="display: inline; float: left; width: 49%; margin-right: 1%;">
-                                <label for="exampleInputEmail1">작성자</label>
+                                <label for="exampleInputEmail1">Writer</label>
                                 <input type="text" name="writer" class="form-control"
                                        value="${boardVO.writer}" readonly="readonly">
                             </div>
                             <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">Good</label>
                                 <input type="text" name="writer" class="form-control"
-                                       value="${boardVO.goodcnt}" readonly="readonly" style="color: green;">
+                                       value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
+                                       onclick="goodcntButton('${login.nickname}')">
                             </div>
                             <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">Bad</label>
                                 <input type="text" name="writer" class="form-control"
-                                       value="${boardVO.badcnt}" readonly="readonly" style="color: red;">
+                                       value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
+                                       onclick="badcntButton('${login.nickname}')">
                             </div>
                             <div style="display: inline; float: left; width: 16%">
                                 <label for="exampleInputEmail1">Spam</label>
                                 <input type="text" name="writer" class="form-control"
-                                       value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;">
+                                       value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
+                                       onclick="spamcntButton('${login.nickname}')">
                             </div>
                         </div>
                     </div>
@@ -179,10 +184,10 @@
                 <c:if test="${not empty login}">
                     <div class="box-body">
                             <%--@declare id="exampleinputemail1"--%>
-                        <label for="exampleInputEmail1">작성자</label>
+                        <label for="exampleInputEmail1">Writer</label>
                         <input class="form-control" type="text" placeholder="USER ID" id="newReplyWriter"
                                value="${login.nickname}" readonly="readonly">
-                        <label for="exampleInputEmail1">댓글</label>
+                        <label for="exampleInputEmail1">Reply</label>
                         <input class="form-control" type="text" placeholder="Reply TEXT" id="newReplyText">
                     </div>
                     <!--/.box-body-->
@@ -256,6 +261,7 @@
     </div>
 </section>
 <!-- /.content -->
+
 
 <%--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>--%>
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
@@ -407,7 +413,6 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             return;
         }
         getPage("/replies/" + bno + "/1");
-
     });
     // 목록의 size()를 체크하는 코드는 목록을 가져오는 버튼이 보여지는 <li>만 있는 경우에 1 페이지의 댓글 목록을 가져오기 위해서 처리한 코드.
 
@@ -537,7 +542,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         var formObj = $("form[role='form']");
         // formObj는 위에 선언된 <form> 태그를 의미하게 됨. <input type='hidden' name='bno' value="${boardVO.bno}~${cri.keyword}">
 
-        console.log(formObj);
+        // console.log(formObj);
 
         <%--Tip01.게시물 댓글 페이지(리스트) 클릭 안하고 바로 보여주고 싶을 때 --%>
         <%--var bno = ${boardVO.bno};--%>
@@ -558,8 +563,6 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         // window.onload = function() {
         //     var oParams = getUrlParams();
         // };
-
-        console.log("lll~~~ oParams : " + getUrlParams().cate);
 
         // 수정버튼 클릭
         $("#modifyBtn").on("click", function () {
@@ -670,9 +673,34 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             // 화면에 원본 이미지가 보여진 후 다시 한번 사용자가 클릭하면 이미지가 사라지는 효과를 처리.
 
         });
-
     });
 </script>
 
+<%-- goodcnt, badcnt, spamcnt 로그인 시 클릭되어 +1 되게! --%>
+<%--<script type="text/javascript">--%>
+<script>
+
+    function goodcntButton(loginNickname) {
+        if (loginNickname) {
+            alert("굿 씨앤티! 02" + loginNickname);
+            console.log("굿 씨앤티! 02" + loginNickname);
+        }
+    }
+    function badcntButton(loginNickname) {
+        if (loginNickname) {
+            alert("배드 씨앤티! 02" + loginNickname);
+            console.log("배드 씨앤티! 02" + loginNickname);
+        }
+    }
+    function spamcntButton(loginNickname) {
+        if (loginNickname) {
+            alert("스팸 씨앤티! 02" + loginNickname);
+            console.log("스팸 씨앤티! 02" + loginNickname);
+        }
+    }
+
+
+
+</script>
 
 <%@include file="../include/footer.jsp" %>
