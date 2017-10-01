@@ -127,10 +127,8 @@ public class SearchBoardController {
 //        logger.info("lll~~~ cri : " + cri);
 //        logger.info("lll~~~ bno : " + bno);
 
-        model.addAttribute(service.read(bno));
-        model.addAttribute("cateName", service.callCateName(bno));
-
-        logger.info("lll~~~ service.callCateName(bno) : " + service.callCateName(bno));
+        model.addAttribute(service.read(bno));                              // 글 읽기로! 조회수 증가(update)도 트랜잭션으로 있음!
+        model.addAttribute("cateName", service.callCateName(bno));      // 카테고리 이름 가져오기.
 
     }
 
@@ -241,7 +239,7 @@ public class SearchBoardController {
 
         service.regist(board);
 
-        rttr.addFlashAttribute("msg", "success");
+        rttr.addFlashAttribute("msg", "SUCCESS");
 
         int cateInt = Integer.parseInt(httpServletRequest.getParameter("cate"));
 

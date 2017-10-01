@@ -131,19 +131,19 @@
                                 <label for="exampleInputEmail1">Good</label>
                                 <input type="text" name="writer" class="form-control"
                                        value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
-                                       onclick="goodcntButton('${login.nickname}')">
+                                       onclick="goodcntButton('${login.uid}')">
                             </div>
                             <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">Bad</label>
                                 <input type="text" name="writer" class="form-control"
                                        value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
-                                       onclick="badcntButton('${login.nickname}')">
+                                       onclick="badcntButton('${login.uid}')">
                             </div>
                             <div style="display: inline; float: left; width: 16%">
                                 <label for="exampleInputEmail1">Spam</label>
                                 <input type="text" name="writer" class="form-control"
                                        value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
-                                       onclick="spamcntButton('${login.nickname}')">
+                                       onclick="spamcntButton('${login.uid}')">
                             </div>
                         </div>
                     </div>
@@ -531,10 +531,18 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
 <script>
 
-    //    function getUrlParams() {
-    //        var params = {};
-    //        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
-    //        return params;
+    function getUrlParamsCnt() {
+        var params = {};
+        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+            params[key] = value;
+        });
+        return params;
+    };
+
+    //    $("#cnumToList").val(getUrlParamsCnt().cate);
+
+    //    window.onload = function() {
+    //        var oParamsCnt = getUrlParamsCnt();
     //    };
 
     $(document).ready(function () {
@@ -560,9 +568,9 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         $("#cnumToList").val(getUrlParams().cate);
 
-        // window.onload = function() {
-        //     var oParams = getUrlParams();
-        // };
+        window.onload = function () {
+            var oParams = getUrlParams();
+        };
 
         // 수정버튼 클릭
         $("#modifyBtn").on("click", function () {
@@ -674,24 +682,50 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         });
     });
-</script>
+    // end. $(document).ready(function () {
 
-<%-- goodcnt, badcnt, spamcnt 로그인 시 클릭되어 +1 되게! --%>
-<%--<script type="text/javascript">--%>
-<script>
+    <%-- goodcnt, badcnt, spamcnt 로그인 시 클릭되어 +1 되게! --%>
 
-    function goodcntButton(loginNickname) {
-        if (loginNickname) {
-            alert("굿 씨앤티! 02" + loginNickname);
-            console.log("굿 씨앤티! 02" + loginNickname);
+    function goodcntButton(loginUid) {
+        if (loginUid) {
+//            alert("oParams.bno : " + getUrlParamsCnt().bno + "loginNickname : " + loginUid);
+
+            var urlParam = getUrlParamsCnt().bno;
+            var urlLoginSession = loginUid;
+
+            $.ajax({
+                type: 'post',
+                url: '/cnt/goodcntpush',
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-HTTP-Method-Override": "POST"
+                },
+                dataType: 'text',
+                data: JSON.stringify({
+                    goodcntno: urlParam,
+                    goodcntuid: urlLoginSession
+                }),
+                success: function(result) {
+                    console.log("result : " + result);
+                    if (result == 'SUCCESS') {
+//                        alert("처리 완료!");
+
+
+                    }
+
+                }
+
+            });
         }
     }
+
     function badcntButton(loginNickname) {
         if (loginNickname) {
             alert("배드 씨앤티! 02" + loginNickname);
             console.log("배드 씨앤티! 02" + loginNickname);
         }
     }
+
     function spamcntButton(loginNickname) {
         if (loginNickname) {
             alert("스팸 씨앤티! 02" + loginNickname);
@@ -699,6 +733,9 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         }
     }
 
+</script>
+
+<script>
 
 
 </script>

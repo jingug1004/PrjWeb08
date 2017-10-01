@@ -11,8 +11,6 @@ import java.util.Date;
  */
 public class BoardVO {
 
-    // Todo: good, bad, g/b, spam 추가
-
     private Integer bno;
     private String title;
     private String content;
