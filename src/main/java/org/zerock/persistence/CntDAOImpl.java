@@ -41,9 +41,10 @@ public class CntDAOImpl implements CntDAO{
     @Override
     public void goodCntPush(GoodCntVO goodCntVO) throws Exception {
 
-//        logger.info(goodCntVO.toString());
+        logger.info(goodCntVO.toString());
 
         session.insert(namespace + ".goodCntInsert", goodCntVO);
+        session.update(namespace + ".goodCntUpdate", goodCntVO);
         session.delete(namespace + ".goodCntDelete");
 
     }

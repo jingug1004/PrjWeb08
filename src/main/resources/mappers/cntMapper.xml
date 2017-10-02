@@ -21,14 +21,22 @@
     <!-- 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 -->
     <insert id="goodCntInsert">
         INSERT INTO tbl_board_goodcnt
-        VALUES (NULL, #{goodcntno}, #{goodcntuid})
+        VALUES (NULL, #{goodcntbno}, #{goodcntuid})
         ON DUPLICATE KEY UPDATE goodcntuid = 'delCnt';
     </insert>
+
+    <!-- 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 아이디 있으면 + 1, 없으면 -1 -->
+    <update id="goodCntUpdate">
+        UPDATE tbl_board, tbl_board_goodcnt
+        SET goodcnt = IF(goodcntuid = #{goodcntuid} AND goodcntbno = #{goodcntbno}, goodcnt + 1, goodcnt - 1)
+        WHERE bno = #{goodcntbno}
+    </update>
 
     <!-- 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 바로 Delete-->
     <delete id="goodCntDelete">
         DELETE FROM tbl_board_goodcnt WHERE goodcntuid = 'delCnt';
     </delete>
+
 
 
     <!--01031682355-->

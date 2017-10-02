@@ -24,11 +24,10 @@ public class GoodCntVO {
 
     private Integer goodcntseq;
 
-    private int goodcntno;
+    private int goodcntbno;
     private String goodcntuid;
 //    private String badcntuid;
 //    private String spamcntuid;
-
 
     public Integer getGoodcntseq() {
         return goodcntseq;
@@ -38,12 +37,12 @@ public class GoodCntVO {
         this.goodcntseq = goodcntseq;
     }
 
-    public int getGoodcntno() {
-        return goodcntno;
+    public int getGoodcntbno() {
+        return goodcntbno;
     }
 
-    public void setGoodcntno(int goodcntno) {
-        this.goodcntno = goodcntno;
+    public void setGoodcntbno(int goodcntbno) {
+        this.goodcntbno = goodcntbno;
     }
 
     public String getGoodcntuid() {
@@ -58,7 +57,7 @@ public class GoodCntVO {
     public String toString() {
         return "GoodCntVO{" +
                 "goodcntseq=" + goodcntseq +
-                ", goodcntno=" + goodcntno +
+                ", goodcntbno=" + goodcntbno +
                 ", goodcntuid='" + goodcntuid + '\'' +
                 '}';
     }

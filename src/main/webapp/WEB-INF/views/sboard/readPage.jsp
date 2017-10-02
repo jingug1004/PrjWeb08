@@ -46,6 +46,26 @@
         max-height: 800px;
         overflow: auto;
     }
+
+    .hoverInputRead:hover{
+        /*border:10px;*/
+        font-weight: bold;
+        background-color:#aed9da;
+    }
+    /*
+    color : 영문색상명 / RGB색상명 (글씨색)
+    font-size : 절대크기인 pt/mm/cm/in, 상대크기인 px/%(기본100%)/em(배수)
+    font-family :  글씨체명
+    font-style : italic / normal (기울임꼴 여부)
+    font-weight : bold / normal (굵은글꼴 여부)
+    text-align : left / center / right (글자의 가로정렬)
+    text-decoration : underline / none (글자밑줄 여부)
+    [출처] [html/css] css(스타일시트) 기초 / font / a:link / a:hover / a:active / a:visited|작성자 솔부
+    */
+    .hoverInputReadAct:active {
+        background-color:#aed9da;
+    }
+
 </style>
 
 <div class='popup back' style="display:none;"></div>
@@ -129,19 +149,19 @@
                             </div>
                             <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">Good</label>
-                                <input type="text" name="writer" class="form-control"
+                                <input type="text" name="writer" class="form-control hoverInputRead"
                                        value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                        onclick="goodcntButton('${login.uid}')">
                             </div>
                             <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">Bad</label>
-                                <input type="text" name="writer" class="form-control"
+                                <input type="text" name="writer" class="form-control hoverInputRead"
                                        value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
                                        onclick="badcntButton('${login.uid}')">
                             </div>
                             <div style="display: inline; float: left; width: 16%">
                                 <label for="exampleInputEmail1">Spam</label>
-                                <input type="text" name="writer" class="form-control"
+                                <input type="text" name="writer" class="form-control hoverInputRead"
                                        value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                        onclick="spamcntButton('${login.uid}')">
                             </div>
@@ -702,7 +722,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                 },
                 dataType: 'text',
                 data: JSON.stringify({
-                    goodcntno: urlParam,
+                    goodcntbno: urlParam,
                     goodcntuid: urlLoginSession
                 }),
                 success: function(result) {
