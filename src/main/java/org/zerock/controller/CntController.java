@@ -44,8 +44,11 @@ public class CntController {
     @RequestMapping(value = "/goodcntpush", method = RequestMethod.POST)
     public ResponseEntity<String> goodCntPush(@RequestBody GoodCntVO goodCntVO) {
 
+//        logger.info("lll~~~ 01 : " + goodCntVO.toString());
+
         ResponseEntity<String> entity = null;
         try {
+//            logger.info("lll~~~ 02 : " + goodCntVO.toString());
             cntService.goodCntPush(goodCntVO);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
@@ -55,4 +58,38 @@ public class CntController {
         return entity;
     }
 
+    @RequestMapping(value = "/badcntpush", method = RequestMethod.POST)
+    public ResponseEntity<String> badCntPush(@RequestBody GoodCntVO badCntVO) {
+
+//        logger.info("lll~~~ 01 : " + badCntVO.toString());
+
+        ResponseEntity<String> entity = null;
+
+        try {
+//            logger.info("lll~~~ 02 : " + badCntVO.toString());
+            cntService.badCntPush(badCntVO);
+            entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+        return entity;
+    }
+
+    @RequestMapping(value = "/spamcntpush", method = RequestMethod.POST)
+    public ResponseEntity<String> spamCntPush(@RequestBody GoodCntVO spamCntVO) {
+
+        logger.info("lll~~~ 01 : " + spamCntVO.toString());
+
+        ResponseEntity<String> entity = null;
+        try {
+            logger.info("lll~~~ 02 : " + spamCntVO.toString());
+            cntService.spamCntPush(spamCntVO);
+            entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+        return entity;
+    }
 }

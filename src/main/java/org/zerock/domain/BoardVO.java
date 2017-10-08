@@ -20,7 +20,7 @@ public class BoardVO {
 
     private int goodcnt;
     private int badcnt;
-    private int gbcnt;
+    private double gbcnt;
     private int spamcnt;
 
     private int viewcnt;
@@ -197,11 +197,11 @@ public class BoardVO {
         this.badcnt = badcnt;
     }
 
-    public int getGbcnt() {
+    public double getGbcnt() {
         return gbcnt;
     }
 
-    public void setGbcnt(int gbcnt) {
+    public void setGbcnt(double gbcnt) {
         this.gbcnt = gbcnt;
     }
 

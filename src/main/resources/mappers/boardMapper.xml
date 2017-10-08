@@ -12,7 +12,7 @@
     <!--boardMapper.xml의 각 SQL 문의 id 속성 값은 BoardDAO 인터페이스와 동일하게 설정해주어서 혼란을 피하는 것이 좋음.-->
 
     <!-- boardMapper.xml 에 'replycnt'칼럼을 select 쿼리문에 추가 안해서
-어느 한 게시물(readPage)들어가면 그 게시물의 전체 댓글수가 안 보여졌음요. -->
+    어느 한 게시물(readPage)들어가면 그 게시물의 전체 댓글수가 안 보여졌음요. -->
     <select id="read" resultType="org.zerock.domain.BoardVO">
         select
         *
@@ -30,36 +30,15 @@
         delete from tbl_board where bno = #{bno}
     </delete>
 
-    <!-- 테스트용 무시하자! -->
+    <!-- 테스트용 무시하자! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
     <select id="listAll" resultType="org.zerock.domain.BoardVO">
-        <![CDATA[
+        <![CDATA[ select bno, title, content, writer, regdate, viewcnt from tbl_board where bno > 0
+         order by bno desc, regdate desc ]]> </select>
 
-
-         select
-           bno, title, content, writer, regdate, viewcnt
-         from
-           tbl_board
-         where bno > 0
-         order by bno desc, regdate desc
-
-
-
-        ]]>
-    </select>
-
-    <!-- 여기에 'replycnt' select 에 추가 안 해서 readPage 들어가면 그 게시물의 전체 댓글수가 안 보여졌음. -->
+    <!-- 테스트용 무시하자! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
     <select id="listPage" resultType="BoardVO">
-        <![CDATA[
-         select
-           bno, title, content, writer, regdate, viewcnt, replycnt
-         from
-           tbl_board
-         where bno > 0
-         order by bno desc, regdate desc
-         limit #{page}, 10
-        ]]>
-    </select>
-    <!-- resultType은 <typeAliases> 설정을 이용해서 축약해서 사용할 수 있음. -->
+        <![CDATA[ select bno, title, content, writer, regdate, viewcnt, replycnt from tbl_board
+         where bno > 0 order by bno desc, regdate desc limit #{page}, 10 ]]> </select>
 
     <!--<select id="listCriteria" resultType="BoardVO">-->
     <!--<![CDATA[-->
@@ -75,29 +54,22 @@
     <!--]]>-->
     <!--</select>-->
 
+    <!-- 여기에 'replycnt' select 에 추가 안 해서 readPage 들어가면 그 게시물의 전체 댓글수가 안 보여졌음. -->
+    <!-- resultType은 <typeAliases> 설정을 이용해서 축약해서 사용할 수 있음. -->
     <select id="listCriteria" resultType="BoardVO">
         <![CDATA[
-         select
-           bno, title, content, writer, regdate, viewcnt, replycnt
-         from
-           tbl_board
-         where bno > 0
+         select   bno, title, content, writer, regdate, viewcnt, replycnt
+         from     tbl_board
+         where    bno > 0
          order by bno desc, regdate desc
          limit #{pageStart}, #{perPageNum}
         ]]>
     </select>
     <!-- pageStart, perPageNum이라는 인라인 파라미터가 존재. 파라미터로 전달되는 객체는 getPageStart(), getPerPageNum()이라는 메소드를 가지면 됨. -->
 
+    <!-- 이거 안 씀. 밑의 listSearchCount 씀 -->
     <select id="countPaging" resultType="int">
-        <![CDATA[
-         select
-           count(bno)
-         from
-           tbl_board
-         where
-           bno > 0
-        ]]>
-    </select>
+        <![CDATA[ select count(bno) from tbl_board where bno > 0 ]]> </select>
 
 
     <sql id="search">
@@ -205,7 +177,6 @@
         SELECT cname FROM tbl_cate WHERE cnum =
                              (SELECT cnum FROM tbl_board WHERE bno = #{bno});
     </select>
-
     -->
 
     <!-- 게시판 리스트(목록 - List)의 카테고리 이름 출력 -->
@@ -213,16 +184,13 @@
         SELECT cname FROM tbl_cate WHERE cnum = #{cateNum};
     </select>
 
-
     <insert id="addAttach">
         INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, LAST_INSERT_ID())
     </insert>
 
-
     <select id="getAttach" resultType="string">
         SELECT fullname FROM tbl_attach WHERE bno = #{bno} ORDER BY regdate
     </select>
-
 
     <delete id="deleteAttach">
         DELETE FROM tbl_attach WHERE bno = #{bno}

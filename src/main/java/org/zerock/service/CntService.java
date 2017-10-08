@@ -26,7 +26,26 @@ public interface CntService {
 
     public void goodCntPush(GoodCntVO goodCntVO) throws Exception;
 
+    public String goodCntVOGet(String loginUserID, int bno) throws Exception;
 
+    // ---------------------------------------------------------------
 
+    public void badCntPush(GoodCntVO badCntVO) throws Exception;
+
+    public String badCntVOGet(String loginUserID, int bno) throws Exception;
+
+    // ---------------------------------------------------------------
+
+    public int getGoodCntGet(int goodcntbno) throws Exception;
+
+    public int getBadCntGet(int badcntbno) throws Exception;
+
+    public void changeGBPut(int gbbno, double gbRate) throws Exception;
+
+    // ---------------------------------------------------------------
+
+    public void spamCntPush(GoodCntVO spamCntVO) throws Exception;
+
+    public String spamCntVOGet(String loginUserID, int bno) throws Exception;
 
 }

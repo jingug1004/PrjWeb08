@@ -51,21 +51,19 @@ public class BoardDAOImpl implements BoardDAO {
         session.delete(namespace + ".delete", bno);
     }
 
-    // 정말 무시하자! 옛날 거!
+    // 정말 무시하자! 옛날 거! ---------------------------------------------------------
     @Override
     public List<BoardVO> listAll() throws Exception {
         return session.selectList(namespace + ".listAll");
     }
 
+    // 정말 무시하자! 옛날 거! ---------------------------------------------------------
     @Override
     public List<BoardVO> listPage(int page) throws Exception {
-
         if (page <= 0) {
             page = 1;
         }
-
         page = (page - 1) * 10;
-
         return session.selectList(namespace + ".listPage", page);
     }
 
@@ -75,27 +73,27 @@ public class BoardDAOImpl implements BoardDAO {
         return session.selectList(namespace + ".listCriteria", cri);
     }
 
+    // 이거 안 씀. 밑의 listSearchCount 씀
     @Override
     public int countPaging(Criteria cri) throws Exception {
         return session.selectOne(namespace + ".countPaging", cri);
     }
 
-//        기본 게시판(건의사항 클릭하고 나서 보여주는 리스트
+    // 기본 게시판(건의사항 클릭하고 나서 보여주는 리스트
     @Override
     public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
 
-//        Map<String, Object> paramMap = new HashMap<>();
-//
-//        paramMap.put("pageStart", cri.getPageStart());
-//        paramMap.put("perPageNum", cri.getPerPageNum());
-//        paramMap.put("cate", cate);
+        // Map<String, Object> paramMap = new HashMap<>();
+        // paramMap.put("pageStart", cri.getPageStart());
+        // paramMap.put("perPageNum", cri.getPerPageNum());
+        // paramMap.put("cate", cate);
 
-//        logger.info("lll~~~ cate BoardDAOImpl : " + cate + " lll~~~");
+        // logger.info("lll~~~ cate BoardDAOImpl : " + cate + " lll~~~");
 
         return session.selectList(namespace + ".listSearch", cri);
     }
 
-    //    게시판 밑 페이징 (1~10버튼) // 게시판 전체 몇 개인지 카운트 불러오는 메소드
+    // 게시판 밑 페이징 (1~10버튼) // 게시판 전체 몇 개인지 카운트 불러오는 메소드
     @Override
     public int listSearchCount(SearchCriteria cri) throws Exception {
 

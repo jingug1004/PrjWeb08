@@ -21,7 +21,7 @@ public class PageMaker {
     private int endPage;
     private boolean prev;
     private boolean next;
-    private int displayPageNum = 10;        // displayPageNum은 화면에 보여지는 페이지 번호의 숫자를 의미하는 변수를 추가.
+    private int displayPageNum = 10;        // displayPageNum은 화면에 보여지는 페이지 번호의 숫자를 의미하는 변수를 추가
                                             // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
     private Criteria cri;                   // SearchCriteria에 상속하는 Criteria
     private CriteriaListAny criListAny;     // SearchCriteria에 상속하는 Criteria

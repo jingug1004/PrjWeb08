@@ -6,14 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.zerock.domain.BoardVO;
-import org.zerock.domain.PageMaker;
-import org.zerock.domain.SearchCriteria;
-import org.zerock.domain.SearchCriteriaListAny;
+import org.zerock.domain.*;
 import org.zerock.service.BoardService;
+import org.zerock.service.CntService;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -33,7 +32,10 @@ public class SearchBoardController {
     private static final Logger logger = LoggerFactory.getLogger(SearchBoardController.class);
 
     @Inject
-    private BoardService service;
+    private BoardService boardService;
+
+    @Inject
+    private CntService cntService; // cnt 처리하는 서비스
 
     /**
      * 게시판 리스트 페이지가 cate의 기준에 따라 나뉘어짐.
@@ -45,33 +47,24 @@ public class SearchBoardController {
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String listPage(@ModelAttribute("cri") SearchCriteria cri,
-//                         @RequestParam("cate") int cate,
                            Model model,
                            BoardVO boardVO,
                            @RequestParam(required = false, value = "cate") int cateNum) throws Exception {
 
-        logger.info("lll~~~ cri.toString() : " + cri.toString() + " lll~~~");
+        RateMaker rateMaker = new RateMaker();
+        rateMaker.setRategb();
 
-        // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
-        boardVO.setCnum(cateNum);
-
-        // model.addAttribute("list", service.listCriteria(cri));
-        model.addAttribute("list", service.listSearchCriteria(cri));
+        boardVO.setCnum(cateNum); // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
+        model.addAttribute("list", boardService.listSearchCriteria(cri));
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(cri);
-
-        // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
-        pageMaker.setCnumFromBoardVO(boardVO.getCnum());
-
-        // pageMaker.setTotalCount(service.listCountCriteria(cri));
-        pageMaker.setTotalCount(service.listSearchCount(cri));
+        pageMaker.setCnumFromBoardVO(boardVO.getCnum());            // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
+        pageMaker.setTotalCount(boardService.listSearchCount(cri)); // pageMaker.setTotalCount(boardService.listCountCriteria(cri));
 
         model.addAttribute("pageMaker", pageMaker);
-
-
-        model.addAttribute("cateName", cateNum);                               // 리스트 목록 상단에 카테고리 이름 출력!
-        model.addAttribute("cateName", service.callCateNameInList(cateNum));   // 게시판 상세 글의 카테고리 이름 출력
+        model.addAttribute("cateName", cateNum);                                    // 리스트 목록 상단에 카테고리 이름 출력!
+        model.addAttribute("cateName", boardService.callCateNameInList(cateNum));   // 게시판 상세 글의 카테고리 이름 출력
 
         return "sboard/list";
     }
@@ -80,28 +73,13 @@ public class SearchBoardController {
     public String listAnyPage(@ModelAttribute("criteria") SearchCriteriaListAny searchCriteriaListAny,
                               Model model) throws Exception {
 
-        logger.info("lll~~~ criteria.toString() listAny : " + searchCriteriaListAny.toString() + " lll~~~");
-
-        model.addAttribute("listAny", service.listSearchAny(searchCriteriaListAny));
+        model.addAttribute("listAny", boardService.listSearchAny(searchCriteriaListAny));
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCriListAny(searchCriteriaListAny);
-
-        logger.info("lll~~~ pageMaker.setCriListAny(searchCriteria) : " + pageMaker.getCriListAny());
-        logger.info("lll~~~ pageMaker.setCriListAny(searchCriteria) : " + pageMaker.toString());
-
-        pageMaker.setTotalCountListAny(service.listSearchAnyCount(searchCriteriaListAny));
-
-        logger.info("lll~~~ p " + pageMaker.getTotalCount());
-
+        pageMaker.setTotalCountListAny(boardService.listSearchAnyCount(searchCriteriaListAny));
         model.addAttribute("pageMakerAny", pageMaker);
 
-//        redirectAttributes.addAttribute("msg", "SUCCESS");
-
-        /*
-         * 전체 리스트 조회된 후에 카테 검색과 다시 전체검색 돋보기 버튼, 글쓰기 버튼이 동작되지 않는다.
-         * list02 그대로 만들어서 그냥 지워버려도 될 듯.
-         */
         return "sboard/list";
     }
 
@@ -116,20 +94,26 @@ public class SearchBoardController {
     @RequestMapping(value = "/readPage", method = RequestMethod.GET)
     public void read(@RequestParam("bno") int bno,
                      @ModelAttribute("cri") SearchCriteria cri,
-                     Model model)
-            throws Exception {
+                     Model model,
+                     BoardVO boardVO,
+                     HttpSession httpSession) throws Exception {
 
-//        Map<String, Object> paramMap = new HashMap<>();
-//
-//        paramMap.put("cateNum", cri);
-//        paramMap.put("bno", bno);
-//
-//        logger.info("lll~~~ cri : " + cri);
-//        logger.info("lll~~~ bno : " + bno);
+        RateMaker rateMaker = new RateMaker();
+        rateMaker.setRategoodcnt(cntService.getGoodCntGet(bno));
+        rateMaker.setRatebadcnt(cntService.getBadCntGet(bno));
+        rateMaker.setRategb();
+        cntService.changeGBPut(bno, rateMaker.getRategdivb());
 
-        model.addAttribute(service.read(bno));                              // 글 읽기로! 조회수 증가(update)도 트랜잭션으로 있음!
-        model.addAttribute("cateName", service.callCateName(bno));      // 카테고리 이름 가져오기.
+        model.addAttribute(boardService.read(bno));                              // 글 읽기로! 조회수 증가(update)도 트랜잭션으로 있음!
+        model.addAttribute("cateName", boardService.callCateName(bno));      // 카테고리 이름 가져오기.
 
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            model.addAttribute("goodCntVOGet", cntService.goodCntVOGet(loginUserVO.getUid(), bno));      // 굿씨앤티 브이오에 있는 거 가져오기.
+            model.addAttribute("badCntVOGet", cntService.badCntVOGet(loginUserVO.getUid(), bno));        // 배드씨앤티 브이오에 있는 거 가져오기.
+            model.addAttribute("spamCntVOGet", cntService.spamCntVOGet(loginUserVO.getUid(), bno));      // 스팸씨앤티 브이오에 있는 거 가져오기.
+        }
     }
 
     /**
@@ -147,13 +131,10 @@ public class SearchBoardController {
                          SearchCriteria cri,
                          RedirectAttributes rttr) throws Exception {
 
-        service.remove(bno);
+        boardService.remove(bno);
 
         rttr.addAttribute("page", cri.getPage());
-
-        // RedirectAttributes 추가하면 URL 전달 가능 => 밑의 리턴값 "redirect: ... " 와 같겠지?
-        rttr.addAttribute("cate", cateNum);
-
+        rttr.addAttribute("cate", cateNum); // RedirectAttributes 추가하면 URL 전달 가능 => 밑의 리턴값 "redirect: ... " 와 같겠지?
         rttr.addAttribute("perPageNum", cri.getPerPageNum());
         rttr.addAttribute("searchType", cri.getSearchType());
         rttr.addAttribute("keyword", cri.getKeyword());
@@ -175,8 +156,7 @@ public class SearchBoardController {
     public void modifyPagingGET(int bno,
                                 @ModelAttribute("cri") SearchCriteria cri,
                                 Model model) throws Exception {
-
-        model.addAttribute(service.read(bno));
+        model.addAttribute(boardService.read(bno));
     }
 
     /**
@@ -194,13 +174,10 @@ public class SearchBoardController {
                                    RedirectAttributes rttr,
                                    @RequestParam("cate") int cateNum) throws Exception {
 
-        service.modify(board);
+        boardService.modify(board);
 
         rttr.addAttribute("page", cri.getPage());
-
-        // remove 메서드와 같이 RedirectAttributes의 GET 형식으로 URL을 전달하기 위해서. cate 어트리뷰트 추가!
-        rttr.addAttribute("cate", cateNum);
-
+        rttr.addAttribute("cate", cateNum); // remove 메서드와 같이 RedirectAttributes의 GET 형식으로 URL을 전달하기 위해서. cate 어트리뷰트 추가!
         rttr.addAttribute("perPageNum", cri.getPerPageNum());
         rttr.addAttribute("searchType", cri.getSearchType());
         rttr.addAttribute("keyword", cri.getKeyword());
@@ -216,10 +193,7 @@ public class SearchBoardController {
      * @throws Exception the exception
      */
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public void registGET() throws Exception {
-
-        logger.info("lll~~~ regist get ........... lll~~~");
-    }
+    public void registGET() throws Exception {logger.info("lll~~~ regist get ........... lll~~~");}
 
     /**
      * Regist post string.
@@ -234,15 +208,11 @@ public class SearchBoardController {
                              RedirectAttributes rttr,
                              HttpServletRequest httpServletRequest) throws Exception {
 
-        logger.info("lll~~~ regist post ........... lll~~~");
-        logger.info(board.toString());
-
-        service.regist(board);
+        boardService.regist(board);
 
         rttr.addFlashAttribute("msg", "SUCCESS");
 
         int cateInt = Integer.parseInt(httpServletRequest.getParameter("cate"));
-
 
         return "redirect:/sboard/list?cate=" + cateInt;
     }
@@ -257,25 +227,6 @@ public class SearchBoardController {
     @RequestMapping("/getAttach/{bno}")
     @ResponseBody
     public List<String> getAttach(@PathVariable("bno") Integer bno) throws Exception {
-
-        return service.getAttach(bno);
+        return boardService.getAttach(bno);
     }
-
-    // @RequestMapping(value = "/list", method = RequestMethod.GET)
-    // public void listPage(@ModelAttribute("cri") SearchCriteria cri,
-    // Model model) throws Exception {
-    //
-    // logger.info(cri.toString());
-    //
-    // model.addAttribute("list", service.listCriteria(cri));
-    //
-    // PageMaker pageMaker = new PageMaker();
-    // pageMaker.setCri(cri);
-    //
-    // pageMaker.setTotalCount(service.listCountCriteria(cri));
-    //
-    // model.addAttribute("pageMaker", pageMaker);
-
-    // }
-
 }

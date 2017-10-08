@@ -37,8 +37,53 @@ public class CntServiceImpl implements CntService {
 
     @Override
     public void goodCntPush(GoodCntVO goodCntVO) throws Exception {
-
         cntDAO.goodCntPush(goodCntVO);
+    }
 
+    @Override
+    public String goodCntVOGet(String loginUserID, int bno) throws Exception {
+        return cntDAO.goodCntVOGet(loginUserID, bno);
+    }
+
+    // -----------------------------------------------------------------
+
+
+    @Override
+    public void badCntPush(GoodCntVO badCntVO) throws Exception {
+        cntDAO.badCntPush(badCntVO);
+    }
+
+    @Override
+    public String badCntVOGet(String loginUserID, int bno) throws Exception {
+        return cntDAO.badCntVOGet(loginUserID, bno);
+    }
+
+    // -----------------------------------------------------------------
+
+    @Override
+    public int getGoodCntGet(int goodcntbno) throws Exception {
+        return cntDAO.getGoodCntGet(goodcntbno);
+    }
+
+    @Override
+    public int getBadCntGet(int badcntbno) throws Exception {
+        return cntDAO.getBadCntGet(badcntbno);
+    }
+
+    @Override
+    public void changeGBPut(int gbbno, double gbRate) throws Exception {
+        cntDAO.changeGBPut(gbbno, gbRate);
+    }
+
+    // -----------------------------------------------------------------
+
+    @Override
+    public void spamCntPush(GoodCntVO spamCntVO) throws Exception {
+        cntDAO.spamCntPush(spamCntVO);
+    }
+
+    @Override
+    public String spamCntVOGet(String loginUserID, int bno) throws Exception {
+        return cntDAO.spamCntVOGet(loginUserID, bno);
     }
 }

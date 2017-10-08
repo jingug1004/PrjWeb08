@@ -40,6 +40,7 @@
                                     <c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
                                 작성자
                             </option>
+
                             <option value="tc"
                                     <c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
                                 제목 or 내용
@@ -69,15 +70,15 @@
                 <div class="box-body">
                     <table class="table table-bordered">
                         <tr>
-                            <th style="width: 10px">BNO</th>
+                            <th style="width: 10px; text-align: center;">BNO</th>
                             <th>TITLE</th>
-                            <th style="width: 40px" id="goodSort">Good</th>
-                            <th style="width: 40px" id="gbSort">G/B</th>
-                            <th style="width: 40px" id="badSort">Bad</th>
-                            <th style="width: 80px">WRITER</th>
-                            <th style="width: 100px">REGDATE</th>
-                            <th style="width: 40px" id="spamSort">Spam</th>
-                            <th style="width: 40px" id="viewSort">VIEW</th>
+                            <th style="width: 40px; text-align: center;" id="goodSort">Good</th>
+                            <th style="width: 40px; text-align: center;" id="gbSort">G/B</th>
+                            <th style="width: 40px;  text-align: center;" id="badSort">Bad</th>
+                            <th style="width: 80px; text-align: center;">WRITER</th>
+                            <th style="width: 100px; text-align: center;">REGDATE</th>
+                            <th style="width: 40px; text-align: center;" id="spamSort">Spam</th>
+                            <th style="width: 40px; text-align: center;" id="viewSort">VIEW</th>
                         </tr>
 
                         <%--<c:forEach items="${list}" var="boardVO">--%>
@@ -99,40 +100,39 @@
                         <%-- Todo : Good 카테고리 눌렀을 때, 오름차순, 내림차순 구현 --%>
                         <c:forEach items="${list}" var="boardVO">
                             <tr>
-                                <td>${boardVO.bno}</td>
+                                <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
-                                <td><span class="badge bg-yellow-gradient center">${boardVO.gbcnt}</span></td>
-                                <td><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
-                                <td>${boardVO.writer}</td>
-                                <td><fmt:formatDate pattern="yyyy-MM-dd"
+                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
+                                <td align="right"><span class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
+                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
+                                <td align="center">${boardVO.writer}</td>
+                                <td align="center"><fmt:formatDate pattern="yyyy-MM-dd"
                                                     value="${boardVO.regdate}"/></td>
-                                <td><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
-                                <td><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
+                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
+                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
 
                         <%-- listAny 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
                         <c:forEach items="${listAny}" var="boardVO">
                             <tr>
-                                <td>${boardVO.bno}</td>
+                                <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
-                                <td><span class="badge bg-yellow-gradient center">${boardVO.gbcnt}</span></td>
-                                <td><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
-                                <td>${boardVO.writer}</td>
-
+                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
+                                <td align="right"><span class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
+                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
+                                <td align="center">${boardVO.writer}</td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
-                                <td><fmt:formatDate value="${boardVO.regdate}"
+                                <td align="center"><fmt:formatDate value="${boardVO.regdate}"
                                                     pattern="yyyy-MM-dd"/></td>
-                                <td><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
-                                <td><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
+                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
+                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -218,6 +218,10 @@
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
 <%--ex) www.profile.com?name=hyewon&age=25--%>
 <script>
+
+    // list(리스트)의 g/b 넘버 포맷팅
+    $('.listgbcnt').number(true);
+
     function getUrlParams() {
         var params = {};
         window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
@@ -228,6 +232,10 @@
 
     /*      <li><a href="/sboard/list?cate=1111">선거 이력</a></li> */
     $(document).ready(function () {
+        <%--var gbcntListRate = Math.floor(${boardVO.gbcnt});--%>
+        <%--var gbcntListRate = ${boardVO.gbcnt};--%>
+
+
         $('#searchBtn01').on("click", function (event) {
             self.location = "list"
                 + '${pageMaker.makeQuery(1)}'
@@ -265,14 +273,14 @@
             alert("goodSort 클릭 됨");
         });
         $('#gbSort').on("click", function (event) {
-            alert("wantSort 클릭 됨");
+            alert("gbSort 클릭 됨");
         });
         $('#badSort').on("click", function (event) {
             alert("badSort 클릭 됨");
         });
 
         $('#spamSort').on("click", function (event) {
-            alert("outSort 클릭 됨");
+            alert("spamSort 클릭 됨");
         });
         $('#viewSort').on("click", function (event) {
             alert("viewSort 클릭 됨");

@@ -18,28 +18,119 @@
     출처: http://ukmo.tistory.com/entry/MybatisMySQL-한번에-여러-레코드-Insert-Update [Developer;]
     -->
 
-    <!-- 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 -->
+    <!-- 01-01. 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 -->
     <insert id="goodCntInsert">
         INSERT INTO tbl_board_goodcnt
-        VALUES (NULL, #{goodcntbno}, #{goodcntuid})
-        ON DUPLICATE KEY UPDATE goodcntuid = 'delCnt';
+        VALUES (#{goodcntbno}, #{goodcntuid}, #{goodcnttemp}, NULL, NULL, NULL, NULL)
+        ON DUPLICATE KEY UPDATE goodcnttemp = 'delCntGood'
     </insert>
 
-    <!-- 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 아이디 있으면 + 1, 없으면 -1 -->
-    <update id="goodCntUpdate">
-        UPDATE tbl_board, tbl_board_goodcnt
-        SET goodcnt = IF(goodcntuid = #{goodcntuid} AND goodcntbno = #{goodcntbno}, goodcnt + 1, goodcnt - 1)
+    <!-- 01-02. 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 아이디 있으면 + 1, 없으면 -1 -->
+    <!--<update id="goodCntUpdate">-->
+    <!--UPDATE tbl_board AS AAA LEFT OUTER JOIN tbl_board_goodcnt AS BBB-->
+    <!--ON AAA.bno = BBB.goodcntbno-->
+    <!--SET AAA.goodcnt = IF(BBB.goodcnttemp = #{goodcnttemp}, AAA.goodcnt + 1, AAA.goodcnt - 1)-->
+    <!--WHERE AAA.bno = #{goodcntbno};-->
+    <!--</update>-->
+
+    <!--<select id="goodCountGet" resultType="int">-->
+    <!--SELECT COUNT(goodcnttemp) FROM tbl_board_goodcnt WHERE goodcntbno = #{goodcntbno}-->
+    <!--</select>-->
+
+    <update id="updateGoodCountGet">
+        UPDATE tbl_board
+        SET goodcnt = (SELECT COUNT(goodcnttemp) FROM tbl_board_goodcnt WHERE goodcntbno = #{goodcntbno})
         WHERE bno = #{goodcntbno}
     </update>
 
-    <!-- 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 바로 Delete-->
+    <!-- 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 아이디 있으면 + 1, 없으면 -1 -->
+    <!--<update id="goodCntUpdate">-->
+    <!--UPDATE tbl_board, tbl_board_goodcnt-->
+    <!--SET tbl_board.goodcnt = IF(tbl_board_goodcnt.goodcntuid = #{goodcntuid} AND tbl_board_goodcnt.goodcntbno = #{goodcntbno}, tbl_board.goodcnt + 1, tbl_board.goodcnt - 1)-->
+    <!--WHERE tbl_board.bno = #{goodcntbno}-->
+    <!--</update>-->
+
+    <!--UPDATE table-->
+    <!--SET A = IF(A > 0 AND A < 1, 1, IF(A > 1 AND A < 2, 2, A))-->
+    <!--WHERE A IS NOT NULL;-->
+    <!--you might want to use CEIL() if A is always a floating point value > 0 and <= 2-->
+
+    <!-- 01-03. 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 바로 Delete-->
     <delete id="goodCntDelete">
-        DELETE FROM tbl_board_goodcnt WHERE goodcntuid = 'delCnt';
+        DELETE FROM tbl_board_goodcnt WHERE goodcnttemp = 'delCntGood'
     </delete>
 
+    <select id="goodCntVOGet" resultType="String">
+        SELECT goodcntuid FROM tbl_board_goodcnt WHERE goodcnttemp = #{goodcntParamMap}
+    </select>
 
+    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 
-    <!--01031682355-->
+    <!-- 02-01. 배드 버튼 눌렀을 때 아이디가 있는지 없는지 확인 -->
+    <insert id="badCntInsert">
+        INSERT INTO tbl_board_goodcnt
+        VALUES (#{goodcntbno}, NULL, NULL, #{badcntuid}, #{badcnttemp}, NULL, NULL)
+        ON DUPLICATE KEY UPDATE badcnttemp = 'delCntBad'
+    </insert>
+
+    <!-- 02-02. 배드 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 아이디 있으면 + 1, 없으면 -1 -->
+    <!--<update id="badCntUpdate">-->
+    <!--UPDATE tbl_board AS AAA LEFT OUTER JOIN tbl_board_goodcnt AS BBB-->
+    <!--ON AAA.bno = BBB.goodcntbno-->
+    <!--SET AAA.badcnt = IF(BBB.badcnttemp = #{badcnttemp}, AAA.badcnt + 1, AAA.badcnt - 1)-->
+    <!--WHERE AAA.bno = #{goodcntbno};-->
+    <!--</update>-->
+
+    <!-- 02-03. 배드 버튼 눌렀을 때 아이디가 있는지 없는지 확인 // 바로 Delete-->
+    <delete id="badCntDelete">
+        DELETE FROM tbl_board_goodcnt WHERE badcnttemp = 'delCntBad'
+    </delete>
+
+    <update id="updateBadCountGet">
+        UPDATE tbl_board
+        SET badcnt = (SELECT COUNT(badcnttemp) FROM tbl_board_goodcnt WHERE goodcntbno = #{goodcntbno})
+        WHERE bno = #{goodcntbno}
+    </update>
+
+    <select id="badCntVOGet" resultType="String">
+        SELECT badcntuid FROM tbl_board_goodcnt WHERE badcnttemp = #{badcntParamMap}
+    </select>
+
+    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+
+    <select id="getGoodCntGet" resultType="int">
+        SELECT goodcnt FROM tbl_board WHERE bno = #{goodcntbno}
+    </select>
+
+    <select id="getBadCntGet" resultType="int">
+        SELECT badcnt FROM tbl_board WHERE bno = #{badcntbno}
+    </select>
+
+    <update id="changeGBPut">
+        UPDATE tbl_board SET gbcnt = #{gbRateParam} WHERE bno = #{gbbnoParam}
+    </update>
+
+    <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+
+    <insert id="spamCntInsert">
+        INSERT INTO tbl_board_goodcnt
+        VALUES (#{goodcntbno}, NULL, NULL, NULL, NULL, #{spamcntuid}, #{spamcnttemp})
+        ON DUPLICATE KEY UPDATE badcnttemp = 'delCntSpam'
+    </insert>
+
+    <delete id="spamCntDelete">
+        DELETE FROM tbl_board_goodcnt WHERE spamcnttemp = 'delCntSpam'
+    </delete>
+
+    <update id="updateSpamCountGet">
+        UPDATE tbl_board
+        SET spamcnt = (SELECT COUNT(spamcnttemp) FROM tbl_board_goodcnt WHERE goodcntbno = #{goodcntbno})
+        WHERE bno = #{goodcntbno}
+    </update>
+
+    <select id="spamCntVOGet" resultType="String">
+        SELECT spamcntuid FROM tbl_board_goodcnt WHERE spamcnttemp = #{spamcntParamMap}
+    </select>
 
 </mapper>
 

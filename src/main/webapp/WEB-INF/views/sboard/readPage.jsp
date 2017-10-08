@@ -47,11 +47,12 @@
         overflow: auto;
     }
 
-    .hoverInputRead:hover{
+    .hoverInputRead:hover {
         /*border:10px;*/
         font-weight: bold;
-        background-color:#aed9da;
+        background-color: #aed9da;
     }
+
     /*
     color : 영문색상명 / RGB색상명 (글씨색)
     font-size : 절대크기인 pt/mm/cm/in, 상대크기인 px/%(기본100%)/em(배수)
@@ -62,9 +63,27 @@
     text-decoration : underline / none (글자밑줄 여부)
     [출처] [html/css] css(스타일시트) 기초 / font / a:link / a:hover / a:active / a:visited|작성자 솔부
     */
-    .hoverInputReadAct:active {
-        background-color:#aed9da;
+    .hoverInputReadAct {
+        font-weight: bold;
+        /*background-color: #aed9da;*/
+        border: 5px solid #aed9da;
     }
+
+    .disaClass:focus {
+        cursor: not-allowed;
+        /*background-color: #eee;*/
+        /*filter: alpha(opacity=50);*/
+        /*opacity: .5;*/
+        /*!*cursor: default;*!*/
+        /*user-select: none;*/
+        /*!*disabled: true;*!*/
+        /*visibility: collapse;*/
+        disabled: true;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* CSS 이벤트 제어 속성 - pointer-events 출처: http://webclub.tistory.com/331 [Web Club] */
 
 </style>
 
@@ -110,9 +129,9 @@
                                        readonly="readonly">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
-                            <div style="display: inline; float: left; width: 16%; margin-right: 1%">
+                            <div id="gbdiv" style="display: inline; float: left; width: 16%; margin-right: 1%">
                                 <label for="exampleInputEmail1">G/B</label>
-                                <input type="text" name='title' class="form-control" value="${boardVO.gbcnt}"
+                                <input id="gbcnt" type="text" name='gbtitle' class="form-control" value=""
                                        readonly="readonly" style="color: darkorange">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
@@ -147,24 +166,97 @@
                                 <input type="text" name="writer" class="form-control"
                                        value="${boardVO.writer}" readonly="readonly">
                             </div>
-                            <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                <label for="exampleInputEmail1">Good</label>
-                                <input type="text" name="writer" class="form-control hoverInputRead"
-                                       value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
-                                       onclick="goodcntButton('${login.uid}')">
-                            </div>
-                            <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                <label for="exampleInputEmail1">Bad</label>
-                                <input type="text" name="writer" class="form-control hoverInputRead"
-                                       value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
-                                       onclick="badcntButton('${login.uid}')">
-                            </div>
-                            <div style="display: inline; float: left; width: 16%">
-                                <label for="exampleInputEmail1">Spam</label>
-                                <input type="text" name="writer" class="form-control hoverInputRead"
-                                       value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
-                                       onclick="spamcntButton('${login.uid}')">
-                            </div>
+
+                            <%--<c:choose>--%>
+                            <c:if test="${login.uid == goodCntVOGet && login.uid != badCntVOGet}">
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Good1</label>
+                                    <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct"
+                                           value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
+                                           onclick="goodcntButton('${login.uid}')">
+                                </div>
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Bad2</label>
+                                    <input id="logNoBad" type="text" name="writer"
+                                           class="form-control hoverInputRead disaClass"
+                                           value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
+                                           onclick="badcntButton('${login.uid}')">
+                                </div>
+                            </c:if>
+                            <c:if test="${login.uid == badCntVOGet && login.uid != goodCntVOGet}">
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Good3</label>
+                                    <input id="logNoGood" type="text" name="writer"
+                                           class="form-control hoverInputRead disaClass"
+                                           value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
+                                           onclick="goodcntButton('${login.uid}')">
+                                </div>
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Bad4</label>
+                                    <input id="logBad" type="text" name="writer" class="form-control hoverInputReadAct"
+                                           value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
+                                           onclick="badcntButton('${login.uid}')">
+                                </div>
+                            </c:if>
+                            <c:if test="${empty login.uid}">
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Good5</label>
+                                    <input id="logNoGoodPage" type="text" name="writer"
+                                           class="form-control hoverInputRead"
+                                           value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
+                                           onclick="goodcntButton('${login.uid}')">
+                                </div>
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Bad6</label>
+                                    <input id="logNoBadPage" type="text" name="writer"
+                                           class="form-control hoverInputRead"
+                                           value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
+                                           onclick="badcntButton('${login.uid}')">
+                                </div>
+                            </c:if>
+                            <c:if test="${not empty login.uid && empty goodCntVOGet && empty badCntVOGet}">
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Good7</label>
+                                    <input id="logNoGoodPage02" type="text" name="writer"
+                                           class="form-control hoverInputRead"
+                                           value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
+                                           onclick="goodcntButton('${login.uid}')">
+                                </div>
+                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                    <label for="exampleInputEmail1">Bad8</label>
+                                    <input id="logNoBadPage02" type="text" name="writer"
+                                           class="form-control hoverInputRead"
+                                           value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
+                                           onclick="badcntButton('${login.uid}')">
+                                </div>
+                            </c:if>
+
+                            <%-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ --%>
+
+                            <c:if test="${login.uid == spamCntVOGet && not empty login.uid}">
+                                <div style="display: inline; float: left; width: 16%">
+                                    <label for="exampleInputEmail1">Spam1</label>
+                                    <input id="logSpam" type="text" name="writer" class="form-control hoverInputReadAct"
+                                           value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
+                                           onclick="spamcntButton('${login.uid}')">
+                                </div>
+                            </c:if>
+                            <c:if test="${empty login.uid}">
+                                <div style="display: inline; float: left; width: 16%">
+                                    <label for="exampleInputEmail1">Spam5</label>
+                                    <input id="logNoSpam" type="text" name="writer" class="form-control hoverInputRead"
+                                           value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
+                                           onclick="spamcntButton('${login.uid}')">
+                                </div>
+                            </c:if>
+                            <c:if test="${not empty login.uid && login.uid != spamCntVOGet}">
+                                <div style="display: inline; float: left; width: 16%">
+                                    <label for="exampleInputEmail1">Spam7</label>
+                                    <input id="logSpamPage" type="text" name="writer" class="form-control hoverInputRead"
+                                           value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
+                                           onclick="spamcntButton('${login.uid}')">
+                                </div>
+                            </c:if>
                         </div>
                     </div>
                 </div>
@@ -567,6 +659,16 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
     $(document).ready(function () {
 
+        <%--alert("lllll~~~~~ ${login.uid} : " + ${login.uid});--%>
+        <%--alert("lllll~~~~~ ${goodCntVOGet.goodcntuid} : " + ${goodCntVOGet.goodcntuid});--%>
+
+        <%--console.log("lllll~~~~~ ${login.uid} : " + ${login.uid});--%>
+        <%--console.log("lllll~~~~~ ${goodCntVOGet.goodcntuid} : " + ${goodCntVOGet.goodcntuid});--%>
+
+        // readPage(상세페이지)의 g/b 넘버 포맷팅
+        var gbcntRate = Math.round(${boardVO.gbcnt});           // 링크 : http://fillin.tistory.com/88
+        $("input[type=text][name=gbtitle]").val(gbcntRate);
+
         var formObj = $("form[role='form']");
         // formObj는 위에 선언된 <form> 태그를 의미하게 됨. <input type='hidden' name='bno' value="${boardVO.bno}~${cri.keyword}">
 
@@ -707,11 +809,16 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
     <%-- goodcnt, badcnt, spamcnt 로그인 시 클릭되어 +1 되게! --%>
 
     function goodcntButton(loginUid) {
+
         if (loginUid) {
-//            alert("oParams.bno : " + getUrlParamsCnt().bno + "loginNickname : " + loginUid);
 
             var urlParam = getUrlParamsCnt().bno;
             var urlLoginSession = loginUid;
+            var urlGood = 'Good';
+
+            var temp = '';
+
+            var urlTemp = temp.concat(urlParam, urlLoginSession, urlGood);
 
             $.ajax({
                 type: 'post',
@@ -723,33 +830,104 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                 dataType: 'text',
                 data: JSON.stringify({
                     goodcntbno: urlParam,
-                    goodcntuid: urlLoginSession
+                    goodcntuid: urlLoginSession,
+                    goodcnttemp: urlTemp
                 }),
-                success: function(result) {
+                success: function (result) {
                     console.log("result : " + result);
                     if (result == 'SUCCESS') {
-//                        alert("처리 완료!");
+                        alert("urlParam : " + urlParam + " // urlLoginSession : " + urlLoginSession + " // urlParam : " + urlTemp);
+                        console.log("goodcnttemp : " + urlTemp);
 
-
+                        $('#logNoBadPage02').toggleClass('disaClass');
+                        $('#logNoGoodPage02').toggleClass('hoverInputRead');
+                        $('#logNoGoodPage02').toggleClass('hoverInputReadAct');
                     }
-
                 }
-
             });
         }
     }
 
-    function badcntButton(loginNickname) {
-        if (loginNickname) {
-            alert("배드 씨앤티! 02" + loginNickname);
-            console.log("배드 씨앤티! 02" + loginNickname);
+    function badcntButton(loginUid) {
+
+        if (loginUid) {
+
+            var urlParam = getUrlParamsCnt().bno;
+            var urlLoginSession = loginUid;
+            var urlBad = 'Bad';
+
+            var temp = '';
+
+            var urlTemp = temp.concat(urlParam, urlLoginSession, urlBad);
+
+            $.ajax({
+                type: 'post',
+                url: '/cnt/badcntpush',
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-HTTP-Method-Override": "POST"
+                },
+                dataType: 'text',
+                data: JSON.stringify({
+                    goodcntbno: urlParam,
+                    badcntuid: urlLoginSession,
+                    badcnttemp: urlTemp
+                }),
+                success: function (result) {
+                    console.log("result : " + result);
+                    if (result == 'SUCCESS') {
+                        alert("urlParam : " + urlParam + " // urlLoginSession : " + urlLoginSession + " // urlParam : " + urlTemp);
+                        console.log("goodcnttemp : " + urlTemp);
+
+                        $('#logNoGoodPage02').toggleClass('disaClass');
+                        $('#logNoBadPage02').toggleClass('hoverInputRead');
+                        $('#logNoBadPage02').toggleClass('hoverInputReadAct');
+                    }
+                }
+            });
         }
     }
 
-    function spamcntButton(loginNickname) {
-        if (loginNickname) {
-            alert("스팸 씨앤티! 02" + loginNickname);
-            console.log("스팸 씨앤티! 02" + loginNickname);
+    function spamcntButton(loginUid) {
+
+        if (loginUid) {
+//            alert("스팸 씨앤티! 02" + loginNickname);
+//            console.log("스팸 씨앤티! 02" + loginNickname);
+
+            var urlParam = getUrlParamsCnt().bno;
+            var urlLoginSession = loginUid;
+            var urlSpam = 'Spam';
+
+            var temp = '';
+
+            var urlTemp = temp.concat(urlParam, urlLoginSession, urlSpam);
+
+            $.ajax({
+                type: 'post',
+                url: '/cnt/spamcntpush',
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-HTTP-Method-Override": "POST"
+                },
+                dataType: 'text',
+                data: JSON.stringify({
+                    goodcntbno: urlParam,
+                    spamcntuid: urlLoginSession,
+                    spamcnttemp: urlTemp
+                }),
+                success: function (result) {
+                    console.log("result : " + result);
+                    if (result == 'SUCCESS') {
+                        alert("urlParam : " + urlParam + " // urlLoginSession : " + urlLoginSession + " // urlParam : " + urlTemp);
+                        console.log("spamcnttemp : " + urlTemp);
+
+//                        $('#').toggleClass('disaClass');
+                        $('#logSpamPage').toggleClass('hoverInputReadAct');
+                        $('#logSpam').toggleClass('hoverInputRead');
+
+                    }
+                }
+            });
         }
     }
 

@@ -144,6 +144,10 @@
     <%-- CKEditor 스크립트 선언 --%>
     <script src="/resources/ckeditor/ckeditor.js"></script>
 
+    <%-- jQuery 포매팅 선언 --%>
+    <%--<script src="/resources/js/num/jquery-1.11.3.min.js"></script>--%>
+    <script src="/resources/js/num/jquery.number.min.js"></script>
+
 </head>
 
 <style type="text/css">

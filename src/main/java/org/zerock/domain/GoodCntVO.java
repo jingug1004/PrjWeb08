@@ -22,20 +22,16 @@ package org.zerock.domain;
 
 public class GoodCntVO {
 
-    private Integer goodcntseq;
-
     private int goodcntbno;
+
     private String goodcntuid;
-//    private String badcntuid;
-//    private String spamcntuid;
+    private String goodcnttemp;
 
-    public Integer getGoodcntseq() {
-        return goodcntseq;
-    }
+    private String badcntuid;
+    private String badcnttemp;
 
-    public void setGoodcntseq(Integer goodcntseq) {
-        this.goodcntseq = goodcntseq;
-    }
+    private String spamcntuid;
+    private String spamcnttemp;
 
     public int getGoodcntbno() {
         return goodcntbno;
@@ -53,12 +49,57 @@ public class GoodCntVO {
         this.goodcntuid = goodcntuid;
     }
 
+    public String getGoodcnttemp() {
+        return goodcnttemp;
+    }
+
+    public void setGoodcnttemp(String goodcnttemp) {
+        this.goodcnttemp = goodcnttemp;
+    }
+
+    public String getBadcntuid() {
+        return badcntuid;
+    }
+
+    public void setBadcntuid(String badcntuid) {
+        this.badcntuid = badcntuid;
+    }
+
+    public String getBadcnttemp() {
+        return badcnttemp;
+    }
+
+    public void setBadcnttemp(String badcnttemp) {
+        this.badcnttemp = badcnttemp;
+    }
+
+    public String getSpamcntuid() {
+        return spamcntuid;
+    }
+
+    public void setSpamcntuid(String spamcntuid) {
+        this.spamcntuid = spamcntuid;
+    }
+
+    public String getSpamcnttemp() {
+        return spamcnttemp;
+    }
+
+    public void setSpamcnttemp(String spamcnttemp) {
+        this.spamcnttemp = spamcnttemp;
+    }
+
     @Override
     public String toString() {
         return "GoodCntVO{" +
-                "goodcntseq=" + goodcntseq +
-                ", goodcntbno=" + goodcntbno +
+                "goodcntbno=" + goodcntbno +
                 ", goodcntuid='" + goodcntuid + '\'' +
+                ", goodcnttemp='" + goodcnttemp + '\'' +
+                ", badcntuid='" + badcntuid + '\'' +
+                ", badcnttemp='" + badcnttemp + '\'' +
+                ", spamcntuid='" + spamcntuid + '\'' +
+                ", spamcnttemp='" + spamcnttemp + '\'' +
                 '}';
     }
+
 }

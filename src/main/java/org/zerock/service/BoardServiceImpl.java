@@ -154,6 +154,7 @@ public class BoardServiceImpl implements BoardService {
         return dao.listCriteria(cri);
     }
 
+    // 이거 안 씀. 밑의 listSearchCount 씀
     @Override
     public int listCountCriteria(Criteria cri) throws Exception {
         return dao.countPaging(cri);

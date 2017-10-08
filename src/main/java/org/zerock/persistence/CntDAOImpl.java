@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import org.zerock.domain.GoodCntVO;
 
 import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Emiya on 2017-10-01 오전 11:59
@@ -28,7 +30,7 @@ import javax.inject.Inject;
  */
 
 @Repository
-public class CntDAOImpl implements CntDAO{
+public class CntDAOImpl implements CntDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(CntDAOImpl.class);
 
@@ -38,14 +40,104 @@ public class CntDAOImpl implements CntDAO{
     private static String namespace = "org.zerock.mapper.cntMapper";
 
 
+    // 굿 버튼 눌렀을 때
     @Override
     public void goodCntPush(GoodCntVO goodCntVO) throws Exception {
-
-        logger.info(goodCntVO.toString());
-
+        // logger.info(goodCntVO.toString());
         session.insert(namespace + ".goodCntInsert", goodCntVO);
-        session.update(namespace + ".goodCntUpdate", goodCntVO);
+//        session.update(namespace + ".goodCntUpdate", goodCntVO);
         session.delete(namespace + ".goodCntDelete");
+        session.update(namespace + ".updateGoodCountGet", goodCntVO);
+    }
 
+    // 굿 버튼 보이게 안 보이게
+    @Override
+    public String goodCntVOGet(String loginUserID, int bno) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("goodcntParamMap", bno + loginUserID + "Good");
+
+//        logger.info("lllll~~~~~ good paramMap.toString() : " + paramMap.toString() + "lllll~~~~~");
+
+        return session.selectOne(namespace + ".goodCntVOGet", paramMap);
+    }
+
+    // -----------------------------------------------------------------------
+
+    // 배드 버튼 눌렀을 때
+    @Override
+    public void badCntPush(GoodCntVO badcntbno) throws Exception {
+
+//        logger.info("lll~~~ " + badcntbno.toString() + "lll~~~");
+
+        session.insert(namespace + ".badCntInsert", badcntbno);
+//        session.update(namespace + ".badCntUpdate", badcntbno);
+        session.delete(namespace + ".badCntDelete");
+        session.update(namespace + ".updateBadCountGet", badcntbno);
+
+    }
+
+    @Override
+    public String badCntVOGet(String loginUserID, int bno) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("badcntParamMap", bno + loginUserID + "Bad");
+
+//        logger.info("lllll~~~~~ bad paramMap.toString() : " + paramMap.toString() + "lllll~~~~~");
+
+        return session.selectOne(namespace + ".badCntVOGet", paramMap);
+    }
+
+    // -----------------------------------------------------------------------
+
+
+    // good 하기 위한 good 개수 구하는.
+    @Override
+    public int getGoodCntGet(int goodcntbno) throws Exception {
+        // logger.info("lll~~~ " + String.valueOf(goodcntbno));
+        return session.selectOne(namespace + ".getGoodCntGet", goodcntbno);
+    }
+
+    // Bad 하기 위한 Bad 개수 구하는.
+    @Override
+    public int getBadCntGet(int badcntbno) throws Exception {
+        // logger.info("lll~~~ " + String.valueOf(badcntbno));
+        return session.selectOne(namespace + ".getBadCntGet", badcntbno);
+    }
+
+    @Override
+    public void changeGBPut(int gbbno, double gbRate) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("gbbnoParam", gbbno);
+        paramMap.put("gbRateParam", gbRate);
+
+        session.update(namespace + ".changeGBPut", paramMap);
+    }
+
+    // -----------------------------------------------------------------------
+
+    @Override
+    public void spamCntPush(GoodCntVO spamCntVO) throws Exception {
+
+        logger.info("lllll~~~~~ bad paramMap.toString() : " + spamCntVO.toString() + "lllll~~~~~");
+
+        session.insert(namespace + ".spamCntInsert", spamCntVO);
+        session.delete(namespace + ".spamCntDelete");
+        session.update(namespace + ".updateSpamCountGet", spamCntVO);
+
+    }
+
+    @Override
+    public String spamCntVOGet(String loginUserID, int bno) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("spamcntParamMap", bno + loginUserID + "Spam");
+
+        return session.selectOne(namespace + ".spamCntVOGet", paramMap);
     }
 }
