@@ -53,9 +53,7 @@ public class BoardDAOImpl implements BoardDAO {
 
     // 정말 무시하자! 옛날 거! ---------------------------------------------------------
     @Override
-    public List<BoardVO> listAll() throws Exception {
-        return session.selectList(namespace + ".listAll");
-    }
+    public List<BoardVO> listAll() throws Exception {return session.selectList(namespace + ".listAll");}
 
     // 정말 무시하자! 옛날 거! ---------------------------------------------------------
     @Override
@@ -67,56 +65,36 @@ public class BoardDAOImpl implements BoardDAO {
         return session.selectList(namespace + ".listPage", page);
     }
 
+    // 정말 무시하자! 옛날 거! 밑의 listSearch 씀 --------------------------------------------------
     @Override
-    public List<BoardVO> listCriteria(Criteria cri) throws Exception {
-
-        return session.selectList(namespace + ".listCriteria", cri);
-    }
+    public List<BoardVO> listCriteria(Criteria cri) throws Exception {return session.selectList(namespace + ".listCriteria", cri);}
 
     // 이거 안 씀. 밑의 listSearchCount 씀
     @Override
-    public int countPaging(Criteria cri) throws Exception {
-        return session.selectOne(namespace + ".countPaging", cri);
-    }
+    public int countPaging(Criteria cri) throws Exception {return session.selectOne(namespace + ".countPaging", cri);}
 
-    // 기본 게시판(건의사항 클릭하고 나서 보여주는 리스트
+    // 기본 게시판(cate) 클릭하고 나서 보여주는 리스트
     @Override
     public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
-
-        // Map<String, Object> paramMap = new HashMap<>();
-        // paramMap.put("pageStart", cri.getPageStart());
-        // paramMap.put("perPageNum", cri.getPerPageNum());
-        // paramMap.put("cate", cate);
-
-        // logger.info("lll~~~ cate BoardDAOImpl : " + cate + " lll~~~");
-
         return session.selectList(namespace + ".listSearch", cri);
     }
 
     // 게시판 밑 페이징 (1~10버튼) // 게시판 전체 몇 개인지 카운트 불러오는 메소드
     @Override
     public int listSearchCount(SearchCriteria cri) throws Exception {
-
         return session.selectOne(namespace + ".listSearchCount", cri);
     }
 
-    /* 전체 검색 기능 구현 */
+    // 전체 검색 기능 구현
     @Override
     public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception {
-
-        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + criteria.getPageStart() + " lll~~~");
-
         return session.selectList(namespace + ".listSearchAny", criteria);
     }
 
     @Override
     public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception {
-
-        logger.info("lll~~~ cri.toString() BoardDAOImpl : " + criteria.getPageStart() + " lll~~~");
-
         return session.selectOne(namespace + ".listSearchAnyCount", criteria);
     }
-
 
     @Override
     public void updateReplyCnt(Integer bno, int amount) throws Exception {
@@ -127,13 +105,11 @@ public class BoardDAOImpl implements BoardDAO {
         paramMap.put("amount", amount);
 
         session.update(namespace + ".updateReplyCnt", paramMap);
-
     }
 
     /* 게시판 글 클릭 시 조회 수 증가 */
     @Override
     public void updateViewCnt(Integer bno) throws Exception {
-
         session.update(namespace + ".updateViewCnt", bno);
     }
 
@@ -152,20 +128,16 @@ public class BoardDAOImpl implements BoardDAO {
 
     @Override
     public void addAttach(String fullName) throws Exception {
-
         session.insert(namespace + ".addAttach", fullName);
-
     }
 
     @Override
     public List<String> getAttach(Integer bno) throws Exception {
-
         return session.selectList(namespace + ".getAttach", bno);
     }
 
     @Override
     public void deleteAttach(Integer bno) throws Exception {
-
         session.delete(namespace + ".deleteAttach", bno);
     }
 
@@ -178,8 +150,5 @@ public class BoardDAOImpl implements BoardDAO {
         paramMap.put("fullName", fullName);
 
         session.insert(namespace + ".replaceAttach", paramMap);
-
     }
-
-
 }

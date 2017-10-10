@@ -12,9 +12,10 @@ package org.zerock.domain;
 
 public class SearchCriteria extends Criteria{
 
-    private String searchType;      // 검색 타입
-    private String keyword;         // 검색 키워드
-    private String cate;            // 카테고리
+    private String searchType;            // 검색 타입
+    private String keyword;               // 검색 키워드
+    private String cate;                  // 카테고리
+    private String cntSortType;           // Good, Bad etc. 클릭하면 자동 정렬
 
     public String getCate() {
         return cate;
@@ -60,10 +61,21 @@ public class SearchCriteria extends Criteria{
         this.keyword = keyword;
     }
 
+    public String getCntSortType() {
+        return cntSortType;
+    }
+
+    public void setCntSortType(String cntSortType) {
+        this.cntSortType = cntSortType;
+    }
+
     @Override
     public String toString() {
-        return super.toString() + " SearchCriteria "
-                + "[searchType=" + searchType + ", keyword="
-                + keyword + "]";
+        return "SearchCriteria{" +
+                "searchType='" + searchType + '\'' +
+                ", keyword='" + keyword + '\'' +
+                ", cate='" + cate + '\'' +
+                ", cntSort='" + cntSortType + '\'' +
+                '}';
     }
 }

@@ -29,28 +29,28 @@
                                 <%--검색 옵션--%>
                                 <%--</option>--%>
                             <option value="t"
-                                    <c:out value="${cri.searchType eq 't'?'selected':''}"/>>
+                                    <c:out value="${cri.searchType eq 't' ? 'selected' : ''}"/>>
                                 제목
                             </option>
                             <option value="c"
-                                    <c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
+                                    <c:out value="${cri.searchType eq 'c' ? 'selected' : ''}"/>>
                                 내용
                             </option>
                             <option value="w"
-                                    <c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
+                                    <c:out value="${cri.searchType eq 'w' ? 'selected' : ''}"/>>
                                 작성자
                             </option>
 
                             <option value="tc"
-                                    <c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
+                                    <c:out value="${cri.searchType eq 'tc' ? 'selected' : ''}"/>>
                                 제목 or 내용
                             </option>
                             <option value="cw"
-                                    <c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
+                                    <c:out value="${cri.searchType eq 'cw' ? 'selected' : ''}"/>>
                                 내용 or 작성자
                             </option>
                             <option value="tcw"
-                                    <c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
+                                    <c:out value="${cri.searchType eq 'tcw' ? 'selected' : ''}"/>>
                                 제목 or 내용 or 작성자
                             </option>
                         </select>
@@ -96,8 +96,6 @@
 
                         <%--</c:forEach>--%>
 
-                        <%-- list cate에 맞는 검색 / 반복문을 통한 리스트 목록 --%>
-                        <%-- Todo : Good 카테고리 눌렀을 때, 오름차순, 내림차순 구현 --%>
                         <c:forEach items="${list}" var="boardVO">
                             <tr>
                                 <td align="center">${boardVO.bno}</td>
@@ -105,14 +103,19 @@
                                     <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
-                                <td align="right"><span class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
-                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
+                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span>
+                                </td>
+                                <td align="right"><span
+                                        class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
+                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
+                                </td>
                                 <td align="center">${boardVO.writer}</td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd"
-                                                    value="${boardVO.regdate}"/></td>
-                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
-                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
+                                                                   value="${boardVO.regdate}"/></td>
+                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span>
+                                </td>
+                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span>
+                                </td>
                             </tr>
                         </c:forEach>
 
@@ -124,15 +127,20 @@
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span></td>
-                                <td align="right"><span class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
-                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span></td>
+                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span>
+                                </td>
+                                <td align="right"><span
+                                        class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
+                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
+                                </td>
                                 <td align="center">${boardVO.writer}</td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
-                                                    pattern="yyyy-MM-dd"/></td>
-                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span></td>
-                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span></td>
+                                                                   pattern="yyyy-MM-dd"/></td>
+                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span>
+                                </td>
+                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span>
+                                </td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -169,7 +177,7 @@
                                     </c:if>
                                 </c:when>
 
-                                <%-- 전체 아이템 검색 (페이징 기능) --%>
+                                <%-- 전체 게시판 검색 (페이징 기능) --%>
                                 <c:when test="${not empty pageMakerAny}">
                                     <c:if test="${pageMakerAny.prev}">
                                         <li><a href="listAny${pageMakerAny.makeSearchAll(pageMakerAny.startPage - 1) }">&laquo;</a>
@@ -189,6 +197,7 @@
                                     </c:if>
                                 </c:when>
                             </c:choose>
+                            <%--<input type="text" id="goUrl" name="goUrl" class="goUrl" value="">--%>
                         </ul>
                     </div>
                     <%-- JSTL의 <c:if>는 boolean으로 나오는 결과를 확인하므로 ${pageMaker.prev}를 이용해서 이전 페이지로 가는 링크가 있어야 하는지를 판단. --%>
@@ -210,7 +219,7 @@
 <script>
     var result = '${msg}';
 
-    if (result == 'success') {
+    if (result == 'SUCCESS') {
         alert("처리가 완료되었습니다.");
     }
 </script>
@@ -230,13 +239,15 @@
         return params;
     }
 
-    /*      <li><a href="/sboard/list?cate=1111">선거 이력</a></li> */
     $(document).ready(function () {
-        <%--var gbcntListRate = Math.floor(${boardVO.gbcnt});--%>
-        <%--var gbcntListRate = ${boardVO.gbcnt};--%>
 
+//        alert("prevSelfLocation start : " + prevSelfLocation);
 
-        $('#searchBtn01').on("click", function (event) {
+        var allUrlAddr = $(location).attr('href');
+
+//       prevSelfLocation = null;
+
+        $('#searchBtn01').on("click", function (event) { // cate
             self.location = "list"
                 + '${pageMaker.makeQuery(1)}'
                 + "&searchType="
@@ -247,15 +258,15 @@
                 + oParams.cate;
         });
 
-        $('#searchBtn02').on("click", function (event) {
+        $('#searchBtn02').on("click", function (event) { // 전체 검색
             self.location = "listAny"
                 + '${pageMaker.makeQuery(1)}'
-                //                + "&searchType="
-                //                + $("select option:selected").val()
+                // + "&searchType="
+                // + $("select option:selected").val()
                 + "&keyword="
                 + $('#keywordInputCate').val();
-//                + "&cate="
-//                + oParams.cate;
+                // + "&cate="
+                // + oParams.cate;
         });
 
         window.onload = function () {
@@ -269,40 +280,71 @@
             <%--+ '${getQuerystring(cate)}';--%>
         });
 
+//        alert("prevSelfLocation : " + prevSelfLocation);
+//        var prevSelfLocation = "";
+
         $('#goodSort').on("click", function (event) {
-            alert("goodSort 클릭 됨");
+
+            var criUrlParam = "&cntSortType=gc";
+            var temp = allUrlAddr + "";
+
+            if (temp.match(criUrlParam)) {
+                return true;
+            } else {
+                self.location = temp + "&cntSortType=gc";
+            }
         });
+
         $('#gbSort').on("click", function (event) {
-            alert("gbSort 클릭 됨");
+
+            var criUrlParam = "&cntSortType=gbc";
+            var temp = allUrlAddr + "";
+
+            if (temp.match(criUrlParam)) {
+                return true;
+            } else {
+                self.location = temp + "&cntSortType=gbc";
+            }
         });
+
         $('#badSort').on("click", function (event) {
-            alert("badSort 클릭 됨");
+
+            var criUrlParam = "&cntSortType=bc";
+            var temp = allUrlAddr + "";
+
+            if (temp.match(criUrlParam)) {
+                return true;
+            } else {
+                self.location = temp + "&cntSortType=bc";
+            }
         });
 
         $('#spamSort').on("click", function (event) {
-            alert("spamSort 클릭 됨");
+
+            var criUrlParam = "&cntSortType=sc";
+            var temp = allUrlAddr + "";
+
+            if (temp.match(criUrlParam)) {
+                return true;
+            } else {
+                self.location = temp + "&cntSortType=sc";
+            }
         });
+
         $('#viewSort').on("click", function (event) {
-            alert("viewSort 클릭 됨");
+
+            var criUrlParam = "&cntSortType=vc";
+            var temp = allUrlAddr + "";
+
+            if (temp.match(criUrlParam)) {
+                return true;
+            } else {
+                self.location = temp + "&cntSortType=vc";
+            }
         });
+
     });
+
 </script>
-
-<%-- 테이블 정렬 Ajax --%>
-<%--<script>--%>
-<%--$("#goodSort").on("click", function (event) {--%>
-
-
-<%--$.ajax({--%>
-<%--type: 'post',--%>
-<%--url:--%>
-
-
-<%--})--%>
-
-<%--});--%>
-
-
-<%--</script>--%>
 
 <%@include file="../include/footer.jsp" %>

@@ -22,7 +22,7 @@ public class PageMaker {
     private boolean prev;
     private boolean next;
     private int displayPageNum = 10;        // displayPageNum은 화면에 보여지는 페이지 번호의 숫자를 의미하는 변수를 추가
-                                            // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
+    // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
     private Criteria cri;                   // SearchCriteria에 상속하는 Criteria
     private CriteriaListAny criListAny;     // SearchCriteria에 상속하는 Criteria
 
@@ -70,14 +70,12 @@ public class PageMaker {
      */
     public void setTotalCount(int totalCount) {
         this.totalCount = totalCount;
-
         calcData();
     }
 
     private void calcData() {
 
         endPage = (int) (Math.ceil(cri.getPage() / (double) displayPageNum) * displayPageNum);
-
         startPage = (endPage - displayPageNum) + 1;
 
         int tempEndPage = (int) (Math.ceil(totalCount / (double) cri.getPerPageNum()));
@@ -87,9 +85,7 @@ public class PageMaker {
         }
 
         prev = startPage == 1 ? false : true;
-
         next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
-
     }
 
     /**
@@ -108,7 +104,6 @@ public class PageMaker {
         logger.info("lll~~~ calcDataListAny()");
 
         endPage = (int) (Math.ceil(criListAny.getPage() / (double) displayPageNum) * displayPageNum);
-
         startPage = (endPage - displayPageNum) + 1;
 
         int tempEndPage = (int) (Math.ceil(totalCount / (double) criListAny.getPerPageNum()));
@@ -118,9 +113,7 @@ public class PageMaker {
         }
 
         prev = startPage == 1 ? false : true;
-
         next = endPage * criListAny.getPerPageNum() >= totalCount ? false : true;
-
     }
 
     /**
@@ -192,13 +185,11 @@ public class PageMaker {
                         .queryParam("page", page)
                         .queryParam("perPageNum", cri.getPerPageNum())
                         .build();
-
         return uriComponents.toUriString();
     }
 
-
     /**
-     * 카테고리 검색
+     * 카테고리 검색(List)
      *
      * @param page the page
      * @return the string
@@ -209,12 +200,11 @@ public class PageMaker {
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
                         .queryParam("cate", getCnumFromBoardVO())
-//                        .queryParam("cate", 1101)
                         .queryParam("perPageNum", cri.getPerPageNum())
                         .queryParam("searchType", ((SearchCriteria) cri).getSearchType())
                         .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
+                        .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
                         .build();
-
         return uriComponents.toUriString();
     }
 
@@ -230,8 +220,8 @@ public class PageMaker {
                         .queryParam("page", page)
                         .queryParam("perPageNum", criListAny.getPerPageNum())
                         .queryParam("keyword", ((SearchCriteriaListAny) criListAny).getKeyword())
+//                        .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
                         .build();
-
         return uriComponents.toUriString();
     }
 
