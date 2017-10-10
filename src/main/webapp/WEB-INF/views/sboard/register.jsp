@@ -8,7 +8,7 @@
     .fileDrop {
         width: 100%;
         height: 100px;
-        border: 5px dotted #7BD4CC;
+        border: 5px dotted #2f3834;
         background-color: #f5f5f5;
         margin: auto;
 

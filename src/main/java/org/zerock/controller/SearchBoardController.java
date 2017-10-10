@@ -191,15 +191,17 @@ public class SearchBoardController {
     }
 
     /**
-     * Regist get.
+     * 등록 화면 Get
      *
      * @throws Exception the exception
      */
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public void registGET() throws Exception {logger.info("lll~~~ regist get ........... lll~~~");}
+    public void registGET() throws Exception {
+        logger.info("lll~~~ regist get ........... lll~~~");
+    }
 
     /**
-     * Regist post string.
+     * 등록 화면 Post
      *
      * @param board the board
      * @param rttr  the rttr

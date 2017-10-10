@@ -47,9 +47,7 @@ public class UploadController {
      * Upload form. 테스트용 /views/uploadForm.jsp
      */
     @RequestMapping(value = "/uploadForm", method = RequestMethod.GET)
-    public void uploadForm() {
-
-    }
+    public void uploadForm() {}
 
     /**
      * Upload form string. 테스트용
@@ -61,15 +59,8 @@ public class UploadController {
      */
     @RequestMapping(value = "/uploadForm", method = RequestMethod.POST)
     public String uploadForm(MultipartFile file, Model model) throws Exception {
-
-        logger.info("lll~~~ originalName: " + file.getOriginalFilename() + " lll~~~");
-        logger.info("lll~~~ size: " + file.getSize() + " lll~~~");
-        logger.info("lll~~~ contentType: " + file.getContentType() + " lll~~~");
-
         String savedName = uploadFile(file.getOriginalFilename(), file.getBytes());
-
         model.addAttribute("savedName", savedName);
-
         return "uploadResult";
     }
 
@@ -77,9 +68,7 @@ public class UploadController {
      * Upload ajax. 하나의 JSP 페이지를 보여주도록 작성
      */
     @RequestMapping(value = "/uploadAjax", method = RequestMethod.GET)
-    public void uploadAjax() {
-
-    }
+    public void uploadAjax() {}
 
     /**
      * Upload File 원본 파일의 이름과 파일 데이터를 byte[]로 변환한 정보를 파라미터로 처리해서 실제로 파일을 업로드
@@ -109,9 +98,7 @@ public class UploadController {
      * @throws Exception the exception
      */
     @ResponseBody
-    @RequestMapping(value = "/uploadAjax",
-                    method = RequestMethod.POST,
-                    produces = "text/plain;charset=UTF-8")
+    @RequestMapping(value = "/uploadAjax", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> uploadAjax(MultipartFile file) throws Exception {
 
         logger.info("lll~~~ originalName: " + file.getOriginalFilename() + " lll~~~");
@@ -119,8 +106,7 @@ public class UploadController {
         logger.info("lll~~~ contentType: " + file.getContentType() + " lll~~~");
 
         return new ResponseEntity<>(
-                UploadFileUtils.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes()),
-                HttpStatus.CREATED);
+                UploadFileUtils.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes()), HttpStatus.CREATED);
     }
 
 

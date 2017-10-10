@@ -2,13 +2,20 @@ package org.zerock.awsController;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.zerock.util.AmazoneWebServiceUtil;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 import java.io.File;
+import java.util.UUID;
 
 /**
  * Created by 김진국 on 2017-08-30 오전 11:30
@@ -35,18 +42,42 @@ public class S3Controller {
 
     private static final Logger logger = LoggerFactory.getLogger(S3Controller.class);
 
+    @Resource(name = "uploadPath")
+    private String uploadPath;
+
     @Inject
     private AmazoneWebServiceUtil amazoneWebServiceUtil;
+
+    private String uploadFile(String originalName, byte[] fileData) throws Exception {
+
+        logger.info("");
+
+        UUID uuid = UUID.randomUUID();
+        String savedName = uuid.toString() + "_" + originalName;
+        File target = new File(uploadPath, savedName);
+        FileCopyUtils.copy(fileData, target);
+        return savedName;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/s3uploadAjax", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
+    public ResponseEntity<String> s3uploadAjax(MultipartFile multipartFile) throws Exception {
+
+        return new ResponseEntity<>(
+                AmazoneWebServiceUtil.toUploadFile(uploadPath,
+                        multipartFile.getOriginalFilename(),
+                        multipartFile.getBytes()), HttpStatus.CREATED);
+    }
 
     @RequestMapping(value = "/view", method = RequestMethod.GET)
     public String viewTest() {
 
         logger.info("lll~~~ postTest 01  lll~~~");
 
-        String fileName = "c:\\02.jpg";
+        String fileName = "c:\\02.jpg";                 // 올릴 파일명.
         File tempFile = new File(fileName);
 
-        amazoneWebServiceUtil.uploadFile(tempFile);
+        amazoneWebServiceUtil.uploadFile(tempFile);     // 올릴 폴더 몇 경로.
 
         logger.info("lll~~~ postTest 02 lll~~~");
 

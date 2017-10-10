@@ -58,7 +58,8 @@ public class UploadFileUtils {
         // 원본 파일을 저장.
 
         String formatName = originalName.substring(originalName.lastIndexOf(".") + 1);
-        // String formatName은 원본 파일의 확장자를 의미. 이를 이용해서 MediaUtils 클래스의 getMediaType()을 이용해서 이미지 파일인 경우와 그렇지 않은 경우를 나누어 처리.
+        // String formatName은 원본 파일의 확장자를 의미. 이를 이용해서 MediaUtils 클래스의
+        // getMediaType()을 이용해서 이미지 파일인 경우와 그렇지 않은 경우를 나누어 처리.
 
         String uploadedFileName = null;
 
@@ -82,8 +83,9 @@ public class UploadFileUtils {
         return iconName.substring(uploadPath.length()).replace(File.separatorChar, '/');
     }
 
+    // calcPath()의 리턴값은 최종 결과 폴더를 반환하는데 내부적으로 폴더를 생성해주는 기능이 필요하기 때문에
+    // 기본적인 경로(uploadPath)를 파라미터로 전달받음.
     private static String calcPath(String uploadPath) {
-        // calcPath()의 리턴값은 최종 결과 폴더를 반환하는데 내부적으로 폴더를 생성해주는 기능이 필요하기 때문에 기본적인 경로(uploadPath)를 파라미터로 전달받음.
 
         Calendar cal = Calendar.getInstance();
 
@@ -103,6 +105,7 @@ public class UploadFileUtils {
 
     }
 
+    // 디렉토리 만듬
     private static void makeDir(String uploadPath, String... paths) {
 
         if (new File(paths[paths.length - 1]).exists()) {
@@ -121,6 +124,7 @@ public class UploadFileUtils {
 
     /**
      * BufferedImage는 실제 이미지가 아닌 메모리상의 이미지를 의미하는 객체 - 원본 파일을 메모리상으로 로딩 정해진 크기에 맞게 작은 이미지 파일에 원본 이미지 복사
+     * 첨부 파일 밑 아이콘 표시
      *
      * @param uploadPath 썸네일을 생성하는 작업은 메소드의 파라미터에 사용된 기본경로(uploadPath)와 년/월/일 폴더(path), 현재 업로드 된 파일의 이름을 이용
      * @param path
