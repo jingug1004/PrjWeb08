@@ -38,7 +38,8 @@
                 <!-- /.box-header -->
 
                 <form id='registerForm' role="form" method="post">
-                    <%-- form의 action 속성이 지정되지 않으면 현재 경로를 그대로 action의 대상 경로로 잡음. --%>
+                    <%-- form의 action 속성이 지정되지 않으면 현재 경로를 그대로 action의 대상 경로로 잡음.
+                    @RequestMapping(value = "/register", method = RequestMethod.POST) --%>
                     <div class="box-body">
                         <div class="form-group">
                             <%--@declare id="exampleinputemail1"--%>
@@ -72,14 +73,15 @@
                         <input id="cnumInput" type="hidden" name="cnum" value="1101">
 
 
-                        <%-- Todo : 첨부파일 추가할 수 있는 영역 --%>
+                        <%-- 첨부파일 추가할 수 있는 영역 --%>
                         <div class="form-group">
                             <label for="exampleInputEmail1">File DROP Here</label>
                             <div class="fileDrop">
                                 <p style="display: table-cell; text-align: center; vertical-align: middle;">
                                     첨부할 파일을 드래그 하거나 직접 <a id="btn-upload">파일찾기</a>
-                                    <input style="display: none" type="file" id="file" name="file"
-                                           onchange="changeValue(this)"/>
+                                <%--<form id="inputForm" action="/s3/inputFile" method="post">--%>
+                                    <input <%--style="display: none"--%> type="file" id="file" name="file" <%--onchange="changeValue(this)"--%>/>
+                                <%--</form>--%>
                                 </p>
                             </div>
                             <%--첨부파일을 추가할 수 있는 영역--%>
@@ -93,7 +95,7 @@
                             <hr>
                         </div>
 
-                        <ul class="mailbox-attachments clearfix uploadedList">
+                        <ul class="mailbox-attachments clearfix uploadedList"> <%-- $(".uploadedList").append(html); --%>
                         </ul>
                         <%--업로드 된 파일이 보여줄 수 있는 <ul></ul> 태그--%>
 
@@ -152,6 +154,7 @@
 
 
         $.ajax({
+//            url: '/s3/s3uploadAjax',
             url: '/uploadAjax',
             data: formData,
             dataType: 'text',
@@ -160,9 +163,15 @@
             type: 'POST',
             success: function (data) {
 
+                console.log("data : " + data);
+
                 var fileInfo = getFileInfo(data);
 
+                console.log("fileInfo : " + fileInfo);
+
                 var html = template(fileInfo);
+
+                console.log("html : " + html);
 
                 $(".uploadedList").append(html);
             }
@@ -201,6 +210,8 @@
     $("#registerForm").submit(function (event) {
         event.preventDefault();
 
+        $('#inputForm').submit();
+
         var that = $(this);
 
         var str = "";
@@ -222,8 +233,7 @@
         //     oParams = getUrlParams();
         // }
 
-        self.location = 'list?cate='
-            + getUrlParams().cate;
+        self.location = 'list?cate=' + getUrlParams().cate;
     });
     // 최종적인 submit이 일어나게 되면, 서버에는 사용자가 업로드 한 파일의 정보를 같이 전송해줘야 함.
     // 이에 대한 처리는 업로드 된 파일의 이름을 <form> 태그의 내부로 포함시켜서 전송하는 방식을 이용.
@@ -255,9 +265,9 @@
 
         $('#file').click();
 
-        function changeValue(obj) {
-            alert(obj.value);
-        }
+//        function changeValue(obj) {
+//            alert(obj.value);
+//        }
     });
 
 </script>

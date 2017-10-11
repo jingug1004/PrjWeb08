@@ -50,6 +50,8 @@ public class BoardServiceImpl implements BoardService {
 
         String[] files = board.getFiles();
 
+//        logger.info("lllll~~~~~ files.toString() : " + files.toString() + "lllll~~~~~ ");
+
         if (files == null) {
             return;
         }

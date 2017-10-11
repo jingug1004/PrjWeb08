@@ -30,7 +30,6 @@ import org.imgscalr.Scalr;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.util.FileCopyUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -38,7 +37,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Calendar;
-import java.util.UUID;
 
 @Service
 public class AmazoneWebServiceUtil {
@@ -55,30 +53,30 @@ public class AmazoneWebServiceUtil {
     public static final Logger logger = LoggerFactory.getLogger(AmazoneWebServiceUtil.class);
 
 
-    public static String toUploadFile(String uploadPath,
-                                    String originalName,
-                                    byte[] fileData) throws Exception {
-
-        logger.info("");
-
-        UUID uuid = UUID.randomUUID();
-        String savedName = uuid.toString() + "_" + originalName;
-        String savedPath = calcPath(uploadPath);
-        File target = new File(uploadPath + savedPath, savedName);
-
-        FileCopyUtils.copy(fileData, target);
-
-        String formatName = originalName.substring(originalName.lastIndexOf(".") + 1);
-
-        String uploadedFileName = null;
-
-        if (MediaUtils.getMediaType(formatName) != null) {
-            uploadedFileName = makeThumbnail(uploadPath, savedPath, savedName);
-        } else {
-            uploadedFileName = makeIcon(uploadPath, savedPath, savedName);
-        }
-        return uploadedFileName;
-    }
+//    public static String toUploadFile(String uploadPath,
+//                                    String originalName,
+//                                    byte[] fileData) throws Exception {
+//
+//        logger.info("");
+//
+//        UUID uuid = UUID.randomUUID();
+//        String savedName = uuid.toString() + "_" + originalName;
+//        String savedPath = calcPath(uploadPath);
+//        File target = new File(uploadPath + savedPath, savedName);
+//
+//        FileCopyUtils.copy(fileData, target);
+//
+//        String formatName = originalName.substring(originalName.lastIndexOf(".") + 1);
+//
+//        String uploadedFileName = null;
+//
+//        if (MediaUtils.getMediaType(formatName) != null) {
+//            uploadedFileName = makeThumbnail(uploadPath, savedPath, savedName);
+//        } else {
+//            uploadedFileName = makeIcon(uploadPath, savedPath, savedName);
+//        }
+//        return uploadedFileName;
+//    }
 
 
     // Todo : 파일 올리기 구현 - input 박스로도 추가
@@ -87,7 +85,7 @@ public class AmazoneWebServiceUtil {
         if (amazonS3 != null) {
             try {
                 PutObjectRequest putObjectRequest =
-                        new PutObjectRequest(BUCKET_NAME + "/Volumes/noname/zzz"/*sub directory*/, file.getName(), file);
+                        new PutObjectRequest(BUCKET_NAME + "/Volumes/Board/"/*sub directory*/, calcPath() + file.getName(), file);
                 putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead);      // file permission
                 amazonS3.putObject(putObjectRequest);                                   // upload file
 
@@ -99,34 +97,50 @@ public class AmazoneWebServiceUtil {
         }
     }
 
-    public void uploadFileNewFolder(File file) {
-        if (amazonS3 != null) {
-            try {
-                PutObjectRequest putObjectRequest =
-//                        new PutObjectRequest(BUCKET_NAME + "/Volumes"/*sub directory*/, file.getName(), file);
-                        new PutObjectRequest(BUCKET_NAME + "/NewFolder"/*sub directory*/, file.getName(), file);
-                putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead); // file permission
-                amazonS3.putObject(putObjectRequest); // upload file
+//    public void uploadFileNewFolder(File file) {
+//        if (amazonS3 != null) {
+//            try {
+//                PutObjectRequest putObjectRequest =
+////                        new PutObjectRequest(BUCKET_NAME + "/Volumes"/*sub directory*/, file.getName(), file);
+//                        new PutObjectRequest(BUCKET_NAME + "/NewFolder"/*sub directory*/, file.getName(), file);
+//                putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead); // file permission
+//                amazonS3.putObject(putObjectRequest); // upload file
+//
+//            } catch (AmazonServiceException ase) {
+//                ase.printStackTrace();
+//            } finally {
+//                amazonS3 = null;
+//            }
+//        }
+//    }
 
-            } catch (AmazonServiceException ase) {
-                ase.printStackTrace();
-            } finally {
-                amazonS3 = null;
-            }
-        }
-    }
-
-    private static String calcPath(String uploadPath) {
+    private static String calcPath() {
 
         Calendar calendar = Calendar.getInstance();
         String yearPath = File.separator + calendar.get(Calendar.YEAR);
-        String monthPath = yearPath + File.separator +
-                new DecimalFormat("00").format(calendar.get(Calendar.MONTH) + 1);
-        String datePath = monthPath + File.separator +
-                new DecimalFormat("00").format(calendar.get(Calendar.DATE));
+        String monthPath = yearPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.MONTH) + 1);
+        String datePath = monthPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.DATE));
 
-        return datePath;
+        String temp = datePath.substring(3, 5);
+        String temp2 = datePath.substring(6, 8);
+        String temp3 = datePath.substring(9, 11);
+
+        String te = temp + temp2 + temp3;
+
+        return te;
     }
+
+//    private static String calcPath(String uploadPath) {
+//
+//        Calendar calendar = Calendar.getInstance();
+//        String yearPath = File.separator + calendar.get(Calendar.YEAR);
+//        String monthPath = yearPath + File.separator +
+//                new DecimalFormat("00").format(calendar.get(Calendar.MONTH) + 1);
+//        String datePath = monthPath + File.separator +
+//                new DecimalFormat("00").format(calendar.get(Calendar.DATE));
+//
+//        return datePath;
+//    }
 
     private static String makeThumbnail(String uploadPath, String path, String fileName) throws IOException {
 

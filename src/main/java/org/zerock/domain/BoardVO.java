@@ -27,6 +27,9 @@ public class BoardVO {
     private int replycnt;
     private int cnum;
 
+    private String[] files;
+
+
     public int getCnum() {
         return cnum;
     }
@@ -34,8 +37,6 @@ public class BoardVO {
     public void setCnum(int cnum) {
         this.cnum = cnum;
     }
-
-    private String[] files;
 
     /**
      * Gets bno.

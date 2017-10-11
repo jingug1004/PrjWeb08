@@ -252,7 +252,8 @@
                             <c:if test="${not empty login.uid && login.uid != spamCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%">
                                     <label for="exampleInputEmail1">Spam7</label>
-                                    <input id="logSpamPage" type="text" name="writer" class="form-control hoverInputRead"
+                                    <input id="logSpamPage" type="text" name="writer"
+                                           class="form-control hoverInputRead"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
                                 </div>
@@ -269,6 +270,7 @@
                     </div>
 
 
+                    <%-- 첨부파일 되어있을 때 보여지는 위치 // 클래스 uploadedList에 의하여 --%>
                     <ul class="mailbox-attachments clearfix uploadedList"></ul>
                     <%--조회 페이지에서 기존에 업로드 된 파일들이 보여질 수 있는 영역을 작성하고, upload.js와 handlebars를 설정.--%>
 
@@ -735,12 +737,12 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         $("#goListBtn ").on("click", function () {
 
             // 전체 검색 했을 때 뒤로가기 누르면 /sboard/list 로 매핑 호출되면 안 되기 때문에.
-            // formObj.attr("method", "get");
-            // formObj.attr("action", "/sboard/list");
-            // formObj.attr("action", "/sboard/list?cate=" + oParams.cate);
-            // formObj.submit();
-            history.back();
+            formObj.attr("method", "get");
+            formObj.attr("action", "/sboard/list?cate=" + getUrlParams().cate);
+            formObj.submit();
+            // history.back();
         });
+
 //        "{boardVO.bno}", "{cri.page}", "{cri.perPageNum}" 의 정보를 이용하는 방식으로 변경 되었음.
 
 //        $.getJSON("/replies/all/" + bno, function (data) {
@@ -757,7 +759,6 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 //
 //            $("#replycntSmall").data.length;
 //        });
-
 
         var bno = ${boardVO.bno};
         var template = Handlebars.compile($("#templateAttach").html());

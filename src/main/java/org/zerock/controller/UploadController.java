@@ -109,7 +109,6 @@ public class UploadController {
                 UploadFileUtils.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes()), HttpStatus.CREATED);
     }
 
-
     /**
      * displayFile()은 파라미터로 브라우저에서 전송받기를 원하는 파일의 이름을 '/년/월/일/파일명' 형식으로 받음.
      * 메소드의 선언부에는 @ResponseBody를 이용해서 byte[] 데이터가 그대로 전송될 것임을 명시.
@@ -144,14 +143,17 @@ public class UploadController {
 
                 fileName = fileName.substring(fileName.indexOf("_") + 1);
                 headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-                // 이미지가 아닌 경우에는 MIME 타입을 다운로드 용으로 사용되는 'application/octet-stream'으로 지정. 브라우저는 이 MIME 타입을 보고 사용자에게 자동으로 다운로드 창을 열어줌.
+                // 이미지가 아닌 경우에는 MIME 타입을 다운로드 용으로 사용되는 'application/octet-stream'으로 지정.
+                // 브라우저는 이 MIME 타입을 보고 사용자에게 자동으로 다운로드 창을 열어줌.
                 headers.add("Content-Disposition", "attachment; filename=\"" +
                         new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
-                        // 다운로드할 때 사용자에게 보이는 파일의 이름이므로 한글 처리를 해서 전송. 한글 파일의 경우 다운로드하면 파일의 이름이 깨져서 나오기 때문에 반드시 인코딩 처리를 할 필요가 있음.
+                        // 다운로드할 때 사용자에게 보이는 파일의 이름이므로 한글 처리를 해서 전송.
+                        // 한글 파일의 경우 다운로드하면 파일의 이름이 깨져서 나오기 때문에 반드시 인코딩 처리를 할 필요가 있음.
             }
 
             entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(in),
-                    // IOUtils.toByteArray() - 실제로 데이터를 읽는 부분, commons 라이브러리의 기능을 활용해서 대상 파일에서 데이터를 읽어냄.
+                    // IOUtils.toByteArray() - 실제로 데이터를 읽는 부분,
+                    // commons 라이브러리의 기능을 활용해서 대상 파일에서 데이터를 읽어냄.
                     headers,
                     HttpStatus.CREATED);
         } catch (Exception e) {
@@ -164,7 +166,8 @@ public class UploadController {
     }
 
     /**
-     * deleteFile()은 파라미터로 삭제할 파일의 이름을 받아들임. 이미지의 경우 썸네일의 이름. 이미지 파일이 확인되면 원본 파일을 먼저 삭제하고, 이후에 파일을 삭제하는 방식으로 작성.
+     * deleteFile()은 파라미터로 삭제할 파일의 이름을 받아들임. 이미지의 경우 썸네일의 이름.
+     * 이미지 파일이 확인되면 원본 파일을 먼저 삭제하고, 이후에 파일을 삭제하는 방식으로 작성.
      *
      * @param fileName 일반 파일은 실제 이름.
      * @return

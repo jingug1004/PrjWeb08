@@ -1,20 +1,27 @@
 package org.zerock.awsController;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.zerock.util.AmazoneWebServiceUtil;
+import org.zerock.util.MediaUtils;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.UUID;
 
 /**
@@ -59,15 +66,60 @@ public class S3Controller {
         return savedName;
     }
 
+//    @RequestMapping(value = "/s3uploadAjax", method = RequestMethod.GET)
+//    public void s3uploadAjax() {}
+
     @ResponseBody
     @RequestMapping(value = "/s3uploadAjax", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> s3uploadAjax(MultipartFile multipartFile) throws Exception {
 
-        return new ResponseEntity<>(
-                AmazoneWebServiceUtil.toUploadFile(uploadPath,
-                        multipartFile.getOriginalFilename(),
-                        multipartFile.getBytes()), HttpStatus.CREATED);
+        logger.info(" lllll~~~~~ multipartFile.toString() : " + multipartFile.toString() + " lllll~~~~~ ");
+
+//        return new ResponseEntity<>(
+//                AmazoneWebServiceUtil.toUploadFile(uploadPath,
+//                        multipartFile.getOriginalFilename(),
+//                        multipartFile.getBytes()), HttpStatus.CREATED);
+        return null;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/displayFile")
+    public ResponseEntity<byte[]> displayFile(String fileName) throws Exception {
+
+        InputStream inputStream = null;
+        ResponseEntity<byte[]> entity = null;
+
+        try {
+            String formatName = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+            MediaType mediaType = MediaUtils.getMediaType(formatName);
+
+            HttpHeaders httpHeaders = new HttpHeaders();
+
+            inputStream = new FileInputStream(uploadPath + fileName);
+
+            if(mediaType != null) {
+                httpHeaders.setContentType(mediaType);
+            } else {
+                fileName = fileName.substring(fileName.indexOf("_") + 1);
+                httpHeaders.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+                httpHeaders.add("Content-Disposition", "attachment; filename=\"" +
+                new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
+                logger.info("");
+            }
+
+            entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(inputStream), httpHeaders, HttpStatus.CREATED);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            entity = new ResponseEntity<byte[]>(HttpStatus.BAD_REQUEST);
+        } finally {
+            inputStream.close();
+        }
+        return entity;
+
+    }
+
 
     @RequestMapping(value = "/view", method = RequestMethod.GET)
     public String viewTest() {
@@ -84,21 +136,35 @@ public class S3Controller {
         return "aws/s3/viewTest";
     }
 
+    @RequestMapping(value = "/inputFile", method = RequestMethod.POST)
+    public void inputFile(File file, Model model) {
 
-    @RequestMapping(value = "/view02", method = RequestMethod.GET)
-    public String viewTest02() {
+        logger.info("lll~~~ inputFile 01  lll~~~");
 
-        logger.info("lll~~~ postTest 01-02  lll~~~");
-
-        String fileName = "c:\\eng02복사본.txt";
+//        String fileName =
+        String fileName = file.getName();
         File tempFile = new File(fileName);
 
-        amazoneWebServiceUtil.uploadFileNewFolder(tempFile);
+        amazoneWebServiceUtil.uploadFile(tempFile);
 
-        logger.info("lll~~~ postTest 02-02 lll~~~");
-
-        return "aws/s3/viewTest";
+        logger.info("lll~~~ inputFile 01 lll~~~");
     }
+
+
+//    @RequestMapping(value = "/view02", method = RequestMethod.GET)
+//    public String viewTest02() {
+//
+//        logger.info("lll~~~ postTest 01-02  lll~~~");
+//
+//        String fileName = "c:\\eng02복사본.txt";
+//        File tempFile = new File(fileName);
+//
+//        amazoneWebServiceUtil.uploadFileNewFolder(tempFile);
+//
+//        logger.info("lll~~~ postTest 02-02 lll~~~");
+//
+//        return "aws/s3/viewTest";
+//    }
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public void postTest() {

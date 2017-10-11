@@ -128,6 +128,9 @@ public class BoardDAOImpl implements BoardDAO {
 
     @Override
     public void addAttach(String fullName) throws Exception {
+
+        logger.info("lllll~~~~~ fullName : " + fullName + "lllll~~~~~ ");
+
         session.insert(namespace + ".addAttach", fullName);
     }
 

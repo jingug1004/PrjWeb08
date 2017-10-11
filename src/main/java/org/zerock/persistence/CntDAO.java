@@ -21,7 +21,6 @@ import org.zerock.domain.GoodCntVO;
  * @since 2017/04/10
  */
 
-
 public interface CntDAO {
 
     public void goodCntPush(GoodCntVO goodCntVO) throws Exception;             // 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인
