@@ -84,7 +84,7 @@
                             <div class="col-sm-6">
                                 <section>
                                     <label class="input">
-                                        <input type="text" name="uname" placeholder="User name"
+                                        <input type="text" name="uname" placeholder="Like Politician ex)문재인"
                                                class="form-control">
                                         <form:errors path="uname" cssClass="error"/>
                                         <%--messages.properties 안에 경로 레벨과 같아야 함!--%>
@@ -109,6 +109,32 @@
                                 <option value="매우 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>매우 진보적</option>
                             </select>
                         </label>
+
+                        <div class="panel-group" id="accordion-v5">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion-v5" href="#collapseFive">
+                                            Color
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <ul class="list-inline product-color-list">
+                                            <li><a href="#"><img src="/assets/img/colors/01.jpg" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/02.jpg" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/03.jpg" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/04.jpg" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/05.jpg" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/06.jpg" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/07.jpg" alt=""></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/end panel group-->
                         <%--
                         <div class="row margin-bottom-10">
                             </label>
