@@ -123,13 +123,18 @@
                                 <div id="collapseFive" class="panel-collapse collapse in">
                                     <div class="panel-body">
                                         <ul class="list-inline product-color-list">
-                                            <li><a href="#"><img src="/assets/img/colors/01.jpg" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/02.jpg" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/03.jpg" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/04.jpg" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/05.jpg" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/06.jpg" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/07.jpg" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/001.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/002.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/003.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/004.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/005.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/006.png" alt=""></a></li></br>
+                                            <li><a href="#"><img src="/assets/img/colors/007.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/008.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/009.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/010.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/011.png" alt=""></a></li>
+                                            <li><a href="#"><img src="/assets/img/colors/012.png" alt=""></a></li>
                                         </ul>
                                     </div>
                                 </div>
