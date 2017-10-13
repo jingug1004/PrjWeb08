@@ -17,6 +17,32 @@
 <!--=== End Header v5 ===-->
 <%@ include file="../include/header.jsp" %>
 
+<style>
+    .product-color label:hover {
+        cursor: pointer;
+        border: 2px solid #18ba9b;
+    }
+
+    .product-color input:checked ~ label {
+        border: 2px solid #18ba9b;
+    }
+
+    .product-color input[type=radio] {
+        display: none;
+    }
+
+    .product-color label {
+        /*width: 50px;*/
+        /*height: 50px;*/
+        /*float: right;*/
+        /*padding: 5px;*/
+        /*display: block;*/
+        /*font-size: 24px;*/
+        /*text-align: center;*/
+    }
+
+</style>
+
 <!--=== Breadcrumbs v4 ===-->
 <div class="breadcrumbs-v4">
     <div class="container">
@@ -67,7 +93,7 @@
             <div class="col-md-5">
                 <%--<form id="sky-form4" class="log-reg-block sky-form">--%>
                 <form id="sky-form4" class="log-reg-block sky-form" action="/user/registPost" method="post">
-                <%--<form id="sky-form4" class="log-reg-block sky-form" action="/user/shop-ui-register03" method="post">--%>
+                    <%--<form id="sky-form4" class="log-reg-block sky-form" action="/user/shop-ui-register03" method="post">--%>
                     <h2>Create New Account</h2>
 
                     <div class="login-input reg-input">
@@ -95,7 +121,7 @@
                         <label class="select margin-bottom-15">
                             <select name="ugender" class="form-control">
                                 <%--<option value="0" selected disabled--%>
-                                <option value="0" selected="" >정치성향</option>
+                                <option value="0" selected="">정치성향</option>
                                 <%--<option value="1">Male</option>--%>
                                 <option value="매우 보수적" <c:if test="남자">selected</c:if>>매우 보수적</option>
                                 <%--<option value="2" <c:if test="${여자}">selected</c:if>>Female</option>--%>
@@ -122,19 +148,60 @@
                                 </div>
                                 <div id="collapseFive" class="panel-collapse collapse in">
                                     <div class="panel-body">
-                                        <ul class="list-inline product-color-list">
+                                        <ul class="list-inline product-color-list product-color ls-ct-center">
+                                            &nbsp;&nbsp;
+                                            <%--
                                             <li><a href="#"><img src="/assets/img/colors/001.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/002.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/003.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/004.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/005.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/006.png" alt=""></a></li></br>
-                                            <li><a href="#"><img src="/assets/img/colors/007.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/008.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/009.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/010.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/011.png" alt=""></a></li>
-                                            <li><a href="#"><img src="/assets/img/colors/012.png" alt=""></a></li>
+                                            --%>
+                                            <li>
+                                                <input type="radio" id="choice001" name="uday" value="001">
+                                                <label class="color-one" for="choice001"><img src="/assets/img/colors/001.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice002" name="uday" value="002">
+                                                <label class="color-one" for="choice002"><img src="/assets/img/colors/002.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice003" name="uday" value="003">
+                                                <label class="color-one" for="choice003"><img src="/assets/img/colors/003.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice004" name="uday" value="004">
+                                                <label class="color-one" for="choice004"><img src="/assets/img/colors/004.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice005" name="uday" value="005">
+                                                <label class="color-one" for="choice005"><img src="/assets/img/colors/005.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice006" name="uday" value="006">
+                                                <label class="color-one" for="choice006"><img src="/assets/img/colors/006.png" alt=""></label>
+                                            </li>
+                                            </br>
+                                            <li>
+                                                <input type="radio" id="choice007" name="uday" value="007">
+                                                <label class="color-one" for="choice007"><img src="/assets/img/colors/007.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice008" name="uday" value="008">
+                                                <label class="color-one" for="choice008"><img src="/assets/img/colors/008.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice009" name="uday" value="009">
+                                                <label class="color-one" for="choice009"><img src="/assets/img/colors/009.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice010" name="uday" value="010">
+                                                <label class="color-one" for="choice010"><img src="/assets/img/colors/010.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice011" name="uday" value="011">
+                                                <label class="color-one" for="choice011"><img src="/assets/img/colors/011.png" alt=""></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="choice012" name="uday" value="012">
+                                                <label class="color-one" for="choice012"><img src="/assets/img/colors/012.png" alt=""></label>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -223,9 +290,9 @@
                         최신 뉴스를 받아 보려면 '뉴스 레터 구독'
                     </label>
                     <%--<label class="checkbox margin-bottom-20">--%>
-                        <%--<input type="checkbox" name="checkbox"/>--%>
-                        <%--<i></i>--%>
-                        <%--저는 <a href="#">이용약관 &amp; 운영방침</a>에 동의한 것을 읽었습니다.--%>
+                    <%--<input type="checkbox" name="checkbox"/>--%>
+                    <%--<i></i>--%>
+                    <%--저는 <a href="#">이용약관 &amp; 운영방침</a>에 동의한 것을 읽었습니다.--%>
                     <%--</label>--%>
                     <button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Create Account
                     </button>
@@ -263,21 +330,26 @@
 <div class="g-popup-wrapper">
     <div class="g-popup g-popup--fb">
         <div class="g-popup--fb-title">
-            <a target="_blank" href="https://www.facebook.com/jingug1004" class="g-popup--fb__logo"><img alt="facebook" src="/assets/img/others/fb.png" width="110"></a>
+            <a target="_blank" href="https://www.facebook.com/jingug1004" class="g-popup--fb__logo"><img alt="facebook"
+                                                                                                         src="/assets/img/others/fb.png"
+                                                                                                         width="110"></a>
             <div class="g-popup--fb-message">Click <strong>"Like"</strong><br>to read our blog on Facebook</div>
         </div>
         <div class="g-popup--fb-widjet">
             <div id="fb-root"></div>
-            <script>(function(d, s, id) {
+            <script>(function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
+                js = d.createElement(s);
+                js.id = id;
                 js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.4&appId=118547268248380";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
-            <div class="fb-like" data-href="https://www.facebook.com/htmlstream/" data-width="270" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+            <div class="fb-like" data-href="https://www.facebook.com/htmlstream/" data-width="270"
+                 data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
         </div>
-        <a href="javascript:void(0);" class="g-popup__close g-popup--fb__close"><span class="icon-close" aria-hidden="true"></span></a>
+        <a href="javascript:void(0);" class="g-popup__close g-popup--fb__close"><span class="icon-close"
+                                                                                      aria-hidden="true"></span></a>
     </div>
 </div>
 <!-- End Wait Block -->

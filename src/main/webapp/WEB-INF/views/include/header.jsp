@@ -232,9 +232,10 @@
                                 </li>
                             </c:if>
                             <c:if test="${not empty login}">
-                                <li>${login.nickname}님! | <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |
-                                    <a
-                                            href="<c:url value="/user/logout"/>">Logout</a>
+                                <li>
+                                    <img src="/assets/img/colors/006.png" alt=""> ${login.nickname}님! |
+                                    <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |
+                                    <a href="<c:url value="/user/logout"/>">Logout</a>
                                 </li>
                             </c:if>
                             <li><i id="searchBtnAny" class="search fa fa-search search-button"></i></li>
