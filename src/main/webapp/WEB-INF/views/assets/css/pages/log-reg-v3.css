@@ -60,6 +60,32 @@
 	text-align: center;
 	/*margin-bottom: 30px;*/
 	text-transform: capitalize;
+
+	color: #c00;
+	color: #fb940b;
+	color: #ff0;
+	color: #0c0;
+	color: #03c0c6;
+	color: #00f;
+	color: #762ca7;
+	color: #ff98bf;
+	color: #fff;
+	color: #999;
+	color: #000;
+	color: #885418;
+
+    color: #7BD4CC; /*AQUAPOISE*/
+    color: #BEA42E; /*HONEY*/
+    color: #7B895B; /*ARMY*/
+    color: #037367; /*CELADON*/
+    color: #00281F; /*SANGRIA*/
+
+    color: #EDFAFD; /*GLASS*/
+    color: #AED9DA; /*CHILL*/
+    color: #3DDAD7; /*CALIFORNIAN CORAL*/
+    color: #2A93D5; /*BONDI BLUE*/
+    color: #135589; /*MARINA*/
+
 }
 
 .log-reg-v3 .log-reg-block a {

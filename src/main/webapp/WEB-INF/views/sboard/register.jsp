@@ -16,14 +16,6 @@
     }
 </style>
 
-<%--
-#7BD4CC AQUAPOISE
-#BEA42E HONEY
-#7B895B ARMY
-#037367 CELADON
-#00281F SANGRIA
---%>
-
 <!-- Main content -->
 <section class="content">
     <div class="row">
