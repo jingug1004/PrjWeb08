@@ -498,7 +498,6 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
     // getPage()는 특정한 게시물에 대한 페이징 처리를 위해서 호출되는 함수. 내부적으로 jQuery를 이용해서 JSON 타입의 데이터를 처리.
     // getPage()는 페이지 번호를 파라미터로 전달받고, jQuery의 getJSON()을 이용해서 댓글의 목록 데이터를 처리. 댓글의 목록 데이터는 'pageMaker'와 'list'로 구성되므로 이를 printPaging()과 printData()에서 처리.
-
     var printPaging = function (pageMaker, target) {
 
         var str = "";

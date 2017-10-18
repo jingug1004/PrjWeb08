@@ -1,0 +1,679 @@
+-- auto-generated definition
+CREATE TABLE app
+(
+  appid       SERIAL NOT NULL
+    CONSTRAINT app_pkey
+    PRIMARY KEY,
+  appname     VARCHAR(30),
+  appversion  VARCHAR(30),
+  packagename VARCHAR(30),
+  adddate     DATE DEFAULT ('now' :: TEXT) :: DATE,
+  adduser     VARCHAR(20)
+);
+COMMENT ON TABLE app IS '테스트 앱 정보
+';
+COMMENT ON COLUMN app.appid IS 'App 순번
+';
+COMMENT ON COLUMN app.appname IS '이름
+';
+COMMENT ON COLUMN app.appversion IS '버전
+';
+COMMENT ON COLUMN app.packagename IS '패키지 명';
+COMMENT ON COLUMN app.adddate IS '등록일자
+';
+COMMENT ON COLUMN app.adduser IS '등록한 사용자
+';
+
+
+-- auto-generated definition
+CREATE TABLE client
+(
+  clntid  SERIAL NOT NULL
+    CONSTRAINT client_pkey
+    PRIMARY KEY,
+  ipaddr  CHAR(15),
+  macaddr CHAR(17),
+  devid   INTEGER,
+  adddate DATE DEFAULT ('now' :: TEXT) :: DATE,
+  upddate DATE,
+  adduser VARCHAR(20),
+  upduser VARCHAR(20)
+);
+COMMENT ON TABLE client IS '컨트롤러 정보
+';
+COMMENT ON COLUMN client.clntid IS '클라이언트 순번';
+COMMENT ON COLUMN client.ipaddr IS 'IP 주소
+';
+COMMENT ON COLUMN client.macaddr IS 'MAC 주소
+';
+COMMENT ON COLUMN client.devid IS '디바이스를 1개만 사용하는 경우
+';
+COMMENT ON COLUMN client.adddate IS '등록일자
+';
+COMMENT ON COLUMN client.upddate IS '수정일자
+';
+COMMENT ON COLUMN client.adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN client.upduser IS '수정한 사용자
+';
+
+
+-- auto-generated definition
+CREATE TABLE code
+(
+  "group" CHAR(2) NOT NULL
+    CONSTRAINT code_pkey
+    PRIMARY KEY,
+  code    INTEGER,
+  name    VARCHAR(50)
+);
+COMMENT ON TABLE code IS '코드와 코드 값
+';
+COMMENT ON COLUMN code."group" IS '코드 그룹
+';
+COMMENT ON COLUMN code.code IS '코드 번호
+';
+COMMENT ON COLUMN code.name IS '코드 설명
+';
+
+
+-- auto-generated definition
+CREATE TABLE device
+(
+  devid           SERIAL               NOT NULL
+    CONSTRAINT device_pkey
+    PRIMARY KEY,
+  name            VARCHAR(50),
+  storagesize     INTEGER,
+  ramsize         VARCHAR(20),
+  os              VARCHAR,
+  version         VARCHAR(20),
+  company         VARCHAR(5),
+  networkstandard VARCHAR(50),
+  ipaddr          CHAR(15),
+  port            INTEGER,
+  modelno         VARCHAR(50),
+  adddate         DATE DEFAULT ('now' :: TEXT) :: DATE,
+  adduser         VARCHAR(20),
+  serial          VARCHAR(100),
+  width           INTEGER,
+  height          INTEGER,
+  status          VARCHAR(3) DEFAULT 0 NOT NULL
+);
+COMMENT ON TABLE device IS '단말기 디바이스 정보
+';
+COMMENT ON COLUMN device.devid IS '디바이스 순번
+';
+COMMENT ON COLUMN device.name IS '디바이스 이름
+';
+COMMENT ON COLUMN device.storagesize IS '저장소 크기 (GB)
+';
+COMMENT ON COLUMN device.ramsize IS 'RAM 크기 (MB)
+';
+COMMENT ON COLUMN device.os IS 'OS (0:android, 1:ios)
+';
+COMMENT ON COLUMN device.version IS '버전
+';
+COMMENT ON COLUMN device.company IS '통신사 이름 (skt)
+';
+COMMENT ON COLUMN device.networkstandard IS '네트웍 유형 (LTE)
+';
+COMMENT ON COLUMN device.ipaddr IS 'IP 주소
+';
+COMMENT ON COLUMN device.port IS '포트
+';
+COMMENT ON COLUMN device.modelno IS '모델 번호
+';
+COMMENT ON COLUMN device.adddate IS '등록일자
+';
+COMMENT ON COLUMN device.adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN device.serial IS 'Serial No';
+COMMENT ON COLUMN device.width IS '해상도(가로)';
+COMMENT ON COLUMN device.height IS '해상도(세로)';
+COMMENT ON COLUMN device.status IS '디바이스의 유무선 상태  0 = 유선, 1 = 무선';
+
+
+
+-- auto-generated definition
+CREATE TABLE event
+(
+  senid       INTEGER NOT NULL,
+  seq         INTEGER NOT NULL,
+  evtdesc     VARCHAR(100),
+  evtact      VARCHAR(30),
+  objid       VARCHAR(30),
+  location_x1 INTEGER,
+  location_y1 INTEGER,
+  location_x2 INTEGER,
+  location_y2 INTEGER,
+  location_x3 INTEGER,
+  location_y3 INTEGER,
+  image       VARCHAR(100),
+  adddate     DATE DEFAULT ('now' :: TEXT) :: DATE,
+  adduser     VARCHAR(20),
+  projid      INTEGER NOT NULL,
+  xy          VARCHAR(100),
+  param       VARCHAR,
+  filename    VARCHAR,
+  CONSTRAINT event_pkey
+  PRIMARY KEY (projid, senid, seq)
+);
+COMMENT ON TABLE event IS '이벤트 정보
+';
+COMMENT ON COLUMN event.senid IS '시나리오 id
+';
+COMMENT ON COLUMN event.seq IS '이벤트 순번
+';
+COMMENT ON COLUMN event.evtdesc IS '이벤트 설명
+';
+COMMENT ON COLUMN event.evtact IS '수행한 액션
+';
+COMMENT ON COLUMN event.objid IS 'App 화면 오브젝트 ID
+';
+COMMENT ON COLUMN event.location_x1 IS 'x 좌표
+';
+COMMENT ON COLUMN event.location_y1 IS 'y 좌표
+';
+COMMENT ON COLUMN event.location_x2 IS 'x 좌표
+';
+COMMENT ON COLUMN event.location_y2 IS 'y 좌표
+';
+COMMENT ON COLUMN event.location_x3 IS 'x 좌표
+';
+COMMENT ON COLUMN event.location_y3 IS 'y 좌표
+';
+COMMENT ON COLUMN event.image IS '이벤트 캡쳐 파일 위치
+';
+COMMENT ON COLUMN event.adddate IS '등록일자
+';
+COMMENT ON COLUMN event.adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN event.projid IS '프로젝트 순번';
+
+
+-- auto-generated definition
+CREATE TABLE hcdevice
+(
+  clntid  INTEGER NOT NULL,
+  devid   INTEGER NOT NULL,
+  adddate DATE DEFAULT ('now' :: TEXT) :: DATE,
+  upddate DATE,
+  adduser VARCHAR(20),
+  upduser VARCHAR(20),
+  CONSTRAINT hcdevice_pkey
+  PRIMARY KEY (clntid, devid)
+);
+COMMENT ON TABLE hcdevice IS '클라이언트에서 사용한 디바이스 이력
+';
+COMMENT ON COLUMN hcdevice.clntid IS '클라이언트 순번
+';
+COMMENT ON COLUMN hcdevice.devid IS '디바이스 순번
+';
+COMMENT ON COLUMN hcdevice.adddate IS '등록일자
+';
+COMMENT ON COLUMN hcdevice.upddate IS '수정일자
+';
+COMMENT ON COLUMN hcdevice.adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN hcdevice.upduser IS '수정한 사용자
+';
+
+
+
+-- auto-generated definition
+CREATE TABLE issue
+(
+  projid      INTEGER NOT NULL,
+  seq         INTEGER NOT NULL,
+  phid        INTEGER NOT NULL,
+  isudesc     VARCHAR(100),
+  adddate     DATE DEFAULT ('now' :: TEXT) :: DATE,
+  upddate     DATE,
+  adduser     VARCHAR(20),
+  upduser     VARCHAR(20),
+  isuname     VARCHAR(100),
+  category    CHAR DEFAULT 0,
+  seriousness CHAR,
+  procedure   VARCHAR(1000),
+  status      CHAR,
+  attach      VARCHAR(100),
+  CONSTRAINT issue_pkey
+  PRIMARY KEY (projid, seq)
+);
+COMMENT ON TABLE issue IS '이슈';
+COMMENT ON COLUMN issue.projid IS '프로젝트 순번
+';
+COMMENT ON COLUMN issue.seq IS '이슈 순번
+';
+COMMENT ON COLUMN issue.phid IS 'Phase 순번
+';
+COMMENT ON COLUMN issue.isudesc IS '이슈 설명
+';
+COMMENT ON COLUMN issue.adddate IS '등록일자
+';
+COMMENT ON COLUMN issue.upddate IS '수정일자
+';
+COMMENT ON COLUMN issue.adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN issue.upduser IS '수정한 사용자
+';
+COMMENT ON COLUMN issue.isuname IS '이슈 명';
+COMMENT ON COLUMN issue.category IS '분류 0:note, 1:issue, 2:defect';
+COMMENT ON COLUMN issue.seriousness IS '심각도 0:Critical, 1:Major, 2:Minor';
+COMMENT ON COLUMN issue.procedure IS '재현절차';
+COMMENT ON COLUMN issue.status IS '상태 0:New, 1:Open, 2:Assigned, 3:Resolved, 4:Closed, 5:Reopened';
+COMMENT ON COLUMN issue.attach IS '첨부 파일 패스';
+
+
+-- auto-generated definition
+CREATE TABLE license
+(
+  serverid   INTEGER DEFAULT 0 NOT NULL
+    CONSTRAINT license_pkey
+    PRIMARY KEY,
+  commercial CHAR              NOT NULL,
+  enddate    DATE,
+  maxuser    INTEGER,
+  maxdevice  INTEGER,
+  adddate    DATE DEFAULT ('now' :: TEXT) :: DATE,
+  upddate    DATE,
+  adduser    VARCHAR(20),
+  upduser    VARCHAR(20)
+);
+COMMENT ON COLUMN license.serverid IS '서버 ID
+';
+COMMENT ON COLUMN license.commercial IS '0:상용 1:trial
+';
+COMMENT ON COLUMN license.enddate IS '만료일자
+';
+COMMENT ON COLUMN license.maxuser IS '사용자 수
+';
+COMMENT ON COLUMN license.maxdevice IS '사용 가능한 디바이스 수
+';
+COMMENT ON COLUMN license.adddate IS '등록일자
+';
+COMMENT ON COLUMN license.upddate IS '수정일자
+';
+COMMENT ON COLUMN license.adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN license.upduser IS '수정한 사용자
+';
+
+
+-- auto-generated definition
+CREATE TABLE phase
+(
+  projid   INTEGER NOT NULL,
+  phid     INTEGER NOT NULL,
+  abbr     CHAR(3),
+  name     VARCHAR,
+  "desc"   VARCHAR,
+  "user"   VARCHAR,
+  status   CHAR DEFAULT 0,
+  fromdate DATE,
+  todate   DATE,
+  adddate  DATE DEFAULT ('now' :: TEXT) :: DATE,
+  upddate  DATE,
+  upduser  VARCHAR,
+  attach   VARCHAR(100),
+  CONSTRAINT phase_pkey
+  PRIMARY KEY (projid, phid)
+);
+COMMENT ON COLUMN phase.projid IS '프로젝트 순번
+';
+COMMENT ON COLUMN phase.phid IS 'Phase 순번
+';
+COMMENT ON COLUMN phase.abbr IS '약어
+';
+COMMENT ON COLUMN phase.name IS 'phase 명
+';
+COMMENT ON COLUMN phase."desc" IS 'Phase 설명
+';
+COMMENT ON COLUMN phase."user" IS '등록한 사용자
+';
+COMMENT ON COLUMN phase.status IS '0:Ongoing 1:Hold 2:End
+';
+COMMENT ON COLUMN phase.fromdate IS 'Phase 시작일
+';
+COMMENT ON COLUMN phase.todate IS 'Phase 종료일
+';
+COMMENT ON COLUMN phase.adddate IS '등록일자
+';
+COMMENT ON COLUMN phase.upddate IS '수정일자
+';
+COMMENT ON COLUMN phase.upduser IS '수정한 사용자
+';
+COMMENT ON COLUMN phase.attach IS '첨부 파일 패스';
+
+
+-- auto-generated definition
+CREATE TABLE project
+(
+  projid   SERIAL      NOT NULL
+    CONSTRAINT project_pkey
+    PRIMARY KEY,
+  name     VARCHAR(30) NOT NULL,
+  "desc"   VARCHAR(100),
+  "user"   VARCHAR(20),
+  adddate  DATE DEFAULT ('now' :: TEXT) :: DATE,
+  upddate  DATE,
+  upduser  VARCHAR(20),
+  abbr     CHAR(3),
+  status   CHAR,
+  fromdate DATE,
+  todate   DATE,
+  attach   VARCHAR(200)
+);
+COMMENT ON TABLE project IS '프로젝트 정보
+';
+COMMENT ON COLUMN project.projid IS '프로젝트 순번
+';
+COMMENT ON COLUMN project.name IS '프로젝트 명
+';
+COMMENT ON COLUMN project."desc" IS '프로젝트 설명
+';
+COMMENT ON COLUMN project."user" IS '등록한 사용자
+';
+COMMENT ON COLUMN project.adddate IS '등록일자
+';
+COMMENT ON COLUMN project.upddate IS '수정일자
+';
+COMMENT ON COLUMN project.upduser IS '수정한 사용자
+';
+COMMENT ON COLUMN project.abbr IS '약어';
+COMMENT ON COLUMN project.status IS '프로젝트 진행 상태. 0:Ongoing 1:Hold 2:End';
+COMMENT ON COLUMN project.fromdate IS '프로젝트 시작일';
+COMMENT ON COLUMN project.todate IS '프로젝트 종료일';
+COMMENT ON COLUMN project.attach IS '첨부 파일 패스';
+
+
+-- auto-generated definition
+CREATE TABLE replay
+(
+  projid    INTEGER NOT NULL,
+  senid     INTEGER NOT NULL,
+  resid     INTEGER NOT NULL,
+  repeatnum INTEGER NOT NULL,
+  seq       INTEGER NOT NULL,
+  result    VARCHAR NOT NULL,
+  CONSTRAINT replay_pkey
+  PRIMARY KEY (projid, resid, senid, seq, repeatnum)
+);
+COMMENT ON COLUMN replay.projid IS '프로젝트 순번';
+COMMENT ON COLUMN replay.senid IS '시나리오 id';
+COMMENT ON COLUMN replay.resid IS '결과 순번';
+COMMENT ON COLUMN replay.repeatnum IS '리플레이 순번';
+COMMENT ON COLUMN replay.seq IS '이벤트 순번';
+COMMENT ON COLUMN replay.result IS '이벤트 결과';
+
+
+
+-- auto-generated definition
+CREATE TABLE resource
+(
+  senid        INTEGER NOT NULL,
+  resid        INTEGER NOT NULL,
+  monitorno    INTEGER NOT NULL,
+  cpu_user     REAL,
+  cpu_kernel   REAL,
+  battery_free INTEGER,
+  bat_tempo    REAL,
+  projid       INTEGER NOT NULL,
+  cpu          VARCHAR,
+  memory       VARCHAR,
+  battery      VARCHAR,
+  network      VARCHAR,
+  param        VARCHAR,
+  cpu_min      VARCHAR(10),
+  cpu_max      VARCHAR(10),
+  battery_min  VARCHAR(10),
+  battery_max  VARCHAR(10),
+  memory_min   VARCHAR(10),
+  memory_max   VARCHAR(10),
+  network_min  VARCHAR(10),
+  network_max  VARCHAR(10),
+  action       VARCHAR,
+  CONSTRAINT resource_pkey
+  PRIMARY KEY (projid, senid, resid, monitorno)
+);
+COMMENT ON TABLE resource IS '리소스 모니터 결과
+';
+COMMENT ON COLUMN resource.senid IS '시나리오 id
+';
+COMMENT ON COLUMN resource.resid IS '결과 순번
+';
+COMMENT ON COLUMN resource.monitorno IS '모니터링 순번
+';
+COMMENT ON COLUMN resource.cpu_user IS 'cpu user (%)
+';
+COMMENT ON COLUMN resource.cpu_kernel IS 'cpu kernel (%)
+';
+COMMENT ON COLUMN resource.battery_free IS 'battery 남은 용량 (%)
+';
+COMMENT ON COLUMN resource.bat_tempo IS 'battery 온도 (℃)
+';
+COMMENT ON COLUMN resource.projid IS '프로젝트 순번';
+COMMENT ON COLUMN resource.cpu IS 'cpu 점유율 (%)
+';
+COMMENT ON COLUMN resource.memory IS '메모리 사용량 (kb)
+';
+COMMENT ON COLUMN resource.battery IS 'battery 사용량 (mAh)
+';
+COMMENT ON COLUMN resource.network IS '네트웍 처리량
+';
+COMMENT ON COLUMN resource.cpu_min IS '최소 CPU값';
+COMMENT ON COLUMN resource.cpu_max IS '최대 CPU값';
+COMMENT ON COLUMN resource.battery_min IS '최소 BATTERY값';
+COMMENT ON COLUMN resource.battery_max IS '최대 BATTERY값';
+COMMENT ON COLUMN resource.memory_min IS '최소 MEMORY값';
+COMMENT ON COLUMN resource.memory_max IS '최대 MEMORY값';
+COMMENT ON COLUMN resource.network_min IS '최소 NETWORK값';
+COMMENT ON COLUMN resource.network_max IS '최대 NETWORK값';
+
+
+
+-- auto-generated definition
+CREATE TABLE result
+(
+  senid       INTEGER NOT NULL,
+  resid       INTEGER NOT NULL,
+  devid       INTEGER,
+  resname     VARCHAR(200),
+  devname     VARCHAR(50),
+  appid       INTEGER,
+  appname     VARCHAR(30),
+  interval    INTEGER DEFAULT 1,
+  result      CHAR,
+  reason      VARCHAR(100),
+  seriousness CHAR,
+  procedure   VARCHAR(2000),
+  status      CHAR,
+  attach      VARCHAR(100),
+  systemlog   VARCHAR(102400),
+  eventlog    VARCHAR(102400),
+  etclog      VARCHAR(102400),
+  adddate     DATE    DEFAULT ('now' :: TEXT) :: DATE,
+  addtime     TIME    DEFAULT ('now' :: TEXT) :: ABSTIME,
+  adduser     VARCHAR(20),
+  repeat      INTEGER DEFAULT 1,
+  projid      INTEGER NOT NULL,
+  starttime   TIMESTAMP WITH TIME ZONE,
+  endtime     TIMESTAMP WITH TIME ZONE,
+  CONSTRAINT result_pkey
+  PRIMARY KEY (projid, senid, resid)
+);
+COMMENT ON TABLE result IS '테스트 결과
+';
+COMMENT ON COLUMN result.senid IS '시나리오 id
+';
+COMMENT ON COLUMN result.resid IS '결과 순번
+';
+COMMENT ON COLUMN result.devid IS '디바이스 순번
+';
+COMMENT ON COLUMN result.resname IS '결과 명';
+COMMENT ON COLUMN result.devname IS '디바이스 명';
+COMMENT ON COLUMN result.appid IS 'App ID';
+COMMENT ON COLUMN result.appname IS 'App Name';
+COMMENT ON COLUMN result.interval IS '모니터 주기
+';
+COMMENT ON COLUMN result.result IS 'Case 수행 결과 0:Pass, 1:Fail, 2:N/A, 3:N/I';
+COMMENT ON COLUMN result.reason IS '실패 사유';
+COMMENT ON COLUMN result.seriousness IS '심각도 0:Critical, 1:Major, 2:Minor';
+COMMENT ON COLUMN result.procedure IS '재현절차';
+COMMENT ON COLUMN result.status IS '상태 0:New, 1:Open, 2:Assignde, 3:Resolved, 4:Closed, 5:Reopened';
+COMMENT ON COLUMN result.attach IS '첨부 파일 패스';
+COMMENT ON COLUMN result.systemlog IS '시스템 로그';
+COMMENT ON COLUMN result.eventlog IS '이벤트 로그';
+COMMENT ON COLUMN result.etclog IS '기타 로그';
+COMMENT ON COLUMN result.adddate IS '등록일자';
+COMMENT ON COLUMN result.addtime IS '등록시간';
+COMMENT ON COLUMN result.adduser IS '등록한 사용자';
+COMMENT ON COLUMN result.repeat IS '테스트 반복 횟수';
+COMMENT ON COLUMN result.projid IS '프로젝트 순번';
+
+
+
+-- auto-generated definition
+CREATE TABLE scenario
+(
+  projid   INTEGER     NOT NULL,
+  senid    INTEGER     NOT NULL,
+  phid     INTEGER     NOT NULL,
+  senaname VARCHAR(50) NOT NULL,
+  devid    INTEGER,
+  appid    INTEGER,
+  adddate  DATE DEFAULT ('now' :: TEXT) :: DATE,
+  upddate  DATE,
+  adduser  VARCHAR(20),
+  upduser  VARCHAR(20),
+  senaabbr CHAR(10),
+  senadesc VARCHAR(100),
+  category CHAR DEFAULT 1,
+  attach   VARCHAR(100),
+  expect   VARCHAR(100),
+  CONSTRAINT senario_pkey
+  PRIMARY KEY (projid, senid)
+);
+COMMENT ON TABLE scenario IS '시나리오 정보
+';
+COMMENT ON COLUMN scenario.projid IS '프로젝트 순번
+';
+COMMENT ON COLUMN scenario.senid IS '시나리오 id
+';
+COMMENT ON COLUMN scenario.phid IS 'phase id
+';
+COMMENT ON COLUMN scenario.senaname IS '시나리오 이름
+';
+COMMENT ON COLUMN scenario.devid IS '기본 디바이스 순번
+';
+COMMENT ON COLUMN scenario.appid IS 'App 순번
+';
+COMMENT ON COLUMN scenario.adddate IS '등록일자
+';
+COMMENT ON COLUMN scenario.upddate IS '수정일자
+';
+COMMENT ON COLUMN scenario.adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN scenario.upduser IS '수정한 사용자
+';
+COMMENT ON COLUMN scenario.senaabbr IS ' 약어';
+COMMENT ON COLUMN scenario.senadesc IS '시나리오 설명';
+COMMENT ON COLUMN scenario.category IS '분류 0:매뉴얼 테스트, 1:리소스 모니터링, 2:테스트 자동화
+';
+COMMENT ON COLUMN scenario.attach IS '첨부 파일 패스
+';
+COMMENT ON COLUMN scenario.expect IS '예상 결과
+';
+
+
+
+-- auto-generated definition
+CREATE TABLE usedevice
+(
+  userid  VARCHAR(20)  NOT NULL,
+  devid   INTEGER      NOT NULL,
+  serial  VARCHAR(100) NOT NULL,
+  adddate DATE DEFAULT ('now' :: TEXT) :: DATE,
+  adduser VARCHAR(20),
+  CONSTRAINT usedevice_pkey
+  PRIMARY KEY (userid, devid)
+);
+COMMENT ON TABLE usedevice IS '사용자가 사용한 디바이스';
+COMMENT ON COLUMN usedevice.userid IS '사용자 ID';
+COMMENT ON COLUMN usedevice.devid IS '디바이스 순번';
+COMMENT ON COLUMN usedevice.serial IS '디바이스 Serial No';
+COMMENT ON COLUMN usedevice.adddate IS '등록일자';
+COMMENT ON COLUMN usedevice.adduser IS '등록한 사용자';
+
+
+
+-- auto-generated definition
+CREATE TABLE useproj
+(
+  projid  INTEGER     NOT NULL,
+  userid  VARCHAR(20) NOT NULL,
+  role    CHAR DEFAULT 1,
+  adddate DATE DEFAULT ('now' :: TEXT) :: DATE,
+  adduser VARCHAR(20),
+  CONSTRAINT useproj_pkey
+  PRIMARY KEY (projid, userid)
+);
+COMMENT ON TABLE useproj IS '프로젝트를 이용하는 사용자';
+COMMENT ON COLUMN useproj.projid IS '프로젝트 순번';
+COMMENT ON COLUMN useproj.userid IS '사용자';
+COMMENT ON COLUMN useproj.role IS '역할 (0:책임자, 1:참여자)';
+COMMENT ON COLUMN useproj.adddate IS '등록일자';
+COMMENT ON COLUMN useproj.adduser IS '등록한 사용자';
+
+
+
+-- auto-generated definition
+CREATE TABLE "user"
+(
+  id      VARCHAR(20)  NOT NULL
+    CONSTRAINT user_pkey
+    PRIMARY KEY,
+  pwd     VARCHAR(100) NOT NULL,
+  name    VARCHAR(100),
+  role    CHAR    DEFAULT 1,
+  clntid  INTEGER DEFAULT '-1' :: INTEGER,
+  telno   CHAR(100),
+  email   VARCHAR(100),
+  adddate DATE    DEFAULT ('now' :: TEXT) :: DATE,
+  upddate DATE,
+  adduser VARCHAR(20),
+  upduser VARCHAR(20),
+  company VARCHAR(50),
+  paper   VARCHAR(100),
+  devid   INTEGER,
+  appid   INTEGER
+);
+COMMENT ON TABLE "user" IS '사용자 정보. 로그인 인증 및 권한
+';
+COMMENT ON COLUMN "user".id IS '사용자 ID
+';
+COMMENT ON COLUMN "user".pwd IS '비밀번호
+';
+COMMENT ON COLUMN "user".name IS '이름
+';
+COMMENT ON COLUMN "user".role IS '권한 (0:관리자)
+';
+COMMENT ON COLUMN "user".clntid IS '고정된 클라이언트 사용시 클라이언트 번호
+';
+COMMENT ON COLUMN "user".telno IS '전화번호
+';
+COMMENT ON COLUMN "user".email IS '이메일
+';
+COMMENT ON COLUMN "user".adddate IS '등록일자
+';
+COMMENT ON COLUMN "user".upddate IS '수정일자
+';
+COMMENT ON COLUMN "user".adduser IS '등록한 사용자
+';
+COMMENT ON COLUMN "user".upduser IS '수정한 사용자
+';
+COMMENT ON COLUMN "user".company IS '소속 기업';
+COMMENT ON COLUMN "user".paper IS '증빙서류 파일 위치';
+COMMENT ON COLUMN "user".devid IS '디폴트 디바이스 순번';
+COMMENT ON COLUMN "user".appid IS '디폴트 App 순번';

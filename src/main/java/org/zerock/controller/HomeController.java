@@ -43,10 +43,12 @@ public class HomeController {
 
         model.addAttribute("serverTime", formattedDate);
 
-        HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
-        String ip = req.getHeader("X-FORWARDED-FOR");
+        // Spring 에서 client ip 가져오는 법. https://www.lesstif.com/pages/viewpage.action?pageId=18220218
+        HttpServletRequest httpServletRequest =
+                ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+        String ip = httpServletRequest.getHeader("X-FORWARDED-FOR");
         if (ip == null)
-            ip = req.getRemoteAddr();
+            ip = httpServletRequest.getRemoteAddr();
 
         model.addAttribute("clientIP", ip);
 
