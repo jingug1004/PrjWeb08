@@ -46,9 +46,23 @@ public class HomeController {
         // Spring 에서 client ip 가져오는 법. https://www.lesstif.com/pages/viewpage.action?pageId=18220218
         HttpServletRequest httpServletRequest =
                 ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+
+        /*
         String ip = httpServletRequest.getHeader("X-FORWARDED-FOR");
         if (ip == null)
             ip = httpServletRequest.getRemoteAddr();
+        */
+        // 출처: http://sesok808.tistory.com/378 [살아가는 그 이유]
+        String ip = httpServletRequest.getHeader("X-FORWARDED-FOR");
+        if (ip == null || ip.length() == 0) {
+            ip = httpServletRequest.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0) {
+            ip = httpServletRequest.getHeader("WL-Proxy-Client-IP");  // 웹로직
+        }
+        if (ip == null || ip.length() == 0) {
+            ip = httpServletRequest.getRemoteAddr();
+        }
 
         model.addAttribute("clientIP", ip);
 
