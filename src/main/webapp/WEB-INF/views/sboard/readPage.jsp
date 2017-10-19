@@ -269,7 +269,6 @@
                         <hr/>
                     </div>
 
-
                     <%-- 첨부파일 되어있을 때 보여지는 위치 // 클래스 uploadedList에 의하여 --%>
                     <ul class="mailbox-attachments clearfix uploadedList"></ul>
                     <%--조회 페이지에서 기존에 업로드 된 파일들이 보여질 수 있는 영역을 작성하고, upload.js와 handlebars를 설정.--%>

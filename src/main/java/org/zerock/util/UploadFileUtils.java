@@ -87,6 +87,8 @@ public class UploadFileUtils {
     // 기본적인 경로(uploadPath)를 파라미터로 전달받음.
     private static String calcPath(String uploadPath) {
 
+        logger.info("");
+
         Calendar cal = Calendar.getInstance();
 
         String yearPath = File.separator + cal.get(Calendar.YEAR);
