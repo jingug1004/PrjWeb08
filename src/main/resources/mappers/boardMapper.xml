@@ -26,9 +26,12 @@
         where bno = #{bno}
     </update>
 
-    <delete id="delete">
-        delete from tbl_board where bno = #{bno}
-    </delete>
+    <!-- SQL delete 에서 update 로 바꿈 -->
+    <!-- <delete id="delete"> delete from tbl_board where bno = #{bno} </delete> -->
+    <update id="delete">
+        UPDATE tbl_board SET boardvisible = 'N'
+        WHERE bno = #{bno}
+    </update>
 
     <!-- 테스트용 무시하자! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
     <select id="listAll" resultType="org.zerock.domain.BoardVO">
@@ -109,6 +112,7 @@
               select *
               from tbl_board
               where bno > 0 AND cnum = #{cate}
+              AND boardvisible = 'Y'
         ]]>
 
         <include refid="search"></include>
@@ -130,7 +134,9 @@
         <![CDATA[
           select count(bno)
           from tbl_board
-          where bno > 0 AND cnum = #{cate}
+          where bno > 0
+          AND cnum = #{cate}
+          AND boardvisible = 'Y'
         ]]>
         <include refid="search"></include>
     </select>
@@ -139,6 +145,7 @@
     <select id="listSearchAny" resultType="BoardVO">
         SELECT * FROM tbl_board
         WHERE bno > 0
+        AND boardvisible = 'Y'
         AND (title LIKE concat('%', #{keyword}, '%')
         OR content LIKE concat('%', #{keyword}, '%')
         OR writer LIKE concat('%', #{keyword}, '%'))
@@ -159,6 +166,7 @@
         SELECT COUNT(bno)
         FROM tbl_board
         WHERE bno > 0
+        AND boardvisible = 'Y'
         ]]>
         AND (
         writer LIKE concat('%', #{keyword}, '%')

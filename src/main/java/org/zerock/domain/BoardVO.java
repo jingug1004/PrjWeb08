@@ -29,6 +29,8 @@ public class BoardVO {
 
     private String[] files;
 
+    private String boardvisible;
+
 
     public int getCnum() {
         return cnum;
@@ -222,6 +224,10 @@ public class BoardVO {
         this.updatedate = updatedate;
     }
 
+    public String getBoardvisible() {return boardvisible;}
+
+    public void setBoardvisible(String boardvisible) {this.boardvisible = boardvisible;}
+
     @Override
     public String toString() {
         return "BoardVO{" +
@@ -239,6 +245,7 @@ public class BoardVO {
                 ", replycnt=" + replycnt +
                 ", cnum=" + cnum +
                 ", files=" + Arrays.toString(files) +
+                ", boardvisible='" + boardvisible + '\'' +
                 '}';
     }
 }

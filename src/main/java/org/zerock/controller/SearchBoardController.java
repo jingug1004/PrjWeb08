@@ -42,14 +42,14 @@ public class SearchBoardController {
      *
      * @param cri     SearchCriteria -> cri
      * @param model   the model
-     * @param cateNum 카테고리 - 넘버 기준으로 나뉨.
+//     * @param cateNum 카테고리 - 넘버 기준으로 나뉨.
      * @throws Exception the exception
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String listPage(@ModelAttribute("cri") SearchCriteria cri,
                            Model model,
                            BoardVO boardVO,
-                           @RequestParam(required = false, value = "cate") int cateNum,
+                           @RequestParam(required = false, value = "cate") Integer cateNum,
                            @RequestParam(required = false, value = "cntSortType") String cntSortType) throws Exception {
 
         RateMaker rateMaker = new RateMaker();
@@ -63,8 +63,10 @@ public class SearchBoardController {
         pageMaker.setCnumFromBoardVO(boardVO.getCnum());            // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
         pageMaker.setTotalCount(boardService.listSearchCount(cri)); // pageMaker.setTotalCount(boardService.listCountCriteria(cri));
         model.addAttribute("pageMaker", pageMaker);
-        model.addAttribute("cateName", cateNum);                                    // 리스트 목록 상단에 카테고리 이름 출력!
-        model.addAttribute("cateName", boardService.callCateNameInList(cateNum));   // 게시판 상세 글의 카테고리 이름 출력
+//        model.addAttribute("cateName", cateNum);                                    // 리스트 목록 상단에 카테고리 이름 출력!
+        model.addAttribute("cateName", boardVO.getCnum());                                    // 리스트 목록 상단에 카테고리 이름 출력!
+//        model.addAttribute("cateName", boardService.callCateNameInList(cateNum));   // 게시판 상세 글의 카테고리 이름 출력
+        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));   // 게시판 상세 글의 카테고리 이름 출력
 
         return "sboard/list";
     }
@@ -120,7 +122,7 @@ public class SearchBoardController {
     }
 
     /**
-     * Remove string.
+     * SQL delete 에서 update 로 바꿈. 전달 메소드는 remove지만 마이바티스는 update로!
      *
      * @param bno  the bno
      * @param cri  the cri
@@ -130,21 +132,54 @@ public class SearchBoardController {
      */
     @RequestMapping(value = "/removePage", method = RequestMethod.POST)
     public String remove(@RequestParam("bno") int bno,
-                         @RequestParam("cate") int cateNum,
+                         @RequestParam(required = false, value = "cate") Integer cateNum,
                          SearchCriteria cri,
                          RedirectAttributes rttr) throws Exception {
 
-        boardService.remove(bno);
+        boardService.remove(bno); // SQL delete 에서 update 로 바꿈. 전달 메소드는 remove지만 마이바티스는 update로!
 
-        rttr.addAttribute("page", cri.getPage());
-        rttr.addAttribute("cate", cateNum); // RedirectAttributes 추가하면 URL 전달 가능 => 밑의 리턴값 "redirect: ... " 와 같겠지?
-        rttr.addAttribute("perPageNum", cri.getPerPageNum());
-        rttr.addAttribute("searchType", cri.getSearchType());
-        rttr.addAttribute("keyword", cri.getKeyword());
+//        String valCatenum = String.valueOf(cateNum);
 
-        rttr.addFlashAttribute("msg", "SUCCESS");
+        if (cateNum != null) {
+            rttr.addAttribute("page", cri.getPage());
+            rttr.addAttribute("cate", cateNum); // RedirectAttributes 추가하면 URL 전달 가능 => 밑의 리턴값 "redirect: ... " 와 같겠지?
+            rttr.addAttribute("perPageNum", cri.getPerPageNum());
+            rttr.addAttribute("searchType", cri.getSearchType());
+            rttr.addAttribute("keyword", cri.getKeyword());
 
-        return "redirect:/sboard/list";
+            rttr.addFlashAttribute("msg", "SUCCESS");
+
+            logger.info("lllll~~~~~ valCatenum 01 : " + cateNum);
+
+            return "redirect:/sboard/list";
+        }
+
+        if (cateNum == null){
+            rttr.addAttribute("page", cri.getPage());
+            rttr.addAttribute("perPageNum", cri.getPerPageNum());
+            rttr.addAttribute("keyword", cri.getKeyword());
+
+            rttr.addFlashAttribute("msg", "SUCCESS");
+
+            logger.info("lllll~~~~~ valCatenum 02 : " + cateNum);
+
+            return "redirect:/sboard/listAny";
+        }
+
+//        else {
+//            rttr.addAttribute("page", cri.getPage());
+//            rttr.addAttribute("perPageNum", cri.getPerPageNum());
+//            rttr.addAttribute("keyword", cri.getKeyword());
+//
+//            rttr.addFlashAttribute("msg", "SUCCESS");
+//
+//            logger.info("lllll~~~~~ valCatenum 02 : " + valCatenum);
+//
+//            return "redirect:/sboard/listAny";
+//        }
+
+        return null;
+
     }
 
     /**

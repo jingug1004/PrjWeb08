@@ -75,7 +75,7 @@
                             <th style="width: 40px; text-align: center;" id="goodSort">Good</th>
                             <th style="width: 40px; text-align: center;" id="gbSort">G/B</th>
                             <th style="width: 40px;  text-align: center;" id="badSort">Bad</th>
-                            <th style="width: 80px; text-align: center;">WRITER</th>
+                            <th style="width: 100px; text-align: center;">WRITER</th>
                             <th style="width: 100px; text-align: center;">REGDATE</th>
                             <th style="width: 40px; text-align: center;" id="spamSort">Spam</th>
                             <th style="width: 40px; text-align: center;" id="viewSort">VIEW</th>

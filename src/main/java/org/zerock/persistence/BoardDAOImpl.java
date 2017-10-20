@@ -46,9 +46,10 @@ public class BoardDAOImpl implements BoardDAO {
         session.update(namespace + ".update", vo);
     }
 
+    // SQL delete 에서 update 로 바꿈. 전달 메소드는 remove지만 마이바티스는 update로!
     @Override
     public void delete(Integer bno) throws Exception {
-        session.delete(namespace + ".delete", bno);
+        session.update(namespace + ".delete", bno);
     }
 
     // 정말 무시하자! 옛날 거! ---------------------------------------------------------

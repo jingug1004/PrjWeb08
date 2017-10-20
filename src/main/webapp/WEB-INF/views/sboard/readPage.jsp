@@ -277,7 +277,9 @@
                         <button type="submit" class="btn btn-warning" id="modifyBtn">수정</button>
                         <button type="submit" class="btn btn-danger" id="removeBtn">삭제</button>
                     </c:if>
-                    <button type="submit" class="btn btn-primary" id="goListBtn">메뉴</button>
+                    <a name="goListBtnTest"></a>
+                    <%--<button &lt;%&ndash;type="submit" &ndash;%&gt;name="goListBtn" class="btn btn-primary" id="goListBtn01">메뉴</button>--%>
+                    <%--<button &lt;%&ndash;type="submit"&ndash;%&gt;name="goListBtn" class="btn btn-primary" id="goListBtn02">메뉴</button>--%>
                 </div>
             </div>
             <!-- /.box -->
@@ -732,7 +734,20 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         // 현재 첨부파일의 이름을 배열로 작성해서 UploadController에 Ajax 방식으로 첨부파일에 대한 삭제를 지시.
         // 첨부파일 삭제 이후에 바로 <form> 태그를 이용해서 데이터베이스의 삭제를 처리할 것이므로, 성공이나 실패를 기다리지 않고, 바로 '/sboard/removePage'를 호출하는 형태로 작성.
 
-        $("#goListBtn ").on("click", function () {
+        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn01">메뉴1</button>';
+        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn02">메뉴2</button>';
+
+        function validMenuInReadPage() {
+            if(getUrlParams().cate) {
+                $('a[name = "goListBtnTest"]').html(goListBtn01);
+            } else {
+                $('a[name = "goListBtnTest"]').html(goListBtn02);
+            }
+        }
+
+        validMenuInReadPage();
+
+        $("#goListBtn01").on("click", function () {
 
             // 전체 검색 했을 때 뒤로가기 누르면 /sboard/list 로 매핑 호출되면 안 되기 때문에.
             formObj.attr("method", "get");
@@ -740,6 +755,16 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             formObj.submit();
             // history.back();
         });
+
+        $("#goListBtn02").on("click", function () {
+
+            // 전체 검색 했을 때 뒤로가기 누르면 /sboard/list 로 매핑 호출되면 안 되기 때문에.
+            formObj.attr("method", "get");
+            formObj.attr("action", "/sboard/listAny?keyword=" + getUrlParams().keyword);
+            formObj.submit();
+            // history.back();
+        });
+
 
 //        "{boardVO.bno}", "{cri.page}", "{cri.perPageNum}" 의 정보를 이용하는 방식으로 변경 되었음.
 
