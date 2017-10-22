@@ -27,18 +27,18 @@ public class BoardServiceImpl implements BoardService {
 
 
     @Inject
-    private BoardDAO dao;
+    private BoardDAO boardDAO;
 
     /*
     @Override
     public void regist(BoardVO board) throws Exception {
-        dao.create(board);
+        boardDAO.create(board);
     }
     */
 
     /**
      * BoardDAO의 create()와 addAttach()를 연속으로 사용하기 때문에 코드는 아래와 같이 트랜잭션을 처리하는 방식으로 변경.
-     * 작업의 순서는 먼저 게시물을 등록하는 dao.create()를 호출한 후 첨부파일의 이름 배열을 이용해서 각각의 파일 이름을 데이터베이스에 추가하는 형태로 구현.
+     * 작업의 순서는 먼저 게시물을 등록하는 boardDAO.create()를 호출한 후 첨부파일의 이름 배열을 이용해서 각각의 파일 이름을 데이터베이스에 추가하는 형태로 구현.
      *
      * @param board
      */
@@ -46,7 +46,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void regist(BoardVO board) throws Exception {
 
-        dao.create(board);
+        boardDAO.create(board);
 
         String[] files = board.getFiles();
 
@@ -57,14 +57,14 @@ public class BoardServiceImpl implements BoardService {
         }
 
         for (String fileName : files) {
-            dao.addAttach(fileName);
+            boardDAO.addAttach(fileName);
         }
 
     }
 
 //    @Override
 //    public BoardVO read(Integer bno) throws Exception {
-//        return dao.read(bno);
+//        return boardDAO.read(bno);
 //    }
 
     /**
@@ -77,25 +77,25 @@ public class BoardServiceImpl implements BoardService {
     public BoardVO read(Integer bno) throws Exception {
 
         /* 조회수 증가(업데이트) */
-        dao.updateViewCnt(bno);
+        boardDAO.updateViewCnt(bno);
 
-        return dao.read(bno);
+        return boardDAO.read(bno);
     }
 
     @Override
     public String callCateName(int bno) throws Exception {
-        return dao.callCateName(bno);               // 게시판 상세 글의 카테고리 이름 출력
+        return boardDAO.callCateName(bno);               // 게시판 상세 글의 카테고리 이름 출력
     }
 
     @Override
     public String callCateNameInList(int cateNum) throws Exception {
-        return dao.callCateNameInList(cateNum);     // 게시판 리스트(목록 - List)의 카테고리 이름 출력
+        return boardDAO.callCateNameInList(cateNum);     // 게시판 리스트(목록 - List)의 카테고리 이름 출력
     }
 
     /*
     @Override
     public void modify(BoardVO board) throws Exception {
-        dao.update(board);
+        boardDAO.update(board);
     }
     */
 
@@ -108,11 +108,11 @@ public class BoardServiceImpl implements BoardService {
     @Transactional
     @Override
     public void modify(BoardVO board) throws Exception {
-        dao.update(board);
+        boardDAO.update(board);
 
         Integer bno = board.getBno();
 
-        dao.deleteAttach(bno);
+        boardDAO.deleteAttach(bno);
 
         String[] files = board.getFiles();
 
@@ -121,14 +121,14 @@ public class BoardServiceImpl implements BoardService {
         }
 
         for (String fileName : files) {
-            dao.replaceAttach(fileName, bno);
+            boardDAO.replaceAttach(fileName, bno);
         }
     }
 
     /*
     @Override
     public void remove(Integer bno) throws Exception {
-        dao.delete(bno);
+        boardDAO.delete(bno);
     }
     */
 
@@ -141,25 +141,25 @@ public class BoardServiceImpl implements BoardService {
     @Transactional
     @Override
     public void remove(Integer bno) throws Exception {
-        dao.deleteAttach(bno);
-        dao.delete(bno);
+        boardDAO.deleteAttach(bno);
+        boardDAO.delete(bno);
     }
 
     // 정말 무시하자! 옛날 거!
     @Override
     public List<BoardVO> listAll() throws Exception {
-        return dao.listAll();
+        return boardDAO.listAll();
     }
 
     @Override
     public List<BoardVO> listCriteria(Criteria cri) throws Exception {
-        return dao.listCriteria(cri);
+        return boardDAO.listCriteria(cri);
     }
 
     // 이거 안 씀. 밑의 listSearchCount 씀
     @Override
     public int listCountCriteria(Criteria cri) throws Exception {
-        return dao.countPaging(cri);
+        return boardDAO.countPaging(cri);
     }
 
     // 글 목록 불러오기
@@ -169,7 +169,7 @@ public class BoardServiceImpl implements BoardService {
 //        logger.info("lll~~~ cri.toString() BoardServiceImpl : " + cri.toString() + " lll~~~");
 //        logger.info("lll~~~ cate BoardServiceImpl : " + cate + " lll~~~");
 
-        return dao.listSearch(cri);
+        return boardDAO.listSearch(cri);
     }
 
     @Override
@@ -177,22 +177,22 @@ public class BoardServiceImpl implements BoardService {
 
         logger.info("lll~~~ cri.toString() BoardServiceImpl : " + criteria.toString() + " lll~~~");
 
-        return dao.listSearchAny(criteria);
+        return boardDAO.listSearchAny(criteria);
     }
 
     @Override
     public int listSearchCount(SearchCriteria cri) throws Exception {
-        return dao.listSearchCount(cri);
+        return boardDAO.listSearchCount(cri);
     }
 
     @Override
     public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception {
-        return dao.listSearchAnyCount(criteria);
+        return boardDAO.listSearchAnyCount(criteria);
     }
 
     @Override
     public List<String> getAttach(Integer bno) throws Exception {
-        return dao.getAttach(bno);
+        return boardDAO.getAttach(bno);
     }
 
 

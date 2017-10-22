@@ -75,7 +75,7 @@
                             <th style="width: 40px; text-align: center;" id="goodSort">Good</th>
                             <th style="width: 40px; text-align: center;" id="gbSort">G/B</th>
                             <th style="width: 40px;  text-align: center;" id="badSort">Bad</th>
-                            <th style="width: 100px; text-align: center;">WRITER</th>
+                            <th style="width: 120px; text-align: center;">WRITER</th>
                             <th style="width: 100px; text-align: center;">REGDATE</th>
                             <th style="width: 40px; text-align: center;" id="spamSort">Spam</th>
                             <th style="width: 40px; text-align: center;" id="viewSort">VIEW</th>
@@ -98,6 +98,7 @@
 
                         <c:forEach items="${list}" var="boardVO">
                             <tr>
+                                <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
@@ -109,7 +110,9 @@
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
                                 <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
                                 </td>
-                                <td align="center">${boardVO.writer}</td>
+                                <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                        ${boardVO.writer}
+                                </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd"
                                                                    value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span>
@@ -122,6 +125,7 @@
                         <%-- listAny 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
                         <c:forEach items="${listAny}" var="boardVO">
                             <tr>
+                                <input type="hidden" class="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
@@ -133,7 +137,9 @@
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
                                 <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
                                 </td>
-                                <td align="center">${boardVO.writer}</td>
+                                <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                        ${boardVO.writer}
+                                </td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
                                                                    pattern="yyyy-MM-dd"/></td>
@@ -228,7 +234,7 @@
 <%--ex) www.profile.com?name=hyewon&age=25--%>
 <script>
 
-    // list(리스트)의 g/b 넘버 포맷팅
+    // list(리스트)의 g/b 넘버 포맷팅 Todo: 나머지 넘ㅂ 버 ㅗ포맷팅 해야ㅏ함
     $('.listgbcnt').number(true);
 
     function getUrlParams() {
@@ -241,11 +247,7 @@
 
     $(document).ready(function () {
 
-//        alert("prevSelfLocation start : " + prevSelfLocation);
-
         var allUrlAddr = $(location).attr('href');
-
-//       prevSelfLocation = null;
 
         $('#searchBtn01').on("click", function (event) { // cate
             self.location = "list"
@@ -265,8 +267,8 @@
                 // + $("select option:selected").val()
                 + "&keyword="
                 + $('#keywordInputCate').val();
-                // + "&cate="
-                // + oParams.cate;
+            // + "&cate="
+            // + oParams.cate;
         });
 
         window.onload = function () {

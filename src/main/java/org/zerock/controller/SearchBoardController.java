@@ -238,17 +238,24 @@ public class SearchBoardController {
     /**
      * 등록 화면 Post
      *
-     * @param board the board
+     * @param boardVO the boardVO
      * @param rttr  the rttr
      * @return the string
      * @throws Exception the exception
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registPOST(BoardVO board,
+    public String registPOST(BoardVO boardVO,
                              RedirectAttributes rttr,
-                             HttpServletRequest httpServletRequest) throws Exception {
+                             HttpServletRequest httpServletRequest,
+                             HttpSession httpSession) throws Exception {
 
-        boardService.regist(board);
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
+        }
+
+        boardService.regist(boardVO);
 
         rttr.addFlashAttribute("msg", "SUCCESS");
 

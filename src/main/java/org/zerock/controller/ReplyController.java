@@ -27,7 +27,7 @@ import java.util.Map;
 public class ReplyController {
 
     @Inject
-    private ReplyService service;
+    private ReplyService replyService;
 
     /**
      * 만일 새로운 댓글을 등록하는데 실패하면 try~catch에 선언되었듯이 예외의 원인 메시지를 전송하고, 사용자에게는 BAD_REQUEST(400)를 결과로 전송.
@@ -40,7 +40,7 @@ public class ReplyController {
 
         ResponseEntity<String> entity = null;
         try {
-            service.addReply(vo);
+            replyService.addReply(vo);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,7 +61,7 @@ public class ReplyController {
         ResponseEntity<List<ReplyVO>> entity = null;
         try {
             entity = new ResponseEntity<>(
-                    service.listReply(bno), HttpStatus.OK);
+                    replyService.listReply(bno), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -83,7 +83,7 @@ public class ReplyController {
         ResponseEntity<String> entity = null;
         try {
             vo.setRno(rno);
-            service.modifyReply(vo);
+            replyService.modifyReply(vo);
 
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
@@ -104,7 +104,7 @@ public class ReplyController {
 
         ResponseEntity<String> entity = null;
         try {
-            service.removeReply(rno);
+            replyService.removeReply(rno);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
@@ -135,11 +135,11 @@ public class ReplyController {
             pageMaker.setCri(cri);
 
             Map<String, Object> map = new HashMap<String, Object>();
-            List<ReplyVO> list = service.listReplyPage(bno, cri);
+            List<ReplyVO> list = replyService.listReplyPage(bno, cri);
 
             map.put("list", list);
 
-            int replyCount = service.count(bno);
+            int replyCount = replyService.count(bno);
             pageMaker.setTotalCount(replyCount);
 
             map.put("pageMaker", pageMaker);

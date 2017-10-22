@@ -234,7 +234,8 @@
                             </c:if>
                             <c:if test="${not empty login}">
                                 <li>
-                                    <img src="/assets/img/colors/006.png" alt=""> ${login.nickname}님! |
+                                    <img src="/assets/img/colors/000.png" id="getColor" alt="">
+                                    ${login.nickname}님! |
                                     <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |
                                     <a href="<c:url value="/user/logout"/>">Logout</a>
                                 </li>
@@ -570,6 +571,9 @@
     <!--=== End Header v5 ===-->
 
     <script>
+
+        <%--var tempUrl02 = ${login.uday};--%>
+
         $(document).ready(function () {
 
             /* url 쿼리 스트링 구하기 */
@@ -590,6 +594,29 @@
                     return false;
                 }
             });
+
+            // 숫자 앞에 자릿수를 맞추기 위한 0을 넣기 / https://programmers.co.kr/learn/questions/52
+            function pad(n, width) {
+                n = n + '';
+                return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+            }
+            /*
+            pad(10, 4);      // 0010
+            pad(9, 4);       // 0009
+            pad(123, 4);    // 0123
+            pad(1234, 4);   // 1234
+            */
+
+            var tempUrl01 = "/assets/img/colors/";
+            var tempUrl02 = pad(${login.uday}, 3);
+            var tempUrl03 = ".png";
+
+            var tempUrl = "";
+            var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);
+
+            $('#getColor').prop("src", temp);
+
+
         });
 
         /* url 쿼리 스트링 구하기 */

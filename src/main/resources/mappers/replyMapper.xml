@@ -15,8 +15,8 @@
     </select>
 
     <insert id="create">
-        insert into tbl_reply (bno, replytext, replyer)
-        VALUES (#{bno}, #{replytext}, #{replyer})
+        insert into tbl_reply (bno, replytext, replyer, bringreplycolor)
+        VALUES (#{bno}, #{replytext}, #{replyer}, #{bringreplycolor})
     </insert>
 
     <update id="update">

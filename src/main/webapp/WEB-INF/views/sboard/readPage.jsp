@@ -162,7 +162,9 @@
                     <div class="form-group">
                         <div style="display:inline; float: left; width: 100%;">
                             <div style="display: inline; float: left; width: 49%; margin-right: 1%;">
-                                <label for="exampleInputEmail1">Writer</label>
+                                <label for="exampleInputEmail1">
+                                    <img src="/assets/img/colors/${boardVO.getcolor}.png" class="getColor" alt="">
+                                    Writer</label>
                                 <input type="text" name="writer" class="form-control"
                                        value="${boardVO.writer}" readonly="readonly">
                             </div>
@@ -170,13 +172,13 @@
                             <%--<c:choose>--%>
                             <c:if test="${login.uid == goodCntVOGet && login.uid != badCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good1</label>
+                                    <label for="exampleInputEmail1">Good</label>
                                     <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad2</label>
+                                    <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBad" type="text" name="writer"
                                            class="form-control hoverInputRead disaClass"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
@@ -185,14 +187,14 @@
                             </c:if>
                             <c:if test="${login.uid == badCntVOGet && login.uid != goodCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good3</label>
+                                    <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGood" type="text" name="writer"
                                            class="form-control hoverInputRead disaClass"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad4</label>
+                                    <label for="exampleInputEmail1">Bad</label>
                                     <input id="logBad" type="text" name="writer" class="form-control hoverInputReadAct"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
                                            onclick="badcntButton('${login.uid}')">
@@ -200,14 +202,14 @@
                             </c:if>
                             <c:if test="${empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good5</label>
+                                    <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad6</label>
+                                    <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBadPage" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
@@ -216,14 +218,14 @@
                             </c:if>
                             <c:if test="${not empty login.uid && empty goodCntVOGet && empty badCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good7</label>
+                                    <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage02" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad8</label>
+                                    <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBadPage02" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
@@ -235,7 +237,7 @@
 
                             <c:if test="${login.uid == spamCntVOGet && not empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
-                                    <label for="exampleInputEmail1">Spam1</label>
+                                    <label for="exampleInputEmail1">Spam</label>
                                     <input id="logSpam" type="text" name="writer" class="form-control hoverInputReadAct"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
@@ -243,7 +245,7 @@
                             </c:if>
                             <c:if test="${empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
-                                    <label for="exampleInputEmail1">Spam5</label>
+                                    <label for="exampleInputEmail1">Spam</label>
                                     <input id="logNoSpam" type="text" name="writer" class="form-control hoverInputRead"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
@@ -251,7 +253,7 @@
                             </c:if>
                             <c:if test="${not empty login.uid && login.uid != spamCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%">
-                                    <label for="exampleInputEmail1">Spam7</label>
+                                    <label for="exampleInputEmail1">Spam</label>
                                     <input id="logSpamPage" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
@@ -299,11 +301,14 @@
                 <c:if test="${not empty login}">
                     <div class="box-body">
                             <%--@declare id="exampleinputemail1"--%>
-                        <label for="exampleInputEmail1">Writer</label>
+                        <label for="exampleInputEmail1">
+                            <img src="/assets/img/colors/${login.uday}.png" class="getColor" alt="">
+                            Writer</label> <%-- 댓글 등록 --%>
                         <input class="form-control" type="text" placeholder="USER ID" id="newReplyWriter"
                                value="${login.nickname}" readonly="readonly">
                         <label for="exampleInputEmail1">Reply</label>
                         <input class="form-control" type="text" placeholder="Reply TEXT" id="newReplyText">
+                        <input type="hidden" value="${login.uday}" id="newReplyColor">
                     </div>
                     <!--/.box-body-->
 
@@ -316,7 +321,7 @@
 
                 <c:if test="${empty login}">
                     <div class="box-body">
-                        <div><a href="javascript:goLogin();">Login Please</a></div>
+                        <div><a href="javascript:goLogin();">로그인 하셔야 댓글을 달 수 있습니다.</a></div>
                     </div>
                 </c:if>
             </div>
@@ -382,7 +387,7 @@
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
 <%--<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>--%>
 
-<%-- 첨부파일 보이게 하는 스크립트 --%>
+<%-- 등록된 첨부파일 보이게 하는 스크립트 --%>
 <script id="templateAttach" type="text/x-handlebars-template">
     <li data-src='{{fullName}}'>
         <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
@@ -413,7 +418,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 {{/each}}
 </script>--%>
 
-<%-- 댓글 리스트 보이게 하는 스크립트 --%>
+<%-- 등록된 댓글 리스트 보이게 하는 스크립트 --%>
 <script id="template" type="text/x-handlebars-template">
     {{#each .}}
     <li class="replyLi" data-rno={{rno}}>
@@ -423,7 +428,9 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                   <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
                     <%--'prettifyDate regdate'에는 handlebar의 기능을 확장하는 자바스크립트 방법의 예로 사용. --%>
                 </span>
-            <h3 class="timeline-header"><strong>{{rno}}</strong> -{{replyer}}</h3>
+            <h3 class="timeline-header"><strong>{{rno}}</strong>
+                <img src="/assets/img/colors/{{bringreplycolor}}.png" id="getColor" alt="">
+                {{replyer}}</h3>
             <div class="timeline-body">{{replytext}}</div>
             <div class="timeline-footer">
                 {{#eqReplyer replyer }}
@@ -546,8 +553,10 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         var replyerObj = $("#newReplyWriter");
         var replytextObj = $("#newReplyText");
+        var bringreplycolorObj = $("#newReplyColor");
         var replyer = replyerObj.val();
         var replytext = replytextObj.val();
+        var bringreplycolor = bringreplycolorObj.val();
 
         $.ajax({
             type: 'post',
@@ -560,7 +569,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             data: JSON.stringify({
                 bno: bno,
                 replyer: replyer,
-                replytext: replytext
+                replytext: replytext,
+                bringreplycolor: bringreplycolor
             }),
             success: function (result) {
                 console.log("result: " + result);
@@ -734,8 +744,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         // 현재 첨부파일의 이름을 배열로 작성해서 UploadController에 Ajax 방식으로 첨부파일에 대한 삭제를 지시.
         // 첨부파일 삭제 이후에 바로 <form> 태그를 이용해서 데이터베이스의 삭제를 처리할 것이므로, 성공이나 실패를 기다리지 않고, 바로 '/sboard/removePage'를 호출하는 형태로 작성.
 
-        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn01">메뉴1</button>';
-        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn02">메뉴2</button>';
+        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn01">메뉴</button>';
+        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn02">메뉴</button>';
 
         function validMenuInReadPage() {
             if(getUrlParams().cate) {
@@ -954,11 +964,12 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             });
         }
     }
+    
+    function goLogin() {
 
-</script>
-
-<script>
-
+        self.location = "/user/login";
+        
+    }
 
 </script>
 

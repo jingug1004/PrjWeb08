@@ -74,7 +74,7 @@ public class UserController {
 //    }
 
     @Inject
-    private UserService service;
+    private UserService userService;
 
     /**
      * Login get string.
@@ -102,7 +102,7 @@ public class UserController {
                           HttpSession session,
                           Model model) throws Exception {
 
-        UserVO vo = service.login(dto);
+        UserVO vo = userService.login(dto);
 
         if (vo == null) {
             return;
@@ -116,7 +116,7 @@ public class UserController {
 
             Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
 
-            service.keepLogin(vo.getUid(), session.getId(), sessionLimit);
+            userService.keepLogin(vo.getUid(), session.getId(), sessionLimit);
         }
     }
 
@@ -193,7 +193,7 @@ public class UserController {
             return "user/shop-ui-register02";
         }
 
-        service.regist(userVO);
+        userService.regist(userVO);
         rttr.addFlashAttribute("msg", "SUCCESS");
 
 //        return "redirect:/home";
@@ -255,7 +255,7 @@ public class UserController {
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(0);
                 response.addCookie(loginCookie);
-                service.keepLogin(vo.getUid(), session.getId(), new Date());
+                userService.keepLogin(vo.getUid(), session.getId(), new Date());
             }
         }
 //        밑의 리턴들은 모두 uri 맵핑오류 발생

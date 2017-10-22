@@ -6,8 +6,8 @@
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
     <insert id="create">
-        insert into tbl_board (title, content, writer, cnum, regdate)
-        values(#{title}, #{content}, #{writer}, #{cnum}, NOW())
+        insert into tbl_board (title, content, writer, cnum, regdate, getcolor)
+        values(#{title}, #{content}, #{writer}, #{cnum}, NOW(), #{getcolor})
     </insert>
     <!--boardMapper.xml의 각 SQL 문의 id 속성 값은 BoardDAO 인터페이스와 동일하게 설정해주어서 혼란을 피하는 것이 좋음.-->
 

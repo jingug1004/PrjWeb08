@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
  * How : preHandle()을 이용하여 현재 사용자가 로그인한 상태인지를 체크하고,
  *      컨트롤러를 호출하게 할 것인지를 결정. 만일 사용자가 로그인하지 않은 상태라면
  *      로그인하는 '/user/login'으로 이동
- * UserController ("userVO") - LoginInterceptor - AuthInterceptor - @Inject UserService service
+ * UserController ("userVO") - LoginInterceptor - AuthInterceptor - @Inject UserService userService
  */
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
@@ -36,7 +36,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
             LoggerFactory.getLogger(AuthInterceptor.class);
 
     @Inject
-    private UserService service;
+    private UserService userService;
 
     @Override
     public boolean preHandle(HttpServletRequest request,
@@ -55,7 +55,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
             if (loginCookie != null) {
 
-                UserVO userVO = service.checkLoginBefore(loginCookie.getValue());
+                UserVO userVO = userService.checkLoginBefore(loginCookie.getValue());
 
                 logger.info("lll~~~ USERVO : " + userVO + " lll~~~");
 
@@ -75,7 +75,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     /**
      * Save dest. 로그인하면 '/'경로로 이동하는데 사용자가 원하는 URI가 무엇이었는지를 보관했다가, 로그인 성공 후 해당 경로로 이동시켜주는 것
      *
-     * @param req saveDest() 메소드를 이용해서 원래 사용자가 원하는 페이지의 정보는 HttpSession에 'dest'라는 이름으로 저장. GET 방식인 경우에는 URI 정보 뒤의 파라미터들을 함께 보관. 후에 LoginInterceptor는 로그인 성공 후의 response.sendRedirect() 작업에 'dest' 정보를 사용하도록 수정
+     * @param req saveDest() 메소드를 이용해서 원래 사용자가 원하는 페이지의 정보는 HttpSession에 'dest'라는 이름으로 저장.
+     *            GET 방식인 경우에는 URI 정보 뒤의 파라미터들을 함께 보관.
+     *            후에 LoginInterceptor는 로그인 성공 후의 response.sendRedirect() 작업에 'dest' 정보를 사용하도록 수정.
      */
     public void saveDest(HttpServletRequest req) {
 

@@ -31,6 +31,8 @@ public class BoardVO {
 
     private String boardvisible;
 
+    private String getcolor;
+
 
     public int getCnum() {
         return cnum;
@@ -228,6 +230,14 @@ public class BoardVO {
 
     public void setBoardvisible(String boardvisible) {this.boardvisible = boardvisible;}
 
+    public String getGetcolor() {
+        return getcolor;
+    }
+
+    public void setGetcolor(String getcolor) {
+        this.getcolor = getcolor;
+    }
+
     @Override
     public String toString() {
         return "BoardVO{" +
@@ -246,6 +256,7 @@ public class BoardVO {
                 ", cnum=" + cnum +
                 ", files=" + Arrays.toString(files) +
                 ", boardvisible='" + boardvisible + '\'' +
+                ", getcolor='" + getcolor + '\'' +
                 '}';
     }
 }

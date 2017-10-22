@@ -22,6 +22,8 @@ public class ReplyVO {
     private Date regdate;
     private Date updatedate;
 
+    private String bringreplycolor;
+
     /**
      * Gets rno.
      *
@@ -130,6 +132,14 @@ public class ReplyVO {
         this.updatedate = updaterdate;
     }
 
+    public String getBringreplycolor() {
+        return bringreplycolor;
+    }
+
+    public void setBringreplycolor(String bringreplycolor) {
+        this.bringreplycolor = bringreplycolor;
+    }
+
     @Override
     public String toString() {
         return "ReplyVO{" +
@@ -139,6 +149,7 @@ public class ReplyVO {
                 ", replyer='" + replyer + '\'' +
                 ", regdate=" + regdate +
                 ", updatedate=" + updatedate +
+                ", bringreplycolor='" + bringreplycolor + '\'' +
                 '}';
     }
 }
