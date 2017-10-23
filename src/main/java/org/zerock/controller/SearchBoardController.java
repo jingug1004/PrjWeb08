@@ -149,8 +149,6 @@ public class SearchBoardController {
 
             rttr.addFlashAttribute("msg", "SUCCESS");
 
-            logger.info("lllll~~~~~ valCatenum 01 : " + cateNum);
-
             return "redirect:/sboard/list";
         }
 
@@ -160,8 +158,6 @@ public class SearchBoardController {
             rttr.addAttribute("keyword", cri.getKeyword());
 
             rttr.addFlashAttribute("msg", "SUCCESS");
-
-            logger.info("lllll~~~~~ valCatenum 02 : " + cateNum);
 
             return "redirect:/sboard/listAny";
         }
@@ -232,7 +228,6 @@ public class SearchBoardController {
      */
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public void registGET() throws Exception {
-        logger.info("lll~~~ regist get ........... lll~~~");
     }
 
     /**

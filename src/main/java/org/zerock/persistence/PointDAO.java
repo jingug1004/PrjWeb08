@@ -1,5 +1,7 @@
 package org.zerock.persistence;
 
+import org.zerock.domain.PointInsertVO;
+
 /**
  * Created by macbookpro on 2017. 2. 19. PM 2:16
  * sp4chap11-Project / org.zerock.persistence
@@ -19,5 +21,7 @@ public interface PointDAO {
      * @param point the point
      * @throws Exception the exception
      */
-    public void updatePoint(String uid, int point)throws Exception;
+    public void updatePoint(String uid, int point) throws Exception;
+
+    public void registerSuccessPoint(PointInsertVO pointInsertVO) throws Exception;
 }

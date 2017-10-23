@@ -72,7 +72,9 @@
 
                     <p>회원 가입을 축하드립니다. ${userVO.uname}님!<p>
 
-                    <p>귀하의 ID는 ${userVO.uid}이며, 별명은${userVO.nickname}, 이메일 주소는 ${userVO.email}이십니다.</p>
+                    <p>귀하의 ID는 ${userVO.uid}이며, </p>
+                    <p>별명은${userVO.nickname}, </p>
+                    <p>이메일 주소는 ${userVO.email}이십니다.</p>
 
                     <p>앞으로 더욱 발전하는 UNIFY가 되겠습니다.</p>
 

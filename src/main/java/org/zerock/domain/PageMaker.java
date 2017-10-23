@@ -15,19 +15,19 @@ public class PageMaker {
 
     private static final Logger logger = LoggerFactory.getLogger(PageMaker.class);
 
-
     private int totalCount;
     private int startPage;
     private int endPage;
     private boolean prev;
     private boolean next;
     private int displayPageNum = 10;        // displayPageNum은 화면에 보여지는 페이지 번호의 숫자를 의미하는 변수를 추가
-    // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
+                                             // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
     private Criteria cri;                   // SearchCriteria에 상속하는 Criteria
-    private CriteriaListAny criListAny;     // SearchCriteria에 상속하는 Criteria
+    private CriteriaListAny criListAny;     // SearchCriteria에 상속하는 CriteriaListAny
 
     private int cnumFromBoardVO;            // BoardVO 에서 cnum(카테고리 넘버) 가져오는 필드
 
+    //
 
     public int getCnumFromBoardVO() {
         return cnumFromBoardVO;
@@ -74,6 +74,8 @@ public class PageMaker {
     }
 
     private void calcData() {
+
+        logger.info("");
 
         endPage = (int) (Math.ceil(cri.getPage() / (double) displayPageNum) * displayPageNum);
         startPage = (endPage - displayPageNum) + 1;

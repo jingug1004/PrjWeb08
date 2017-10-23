@@ -10,6 +10,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		uid = #{uid}
 	</update>
 
+	<insert id="registerSuccessPoint">
+		INSERT INTO tbl_point_insert(pinsid, pinsregdate, pinspoint, pinsdeldate, pinscontent)
+		VALUES (#{pinsid}, NOW(), #{pinspoint}, #{pinsdeldate}, #{pinscontent});
+	</insert>
+
+
+
 </mapper>
 
 

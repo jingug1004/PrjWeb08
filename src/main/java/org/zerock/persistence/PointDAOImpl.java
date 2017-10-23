@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.zerock.domain.PointInsertVO;
 
 import javax.inject.Inject;
 import java.util.HashMap;
@@ -21,7 +22,7 @@ import java.util.Map;
 public class PointDAOImpl implements PointDAO {
 
     @Inject
-    private SqlSession session;
+    private SqlSession sqlSession;
 
     private static String namespace = "org.zerock.mapper.PointMapper";
 
@@ -32,7 +33,11 @@ public class PointDAOImpl implements PointDAO {
         paramMap.put("uid", uid);
         paramMap.put("point", point);
 
-        session.update(namespace + ".updatePoint", paramMap);
+        sqlSession.update(namespace + ".updatePoint", paramMap);
+    }
 
+    @Override
+    public void registerSuccessPoint(PointInsertVO pointInsertVO) throws Exception {
+        sqlSession.insert(namespace + ".registerSuccessPoint", pointInsertVO);
     }
 }

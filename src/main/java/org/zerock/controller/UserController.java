@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
+import org.zerock.domain.PointInsertVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
+import org.zerock.service.PointService;
 import org.zerock.service.UserService;
+import org.zerock.util.PointUtils;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
@@ -41,40 +44,17 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-//    @RequestMapping(value = "/shop-ui-login")
-//    public String login() {
-//
-//        return "shop-ui-login";
-//    }
-
     /**
      * The constant logger.
      */
     public static final Logger logger =
             LoggerFactory.getLogger(UserController.class);
 
-//    @RequestMapping(value = "/shop-ui-login")
-//    public void login() {
-//
-//    }
-//
-//    @RequestMapping(value = "/login_success")
-//    public void login_success() {
-//
-//    }
-//
-//    @RequestMapping(value = "/login_duplicate")
-//    public void login_duplicate() {
-//
-//    }
-//
-//    @RequestMapping(value = "/logout")
-//    public void logout() {
-//
-//    }
-
     @Inject
     private UserService userService;
+
+    @Inject
+    private PointService pointService;
 
     /**
      * Login get string.
@@ -179,7 +159,7 @@ public class UserController {
                                BindingResult bindingResult) throws Exception {
 
         logger.info("lll~~~ user regist post ........... lll~~~");
-        logger.info(userVO.toString());
+        logger.info("lll~~~ userVO.toString() ........... lll~~~" + userVO.toString() + "lll~~~ userVO.toString() ........... lll~~~");
 
         if (bindingResult.hasErrors()) {
             logger.info("lll~~~ Binding Result has error! lll~~~");
@@ -189,11 +169,22 @@ public class UserController {
                 logger.info("lll~~~ error : {}, {}", error.getCode(), error.getDefaultMessage() + " lll~~~");
             }
 
-//            return "user/shop-ui-register";
             return "user/shop-ui-register02";
         }
 
         userService.regist(userVO);
+
+        PointUtils pointUtils = new PointUtils(userVO.getUid(), "회원가입", 100);
+
+        PointInsertVO pointInsertVO = new PointInsertVO();
+
+        pointInsertVO.setPinsid(userVO.getUid());
+        pointInsertVO.setPinspoint(100);            // 회원가입시 100 포인트 증정
+        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
+        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
+
+        pointService.registerSuccessPoint(pointInsertVO);
+
         rttr.addFlashAttribute("msg", "SUCCESS");
 
 //        return "redirect:/home";

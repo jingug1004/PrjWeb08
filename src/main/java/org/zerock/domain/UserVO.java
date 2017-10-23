@@ -14,25 +14,31 @@ import java.sql.Timestamp;
 
 public class UserVO {
 
-//    @NotEmpty
+    //    @NotEmpty
 //    @Size(min = 4, max = 12)
     private String uid;
 
-//    @NotEmpty @Size(min = 4, max = 12)
+    //    @NotEmpty @Size(min = 4, max = 12)
     private String upw;
 
-//    @NotEmpty @Size(min = 4, max = 12)
+    //    @NotEmpty @Size(min = 4, max = 12)
     private String upwconfirm;
 
-//    @NotEmpty
+    //    @NotEmpty
     private String uname;
 
     private int upoint;
+    /*
+    point 테이블(A): 잔액
+    고객키      + balance point(B point - C point)
+ex) jingug1004 + 100
+    */
 
-//    @Email
+
+    //    @Email
     private String email;
 
-//    @NotEmpty
+    //    @NotEmpty
     private String nickname;
 
     private String uday;
@@ -46,7 +52,7 @@ public class UserVO {
     /**
      * Instantiates a new User vo.
      */
-    public UserVO () {
+    public UserVO() {
 
     }
 
