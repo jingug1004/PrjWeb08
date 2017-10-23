@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -57,6 +58,8 @@ public class PointUtils {
         this.loginId = loginId;
         this.reason = reason;
         this.savingPoint = savingPoint;
+
+        logger.info("lllll~~~~~ loginId, reason, savingPoint : " + loginId + reason + savingPoint);
 
         deleteScheduleDatePointUtils();
         savingPointContentPointUtils(loginId, reason, savingPoint);
@@ -159,7 +162,7 @@ public class PointUtils {
         String datePath = monthPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.DATE));
         String datePathLast = datePath.substring(1);
 
-        String te = datePathLast.replaceAll("\\\\", "-");
+        String te = datePathLast.replaceAll("/", "-");
 
 //        String temp = datePath.substring(3, 5);
 //        String temp2 = datePath.substring(6, 8);
@@ -189,18 +192,25 @@ public class PointUtils {
         output_dt = formatter.format(cal.getTime());
         System.out.println(output_dt);
 
-        SimpleDateFormat simpleDateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
+        logger.info("lllll~~~~~ formatter : " + formatter);
+        logger.info("lllll~~~~~ output_dt : " + output_dt);
 
-        logger.info("lllll~~~~~ simpleDateFormatOutput : " + simpleDateFormatOutput);
+        try {
+            Date dateFromString = formatter.parse(output_dt);
 
-        this.deleteScheduleDate = simpleDateFormatOutput;
+            this.deleteScheduleDate = dateFromString;
+
+        } catch(ParseException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
     private void savingPointContentPointUtils (String loginId, String savingReason, int pointAmount) {
 
-        this.savingPointContent = loginId + "님 " + savingReason + "으로 " + pointAmount + " 포인트 적립(+) ";
-
+        String ment = loginId + "님 " + savingReason + "으로 " + pointAmount + " 포인트 적립 (+) ";
+        this.savingPointContent = ment;
     }
 
 }

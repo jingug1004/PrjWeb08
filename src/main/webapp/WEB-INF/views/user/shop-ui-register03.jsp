@@ -70,17 +70,19 @@
                 <div id="sky-form4" class="log-reg-block sky-form">
                     <h2>회원 가입 완료</h2>
 
-                    <p>회원 가입을 축하드립니다. ${userVO.uname}님!<p>
+                    <p>
+                    회원 가입을 축하드립니다. ${userVO.uname}님!<br><br>
 
-                    <p>귀하의 ID는 ${userVO.uid}이며, </p>
-                    <p>별명은${userVO.nickname}, </p>
-                    <p>이메일 주소는 ${userVO.email}이십니다.</p>
+                    귀하의 ID는 ${userVO.uid}이며,<br>
+                    별명은${userVO.nickname},<br>
+                    이메일 주소는 ${userVO.email}이십니다.<br><br>
 
-                    <p>앞으로 더욱 발전하는 UNIFY가 되겠습니다.</p>
+                    앞으로 더욱 발전하는 UNIFY가 되겠습니다.<br><br>
 
-                    <p>로그인 하시고 즐거운 시간 보내시기 바랍니다.</p>
+                    로그인 하시고 즐거운 시간 보내시기 바랍니다.<br><br>
 
-                    <p>감사합니다.</p>
+                    감사합니다.
+                    </p>
 
                     <%--<label class="checkbox margin-bottom-10">--%>
                         <%--<input type="checkbox" name="checkbox"/>--%>

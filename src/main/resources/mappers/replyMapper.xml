@@ -15,8 +15,10 @@
     </select>
 
     <insert id="create">
+      <![CDATA[ 
         insert into tbl_reply (bno, replytext, replyer, bringreplycolor)
         VALUES (#{bno}, #{replytext}, #{replyer}, #{bringreplycolor})
+        ]]>
     </insert>
 
     <update id="update">

@@ -1,6 +1,8 @@
 package org.zerock.persistence;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.PointInsertVO;
 
@@ -21,6 +23,9 @@ import java.util.Map;
 @Repository
 public class PointDAOImpl implements PointDAO {
 
+    public static final Logger logger =
+            LoggerFactory.getLogger(PointDAOImpl.class);
+
     @Inject
     private SqlSession sqlSession;
 
@@ -38,6 +43,9 @@ public class PointDAOImpl implements PointDAO {
 
     @Override
     public void registerSuccessPoint(PointInsertVO pointInsertVO) throws Exception {
+
+        logger.info("lllll~~~~~ pointInsertVO.toString() : " + pointInsertVO.toString());
+
         sqlSession.insert(namespace + ".registerSuccessPoint", pointInsertVO);
     }
 }

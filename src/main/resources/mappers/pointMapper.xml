@@ -11,11 +11,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 
 	<insert id="registerSuccessPoint">
+		<![CDATA[
 		INSERT INTO tbl_point_insert(pinsid, pinsregdate, pinspoint, pinsdeldate, pinscontent)
-		VALUES (#{pinsid}, NOW(), #{pinspoint}, #{pinsdeldate}, #{pinscontent});
+		VALUES (#{pinsid}, NOW(), #{pinspoint}, #{pinsdeldate}, 
+		#{pinscontent}
+		);
+		]]>
 	</insert>
-
-
 
 </mapper>
 
