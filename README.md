@@ -11,12 +11,14 @@ AWS Deploy시
 - 카테고리별 조건 검색 가능. 패턴 = yyyy-MM-dd HH:mm 디버깅. 전체 조회시 url 파라미터 분리시키기
 - 카테고리별 조건 검색 완료.
 - 전체 검색 한글만 입력 가능하게!
-- Good, Bad, Want, Out <tr><td> 웹단 구현
+- Good, Bad, Want, Out tr td 웹단 구현
 - 전체 검색에도 페이징 검색 가능하게 만듦(SPA로!)!
 - 전체검색은 한 페이지당(perPageNum = 100) 100개씩 출력
 - Input TYPE=“File” 을 히든으로 하고 외부 버튼을 눌러서 파일을 선택
 - 게시판 글(리스트, readPage 등) width 1170으로 맞춤.
 - BoardVO 에 updatedate VO 추가. GB를 위한 BoardGBVO VO 클래스 추가 
+
+@ 2017년 10월
 
 쌍용강북교육센터
 
