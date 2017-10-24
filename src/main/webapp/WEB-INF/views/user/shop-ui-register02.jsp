@@ -256,6 +256,7 @@
                             </div>
                         </div>
                         --%>
+                        <%-- fixme: 비밀번호 중복 검증  --%>
                         <section>
                             <label class="input">
                                 <input type="text" name="nickname" placeholder="Nickname" class="form-control">

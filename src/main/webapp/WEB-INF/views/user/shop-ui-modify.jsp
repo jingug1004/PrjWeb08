@@ -135,7 +135,7 @@
                                         [java.lang.String] to required type [int] for property 'umonth';
                                         nested exception is java.lang.NumberFormatException: For input string: "10월"]--%>
                                         <%--<option value="10월">October</option>--%>
-                                        <option value="10" <c:if test="${}">selected</c:if>>October
+                                        <option value="10" <c:if test="${reg_month == 10}">selected</c:if>>October
                                             <%--<option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November--%>
                                         <option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November
                                         </option>

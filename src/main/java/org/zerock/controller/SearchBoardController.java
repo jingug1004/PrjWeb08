@@ -9,6 +9,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.*;
 import org.zerock.service.BoardService;
 import org.zerock.service.CntService;
+import org.zerock.service.PointService;
+import org.zerock.util.PointUtils;
+import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -32,17 +35,20 @@ public class SearchBoardController {
     private static final Logger logger = LoggerFactory.getLogger(SearchBoardController.class);
 
     @Inject
-    private BoardService boardService;
+    private BoardService boardService;      // 게시판 글 처리하는 서비
 
     @Inject
-    private CntService cntService; // cnt 처리하는 서비스
+    private CntService cntService;          // cnt 처리하는 서비스
+
+    @Inject
+    private PointService pointService;      // 포인트 처리하는 서비스
 
     /**
      * 게시판 리스트 페이지가 cate의 기준에 따라 나뉘어짐.
      *
-     * @param cri     SearchCriteria -> cri
-     * @param model   the model
-//     * @param cateNum 카테고리 - 넘버 기준으로 나뉨.
+     * @param cri   SearchCriteria -> cri
+     * @param model the model
+     *              //     * @param cateNum 카테고리 - 넘버 기준으로 나뉨.
      * @throws Exception the exception
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -152,7 +158,7 @@ public class SearchBoardController {
             return "redirect:/sboard/list";
         }
 
-        if (cateNum == null){
+        if (cateNum == null) {
             rttr.addAttribute("page", cri.getPage());
             rttr.addAttribute("perPageNum", cri.getPerPageNum());
             rttr.addAttribute("keyword", cri.getKeyword());
@@ -234,7 +240,7 @@ public class SearchBoardController {
      * 등록 화면 Post
      *
      * @param boardVO the boardVO
-     * @param rttr  the rttr
+     * @param rttr    the rttr
      * @return the string
      * @throws Exception the exception
      */
@@ -251,6 +257,14 @@ public class SearchBoardController {
         }
 
         boardService.regist(boardVO);
+
+        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVO.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
+        PointInsertVO pointInsertVO = new PointInsertVO();
+        pointInsertVO.setPinsid(loginUserVO.getUid());
+        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
+        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
+        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
+        pointService.registerSuccessPoint(pointInsertVO);
 
         rttr.addFlashAttribute("msg", "SUCCESS");
 

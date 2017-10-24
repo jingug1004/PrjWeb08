@@ -18,6 +18,7 @@ import org.zerock.dto.LoginDTO;
 import org.zerock.service.PointService;
 import org.zerock.service.UserService;
 import org.zerock.util.PointUtils;
+import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
@@ -174,15 +175,12 @@ public class UserController {
 
         userService.regist(userVO);
 
-        PointUtils pointUtils = new PointUtils(userVO.getUid(), "회원가입", 100);
-
+        PointUtils pointUtils = new PointUtils(userVO.getUid(), "회원가입", Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
         PointInsertVO pointInsertVO = new PointInsertVO();
-
         pointInsertVO.setPinsid(userVO.getUid());
-        pointInsertVO.setPinspoint(100);            // 회원가입시 100 포인트 증정
+        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("RegisterPoint"))); // 회원가입시 100 포인트 증정
         pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
         pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
-
         pointService.registerSuccessPoint(pointInsertVO);
 
         rttr.addFlashAttribute("msg", "SUCCESS");

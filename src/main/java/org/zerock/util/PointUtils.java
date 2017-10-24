@@ -49,7 +49,9 @@ public class PointUtils {
     private int extinctPoint;                       // 소멸 포인트
     private String extinctPointContent;             // 소멸 내용
 
-    private String reason;
+    private String reason;                          // 적립, 사용, 소멸 이유
+
+    private Integer bnoParam;                           // 글번호, 전달되는 파라미터값
 
     public PointUtils(){}; // 기본 생성자
 
@@ -63,6 +65,17 @@ public class PointUtils {
 
         deleteScheduleDatePointUtils();
         savingPointContentPointUtils(loginId, reason, savingPoint);
+    }
+
+    // insert 글작성시 50 포인트(+) 생성자
+    public PointUtils(String loginId, Integer bnoParam, String reason, int savingPoint) {
+        this.loginId = loginId;
+        this.bnoParam = bnoParam;
+        this.reason = reason;
+        this.savingPoint = savingPoint;
+
+        deleteScheduleDatePointUtils();
+        savingPointContentPointUtils(loginId, bnoParam, reason, savingPoint);
     }
 
     public String getLoginId() {
@@ -153,6 +166,14 @@ public class PointUtils {
         this.reason = reason;
     }
 
+    public Integer getBnoParam() {
+        return bnoParam;
+    }
+
+    public void setBnoParam(Integer bnoParam) {
+        this.bnoParam = bnoParam;
+    }
+
     // insert시 소멸 예정일 구하는 내부 메소드
     private void deleteScheduleDatePointUtils() {
 
@@ -208,8 +229,12 @@ public class PointUtils {
     }
 
     private void savingPointContentPointUtils (String loginId, String savingReason, int pointAmount) {
-
         String ment = loginId + "님 " + savingReason + "으로 " + pointAmount + " 포인트 적립 (+) ";
+        this.savingPointContent = ment;
+    }
+
+    private void savingPointContentPointUtils (String loginId, Integer bnoParam, String savingReason, int pointAmount) {
+        String ment = loginId + "님 " + bnoParam + savingReason + "으로 " + pointAmount + " 포인트 적립 (+) ";
         this.savingPointContent = ment;
     }
 

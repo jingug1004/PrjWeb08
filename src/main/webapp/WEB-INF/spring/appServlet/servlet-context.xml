@@ -130,8 +130,7 @@
         </interceptor>
     </interceptors>
 
-    <beans:bean id="messageSource"
-                class="org.springframework.context.support.ResourceBundleMessageSource">
+    <beans:bean id="messageSource01" class="org.springframework.context.support.ResourceBundleMessageSource">
         <beans:property name="basenames">
             <beans:list>
                 <beans:value>message.messages</beans:value>
@@ -139,5 +138,19 @@
         </beans:property>
         <beans:property name="defaultEncoding" value="UTF-8"></beans:property>
     </beans:bean>
+
+    <!--출처: http://zinlee.tistory.com/204 [진리 블로그]-->
+    <beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <beans:property name="basenames" value="message.javamessages" /> <!-- messages.properties source 경로 -->
+        <!-- 여러개일경우 property태그 안에<list><value>cms/messages</value></list>로 변경 -->
+        <beans:property name="defaultEncoding" value="UTF-8"></beans:property>
+    </beans:bean>
+    <beans:bean id="messageSourceAccessor" class="org.springframework.context.support.MessageSourceAccessor">
+        <beans:constructor-arg ref="messageSource"/>
+    </beans:bean>
+    <beans:bean id="message" class="org.zerock.util.UnifyMessage">
+        <beans:property name="messageSourceAccessor" ref="messageSourceAccessor"/>
+    </beans:bean>
+    <!--출처: http://zinlee.tistory.com/204 [진리 블로그]-->
 
 </beans:beans>

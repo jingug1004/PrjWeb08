@@ -30,8 +30,8 @@ point 적립 테이블(B): insert
 public class PointInsertVO {
 
     private String pinsid;
-    private Date pinsregdate;
-    private int pinsseq;
+    private Date pinsregdate;       // now()
+    private int pinsseq;            // MySQL AutoIcrement
     private int pinspoint;
     private Date pinsdeldate;
     private String pinscontent;

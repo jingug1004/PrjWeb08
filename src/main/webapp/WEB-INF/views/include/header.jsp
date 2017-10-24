@@ -234,6 +234,7 @@
                             </c:if>
                             <c:if test="${not empty login}">
                                 <li>
+                                    <input type="hidden" id="loginUday" value="${login.uday}">
                                     <img src="/assets/img/colors/000.png" id="getColor" alt="">
                                     ${login.nickname}님! |
                                     <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |
@@ -569,6 +570,7 @@
         <!-- End Navbar -->
     </div>
     <!--=== End Header v5 ===-->
+</div>
 
     <script>
 
@@ -599,6 +601,7 @@
             function pad(n, width) {
                 n = n + '';
                 return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+
             }
             /*
             pad(10, 4);      // 0010
@@ -607,15 +610,16 @@
             pad(1234, 4);   // 1234
             */
 
+            var number = $('#loginUday').val();
+
             var tempUrl01 = "/assets/img/colors/";
-            var tempUrl02 = pad(${login.uday}, 3);
+            var tempUrl02 = pad(number, 3);
             var tempUrl03 = ".png";
 
             var tempUrl = "";
             var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);
 
             $('#getColor').prop("src", temp);
-
 
         });
 
