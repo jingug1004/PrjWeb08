@@ -570,7 +570,7 @@
         <!-- End Navbar -->
     </div>
     <!--=== End Header v5 ===-->
-</div>
+<%--</div>--%>
 
     <script>
 

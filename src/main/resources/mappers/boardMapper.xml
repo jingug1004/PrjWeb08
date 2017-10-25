@@ -21,6 +21,15 @@
         where bno = #{bno}
     </select>
 
+    <!-- 글 등록으로 인하여 포인트 증가시키기 위한 bno 가져오기 위한 다시 리드 후 boardVO에 겹침 -->
+    <select id="readByIDnTitle" resultType="org.zerock.domain.BoardVO">
+        select
+        *
+        from
+        tbl_board
+        where writer = #{writer} AND title = #{title}
+    </select>
+
     <update id="update">
         update tbl_board set title =#{title}, content =#{content}, updatedate = NOW()
         where bno = #{bno}

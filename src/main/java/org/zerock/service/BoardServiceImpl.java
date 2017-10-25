@@ -83,6 +83,11 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception {
+        return boardDAO.readByIDnTitle(boardVO);
+    }
+
+    @Override
     public String callCateName(int bno) throws Exception {
         return boardDAO.callCateName(bno);               // 게시판 상세 글의 카테고리 이름 출력
     }

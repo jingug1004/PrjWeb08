@@ -32,6 +32,8 @@ public interface BoardService {
      */
     public BoardVO read(Integer bno) throws Exception;
 
+    public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception;
+
     /**
      * 게시판 글의 카테고리 이름 출력
      *
