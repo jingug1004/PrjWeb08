@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
 
 import javax.inject.Inject;
@@ -42,10 +43,13 @@ public class PointDAOImpl implements PointDAO {
     }
 
     @Override
-    public void registerSuccessPoint(PointInsertVO pointInsertVO) throws Exception {
-
+    public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception {
         logger.info("lllll~~~~~ pointInsertVO.toString() : " + pointInsertVO.toString());
+        sqlSession.insert(namespace + ".insertOperPoint", pointInsertVO);
+    }
 
-        sqlSession.insert(namespace + ".registerSuccessPoint", pointInsertVO);
+    @Override
+    public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception {
+        sqlSession.insert(namespace + ".deleteOperPoint", pointDeleteVO);
     }
 }

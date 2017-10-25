@@ -140,12 +140,27 @@ public class SearchBoardController {
     public String remove(@RequestParam("bno") int bno,
                          @RequestParam(required = false, value = "cate") Integer cateNum,
                          SearchCriteria cri,
-                         RedirectAttributes rttr) throws Exception {
+                         RedirectAttributes rttr,
+                         HttpSession httpSession) throws Exception {
 
         boardService.remove(bno); // SQL delete 에서 update 로 바꿈. 전달 메소드는 remove지만 마이바티스는 update로!
 
 //        String valCatenum = String.valueOf(cateNum);
 
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            // boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
+        }
+
+        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")), "글 삭제", (Integer) bno);
+        PointDeleteVO pointDeleteVO = new PointDeleteVO();
+        pointDeleteVO.setPdelid(loginUserVO.getUid());
+        pointDeleteVO.setPdelpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
+        pointDeleteVO.setPdelcontent(pointUtils.getExtinctPointContent());
+        pointService.deleteOperPoint(pointDeleteVO);
+
+        // 카테고리 리스트
         if (cateNum != null) {
             rttr.addAttribute("page", cri.getPage());
             rttr.addAttribute("cate", cateNum); // RedirectAttributes 추가하면 URL 전달 가능 => 밑의 리턴값 "redirect: ... " 와 같겠지?
@@ -158,6 +173,7 @@ public class SearchBoardController {
             return "redirect:/sboard/list";
         }
 
+        // 전체검색 리스트
         if (cateNum == null) {
             rttr.addAttribute("page", cri.getPage());
             rttr.addAttribute("perPageNum", cri.getPerPageNum());
@@ -265,7 +281,7 @@ public class SearchBoardController {
         pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
         pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
         pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
-        pointService.registerSuccessPoint(pointInsertVO);
+        pointService.insertOperPoint(pointInsertVO);
 
         rttr.addFlashAttribute("msg", "SUCCESS");
 

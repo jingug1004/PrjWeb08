@@ -76,6 +76,16 @@ public class PointUtils {
         savingPointContentPointUtils(loginId, bnoParam, reason, savingPoint);
     }
 
+    // delete 글삭제시 45 포인트(-) 생성자
+    public PointUtils(String loginId, int extinctPoint, String reason, Integer bnoParam) {
+        this.loginId = loginId;
+        this.extinctPoint = extinctPoint;
+        this.reason = reason;
+        this.bnoParam = bnoParam;
+
+        extinctPointContentPointUtils(loginId, extinctPoint, reason, bnoParam);
+    }
+
     public String getLoginId() {
         return loginId;
     }
@@ -238,6 +248,11 @@ public class PointUtils {
     private void savingPointContentPointUtils (String loginId, Integer bnoParam, String savingReason, int pointAmount) {
         String ment = loginId + "님 " + bnoParam + savingReason + "으로 " + pointAmount + " 포인트 적립 (+) ";
         this.savingPointContent = ment;
+    }
+
+    private void extinctPointContentPointUtils (String loginId, int pointAmount, String reason, Integer bnoParam) {
+        String ment = loginId + "님 " + bnoParam + reason + "로 " + pointAmount + " 포인트 소멸 (-) ";
+        this.extinctPointContent = ment;
     }
 
 }

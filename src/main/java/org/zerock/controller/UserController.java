@@ -181,7 +181,7 @@ public class UserController {
         pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("RegisterPoint"))); // 회원가입시 100 포인트 증정
         pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
         pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
-        pointService.registerSuccessPoint(pointInsertVO);
+        pointService.insertOperPoint(pointInsertVO);
 
         rttr.addFlashAttribute("msg", "SUCCESS");
 

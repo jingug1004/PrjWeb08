@@ -10,13 +10,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		uid = #{uid}
 	</update>
 
-	<insert id="registerSuccessPoint">
-		<![CDATA[
+	<insert id="insertOperPoint">
 		INSERT INTO tbl_point_insert(pinsid, pinsregdate, pinspoint, pinsdeldate, pinscontent)
-		VALUES (#{pinsid}, NOW(), #{pinspoint}, #{pinsdeldate}, 
-		#{pinscontent}
-		);
-		]]>
+		VALUES (#{pinsid}, NOW(), #{pinspoint}, #{pinsdeldate}, #{pinscontent})
+	</insert>
+
+	<insert id="deleteOperPoint">
+		INSERT INTO tbl_point_delete(pdelid, pdeldate, pdelpoint, pdelcontent)
+		VALUES (#{pdelid}, NOW(), #{pdelpoint}, #{pdelcontent})
 	</insert>
 
 </mapper>

@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
 
 /**
@@ -24,7 +25,9 @@ import org.zerock.domain.PointInsertVO;
 
 public interface PointService {
 
-    public void registerSuccessPoint(PointInsertVO pointInsertVO) throws Exception;
+    public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
+
+    public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
 
 
 }

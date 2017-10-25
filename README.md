@@ -53,8 +53,8 @@ point 사용 테이블(C): update
 ex) jingug1004 + 171023 + 48      + 100        + jingug1004님 157번 상품 투자로 50포인트 사용(-)
 
 point 소멸 테이블(D): delete
-    고객키     + 소멸일  + 소멸 point + 소멸 내용
-ex) jingug1004 + 180121 + 300        + jingug1004님 1567번 글 삭제로 45포인트 소멸(-)
+    고객키     + 소멸일     + 소멸순번 + 소멸 point + 소멸 내용
+ex) jingug1004 + 180121 + 27     + 300        + jingug1004님 1567번 글 삭제로 45포인트 소멸(-)
 
 
 B테이블과 C테이블에 insert/update/delete 발생시

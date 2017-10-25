@@ -1,5 +1,6 @@
 package org.zerock.persistence;
 
+import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
 
 /**
@@ -23,5 +24,7 @@ public interface PointDAO {
      */
     public void updatePoint(String uid, int point) throws Exception;
 
-    public void registerSuccessPoint(PointInsertVO pointInsertVO) throws Exception;
+    public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
+
+    public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
 }

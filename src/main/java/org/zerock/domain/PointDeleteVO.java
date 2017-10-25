@@ -31,6 +31,7 @@ public class PointDeleteVO {
 
     private String pdelid;
     private Date pdeldate;
+    private int pdelseq;
     private int pdelpoint;
     private String pdelcontent;
 
@@ -48,6 +49,14 @@ public class PointDeleteVO {
 
     public void setPdeldate(Date pdeldate) {
         this.pdeldate = pdeldate;
+    }
+
+    public int getPdelseq() {
+        return pdelseq;
+    }
+
+    public void setPdelseq(int pdelseq) {
+        this.pdelseq = pdelseq;
     }
 
     public int getPdelpoint() {
@@ -71,6 +80,7 @@ public class PointDeleteVO {
         return "PointDeleteVO{" +
                 "pdelid='" + pdelid + '\'' +
                 ", pdeldate=" + pdeldate +
+                ", pdelseq=" + pdelseq +
                 ", pdelpoint=" + pdelpoint +
                 ", pdelcontent='" + pdelcontent + '\'' +
                 '}';
