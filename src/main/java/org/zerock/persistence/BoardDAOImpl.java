@@ -42,6 +42,11 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
+    public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception {
+        return session.selectOne(namespace + ".readByIDnTitle", boardVO);
+    }
+
+    @Override
     public void update(BoardVO vo) throws Exception {
         session.update(namespace + ".update", vo);
     }

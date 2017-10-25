@@ -32,6 +32,8 @@ public interface BoardDAO {
      */
     public BoardVO read(Integer bno) throws Exception;
 
+    public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception;
+
     /**
      * Update.
      *

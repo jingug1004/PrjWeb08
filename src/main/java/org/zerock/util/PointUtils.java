@@ -3,8 +3,6 @@ package org.zerock.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -51,7 +49,7 @@ public class PointUtils {
 
     private String reason;                          // 적립, 사용, 소멸 이유
 
-    private Integer bnoParam;                           // 글번호, 전달되는 파라미터값
+    private Integer bnoParam;                       // 글번호, 전달되는 파라미터값
 
     public PointUtils(){}; // 기본 생성자
 
@@ -177,19 +175,25 @@ public class PointUtils {
     // insert시 소멸 예정일 구하는 내부 메소드
     private void deleteScheduleDatePointUtils() {
 
-        Calendar calendar = Calendar.getInstance();
-        String yearPath = File.separator + calendar.get(Calendar.YEAR);
-        String monthPath = yearPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.MONTH) + 1);
-        String datePath = monthPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.DATE));
-        String datePathLast = datePath.substring(1);
-
-        String te = datePathLast.replaceAll("/", "-");
+//        Calendar calendar = Calendar.getInstance();
+//        String yearPath = File.separator + calendar.get(Calendar.YEAR);
+//        String monthPath = yearPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.MONTH) + 1);
+//        String datePath = monthPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.DATE));
+//        String datePathLast = datePath.substring(1);
+//
+//        String te = datePathLast.replaceAll("/", "-");
 
 //        String temp = datePath.substring(3, 5);
 //        String temp2 = datePath.substring(6, 8);
 //        String temp3 = datePath.substring(9, 11);
 //
 //        String te = temp + temp2 + temp3;
+
+        Date date = new Date();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        String te = simpleDateFormat.format(date);
 
         int YEAR = 1;
         int MONTH = 2;
@@ -224,8 +228,6 @@ public class PointUtils {
         } catch(ParseException e) {
             e.printStackTrace();
         }
-
-
     }
 
     private void savingPointContentPointUtils (String loginId, String savingReason, int pointAmount) {

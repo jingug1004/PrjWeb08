@@ -237,7 +237,7 @@ public class SearchBoardController {
     }
 
     /**
-     * 등록 화면 Post
+     * 글 등록 화면 Post
      *
      * @param boardVO the boardVO
      * @param rttr    the rttr
@@ -258,6 +258,7 @@ public class SearchBoardController {
 
         boardService.regist(boardVO);
 
+        boardVO = boardService.readByIDnTitle(boardVO);
         PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVO.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
         PointInsertVO pointInsertVO = new PointInsertVO();
         pointInsertVO.setPinsid(loginUserVO.getUid());
