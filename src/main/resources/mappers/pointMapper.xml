@@ -24,10 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES (#{pdelid}, NOW(), #{pdelpoint}, #{pdelcontent})
 	</insert>
 
-	<update id="balancePointUpdate" parameterType="map">
-		<![CDATA[
+	<update id="balancePointUpdate">
 		UPDATE tbl_user SET upoint = upoint + #{upoint} WHERE uid = #{uid}
-		]]>
 	</update>
 
 </mapper>

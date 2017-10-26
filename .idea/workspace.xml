@@ -12,21 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="43c63fab-8b5d-4adf-8d4d-5257ee3a297c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/domain/PointUpdateVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/domain/PointUpdateVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/PointDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/PointDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/PointDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/PointDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/service/PointService.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/service/PointService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/service/PointServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/service/PointServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/util/PointUtils.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/util/PointUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/pointMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/pointMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/message/javamessages.properties" afterPath="$PROJECT_DIR$/src/main/resources/message/javamessages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register03.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register03.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$USER_HOME$/Desktop/beauty/Balgre/target/" />
@@ -97,8 +84,8 @@
           <file leaf-file-name="SearchBoardController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="427">
-                  <caret line="167" column="65" lean-forward="true" selection-start-line="167" selection-start-column="65" selection-end-line="167" selection-end-column="65" />
+                <state relative-caret-position="441">
+                  <caret line="168" column="59" lean-forward="true" selection-start-line="168" selection-start-column="59" selection-end-line="168" selection-end-column="59" />
                   <folding />
                 </state>
               </provider>
@@ -183,15 +170,15 @@
           <file leaf-file-name="pointMapper.xml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/pointMapper.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="490">
-                  <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+                <state relative-caret-position="462">
+                  <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
                   <folding>
-                    <marker date="1509001689582" expanded="true" signature="229:294" ph="update tbl_u... " />
-                    <marker date="1509001689582" expanded="true" signature="340:500" ph="INSERT INTO tbl_point_insert... " />
-                    <marker date="1509001689582" expanded="true" signature="546:674" ph="INSERT INTO tbl_point_delete... " />
-                    <marker date="1509001689582" expanded="true" signature="720:848" ph="INSERT INTO tbl_point_delete... " />
-                    <marker date="1509001689582" expanded="true" signature="929:995" ph="UPDATE tbl_u... " />
-                    <marker date="1509001689582" expanded="true" signature="929:1023" ph="UPDATE tbl_u... " />
+                    <marker date="1509007458078" expanded="true" signature="229:294" ph="update tbl_u... " />
+                    <marker date="1509007458078" expanded="true" signature="340:500" ph="INSERT INTO tbl_point_insert... " />
+                    <marker date="1509007458078" expanded="true" signature="546:674" ph="INSERT INTO tbl_point_delete... " />
+                    <marker date="1509007458078" expanded="true" signature="720:848" ph="INSERT INTO tbl_point_delete... " />
+                    <marker date="1509007458078" expanded="true" signature="897:963" ph="UPDATE tbl_u... " />
+                    <marker date="1509007458078" expanded="true" signature="897:985" ph="UPDATE tbl_u... " />
                   </folding>
                 </state>
               </provider>
@@ -1612,7 +1599,7 @@
       <workItem from="1503899884779" duration="10651000" />
       <workItem from="1503958992816" duration="1365000" />
       <workItem from="1504064059943" duration="1589000" />
-      <workItem from="1508977493693" duration="18973000" />
+      <workItem from="1508977493693" duration="19041000" />
     </task>
     <task id="LOCAL-00001" summary="170601 New Generation">
       <created>1496919698439</created>
@@ -1642,11 +1629,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508991732976</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="171026 (목)">
+      <created>1509007424548</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1509007424548</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85586000" />
+    <option name="totallyTimeSpent" value="85654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1724,7 +1718,8 @@
     <MESSAGE value="170622 &#10;Debuged : $('#cnumInput').val(getUrlParams().cate);" />
     <MESSAGE value="170828 (월)&#10;at seedit after was abandonmented for SangAm SS" />
     <MESSAGE value="171026 (목)&#10;at seedit after was abandonmented for SangAm SS" />
-    <option name="LAST_COMMIT_MESSAGE" value="171026 (목)&#10;at seedit after was abandonmented for SangAm SS" />
+    <MESSAGE value="171026 (목)" />
+    <option name="LAST_COMMIT_MESSAGE" value="171026 (목)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2099,26 +2094,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/pointMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <marker date="1509001689582" expanded="true" signature="229:294" ph="update tbl_u... " />
-            <marker date="1509001689582" expanded="true" signature="340:500" ph="INSERT INTO tbl_point_insert... " />
-            <marker date="1509001689582" expanded="true" signature="546:674" ph="INSERT INTO tbl_point_delete... " />
-            <marker date="1509001689582" expanded="true" signature="720:848" ph="INSERT INTO tbl_point_delete... " />
-            <marker date="1509001689582" expanded="true" signature="929:995" ph="UPDATE tbl_u... " />
-            <marker date="1509001689582" expanded="true" signature="929:1023" ph="UPDATE tbl_u... " />
-          </folding>
+        <state relative-caret-position="441">
+          <caret line="168" column="59" lean-forward="true" selection-start-line="168" selection-start-column="59" selection-end-line="168" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/pointMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="167" column="65" lean-forward="true" selection-start-line="167" selection-start-column="65" selection-end-line="167" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="462">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <marker date="1509007458078" expanded="true" signature="229:294" ph="update tbl_u... " />
+            <marker date="1509007458078" expanded="true" signature="340:500" ph="INSERT INTO tbl_point_insert... " />
+            <marker date="1509007458078" expanded="true" signature="546:674" ph="INSERT INTO tbl_point_delete... " />
+            <marker date="1509007458078" expanded="true" signature="720:848" ph="INSERT INTO tbl_point_delete... " />
+            <marker date="1509007458078" expanded="true" signature="897:963" ph="UPDATE tbl_u... " />
+            <marker date="1509007458078" expanded="true" signature="897:985" ph="UPDATE tbl_u... " />
+          </folding>
         </state>
       </provider>
     </entry>
