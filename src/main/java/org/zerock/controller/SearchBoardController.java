@@ -154,11 +154,22 @@ public class SearchBoardController {
         }
 
         PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")), "글 삭제", (Integer) bno);
+
         PointUpdateVO pointUpdateVO = new PointUpdateVO();
         pointUpdateVO.setPupdid(loginUserVO.getUid());
         pointUpdateVO.setPupdpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
         pointUpdateVO.setPupdcontent(pointUtils.getUsePointContent());
+
+        pointUtils.setBalancePoint(loginUserVO.getUpoint());
+
         pointService.updateOperPoint(pointUpdateVO);
+        pointService.balancePointUpdate(loginUserVO.getUid(), pointUtils.getBalancePoint());
+
+        PointDeleteVO pointDeleteVO = new PointDeleteVO();
+        pointDeleteVO.setPdelid(loginUserVO.getUid());
+        pointDeleteVO.setPdelpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
+        pointDeleteVO.setPdelcontent(pointUtils.getExtinctPointContent());
+        pointService.deleteOperPoint(pointDeleteVO);
 
         // 카테고리 리스트
         if (cateNum != null) {
@@ -276,6 +287,7 @@ public class SearchBoardController {
 
         boardVO = boardService.readByIDnTitle(boardVO);
         PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVO.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
+
         PointInsertVO pointInsertVO = new PointInsertVO();
         pointInsertVO.setPinsid(loginUserVO.getUid());
         pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));

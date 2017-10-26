@@ -78,7 +78,7 @@ public class PointUtils {
         savingPointContentPointUtils(loginId, bnoParam, reason, savingPoint);
     }
 
-    // update 사용 - 글삭제시 45 포인트(-) 생성자
+    // update 사용 - 글삭제시 49 포인트(-) 생성자
     public PointUtils(String loginId, int usePoint, String reason, Integer bnoParam) {
         this.loginId = loginId;
         this.usePoint = usePoint;
@@ -86,6 +86,7 @@ public class PointUtils {
         this.bnoParam = bnoParam;
 
         exploitPointContentPointUtils(loginId, usePoint, reason, bnoParam);
+        extinctPointContentPointUtils(loginId, usePoint, reason, bnoParam);
     }
 
     public String getLoginId() {
@@ -196,7 +197,7 @@ public class PointUtils {
 
     // tbl_user의 남은 포인트 = B테이블(적립) - C테이블(사용)
     private void balancePointUtils() {
-        this.balancePoint = balancePoint + savingPoint - usePoint;
+        this.balancePoint = balancePoint + this.savingPoint - this.usePoint;
     }
 
     // insert시 소멸 예정일 구하는 내부 메소드
@@ -258,9 +259,9 @@ public class PointUtils {
         this.usePointContent = ment;
     }
 
-//    private void extinctPointContentPointUtils (String loginId, int pointAmount, String reason, Integer bnoParam) {
-//        String ment = loginId + "님 " + bnoParam + reason + "로 " + pointAmount + " 포인트 소멸 (-) ";
-//        this.extinctPointContent = ment;
-//    }
+    private void extinctPointContentPointUtils (String loginId, int pointAmount, String reason, Integer bnoParam) {
+        String ment = loginId + "님 " + bnoParam + reason + "로 " + pointAmount + " 포인트 소멸 (-) ";
+        this.extinctPointContent = ment;
+    }
 
 }

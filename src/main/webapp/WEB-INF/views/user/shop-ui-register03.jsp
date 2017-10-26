@@ -71,12 +71,12 @@
                     <h2>회원 가입 완료</h2>
 
                     <p align="center">
-                    회원 가입을 축하드립니다. ${userVO.uid}님!<br><br>
+                    회원 가입을 축하드립니다. <b>${userVO.uid}</b>님!<br><br>
 
-                    귀하의 ID는 ${userVO.uid}이며, 별명은${userVO.nickname},<br>
+                    귀하의 ID는 ${userVO.uid}이며, 별명은 ${userVO.nickname},<br>
                     이메일 주소는 ${userVO.email}이십니다.<br><br>
 
-                    회원가입으로 100만 포인트가 지급되었습니다.<br><br>
+                    회원가입으로 <b>100만 포인트</b>가 지급되었습니다.<br><br>
 
                     앞으로 더욱 발전하는 UNIFY가 되겠습니다.<br><br>
 
