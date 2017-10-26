@@ -183,6 +183,8 @@ public class UserController {
         pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
         pointService.insertOperPoint(pointInsertVO);
 
+        pointService.balancePointUpdate(userVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
+
         rttr.addFlashAttribute("msg", "SUCCESS");
 
 //        return "redirect:/home";

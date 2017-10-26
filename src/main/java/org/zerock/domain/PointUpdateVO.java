@@ -31,7 +31,7 @@ public class PointUpdateVO {
 
     private String pupdid;
     private Date pupddate;
-    private int pupdseq;
+    private int pupdseq;            // 시퀀스
     private int pupdpoint;
     private String pupdcontent;
 

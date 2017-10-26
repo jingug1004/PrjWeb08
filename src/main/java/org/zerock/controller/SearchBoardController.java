@@ -154,11 +154,11 @@ public class SearchBoardController {
         }
 
         PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")), "글 삭제", (Integer) bno);
-        PointDeleteVO pointDeleteVO = new PointDeleteVO();
-        pointDeleteVO.setPdelid(loginUserVO.getUid());
-        pointDeleteVO.setPdelpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
-        pointDeleteVO.setPdelcontent(pointUtils.getExtinctPointContent());
-        pointService.deleteOperPoint(pointDeleteVO);
+        PointUpdateVO pointUpdateVO = new PointUpdateVO();
+        pointUpdateVO.setPupdid(loginUserVO.getUid());
+        pointUpdateVO.setPupdpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
+        pointUpdateVO.setPupdcontent(pointUtils.getUsePointContent());
+        pointService.updateOperPoint(pointUpdateVO);
 
         // 카테고리 리스트
         if (cateNum != null) {
@@ -282,6 +282,9 @@ public class SearchBoardController {
         pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
         pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
         pointService.insertOperPoint(pointInsertVO);
+
+        pointUtils.setBalancePoint(loginUserVO.getUpoint());
+        pointService.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
 
         rttr.addFlashAttribute("msg", "SUCCESS");
 

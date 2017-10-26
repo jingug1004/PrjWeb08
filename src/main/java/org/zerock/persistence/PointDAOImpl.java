@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
+import org.zerock.domain.PointUpdateVO;
 
 import javax.inject.Inject;
 import java.util.HashMap;
@@ -49,7 +50,24 @@ public class PointDAOImpl implements PointDAO {
     }
 
     @Override
+    public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception {
+        sqlSession.insert(namespace + ".updateOperPoint", pointUpdateVO);
+    }
+
+    @Override
     public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception {
         sqlSession.insert(namespace + ".deleteOperPoint", pointDeleteVO);
+    }
+
+    @Override
+    public void balancePointUpdate(String uid, int balancePoint) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("uid", uid);
+        paramMap.put("upoint", balancePoint);
+
+        logger.info("lllll~~~~~ paramMap.toString() : " + paramMap.toString());
+
+        sqlSession.update(namespace + ".balancePointUpdate", paramMap);
     }
 }

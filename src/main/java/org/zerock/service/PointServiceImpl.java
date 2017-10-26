@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
+import org.zerock.domain.PointUpdateVO;
 import org.zerock.persistence.PointDAO;
 
 import javax.inject.Inject;
@@ -42,7 +43,17 @@ public class PointServiceImpl implements PointService {
     }
 
     @Override
+    public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception {
+        pointDAO.updateOperPoint(pointUpdateVO);
+    }
+
+    @Override
     public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception {
         pointDAO.deleteOperPoint(pointDeleteVO);
+    }
+
+    @Override
+    public void balancePointUpdate(String uid, int balancePoint) throws Exception {
+        pointDAO.balancePointUpdate(uid, balancePoint);
     }
 }

@@ -2924,7 +2924,7 @@
     </column>
     <column id="734" parent="78" name="pdelcontent">
       <Position>5</Position>
-      <DataType>varchar(200)|0</DataType>
+      <DataType>varchar(400)|0</DataType>
     </column>
     <key id="735" parent="78" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -2955,7 +2955,7 @@
     </column>
     <column id="741" parent="79" name="pinscontent">
       <Position>6</Position>
-      <DataType>varchar(200)|0</DataType>
+      <DataType>varchar(400)|0</DataType>
     </column>
     <key id="742" parent="79" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -2982,7 +2982,7 @@
     </column>
     <column id="747" parent="80" name="pupdcontent">
       <Position>5</Position>
-      <DataType>varchar(200)|0</DataType>
+      <DataType>varchar(400)|0</DataType>
     </column>
     <key id="748" parent="80" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

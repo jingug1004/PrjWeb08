@@ -51,6 +51,8 @@ public class PointUtils {
 
     private Integer bnoParam;                       // 글번호, 전달되는 파라미터값
 
+    private int balancePoint;                       // tbl_user의 포인트 잔액
+
     public PointUtils(){}; // 기본 생성자
 
     // insert 회원가입시 100 포인트(+) 생성자
@@ -76,14 +78,14 @@ public class PointUtils {
         savingPointContentPointUtils(loginId, bnoParam, reason, savingPoint);
     }
 
-    // delete 글삭제시 45 포인트(-) 생성자
-    public PointUtils(String loginId, int extinctPoint, String reason, Integer bnoParam) {
+    // update 사용 - 글삭제시 45 포인트(-) 생성자
+    public PointUtils(String loginId, int usePoint, String reason, Integer bnoParam) {
         this.loginId = loginId;
-        this.extinctPoint = extinctPoint;
+        this.usePoint = usePoint;
         this.reason = reason;
         this.bnoParam = bnoParam;
 
-        extinctPointContentPointUtils(loginId, extinctPoint, reason, bnoParam);
+        exploitPointContentPointUtils(loginId, usePoint, reason, bnoParam);
     }
 
     public String getLoginId() {
@@ -182,22 +184,23 @@ public class PointUtils {
         this.bnoParam = bnoParam;
     }
 
+    public int getBalancePoint() {
+        return balancePoint;
+    }
+
+    public void setBalancePoint(int balancePoint) {
+        this.balancePoint = balancePoint;
+
+        balancePointUtils();
+    }
+
+    // tbl_user의 남은 포인트 = B테이블(적립) - C테이블(사용)
+    private void balancePointUtils() {
+        this.balancePoint = balancePoint + savingPoint - usePoint;
+    }
+
     // insert시 소멸 예정일 구하는 내부 메소드
     private void deleteScheduleDatePointUtils() {
-
-//        Calendar calendar = Calendar.getInstance();
-//        String yearPath = File.separator + calendar.get(Calendar.YEAR);
-//        String monthPath = yearPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.MONTH) + 1);
-//        String datePath = monthPath + File.separator + new DecimalFormat("00").format(calendar.get(Calendar.DATE));
-//        String datePathLast = datePath.substring(1);
-//
-//        String te = datePathLast.replaceAll("/", "-");
-
-//        String temp = datePath.substring(3, 5);
-//        String temp2 = datePath.substring(6, 8);
-//        String temp3 = datePath.substring(9, 11);
-//
-//        String te = temp + temp2 + temp3;
 
         Date date = new Date();
 
@@ -250,9 +253,14 @@ public class PointUtils {
         this.savingPointContent = ment;
     }
 
-    private void extinctPointContentPointUtils (String loginId, int pointAmount, String reason, Integer bnoParam) {
-        String ment = loginId + "님 " + bnoParam + reason + "로 " + pointAmount + " 포인트 소멸 (-) ";
-        this.extinctPointContent = ment;
+    private void exploitPointContentPointUtils (String loginId, int pointAmount, String reason, Integer bnoParam) {
+        String ment = loginId + "님 " + bnoParam + reason + "로 " + pointAmount + " 포인트 사용 (-) ";
+        this.usePointContent = ment;
     }
+
+//    private void extinctPointContentPointUtils (String loginId, int pointAmount, String reason, Integer bnoParam) {
+//        String ment = loginId + "님 " + bnoParam + reason + "로 " + pointAmount + " 포인트 소멸 (-) ";
+//        this.extinctPointContent = ment;
+//    }
 
 }

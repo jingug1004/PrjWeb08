@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
+import org.zerock.domain.PointUpdateVO;
 
 /**
  * Created by Emiya on 2017-10-23 오후 1:23
@@ -27,7 +28,10 @@ public interface PointService {
 
     public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
 
+    public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception;
+
     public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
 
+    public void balancePointUpdate(String uid, int balancePoint) throws Exception;
 
 }

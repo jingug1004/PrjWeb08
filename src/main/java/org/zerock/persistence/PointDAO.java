@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
+import org.zerock.domain.PointUpdateVO;
 
 /**
  * Created by macbookpro on 2017. 2. 19. PM 2:16
@@ -26,5 +27,9 @@ public interface PointDAO {
 
     public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
 
+    public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception;
+
     public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
+
+    public void balancePointUpdate(String uid, int balancePoint) throws Exception;
 }

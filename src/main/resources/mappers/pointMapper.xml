@@ -6,8 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="org.zerock.mapper.PointMapper">
 
 	<update id="updatePoint">
-		update tbl_user set upoint = upoint + #{point} where
-		uid = #{uid}
+		update tbl_user set upoint = upoint + #{point} where uid = #{uid}
 	</update>
 
 	<insert id="insertOperPoint">
@@ -15,10 +14,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES (#{pinsid}, NOW(), #{pinspoint}, #{pinsdeldate}, #{pinscontent})
 	</insert>
 
+	<insert id="updateOperPoint">
+		INSERT INTO tbl_point_update(pupdid, pupddate, pupdpoint, pupdcontent)
+		VALUES (#{pupdid}, NOW(), #{pupdpoint}, #{pupdcontent})
+	</insert>
+
 	<insert id="deleteOperPoint">
 		INSERT INTO tbl_point_delete(pdelid, pdeldate, pdelpoint, pdelcontent)
 		VALUES (#{pdelid}, NOW(), #{pdelpoint}, #{pdelcontent})
 	</insert>
+
+	<update id="balancePointUpdate" parameterType="map">
+		<![CDATA[
+		UPDATE tbl_user SET upoint = upoint + #{upoint} WHERE uid = #{uid}
+		]]>
+	</update>
 
 </mapper>
 

@@ -76,6 +76,8 @@
                     귀하의 ID는 ${userVO.uid}이며, 별명은${userVO.nickname},<br>
                     이메일 주소는 ${userVO.email}이십니다.<br><br>
 
+                    회원가입으로 100만 포인트가 지급되었습니다.<br><br>
+
                     앞으로 더욱 발전하는 UNIFY가 되겠습니다.<br><br>
 
                     로그인 하시고 즐거운 시간 보내시기 바랍니다.<br><br>
