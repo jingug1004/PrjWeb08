@@ -96,7 +96,7 @@
 
                         <%--</c:forEach>--%>
 
-                        <c:forEach items="${list}" var="boardVO">
+                        <c:forEach items="${list}" var="boardVO" varStatus="itr">
                             <tr>
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
@@ -110,8 +110,11 @@
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
                                 <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
                                 </td>
+                                <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
+                                        <%--${boardVO.getcolor} // ${boardVO.writer}--%>
+                                <%--</td>--%>
                                 <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
-                                        ${boardVO.writer}
+                                ${boardVO.writer}
                                 </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd"
                                                                    value="${boardVO.regdate}"/></td>
@@ -123,9 +126,9 @@
                         </c:forEach>
 
                         <%-- listAny 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
-                        <c:forEach items="${listAny}" var="boardVO">
+                        <c:forEach items="${listAny}" var="boardVO" varStatus="itr">
                             <tr>
-                                <input type="hidden" class="bringBoardVOgetcolor" value=${boardVO.getcolor}>
+                                <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
@@ -138,7 +141,7 @@
                                 <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
                                 </td>
                                 <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
-                                        ${boardVO.writer}
+                                ${boardVO.writer}
                                 </td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
@@ -344,6 +347,49 @@
                 self.location = temp + "&cntSortType=vc";
             }
         });
+
+        function pad(n, width) {
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+
+        }
+
+//
+//        var number = $('.bringBoardVOgetcolor').val();
+//
+//        console.log("lllll~~~~~ number : " + number);
+//
+//        var tempUrl01 = "/assets/img/colors/";
+//        var tempUrl02 = pad(number, 3);
+//        var tempUrl03 = ".png";
+//
+//        var tempUrl = "";
+//        var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);
+//
+//        console.log("lllll~~~~~ temp : " + temp);
+//
+//        $('.getColor').prop("src", temp);
+
+        <%--$("#getColor").each(function (itr) {--%>
+            <%--&lt;%&ndash;$(this).after($m[${list}]);&ndash;%&gt;--%>
+            <%--console.log("lllll~~~~~ {itr} : " + itr.length);--%>
+
+            <%--var number = $('#bringBoardVOgetcolor').val();--%>
+
+            <%--console.log("lllll~~~~~ number : " + number);--%>
+
+            <%--var tempUrl01 = "/assets/img/colors/";--%>
+            <%--var tempUrl02 = pad(number, 3);--%>
+            <%--var tempUrl03 = ".png";--%>
+
+            <%--var tempUrl = "";--%>
+            <%--var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);--%>
+
+            <%--console.log("lllll~~~~~ temp : " + temp);--%>
+
+            <%--$('.getColor')[itr.current()].prop("src", temp);--%>
+        <%--});--%>
+        <%--&lt;%&ndash;$(".reptilia").remove();&ndash;%&gt;--%>
 
     });
 

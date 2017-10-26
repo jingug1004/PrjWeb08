@@ -55,8 +55,8 @@ public class SearchBoardController {
     public String listPage(@ModelAttribute("cri") SearchCriteria cri,
                            Model model,
                            BoardVO boardVO,
-                           @RequestParam(required = false, value = "cate") Integer cateNum,
-                           @RequestParam(required = false, value = "cntSortType") String cntSortType) throws Exception {
+                           @RequestParam(required = false, value = "cate") Integer cateNum
+                           /*@RequestParam(required = false, value = "cntSortType") String cntSortType*/) throws Exception {
 
         RateMaker rateMaker = new RateMaker();
         rateMaker.setRategb();
@@ -69,10 +69,10 @@ public class SearchBoardController {
         pageMaker.setCnumFromBoardVO(boardVO.getCnum());            // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
         pageMaker.setTotalCount(boardService.listSearchCount(cri)); // pageMaker.setTotalCount(boardService.listCountCriteria(cri));
         model.addAttribute("pageMaker", pageMaker);
-//        model.addAttribute("cateName", cateNum);                                    // 리스트 목록 상단에 카테고리 이름 출력!
-        model.addAttribute("cateName", boardVO.getCnum());                                    // 리스트 목록 상단에 카테고리 이름 출력!
-//        model.addAttribute("cateName", boardService.callCateNameInList(cateNum));   // 게시판 상세 글의 카테고리 이름 출력
-        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));   // 게시판 상세 글의 카테고리 이름 출력
+//        model.addAttribute("cateName", cateNum);                                                 // 리스트 목록 상단에 카테고리 이름 출력!
+        model.addAttribute("cateName", boardVO.getCnum());                                     // 리스트 목록 상단에 카테고리 이름 출력!
+//        model.addAttribute("cateName", boardService.callCateNameInList(cateNum));                // 게시판 상세 글의 카테고리 이름 출력
+        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
 
         return "sboard/list";
     }

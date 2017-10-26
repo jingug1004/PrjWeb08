@@ -235,7 +235,7 @@
                             <c:if test="${not empty login}">
                                 <li>
                                     <input type="hidden" id="loginUday" value="${login.uday}">
-                                    <img src="/assets/img/colors/000.png" id="getColor" alt="">
+                                    <img src="/assets/img/colors/${login.uday}.png" id="getColor" alt="">
                                     ${login.nickname}님! |
                                     <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |
                                     <a href="<c:url value="/user/logout"/>">Logout</a>
@@ -597,29 +597,29 @@
                 }
             });
 
-            // 숫자 앞에 자릿수를 맞추기 위한 0을 넣기 / https://programmers.co.kr/learn/questions/52
-            function pad(n, width) {
-                n = n + '';
-                return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
-
-            }
-            /*
-            pad(10, 4);      // 0010
-            pad(9, 4);       // 0009
-            pad(123, 4);    // 0123
-            pad(1234, 4);   // 1234
-            */
-
-            var number = $('#loginUday').val();
-
-            var tempUrl01 = "/assets/img/colors/";
-            var tempUrl02 = pad(number, 3);
-            var tempUrl03 = ".png";
-
-            var tempUrl = "";
-            var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);
-
-            $('#getColor').prop("src", temp);
+//            // 숫자 앞에 자릿수를 맞추기 위한 0을 넣기 / https://programmers.co.kr/learn/questions/52
+//            function pad(n, width) {
+//                n = n + '';
+//                return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+//
+//            }
+//            /*
+//            pad(10, 4);      // 0010
+//            pad(9, 4);       // 0009
+//            pad(123, 4);    // 0123
+//            pad(1234, 4);   // 1234
+//            */
+//
+//            var number = $('#loginUday').val();
+//
+//            var tempUrl01 = "/assets/img/colors/";
+//            var tempUrl02 = pad(number, 3);
+//            var tempUrl03 = ".png";
+//
+//            var tempUrl = "";
+//            var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);
+//
+//            $('#getColor').prop("src", temp);
 
         });
 
