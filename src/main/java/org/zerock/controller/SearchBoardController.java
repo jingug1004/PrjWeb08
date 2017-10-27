@@ -27,7 +27,6 @@ import java.util.List;
  * How :
  */
 
-
 @Controller
 @RequestMapping("/sboard/*")
 public class SearchBoardController {

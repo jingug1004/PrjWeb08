@@ -30,7 +30,7 @@
                 <!-- /.box-header -->
 
                 <form id='registerForm' role="form" method="post">
-                    <%-- form의 action 속성이 지정되지 않으면 현재 경로를 그대로 action의 대상 경로로 잡음.
+                    <%-- form의 action 속성이 지정되지 않으면 현재 경로(register.jsp)를 그대로 action의 대상 경로로 잡음.
                     @RequestMapping(value = "/register", method = RequestMethod.POST) --%>
                     <div class="box-body">
                         <div class="form-group">
