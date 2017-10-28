@@ -73,8 +73,9 @@
                     <p align="center">
                     회원 가입을 축하드립니다. <b>${userVO.uid}</b>님!<br><br>
 
-                    귀하의 ID는 ${userVO.uid}이며, 별명은 ${userVO.nickname},<br>
-                    이메일 주소는 ${userVO.email}이십니다.<br><br>
+                    귀하의 ID는 <b>${userVO.uid}</b>이며, 별명은 <b>${userVO.nickname}</b>,<br>
+                    존경하는 정치인으로는 <b>${userVO.uname}</b>,<br>
+                    이메일 주소는 <b>${userVO.email}</b>이십니다.<br><br>
 
                     회원가입으로 <b>100만 포인트</b>가 지급되었습니다.<br><br>
 

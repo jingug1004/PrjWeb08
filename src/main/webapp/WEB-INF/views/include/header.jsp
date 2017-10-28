@@ -224,6 +224,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ul class="list-inline right-topbar pull-right">
+                            <li>${todayTime}</li>
                             <li>${clientIP}</li>
                             <li><a href="#">Account</a></li>
                             <li><a href="#">Wishlist (0)</a></li>

@@ -11,6 +11,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
@@ -65,6 +66,12 @@ public class HomeController {
         }
 
         model.addAttribute("clientIP", ip);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String todaySimple = simpleDateFormat.format(date);
+
+        model.addAttribute("todayTime", todaySimple);
 
         return "home";
     }

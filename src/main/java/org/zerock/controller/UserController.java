@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
-import org.zerock.domain.PointInsertVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.service.PointService;
 import org.zerock.service.UserService;
-import org.zerock.util.PointUtils;
-import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
@@ -82,22 +79,15 @@ public class UserController {
     public void loginPOST(LoginDTO dto,
                           HttpSession session,
                           Model model) throws Exception {
-
-        UserVO vo = userService.login(dto);
-
-        if (vo == null) {
+        UserVO userVO = userService.login(dto);
+        if (userVO == null) {
             return;
         }
-
-        model.addAttribute("userVO", vo);
-
+        model.addAttribute("userVO", userVO);
         if (dto.isUseCookie()) {
-
             int amount = 60 * 60 * 24 * 7;
-
             Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
-
-            userService.keepLogin(vo.getUid(), session.getId(), sessionLimit);
+            userService.keepLogin(userVO.getUid(), session.getId(), sessionLimit);
         }
     }
 
@@ -108,7 +98,6 @@ public class UserController {
      */
     @RequestMapping(value = "/shop-ui-register", method = RequestMethod.GET)
     public String registerGET() {
-
         return "user/shop-ui-register";
     }
 
@@ -158,37 +147,20 @@ public class UserController {
     public String registerPOST(@Valid UserVO userVO,
                                RedirectAttributes rttr,
                                BindingResult bindingResult) throws Exception {
-
-        logger.info("lll~~~ user regist post ........... lll~~~");
-        logger.info("lll~~~ userVO.toString() ........... lll~~~" + userVO.toString() + "lll~~~ userVO.toString() ........... lll~~~");
-
+        logger.info("lll~~~ user regist post ........... userVO.toString() ........... lll~~~" + userVO.toString() + "lll~~~ userVO.toString() ........... lll~~~");
         if (bindingResult.hasErrors()) {
             logger.info("lll~~~ Binding Result has error! lll~~~");
             List<ObjectError> errors = bindingResult.getAllErrors();
-
             for (ObjectError error : errors) {
                 logger.info("lll~~~ error : {}, {}", error.getCode(), error.getDefaultMessage() + " lll~~~");
             }
-
             return "user/shop-ui-register02";
         }
 
         userService.regist(userVO);
 
-        PointUtils pointUtils = new PointUtils(userVO.getUid(), "회원가입", Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
-        PointInsertVO pointInsertVO = new PointInsertVO();
-        pointInsertVO.setPinsid(userVO.getUid());
-        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("RegisterPoint"))); // 회원가입시 100 포인트 증정
-        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
-        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
-        pointService.insertOperPoint(pointInsertVO);
-
-        pointService.balancePointUpdate(userVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
-
         rttr.addFlashAttribute("msg", "SUCCESS");
 
-//        return "redirect:/home";
-//        return "redirect:/user/shop-ui-register03";
         return "user/shop-ui-register03";
     }
 
@@ -219,30 +191,19 @@ public class UserController {
      */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request,
-                       HttpServletResponse response,
-                       HttpSession session) throws Exception {
-
-        logger.info("lll~~~ logout..................1 lll~~~");
-
+                         HttpServletResponse response,
+                         HttpSession session) throws Exception {
+        logger.info("lll~~~ logout..................1      lll~~~");
         Object obj = session.getAttribute("login");
-
         if (obj != null) {
-
             UserVO vo = (UserVO) obj;
-
-            logger.info("lll~~~ logout.......................2 lll~~~");
-
+            logger.info("lll~~~ logout.......................2      lll~~~");
             session.removeAttribute("login");
             session.invalidate();
-
-            logger.info("lll~~~ logout............................3 lll~~~");
-
+            logger.info("lll~~~ logout............................3      lll~~~");
             Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
-
             if (loginCookie != null) {
-
-                logger.info("lll~~~ logout.................................4 lll~~~");
-
+                logger.info("lll~~~ logout.................................4      lll~~~");
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(0);
                 response.addCookie(loginCookie);

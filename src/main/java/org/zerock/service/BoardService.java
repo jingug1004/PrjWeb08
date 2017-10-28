@@ -5,6 +5,7 @@ import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
 import org.zerock.domain.SearchCriteriaListAny;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -18,10 +19,10 @@ public interface BoardService {
     /**
      * Regist. 글 등록 from SeachBoardController
      *
-     * @param board the board
+     * @param boardVO the board
      * @throws Exception the exception
      */
-    public void regist(BoardVO board) throws Exception;
+    public void regist(BoardVO boardVO, HttpSession httpSession) throws Exception;
 
     /**
      * Read board vo.

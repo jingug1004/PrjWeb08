@@ -1,9 +1,13 @@
 package org.zerock.service;
 
 import org.springframework.stereotype.Service;
+import org.zerock.domain.PointInsertVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
+import org.zerock.persistence.PointDAO;
 import org.zerock.persistence.UserDAO;
+import org.zerock.util.PointUtils;
+import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
 import java.util.Date;
@@ -21,29 +25,49 @@ import java.util.Date;
 public class UserServiceImpl implements UserService {
 
     @Inject
-    private UserDAO dao;
+    private UserDAO userDAO;
+
+//    @Inject
+//    private PointService pointService;                  // 포인트 서비스
+
+    @Inject
+    private PointDAO pointDAO;                          // 포인트 DAO
 
     @Override
     public UserVO login(LoginDTO dto) throws Exception {
 
-        return dao.login(dto);
+        return userDAO.login(dto);
     }
 
     @Override
     public void keepLogin(String uid, String sessionId, Date next) throws Exception {
 
-        dao.keepLogin(uid, sessionId, next);
+        userDAO.keepLogin(uid, sessionId, next);
     }
 
     @Override
     public UserVO checkLoginBefore(String value) {
 
-        return dao.checkUserWithSessionKey(value);
+        return userDAO.checkUserWithSessionKey(value);
     }
 
     @Override
-    public void regist(UserVO user) throws Exception {
+    public void regist(UserVO userVO) throws Exception {
 
-        dao.create(user);
+        userDAO.create(userVO);
+
+        /* 회원가입시 100 포인트 증정 */
+        PointUtils pointUtils = new PointUtils(userVO.getUid(), "회원가입", Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
+        PointInsertVO pointInsertVO = new PointInsertVO();
+        pointInsertVO.setPinsid(userVO.getUid());
+        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("RegisterPoint"))); // 회원가입시 100 포인트 증정
+        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
+        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
+        pointDAO.insertOperPoint(pointInsertVO);
+
+        pointDAO.balancePointUpdate(userVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
+        /* 회원가입시 100 포인트 증정 */
+
+
     }
 }

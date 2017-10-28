@@ -5,13 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import org.zerock.domain.BoardVO;
-import org.zerock.domain.Criteria;
-import org.zerock.domain.SearchCriteria;
-import org.zerock.domain.SearchCriteriaListAny;
+import org.zerock.domain.*;
 import org.zerock.persistence.BoardDAO;
+import org.zerock.persistence.PointDAO;
+import org.zerock.util.PointUtils;
+import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -29,6 +30,15 @@ public class BoardServiceImpl implements BoardService {
     @Inject
     private BoardDAO boardDAO;
 
+//    @Inject
+//    private BoardService boardService;
+
+//    @Inject
+//    private PointService pointService;
+
+    @Inject
+    private PointDAO pointDAO;
+
     /*
     @Override
     public void regist(BoardVO board) throws Exception {
@@ -40,18 +50,41 @@ public class BoardServiceImpl implements BoardService {
      * BoardDAO의 create()와 addAttach()를 연속으로 사용하기 때문에 코드는 아래와 같이 트랜잭션을 처리하는 방식으로 변경.
      * 작업의 순서는 먼저 게시물을 등록하는 boardDAO.create()를 호출한 후 첨부파일의 이름 배열을 이용해서 각각의 파일 이름을 데이터베이스에 추가하는 형태로 구현.
      *
-     * @param board
+     * @param boardVO
      */
-    @Transactional
+//    @Transactional
     @Override
-    public void regist(BoardVO board) throws Exception {
+    public void regist(BoardVO boardVO, HttpSession httpSession) throws Exception {
 
-        boardDAO.create(board);
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
+        }
 
-        String[] files = board.getFiles();
+        logger.info("lllll~~~~~ loginUserVO.toString() lllll~~~~~ " + loginUserVO.toString());
 
-//        logger.info("lllll~~~~~ files.toString() : " + files.toString() + "lllll~~~~~ ");
+        boardDAO.create(boardVO);
 
+        /* 글 작성시 + 50 포인트 */
+        boardVO = boardDAO.readByIDnTitle(boardVO);
+
+        logger.info("lllll~~~~~ boardVO = boardService.readByIDnTitle(boardVO); lllll~~~~~ " + boardVO.toString());
+        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVO.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
+
+        PointInsertVO pointInsertVO = new PointInsertVO();
+        pointInsertVO.setPinsid(loginUserVO.getUid());
+        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
+        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
+        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
+        pointDAO.insertOperPoint(pointInsertVO);
+
+        pointUtils.setBalancePoint(loginUserVO.getUpoint());
+        pointDAO.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
+        /* 글 작성시 + 50 포인트 */
+
+        /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
+        String[] files = boardVO.getFiles();
         if (files == null) {
             return;
         }
@@ -59,6 +92,7 @@ public class BoardServiceImpl implements BoardService {
         for (String fileName : files) {
             boardDAO.addAttach(fileName);
         }
+        /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
 
     }
 
@@ -130,13 +164,6 @@ public class BoardServiceImpl implements BoardService {
         }
     }
 
-    /*
-    @Override
-    public void remove(Integer bno) throws Exception {
-        boardDAO.delete(bno);
-    }
-    */
-
     /**
      * 데이터베이스에 저장된 첨부파일의 정보와 게시물의 삭제 작업.
      * 삭제 작업의 경우 tbl_attach가 tbl_board를 참조하기 때문에 반드시 첨부파일과 관련된 정보부터 삭제하고, 게시글을 삭제.
@@ -170,18 +197,11 @@ public class BoardServiceImpl implements BoardService {
     // 글 목록 불러오기
     @Override
     public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
-
-//        logger.info("lll~~~ cri.toString() BoardServiceImpl : " + cri.toString() + " lll~~~");
-//        logger.info("lll~~~ cate BoardServiceImpl : " + cate + " lll~~~");
-
         return boardDAO.listSearch(cri);
     }
 
     @Override
     public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception {
-
-        logger.info("lll~~~ cri.toString() BoardServiceImpl : " + criteria.toString() + " lll~~~");
-
         return boardDAO.listSearchAny(criteria);
     }
 
