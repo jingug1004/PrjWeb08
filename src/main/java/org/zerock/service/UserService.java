@@ -50,4 +50,6 @@ public interface UserService {
      */
     public void regist(UserVO user) throws Exception;
 
+    public int registUsersNumGET() throws Exception;
+
 }

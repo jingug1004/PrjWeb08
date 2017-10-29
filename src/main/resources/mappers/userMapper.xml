@@ -34,5 +34,9 @@
         <!--select * from tbl_user where email = #{email}-->
     <!--</select>-->
 
+    <select id="registUsersNumGET" resultType="int">
+        SELECT count(*) FROM tbl_user;
+    </select>
+
 
 </mapper>

@@ -104,11 +104,11 @@
                                     <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span>
+                                <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
                                 </td>
                                 <td align="right"><span
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
-                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
+                                <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
                                 </td>
                                 <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
                                         <%--${boardVO.getcolor} // ${boardVO.writer}--%>
@@ -118,9 +118,9 @@
                                 </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd"
                                                                    value="${boardVO.regdate}"/></td>
-                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span>
+                                <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
                                 </td>
-                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span>
+                                <td align="right"><span class="badge bg-gray-light center listvcnt">${boardVO.viewcnt}</span>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -134,11 +134,11 @@
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
                                             ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
                                     </a></td>
-                                <td align="right"><span class="badge bg-green-gradient center">${boardVO.goodcnt}</span>
+                                <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
                                 </td>
                                 <td align="right"><span
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
-                                <td align="right"><span class="badge bg-red-gradient center">${boardVO.badcnt}</span>
+                                <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
                                 </td>
                                 <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
                                 ${boardVO.writer}
@@ -146,9 +146,9 @@
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
                                                                    pattern="yyyy-MM-dd"/></td>
-                                <td align="right"><span class="badge bg-orange-active center">${boardVO.spamcnt}</span>
+                                <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
                                 </td>
-                                <td align="right"><span class="badge bg-gray-light center">${boardVO.viewcnt}</span>
+                                <td align="right"><span class="badge bg-gray-light center listvcnt">${boardVO.viewcnt}</span>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -237,8 +237,12 @@
 <%--ex) www.profile.com?name=hyewon&age=25--%>
 <script>
 
-    // list(리스트)의 g/b 넘버 포맷팅 Todo: 나머지 넘ㅂ 버 ㅗ포맷팅 해야ㅏ함
+    // list(리스트)의 g/b 넘버 포맷팅 Todo: 나머지 넘버 포맷팅 해야함
+    $('.listgcnt').number(true);
     $('.listgbcnt').number(true);
+    $('.listbcnt').number(true);
+    $('.listscnt').number(true);
+    $('.listvcnt').number(true);
 
     function getUrlParams() {
         var params = {};

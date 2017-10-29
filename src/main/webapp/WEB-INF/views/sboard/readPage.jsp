@@ -131,13 +131,13 @@
                             </div>
                             <div id="gbdiv" style="display: inline; float: left; width: 16%; margin-right: 1%">
                                 <label for="exampleInputEmail1">G/B</label>
-                                <input id="gbcnt" type="text" name='gbtitle' class="form-control" value=""
+                                <input id="gbcnt" type="text" name='gbtitle' class="form-control readgbcnt" value=""
                                        readonly="readonly" style="color: darkorange">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
                             <div style="display: inline; float: left; width: 17%;">
                                 <label for="exampleInputEmail1">View</label>
-                                <input type="text" name='title' class="form-control" value="${boardVO.viewcnt}"
+                                <input type="text" name='title' class="form-control readvcnt" value="${boardVO.viewcnt}"
                                        readonly="readonly" style="color: darkgray">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
@@ -173,14 +173,14 @@
                             <c:if test="${login.uid == goodCntVOGet && login.uid != badCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
-                                    <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct"
+                                    <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct readgcnt"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBad" type="text" name="writer"
-                                           class="form-control hoverInputRead disaClass"
+                                           class="form-control hoverInputRead disaClass readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
                                            onclick="badcntButton('${login.uid}')">
                                 </div>
@@ -189,13 +189,13 @@
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGood" type="text" name="writer"
-                                           class="form-control hoverInputRead disaClass"
+                                           class="form-control hoverInputRead disaClass readgcnt"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
-                                    <input id="logBad" type="text" name="writer" class="form-control hoverInputReadAct"
+                                    <input id="logBad" type="text" name="writer" class="form-control hoverInputReadAct readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
                                            onclick="badcntButton('${login.uid}')">
                                 </div>
@@ -204,14 +204,14 @@
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage" type="text" name="writer"
-                                           class="form-control hoverInputRead"
+                                           class="form-control hoverInputRead readgcnt"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBadPage" type="text" name="writer"
-                                           class="form-control hoverInputRead"
+                                           class="form-control hoverInputRead readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
                                            onclick="badcntButton('${login.uid}')">
                                 </div>
@@ -220,14 +220,14 @@
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage02" type="text" name="writer"
-                                           class="form-control hoverInputRead"
+                                           class="form-control hoverInputRead readgcnt"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBadPage02" type="text" name="writer"
-                                           class="form-control hoverInputRead"
+                                           class="form-control hoverInputRead readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
                                            onclick="badcntButton('${login.uid}')">
                                 </div>
@@ -238,7 +238,7 @@
                             <c:if test="${login.uid == spamCntVOGet && not empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
                                     <label for="exampleInputEmail1">Spam</label>
-                                    <input id="logSpam" type="text" name="writer" class="form-control hoverInputReadAct"
+                                    <input id="logSpam" type="text" name="writer" class="form-control hoverInputReadAct readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
                                 </div>
@@ -246,7 +246,7 @@
                             <c:if test="${empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
                                     <label for="exampleInputEmail1">Spam</label>
-                                    <input id="logNoSpam" type="text" name="writer" class="form-control hoverInputRead"
+                                    <input id="logNoSpam" type="text" name="writer" class="form-control hoverInputRead readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
                                 </div>
@@ -255,7 +255,7 @@
                                 <div style="display: inline; float: left; width: 16%">
                                     <label for="exampleInputEmail1">Spam</label>
                                     <input id="logSpamPage" type="text" name="writer"
-                                           class="form-control hoverInputRead"
+                                           class="form-control hoverInputRead readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
                                 </div>
@@ -655,6 +655,16 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
 <script>
 
+//    $('.readgbcnt').val().number(true);
+//    $('.readvcnt').val().number(true);
+//
+//    $('.readgcnt').val().number(true);
+//    $('.readbcnt').val().number(true);
+//
+//    $('.readscnt').val().number(true);
+
+
+
     function getUrlParamsCnt() {
         var params = {};
         window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
@@ -678,8 +688,24 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         <%--console.log("lllll~~~~~ ${goodCntVOGet.goodcntuid} : " + ${goodCntVOGet.goodcntuid});--%>
 
         // readPage(상세페이지)의 g/b 넘버 포맷팅
+        // fixme: list.jsp의 넘버 포맷팅은 됨(태그 안에 없으면) 그러나 readPage.jsp의 포맷팅은 안 됨(input 안에 포맷팅 디버깅 해야함)
         var gbcntRate = Math.round(${boardVO.gbcnt});           // 링크 : http://fillin.tistory.com/88
+        // $("input[type=text][name=gbtitle]").val(gbcntRate);
         $("input[type=text][name=gbtitle]").val(gbcntRate);
+//        var ss = $("input[type=text][name=gbtitle]").val(gbcntRate).number(true);
+
+        console.log("gbcntRate : " + gbcntRate);
+
+        <%--function formatting() {--%>
+            <%--var gbcntRate = Math.round(${boardVO.gbcnt});           // 링크 : http://fillin.tistory.com/88--%>
+
+            <%--var ss = $("input[type=text][name=gbtitle]").val(gbcntRate).number(true);--%>
+
+            <%--return ss;--%>
+
+            <%--console.log("gbcntRate : " + gbcntRate);--%>
+            <%--console.log("ss : " + ss);--%>
+        <%--}--%>
 
         var formObj = $("form[role='form']");
         // formObj는 위에 선언된 <form> 태그를 의미하게 됨. <input type='hidden' name='bno' value="${boardVO.bno}~${cri.keyword}">
@@ -744,8 +770,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         // 현재 첨부파일의 이름을 배열로 작성해서 UploadController에 Ajax 방식으로 첨부파일에 대한 삭제를 지시.
         // 첨부파일 삭제 이후에 바로 <form> 태그를 이용해서 데이터베이스의 삭제를 처리할 것이므로, 성공이나 실패를 기다리지 않고, 바로 '/sboard/removePage'를 호출하는 형태로 작성.
 
-        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn01">메뉴</button>';
-        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn02">메뉴</button>';
+        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn01">목록</button>';
+        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn02">목록</button>';
 
         function validMenuInReadPage() {
             if(getUrlParams().cate) {

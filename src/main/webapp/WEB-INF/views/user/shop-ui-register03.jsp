@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="members-number">
-                    <h3>전 세계 <span class="shop-green">1,913,000명 </span>이상의 회원</h3>
+                    <h3>전 세계 <span class="shop-green" id="ui-register-num">${uiregister}</span>명 이상의 회원</h3>
                     <img class="img-responsive" src="../assets/img/map.png" alt="">
                 </div>
             </div>
@@ -156,6 +156,12 @@
     </div>
 </div>
 <!-- End Wait Block -->
+
+<script>
+    $('#ui-register-num').number(true);
+    <%--console.log("{uiregister} : " + ${uiregister});--%>
+
+</script>
 
 <%@ include file="../include/footer.jsp" %>
 

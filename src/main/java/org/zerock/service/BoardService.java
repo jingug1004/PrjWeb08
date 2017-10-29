@@ -66,7 +66,7 @@ public interface BoardService {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public void remove(Integer bno) throws Exception;
+    public void remove(Integer bno, HttpSession httpSession) throws Exception;
 
     /**
      * List all list.     // 정말 무시하자! 옛날 거!

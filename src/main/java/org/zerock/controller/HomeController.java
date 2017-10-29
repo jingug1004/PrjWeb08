@@ -48,11 +48,6 @@ public class HomeController {
         HttpServletRequest httpServletRequest =
                 ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 
-        /*
-        String ip = httpServletRequest.getHeader("X-FORWARDED-FOR");
-        if (ip == null)
-            ip = httpServletRequest.getRemoteAddr();
-        */
         // 출처: http://sesok808.tistory.com/378 [살아가는 그 이유]
         String ip = httpServletRequest.getHeader("X-FORWARDED-FOR");
         if (ip == null || ip.length() == 0) {
@@ -64,14 +59,14 @@ public class HomeController {
         if (ip == null || ip.length() == 0) {
             ip = httpServletRequest.getRemoteAddr();
         }
-
         model.addAttribute("clientIP", ip);
+        // Spring 에서 client ip 가져오는 법. https://www.lesstif.com/pages/viewpage.action?pageId=18220218
 
+        /* 접속 날짜 시간 */
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
         String todaySimple = simpleDateFormat.format(date);
-
         model.addAttribute("todayTime", todaySimple);
+        /* 접속 날짜 시간 */
 
         return "home";
     }

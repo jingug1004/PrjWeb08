@@ -56,10 +56,9 @@ public class UserDAOImpl implements UserDAO{
         session.insert(namespace + ".create", uvo);
     }
 
-//    @Override
-//    public UserVO readEmail(String email) throws Exception {
-//        return session.selectOne(namespace + ".selectEmail");
-//    }
-
-
+    /* 총 회원가입수 GET 하는 메소드 */
+    @Override
+    public int registUsersNumGET() throws Exception {
+        return session.selectOne(namespace + ".registUsersNumGET");
+    }
 }

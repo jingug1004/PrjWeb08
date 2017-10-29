@@ -66,7 +66,7 @@ public class BoardServiceImpl implements BoardService {
 
         boardDAO.create(boardVO);
 
-        /* 글 작성시 + 50 포인트 */
+        /* 글 작성시 +50 포인트 */
         boardVO = boardDAO.readByIDnTitle(boardVO);
 
         logger.info("lllll~~~~~ boardVO = boardService.readByIDnTitle(boardVO); lllll~~~~~ " + boardVO.toString());
@@ -81,7 +81,7 @@ public class BoardServiceImpl implements BoardService {
 
         pointUtils.setBalancePoint(loginUserVO.getUpoint());
         pointDAO.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
-        /* 글 작성시 + 50 포인트 */
+        /* 글 작성시 +50 포인트 */
 
         /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
         String[] files = boardVO.getFiles();
@@ -172,9 +172,36 @@ public class BoardServiceImpl implements BoardService {
      */
     @Transactional
     @Override
-    public void remove(Integer bno) throws Exception {
+    public void remove(Integer bno, HttpSession httpSession) throws Exception {
         boardDAO.deleteAttach(bno);
         boardDAO.delete(bno);
+
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            // boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
+        }
+
+        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")), "글 삭제", (Integer) bno);
+
+       /* 글 작성시 -49 포인트 */
+        PointUpdateVO pointUpdateVO = new PointUpdateVO();
+        pointUpdateVO.setPupdid(loginUserVO.getUid());
+        pointUpdateVO.setPupdpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
+        pointUpdateVO.setPupdcontent(pointUtils.getUsePointContent());
+
+        pointUtils.setBalancePoint(loginUserVO.getUpoint());
+
+        pointDAO.updateOperPoint(pointUpdateVO);
+        pointDAO.balancePointUpdate(loginUserVO.getUid(), pointUtils.getBalancePoint());
+
+        PointDeleteVO pointDeleteVO = new PointDeleteVO();
+        pointDeleteVO.setPdelid(loginUserVO.getUid());
+        pointDeleteVO.setPdelpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
+        pointDeleteVO.setPdelcontent(pointUtils.getExtinctPointContent());
+        pointDAO.deleteOperPoint(pointDeleteVO);
+       /* 글 작성시 -49 포인트 */
+
     }
 
     // 정말 무시하자! 옛날 거!

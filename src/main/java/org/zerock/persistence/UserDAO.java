@@ -52,7 +52,8 @@ public interface UserDAO {
      */
     public void create(UserVO uvo) throws Exception;
 
-//    public UserVO readEmail(String email) throws Exception;
-    
+    public int registUsersNumGET() throws Exception;
+
+
 
 }

@@ -1,10 +1,13 @@
 package org.zerock.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.PointInsertVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.persistence.PointDAO;
+import org.zerock.persistence.UserColorDAO;
 import org.zerock.persistence.UserDAO;
 import org.zerock.util.PointUtils;
 import org.zerock.util.UnifyMessage;
@@ -24,14 +27,16 @@ import java.util.Date;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
     @Inject
     private UserDAO userDAO;
 
-//    @Inject
-//    private PointService pointService;                  // 포인트 서비스
+    @Inject
+    private PointDAO pointDAO;                              // 포인트 DAO
 
     @Inject
-    private PointDAO pointDAO;                          // 포인트 DAO
+    private UserColorDAO userColorDAO;                      // 칼라 DAO
 
     @Override
     public UserVO login(LoginDTO dto) throws Exception {
@@ -68,6 +73,15 @@ public class UserServiceImpl implements UserService {
         pointDAO.balancePointUpdate(userVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
         /* 회원가입시 100 포인트 증정 */
 
+        /* 색깔별 회원가입수 tbl_color_result에 저장 */
+        int userColorNum = userColorDAO.userColorInputGET(userVO.getUday());
+        userColorDAO.userColorInputTotalUpd(userColorNum, userVO.getUday());
+        /* 색깔별 회원가입수 tbl_color_result에 저장 */
 
+    }
+
+    @Override
+    public int registUsersNumGET() throws Exception {
+        return userDAO.registUsersNumGET();
     }
 }

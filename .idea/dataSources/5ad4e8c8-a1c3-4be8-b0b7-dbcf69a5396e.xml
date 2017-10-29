@@ -2815,7 +2815,7 @@
       <ColNames>cnum</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="714" parent="76" name="totalregnum">
+    <column id="714" parent="76" name="userregnum">
       <Position>1</Position>
       <Comment>회원가입수</Comment>
       <DataType>int(11)|0</DataType>
@@ -2870,323 +2870,327 @@
       <Comment>댓글 쓴 통계(원형 테이블)</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="725" parent="77" name="userid">
+    <column id="725" parent="76" name="divisionnum">
+      <Position>12</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="726" parent="77" name="userid">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="726" parent="77" name="userpw">
+    <column id="727" parent="77" name="userpw">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="727" parent="77" name="username">
+    <column id="728" parent="77" name="username">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="728" parent="77" name="email">
+    <column id="729" parent="77" name="email">
       <Position>4</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="729" parent="77" name="regdate">
+    <column id="730" parent="77" name="regdate">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="730" parent="77" name="updatedate">
+    <column id="731" parent="77" name="updatedate">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <key id="731" parent="77" name="PRIMARY">
+    <key id="732" parent="77" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="732" parent="78" name="mno">
+    <column id="733" parent="78" name="mno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="733" parent="78" name="targetid">
+    <column id="734" parent="78" name="targetid">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="734" parent="78" name="sender">
+    <column id="735" parent="78" name="sender">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="735" parent="78" name="message">
+    <column id="736" parent="78" name="message">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="736" parent="78" name="opendate">
+    <column id="737" parent="78" name="opendate">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="737" parent="78" name="senddate">
+    <column id="738" parent="78" name="senddate">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <index id="738" parent="78" name="fk_usersender">
+    <index id="739" parent="78" name="fk_usersender">
       <ColNames>targetid</ColNames>
     </index>
-    <key id="739" parent="78" name="PRIMARY">
+    <key id="740" parent="78" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>mno</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="740" parent="78" name="fk_usersender">
+    <foreign-key id="741" parent="78" name="fk_usersender">
       <ColNames>targetid</ColNames>
       <RefSchemaName>PrjWeb</RefSchemaName>
       <RefTableName>tbl_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="741" parent="78" name="fk_usertarget">
+    <foreign-key id="742" parent="78" name="fk_usertarget">
       <ColNames>targetid</ColNames>
       <RefSchemaName>PrjWeb</RefSchemaName>
       <RefTableName>tbl_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <column id="742" parent="79" name="pdelid">
+    <column id="743" parent="79" name="pdelid">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="743" parent="79" name="pdeldate">
+    <column id="744" parent="79" name="pdeldate">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="744" parent="79" name="pdelseq">
+    <column id="745" parent="79" name="pdelseq">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="745" parent="79" name="pdelpoint">
+    <column id="746" parent="79" name="pdelpoint">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="746" parent="79" name="pdelcontent">
+    <column id="747" parent="79" name="pdelcontent">
       <Position>5</Position>
       <DataType>varchar(400)|0</DataType>
     </column>
-    <key id="747" parent="79" name="PRIMARY">
+    <key id="748" parent="79" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pdelseq</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="748" parent="80" name="pinsid">
+    <column id="749" parent="80" name="pinsid">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="749" parent="80" name="pinsregdate">
+    <column id="750" parent="80" name="pinsregdate">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="750" parent="80" name="pinsseq">
+    <column id="751" parent="80" name="pinsseq">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="751" parent="80" name="pinspoint">
+    <column id="752" parent="80" name="pinspoint">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="752" parent="80" name="pinsdeldate">
+    <column id="753" parent="80" name="pinsdeldate">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="753" parent="80" name="pinscontent">
+    <column id="754" parent="80" name="pinscontent">
       <Position>6</Position>
       <DataType>varchar(400)|0</DataType>
     </column>
-    <key id="754" parent="80" name="PRIMARY">
+    <key id="755" parent="80" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pinsseq</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="755" parent="81" name="pupdid">
+    <column id="756" parent="81" name="pupdid">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="756" parent="81" name="pupddate">
+    <column id="757" parent="81" name="pupddate">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="757" parent="81" name="pupdseq">
+    <column id="758" parent="81" name="pupdseq">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="758" parent="81" name="pupdpoint">
+    <column id="759" parent="81" name="pupdpoint">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="759" parent="81" name="pupdcontent">
+    <column id="760" parent="81" name="pupdcontent">
       <Position>5</Position>
       <DataType>varchar(400)|0</DataType>
     </column>
-    <key id="760" parent="81" name="PRIMARY">
+    <key id="761" parent="81" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>pupdseq</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="761" parent="82" name="rno">
+    <column id="762" parent="82" name="rno">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="762" parent="82" name="bno">
+    <column id="763" parent="82" name="bno">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="763" parent="82" name="replytext">
+    <column id="764" parent="82" name="replytext">
       <Position>3</Position>
       <DataType>varchar(1000)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="764" parent="82" name="replyer">
+    <column id="765" parent="82" name="replyer">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="765" parent="82" name="regdate">
+    <column id="766" parent="82" name="regdate">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="766" parent="82" name="updatedate">
+    <column id="767" parent="82" name="updatedate">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="767" parent="82" name="bringreplycolor">
+    <column id="768" parent="82" name="bringreplycolor">
       <Position>7</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <index id="768" parent="82" name="fk_board">
+    <index id="769" parent="82" name="fk_board">
       <ColNames>bno</ColNames>
     </index>
-    <key id="769" parent="82" name="PRIMARY">
+    <key id="770" parent="82" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>rno</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="770" parent="82" name="fk_board">
+    <foreign-key id="771" parent="82" name="fk_board">
       <ColNames>bno</ColNames>
       <RefSchemaName>PrjWeb</RefSchemaName>
       <RefTableName>tbl_board</RefTableName>
       <RefColNames>bno</RefColNames>
     </foreign-key>
-    <column id="771" parent="83" name="uid">
+    <column id="772" parent="83" name="uid">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="772" parent="83" name="upw">
+    <column id="773" parent="83" name="upw">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="773" parent="83" name="upwconfirm">
+    <column id="774" parent="83" name="upwconfirm">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="774" parent="83" name="uname">
+    <column id="775" parent="83" name="uname">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="775" parent="83" name="email">
+    <column id="776" parent="83" name="email">
       <Position>5</Position>
       <DataType>varchar(50)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="776" parent="83" name="nickname">
+    <column id="777" parent="83" name="nickname">
       <Position>6</Position>
       <DataType>varchar(50)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="777" parent="83" name="uday">
+    <column id="778" parent="83" name="uday">
       <Position>7</Position>
       <DataType>varchar(3)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="778" parent="83" name="uyear">
+    <column id="779" parent="83" name="uyear">
       <Position>8</Position>
       <DataType>varchar(50)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="779" parent="83" name="umonth">
+    <column id="780" parent="83" name="umonth">
       <Position>9</Position>
       <DataType>varchar(50)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="780" parent="83" name="ugender">
+    <column id="781" parent="83" name="ugender">
       <Position>10</Position>
       <DataType>varchar(50)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="781" parent="83" name="upoint">
+    <column id="782" parent="83" name="upoint">
       <Position>11</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="782" parent="83" name="sessionkey">
+    <column id="783" parent="83" name="sessionkey">
       <Position>12</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;none&apos;</DefaultExpression>
     </column>
-    <column id="783" parent="83" name="sessionlimit">
+    <column id="784" parent="83" name="sessionlimit">
       <Position>13</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="784" parent="83" name="regdate">
+    <column id="785" parent="83" name="regdate">
       <Position>14</Position>
       <DataType>timestamp|0</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <key id="785" parent="83" name="PRIMARY">
+    <key id="786" parent="83" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="786" parent="84" name="app_user_id">
+    <column id="787" parent="84" name="app_user_id">
       <Position>1</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="787" parent="84" name="role">
+    <column id="788" parent="84" name="role">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="788" parent="84" name="PRIMARY">
+    <key id="789" parent="84" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>app_user_id
 role</ColNames>

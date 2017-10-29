@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+/**
+* What :
+* Why :
+* How :
+*/
+-->
+
+<mapper namespace="org.zerock.mapper.UserColorMapper">
+
+    <select id="userColorInputGET" resultType="int">
+        SELECT count(*) FROM tbl_user WHERE uday = #{userColor};
+    </select>
+
+    <update id="userColorInputTotalUpd">
+        update tbl_color_result set userregnum = #{userColorNum} where divisionnum = #{userColor};
+    </update>
+
+
+</mapper>

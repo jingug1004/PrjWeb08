@@ -10,8 +10,6 @@ import org.zerock.domain.*;
 import org.zerock.service.BoardService;
 import org.zerock.service.CntService;
 import org.zerock.service.PointService;
-import org.zerock.util.PointUtils;
-import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -164,33 +162,7 @@ public class SearchBoardController {
                          RedirectAttributes rttr,
                          HttpSession httpSession) throws Exception {
 
-        boardService.remove(bno); // SQL delete 에서 update 로 바꿈. 전달 메소드는 remove지만 마이바티스는 update로!
-
-//        String valCatenum = String.valueOf(cateNum);
-
-        Object object = httpSession.getAttribute("login");
-        UserVO loginUserVO = (UserVO) object;
-        if (object != null) {
-            // boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
-        }
-
-        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")), "글 삭제", (Integer) bno);
-
-        PointUpdateVO pointUpdateVO = new PointUpdateVO();
-        pointUpdateVO.setPupdid(loginUserVO.getUid());
-        pointUpdateVO.setPupdpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
-        pointUpdateVO.setPupdcontent(pointUtils.getUsePointContent());
-
-        pointUtils.setBalancePoint(loginUserVO.getUpoint());
-
-        pointService.updateOperPoint(pointUpdateVO);
-        pointService.balancePointUpdate(loginUserVO.getUid(), pointUtils.getBalancePoint());
-
-        PointDeleteVO pointDeleteVO = new PointDeleteVO();
-        pointDeleteVO.setPdelid(loginUserVO.getUid());
-        pointDeleteVO.setPdelpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
-        pointDeleteVO.setPdelcontent(pointUtils.getExtinctPointContent());
-        pointService.deleteOperPoint(pointDeleteVO);
+        boardService.remove(bno, httpSession); // SQL delete 에서 update 로 바꿈. 전달 메소드는 remove지만 마이바티스는 update로!
 
         // 카테고리 리스트
         if (cateNum != null) {
@@ -215,21 +187,7 @@ public class SearchBoardController {
 
             return "redirect:/sboard/listAny";
         }
-
-//        else {
-//            rttr.addAttribute("page", cri.getPage());
-//            rttr.addAttribute("perPageNum", cri.getPerPageNum());
-//            rttr.addAttribute("keyword", cri.getKeyword());
-//
-//            rttr.addFlashAttribute("msg", "SUCCESS");
-//
-//            logger.info("lllll~~~~~ valCatenum 02 : " + valCatenum);
-//
-//            return "redirect:/sboard/listAny";
-//        }
-
         return null;
-
     }
 
     /**
@@ -309,26 +267,7 @@ public class SearchBoardController {
                              HttpServletRequest httpServletRequest,
                              HttpSession httpSession) throws Exception {
 
-//        Object object = httpSession.getAttribute("login");
-//        UserVO loginUserVO = (UserVO) object;
-//        if (object != null) {
-//            boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
-//        }
-
         boardService.regist(boardVO, httpSession);
-
-//        boardVO = boardService.readByIDnTitle(boardVO);
-//        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVO.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
-//
-//        PointInsertVO pointInsertVO = new PointInsertVO();
-//        pointInsertVO.setPinsid(loginUserVO.getUid());
-//        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
-//        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
-//        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
-//        pointService.insertOperPoint(pointInsertVO);
-//
-//        pointUtils.setBalancePoint(loginUserVO.getUpoint());
-//        pointService.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
 
         rttr.addFlashAttribute("msg", "SUCCESS");
 
