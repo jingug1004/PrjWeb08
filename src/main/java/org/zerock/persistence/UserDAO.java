@@ -27,6 +27,8 @@ public interface UserDAO {
      */
     public UserVO login(LoginDTO dto) throws Exception;
 
+    public void loginIpUpd() throws Exception;
+
     /**
      * Keep login. 로그인한 사용자의 sessionKey와 sessionLimit을 업데이트 하는 기능 / userMapper.xml의 keepLogin
      *
@@ -53,7 +55,6 @@ public interface UserDAO {
     public void create(UserVO uvo) throws Exception;
 
     public int registUsersNumGET() throws Exception;
-
 
 
 }

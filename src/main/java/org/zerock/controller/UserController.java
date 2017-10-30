@@ -98,11 +98,7 @@ public class UserController {
      */
     @RequestMapping(value = "/shop-ui-register", method = RequestMethod.GET)
     public String registerGET(Model model) throws Exception {
-
-        logger.info("lllll~~~~~ userService.registUsersNumGET() lllll~~~~~ : " + userService.registUsersNumGET());
-
         model.addAttribute("uiregister", userService.registUsersNumGET());
-
         return "user/shop-ui-register";
     }
 

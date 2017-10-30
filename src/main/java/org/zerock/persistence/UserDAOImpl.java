@@ -22,14 +22,19 @@ import java.util.Map;
 public class UserDAOImpl implements UserDAO{
 
     @Inject
-    private SqlSession session;
+    private SqlSession sqlSession;
 
     private static String namespace = "org.zerock.mapper.UserMapper";
 
     @Override
     public UserVO login(LoginDTO dto) throws Exception {
 
-        return session.selectOne(namespace + ".login", dto);
+        return sqlSession.selectOne(namespace + ".login", dto);
+    }
+
+    @Override
+    public void loginIpUpd() throws Exception {
+        sqlSession.update(namespace + ".loginIpUpd");
     }
 
     @Override
@@ -40,25 +45,25 @@ public class UserDAOImpl implements UserDAO{
         paramMap.put("sessionId", sessionId);
         paramMap.put("next", next);
 
-        session.update(namespace + ".keepLogin", paramMap);
+        sqlSession.update(namespace + ".keepLogin", paramMap);
 
     }
 
     @Override
     public UserVO checkUserWithSessionKey(String value) {
 
-        return session.selectOne(namespace + ".checkUserWithSessionKey", value);
+        return sqlSession.selectOne(namespace + ".checkUserWithSessionKey", value);
     }
 
     @Override
     public void create(UserVO uvo) throws Exception {
 
-        session.insert(namespace + ".create", uvo);
+        sqlSession.insert(namespace + ".create", uvo);
     }
 
     /* 총 회원가입수 GET 하는 메소드 */
     @Override
     public int registUsersNumGET() throws Exception {
-        return session.selectOne(namespace + ".registUsersNumGET");
+        return sqlSession.selectOne(namespace + ".registUsersNumGET");
     }
 }

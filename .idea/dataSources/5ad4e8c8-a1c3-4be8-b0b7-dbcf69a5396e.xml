@@ -3143,10 +3143,10 @@
       <DataType>varchar(50)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="780" parent="83" name="umonth">
+    <column id="780" parent="83" name="delyn">
       <Position>9</Position>
       <DataType>varchar(50)|0</DataType>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DefaultExpression>&apos;N&apos;</DefaultExpression>
     </column>
     <column id="781" parent="83" name="ugender">
       <Position>10</Position>
@@ -3175,22 +3175,30 @@
       <DataType>timestamp|0</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <key id="786" parent="83" name="PRIMARY">
+    <column id="786" parent="83" name="regip">
+      <Position>15</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="787" parent="83" name="updip">
+      <Position>16</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="788" parent="83" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="787" parent="84" name="app_user_id">
+    <column id="789" parent="84" name="app_user_id">
       <Position>1</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="788" parent="84" name="role">
+    <column id="790" parent="84" name="role">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="789" parent="84" name="PRIMARY">
+    <key id="791" parent="84" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>app_user_id
 role</ColNames>

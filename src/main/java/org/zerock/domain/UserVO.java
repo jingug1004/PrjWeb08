@@ -14,26 +14,25 @@ import java.sql.Timestamp;
 
 public class UserVO {
 
-    //    @NotEmpty
-//    @Size(min = 4, max = 12)
+    // @NotEmpty
+    // @Size(min = 4, max = 12)
     private String uid;
 
-    //    @NotEmpty @Size(min = 4, max = 12)
+    // @NotEmpty @Size(min = 4, max = 12)
     private String upw;
 
-    //    @NotEmpty @Size(min = 4, max = 12)
+    // @NotEmpty @Size(min = 4, max = 12)
     private String upwconfirm;
 
-    //    @NotEmpty
+    // @NotEmpty
     private String uname;
 
     private int upoint;
     /*
     point 테이블(A): 잔액
     고객키      + balance point(B point - C point)
-ex) jingug1004 + 100
+    ex) jingug1004 + 100
     */
-
 
     //    @Email
     private String email;
@@ -44,10 +43,13 @@ ex) jingug1004 + 100
     private String uday;
     private String uyear;
 
-    private String umonth;
+    private String delyn;
     private String ugender;
 
     private Timestamp regdate;
+
+    private String regip;
+    private String updip;
 
     /**
      * Instantiates a new User vo.
@@ -57,7 +59,7 @@ ex) jingug1004 + 100
     }
 
     /**
-     * Instantiates a new User vo.
+     * UserTest
      *
      * @param uid        the uid
      * @param upw        the upw
@@ -68,10 +70,10 @@ ex) jingug1004 + 100
      * @param nickname   the nickname
      * @param uday       the uday
      * @param uyear      the uyear
-     * @param umonth     the umonth
+     * @param delyn      the delyn
      * @param ugender    the ugender
      */
-    public UserVO(String uid, String upw, String upwconfirm, String uname, int upoint, String email, String nickname, String uday, String uyear, String umonth, String ugender) {
+    public UserVO(String uid, String upw, String upwconfirm, String uname, int upoint, String email, String nickname, String uday, String uyear, String delyn, String ugender) {
         this.uid = uid;
         this.upw = upw;
         this.upwconfirm = upwconfirm;
@@ -81,7 +83,7 @@ ex) jingug1004 + 100
         this.nickname = nickname;
         this.uday = uday;
         this.uyear = uyear;
-        this.umonth = umonth;
+        this.delyn = delyn;
         this.ugender = ugender;
     }
 
@@ -248,22 +250,12 @@ ex) jingug1004 + 100
         this.uyear = uyear;
     }
 
-    /**
-     * Gets umonth.
-     *
-     * @return the umonth
-     */
-    public String getUmonth() {
-        return umonth;
+    public String getDelyn() {
+        return delyn;
     }
 
-    /**
-     * Sets umonth.
-     *
-     * @param umonth the umonth
-     */
-    public void setUmonth(String umonth) {
-        this.umonth = umonth;
+    public void setDelyn(String delyn) {
+        this.delyn = delyn;
     }
 
     /**
@@ -302,6 +294,22 @@ ex) jingug1004 + 100
         this.regdate = regdate;
     }
 
+    public String getRegip() {
+        return regip;
+    }
+
+    public void setRegip(String regip) {
+        this.regip = regip;
+    }
+
+    public String getUpdip() {
+        return updip;
+    }
+
+    public void setUpdip(String updip) {
+        this.updip = updip;
+    }
+
     @Override
     public String toString() {
         return "UserVO{" +
@@ -314,9 +322,11 @@ ex) jingug1004 + 100
                 ", nickname='" + nickname + '\'' +
                 ", uday='" + uday + '\'' +
                 ", uyear='" + uyear + '\'' +
-                ", umonth='" + umonth + '\'' +
+                ", delyn='" + delyn + '\'' +
                 ", ugender='" + ugender + '\'' +
                 ", regdate=" + regdate +
+                ", regip='" + regip + '\'' +
+                ", updip='" + updip + '\'' +
                 '}';
     }
 }
