@@ -12,31 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="43c63fab-8b5d-4adf-8d4d-5257ee3a297c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/util/IPUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/SQL/171031-loginInfo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/img/breadcrumbs-img02.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/img/breadcrumbs-img.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/img/breadcrumbs-img.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/domain/UserVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/domain/UserVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserColorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserColorDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserColorDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserColorDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/service/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/userColorMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/userColorMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/userMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/userMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$USER_HOME$/Desktop/beauty/Balgre/target/" />
@@ -115,8 +94,18 @@
               <file leaf-file-name="SearchBoardController.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="189">
-                      <caret line="249" column="46" lean-forward="false" selection-start-line="249" selection-start-column="46" selection-end-line="249" selection-end-column="46" />
+                    <state relative-caret-position="497">
+                      <caret line="270" column="0" lean-forward="true" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="CntController.java" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/CntController.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="728">
+                      <caret line="63" column="60" lean-forward="true" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
                       <folding />
                     </state>
                   </provider>
@@ -144,11 +133,31 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
+              <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="462">
-                      <caret line="61" column="71" lean-forward="true" selection-start-line="61" selection-start-column="71" selection-end-line="61" selection-end-column="71" />
+                    <state relative-caret-position="322">
+                      <caret line="45" column="43" lean-forward="true" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="shop-ui-login.jsp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-login.jsp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="339">
+                      <caret line="456" column="26" lean-forward="true" selection-start-line="456" selection-start-column="12" selection-end-line="456" selection-end-column="26" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="shop.style.css" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="412">
+                      <caret line="714" column="32" lean-forward="true" selection-start-line="714" selection-start-column="32" selection-end-line="714" selection-end-column="32" />
                       <folding />
                     </state>
                   </provider>
@@ -171,8 +180,8 @@
               <file leaf-file-name="header.jsp" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="588">
-                      <caret line="224" column="52" lean-forward="true" selection-start-line="224" selection-start-column="52" selection-end-line="224" selection-end-column="52" />
+                    <state relative-caret-position="546">
+                      <caret line="191" column="33" lean-forward="true" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
                       <folding />
                     </state>
                   </provider>
@@ -219,8 +228,8 @@
               <file leaf-file-name="BoardServiceImpl.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="686">
-                      <caret line="88" column="54" lean-forward="true" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
+                    <state relative-caret-position="574">
+                      <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -356,8 +365,8 @@
                 <entry file="file://$PROJECT_DIR$/README.md">
                   <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                     <state split_layout="FIRST">
-                      <first_editor relative-caret-position="266">
-                        <caret line="67" column="59" lean-forward="false" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+                      <first_editor relative-caret-position="658">
+                        <caret line="95" column="8" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
                         <folding />
                       </first_editor>
                       <second_editor />
@@ -396,8 +405,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>searchBtn</find>
-      <find>searchtype</find>
       <find>keywordInput</find>
       <find>/list</find>
       <find>readByIDnTitle</find>
@@ -426,6 +433,8 @@
       <find>writer</find>
       <find>col-sm-6</find>
       <find>todayTime</find>
+      <find>breadcrumbs-v4</find>
+      <find>-image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -480,7 +489,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/domain/UserVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java" />
@@ -491,6 +499,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java" />
       </list>
     </option>
   </component>
@@ -746,6 +755,15 @@
               <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zerock" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -785,6 +803,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -795,6 +821,27 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Web07" type="b2602c69:ProjectViewProjectNode" />
@@ -1801,7 +1848,7 @@
       <workItem from="1509164791781" duration="7459000" />
       <workItem from="1509197270673" duration="428000" />
       <workItem from="1509236763961" duration="18962000" />
-      <workItem from="1509409362284" duration="16388000" />
+      <workItem from="1509409362284" duration="22290000" />
     </task>
     <task id="LOCAL-00001" summary="170601 New Generation">
       <created>1496919698439</created>
@@ -1852,11 +1899,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509178031962</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="171031 (화)&#10;- 회원가입하면 자동으로 칼라별 넘버 카운트 됨.&#10;- 글 쓰면 자동으로 tbl_color_result에 맞게 카운트 됨.">
+      <created>1509431380874</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1509431380874</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151130000" />
+    <option name="totallyTimeSpent" value="157032000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1936,7 +1990,8 @@
     <MESSAGE value="171026 (목)&#10;at seedit after was abandonmented for SangAm SS" />
     <MESSAGE value="171026 (목)" />
     <MESSAGE value="171028 (토)" />
-    <option name="LAST_COMMIT_MESSAGE" value="171028 (토)" />
+    <MESSAGE value="171031 (화)&#10;- 회원가입하면 자동으로 칼라별 넘버 카운트 됨.&#10;- 글 쓰면 자동으로 tbl_color_result에 맞게 카운트 됨." />
+    <option name="LAST_COMMIT_MESSAGE" value="171031 (화)&#10;- 회원가입하면 자동으로 칼라별 넘버 카운트 됨.&#10;- 글 쓰면 자동으로 tbl_color_result에 맞게 카운트 됨." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1958,52 +2013,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/message/javamessages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1526">
-          <caret line="109" column="106" lean-forward="false" selection-start-line="109" selection-start-column="90" selection-end-line="109" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/79981713/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.app_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/util/PointUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="468" column="0" lean-forward="true" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1554">
-          <caret line="111" column="27" lean-forward="false" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
@@ -2182,34 +2191,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/util/IPUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="58" column="92" lean-forward="false" selection-start-line="58" selection-start-column="92" selection-end-line="58" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="249" column="46" lean-forward="false" selection-start-line="249" selection-start-column="46" selection-end-line="249" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="61" column="71" lean-forward="true" selection-start-line="61" selection-start-column="71" selection-end-line="61" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -2226,14 +2211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
           <caret line="52" column="74" lean-forward="false" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="224" column="52" lean-forward="true" selection-start-line="224" selection-start-column="52" selection-end-line="224" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -2363,13 +2340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/79981713/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_color_result">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/79981713/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_point_insert">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -2384,10 +2354,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java">
+    <entry file="das://table:/79981713/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_color_result">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/BadCntVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="88" column="54" lean-forward="true" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
+        <state relative-caret-position="336">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/GoodCntVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -2405,14 +2390,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/util/IPUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="41" column="76" lean-forward="true" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/CntController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="63" column="60" lean-forward="true" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="45" column="43" lean-forward="true" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="456" column="26" lean-forward="true" selection-start-line="456" selection-start-column="12" selection-end-line="456" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="270" column="0" lean-forward="true" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/img/breadcrumbs-img.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="714" column="32" lean-forward="true" selection-start-line="714" selection-start-column="32" selection-end-line="714" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="191" column="33" lean-forward="true" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="266">
-            <caret line="67" column="59" lean-forward="false" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+          <first_editor relative-caret-position="658">
+            <caret line="95" column="8" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

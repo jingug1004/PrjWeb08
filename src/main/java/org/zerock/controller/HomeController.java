@@ -46,7 +46,7 @@ public class HomeController {
         model.addAttribute("clientIP", ip);
 
         /* 접속 날짜 시간 */
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String todaySimple = simpleDateFormat.format(date);
         model.addAttribute("todayTime", todaySimple);
         /* 접속 날짜 시간 */
