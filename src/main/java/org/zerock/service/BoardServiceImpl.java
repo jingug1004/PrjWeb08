@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.*;
 import org.zerock.persistence.BoardDAO;
 import org.zerock.persistence.PointDAO;
+import org.zerock.persistence.UserColorDAO;
+import org.zerock.persistence.UserDAO;
 import org.zerock.util.PointUtils;
 import org.zerock.util.UnifyMessage;
 
@@ -30,14 +32,14 @@ public class BoardServiceImpl implements BoardService {
     @Inject
     private BoardDAO boardDAO;
 
-//    @Inject
-//    private BoardService boardService;
-
-//    @Inject
-//    private PointService pointService;
-
     @Inject
     private PointDAO pointDAO;
+
+    @Inject
+    private UserDAO userDAO;
+
+    @Inject
+    private UserColorDAO userColorDAO;
 
     /*
     @Override
@@ -65,6 +67,17 @@ public class BoardServiceImpl implements BoardService {
         logger.info("lllll~~~~~ loginUserVO.toString() lllll~~~~~ " + loginUserVO.toString());
 
         boardDAO.create(boardVO);
+
+        /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
+        int tgoodnum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname());
+        loginUserVO.setTpost(tgoodnum);
+        userDAO.totalUserPostNumUPD(loginUserVO);
+        /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
+
+        /* 글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        int tcPostNum = boardDAO.totalColorPostNumGet(loginUserVO.getUday());
+        userColorDAO.totalColorPostNumUPD(tcPostNum, loginUserVO.getUday());
+        /* 글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
 
         /* 글 작성시 +50 포인트 */
         boardVO = boardDAO.readByIDnTitle(boardVO);
@@ -181,6 +194,18 @@ public class BoardServiceImpl implements BoardService {
         if (object != null) {
             // boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
         }
+
+        /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
+        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname());
+        loginUserVO.setTpost(tPostNum);
+        userDAO.totalUserPostNumUPD(loginUserVO);
+        /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
+
+        /* 글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        int tcPostNum = boardDAO.totalColorPostNumGet(loginUserVO.getUday());
+        userColorDAO.totalColorPostNumUPD(tcPostNum, loginUserVO.getUday());
+        /* 글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+
 
         PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")), "글 삭제", (Integer) bno);
 

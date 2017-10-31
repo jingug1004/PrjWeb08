@@ -63,7 +63,7 @@
                             <%--JSP에서 사용하는 EL의 경우 자동으로 HttpSession에 있는 'login'을 찾아서 사용하므로 '${loogin.nickname}'와 같은 형태로 사용할 수 있음--%>
                         </div>
                         <input id="cnumInput" type="hidden" name="cnum" value="">
-
+                        <input id="id" type="hidden" name="id" value="${login.uid}">
 
                         <%-- 첨부파일 추가할 수 있는 영역 --%>
                         <div class="form-group">

@@ -16,6 +16,7 @@ import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.service.PointService;
 import org.zerock.service.UserService;
+import org.zerock.util.IPUtils;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
@@ -72,7 +73,7 @@ public class UserController {
      * @param dto     the dto
      * @param session the session
      * @param model   the model Model에 UserVO 객체 추가
-     *                model.addAttribute("userVO", vo); 실제로 로그인 처리가 이뤄지는 loginPost()에서는 Model 객체에 사용자가 존재하는 경우에 'userVO'라는 이름으로 저장
+     *                model.addAttribute("userVO", userVO); 실제로 로그인 처리가 이뤄지는 loginPost()에서는 Model 객체에 사용자가 존재하는 경우에 'userVO'라는 이름으로 저장
      * @throws Exception the exception
      */
     @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
@@ -83,6 +84,16 @@ public class UserController {
         if (userVO == null) {
             return;
         }
+
+        IPUtils ipUtils = new IPUtils();
+        String ip = ipUtils.getIP();
+        model.addAttribute("clientIP", ip);
+
+        /* 회원가입된 유저의 변경된 또는 접속된 ip 업데이트 */
+        userVO.setUpdip(ip);
+        userService.loginIpUpd(userVO);
+        /* 회원가입된 유저의 변경된 또는 접속된 ip 업데이트 */
+
         model.addAttribute("userVO", userVO);
         if (dto.isUseCookie()) {
             int amount = 60 * 60 * 24 * 7;

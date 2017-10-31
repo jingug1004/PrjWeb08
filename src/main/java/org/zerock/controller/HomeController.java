@@ -6,10 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
+import org.zerock.util.IPUtils;
 
-import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,26 +41,12 @@ public class HomeController {
 
         model.addAttribute("serverTime", formattedDate);
 
-        // Spring 에서 client ip 가져오는 법. https://www.lesstif.com/pages/viewpage.action?pageId=18220218
-        HttpServletRequest httpServletRequest =
-                ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
-
-        // 출처: http://sesok808.tistory.com/378 [살아가는 그 이유]
-        String ip = httpServletRequest.getHeader("X-FORWARDED-FOR");
-        if (ip == null || ip.length() == 0) {
-            ip = httpServletRequest.getHeader("Proxy-Client-IP");
-        }
-        if (ip == null || ip.length() == 0) {
-            ip = httpServletRequest.getHeader("WL-Proxy-Client-IP");  // 웹로직
-        }
-        if (ip == null || ip.length() == 0) {
-            ip = httpServletRequest.getRemoteAddr();
-        }
+        IPUtils ipUtils = new IPUtils();
+        String ip = ipUtils.getIP();
         model.addAttribute("clientIP", ip);
-        // Spring 에서 client ip 가져오는 법. https://www.lesstif.com/pages/viewpage.action?pageId=18220218
 
         /* 접속 날짜 시간 */
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
         String todaySimple = simpleDateFormat.format(date);
         model.addAttribute("todayTime", todaySimple);
         /* 접속 날짜 시간 */

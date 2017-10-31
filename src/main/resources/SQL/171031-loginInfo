@@ -1,0 +1,27 @@
+UPDATE tbl_user
+SET  upoint = 200
+WHERE uid = 'c01';
+
+SELECT * FROM tbl_user WHERE uid = 'c01';
+
+SELECT count(*) FROM tbl_user;
+
+SELECT COUNT(*) FROM tbl_user WHERE uday = '012';
+
+INSERT INTO tbl_board (getcolor) VALUES (
+);
+
+UPDATE tbl_board
+SET getcolor = (SELECT uday FROM tbl_user WHERE tbl_board.writer = tbl_user.uname)
+WHERE tbl_board.writer = tbl_user.uname;
+
+UPDATE tbl_board LEFT JOIN tbl_user
+    ON tbl_board.writer = tbl_user.uname
+    SET tbl_board.getcolor = tbl_user.uday;
+
+UPDATE tbl_board
+SET tbl_board.getcolor = '007'
+    WHERE bno BETWEEN 4570 AND 4586;
+
+UPDATE tbl_board
+SET boardvisible = 'Y';

@@ -172,7 +172,7 @@ public interface BoardDAO {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public void deleteAttach(Integer bno)throws Exception;
+    public void deleteAttach(Integer bno) throws Exception;
 
     /**
      * 게시물의 수정에는 기존의 첨부파일을 삭제하고, 새롭게 추가하는 부분이 들어가므로 BoardDAO에 다음과 같은 SQL 처리가 필요.
@@ -182,7 +182,11 @@ public interface BoardDAO {
      * @param bno      the bno
      * @throws Exception the exception
      */
-    public void replaceAttach(String fullName, Integer bno)throws Exception;
+    public void replaceAttach(String fullName, Integer bno) throws Exception;
+
+    public int totalUserPostNumGET(String uname) throws Exception;
+
+    public int totalColorPostNumGet(String getColor) throws Exception;
 
 
 }

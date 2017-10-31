@@ -14,11 +14,15 @@
 <mapper namespace="org.zerock.mapper.UserColorMapper">
 
     <select id="userColorInputGET" resultType="int">
-        SELECT count(*) FROM tbl_user WHERE uday = #{userColor};
+        SELECT count(*) FROM tbl_user WHERE uday = #{userColor} and delyn = 'N'
     </select>
 
     <update id="userColorInputTotalUpd">
-        update tbl_color_result set userregnum = #{userColorNum} where divisionnum = #{userColor};
+        update tbl_color_result set userregnum = #{userColorNum} where divisionnum = #{userColor}
+    </update>
+
+    <update id="totalColorPostNumUPD">
+        UPDATE tbl_color_result SET userpostnum = #{getTotalPostNumByColor} WHERE divisionnum = #{userColor}
     </update>
 
 

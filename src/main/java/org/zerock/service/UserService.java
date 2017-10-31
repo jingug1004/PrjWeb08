@@ -24,6 +24,8 @@ public interface UserService {
      */
     public UserVO login(LoginDTO dto) throws Exception;
 
+    public void loginIpUpd(UserVO userVO) throws Exception;
+
     /**
      * Keep login. 로그인 정보를 유지하는 keepLogin과 과거에 접속한 사용자인지를 확인하는 기능을 작성
      *

@@ -48,6 +48,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void loginIpUpd(UserVO userVO) throws Exception {
+        userDAO.loginIpUpd(userVO);
+    }
+
+    @Override
     public void keepLogin(String uid, String sessionId, Date next) throws Exception {
 
         userDAO.keepLogin(uid, sessionId, next);

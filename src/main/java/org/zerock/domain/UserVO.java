@@ -24,7 +24,7 @@ public class UserVO {
     // @NotEmpty @Size(min = 4, max = 12)
     private String upwconfirm;
 
-    // @NotEmpty
+    // @NotEmpty 존경하는 인물
     private String uname;
 
     private int upoint;
@@ -37,7 +37,7 @@ public class UserVO {
     //    @Email
     private String email;
 
-    //    @NotEmpty
+    //    @NotEmpty 별명
     private String nickname;
 
     private String uday;
@@ -50,6 +50,13 @@ public class UserVO {
 
     private String regip;
     private String updip;
+
+    private int tpost;
+    private int treply;
+    private int tgood;
+    private int tbad;
+    private int tspam;
+
 
     /**
      * Instantiates a new User vo.
@@ -310,6 +317,46 @@ public class UserVO {
         this.updip = updip;
     }
 
+    public int getTpost() {
+        return tpost;
+    }
+
+    public void setTpost(int tpost) {
+        this.tpost = tpost;
+    }
+
+    public int getTreply() {
+        return treply;
+    }
+
+    public void setTreply(int treply) {
+        this.treply = treply;
+    }
+
+    public int getTgood() {
+        return tgood;
+    }
+
+    public void setTgood(int tgood) {
+        this.tgood = tgood;
+    }
+
+    public int getTbad() {
+        return tbad;
+    }
+
+    public void setTbad(int tbad) {
+        this.tbad = tbad;
+    }
+
+    public int getTspam() {
+        return tspam;
+    }
+
+    public void setTspam(int tspam) {
+        this.tspam = tspam;
+    }
+
     @Override
     public String toString() {
         return "UserVO{" +
@@ -327,6 +374,11 @@ public class UserVO {
                 ", regdate=" + regdate +
                 ", regip='" + regip + '\'' +
                 ", updip='" + updip + '\'' +
+                ", tpost=" + tpost +
+                ", treply=" + treply +
+                ", tgood=" + tgood +
+                ", tbad=" + tbad +
+                ", tspam=" + tspam +
                 '}';
     }
 }

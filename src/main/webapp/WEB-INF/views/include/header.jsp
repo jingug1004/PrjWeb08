@@ -220,26 +220,36 @@
                                     <li><a href="#">German (GRM)</a></li>
                                 </ul>
                             </li>
+                            <li><a>${todayTime}</a></li>
+                            <li><a>${clientIP}</a></li>
                         </ul><!--/end left-topbar-->
                     </div>
                     <div class="col-sm-6">
                         <ul class="list-inline right-topbar pull-right">
-                            <li>${todayTime}</li>
-                            <li>${clientIP}</li>
-                            <li><a href="#">Account</a></li>
-                            <li><a href="#">Wishlist (0)</a></li>
+                            <%--<li>${todayTime}</li>--%>
+                            <%--<li>${clientIP}</li>--%>
+                            <%--<li><a href="#">Account</a></li>--%>
+                            <%--<li><a href="#">Wishlist (0)</a></li>--%>
                             <c:if test="${empty login}">
+                                <%--<li>${todayTime}</li>--%>
+                                <%--<li>${clientIP}</li>--%>
+                                <li><a href="#">Account</a></li>
+                                <li><a href="#">Wishlist (0)</a></li>
                                 <li><a href="<c:url value="/user/login"/>">Login</a> | <a
                                         href="<c:url value="/user/shop-ui-register"/>">Register</a>
                                 </li>
                             </c:if>
                             <c:if test="${not empty login}">
+                                <%--<li>${todayTime}</li>--%>
+                                <%--<li>${login.updip}</li>--%>
+                                <li><a href="#">Account</a></li>
+                                <li><a href="#">Wishlist (0)</a></li>
                                 <li>
                                     <input type="hidden" id="loginUday" value="${login.uday}">
-                                    <img src="/assets/img/colors/${login.uday}.png" id="getColor" alt="">
-                                    ${login.nickname}님! |
-                                    <a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |
-                                    <a href="<c:url value="/user/logout"/>">Logout</a>
+                                    <img src="/assets/img/colors/${login.uday}.png" id="getColor"
+                                         alt=""> ${login.nickname}님! | <a
+                                        href="<c:url value="/user/shop-ui-modify"/>">Modify</a> | <a
+                                        href="<c:url value="/user/logout"/>">Logout</a>
                                 </li>
                             </c:if>
                             <li><i id="searchBtnAny" class="search fa fa-search search-button"></i></li>
@@ -571,7 +581,7 @@
         <!-- End Navbar -->
     </div>
     <!--=== End Header v5 ===-->
-<%--</div>--%>
+    <%--</div>--%>
 
     <script>
 

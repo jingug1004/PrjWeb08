@@ -33,8 +33,8 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public void loginIpUpd() throws Exception {
-        sqlSession.update(namespace + ".loginIpUpd");
+    public void loginIpUpd(UserVO userVO) throws Exception {
+        sqlSession.update(namespace + ".loginIpUpd", userVO);
     }
 
     @Override
@@ -65,5 +65,11 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public int registUsersNumGET() throws Exception {
         return sqlSession.selectOne(namespace + ".registUsersNumGET");
+    }
+
+    /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
+    @Override
+    public void totalUserPostNumUPD(UserVO userVO) throws Exception {
+        sqlSession.update(namespace + ".totalUserPostNumUPD", userVO);
     }
 }

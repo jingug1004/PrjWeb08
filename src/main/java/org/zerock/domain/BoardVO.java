@@ -11,6 +11,8 @@ import java.util.Date;
  */
 public class BoardVO {
 
+    private String id;
+
     private Integer bno;
     private String title;
     private String content;
@@ -33,13 +35,12 @@ public class BoardVO {
 
     private String getcolor;
 
-
-    public int getCnum() {
-        return cnum;
+    public String getId() {
+        return id;
     }
 
-    public void setCnum(int cnum) {
-        this.cnum = cnum;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
@@ -166,6 +167,14 @@ public class BoardVO {
      */
     public void setReplycnt(int replycnt) {
         this.replycnt = replycnt;
+    }
+
+    public int getCnum() {
+        return cnum;
+    }
+
+    public void setCnum(int cnum) {
+        this.cnum = cnum;
     }
 
     /**

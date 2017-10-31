@@ -14,19 +14,19 @@
 <mapper namespace="org.zerock.mapper.UserMapper">
 
     <select id="login" resultType="UserVO">
-        SELECT uid, upw, uname, nickname, uday FROM tbl_user WHERE uid = #{uid} and upw = #{upw}
+        SELECT uid, upw, uname, nickname, uday FROM tbl_user WHERE uid = #{uid} and upw = #{upw} and delyn = 'N'
     </select>
 
     <update id="loginIpUpd">
-        UPDATE tbl_user SET updip = #{updip} WHERE uid = #{uid};
+        UPDATE tbl_user SET updip = #{updip} WHERE uid = #{uid} and delyn = 'N'
     </update>
 
     <update id="keepLogin">
-        UPDATE tbl_user SET sessionKey = #{sessionId}, sessionLimit = #{next} WHERE uid = #{uid}
+        UPDATE tbl_user SET sessionKey = #{sessionId}, sessionLimit = #{next} WHERE uid = #{uid} and delyn = 'N'
     </update>
 
     <select id="checkUserWithSessionKey" resultType="UserVO">
-        SELECT * FROM tbl_user WHERE sessionKey = #{value} AND sessionlimit > now()
+        SELECT * FROM tbl_user WHERE sessionKey = #{value} AND sessionlimit > now() and delyn = 'N'
     </select>
 
     <insert id="create">
@@ -41,6 +41,10 @@
     <select id="registUsersNumGET" resultType="int">
         SELECT count(*) FROM tbl_user WHERE delyn = 'N';
     </select>
+
+    <update id="totalUserPostNumUPD">
+        update tbl_user set tpost = #{tpost} where uid = #{uid} AND delyn = 'N';
+    </update>
 
 
 </mapper>

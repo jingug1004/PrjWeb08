@@ -160,4 +160,14 @@ public class BoardDAOImpl implements BoardDAO {
 
         session.insert(namespace + ".replaceAttach", paramMap);
     }
+
+    @Override
+    public int totalUserPostNumGET(String uname) throws Exception {
+        return session.selectOne(namespace + ".totalUserPostNumGET", uname);
+    }
+
+    @Override
+    public int totalColorPostNumGet(String getColor) throws Exception {
+        return session.selectOne(namespace + ".totalColorPostNumGet", getColor);
+    }
 }

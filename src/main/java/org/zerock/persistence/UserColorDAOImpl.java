@@ -37,4 +37,14 @@ public class UserColorDAOImpl implements UserColorDAO {
 
         sqlSession.update(namespace + ".userColorInputTotalUpd", paramMap);
     }
+
+    @Override
+    public void totalColorPostNumUPD(int getTotalPostNumByColor, String userColor) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("getTotalPostNumByColor", getTotalPostNumByColor);
+        paramMap.put("userColor", userColor);
+
+        sqlSession.update(namespace + ".totalColorPostNumUPD", paramMap);
+    }
 }

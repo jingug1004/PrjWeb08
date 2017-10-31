@@ -13,8 +13,6 @@ import java.util.Date;
  * Why : Service에서 의존성 주입을 받기 위해
  * How : 인터페이스 선언만 하고 B/L은 인터페이스 구현할 UserDAOImpl 클래스에서
  */
-
-
 public interface UserDAO {
 
     /**
@@ -27,7 +25,7 @@ public interface UserDAO {
      */
     public UserVO login(LoginDTO dto) throws Exception;
 
-    public void loginIpUpd() throws Exception;
+    public void loginIpUpd(UserVO userVO) throws Exception;
 
     /**
      * Keep login. 로그인한 사용자의 sessionKey와 sessionLimit을 업데이트 하는 기능 / userMapper.xml의 keepLogin
@@ -55,6 +53,8 @@ public interface UserDAO {
     public void create(UserVO uvo) throws Exception;
 
     public int registUsersNumGET() throws Exception;
+
+    public void totalUserPostNumUPD(UserVO userVO) throws Exception;
 
 
 }

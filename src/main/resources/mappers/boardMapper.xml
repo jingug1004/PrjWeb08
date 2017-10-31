@@ -6,8 +6,8 @@
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
     <insert id="create">
-        insert into tbl_board (title, content, writer, cnum, regdate, getcolor)
-        values(#{title}, #{content}, #{writer}, #{cnum}, NOW(), #{getcolor})
+        insert into tbl_board (id, title, content, writer, cnum, regdate, getcolor)
+        values(#{id}, #{title}, #{content}, #{writer}, #{cnum}, NOW(), #{getcolor})
     </insert>
     <!--boardMapper.xml의 각 SQL 문의 id 속성 값은 BoardDAO 인터페이스와 동일하게 설정해주어서 혼란을 피하는 것이 좋음.-->
 
@@ -228,6 +228,14 @@
     <insert id="replaceAttach">
         INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, #{bno})
     </insert>
+
+    <select id="totalUserPostNumGET" resultType="int">
+        SELECT count(*) FROM tbl_board WHERE boardvisible = 'Y' AND writer = #{uname};
+    </select>
+
+    <select id="totalColorPostNumGet" resultType="int">
+        SELECT count(*) FROM tbl_board WHERE boardvisible = 'Y' AND getcolor = #{getColor}
+    </select>
 
 </mapper>
 
