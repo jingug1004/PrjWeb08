@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="@localhost" uuid="22d22e3e-f0ad-471f-88c8-a50bba813ede">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
-      <introspection-schemas>*:@</introspection-schemas>
-    </data-source>
     <data-source name="jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;amp;useSSL=true:3306" uuid="5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e">
       <database-info product="MySQL" version="5.5.5-10.1.19-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
         <extra-name-characters>#@</extra-name-characters>
@@ -15,6 +9,16 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <user-name>Node</user-name>
       <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
+    <data-source name="@58.229.234.13" uuid="e17ac06a-0d7e-4133-9fcb-1ad785cb183f">
+      <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production&#10;With the Partitioning, OLAP, Data Mining and Real Application Testing options" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>hanauser</user-name>
+      <introspection-schemas>*:SALEON</introspection-schemas>
     </data-source>
   </component>
 </project>
