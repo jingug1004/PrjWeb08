@@ -5,10 +5,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.zerock.mapper.PointMapper">
 
-	<update id="updatePoint">
-		update tbl_user set upoint = upoint + #{point} where uid = #{uid}
-	</update>
+	<!--<update id="updatePoint">-->
+		<!--update tbl_user set upoint = upoint + #{point} where uid = #{uid}-->
+	<!--</update>-->
 
+	<!-- 글 작성할 때 포인트 추가, 제거 -->
 	<insert id="insertOperPoint">
 		INSERT INTO tbl_point_insert(pinsid, pinsregdate, pinspoint, pinsdeldate, pinscontent)
 		VALUES (#{pinsid}, NOW(), #{pinspoint}, #{pinsdeldate}, #{pinscontent})
@@ -27,6 +28,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="balancePointUpdate">
 		UPDATE tbl_user SET upoint = upoint + #{upoint} WHERE uid = #{uid}
 	</update>
+	<!-- 글 작성할 때 포인트 추가, 제거 -->
+
 
 </mapper>
 

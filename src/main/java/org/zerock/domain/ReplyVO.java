@@ -14,6 +14,8 @@ import java.util.Date;
 
 public class ReplyVO {
 
+    private String rid;
+
     private Integer rno;
     private Integer bno;
     private String replytext;
@@ -23,6 +25,16 @@ public class ReplyVO {
     private Date updatedate;
 
     private String bringreplycolor;
+
+    private String replyvisible;
+
+    public String getRid() {
+        return rid;
+    }
+
+    public void setRid(String rid) {
+        this.rid = rid;
+    }
 
     /**
      * Gets rno.
@@ -114,22 +126,12 @@ public class ReplyVO {
         this.regdate = regdate;
     }
 
-    /**
-     * Gets updaterdate.
-     *
-     * @return the updaterdate
-     */
-    public Date getUpdaterdate() {
+    public Date getUpdatedate() {
         return updatedate;
     }
 
-    /**
-     * Sets updaterdate.
-     *
-     * @param updaterdate the updaterdate
-     */
-    public void setUpdaterdate(Date updaterdate) {
-        this.updatedate = updaterdate;
+    public void setUpdatedate(Date updatedate) {
+        this.updatedate = updatedate;
     }
 
     public String getBringreplycolor() {
@@ -140,16 +142,26 @@ public class ReplyVO {
         this.bringreplycolor = bringreplycolor;
     }
 
+    public String getReplyvisible() {
+        return replyvisible;
+    }
+
+    public void setReplyvisible(String replyvisible) {
+        this.replyvisible = replyvisible;
+    }
+
     @Override
     public String toString() {
         return "ReplyVO{" +
-                "rno=" + rno +
+                "rid='" + rid + '\'' +
+                ", rno=" + rno +
                 ", bno=" + bno +
                 ", replytext='" + replytext + '\'' +
                 ", replyer='" + replyer + '\'' +
                 ", regdate=" + regdate +
                 ", updatedate=" + updatedate +
                 ", bringreplycolor='" + bringreplycolor + '\'' +
+                ", replyvisible='" + replyvisible + '\'' +
                 '}';
     }
 }

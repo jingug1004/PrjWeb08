@@ -31,7 +31,7 @@ public class MessageServiceImpl implements MessageService {
     public void addMessage(MessageVO vo) throws Exception {
 
         messageDAO.create(vo);
-        pointDAO.updatePoint(vo.getSender(), 10);
+        pointDAO.balancePointUpdate(vo.getSender(), 10);
     }
 
     /**
@@ -47,7 +47,7 @@ public class MessageServiceImpl implements MessageService {
 
         messageDAO.updateState(mno);
 
-        pointDAO.updatePoint(uid, 5);
+        pointDAO.balancePointUpdate(uid, 5);
 
         return messageDAO.readMessage(mno);
     }

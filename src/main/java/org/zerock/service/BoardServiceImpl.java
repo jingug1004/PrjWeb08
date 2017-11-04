@@ -82,7 +82,6 @@ public class BoardServiceImpl implements BoardService {
         /* 글 작성시 +50 포인트 */
         boardVO = boardDAO.readByIDnTitle(boardVO);
 
-        logger.info("lllll~~~~~ boardVO = boardService.readByIDnTitle(boardVO); lllll~~~~~ " + boardVO.toString());
         PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVO.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
 
         PointInsertVO pointInsertVO = new PointInsertVO();

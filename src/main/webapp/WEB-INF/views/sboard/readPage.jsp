@@ -301,6 +301,7 @@
                 <c:if test="${not empty login}">
                     <div class="box-body">
                             <%--@declare id="exampleinputemail1"--%>
+                        <input type="hidden" value="${login.uid}" id="newReplyerID">
                         <label for="exampleInputEmail1">
                             <img src="/assets/img/colors/${login.uday}.png" class="getColor" alt="">
                             Writer</label> <%-- 댓글 등록 --%>
@@ -384,7 +385,20 @@
 
 
 <%--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>--%>
+
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
+<!--
+[현상] : 눌러도 아무런 동작을 하지 않음. 콘솔창에도 넘어가는 받는 데이터가 없음. 찍히는 값도 확인 안 됐음. ㅠ_ㅠ
+[예상] : 이건(<script>) 다른 소스와 연결된 문제가 없을 것이다 왜냐하면 아무런 데이터를 주고 받는 것이 포착되지 않으니깐.
+[해결] : "1. 스크립트 부분을 헤더에 두지말고 Html 라인 제일 아래에 위치 변경해보세요~" 맨 밑에 위치시켰음!
+"2. 제이쿼리 라이브러리 선언은 하셨나요?" 아니오!!!
+"<script src="http://code.jquery.com/jquery-latest.js"></script>
+스크립트 호출 전에 넣어주시죠. 브라우저에 로딩하는 페이지에 jquery.js 파일이 빠진 듯합니다. " 감사합니다. 이제 되네요. ^^
+"3. 이것도 써보실래요?
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+" 이것도 됩니다. 감사합니다. 뭐가 더 좋고 뭔 차이가 있는지 알아보고 싶지만 시간이 없어서.. 2번으로 써야겠네요.
+-->
+
 <%--<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>--%>
 
 <%-- 등록된 첨부파일 보이게 하는 스크립트 --%>
@@ -511,8 +525,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         var str = "";
 
         if (pageMaker.prev) {
-            str += "<li><a href='" + (pageMaker.startPage - 1)
-                + "'> << </a></li>";
+            str += "<li><a href='" + (pageMaker.startPage - 1) + "'> << </a></li>";
         }
 
         for (var i = pageMaker.startPage, len = pageMaker.endPage; i <= len; i++) {
@@ -521,8 +534,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         }
 
         if (pageMaker.next) {
-            str += "<li><a href='" + (pageMaker.endPage + 1)
-                + "'> >> </a></li>";
+            str += "<li><a href='" + (pageMaker.endPage + 1) + "'> >> </a></li>";
         }
 
         target.html(str);
@@ -551,9 +563,11 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
     // 댓글에 대한 Ajax 및 모달 처리
     $("#replyAddBtn").on("click", function () {
 
+        var replyerIDObj = $("#newReplyerID");
         var replyerObj = $("#newReplyWriter");
         var replytextObj = $("#newReplyText");
         var bringreplycolorObj = $("#newReplyColor");
+        var replyerID = replyerIDObj.val();
         var replyer = replyerObj.val();
         var replytext = replytextObj.val();
         var bringreplycolor = bringreplycolorObj.val();
@@ -567,6 +581,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             },
             dataType: 'text',
             data: JSON.stringify({
+                rid: replyerID,
                 bno: bno,
                 replyer: replyer,
                 replytext: replytext,

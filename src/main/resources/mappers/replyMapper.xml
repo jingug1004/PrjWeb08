@@ -10,25 +10,26 @@
         *
         FROM
         tbl_reply
-        WHERE bno = #{bno}
+        WHERE bno = #{bno} AND replyvisible = 'Y'
         ORDER BY rno DESC
     </select>
 
     <insert id="create">
       <![CDATA[ 
-        insert into tbl_reply (bno, replytext, replyer, bringreplycolor)
-        VALUES (#{bno}, #{replytext}, #{replyer}, #{bringreplycolor})
+        insert into tbl_reply (rid, bno, replytext, replyer, bringreplycolor, replyvisible)
+        VALUES (#{rid}, #{bno}, #{replytext}, #{replyer}, #{bringreplycolor}, 'Y')
         ]]>
     </insert>
 
     <update id="update">
         UPDATE tbl_reply SET replytext = #{replytext}, updatedate = now()
-        WHERE rno = #{rno}
+        WHERE rno = #{rno} AND replyvisible = 'Y'
     </update>
 
-    <delete id="delete">
-        DELETE FROM tbl_reply WHERE rno = #{rno}
-    </delete>
+    <!-- DELETE FROM tbl_reply WHERE rno = #{rno} 딜리트에서 업데이트로 수정 -->
+    <update id="delete">
+        UPDATE tbl_reply SET replyvisible = 'N' WHERE rno = #{rno}
+    </update>
 
     <select id="listPage" resultType="ReplyVO">
       SELECT
@@ -36,17 +37,18 @@
       FROM
       tbl_reply
       WHERE
-      bno = #{bno}
+      bno = #{bno} AND replyvisible = 'Y'
       ORDER BY rno DESC
       limit #{cri.pageStart}, #{cri.perPageNum}
     </select>
 
+    <!-- readPage.jsp의 토탈카운트 $("#replycntSmall").html("[ " + data.pageMaker.totalCount + " ]"); -->
     <select id="count" resultType="int">
-        SELECT COUNT(bno) FROM tbl_reply WHERE bno = #{bno}
+        SELECT COUNT(bno) FROM tbl_reply WHERE bno = #{bno} AND replyvisible = 'Y'
     </select>
 
     <select id="getBno" resultType="int">
-        SELECT bno FROM tbl_reply WHERE rno = #{rno}
+        SELECT bno FROM tbl_reply WHERE rno = #{rno} AND replyvisible = 'Y'
     </select>
 
 </mapper>

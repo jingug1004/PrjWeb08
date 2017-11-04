@@ -1,4 +1,4 @@
-# Spring Project 김진국
+# Spring UNIFY Project 김진국
 
 ### AWS Deploy시 예상 되는 오류
 
@@ -25,7 +25,7 @@
 
 @ 2017년 10월
 
--
+- 댓글도 삭제시 delete가 아니라 update로 블라인드 처리
 
 # 포인트 기능
 저는 포인트 테이블을 따로두시는게 좋을 것 같아요. 이력관리위해서

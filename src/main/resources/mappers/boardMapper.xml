@@ -199,7 +199,7 @@
         SELECT cname FROM tbl_cate
         LEFT JOIN tbl_board
         ON tbl_cate.cnum = tbl_board.cnum
-        WHERE tbl_board.bno = #{bno};
+        WHERE tbl_board.bno = #{bno}
     </select>
     <!--
     <select id="callCateName" resultType="String">

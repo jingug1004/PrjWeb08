@@ -12,19 +12,18 @@ import org.zerock.domain.PointUpdateVO;
  * Why : 메시지 전송이나 개봉에 따라서 달라지는 사용자의 포린트를 처리하기 위해서 PointDAO를 설정.
  * How : MessageDAO에 추가적인 메소드를 선언해서 사용하는 것도 가능하지만, 포인트와 메시지는 다른 도메인이므로 분리.
  */
-
-
 public interface PointDAO {
 
-    /**
-     * Update point.
-     *
-     * @param uid   the uid
-     * @param point the point
-     * @throws Exception the exception
-     */
-    public void updatePoint(String uid, int point) throws Exception;
+//    /**
+//     * Update point.
+//     *
+//     * @param uid   the uid
+//     * @param point the point
+//     * @throws Exception the exception
+//     */
+//    public void updatePoint(String uid, int point) throws Exception;
 
+    /* 글 작성할 때 포인트 추가, 제거 */
     public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
 
     public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception;
@@ -32,4 +31,6 @@ public interface PointDAO {
     public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
 
     public void balancePointUpdate(String uid, int balancePoint) throws Exception;
+    /* 글 작성할 때 포인트 추가, 제거 */
+
 }

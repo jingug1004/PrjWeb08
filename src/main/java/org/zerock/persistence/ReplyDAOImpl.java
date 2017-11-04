@@ -22,32 +22,33 @@ import java.util.Map;
 public class ReplyDAOImpl implements ReplyDAO{
 
     @Inject
-    private SqlSession session;
+    private SqlSession sqlSession;
 
     private static String namespace = "org.zerock.mapper.ReplyMapper";
 
     @Override
     public List<ReplyVO> list(Integer bno) throws Exception {
 
-        return session.selectList(namespace + ".list", bno);
+        return sqlSession.selectList(namespace + ".list", bno);
     }
 
     @Override
     public void create(ReplyVO vo) throws Exception {
 
-        session.insert(namespace + ".create", vo);
+        sqlSession.insert(namespace + ".create", vo);
     }
 
     @Override
     public void update(ReplyVO vo) throws Exception {
 
-        session.update(namespace + ".update", vo);
+        sqlSession.update(namespace + ".update", vo);
     }
 
     @Override
     public void delete(Integer rno) throws Exception {
 
-        session.delete(namespace + ".delete", rno);
+        // sqlSession.delete(namespace + ".delete", rno);
+        sqlSession.update(namespace + ".delete", rno);
     }
 
     @Override
@@ -58,18 +59,18 @@ public class ReplyDAOImpl implements ReplyDAO{
         paramMap.put("bno", bno);
         paramMap.put("cri", cri);
 
-        return session.selectList(namespace + ".listPage", paramMap);
+        return sqlSession.selectList(namespace + ".listPage", paramMap);
     }
 
     @Override
     public int count(Integer bno) throws Exception {
 
-        return session.selectOne(namespace + ".count", bno);
+        return sqlSession.selectOne(namespace + ".count", bno);
     }
 
     @Override
     public int getBno(Integer rno) throws Exception {
 
-        return session.selectOne(namespace + ".getBno", rno);
+        return sqlSession.selectOne(namespace + ".getBno", rno);
     }
 }
