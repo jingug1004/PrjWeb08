@@ -3,6 +3,7 @@ package org.zerock.service;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.ReplyVO;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public interface ReplyService {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void addReply(ReplyVO vo) throws Exception;
+    public void addReply(ReplyVO vo, HttpSession httpSession) throws Exception;
 
     /**
      * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.

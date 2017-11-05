@@ -9,6 +9,7 @@ import org.zerock.domain.ReplyVO;
 import org.zerock.service.ReplyService;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,11 +37,11 @@ public class ReplyController {
      * @return
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ResponseEntity<String> register(@RequestBody ReplyVO vo) {
+    public ResponseEntity<String> register(@RequestBody ReplyVO vo, HttpSession httpSession) {
 
         ResponseEntity<String> entity = null;
         try {
-            replyService.addReply(vo);
+            replyService.addReply(vo, httpSession);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();

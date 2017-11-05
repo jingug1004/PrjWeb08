@@ -439,7 +439,7 @@
                                                     <h3 class="mega-menu-heading">대통령i</h3>
                                                     <ul class="list-unstyled style-list">
                                                         <li><a href="/sboard/list?cate=1401">대통령비서실</a></li>
-                                                        <li><a href="/sboard/list?cate=1402">대통령경호실</a></li>
+                                                        <li><a href="/sboard/list?cate=1402">대통령경호처</a></li>
                                                         <li><a href="/sboard/list?cate=1403">국가안보실</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국가인권위원회</h3>

@@ -33,6 +33,11 @@ public class ReplyDAOImpl implements ReplyDAO{
     }
 
     @Override
+    public ReplyVO readByIDnBnonText(ReplyVO replyVO) throws Exception {
+        return sqlSession.selectOne(namespace + ".readByIDnBnonText", replyVO);
+    }
+
+    @Override
     public void create(ReplyVO vo) throws Exception {
 
         sqlSession.insert(namespace + ".create", vo);

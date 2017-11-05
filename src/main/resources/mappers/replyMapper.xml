@@ -14,6 +14,14 @@
         ORDER BY rno DESC
     </select>
 
+    <select id="readByIDnBnonText" resultType="org.zerock.domain.ReplyVO">
+        select
+        *
+        from
+        tbl_reply
+        where rid = #{rid} AND bno = #{bno} AND replytext = #{replytext}
+    </select>
+
     <insert id="create">
       <![CDATA[ 
         insert into tbl_reply (rid, bno, replytext, replyer, bringreplycolor, replyvisible)

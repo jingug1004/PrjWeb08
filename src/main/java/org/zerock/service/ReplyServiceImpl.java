@@ -3,12 +3,17 @@ package org.zerock.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.PointInsertVO;
 import org.zerock.domain.ReplyVO;
+import org.zerock.domain.UserVO;
 import org.zerock.persistence.BoardDAO;
 import org.zerock.persistence.PointDAO;
 import org.zerock.persistence.ReplyDAO;
+import org.zerock.util.PointUtils;
+import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -40,30 +45,34 @@ public class ReplyServiceImpl implements ReplyService {
     /**
      * 새로운 댓글이 추가되면 tbl_board의 replycnt 칼럼의 값을 1 증가시키는 작업과 댓글이 삭제될 때 replycnt 칼럼의 값을 -1 시키는 작업으로 수정하고 @Transactional을 이용해서 처리.
      *
-     * @param vo the vo
+     * @param replyVO the vo
      * @throws Exception the exception
      */
     @Transactional
     @Override
-    public void addReply(ReplyVO vo) throws Exception {
+    public void addReply(ReplyVO replyVO, HttpSession httpSession) throws Exception {
 
-//        Object object = httpSession.getAttribute("login");
-//        UserVO loginUserVO = (UserVO) object;
-//        if (object != null) {
-//        }
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+        }
 
-        replyDAO.create(vo);
-        boardDAO.updateReplyCnt(vo.getBno(), 1);
+        replyDAO.create(replyVO);
+        boardDAO.updateReplyCnt(replyVO.getBno(), 1);
 
-//        ReplyVO replyVO = new ReplyVO();
+        replyVO = replyDAO.readByIDnBnonText(replyVO);
 
-//        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), vo.getRno(), "댓글 작성", Integer.parseInt(UnifyMessage.getMessage("ReplyWriterPoint")));
-//
-//        PointInsertVO pointInsertVO = new PointInsertVO();
-//        pointInsertVO.setPinsid(vo.getRid());
-//        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("ReplyWriterPoint")));
-//        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
-//        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
+        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), replyVO.getRno(), "댓글 작성", Integer.parseInt(UnifyMessage.getMessage("ReplyWriterPoint")));
+
+        PointInsertVO pointInsertVO = new PointInsertVO();
+        pointInsertVO.setPinsid(replyVO.getRid());
+        pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("ReplyWriterPoint")));
+        pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
+        pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
+        pointDAO.insertOperPoint(pointInsertVO);
+
+        pointUtils.setBalancePoint(loginUserVO.getUpoint());
+        pointDAO.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("ReplyWriterPoint")));
 
     }
 

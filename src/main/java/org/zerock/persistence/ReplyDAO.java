@@ -27,6 +27,8 @@ public interface ReplyDAO {
      */
     public List<ReplyVO> list(Integer bno) throws Exception;
 
+    public ReplyVO readByIDnBnonText (ReplyVO replyVO) throws Exception;
+
     /**
      * Create.
      *

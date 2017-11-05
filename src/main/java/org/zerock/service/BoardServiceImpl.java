@@ -54,7 +54,7 @@ public class BoardServiceImpl implements BoardService {
      *
      * @param boardVO
      */
-//    @Transactional
+    @Transactional
     @Override
     public void regist(BoardVO boardVO, HttpSession httpSession) throws Exception {
 
