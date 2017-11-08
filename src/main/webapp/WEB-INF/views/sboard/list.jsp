@@ -163,7 +163,7 @@
                 <div class="box-footer">
 
                     <div class="text-center">
-                        <ul class="pagination">
+                        <ul class="pagination pagination-v2">
 
                             <c:choose>
                                 <%-- cate에 맞는 검색 (페이징 기능) --%>
