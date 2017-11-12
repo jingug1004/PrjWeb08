@@ -56,5 +56,7 @@ public interface UserDAO {
 
     public void totalUserPostNumUPD(UserVO userVO) throws Exception;
 
+    public void totalUserReplyNumUPD(UserVO userVO) throws Exception;
+
 
 }

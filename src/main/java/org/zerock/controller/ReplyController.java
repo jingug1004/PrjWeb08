@@ -101,11 +101,11 @@ public class ReplyController {
      * @return the response entity
      */
     @RequestMapping(value = "/{rno}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> remove(@PathVariable("rno") Integer rno) {
+    public ResponseEntity<String> remove(@PathVariable("rno") Integer rno, HttpSession httpSession) {
 
         ResponseEntity<String> entity = null;
         try {
-            replyService.removeReply(rno);
+            replyService.removeReply(rno, httpSession);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();

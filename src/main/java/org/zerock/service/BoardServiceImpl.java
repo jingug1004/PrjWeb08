@@ -69,8 +69,8 @@ public class BoardServiceImpl implements BoardService {
         boardDAO.create(boardVO);
 
         /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
-        int tgoodnum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname());
-        loginUserVO.setTpost(tgoodnum);
+        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname());
+        loginUserVO.setTpost(tPostNum);
         userDAO.totalUserPostNumUPD(loginUserVO);
         /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
 
@@ -186,7 +186,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void remove(Integer bno, HttpSession httpSession) throws Exception {
         boardDAO.deleteAttach(bno);
-        boardDAO.delete(bno);
+        boardDAO.delete(bno);           // MyBatis 맵퍼 딜리트에서 업데이트(boardvisible = 'Y') 로 변경
 
         Object object = httpSession.getAttribute("login");
         UserVO loginUserVO = (UserVO) object;
@@ -194,21 +194,24 @@ public class BoardServiceImpl implements BoardService {
             // boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
         }
 
-        /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
-        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname());
+        /* 글 삭제시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
+        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname()); // 로그인한 유저의 아이디에 따라 총 게시글 수 조회
         loginUserVO.setTpost(tPostNum);
-        userDAO.totalUserPostNumUPD(loginUserVO);
-        /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
+        userDAO.totalUserPostNumUPD(loginUserVO);                               // 로그인한 유저의 총 게시글수(tpost 칼럼)에 업데이트
+        /* 글 삭제시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
 
-        /* 글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
-        int tcPostNum = boardDAO.totalColorPostNumGet(loginUserVO.getUday());
-        userColorDAO.totalColorPostNumUPD(tcPostNum, loginUserVO.getUday());
-        /* 글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        /* 글 삭제시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        int tcPostNum = boardDAO.totalColorPostNumGet(loginUserVO.getUday()); // 로그인한 유저의 칼라에 따라서 칼라 기준으로 총 토탈수 조회
+        userColorDAO.totalColorPostNumUPD(tcPostNum, loginUserVO.getUday());  // tbl_color_result에 칼라 기준의 총 토탈수 업데이트 주입
+        /* 글 삭제시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
 
+       /* 글 삭제시 -50 포인트 */
+        PointUtils pointUtils = new PointUtils(
+                loginUserVO.getUid(),
+                Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")),
+                "글 삭제",
+                bno);
 
-        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")), "글 삭제", (Integer) bno);
-
-       /* 글 작성시 -49 포인트 */
         PointUpdateVO pointUpdateVO = new PointUpdateVO();
         pointUpdateVO.setPupdid(loginUserVO.getUid());
         pointUpdateVO.setPupdpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
@@ -216,15 +219,15 @@ public class BoardServiceImpl implements BoardService {
 
         pointUtils.setBalancePoint(loginUserVO.getUpoint());
 
-        pointDAO.updateOperPoint(pointUpdateVO);
-        pointDAO.balancePointUpdate(loginUserVO.getUid(), pointUtils.getBalancePoint());
+        pointDAO.updateOperPoint(pointUpdateVO);                                                // tbl_point_update 추가(insert)
+        pointDAO.balancePointUpdate(loginUserVO.getUid(), pointUtils.getBalancePoint());        // tbl_user 유저 포인트 변경(update)
 
         PointDeleteVO pointDeleteVO = new PointDeleteVO();
         pointDeleteVO.setPdelid(loginUserVO.getUid());
         pointDeleteVO.setPdelpoint(Integer.parseInt(UnifyMessage.getMessage("BoardDeletePoint")));
         pointDeleteVO.setPdelcontent(pointUtils.getExtinctPointContent());
-        pointDAO.deleteOperPoint(pointDeleteVO);
-       /* 글 작성시 -49 포인트 */
+        pointDAO.deleteOperPoint(pointDeleteVO);                        // tbl_point_delete 추가(insert)
+       /* 글 삭제시 -50 포인트 */
 
     }
 

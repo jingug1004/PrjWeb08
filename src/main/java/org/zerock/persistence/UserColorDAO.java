@@ -18,4 +18,6 @@ public interface UserColorDAO {
 
     public void totalColorPostNumUPD(int getTotalPostNumByColor, String userColor) throws Exception;
 
+    public void totalColorReplyNumUPD(int getTotalReplyNumByColor, String userColor) throws Exception;
+
 }

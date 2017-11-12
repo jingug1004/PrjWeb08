@@ -49,7 +49,7 @@ public interface ReplyService {
      * @param rno the rno
      * @throws Exception the exception
      */
-    public void removeReply(Integer rno) throws Exception;
+    public void removeReply(Integer rno, HttpSession httpSession) throws Exception;
 
     /**
      * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.

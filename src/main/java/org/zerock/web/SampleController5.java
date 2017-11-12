@@ -3,15 +3,16 @@ package org.zerock.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.zerock.domain.ProductVO;
+import org.zerock.domain.SampleProductVO;
 
 @Controller
 public class SampleController5 {
 
 	@RequestMapping("/doJSON")
-	public @ResponseBody ProductVO doJSON(){
+	public @ResponseBody
+    SampleProductVO doJSON(){
 		
-		ProductVO vo = new ProductVO("샘플상품",30000);
+		SampleProductVO vo = new SampleProductVO("샘플상품",30000);
 		
 		return vo;
 		

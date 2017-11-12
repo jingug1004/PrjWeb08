@@ -25,5 +25,9 @@
         UPDATE tbl_color_result SET userpostnum = #{getTotalPostNumByColor} WHERE divisionnum = #{userColor}
     </update>
 
+    <update id="totalColorReplyNumUPD">
+        UPDATE tbl_color_result SET userreplynum = #{getTotalReplyNumByColor} WHERE divisionnum = #{userColor}
+    </update>
+
 
 </mapper>

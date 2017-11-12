@@ -39,11 +39,16 @@
     <!--</select>-->
 
     <select id="registUsersNumGET" resultType="int">
-        SELECT count(*) FROM tbl_user WHERE delyn = 'N';
+        SELECT count(*) FROM tbl_user WHERE delyn = 'N'
     </select>
 
+    <!-- 글 작성시 접속한 유저의 아이디 통해서 총 게시글 등록수 구함 -->
     <update id="totalUserPostNumUPD">
-        update tbl_user set tpost = #{tpost} where uid = #{uid} AND delyn = 'N';
+        update tbl_user set tpost = #{tpost} where uid = #{uid} AND delyn = 'N'
+    </update>
+
+    <update id="totalUserReplyNumUPD">
+        UPDATE tbl_user SET treply = #{treply} WHERE uid = #{uid} AND delyn = 'N'
     </update>
 
 

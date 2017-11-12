@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by 김진국 on 2017-11-09 오후 10:38
@@ -29,6 +30,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductController {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+
+    @RequestMapping(value = "/productList", method = RequestMethod.GET)
+    public void productListGET () {
+
+    }
+
+    @RequestMapping(value = "/productDetail", method = RequestMethod.GET)
+    public void productDetailGET() {
+
+    }
 
 
 

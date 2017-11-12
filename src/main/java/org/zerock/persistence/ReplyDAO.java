@@ -81,4 +81,8 @@ public interface ReplyDAO {
      */
     public int getBno(Integer rno) throws Exception;
 
+    public int totalUserReplyNumGET(String uid) throws Exception;
+
+    public int totalColorReplyNumGet(String getColor) throws Exception;
+
 }

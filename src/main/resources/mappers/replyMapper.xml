@@ -50,13 +50,24 @@
       limit #{cri.pageStart}, #{cri.perPageNum}
     </select>
 
+    <!--SELECT COUNT(bno) FROM tbl_reply WHERE bno = #{bno} AND replyvisible = 'Y'-->
     <!-- readPage.jsp의 토탈카운트 $("#replycntSmall").html("[ " + data.pageMaker.totalCount + " ]"); -->
     <select id="count" resultType="int">
-        SELECT COUNT(bno) FROM tbl_reply WHERE bno = #{bno} AND replyvisible = 'Y'
+        SELECT COUNT(*) FROM tbl_reply WHERE bno = #{bno} AND replyvisible = 'Y'
     </select>
 
     <select id="getBno" resultType="int">
         SELECT bno FROM tbl_reply WHERE rno = #{rno} AND replyvisible = 'Y'
+    </select>
+
+    <!--SELECT count(rid) FROM tbl_reply WHERE replyvisible = 'Y' AND rid = #{uid};-->
+    <select id="totalUserReplyNumGET" resultType="int">
+        SELECT count(*) FROM tbl_reply WHERE replyvisible = 'Y' AND rid = #{uid};
+    </select>
+
+    <!--SELECT count(bringreplycolor) FROM tbl_reply WHERE replyvisible = 'Y' AND bringreplycolor = #{getColor}-->
+    <select id="totalColorReplyNumGet" resultType="int">
+        SELECT count(*) FROM tbl_reply WHERE replyvisible = 'Y' AND bringreplycolor = #{getColor}
     </select>
 
 </mapper>

@@ -78,4 +78,15 @@ public class ReplyDAOImpl implements ReplyDAO{
 
         return sqlSession.selectOne(namespace + ".getBno", rno);
     }
+
+    @Override
+    public int totalUserReplyNumGET(String uid) throws Exception {
+
+        return sqlSession.selectOne(namespace + ".totalUserReplyNumGET", uid); // 댓글 작성시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함
+    }
+
+    @Override
+    public int totalColorReplyNumGet(String getColor) throws Exception {
+        return sqlSession.selectOne(namespace + ".totalColorReplyNumGet", getColor);
+    }
 }

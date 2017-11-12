@@ -19,7 +19,7 @@ import java.util.Map;
  * How : UserDAO 인터페이스 만든 후 마이바티스 userMapper.xml 파일 만들고 UserDAOImpl 만듦
  */
 @Repository
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
 
     @Inject
     private SqlSession sqlSession;
@@ -71,5 +71,11 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public void totalUserPostNumUPD(UserVO userVO) throws Exception {
         sqlSession.update(namespace + ".totalUserPostNumUPD", userVO);
+    }
+
+    /* 댓글 작성시 접속한 유저의 아이디를 통해서 총 댓글 등록수 구함 */
+    @Override
+    public void totalUserReplyNumUPD(UserVO userVO) throws Exception {
+        sqlSession.update(namespace + ".totalUserReplyNumUPD", userVO);
     }
 }

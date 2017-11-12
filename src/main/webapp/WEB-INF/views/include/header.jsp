@@ -68,7 +68,7 @@
     -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<c:url value="/WEB-INF/views/favicon.ico"/>">
+    <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css'
@@ -566,9 +566,9 @@
                         </li>
                         <!-- End Books -->
 
-                        <!-- Main Demo -->
-                        <li><a href="<c:url value="/sboard/list"/>">건의사항</a></li>
-                        <!-- Main Demo -->
+                        <!-- 상품 리스트 헤더 메뉴 -->
+                        <li><a href="/product/productList">상품 리스트</a></li>
+                        <!-- 상품 리스트 헤더 메뉴 -->
 
                         <!-- Main Demo -->
                         <li><a href="<c:url value="/ck/viewGo"/>">ck view</a></li>

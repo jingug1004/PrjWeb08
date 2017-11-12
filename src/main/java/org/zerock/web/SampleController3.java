@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.zerock.domain.ProductVO;
+import org.zerock.domain.SampleProductVO;
 
 @Controller
 public class SampleController3 {
@@ -17,7 +17,7 @@ public class SampleController3 {
 	public String doD(Model model){
 		
 		//make sample data
-		ProductVO product = new ProductVO("Sample Product", 10000);
+		SampleProductVO product = new SampleProductVO("Sample Product", 10000);
 		
 		logger.info("lll~~~ doD lll~~~");
 	
