@@ -72,7 +72,7 @@
                                 <p style="display: table-cell; text-align: center; vertical-align: middle;">
                                     첨부할 파일을 드래그 하거나 직접 <a id="btn-upload">파일찾기</a>
                                 <%--<form id="inputForm" action="/s3/inputFile" method="post">--%>
-                                    <input <%--style="display: none"--%> type="file" id="file" name="file" <%--onchange="changeValue(this)"--%>/>
+                                    <input style="display: none" type="file" id="file" name="file" <%--onchange="changeValue(this)"--%>/>
                                 <%--</form>--%>
                                 </p>
                             </div>

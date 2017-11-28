@@ -148,6 +148,10 @@
     <%--<script src="/resources/js/num/jquery-1.11.3.min.js"></script>--%>
     <script src="/resources/js/num/jquery.number.min.js"></script>
 
+
+
+
+
 </head>
 
 <style type="text/css">
@@ -569,6 +573,11 @@
                         <!-- 상품 리스트 헤더 메뉴 -->
                         <li><a href="/product/productList">상품 리스트</a></li>
                         <!-- 상품 리스트 헤더 메뉴 -->
+
+                        <!-- jqGrid 헤더 메뉴 -->
+                        <li><a href="/jqGrid/jqGridList">jqGrid 리스트</a></li>
+                        <li><a href="/jqGrid/jqGridList02">jqGrid 리스트 02</a></li>
+                        <!-- jqGrid 헤더 메뉴 -->
 
                         <!-- Main Demo -->
                         <li><a href="<c:url value="/ck/viewGo"/>">ck view</a></li>
