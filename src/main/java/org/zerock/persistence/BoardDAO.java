@@ -153,7 +153,7 @@ public interface BoardDAO {
      * @param fullName 첨부파일의 이름.
      * @throws Exception
      */
-    public void addAttach(String fullName) throws Exception;
+    public void addAttach(String fullName, int boardBno) throws Exception;
 
     /**
      * 특정 게시물의 첨부파일을 시간 순서대로 가져오는 SQL문을 작성.
