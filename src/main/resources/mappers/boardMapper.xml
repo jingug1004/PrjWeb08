@@ -216,7 +216,7 @@
     </select>
 
     <insert id="addAttach">
-        INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, LAST_INSERT_ID())
+        INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, #{boardBno})
     </insert>
 
     <select id="getAttach" resultType="string">

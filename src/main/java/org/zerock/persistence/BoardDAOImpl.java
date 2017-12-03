@@ -133,11 +133,16 @@ public class BoardDAOImpl implements BoardDAO {
 
 
     @Override
-    public void addAttach(String fullName) throws Exception {
+    public void addAttach(String fullName, int boardBno) throws Exception {
 
-        logger.info("lllll~~~~~ fullName : " + fullName + "lllll~~~~~ ");
+        Map<String, Object> paramMap = new HashMap<>();
 
-        session.insert(namespace + ".addAttach", fullName);
+        paramMap.put("fullName", fullName);
+        paramMap.put("boardBno", boardBno);
+
+        logger.info("lllll~~~~~ addAttach fullName : " + paramMap.toString() + "lllll~~~~~ ");
+
+        session.insert(namespace + ".addAttach", paramMap);
     }
 
     @Override

@@ -80,9 +80,10 @@ public class BoardServiceImpl implements BoardService {
         /* 글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
 
         /* 글 작성시 +50 포인트 */
-        boardVO = boardDAO.readByIDnTitle(boardVO);
+        BoardVO boardVOExceptFile;                  // 첨부파일은 메소드 시그니처의 파라미터 그대로 가져가야 함으로.
+        boardVOExceptFile = boardDAO.readByIDnTitle(boardVO);
 
-        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVO.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
+        PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), boardVOExceptFile.getBno(), "글 작성", Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
 
         PointInsertVO pointInsertVO = new PointInsertVO();
         pointInsertVO.setPinsid(loginUserVO.getUid());
@@ -95,14 +96,24 @@ public class BoardServiceImpl implements BoardService {
         pointDAO.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
         /* 글 작성시 +50 포인트 */
 
+        System.out.println("lllll~~~~~ pointUtils.set : " + pointUtils.toString());
+
+
         /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
         String[] files = boardVO.getFiles();
         if (files == null) {
+
+            System.out.println("lllll~~~~~ files == null : " + files);
+
             return;
         }
 
         for (String fileName : files) {
-            boardDAO.addAttach(fileName);
+
+            System.out.println("lllll~~~~~ fileName : " + fileName);
+            System.out.println("lllll~~~~~ boardVO.getBno() : " + boardVOExceptFile.getBno());      // boardVO로 하면 lastInsertID가 형성되지 않았기에 sQL 오류 발생.
+            boardDAO.addAttach(fileName, boardVOExceptFile.getBno());
+
         }
         /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
 
