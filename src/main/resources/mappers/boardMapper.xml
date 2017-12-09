@@ -232,7 +232,7 @@
     </insert>
 
     <select id="totalUserPostNumGET" resultType="int">
-        SELECT count(*) FROM tbl_board WHERE boardvisible = 'Y' AND writer = #{uname};
+        SELECT count(*) FROM tbl_board WHERE boardvisible = 'Y' AND id = #{uid};
     </select>
 
     <select id="totalColorPostNumGet" resultType="int">

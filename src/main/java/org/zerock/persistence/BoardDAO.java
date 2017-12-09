@@ -184,7 +184,7 @@ public interface BoardDAO {
      */
     public void replaceAttach(String fullName, Integer bno) throws Exception;
 
-    public int totalUserPostNumGET(String uname) throws Exception; // 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함
+    public int totalUserPostNumGET(String uid) throws Exception; // 글 작성시 접속한 유저의 아이디를 통해서 총 게시글 등록수 구함
 
     public int totalColorPostNumGet(String getColor) throws Exception;
 

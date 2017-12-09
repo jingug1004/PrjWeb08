@@ -69,7 +69,7 @@ public class BoardServiceImpl implements BoardService {
         boardDAO.create(boardVO);
 
         /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
-        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname());
+        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getUid());
         loginUserVO.setTpost(tPostNum);
         userDAO.totalUserPostNumUPD(loginUserVO);
         /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
@@ -206,7 +206,7 @@ public class BoardServiceImpl implements BoardService {
         }
 
         /* 글 삭제시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
-        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getNickname()); // 로그인한 유저의 아이디에 따라 총 게시글 수 조회
+        int tPostNum = boardDAO.totalUserPostNumGET(loginUserVO.getUid()); // 로그인한 유저의 아이디에 따라 총 게시글 수 조회
         loginUserVO.setTpost(tPostNum);
         userDAO.totalUserPostNumUPD(loginUserVO);                               // 로그인한 유저의 총 게시글수(tpost 칼럼)에 업데이트
         /* 글 삭제시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */

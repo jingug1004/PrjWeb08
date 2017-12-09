@@ -167,8 +167,8 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public int totalUserPostNumGET(String uname) throws Exception {
-        return session.selectOne(namespace + ".totalUserPostNumGET", uname);
+    public int totalUserPostNumGET(String uid) throws Exception {
+        return session.selectOne(namespace + ".totalUserPostNumGET", uid);
     }
 
     @Override
