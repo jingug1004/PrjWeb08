@@ -7,62 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="43c63fab-8b5d-4adf-8d4d-5257ee3a297c" name="Default" comment="171217 (일)&#10;- 상품 리스트 CSS 제대로 디버깅 - 중복된 css 라이브러리 패쓰 경로 삭제">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata.keystream" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata.keystream.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata.values" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata.values.at" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata.values.s" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata_i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_metadata_/metadata_i.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_src_/schema/HANAUSER.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_src_/schema/ORAGMP.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_src_/schema/SALE.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/_src_/schema/SALE_ON.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/64780d55-7390-49f9-a579-1e6fc54f2f04/storage.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/TestLib.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/closure_compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_connector.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_connector1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_connector2.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_src_/schema/ORAGMP.zip" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_src_/schema/ORAGMP.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_src_/schema/SALE.zip" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_src_/schema/SALE.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_src_/schema/SALE_ON.zip" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b/_src_/schema/SALE_ON.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_src_/schema/ORAGMP.zip" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_src_/schema/ORAGMP.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_src_/schema/SALE.zip" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f/_src_/schema/SALE.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2014d041-757f-44d6-8819-69d7a3ba3e5b.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e17ac06a-0d7e-4133-9fcb-1ad785cb183f.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/footer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/footer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/jqGrid/jqGridList02.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/jqGrid/jqGridList02.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/productList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/productList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" />
-      <change type="MODIFICATION" beforePath="D:/simple-counter/simple-counter/src/app/app.component.css" afterPath="D:/simple-counter/simple-counter/src/app/app.component.css" />
-      <change type="MODIFICATION" beforePath="D:/simple-counter/simple-counter/src/app/app.component.html" afterPath="D:/simple-counter/simple-counter/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="D:/simple-counter/simple-counter/src/app/app.component.ts" afterPath="D:/simple-counter/simple-counter/src/app/app.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$USER_HOME$/Desktop/beauty/Balgre/target/" />
@@ -141,7 +87,7 @@
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="420">
-                      <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+                      <caret line="61" column="46" lean-forward="false" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
                       <folding />
                     </state>
                   </provider>
@@ -151,7 +97,7 @@
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="555">
-                      <caret line="189" column="107" lean-forward="true" selection-start-line="189" selection-start-column="107" selection-end-line="189" selection-end-column="107" />
+                      <caret line="189" column="107" lean-forward="false" selection-start-line="189" selection-start-column="107" selection-end-line="189" selection-end-column="107" />
                       <folding />
                     </state>
                   </provider>
@@ -161,7 +107,7 @@
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/productList.jsp">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="518">
-                      <caret line="244" column="48" lean-forward="true" selection-start-line="244" selection-start-column="48" selection-end-line="244" selection-end-column="48" />
+                      <caret line="244" column="48" lean-forward="false" selection-start-line="244" selection-start-column="48" selection-end-line="244" selection-end-column="48" />
                       <folding />
                     </state>
                   </provider>
@@ -170,8 +116,8 @@
               <file leaf-file-name="shop.style.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="302">
-                      <caret line="1697" column="16" lean-forward="true" selection-start-line="1697" selection-start-column="16" selection-end-line="1697" selection-end-column="16" />
+                    <state relative-caret-position="345">
+                      <caret line="1696" column="11" lean-forward="false" selection-start-line="1696" selection-start-column="11" selection-end-line="1696" selection-end-column="11" />
                       <folding />
                     </state>
                   </provider>
@@ -225,7 +171,7 @@
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/util/MarshallerUtil.java">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="698">
-                      <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+                      <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -243,7 +189,7 @@
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="434">
-                      <caret line="128" column="6" lean-forward="true" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
+                      <caret line="128" column="6" lean-forward="false" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
                       <folding />
                     </state>
                   </provider>
@@ -273,7 +219,7 @@
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/footer.jsp">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="3318">
-                      <caret line="237" column="60" lean-forward="true" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
+                      <caret line="237" column="60" lean-forward="false" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
                       <folding />
                     </state>
                   </provider>
@@ -298,7 +244,7 @@
                   <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                     <state split_layout="FIRST">
                       <first_editor relative-caret-position="343">
-                        <caret line="47" column="16" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+                        <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
                         <folding />
                       </first_editor>
                       <second_editor />
@@ -367,9 +313,9 @@
       <find>img/</find>
       <find>.result-category .badge</find>
       <find>shop.style.css</find>
-      <find>.badge-results</find>
       <find>bootstrap.min.css</find>
       <find>app.css</find>
+      <find>.badge-results</find>
     </findStrings>
     <replaceStrings>
       <replace>assets/</replace>
@@ -437,8 +383,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/productList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css" />
       </list>
     </option>
   </component>
@@ -472,9 +418,6 @@
       </expand>
       <select />
     </treeState>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="D:/simple-counter/simple-counter/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-3603" />
@@ -1744,7 +1687,7 @@
       <workItem from="1512878548840" duration="3624000" />
       <workItem from="1513399419812" duration="4660000" />
       <workItem from="1513422504965" duration="9310000" />
-      <workItem from="1513476743527" duration="5015000" />
+      <workItem from="1513476743527" duration="5080000" />
     </task>
     <task id="LOCAL-00001" summary="170601 New Generation">
       <created>1496919698439</created>
@@ -1837,11 +1780,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511912583350</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="171217 (일)&#10;- 상품 리스트 CSS 제대로 디버깅 - 중복된 css 라이브러리 패쓰 경로 삭제">
+      <created>1513483648478</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1513483648478</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297485000" />
+    <option name="totallyTimeSpent" value="297550000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2149,7 +2099,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3318">
-          <caret line="237" column="60" lean-forward="true" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
+          <caret line="237" column="60" lean-forward="false" selection-start-line="237" selection-start-column="60" selection-end-line="237" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -2173,7 +2123,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+          <caret line="61" column="46" lean-forward="false" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -2181,7 +2131,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
-          <caret line="189" column="107" lean-forward="true" selection-start-line="189" selection-start-column="107" selection-end-line="189" selection-end-column="107" />
+          <caret line="189" column="107" lean-forward="false" selection-start-line="189" selection-start-column="107" selection-end-line="189" selection-end-column="107" />
           <folding />
         </state>
       </provider>
@@ -2189,7 +2139,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/productList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
-          <caret line="244" column="48" lean-forward="true" selection-start-line="244" selection-start-column="48" selection-end-line="244" selection-end-column="48" />
+          <caret line="244" column="48" lean-forward="false" selection-start-line="244" selection-start-column="48" selection-end-line="244" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -2197,15 +2147,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
-          <caret line="128" column="6" lean-forward="true" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="1697" column="16" lean-forward="true" selection-start-line="1697" selection-start-column="16" selection-end-line="1697" selection-end-column="16" />
+          <caret line="128" column="6" lean-forward="false" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -2228,7 +2170,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/util/MarshallerUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="698">
-          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2237,7 +2179,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="343">
-            <caret line="47" column="16" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+            <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
             <folding />
           </first_editor>
           <second_editor />
@@ -2248,6 +2190,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="471" column="34" lean-forward="false" selection-start-line="471" selection-start-column="34" selection-end-line="471" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="1696" column="11" lean-forward="false" selection-start-line="1696" selection-start-column="11" selection-end-line="1696" selection-end-column="11" />
           <folding />
         </state>
       </provider>
