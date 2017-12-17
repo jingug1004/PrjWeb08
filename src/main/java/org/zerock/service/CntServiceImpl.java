@@ -4,9 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.GoodCntVO;
+import org.zerock.domain.UserVO;
 import org.zerock.persistence.CntDAO;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Emiya on 2017-10-01 오후 2:04
@@ -36,7 +38,14 @@ public class CntServiceImpl implements CntService {
     private CntDAO cntDAO;
 
     @Override
-    public void goodCntPush(GoodCntVO goodCntVO) throws Exception {
+    public void goodCntPush(GoodCntVO goodCntVO, HttpSession httpSession) throws Exception {
+
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            goodCntVO.setUsercolor(loginUserVO.getUday());   // 유저의 칼라 숫자에 따라서 저장되는 좋아요에 칼라숫자 저장됨
+        }
+
         cntDAO.goodCntPush(goodCntVO);
     }
 
@@ -49,7 +58,14 @@ public class CntServiceImpl implements CntService {
 
 
     @Override
-    public void badCntPush(GoodCntVO badCntVO) throws Exception {
+    public void badCntPush(GoodCntVO badCntVO, HttpSession httpSession) throws Exception {
+
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            badCntVO.setUsercolor(loginUserVO.getUday());   // 유저의 칼라 숫자에 따라서 저장되는 좋아요에 칼라숫자 저장됨
+        }
+
         cntDAO.badCntPush(badCntVO);
     }
 
@@ -78,7 +94,14 @@ public class CntServiceImpl implements CntService {
     // -----------------------------------------------------------------
 
     @Override
-    public void spamCntPush(GoodCntVO spamCntVO) throws Exception {
+    public void spamCntPush(GoodCntVO spamCntVO, HttpSession httpSession) throws Exception {
+
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            spamCntVO.setUsercolor(loginUserVO.getUday());   // 유저의 칼라 숫자에 따라서 저장되는 좋아요에 칼라숫자 저장됨
+        }
+
         cntDAO.spamCntPush(spamCntVO);
     }
 

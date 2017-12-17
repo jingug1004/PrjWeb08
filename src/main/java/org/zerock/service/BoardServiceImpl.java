@@ -64,8 +64,6 @@ public class BoardServiceImpl implements BoardService {
             boardVO.setGetcolor(loginUserVO.getUday());   // 유저의 uday 숫자에 따라서 저장되는 보드 칼라숫자 달라짐
         }
 
-        logger.info("lllll~~~~~ loginUserVO.toString() lllll~~~~~ " + loginUserVO.toString());
-
         boardDAO.create(boardVO);
 
         /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */

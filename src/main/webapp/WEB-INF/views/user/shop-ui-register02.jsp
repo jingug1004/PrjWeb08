@@ -149,59 +149,70 @@
                                 <div id="collapseFive" class="panel-collapse collapse in">
                                     <div class="panel-body">
                                         <ul class="list-inline product-color-list product-color ls-ct-center">
-                                            &nbsp;&nbsp;
-                                            <%--
-                                            <li><a href="#"><img src="/assets/img/colors/001.png" alt=""></a></li>
-                                            --%>
-                                            <li>
-                                                <input type="radio" id="choice001" name="uday" value="001">
-                                                <label class="color-one" for="choice001"><img src="/assets/img/colors/001.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice002" name="uday" value="002">
-                                                <label class="color-one" for="choice002"><img src="/assets/img/colors/002.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice003" name="uday" value="003">
-                                                <label class="color-one" for="choice003"><img src="/assets/img/colors/003.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice004" name="uday" value="004">
-                                                <label class="color-one" for="choice004"><img src="/assets/img/colors/004.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice005" name="uday" value="005">
-                                                <label class="color-one" for="choice005"><img src="/assets/img/colors/005.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice006" name="uday" value="006">
-                                                <label class="color-one" for="choice006"><img src="/assets/img/colors/006.png" alt=""></label>
-                                            </li>
-                                            </br>
-                                            <li>
-                                                <input type="radio" id="choice007" name="uday" value="007">
-                                                <label class="color-one" for="choice007"><img src="/assets/img/colors/007.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice008" name="uday" value="008">
-                                                <label class="color-one" for="choice008"><img src="/assets/img/colors/008.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice009" name="uday" value="009">
-                                                <label class="color-one" for="choice009"><img src="/assets/img/colors/009.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice010" name="uday" value="010">
-                                                <label class="color-one" for="choice010"><img src="/assets/img/colors/010.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice011" name="uday" value="011">
-                                                <label class="color-one" for="choice011"><img src="/assets/img/colors/011.png" alt=""></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="choice012" name="uday" value="012">
-                                                <label class="color-one" for="choice012"><img src="/assets/img/colors/012.png" alt=""></label>
-                                            </li>
+                                            <div class="list-inline product-color-list product-color ls-ct-center">
+                                                <li>
+                                                    <input type="radio" id="choice001" name="uday" value="001">
+                                                    <label class="color-one" for="choice001"><img
+                                                            src="/assets/img/colors/001.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice002" name="uday" value="002">
+                                                    <label class="color-one" for="choice002"><img
+                                                            src="/assets/img/colors/002.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice003" name="uday" value="003">
+                                                    <label class="color-one" for="choice003"><img
+                                                            src="/assets/img/colors/003.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice004" name="uday" value="004">
+                                                    <label class="color-one" for="choice004"><img
+                                                            src="/assets/img/colors/004.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice005" name="uday" value="005">
+                                                    <label class="color-one" for="choice005"><img
+                                                            src="/assets/img/colors/005.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice006" name="uday" value="006">
+                                                    <label class="color-one" for="choice006"><img
+                                                            src="/assets/img/colors/006.png" alt=""></label>
+                                                </li>
+                                            </div>
+                                            <div class="list-inline product-color-list product-color ls-ct-center">
+                                                <li>
+                                                    <input type="radio" id="choice007" name="uday" value="007">
+                                                    <label class="color-one" for="choice007"><img
+                                                            src="/assets/img/colors/007.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice008" name="uday" value="008">
+                                                    <label class="color-one" for="choice008"><img
+                                                            src="/assets/img/colors/008.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice009" name="uday" value="009">
+                                                    <label class="color-one" for="choice009"><img
+                                                            src="/assets/img/colors/009.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice010" name="uday" value="010">
+                                                    <label class="color-one" for="choice010"><img
+                                                            src="/assets/img/colors/010.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice011" name="uday" value="011">
+                                                    <label class="color-one" for="choice011"><img
+                                                            src="/assets/img/colors/011.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice012" name="uday" value="012">
+                                                    <label class="color-one" for="choice012"><img
+                                                            src="/assets/img/colors/012.png" alt=""></label>
+                                                </li>
+                                            </div>
                                         </ul>
                                     </div>
                                 </div>

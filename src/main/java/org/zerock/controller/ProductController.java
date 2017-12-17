@@ -36,6 +36,11 @@ public class ProductController {
 
     }
 
+    @RequestMapping(value = "/productListGrid", method = RequestMethod.GET)
+    public void productListGridGET () {
+
+    }
+
     @RequestMapping(value = "/productDetail", method = RequestMethod.GET)
     public void productDetailGET() {
 

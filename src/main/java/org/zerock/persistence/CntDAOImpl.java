@@ -53,13 +53,8 @@ public class CntDAOImpl implements CntDAO {
     // 굿 버튼 보이게 안 보이게
     @Override
     public String goodCntVOGet(String loginUserID, int bno) throws Exception {
-
         Map<String, Object> paramMap = new HashMap<>();
-
         paramMap.put("goodcntParamMap", bno + loginUserID + "Good");
-
-//        logger.info("lllll~~~~~ good paramMap.toString() : " + paramMap.toString() + "lllll~~~~~");
-
         return session.selectOne(namespace + ".goodCntVOGet", paramMap);
     }
 

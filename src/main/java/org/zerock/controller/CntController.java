@@ -12,6 +12,7 @@ import org.zerock.domain.GoodCntVO;
 import org.zerock.service.CntService;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Emiya on 2017-10-01 오후 2:07
@@ -42,14 +43,10 @@ public class CntController {
     private CntService cntService;
 
     @RequestMapping(value = "/goodcntpush", method = RequestMethod.POST)
-    public ResponseEntity<String> goodCntPush(@RequestBody GoodCntVO goodCntVO) {
-
-//        logger.info("lll~~~ 01 : " + goodCntVO.toString());
-
+    public ResponseEntity<String> goodCntPush(@RequestBody GoodCntVO goodCntVO, HttpSession httpSession) {
         ResponseEntity<String> entity = null;
         try {
-//            logger.info("lll~~~ 02 : " + goodCntVO.toString());
-            cntService.goodCntPush(goodCntVO);
+            cntService.goodCntPush(goodCntVO, httpSession);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,15 +56,10 @@ public class CntController {
     }
 
     @RequestMapping(value = "/badcntpush", method = RequestMethod.POST)
-    public ResponseEntity<String> badCntPush(@RequestBody GoodCntVO badCntVO) {
-
-//        logger.info("lll~~~ 01 : " + badCntVO.toString());
-
+    public ResponseEntity<String> badCntPush(@RequestBody GoodCntVO badCntVO, HttpSession httpSession) {
         ResponseEntity<String> entity = null;
-
         try {
-//            logger.info("lll~~~ 02 : " + badCntVO.toString());
-            cntService.badCntPush(badCntVO);
+            cntService.badCntPush(badCntVO, httpSession);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,14 +69,10 @@ public class CntController {
     }
 
     @RequestMapping(value = "/spamcntpush", method = RequestMethod.POST)
-    public ResponseEntity<String> spamCntPush(@RequestBody GoodCntVO spamCntVO) {
-
-        logger.info("lll~~~ 01 : " + spamCntVO.toString());
-
+    public ResponseEntity<String> spamCntPush(@RequestBody GoodCntVO spamCntVO, HttpSession httpSession) {
         ResponseEntity<String> entity = null;
         try {
-            logger.info("lll~~~ 02 : " + spamCntVO.toString());
-            cntService.spamCntPush(spamCntVO);
+            cntService.spamCntPush(spamCntVO, httpSession);
             entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();

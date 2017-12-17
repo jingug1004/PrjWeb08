@@ -2,6 +2,8 @@ package org.zerock.service;
 
 import org.zerock.domain.GoodCntVO;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by Emiya on 2017-10-01 오후 2:01
  * untitled / org.zerock.service
@@ -24,13 +26,13 @@ import org.zerock.domain.GoodCntVO;
 
 public interface CntService {
 
-    public void goodCntPush(GoodCntVO goodCntVO) throws Exception;
+    public void goodCntPush(GoodCntVO goodCntVO, HttpSession httpSession) throws Exception;
 
     public String goodCntVOGet(String loginUserID, int bno) throws Exception;
 
     // ---------------------------------------------------------------
 
-    public void badCntPush(GoodCntVO badCntVO) throws Exception;
+    public void badCntPush(GoodCntVO badCntVO, HttpSession httpSession) throws Exception;
 
     public String badCntVOGet(String loginUserID, int bno) throws Exception;
 
@@ -44,7 +46,7 @@ public interface CntService {
 
     // ---------------------------------------------------------------
 
-    public void spamCntPush(GoodCntVO spamCntVO) throws Exception;
+    public void spamCntPush(GoodCntVO spamCntVO, HttpSession httpSession) throws Exception;
 
     public String spamCntVOGet(String loginUserID, int bno) throws Exception;
 

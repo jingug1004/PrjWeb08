@@ -66,7 +66,7 @@
     .hoverInputReadAct {
         font-weight: bold;
         /*background-color: #aed9da;*/
-        border: 5px solid #aed9da;
+        /*border: 5px solid #aed9da;*/
     }
 
     .disaClass:focus {

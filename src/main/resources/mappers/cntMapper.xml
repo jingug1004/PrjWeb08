@@ -21,7 +21,7 @@
     <!-- 01-01. 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인 -->
     <insert id="goodCntInsert">
         INSERT INTO tbl_board_goodcnt
-        VALUES (#{goodcntbno}, #{goodcntuid}, #{goodcnttemp}, NULL, NULL, NULL, NULL)
+        VALUES (#{goodcntbno}, #{goodcntuid}, #{goodcnttemp}, NULL, NULL, NULL, NULL, #{usercolor})
         ON DUPLICATE KEY UPDATE goodcnttemp = 'delCntGood'
     </insert>
 
@@ -69,7 +69,7 @@
     <!-- 02-01. 배드 버튼 눌렀을 때 아이디가 있는지 없는지 확인 -->
     <insert id="badCntInsert">
         INSERT INTO tbl_board_goodcnt
-        VALUES (#{goodcntbno}, NULL, NULL, #{badcntuid}, #{badcnttemp}, NULL, NULL)
+        VALUES (#{goodcntbno}, NULL, NULL, #{badcntuid}, #{badcnttemp}, NULL, NULL, #{usercolor})
         ON DUPLICATE KEY UPDATE badcnttemp = 'delCntBad'
     </insert>
 
@@ -114,7 +114,7 @@
 
     <insert id="spamCntInsert">
         INSERT INTO tbl_board_goodcnt
-        VALUES (#{goodcntbno}, NULL, NULL, NULL, NULL, #{spamcntuid}, #{spamcnttemp})
+        VALUES (#{goodcntbno}, NULL, NULL, NULL, NULL, #{spamcntuid}, #{spamcnttemp}, #{usercolor})
         ON DUPLICATE KEY UPDATE badcnttemp = 'delCntSpam'
     </insert>
 

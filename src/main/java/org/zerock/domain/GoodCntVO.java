@@ -33,6 +33,8 @@ public class GoodCntVO {
     private String spamcntuid;
     private String spamcnttemp;
 
+    private String usercolor;
+
     public int getGoodcntbno() {
         return goodcntbno;
     }
@@ -89,6 +91,14 @@ public class GoodCntVO {
         this.spamcnttemp = spamcnttemp;
     }
 
+    public String getUsercolor() {
+        return usercolor;
+    }
+
+    public void setUsercolor(String usercolor) {
+        this.usercolor = usercolor;
+    }
+
     @Override
     public String toString() {
         return "GoodCntVO{" +
@@ -99,7 +109,7 @@ public class GoodCntVO {
                 ", badcnttemp='" + badcnttemp + '\'' +
                 ", spamcntuid='" + spamcntuid + '\'' +
                 ", spamcnttemp='" + spamcnttemp + '\'' +
+                ", usercolor='" + usercolor + '\'' +
                 '}';
     }
-
 }
