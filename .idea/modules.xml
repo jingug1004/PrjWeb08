@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/NewStart/NewStart.iml" filepath="$USER_HOME$/NewStart/NewStart.iml" />
-      <module fileurl="file://$USER_HOME$/Desktop/downedGit/PrjWeb07-master/PrjWeb07-master/Web07.iml" filepath="$USER_HOME$/Desktop/downedGit/PrjWeb07-master/PrjWeb07-master/Web07.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web08.iml" filepath="$PROJECT_DIR$/Web08.iml" />
-      <module fileurl="file://$USER_HOME$/angular2-shop-master/angular2-shop-master.iml" filepath="$USER_HOME$/angular2-shop-master/angular2-shop-master.iml" />
+      <module fileurl="file://D:/simple-counter/simple-counter/simple-counter.iml" filepath="D:/simple-counter/simple-counter/simple-counter.iml" />
     </modules>
   </component>
 </project>

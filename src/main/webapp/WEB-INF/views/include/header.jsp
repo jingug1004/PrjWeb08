@@ -82,7 +82,7 @@
     @RequestMapping("/board/") 가 있어서 모든 경로에 /board/... 가 붙어서 경로를 못 찾는듯 했다.
     그래서 assets/(상대경로)...가 아닌 /asssets/(절대경로)...를 쓰니 된다.
     -->
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <%--<link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">--%>
     <link rel="stylesheet" href="/assets/css/shop.style.css">
 
     <!-- CSS Header and Footer -->
@@ -117,7 +117,7 @@
 
     <%--<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>--%>
     <!-- Bootstrap 3.3.4 -->
-    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <%--<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>--%>
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css"/>
@@ -347,23 +347,26 @@
                             <ul class="dropdown-menu">
 
                                 <li class="dropdown-submenu">
-                                    <%--<ul id="cateNum" class="dropdown-menu">--%>
-                                <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
-                                <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
-                                <li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>
-                                <li><a href="/sboard/list?cate=1104">가족관계</a></li>
-                                <li><a href="/sboard/list?cate=1105">인간관계</a></li>
-                                <li><a href="/sboard/list?cate=1106">반려 동물</a></li>
-                                <li><a href="/sboard/list?cate=1107">성격</a></li>
-                                <li><a href="/sboard/list?cate=1108">인기</a></li>
-                                <li><a href="/sboard/list?cate=1109">별명</a></li>
-                                <li><a href="/sboard/list?cate=1110">저서</a></li>
-                                <li><a href="/sboard/list?cate=1111">선거 이력</a></li>
-                                <li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>
-                                <li><a href="/sboard/list?cate=1113">비판과 논란</a></li>
-                                <li><a href="/sboard/list?cate=1114">재산</a></li>
-                                <li><a href="/sboard/list?cate=1115">기타</a></li>
-                                <%--</ul>--%>
+                                    <a href="javascript:void(0);">프로필</a>
+                                    <ul class="dropdown-menu">
+                                        <%--<ul id="cateNum" class="dropdown-menu">--%>
+                                        <li class="active" value="1101"><a href="/sboard/list?cate=1101">개요</a></li>
+                                        <li value="1102"><a href="/sboard/list?cate=1102">생애</a></li>
+                                        <li value="1103"><a href="/sboard/list?cate=1103">약력</a></li>
+                                        <li><a href="/sboard/list?cate=1104">가족관계</a></li>
+                                        <li><a href="/sboard/list?cate=1105">인간관계</a></li>
+                                        <li><a href="/sboard/list?cate=1106">반려 동물</a></li>
+                                        <li><a href="/sboard/list?cate=1107">성격</a></li>
+                                        <li><a href="/sboard/list?cate=1108">인기</a></li>
+                                        <li><a href="/sboard/list?cate=1109">별명</a></li>
+                                        <li><a href="/sboard/list?cate=1110">저서</a></li>
+                                        <li><a href="/sboard/list?cate=1111">선거 이력</a></li>
+                                        <li><a href="/sboard/list?cate=1112">각종 타이틀</a></li>
+                                        <li><a href="/sboard/list?cate=1113">비판과 논란</a></li>
+                                        <li><a href="/sboard/list?cate=1114">재산</a></li>
+                                        <li><a href="/sboard/list?cate=1115">기타</a></li>
+                                        <%--</ul>--%>
+                                    </ul>
                                 </li>
 
                                 <li class="dropdown-submenu">

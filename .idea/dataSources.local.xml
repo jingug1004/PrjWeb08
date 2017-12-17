@@ -25,7 +25,15 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
+      <user-name>HANAUSER</user-name>
+      <introspection-schemas>*:HANAUSER,ORAGMP,SALE,SALE_ON</introspection-schemas>
+    </data-source>
+    <data-source name="@58.229.234.11" uuid="64780d55-7390-49f9-a579-1e6fc54f2f04">
+      <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production&#10;With the Partitioning, OLAP, Data Mining and Real Application Testing options" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <user-name>HANAUSER</user-name>
       <introspection-schemas>*:HANAUSER,ORAGMP,SALE,SALE_ON</introspection-schemas>
     </data-source>

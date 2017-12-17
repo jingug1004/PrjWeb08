@@ -9,7 +9,7 @@
 <!--=== Breadcrumbs v4 ===-->
 <div class="breadcrumbs-v4">
     <div class="container">
-        <span class="page-name">Product Filter Page</span>
+        <span class="page-name">프로덕트 필터 페이지</span>
         <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
         <ul class="breadcrumb-v4-in">
             <li><a href="home.jsp">Home</a></li>
@@ -213,13 +213,18 @@
                     <div id="collapseFive" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="list-inline product-color-list">
-                                <li><a href="#"><img src="/assets/img/colors/01.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/colors/02.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/colors/03.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/colors/04.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/colors/05.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/colors/06.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/colors/07.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/001.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/002.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/003.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/004.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/005.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/006.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/007.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/008.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/009.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/010.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/011.png" alt=""></a></li>
+                                <li><a href="#"><img src="/assets/img/colors/012.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -262,7 +267,7 @@
             <div class="row margin-bottom-5">
                 <div class="col-sm-4 result-category">
                     <h2>Men</h2>
-                    <small class="shop-bg-red badge-results">45 Results</small>
+                    <small class="shop-bg-red badge-results">46 Results</small>
                 </div>
                 <div class="col-sm-8">
                     <ul class="list-inline clear-both">
