@@ -129,6 +129,8 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="/resources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css"/>
 
+    <%----------------------------------------------------------%>
+
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <%--<script src="/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>--%>
     <%--일일이 자바스크립트에 선언하지 않아도 된다. 헤드와 바디 사이에 미리 자바스크립트 선언을 해놓으며.--%>
@@ -578,13 +580,11 @@
                         <!-- 상품 리스트 헤더 메뉴 -->
 
                         <!-- jqGrid 헤더 메뉴 -->
-                        <li><a href="/jqGrid/jqGridList">jqGrid 리스트</a></li>
-                        <li><a href="/jqGrid/jqGridList02">jqGrid 리스트 02</a></li>
+                        <li><a href="/jqGrid/jqGridList">jq</a></li>
+                        <li><a href="/jqGrid/jqGridList02">jq2</a></li>
+                        <li><a href="/jqGrid/jqGridList03">jq3</a></li>
                         <!-- jqGrid 헤더 메뉴 -->
 
-                        <!-- Main Demo -->
-                        <li><a href="<c:url value="/ck/viewGo"/>">ck view</a></li>
-                        <!-- Main Demo -->
                     </ul>
                     <!-- End Nav Menu -->
                 </div>

@@ -173,7 +173,7 @@
                             <c:if test="${login.uid == goodCntVOGet && login.uid != badCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
-                                    <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct readgcnt"
+                                    <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
@@ -189,7 +189,7 @@
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGood" type="text" name="writer"
-                                           class="form-control hoverInputRead disaClass readgcnt"
+                                           class="form-control hoverInputRead disaClass"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
@@ -204,7 +204,7 @@
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage" type="text" name="writer"
-                                           class="form-control hoverInputRead readgcnt"
+                                           class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
@@ -220,7 +220,7 @@
                                 <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage02" type="text" name="writer"
-                                           class="form-control hoverInputRead readgcnt"
+                                           class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
