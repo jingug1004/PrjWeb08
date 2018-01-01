@@ -142,7 +142,14 @@
 
     <!--출처: http://zinlee.tistory.com/204 [진리 블로그]-->
     <beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <beans:property name="basenames" value="message.javamessages" /> <!-- messages.properties source 경로 -->
+        <!--<beans:property name="basenames" value="message.javamessages" /> &lt;!&ndash; messages.properties source 경로 &ndash;&gt;-->
+        <beans:property name="basenames">
+            <beans:list>
+                <beans:value>message.javamessages</beans:value>         <!-- 자바에서만 사용할 때를 위한 빈 설정-->
+                <beans:value>message.messages</beans:value>             <!-- 이것 됨. 바로 밑에 header의 타이틀(말풍선 툴팁)을 위하여 하나더 만듬 -->
+                <beans:value>message.htmlheaderprofile</beans:value>   <!-- 바로 위 테스트 되어서 하나더 만듬. -->
+            </beans:list>
+        </beans:property>
         <!-- 여러개일경우 property태그 안에<list><value>cms/messages</value></list>로 변경 -->
         <beans:property name="defaultEncoding" value="UTF-8"></beans:property>
     </beans:bean>

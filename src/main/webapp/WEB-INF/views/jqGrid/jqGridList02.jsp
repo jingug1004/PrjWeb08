@@ -73,7 +73,7 @@
             // grid 설정
                 grid.jqGrid({
                     datatype: 'local',
-                    height: '463',
+                    height: '460',
 //                scroll: 1,
                     colNames: ['Inv No 넘버', 'Date 날짜', 'Client 클라', 'Amount 양', 'Tax 세금', 'Total 합', 'Notes 비고'],
                     colModel: [
@@ -149,6 +149,7 @@
                     grid.jqGrid('addRowData', i + 1, myData[i]);
                 }
 
+                grid.jqGrid().trigger("reloadGrid");
 
             });
 

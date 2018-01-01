@@ -67,6 +67,4 @@ public class MarshallerUtil {
             response.getWriter().print(json);
         }
     }
-
-
 }
