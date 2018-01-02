@@ -11,7 +11,7 @@
 <!--[if !IE]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-    <title>UNIFY | 기회는 평등. 과정은 공정. 결과는 정의. </title>
+    <title>UNIFY | 평등. 공정. 정의. </title>
 
     <!-- Meta -->
     <meta charset="utf-8">

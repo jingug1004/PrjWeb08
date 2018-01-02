@@ -130,11 +130,12 @@ public class BoardServiceImpl implements BoardService {
     @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
     public BoardVO read(Integer bno) throws Exception {
+        return boardDAO.read(bno); // 게시물 전체 내용 가져옴(제목, 내용, 작성자, 등등)
+    }
 
-        /* 조회수 증가(업데이트) */
-        boardDAO.updateViewCnt(bno);
-
-        return boardDAO.read(bno);
+    @Override
+    public void updateViewCnt(Integer bno) throws Exception {
+        boardDAO.updateViewCnt(bno); // 조회수 증가(업데이트)
     }
 
     @Override

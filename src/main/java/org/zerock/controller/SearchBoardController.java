@@ -1,5 +1,6 @@
 package org.zerock.controller;
 
+import com.mysql.jdbc.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,9 +13,13 @@ import org.zerock.service.CntService;
 import org.zerock.service.PointService;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by macbookpro on 2017. 2. 12. PM 12:44
@@ -118,11 +123,25 @@ public class SearchBoardController {
      * @throws Exception the exception
      */
     @RequestMapping(value = "/readPage", method = RequestMethod.GET)
-    public void read(@RequestParam("bno") int bno,
+    public String read(@RequestParam("bno") int bno,
                      @ModelAttribute("cri") SearchCriteria cri,
                      Model model,
-                     BoardVO boardVO,
-                     HttpSession httpSession) throws Exception {
+                     HttpSession httpSession,
+                     HttpServletRequest httpServletRequest,
+                     HttpServletResponse httpServletResponse,
+                     @RequestParam(required = false, value = "cate") String cateNum
+                     ) throws Exception {
+
+        logger.info("lllll~~~~~ : " + httpServletRequest.getQueryString());
+        logger.info("lllll~~~~~ : " + httpServletRequest.getRequestURI());
+        logger.info("lllll~~~~~ : " + httpServletRequest.getRequestURL());
+
+        String readPageDest = httpServletRequest.getQueryString();          // page=1&cate=1102&perPageNum=10&searchType&keyword&cntSortType&bno=4590
+        String readPageDest02 = httpServletRequest.getRequestURI();      // /sboard/readPage
+        // StringBuffer readPageDest03 = httpServletRequest.getRequestURL();   // http://localhost:8082/sboard/readPage
+//        String readPageDest04 = readPageDest03.toString();
+
+        logger.info("lllll~~~~~ : /" + readPageDest02 + "?" + readPageDest);
 
         RateMaker rateMaker = new RateMaker();
         rateMaker.setRategoodcnt(cntService.getGoodCntGet(bno));
@@ -140,6 +159,47 @@ public class SearchBoardController {
             model.addAttribute("badCntVOGet", cntService.badCntVOGet(loginUserVO.getUid(), bno));        // 배드씨앤티 브이오에 있는 거 가져오기.
             model.addAttribute("spamCntVOGet", cntService.spamCntVOGet(loginUserVO.getUid(), bno));      // 스팸씨앤티 브이오에 있는 거 가져오기.
         }
+
+        Cookie cookies[] = httpServletRequest.getCookies();                                  // 저장된 쿠키 불러오기
+
+        Map mapCookie = new HashMap();
+        if (httpServletRequest.getCookies() != null) {
+            for (int i = 0; i < cookies.length; i++) {
+                Cookie obj = cookies[i];
+                mapCookie.put(obj.getName(), obj.getValue());
+            }
+        }
+
+        // 저장된 쿠키중에 viewcnt만 불러오기    @BoardVO.java     private int viewcnt;        // 게시글 조회수
+        String cookie_viewcnt = (String) mapCookie.get(cateNum);
+
+        // 저잘될 새로운 쿠키값 생성
+        String new_cookie_viewcnt = "|" + bno;
+
+        // 저장된 쿠키에 새로운 쿠키값이 존재하는지 검사
+        if (StringUtils.indexOfIgnoreCase(cookie_viewcnt, new_cookie_viewcnt) == -1) {
+            Cookie cookie = new Cookie(cateNum, cookie_viewcnt + new_cookie_viewcnt); // 없을 경우 쿠키 생성
+            cookie.setMaxAge(60 * 60 * 24);
+            httpServletResponse.addCookie(cookie);                                           // cookie.setmaxAge(1000); // 초단위
+
+            /* 조회수 증가(업데이트) */
+            boardService.updateViewCnt(bno);
+        }
+
+//        httpServletResponse.sendRedirect("/sboard/readPage");
+//        httpServletResponse.sendRedirect(readPageDest02 + "?" + readPageDest);
+//
+//        httpServletResponse.setContentType("text/html;charset=euc-kr");
+//        PrintWriter printWriter = httpServletResponse.getWriter();
+//
+//        httpServletResponse.sendRedirect(readPageDest02 + "?" + readPageDest);
+//
+//        printWriter.close();
+
+        return "redirect:" + readPageDest02 + "?" + readPageDest;
+
+
+
     }
 
     /**
@@ -204,7 +264,8 @@ public class SearchBoardController {
     @RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
     public void modifyPagingGET(int bno,
                                 @ModelAttribute("cri") SearchCriteria cri,
-                                Model model) throws Exception {
+                                Model model
+                                ) throws Exception {
         model.addAttribute(boardService.read(bno));
     }
 

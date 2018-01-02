@@ -33,6 +33,8 @@ public interface BoardService {
      */
     public BoardVO read(Integer bno) throws Exception;
 
+    public void updateViewCnt(Integer bno) throws Exception;
+
     public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception;
 
     /**
@@ -95,7 +97,6 @@ public interface BoardService {
     public int listCountCriteria(Criteria cri) throws Exception;
 
 
-
     /**
      * BoardDAO 의 listSearch 메소드로 전달(BoardDAOImpl 의 listSearch 로 전달.).
      *
@@ -108,7 +109,6 @@ public interface BoardService {
     public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception;
 
 
-
     /**
      * List search count int. 게시판 밑 1~10 페이징 버튼
      *
@@ -119,7 +119,6 @@ public interface BoardService {
     public int listSearchCount(SearchCriteria cri) throws Exception;
 
     public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception;
-
 
 
     /**
