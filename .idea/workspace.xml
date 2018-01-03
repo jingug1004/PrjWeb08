@@ -10,6 +10,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list readonly="true" id="43c63fab-8b5d-4adf-8d4d-5257ee3a297c" name="Default" comment="" />
+    <list id="b62d098d-1a59-4e7b-be96-6fdf4c8f8059" name="Revert: 180103 (수) - 기능 구현 완료(게시판 계속 조회수 +1 증가되지 않고 쿠키로 가로막힘(쿠키:카테고리 넘버, 글 번호 -&gt; 2가지 조건)) - 게시판 리스트에서 댓글수 '0'이라면 안 보이게 EL(&lt;c:if test= ) 넣음. ViewCnt+1 @HANA" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$USER_HOME$/Desktop/beauty/Balgre/target/" />
     <ignored path="$USER_HOME$/Desktop/beauty/trunk/target/" />
@@ -130,7 +131,7 @@
               <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="157">
+                    <state relative-caret-position="361">
                       <caret line="208" column="52" lean-forward="true" selection-start-line="208" selection-start-column="52" selection-end-line="208" selection-end-column="52" />
                       <folding />
                     </state>
@@ -141,7 +142,7 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="boardMapper.xml" pinned="false" current-in-tab="false">
+              <file leaf-file-name="boardMapper.xml" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="479">
@@ -170,31 +171,6 @@
                         <marker date="1514860497830" expanded="true" signature="7843:7909" ph="INSERT INTO tbl_attach... " />
                         <marker date="1514860497830" expanded="true" signature="7988:8059" ph="SELECT count... tbl_board" />
                         <marker date="1514860497830" expanded="true" signature="8140:8222" ph="SELECT count... tbl_board" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="518">
-                      <caret line="55" column="62" lean-forward="true" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
-                      <folding>
-                        <element signature="e#16158#16164#0" expanded="true" />
-                        <element signature="e#16168#16174#0" expanded="true" />
-                        <element signature="e#16294#16300#0" expanded="true" />
-                        <element signature="e#16304#16310#0" expanded="true" />
-                        <element signature="e#16462#16468#0" expanded="true" />
-                        <element signature="e#16525#16531#0" expanded="true" />
-                        <element signature="e#16534#16540#0" expanded="true" />
-                        <element signature="e#16654#16658#0" expanded="true" />
-                        <element signature="e#16712#16716#0" expanded="true" />
-                        <element signature="e#23869#23873#0" expanded="true" />
-                        <element signature="e#23879#23883#0" expanded="true" />
-                        <element signature="e#23962#23966#0" expanded="true" />
-                        <element signature="e#23972#23976#0" expanded="true" />
-                        <element signature="e#23989#23993#0" expanded="true" />
                       </folding>
                     </state>
                   </provider>
@@ -239,8 +215,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updateViewCnt</find>
-      <find>cate</find>
       <find>hidden</find>
       <find>o</find>
       <find>cnumFromBoardVO</find>
@@ -269,6 +243,8 @@
       <find>form</find>
       <find>cookie</find>
       <find>/sboard/readPage</find>
+      <find>&lt;state relative-caret-position=</find>
+      <find>&lt;file leaf-file-name=&quot;SearchBoardController.java&quot; pinned=&quot;false&quot; current-in-tab=&quot;true&quot;&gt;</find>
     </findStrings>
     <replaceStrings>
       <replace>assets/</replace>
@@ -1691,7 +1667,7 @@
     <frame x="-1921" y="0" width="3836" height="1040" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.049523305" sideWeight="0.24457309" order="26" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.049523305" sideWeight="0.24457309" order="26" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15252525" sideWeight="0.5063898" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.095882684" sideWeight="0.4954751" order="8" side_tool="false" content_ui="tabs" />
@@ -1714,11 +1690,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23982398" sideWeight="0.50741524" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13939394" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15252525" sideWeight="0.49361023" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.054819915" sideWeight="0.617945" order="0" side_tool="false" content_ui="combo" x="-129" y="514" width="129" height="296" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.054819915" sideWeight="0.617945" order="0" side_tool="false" content_ui="combo" x="-129" y="514" width="129" height="296" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Time Tracking" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.049523305" sideWeight="0.24457309" order="22" side_tool="true" content_ui="tabs" />
+      <window_info id="Time Tracking" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.049523305" sideWeight="0.24457309" order="22" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -2130,7 +2106,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="361">
           <caret line="208" column="52" lean-forward="true" selection-start-line="208" selection-start-column="52" selection-end-line="208" selection-end-column="52" />
           <folding />
         </state>
@@ -2182,6 +2158,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="138" column="76" lean-forward="true" selection-start-line="138" selection-start-column="76" selection-end-line="138" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+          <folding>
+            <element signature="e#17056#17062#0" expanded="true" />
+            <element signature="e#17066#17072#0" expanded="true" />
+            <element signature="e#17192#17198#0" expanded="true" />
+            <element signature="e#17202#17208#0" expanded="true" />
+            <element signature="e#17360#17366#0" expanded="true" />
+            <element signature="e#17423#17429#0" expanded="true" />
+            <element signature="e#17432#17438#0" expanded="true" />
+            <element signature="e#17552#17556#0" expanded="true" />
+            <element signature="e#17610#17614#0" expanded="true" />
+            <element signature="e#17778#17782#0" expanded="true" />
+            <element signature="e#17832#17836#0" expanded="true" />
+            <element signature="e#17856#17862#0" expanded="true" />
+            <element signature="e#17888#17894#0" expanded="true" />
+            <element signature="e#17902#17908#0" expanded="true" />
+            <element signature="e#17913#17919#0" expanded="true" />
+            <element signature="e#17935#17941#0" expanded="true" />
+            <element signature="e#17945#17951#0" expanded="true" />
+            <element signature="e#17951#17955#0" expanded="true" />
+            <element signature="e#24964#24968#0" expanded="true" />
+            <element signature="e#24974#24978#0" expanded="true" />
+            <element signature="e#25057#25061#0" expanded="true" />
+            <element signature="e#25067#25071#0" expanded="true" />
+            <element signature="e#25084#25088#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
@@ -2210,39 +2228,6 @@
             <marker date="1514860497830" expanded="true" signature="7843:7909" ph="INSERT INTO tbl_attach... " />
             <marker date="1514860497830" expanded="true" signature="7988:8059" ph="SELECT count... tbl_board" />
             <marker date="1514860497830" expanded="true" signature="8140:8222" ph="SELECT count... tbl_board" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="55" column="62" lean-forward="true" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
-          <folding>
-            <element signature="e#16158#16164#0" expanded="true" />
-            <element signature="e#16168#16174#0" expanded="true" />
-            <element signature="e#16294#16300#0" expanded="true" />
-            <element signature="e#16304#16310#0" expanded="true" />
-            <element signature="e#16462#16468#0" expanded="true" />
-            <element signature="e#16525#16531#0" expanded="true" />
-            <element signature="e#16534#16540#0" expanded="true" />
-            <element signature="e#16654#16658#0" expanded="true" />
-            <element signature="e#16712#16716#0" expanded="true" />
-            <element signature="e#23869#23873#0" expanded="true" />
-            <element signature="e#23879#23883#0" expanded="true" />
-            <element signature="e#23962#23966#0" expanded="true" />
-            <element signature="e#23972#23976#0" expanded="true" />
-            <element signature="e#23989#23993#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="138" column="76" lean-forward="true" selection-start-line="138" selection-start-column="76" selection-end-line="138" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
