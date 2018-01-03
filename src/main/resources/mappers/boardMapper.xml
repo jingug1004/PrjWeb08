@@ -43,27 +43,34 @@
     </update>
 
     <!-- 테스트용 무시하자! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <!--
     <select id="listAll" resultType="org.zerock.domain.BoardVO">
         <![CDATA[ select bno, title, content, writer, regdate, viewcnt from tbl_board where bno > 0
          order by bno desc, regdate desc ]]> </select>
+    -->
 
     <!-- 테스트용 무시하자! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <!--
     <select id="listPage" resultType="BoardVO">
         <![CDATA[ select bno, title, content, writer, regdate, viewcnt, replycnt from tbl_board
          where bno > 0 order by bno desc, regdate desc limit #{page}, 10 ]]> </select>
+    -->
 
     <!-- 테스트용 무시하자! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+    <!--
     <select id="listCriteria" resultType="BoardVO">
         <![CDATA[
          select   bno, title, content, writer, regdate, viewcnt, replycnt from tbl_board
          where    bno > 0 order by bno desc, regdate desc limit #{pageStart}, #{perPageNum} ]]>
     </select>
+    -->
 
     <!--<![CDATA[ select count(bno) from tbl_board where bno > 0 ]]> </select>-->
     <!-- 이거 안 씀. 밑의 listSearchCount 씀 -->
+    <!--
     <select id="countPaging" resultType="int">
         <![CDATA[ select count(*) from tbl_board where bno > 0 ]]> </select>
-
+    -->
 
     <sql id="search">
         <if test="searchType != null">
