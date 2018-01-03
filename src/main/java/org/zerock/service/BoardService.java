@@ -5,6 +5,8 @@ import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
 import org.zerock.domain.SearchCriteriaListAny;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -32,6 +34,8 @@ public interface BoardService {
      * @throws Exception the exception
      */
     public BoardVO read(Integer bno) throws Exception;
+
+    public void cookieBoard(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, int bno, String cateNum) throws Exception;
 
     public void updateViewCnt(Integer bno) throws Exception;
 

@@ -115,9 +115,13 @@
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
-                                    <a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
-                                            ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
-                                    </a></td>
+                                    <a href='/sboard/readPa${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
+                                        ${boardVO.title}
+                                            <c:if test="${boardVO.replycnt > 0}">
+                                                <strong>[ ${boardVO.replycnt} ]</strong>
+                                            </c:if>
+                                    </a>
+                                </td>
                                 <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
                                 </td>
                                 <td align="right"><span
@@ -128,10 +132,9 @@
                                         <%--${boardVO.getcolor} // ${boardVO.writer}--%>
                                 <%--</td>--%>
                                 <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
-                                ${boardVO.writer}
+                                    ${boardVO.writer}
                                 </td>
-                                <td align="center"><fmt:formatDate pattern="yyyy-MM-dd"
-                                                                   value="${boardVO.regdate}"/></td>
+                                <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
                                 </td>
                                 <td align="right"><span class="badge bg-gray-light center listvcnt">${boardVO.viewcnt}</span>
@@ -145,9 +148,13 @@
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
-                                    <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}'>
-                                            ${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong>
-                                    </a></td>
+                                    <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
+                                        ${boardVO.title}
+                                            <c:if test="${boardVO.replycnt > 0}">
+                                                <strong>[ ${boardVO.replycnt} ]</strong>
+                                            </c:if>
+                                    </a>
+                                </td>
                                 <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
                                 </td>
                                 <td align="right"><span
@@ -155,7 +162,7 @@
                                 <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
                                 </td>
                                 <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
-                                ${boardVO.writer}
+                                    ${boardVO.writer}
                                 </td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
@@ -408,6 +415,11 @@
             <%--$('.getColor')[itr.current()].prop("src", temp);--%>
         <%--});--%>
         <%--&lt;%&ndash;$(".reptilia").remove();&ndash;%&gt;--%>
+
+//        $('#cookieBoardPOST').on("click", function () {
+//
+//
+//        });
 
     });
 

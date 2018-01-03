@@ -1,6 +1,5 @@
 package org.zerock.controller;
 
-import com.mysql.jdbc.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -13,13 +12,10 @@ import org.zerock.service.CntService;
 import org.zerock.service.PointService;
 
 import javax.inject.Inject;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by macbookpro on 2017. 2. 12. PM 12:44
@@ -123,25 +119,25 @@ public class SearchBoardController {
      * @throws Exception the exception
      */
     @RequestMapping(value = "/readPage", method = RequestMethod.GET)
-    public String read(@RequestParam("bno") int bno,
+    public void read(@RequestParam("bno") int bno,
                      @ModelAttribute("cri") SearchCriteria cri,
                      Model model,
-                     HttpSession httpSession,
-                     HttpServletRequest httpServletRequest,
-                     HttpServletResponse httpServletResponse,
-                     @RequestParam(required = false, value = "cate") String cateNum
-                     ) throws Exception {
+                     HttpSession httpSession) throws Exception {
+
+        /* 좋아서 지우기 아까운 로거와 메서드들.
+        String readPageDest = httpServletRequest.getQueryString();               //   page=1&cate=1102&perPageNum=10&searchType&keyword&cntSortType&bno=4590
+        String readPageDest02 = httpServletRequest.getRequestURI();              //   /sboard/readPage
+        StringBuffer readPageDest03 = httpServletRequest.getRequestURL();        //   http://localhost:8082/sboard/readPage
+        String readPageDest04 = readPageDest03.toString();
 
         logger.info("lllll~~~~~ : " + httpServletRequest.getQueryString());
         logger.info("lllll~~~~~ : " + httpServletRequest.getRequestURI());
         logger.info("lllll~~~~~ : " + httpServletRequest.getRequestURL());
 
-        String readPageDest = httpServletRequest.getQueryString();          // page=1&cate=1102&perPageNum=10&searchType&keyword&cntSortType&bno=4590
-        String readPageDest02 = httpServletRequest.getRequestURI();      // /sboard/readPage
-        // StringBuffer readPageDest03 = httpServletRequest.getRequestURL();   // http://localhost:8082/sboard/readPage
-//        String readPageDest04 = readPageDest03.toString();
+        logger.info("lllll~~~~~ : bno : " + bno + "cri." + cri.toString());
 
         logger.info("lllll~~~~~ : /" + readPageDest02 + "?" + readPageDest);
+        */
 
         RateMaker rateMaker = new RateMaker();
         rateMaker.setRategoodcnt(cntService.getGoodCntGet(bno));
@@ -159,47 +155,22 @@ public class SearchBoardController {
             model.addAttribute("badCntVOGet", cntService.badCntVOGet(loginUserVO.getUid(), bno));        // 배드씨앤티 브이오에 있는 거 가져오기.
             model.addAttribute("spamCntVOGet", cntService.spamCntVOGet(loginUserVO.getUid(), bno));      // 스팸씨앤티 브이오에 있는 거 가져오기.
         }
+    }
 
-        Cookie cookies[] = httpServletRequest.getCookies();                                  // 저장된 쿠키 불러오기
+    @RequestMapping(value = "/readPa", method = RequestMethod.GET)
+    public void read(@RequestParam("bno") int bno,
+                     @ModelAttribute("cri") SearchCriteria cri,
+                     HttpServletRequest httpServletRequest,
+                     HttpServletResponse httpServletResponse,
+                     @RequestParam(required = false, value = "cate") String cateNum
+    ) throws Exception {
 
-        Map mapCookie = new HashMap();
-        if (httpServletRequest.getCookies() != null) {
-            for (int i = 0; i < cookies.length; i++) {
-                Cookie obj = cookies[i];
-                mapCookie.put(obj.getName(), obj.getValue());
-            }
-        }
+        String readPageDest = httpServletRequest.getQueryString();               //   page=1&cate=1102&perPageNum=10&searchType&keyword&cntSortType&bno=4590
+        String readPageDest02 = httpServletRequest.getRequestURI();              //   /sboard/readPage
 
-        // 저장된 쿠키중에 viewcnt만 불러오기    @BoardVO.java     private int viewcnt;        // 게시글 조회수
-        String cookie_viewcnt = (String) mapCookie.get(cateNum);
+        boardService.cookieBoard(httpServletRequest, httpServletResponse, bno, cateNum); // 조회수 증가 서비스
 
-        // 저잘될 새로운 쿠키값 생성
-        String new_cookie_viewcnt = "|" + bno;
-
-        // 저장된 쿠키에 새로운 쿠키값이 존재하는지 검사
-        if (StringUtils.indexOfIgnoreCase(cookie_viewcnt, new_cookie_viewcnt) == -1) {
-            Cookie cookie = new Cookie(cateNum, cookie_viewcnt + new_cookie_viewcnt); // 없을 경우 쿠키 생성
-            cookie.setMaxAge(60 * 60 * 24);
-            httpServletResponse.addCookie(cookie);                                           // cookie.setmaxAge(1000); // 초단위
-
-            /* 조회수 증가(업데이트) */
-            boardService.updateViewCnt(bno);
-        }
-
-//        httpServletResponse.sendRedirect("/sboard/readPage");
-//        httpServletResponse.sendRedirect(readPageDest02 + "?" + readPageDest);
-//
-//        httpServletResponse.setContentType("text/html;charset=euc-kr");
-//        PrintWriter printWriter = httpServletResponse.getWriter();
-//
-//        httpServletResponse.sendRedirect(readPageDest02 + "?" + readPageDest);
-//
-//        printWriter.close();
-
-        return "redirect:" + readPageDest02 + "?" + readPageDest;
-
-
-
+        httpServletResponse.sendRedirect(readPageDest02 + "ge?" + readPageDest); // 바로 위 클래스로 리다이렉트 호출
     }
 
     /**
@@ -212,7 +183,7 @@ public class SearchBoardController {
      * @param cri  파라미터로 Criteria를 사용하게 되었고, JSP로 전송되는 정보 역시 page와 perPageNum이 같이 전송되어야 함.
      * @param rttr 삭제 결과는 RedirectAttributes의 addFlashAttribute()를 이용해서 처리.
      *             삭제 결과는 임시로 사용하는 데이터이므로 addFlashAttribute()를 이용해서 처리.
-     * @return     등록 작업과 마찬가지로 리다이렉트 방식으로 리스트 페이지로 이동시켜 버리는 것을 볼 수 있음.
+     * @return 등록 작업과 마찬가지로 리다이렉트 방식으로 리스트 페이지로 이동시켜 버리는 것을 볼 수 있음.
      * @throws Exception the exception
      */
     @RequestMapping(value = "/removePage", method = RequestMethod.POST)
@@ -265,7 +236,7 @@ public class SearchBoardController {
     public void modifyPagingGET(int bno,
                                 @ModelAttribute("cri") SearchCriteria cri,
                                 Model model
-                                ) throws Exception {
+    ) throws Exception {
         model.addAttribute(boardService.read(bno));
     }
 
@@ -278,8 +249,8 @@ public class SearchBoardController {
      * @param cri   the cri
      * @param rttr  the rttr
      * @return 이때 리턴 타입은 등록이나 삭제와 동일하게 처리하는 것을 볼 수 있음.
-     *         수정 작업 역시 삭제와 마찬가지로 모든 작업이 끝나면 다시 목록 페이지로 리다이렉트 되어야 하고,
-     *         수정된 결과에 대해서는 'msg'로 전송
+     * 수정 작업 역시 삭제와 마찬가지로 모든 작업이 끝나면 다시 목록 페이지로 리다이렉트 되어야 하고,
+     * 수정된 결과에 대해서는 'msg'로 전송
      * @throws Exception the exception
      */
     @RequestMapping(value = "/modifyPage", method = RequestMethod.POST)

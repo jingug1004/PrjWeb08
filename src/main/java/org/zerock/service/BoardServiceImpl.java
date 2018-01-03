@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import com.mysql.jdbc.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,13 @@ import org.zerock.util.PointUtils;
 import org.zerock.util.UnifyMessage;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by macbookpro on 2017. 2. 4.. PM 1:04
@@ -132,6 +138,39 @@ public class BoardServiceImpl implements BoardService {
     public BoardVO read(Integer bno) throws Exception {
         return boardDAO.read(bno); // 게시물 전체 내용 가져옴(제목, 내용, 작성자, 등등)
     }
+
+    @Override
+    public void cookieBoard(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, int bno, String cateNum) throws Exception {
+        Cookie cookies[] = httpServletRequest.getCookies();                                  // 저장된 쿠키 불러오기
+
+        logger.info("lllll~~~~~ 01 : " + cookies.toString());
+
+        Map mapCookie = new HashMap();
+        if (httpServletRequest.getCookies() != null) {
+            for (int i = 0; i < cookies.length; i++) {
+                Cookie obj = cookies[i];
+                mapCookie.put(obj.getName(), obj.getValue());
+                logger.info("lllll~~~~~ 02-01 : " + mapCookie.toString());
+                logger.info("lllll~~~~~ 02-02 : " + mapCookie.keySet());
+            }
+        }
+
+        // 저장된 쿠키중에 viewcnt만 불러오기    @BoardVO.java     private int viewcnt;        // 게시글 조회수
+        String cookie_viewcnt = (String) mapCookie.get(cateNum);
+
+        // 저잘될 새로운 쿠키값 생성
+        String new_cookie_viewcnt = "|" + bno;
+
+        // 저장된 쿠키에 새로운 쿠키값이 존재하는지 검사
+        if (StringUtils.indexOfIgnoreCase(cookie_viewcnt, new_cookie_viewcnt) == -1) {
+            Cookie cookie = new Cookie(cateNum, cookie_viewcnt + new_cookie_viewcnt); // 없을 경우 쿠키 생성
+            cookie.setMaxAge(60 * 60 * 24);
+            httpServletResponse.addCookie(cookie);                                           // cookie.setmaxAge(1000); // 초단위
+
+            boardDAO.updateViewCnt(bno);                                                     // 조회수 증가(업데이트)
+        }
+    }
+
 
     @Override
     public void updateViewCnt(Integer bno) throws Exception {
