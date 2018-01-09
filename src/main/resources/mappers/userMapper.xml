@@ -38,6 +38,7 @@
         <!--select * from tbl_user where email = #{email}-->
     <!--</select>-->
 
+    <!-- 전체 회원수 가져오기 - 회원 가입시 전체 회원 숫자 렌더링 -->
     <select id="registUsersNumGET" resultType="int">
         SELECT count(*) FROM tbl_user WHERE delyn = 'N'
     </select>
@@ -50,6 +51,10 @@
     <update id="totalUserReplyNumUPD">
         UPDATE tbl_user SET treply = #{treply} WHERE uid = #{uid} AND delyn = 'N'
     </update>
+
+
+
+
 
 
 </mapper>

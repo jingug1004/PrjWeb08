@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+/**
+* What :
+* Why :
+* How :
+*/
+-->
+
+<mapper namespace="org.zerock.mapper.UserLevelMapper">
+
+    <update id="userLevelPostUserUPD">
+        UPDATE tbl_user SET utotallevel = #{utotallevel}, ucolorlevel = #{ucolorlevel} WHERE uid = #{uid} AND delyn = 'N'
+    </update>
+
+
+</mapper>

@@ -28,7 +28,7 @@ public interface UserDAO {
     public void loginIpUpd(UserVO userVO) throws Exception;
 
     /**
-     * Keep login. 로그인한 사용자의 sessionKey와 sessionLimit을 업데이트 하는 기능 / userMapper.xml의 keepLogin
+     * 로그인한 사용자의 sessionKey와 sessionLimit을 업데이트 하는 기능 / userMapper.xml의 keepLogin
      *
      * @param uid       the uid
      * @param sessionId the session id
@@ -37,7 +37,7 @@ public interface UserDAO {
     public void keepLogin(String uid, String sessionId, Date next);
 
     /**
-     * Check user with session key user vo. loginCookie에 기록된 값으로 사용자의 정보를 조회하는 기능을 추가
+     * loginCookie에 기록된 값으로 사용자의 정보를 조회하는 기능을 추가
      *
      * @param value the value
      * @return the user vo
@@ -45,18 +45,17 @@ public interface UserDAO {
     public UserVO checkUserWithSessionKey(String value);
 
     /**
-     * Create.
+     * 유저 생성(회원가입)
      *
      * @param uvo the uvo
      * @throws Exception the exception
      */
     public void create(UserVO uvo) throws Exception;
 
-    public int registUsersNumGET() throws Exception;
+    public int registUsersNumGET() throws Exception;                    // 전체 등록된 회원수 GET
 
-    public void totalUserPostNumUPD(UserVO userVO) throws Exception;
+    public void totalUserPostNumUPD(UserVO userVO) throws Exception;    // 전체 유저의 등록한 게시물 수 업데이트
 
-    public void totalUserReplyNumUPD(UserVO userVO) throws Exception;
-
+    public void totalUserReplyNumUPD(UserVO userVO) throws Exception;   // 전체 유저의 등록한 댓글 수 업데이트
 
 }

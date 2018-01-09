@@ -30,6 +30,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	<!-- 글 작성할 때 포인트 추가, 제거 -->
 
+	<!-- 유저의 전체, 칼라별 레벨 순번을 가져오기 위한 전체 리스트 -->
+	<select id="userLevelPointGET" resultType="org.zerock.domain.UserVO">
+		SELECT * FROM tbl_user ORDER BY upoint DESC;
+	</select>
+
+	<select id="userLevelPointCountGET" resultType="org.zerock.domain.UserVO">
+		SELECT count(*) FROM tbl_user ORDER BY upoint DESC;
+	</select>
+
 
 </mapper>
 

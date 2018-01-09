@@ -136,7 +136,28 @@ public class BoardServiceImpl implements BoardService {
     @Transactional(isolation = Isolation.READ_COMMITTED)
     @Override
     public BoardVO read(Integer bno) throws Exception {
-        return boardDAO.read(bno); // 게시물 전체 내용 가져옴(제목, 내용, 작성자, 등등)
+
+        BoardVO boardVO = boardDAO.read(bno);                   // Level 구하기 위해서 아이디 가져옴
+
+        logger.info("lllll~~~~~ BoardVO boardVO = boardDAO.read(bno) : " + boardVO);
+        logger.info("lllll~~~~~ BoardVO boardVO = boardDAO.read(bno) getId : " + boardVO.getId());
+
+        List<UserVO> userVO = pointDAO.userLevelPointGET();                 // 전체 유저 내림차순으로 리스트로 가져옴
+
+        int totalUser = userDAO.registUsersNumGET();                        // 전체 유저수 int로 가져옴
+
+        Map<String, Object> userVOMap = new HashMap<String, Object>();
+
+        for (int i = 0; i <userVO.size() ; i++) {
+//            userVOMap.put(userVO, )
+
+        }
+
+//        int output =
+
+
+
+        return boardDAO.read(bno);                  // 게시물 전체 내용 가져옴(제목, 내용, 작성자 등등)
     }
 
     @Override

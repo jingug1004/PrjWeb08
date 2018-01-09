@@ -57,6 +57,9 @@ public class UserVO {
     private int tbad;
     private int tspam;
 
+    private int utotallevel;                    // 회원의 전체 순위 Lv.0 ~ Lv.100
+    private int ucolorlevel;                    // 회원의 칼라 순위 Lv.0 ~ Lv.100
+
 
     /**
      * Instantiates a new User vo.
@@ -357,28 +360,22 @@ public class UserVO {
         this.tspam = tspam;
     }
 
-    @Override
-    public String toString() {
-        return "UserVO{" +
-                "uid='" + uid + '\'' +
-                ", upw='" + upw + '\'' +
-                ", upwconfirm='" + upwconfirm + '\'' +
-                ", uname='" + uname + '\'' +
-                ", upoint=" + upoint +
-                ", email='" + email + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", uday='" + uday + '\'' +
-                ", uyear='" + uyear + '\'' +
-                ", delyn='" + delyn + '\'' +
-                ", ugender='" + ugender + '\'' +
-                ", regdate=" + regdate +
-                ", regip='" + regip + '\'' +
-                ", updip='" + updip + '\'' +
-                ", tpost=" + tpost +
-                ", treply=" + treply +
-                ", tgood=" + tgood +
-                ", tbad=" + tbad +
-                ", tspam=" + tspam +
-                '}';
+    public int getUtotallevel() {
+        return utotallevel;
     }
+
+    public void setUtotallevel(int utotallevel) {
+        this.utotallevel = utotallevel;
+    }
+
+    public int getUcolorlevel() {
+        return ucolorlevel;
+    }
+
+    public void setUcolorlevel(int ucolorlevel) {
+        this.ucolorlevel = ucolorlevel;
+    }
+
+
+
 }
