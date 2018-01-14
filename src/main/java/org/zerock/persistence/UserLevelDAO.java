@@ -15,6 +15,7 @@ import org.zerock.domain.UserVO;
 public interface UserLevelDAO {
 
     public void userLevelPostUserUPD(UserVO userVO) throws Exception;         // (비로그인)게시물 올린 회원의 전체 순위 Lv.0 ~ Lv.100
+    public void userLevelColorUserUPD(UserVO userVO) throws Exception;        // (비로그인)게시물 올린 회원의 전체 순위 Lv.0 ~ Lv.100
 
     public void userLevelLoginUserUPD() throws Exception;        // (로그인)로그인 회원의 전체 순위 Lv.0 ~ Lv.100
 

@@ -54,6 +54,8 @@ public interface UserDAO {
 
     public int registUsersNumGET() throws Exception;                    // 전체 등록된 회원수 GET
 
+    public int registColorNumGET(String uday) throws Exception;                    // 전체 등록된 칼라별 회원수 GET - Lv0~100 구하기 위해서
+
     public void totalUserPostNumUPD(UserVO userVO) throws Exception;    // 전체 유저의 등록한 게시물 수 업데이트
 
     public void totalUserReplyNumUPD(UserVO userVO) throws Exception;   // 전체 유저의 등록한 댓글 수 업데이트

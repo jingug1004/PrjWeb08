@@ -61,41 +61,41 @@ public class UserVO {
     private int ucolorlevel;                    // 회원의 칼라 순위 Lv.0 ~ Lv.100
 
 
-    /**
-     * Instantiates a new User vo.
-     */
-    public UserVO() {
-
-    }
-
-    /**
-     * UserTest
-     *
-     * @param uid        the uid
-     * @param upw        the upw
-     * @param upwconfirm the upwconfirm
-     * @param uname      the uname
-     * @param upoint     the upoint
-     * @param email      the email
-     * @param nickname   the nickname
-     * @param uday       the uday
-     * @param uyear      the uyear
-     * @param delyn      the delyn
-     * @param ugender    the ugender
-     */
-    public UserVO(String uid, String upw, String upwconfirm, String uname, int upoint, String email, String nickname, String uday, String uyear, String delyn, String ugender) {
-        this.uid = uid;
-        this.upw = upw;
-        this.upwconfirm = upwconfirm;
-        this.uname = uname;
-        this.upoint = upoint;
-        this.email = email;
-        this.nickname = nickname;
-        this.uday = uday;
-        this.uyear = uyear;
-        this.delyn = delyn;
-        this.ugender = ugender;
-    }
+//    /**
+//     * Instantiates a new User vo.
+//     */
+//    public UserVO() {
+//
+//    }
+//
+//    /**
+//     * UserTest
+//     *
+//     * @param uid        the uid
+//     * @param upw        the upw
+//     * @param upwconfirm the upwconfirm
+//     * @param uname      the uname
+//     * @param upoint     the upoint
+//     * @param email      the email
+//     * @param nickname   the nickname
+//     * @param uday       the uday
+//     * @param uyear      the uyear
+//     * @param delyn      the delyn
+//     * @param ugender    the ugender
+//     */
+//    public UserVO(String uid, String upw, String upwconfirm, String uname, int upoint, String email, String nickname, String uday, String uyear, String delyn, String ugender) {
+//        this.uid = uid;
+//        this.upw = upw;
+//        this.upwconfirm = upwconfirm;
+//        this.uname = uname;
+//        this.upoint = upoint;
+//        this.email = email;
+//        this.nickname = nickname;
+//        this.uday = uday;
+//        this.uyear = uyear;
+//        this.delyn = delyn;
+//        this.ugender = ugender;
+//    }
 
 
     /**
@@ -376,6 +376,30 @@ public class UserVO {
         this.ucolorlevel = ucolorlevel;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "UserVO{" +
+                "uid='" + uid + '\'' +
+                ", upw='" + upw + '\'' +
+                ", upwconfirm='" + upwconfirm + '\'' +
+                ", uname='" + uname + '\'' +
+                ", upoint=" + upoint +
+                ", email='" + email + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", uday='" + uday + '\'' +
+                ", uyear='" + uyear + '\'' +
+                ", delyn='" + delyn + '\'' +
+                ", ugender='" + ugender + '\'' +
+                ", regdate=" + regdate +
+                ", regip='" + regip + '\'' +
+                ", updip='" + updip + '\'' +
+                ", tpost=" + tpost +
+                ", treply=" + treply +
+                ", tgood=" + tgood +
+                ", tbad=" + tbad +
+                ", tspam=" + tspam +
+                ", utotallevel=" + utotallevel +
+                ", ucolorlevel=" + ucolorlevel +
+                '}';
+    }
 }

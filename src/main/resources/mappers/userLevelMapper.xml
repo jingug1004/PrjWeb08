@@ -13,8 +13,15 @@
 
 <mapper namespace="org.zerock.mapper.UserLevelMapper">
 
+    <!--<update id="userLevelPostUserUPD">-->
+        <!--UPDATE tbl_user SET utotallevel = #{utotallevel}, ucolorlevel = #{ucolorlevel} WHERE uid = #{uid} AND delyn = 'N'-->
+    <!--</update>-->
     <update id="userLevelPostUserUPD">
-        UPDATE tbl_user SET utotallevel = #{utotallevel}, ucolorlevel = #{ucolorlevel} WHERE uid = #{uid} AND delyn = 'N'
+        UPDATE tbl_user SET utotallevel = #{utotallevel} WHERE uid = #{uid} AND delyn = 'N'
+    </update>
+
+    <update id="userLevelColorUserUPD">
+        UPDATE tbl_user SET ucolorlevel = #{ucolorlevel} WHERE uid = #{uid} AND uday = #{uday} AND delyn = 'N'
     </update>
 
 

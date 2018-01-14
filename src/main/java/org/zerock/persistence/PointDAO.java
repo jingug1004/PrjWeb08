@@ -3,7 +3,6 @@ package org.zerock.persistence;
 import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
 import org.zerock.domain.PointUpdateVO;
-import org.zerock.domain.UserVO;
 
 import java.util.List;
 
@@ -37,7 +36,10 @@ public interface PointDAO {
     /* 글 작성할 때 포인트 추가, 제거 */
 
     /* 유저의 전체, 칼라별 레벨 순번을 가져오기 위한 전체 리스트 */
-    public List<UserVO> userLevelPointGET () throws Exception;                  // 전체 회원의 upoint에 따른 내림차순
+    public List<String> userLevelPointGET () throws Exception;                  // 전체 회원의 upoint에 따른 내림차순
+
+    /* 유저의 전체, 칼라별 레벨 순번을 가져오기 위한 전체 리스트 */
+    public List<String> userColorPointGET (String uday) throws Exception;                  // 전체 회원의 upoint에 따른 내림차순
 
 
 }

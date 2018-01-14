@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import org.zerock.domain.PointDeleteVO;
 import org.zerock.domain.PointInsertVO;
 import org.zerock.domain.PointUpdateVO;
-import org.zerock.domain.UserVO;
 
 import javax.inject.Inject;
 import java.util.HashMap;
@@ -72,7 +71,12 @@ public class PointDAOImpl implements PointDAO {
     }
 
     @Override
-    public List<UserVO> userLevelPointGET() throws Exception {
+    public List<String> userLevelPointGET() throws Exception {
         return sqlSession.selectList(namespace + ".userLevelPointGET");
+    }
+
+    @Override
+    public List<String> userColorPointGET(String uday) throws Exception {
+        return sqlSession.selectList(namespace + ".userColorPointGET", uday);
     }
 }

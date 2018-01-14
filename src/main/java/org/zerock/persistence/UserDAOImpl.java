@@ -67,6 +67,11 @@ public class UserDAOImpl implements UserDAO {
         return sqlSession.selectOne(namespace + ".registUsersNumGET");
     }
 
+    @Override
+    public int registColorNumGET(String uday) throws Exception {
+        return sqlSession.selectOne(namespace + ".registColorNumGET", uday);
+    }
+
     /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
     @Override
     public void totalUserPostNumUPD(UserVO userVO) throws Exception {

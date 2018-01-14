@@ -13,8 +13,11 @@
 
 <mapper namespace="org.zerock.mapper.UserMapper">
 
+    <!--<select id="login" resultType="UserVO">-->
+        <!--SELECT uid, upw, uname, nickname, uday FROM tbl_user WHERE uid = #{uid} and upw = #{upw} and delyn = 'N'-->
+    <!--</select>-->
     <select id="login" resultType="UserVO">
-        SELECT uid, upw, uname, nickname, uday FROM tbl_user WHERE uid = #{uid} and upw = #{upw} and delyn = 'N'
+        SELECT * FROM tbl_user WHERE uid = #{uid} and upw = #{upw} and delyn = 'N'
     </select>
 
     <update id="loginIpUpd">
@@ -41,6 +44,11 @@
     <!-- 전체 회원수 가져오기 - 회원 가입시 전체 회원 숫자 렌더링 -->
     <select id="registUsersNumGET" resultType="int">
         SELECT count(*) FROM tbl_user WHERE delyn = 'N'
+    </select>
+
+    <!-- 칼라별 회원수 가져오기 - 칼라별 회원 숫자 렌더링 -->
+    <select id="registColorNumGET" resultType="int">
+        SELECT count(*) FROM tbl_user WHERE uday = #{uday} AND delyn = 'N'
     </select>
 
     <!-- 글 작성시 접속한 유저의 아이디 통해서 총 게시글 등록수 구함 -->

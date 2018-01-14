@@ -7,10 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.*;
-import org.zerock.persistence.BoardDAO;
-import org.zerock.persistence.PointDAO;
-import org.zerock.persistence.UserColorDAO;
-import org.zerock.persistence.UserDAO;
+import org.zerock.persistence.*;
 import org.zerock.util.PointUtils;
 import org.zerock.util.UnifyMessage;
 
@@ -36,16 +33,19 @@ public class BoardServiceImpl implements BoardService {
 
 
     @Inject
-    private BoardDAO boardDAO;
+    private BoardDAO boardDAO;                          // 게시글
 
     @Inject
-    private PointDAO pointDAO;
+    private PointDAO pointDAO;                          // 포인트 증가, 차감
 
     @Inject
-    private UserDAO userDAO;
+    private UserDAO userDAO;                            // 유저 정보
 
     @Inject
-    private UserColorDAO userColorDAO;
+    private UserColorDAO userColorDAO;                  // 각 정당의 색깔에 맞게 구분
+
+    @Inject
+    private UserLevelDAO userLevelDAO;                  // Lv0~100
 
     /*
     @Override
@@ -137,26 +137,64 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public BoardVO read(Integer bno) throws Exception {
 
-        BoardVO boardVO = boardDAO.read(bno);                   // Level 구하기 위해서 아이디 가져옴
+        BoardVO boardVO = boardDAO.read(bno);                                     // Level 구하기 위해서 아이디 가져옴
 
-        logger.info("lllll~~~~~ BoardVO boardVO = boardDAO.read(bno) : " + boardVO);
-        logger.info("lllll~~~~~ BoardVO boardVO = boardDAO.read(bno) getId : " + boardVO.getId());
+//        logger.info("lllll~~~~~ 01 BoardVO boardVO = boardDAO.read(bno) : " + boardVO);
+//        logger.info("lllll~~~~~ 02 BoardVO boardVO = boardDAO.read(bno) getId : " + boardVO.getId());
 
-        List<UserVO> userVO = pointDAO.userLevelPointGET();                 // 전체 유저 내림차순으로 리스트로 가져옴
+        List<String> listId = pointDAO.userLevelPointGET();                             // 전체 유저 내림차순으로 리스트로 가져옴
+        List<String> listColorId = pointDAO.userColorPointGET(boardVO.getGetcolor());   // 칼라 유저 내림차순으로 리스트로 가져옴
 
-        int totalUser = userDAO.registUsersNumGET();                        // 전체 유저수 int로 가져옴
+//        logger.info("lllll~~~~~ 03 userVO : " + listId);
 
-        Map<String, Object> userVOMap = new HashMap<String, Object>();
+        float totalUser = userDAO.registUsersNumGET();                            // 전체 유저수 int로 가져옴
 
-        for (int i = 0; i <userVO.size() ; i++) {
-//            userVOMap.put(userVO, )
+        float colorUserNum = userDAO.registColorNumGET(boardVO.getGetcolor());    // 칼라 유저수 color 가져옴
+
+//        logger.info("lllll~~~~~ 01 colorUserNum : " + colorUserNum);
+
+
+//        List<Map<String, Object>> listMap = new ArrayList<>();
+        UserVO userVO = new UserVO();
+
+        for (int i = 0; i < listId.size(); i++) {
+//            Map<String, Object> userVOMap = new HashMap<String, Object>();
+            int result = Math.round((100 / totalUser) * (totalUser - i));
+
+//            logger.info("lllll~~~~~ 04 : " + i + " : " + result);
+
+//            userVOMap.put(listId.get(i), result);
+//
+//            logger.info("lllll~~~~~ 05 : " + i + " : " + userVOMap.keySet());
+//            logger.info("lllll~~~~~ 06 : " + i + " : " + userVOMap.values());
+//            logger.info("lllll~~~~~ 07 : " + listId.get(i));
+//            logger.info("lllll~~~~~ 08 : " + (int)(userVOMap.get(listId.get(i))));
+
+            userVO.setUid(listId.get(i));
+            userVO.setUtotallevel(result);
+//            userVO.setUtotallevel((int)(userVOMap.get(listId.get(i))));
+//            listMap.add(userVOMap);
+
+//            logger.info("lllll~~~~~ 09 : " + listMap.get(i));
+            logger.info("lllll~~~~~ 10 : " + userVO.getUcolorlevel());
+
+//            listMap.add(userVOMap);
+
+//            userLevelDAO.userLevelPostUserUPD(listMap);
+            userLevelDAO.userLevelPostUserUPD(userVO);
 
         }
 
-//        int output =
 
+        for (int j = 0; j < listColorId.size(); j++) {
+            int resultColor = Math.round((100 / colorUserNum) * (colorUserNum - j));
 
+            userVO.setUid(listColorId.get(j));
+            userVO.setUcolorlevel(resultColor);
+            userVO.setUday(boardVO.getGetcolor());
 
+            userLevelDAO.userLevelColorUserUPD(userVO);
+        }
         return boardDAO.read(bno);                  // 게시물 전체 내용 가져옴(제목, 내용, 작성자 등등)
     }
 
@@ -164,15 +202,15 @@ public class BoardServiceImpl implements BoardService {
     public void cookieBoard(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, int bno, String cateNum) throws Exception {
         Cookie cookies[] = httpServletRequest.getCookies();                                  // 저장된 쿠키 불러오기
 
-        logger.info("lllll~~~~~ 01 : " + cookies.toString());
+//        logger.info("lllll~~~~~ 01 : " + cookies.toString());
 
         Map mapCookie = new HashMap();
         if (httpServletRequest.getCookies() != null) {
             for (int i = 0; i < cookies.length; i++) {
                 Cookie obj = cookies[i];
                 mapCookie.put(obj.getName(), obj.getValue());
-                logger.info("lllll~~~~~ 02-01 : " + mapCookie.toString());
-                logger.info("lllll~~~~~ 02-02 : " + mapCookie.keySet());
+//                logger.info("lllll~~~~~ 02-01 : " + mapCookie.toString());
+//                logger.info("lllll~~~~~ 02-02 : " + mapCookie.keySet());
             }
         }
 

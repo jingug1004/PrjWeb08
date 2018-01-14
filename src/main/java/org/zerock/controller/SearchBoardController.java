@@ -122,8 +122,7 @@ public class SearchBoardController {
     public void read(@RequestParam("bno") int bno,
                      @ModelAttribute("cri") SearchCriteria cri,
                      Model model,
-                     HttpSession httpSession,
-                     HttpServletRequest httpServletRequest) throws Exception {
+                     HttpSession httpSession) throws Exception {
 
         /* 좋아서 지우기 아까운 로거와 메서드들.
         String readPageDest = httpServletRequest.getQueryString();               //   page=1&cate=1102&perPageNum=10&searchType&keyword&cntSortType&bno=4590

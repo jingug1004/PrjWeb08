@@ -161,23 +161,37 @@
                     </div>
                     <div class="form-group">
                         <div style="display:inline; float: left; width: 100%;">
-                            <div style="display: inline; float: left; width: 49%; margin-right: 1%;">
+                            <div style="display: inline; float: left; width: 19%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">
                                     <img src="/assets/img/colors/${boardVO.getcolor}.png" class="getColor" alt="">
                                     Writer</label>
                                 <input type="text" name="writer" class="form-control"
                                        value="${boardVO.writer}" readonly="readonly">
                             </div>
+                            <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
+                                <label for="exampleInputEmail1">
+                                    <img src="/assets/img/colors/${boardVO.getcolor}.png" class="getColor" alt="">
+                                    Level</label>
+                                <input type="text" name="ucolorlevel" class="form-control"
+                                       value="Lv.${login.ucolorlevel}" readonly="readonly">
+                            </div>
+                            <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
+                                <label for="exampleInputEmail1">
+                                    <img src="/assets/img/colors/modify_U.png" class="getColor" alt="">
+                                    Level</label>
+                                <input type="text" name="utotallevel" class="form-control"
+                                       value="Lv.${login.utotallevel}" readonly="readonly">
+                            </div>
 
                             <%--<c:choose>--%>
                             <c:if test="${login.uid == goodCntVOGet && login.uid != badCntVOGet}">
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBad" type="text" name="writer"
                                            class="form-control hoverInputRead disaClass readbcnt"
@@ -186,29 +200,30 @@
                                 </div>
                             </c:if>
                             <c:if test="${login.uid == badCntVOGet && login.uid != goodCntVOGet}">
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGood" type="text" name="writer"
                                            class="form-control hoverInputRead disaClass"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
-                                    <input id="logBad" type="text" name="writer" class="form-control hoverInputReadAct readbcnt"
+                                    <input id="logBad" type="text" name="writer"
+                                           class="form-control hoverInputReadAct readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
                                            onclick="badcntButton('${login.uid}')">
                                 </div>
                             </c:if>
                             <c:if test="${empty login.uid}">
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBadPage" type="text" name="writer"
                                            class="form-control hoverInputRead readbcnt"
@@ -217,14 +232,14 @@
                                 </div>
                             </c:if>
                             <c:if test="${not empty login.uid && empty goodCntVOGet && empty badCntVOGet}">
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Good</label>
                                     <input id="logNoGoodPage02" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
-                                <div style="display: inline; float: left; width: 16%; margin-right: 1%;">
+                                <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                     <label for="exampleInputEmail1">Bad</label>
                                     <input id="logNoBadPage02" type="text" name="writer"
                                            class="form-control hoverInputRead readbcnt"
@@ -238,7 +253,8 @@
                             <c:if test="${login.uid == spamCntVOGet && not empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
                                     <label for="exampleInputEmail1">Spam</label>
-                                    <input id="logSpam" type="text" name="writer" class="form-control hoverInputReadAct readscnt"
+                                    <input id="logSpam" type="text" name="writer"
+                                           class="form-control hoverInputReadAct readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
                                 </div>
@@ -246,7 +262,8 @@
                             <c:if test="${empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
                                     <label for="exampleInputEmail1">Spam</label>
-                                    <input id="logNoSpam" type="text" name="writer" class="form-control hoverInputRead readscnt"
+                                    <input id="logNoSpam" type="text" name="writer"
+                                           class="form-control hoverInputRead readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
                                            onclick="spamcntButton('${login.uid}')">
                                 </div>
@@ -670,14 +687,13 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
 <script>
 
-//    $('.readgbcnt').val().number(true);
-//    $('.readvcnt').val().number(true);
-//
-//    $('.readgcnt').val().number(true);
-//    $('.readbcnt').val().number(true);
-//
-//    $('.readscnt').val().number(true);
-
+    //    $('.readgbcnt').val().number(true);
+    //    $('.readvcnt').val().number(true);
+    //
+    //    $('.readgcnt').val().number(true);
+    //    $('.readbcnt').val().number(true);
+    //
+    //    $('.readscnt').val().number(true);
 
 
     function getUrlParamsCnt() {
@@ -712,14 +728,14 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         console.log("gbcntRate : " + gbcntRate);
 
         <%--function formatting() {--%>
-            <%--var gbcntRate = Math.round(${boardVO.gbcnt});           // 링크 : http://fillin.tistory.com/88--%>
+        <%--var gbcntRate = Math.round(${boardVO.gbcnt});           // 링크 : http://fillin.tistory.com/88--%>
 
-            <%--var ss = $("input[type=text][name=gbtitle]").val(gbcntRate).number(true);--%>
+        <%--var ss = $("input[type=text][name=gbtitle]").val(gbcntRate).number(true);--%>
 
-            <%--return ss;--%>
+        <%--return ss;--%>
 
-            <%--console.log("gbcntRate : " + gbcntRate);--%>
-            <%--console.log("ss : " + ss);--%>
+        <%--console.log("gbcntRate : " + gbcntRate);--%>
+        <%--console.log("ss : " + ss);--%>
         <%--}--%>
 
         var formObj = $("form[role='form']");
@@ -789,7 +805,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         var goListBtn02 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn02">목록</button>';
 
         function validMenuInReadPage() {
-            if(getUrlParams().cate) {
+            if (getUrlParams().cate) {
                 $('a[name = "goListBtnTest"]').html(goListBtn01);
             } else {
                 $('a[name = "goListBtnTest"]').html(goListBtn02);
@@ -1005,11 +1021,11 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             });
         }
     }
-    
+
     function goLogin() {
 
         self.location = "/user/login";
-        
+
     }
 
 </script>

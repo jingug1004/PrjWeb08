@@ -22,10 +22,10 @@ public class UserLevelDAOImpl implements UserLevelDAO {
 
     private static String namespace = "org.zerock.mapper.UserLevelMapper";
 
-    @Override
-    public void userLevelPostUserUPD(UserVO userVO) throws Exception {
-        sqlSession.update(namespace + ".userLevelPostUserUPD", userVO);
-    }
+//    @Override
+//    public void userLevelPostUserUPD(UserVO userVO) throws Exception {
+//        sqlSession.update(namespace + ".userLevelPostUserUPD", userVO);
+//    }
 
     @Override
     public void userLevelLoginUserUPD() throws Exception {
@@ -35,5 +35,15 @@ public class UserLevelDAOImpl implements UserLevelDAO {
     @Override
     public void userAllUserUPD() throws Exception {
 
+    }
+
+    @Override
+    public void userLevelPostUserUPD(UserVO userVO) throws Exception {
+        sqlSession.update(namespace + ".userLevelPostUserUPD", userVO);
+    }
+
+    @Override
+    public void userLevelColorUserUPD(UserVO userVO) throws Exception {
+        sqlSession.update(namespace + ".userLevelColorUserUPD", userVO);
     }
 }

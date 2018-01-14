@@ -35,12 +35,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             LoggerFactory.getLogger(LoginInterceptor.class);
 
     @Override
-    public void postHandle(HttpServletRequest request,
-                           HttpServletResponse response,
+    public void postHandle(HttpServletRequest httpServletRequest,
+                           HttpServletResponse httpServletResponse,
                            Object handler,
                            ModelAndView modelAndView) throws Exception {
 
-        HttpSession session = request.getSession();
+        HttpSession session = httpServletRequest.getSession();
 
         ModelMap modelMap = modelAndView.getModelMap();
         Object userVO = modelMap.get("userVO");
@@ -50,20 +50,20 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             logger.info("lll~~~ new login success............ lll~~~");
             session.setAttribute(LOGIN, userVO);
 
-            if (request.getParameter("useCookie") != null) {
+            if (httpServletRequest.getParameter("useCookie") != null) {
 
                 logger.info("lll~~~ remember me....................... lll~~~");
                 Cookie loginCookie = new Cookie("loginCookie", session.getId());
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(60 * 60 * 24 * 7);
-                response.addCookie(loginCookie);
+                httpServletResponse.addCookie(loginCookie);
             }
 
 //            response.sendRedirect("/");
 
             Object dest = session.getAttribute("dest");
 
-            response.sendRedirect(dest != null ? (String) dest : "/");
+            httpServletResponse.sendRedirect(dest != null ? (String) dest : "/");
         }
     }
 
