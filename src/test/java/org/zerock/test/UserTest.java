@@ -5,13 +5,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.zerock.domain.UserVO;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-import java.util.Set;
 
 /**
  * Created by macbookpro on 2017. 3. 3. PM 12:40
@@ -37,13 +34,12 @@ public class UserTest {
 
     @Test
     public void userIdWhenIsEmpty() {
-        UserVO userVO = new UserVO
-                ("jingug100", "4444", "4444", "김진", 0, "jingug100@nave.co", "Emi", "09", "1987", "", "");
-
-        Set<ConstraintViolation<UserVO>> constraintViolations =
-                validator.validate(userVO);
-//        assertThat(constraintViolations.size());
-
+//        UserVO userVO = new UserVO("jingug100", "4444", "4444", "김진", 0, "jingug100@nave.co", "Emi", "09", "1987", "", "");
+//
+//        Set<ConstraintViolation<UserVO>> constraintViolations =
+//                validator.validate(userVO);
+////        assertThat(constraintViolations.size());
+//
 
     }
 

@@ -173,15 +173,17 @@
                                     <img src="/assets/img/colors/${boardVO.getcolor}.png" class="getColor" alt="">
                                     Level</label>
                                 <input type="text" name="ucolorlevel" class="form-control"
-                                       value="Lv.${login.ucolorlevel}" readonly="readonly">
+                                       value="Lv.${boardVO.ucolorlevel}" readonly="readonly">
                             </div>
                             <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">
                                     <img src="/assets/img/colors/modify_U.png" class="getColor" alt="">
                                     Level</label>
                                 <input type="text" name="utotallevel" class="form-control"
-                                       value="Lv.${login.utotallevel}" readonly="readonly">
+                                       value="Lv.${boardVO.utotallevel}" readonly="readonly">
                             </div>
+
+                            <%-- ---------------------------------------------------------------------------------- --%>
 
                             <%--<c:choose>--%>
                             <c:if test="${login.uid == goodCntVOGet && login.uid != badCntVOGet}">

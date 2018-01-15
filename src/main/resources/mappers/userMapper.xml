@@ -20,6 +20,10 @@
         SELECT * FROM tbl_user WHERE uid = #{uid} and upw = #{upw} and delyn = 'N'
     </select>
 
+    <select id="loginInfoNoPW" resultType="UserVO">
+        SELECT * FROM tbl_user WHERE uid = #{uid} and delyn = 'N'
+    </select>
+
     <update id="loginIpUpd">
         UPDATE tbl_user SET updip = #{updip} WHERE uid = #{uid} and delyn = 'N'
     </update>

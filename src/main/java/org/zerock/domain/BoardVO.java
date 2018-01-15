@@ -35,6 +35,11 @@ public class BoardVO {
 
     private String getcolor;
 
+    private int utotallevel;                    // 회원의 전체 순위 Lv.0 ~ Lv.100
+    private int ucolorlevel;                    // 회원의 칼라 순위 Lv.0 ~ Lv.100
+
+    /*-----*/
+
     public String getId() {
         return id;
     }
@@ -247,10 +252,27 @@ public class BoardVO {
         this.getcolor = getcolor;
     }
 
+    public int getUtotallevel() {
+        return utotallevel;
+    }
+
+    public void setUtotallevel(int utotallevel) {
+        this.utotallevel = utotallevel;
+    }
+
+    public int getUcolorlevel() {
+        return ucolorlevel;
+    }
+
+    public void setUcolorlevel(int ucolorlevel) {
+        this.ucolorlevel = ucolorlevel;
+    }
+
     @Override
     public String toString() {
         return "BoardVO{" +
-                "bno=" + bno +
+                "id='" + id + '\'' +
+                ", bno=" + bno +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
@@ -266,6 +288,8 @@ public class BoardVO {
                 ", files=" + Arrays.toString(files) +
                 ", boardvisible='" + boardvisible + '\'' +
                 ", getcolor='" + getcolor + '\'' +
+                ", utotallevel=" + utotallevel +
+                ", ucolorlevel=" + ucolorlevel +
                 '}';
     }
 }

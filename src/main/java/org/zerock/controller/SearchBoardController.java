@@ -10,6 +10,7 @@ import org.zerock.domain.*;
 import org.zerock.service.BoardService;
 import org.zerock.service.CntService;
 import org.zerock.service.PointService;
+import org.zerock.service.UserService;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -40,6 +41,9 @@ public class SearchBoardController {
 
     @Inject
     private PointService pointService;      // 포인트 처리하는 서비스
+
+    @Inject
+    private UserService userService;        // 유저 정보를 가져와서 처리하는 서비스
 
     /**
      * 게시판 리스트 페이지가 cate의 기준에 따라 나뉘어짐.
@@ -145,7 +149,12 @@ public class SearchBoardController {
         rateMaker.setRategb();
         cntService.changeGBPut(bno, rateMaker.getRategdivb());
 
-        model.addAttribute(boardService.read(bno));                              // 글 읽기로! 조회수 증가(update)도 트랜잭션으로 있음!
+        //model.addAttribute(boardService.read(bno));   데이터 타입이 BoardVO 클래스라서 웹단(jsp)에서 ${boardVO.?}로 사용할 수 있음
+        BoardVO boardVO = boardService.read(bno);
+        UserVO userVO = userService.loginInfoNoPW(boardVO.getId());                 // 게시글 작성자의 아이디를 파라미터로 넘겨 유저 정보 가져옴
+        boardVO.setUtotallevel(userVO.getUtotallevel());
+        boardVO.setUcolorlevel(userVO.getUcolorlevel());
+        model.addAttribute("boardVO", boardVO); // 글 읽기로! 조회수 증가(update)도 트랜잭션으로 있음!
         model.addAttribute("cateName", boardService.callCateName(bno));      // 카테고리 이름 가져오기.
 
         Object object = httpSession.getAttribute("login");

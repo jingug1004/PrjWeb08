@@ -28,8 +28,12 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public UserVO login(LoginDTO dto) throws Exception {
-
         return sqlSession.selectOne(namespace + ".login", dto);
+    }
+
+    @Override
+    public UserVO loginInfoNoPW(String uid) throws Exception {
+        return sqlSession.selectOne(namespace + ".loginInfoNoPW", uid);
     }
 
     @Override

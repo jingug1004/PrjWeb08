@@ -27,6 +27,8 @@ public interface UserDAO {
 
     public void loginIpUpd(UserVO userVO) throws Exception;
 
+    public UserVO loginInfoNoPW(String uid) throws Exception;
+
     /**
      * 로그인한 사용자의 sessionKey와 sessionLimit을 업데이트 하는 기능 / userMapper.xml의 keepLogin
      *

@@ -185,7 +185,6 @@ public class BoardServiceImpl implements BoardService {
 
         }
 
-
         for (int j = 0; j < listColorId.size(); j++) {
             int resultColor = Math.round((100 / colorUserNum) * (colorUserNum - j));
 

@@ -43,13 +43,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserVO login(LoginDTO dto) throws Exception {
-
         return userDAO.login(dto);
     }
 
     @Override
     public void loginIpUpd(UserVO userVO) throws Exception {
         userDAO.loginIpUpd(userVO);
+    }
+
+    @Override
+    public UserVO loginInfoNoPW(String uid) throws Exception {
+        return userDAO.loginInfoNoPW(uid);
     }
 
     @Override
