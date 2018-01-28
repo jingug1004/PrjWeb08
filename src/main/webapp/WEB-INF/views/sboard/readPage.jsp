@@ -124,28 +124,37 @@
                     <div class="form-group">
                         <div style="display: inline; float: left; width: 100%;">
                             <div style="display: inline; float: left; width: 65%; margin-right: 1%">
-                                <label for="exampleInputEmail1">Title</label>
+                                <label for="exampleInputEmail1">
+                                    <img src="/assets/img/colors/titleIcon.png" alt="">
+                                    Title</label>
                                 <input type="text" name='title' class="form-control" value="${boardVO.title}"
                                        readonly="readonly">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
                             <div id="gbdiv" style="display: inline; float: left; width: 16%; margin-right: 1%">
-                                <label for="exampleInputEmail1">G/B</label>
+                                <label for="exampleInputEmail1">
+                                    <img src="/assets/img/colors/rateIcon.png" alt="">
+                                    G/B</label>
                                 <input id="gbcnt" type="text" name='gbtitle' class="form-control readgbcnt" value=""
                                        readonly="readonly" style="color: darkorange">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
                             <div style="display: inline; float: left; width: 17%;">
-                                <label for="exampleInputEmail1">View</label>
+                                <label for="exampleInputEmail1">
+                                    <img src="/assets/img/colors/viewIcon.png" alt="">
+                                    View</label>
                                 <input type="text" name='title' class="form-control readvcnt" value="${boardVO.viewcnt}"
                                        readonly="readonly" style="color: darkgray">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
                         </div>
                     </div>
+                    <div></div>
                     <div class="form-group">
                         <%--@declare id="exampleinputpassword1"--%>
-                        <label for="exampleInputPassword1">Content</label>
+                        <label for="exampleInputPassword1">
+                            <img src="/assets/img/colors/contentIcon.png" alt="">
+                            Content</label>
                         <%--<textarea class="form-control" name="content" rows="25"--%>
                         <%--readonly="readonly">${boardVO.content}</textarea>--%>
 
@@ -188,13 +197,17 @@
                             <%--<c:choose>--%>
                             <c:if test="${login.uid == goodCntVOGet && login.uid != badCntVOGet}">
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/goodIcon.png" alt="">
+                                        Good</label>
                                     <input id="logGood" type="text" name="writer" class="form-control hoverInputReadAct"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/badIcon.png" alt="">
+                                        Bad</label>
                                     <input id="logNoBad" type="text" name="writer"
                                            class="form-control hoverInputRead disaClass readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
@@ -203,14 +216,18 @@
                             </c:if>
                             <c:if test="${login.uid == badCntVOGet && login.uid != goodCntVOGet}">
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/goodIcon.png" alt="">
+                                        Good</label>
                                     <input id="logNoGood" type="text" name="writer"
                                            class="form-control hoverInputRead disaClass"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/badIcon.png" alt="">
+                                        Bad</label>
                                     <input id="logBad" type="text" name="writer"
                                            class="form-control hoverInputReadAct readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
@@ -219,14 +236,18 @@
                             </c:if>
                             <c:if test="${empty login.uid}">
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/goodIcon.png" alt="">
+                                        Good</label>
                                     <input id="logNoGoodPage" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/badIcon.png" alt="">
+                                        Bad</label>
                                     <input id="logNoBadPage" type="text" name="writer"
                                            class="form-control hoverInputRead readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
@@ -235,14 +256,18 @@
                             </c:if>
                             <c:if test="${not empty login.uid && empty goodCntVOGet && empty badCntVOGet}">
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Good</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/goodIcon.png" alt="">
+                                        Good</label>
                                     <input id="logNoGoodPage02" type="text" name="writer"
                                            class="form-control hoverInputRead"
                                            value="${boardVO.goodcnt}" readonly="readonly" style="color: green;"
                                            onclick="goodcntButton('${login.uid}')">
                                 </div>
                                 <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
-                                    <label for="exampleInputEmail1">Bad</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/badIcon.png" alt="">
+                                        Bad</label>
                                     <input id="logNoBadPage02" type="text" name="writer"
                                            class="form-control hoverInputRead readbcnt"
                                            value="${boardVO.badcnt}" readonly="readonly" style="color: red;"
@@ -254,7 +279,9 @@
 
                             <c:if test="${login.uid == spamCntVOGet && not empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
-                                    <label for="exampleInputEmail1">Spam</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/spamIcon.png" alt="">
+                                        Spam</label>
                                     <input id="logSpam" type="text" name="writer"
                                            class="form-control hoverInputReadAct readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
@@ -263,7 +290,9 @@
                             </c:if>
                             <c:if test="${empty login.uid}">
                                 <div style="display: inline; float: left; width: 16%">
-                                    <label for="exampleInputEmail1">Spam</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/spamIcon.png" alt="">
+                                        Spam</label>
                                     <input id="logNoSpam" type="text" name="writer"
                                            class="form-control hoverInputRead readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"
@@ -272,7 +301,9 @@
                             </c:if>
                             <c:if test="${not empty login.uid && login.uid != spamCntVOGet}">
                                 <div style="display: inline; float: left; width: 16%">
-                                    <label for="exampleInputEmail1">Spam</label>
+                                    <label for="exampleInputEmail1">
+                                        <img src="/assets/img/colors/spamIcon.png" alt="">
+                                        Spam</label>
                                     <input id="logSpamPage" type="text" name="writer"
                                            class="form-control hoverInputRead readscnt"
                                            value="${boardVO.spamcnt}" readonly="readonly" style="color: orange;"

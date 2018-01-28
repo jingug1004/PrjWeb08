@@ -34,12 +34,13 @@ public class UserTest {
 
     @Test
     public void userIdWhenIsEmpty() {
-//        UserVO userVO = new UserVO("jingug100", "4444", "4444", "김진", 0, "jingug100@nave.co", "Emi", "09", "1987", "", "");
-//
+//        UserVO userVO = new UserVO
+//                ("jingug100", "4444", "4444", "김진", 0, "jingug100@nave.co", "Emi", "09", "1987", "", "");
+
 //        Set<ConstraintViolation<UserVO>> constraintViolations =
 //                validator.validate(userVO);
-////        assertThat(constraintViolations.size());
-//
+//        assertThat(constraintViolations.size());
+
 
     }
 
