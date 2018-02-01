@@ -589,9 +589,9 @@
                         <!-- 상품 리스트 헤더 메뉴 -->
 
                         <!-- jqGrid 헤더 메뉴 -->
-                        <li><a href="/jqGrid/jqGridList">jq</a></li>
+                        <%--<li><a href="/jqGrid/jqGridList">jq</a></li>--%>
                         <li><a href="/jqGrid/jqGridList02">jq2</a></li>
-                        <li><a href="/jqGrid/jqGridList03">jq3</a></li>
+                        <%--<li><a href="/jqGrid/jqGridList03">jq3</a></li>--%>
                         <!-- jqGrid 헤더 메뉴 -->
 
                     </ul>

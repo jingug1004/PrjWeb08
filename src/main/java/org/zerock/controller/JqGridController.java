@@ -28,11 +28,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/jqGrid")
 public class JqGridController {
 
-    @RequestMapping(value = "/jqGridList", method = RequestMethod.GET)
-    public void jqGridList() throws Exception {
-
-
-    }
+//    @RequestMapping(value = "/jqGridList", method = RequestMethod.GET)
+//    public void jqGridList() throws Exception {
+//
+//
+//    }
 
     @RequestMapping(value = "/jqGridList02", method = RequestMethod.GET)
     public void jqGridList02() throws Exception {
@@ -40,11 +40,11 @@ public class JqGridController {
 
     }
 
-    @RequestMapping(value = "/jqGridList03", method = RequestMethod.GET)
-    public void jqGridList03() throws Exception {
-
-
-    }
+//    @RequestMapping(value = "/jqGridList03", method = RequestMethod.GET)
+//    public void jqGridList03() throws Exception {
+//
+//
+//    }
 
 
 }
