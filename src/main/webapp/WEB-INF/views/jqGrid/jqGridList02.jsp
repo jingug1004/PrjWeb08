@@ -30,7 +30,8 @@
     <%--<link rel="stylesheet" type="text/css" media="screen" href="/resources/jqgridui/jquery-ui.theme.css" />--%>
 
     <%-- irush jqGrid --%>
-    <link rel="stylesheet" type="text/css" media="screen" href="/resources/ijqgrid/css/smoothness/jquery-ui.theme.css"/>
+    <%--<link rel="stylesheet" type="text/css" media="screen" href="/resources/ijqgrid/css/smoothness/jquery-ui.theme.css"/>--%>
+    <link rel="stylesheet" type="text/css" media="screen" href="/resources/jqgrid/jquery-ui-1.12.1.custom/jquery-ui.theme.css"/>
     <%--<link rel="stylesheet" type="text/css" media="screen" href="/resources/ijqgrid/css/" />--%>
 
     <%--<script src="/resources/jqgrid/js/jquery-1.11.0.min.js" type="text/javascript"></script>--%>

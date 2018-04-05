@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/IdeaProjects/Algo/Algo.iml" filepath="$USER_HOME$/IdeaProjects/Algo/Algo.iml" />
+      <module fileurl="file://$USER_HOME$/IdeaProjects/tna3/TNA3-master/Balgre.iml" filepath="$USER_HOME$/IdeaProjects/tna3/TNA3-master/Balgre.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web08.iml" filepath="$PROJECT_DIR$/Web08.iml" />
+      <module fileurl="file://D:/hana_AtoJ/workspace/hana_groupware/hana_groupware.iml" filepath="D:/hana_AtoJ/workspace/hana_groupware/hana_groupware.iml" />
+      <module fileurl="file://D:/hana_AtoJ/workspace/hana_online/hana_online.iml" filepath="D:/hana_AtoJ/workspace/hana_online/hana_online.iml" />
+      <module fileurl="file://D:/hana_AtoJ/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/work/Catalina/localhost/localhost.iml" filepath="D:/hana_AtoJ/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/work/Catalina/localhost/localhost.iml" />
+      <module fileurl="file://D:/hana_AtoJ/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/localhost1.iml" filepath="D:/hana_AtoJ/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/work/Catalina/localhost/localhost1.iml" />
+      <module fileurl="file://$USER_HOME$/sample/sample.iml" filepath="$USER_HOME$/sample/sample.iml" />
     </modules>
   </component>
 </project>

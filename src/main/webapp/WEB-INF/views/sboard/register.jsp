@@ -71,8 +71,15 @@
                             <div class="fileDrop">
                                 <p style="display: table-cell; text-align: center; vertical-align: middle;">
                                     첨부할 파일을 드래그 하거나 직접 <a id="btn-upload">파일찾기</a>
-                                <%--<form id="inputForm" action="/s3/inputFile" method="post">--%>
-                                    <input style="display: none" type="file" id="file" name="file" <%--onchange="changeValue(this)"--%>/>
+
+                                <%--<form id="fileForm" action="uploadAjax" method="post">--%>
+
+                                    <%--<input type="file" id="fileUp"--%>
+                                           <%--name="fileUp" onchange="changeValue(this)" multiple="multiple"/>--%>
+                                    <input style="display: none" type="file" id="fileUp"
+                                           name="fileUp" onchange="changeValue(this)" multiple="multiple" />
+
+                                    <%--<input type="button" value="전송하기" onClick="fileSubmit();">--%>
                                 <%--</form>--%>
                                 </p>
                             </div>
@@ -80,7 +87,7 @@
                         </div>
                     </div>
 
-                    <!-- /.box-body -->
+                        <!-- /.box-body -->
 
                     <div class="box-footer text-right">
                         <div>
@@ -132,18 +139,19 @@
         event.preventDefault();
     });
 
-
     $(".fileDrop").on("drop", function (event) {
         event.preventDefault();
 
         var files = event.originalEvent.dataTransfer.files;
+        console.log("files : " + files);
 
         var file = files[0];
+        console.log("file 2   : " + file);
 
         var formData = new FormData();
+        console.log("formData 3    : " + formData);
 
         formData.append("file", file);
-
 
         $.ajax({
 //            url: '/s3/s3uploadAjax',
@@ -154,15 +162,12 @@
             contentType: false,
             type: 'POST',
             success: function (data) {
-
                 console.log("data : " + data);
 
                 var fileInfo = getFileInfo(data);
-
                 console.log("fileInfo : " + fileInfo);
 
                 var html = template(fileInfo);
-
                 console.log("html : " + html);
 
                 $(".uploadedList").append(html);
@@ -252,17 +257,78 @@
     // console.log("cnumInput: " + $('#cnumInput').val('getUrlParams().cate'));
     // });
 
+
     // Input TYPE=“File” 을 히든으로 하고 외부 버튼을 눌러서 파일을 선택
     $('#btn-upload').on('click', function (event) {
-
-        $('#file').click();
-
-//        function changeValue(obj) {
-//            alert(obj.value);
-//        }
+        $('#fileUp').click(); /* step.1 숨김 파일 클릭 */
     });
 
+    function changeValue(that) {
+        sub(); /* step.2 onchange 어트리뷰트 val 속성 변경 일어나면 sub 메서드 실행 */
+    }
+
+    function sub(event) {
+        /* step.3 파일 첨부 실행 */
+        console.log("$('#fileUp') 00 : " + $('#fileUp').val());
+
+        var file = document.querySelector('#fileUp');
+//        var file = $('#fileUp'); 이건 안 됨
+        console.log("file 01 : " + file);
+
+        var fileList = file.files;
+        console.log("fileList 02 : " + fileList);
+
+        var files = fileList;
+
+        var file02 = files[0];
+        console.log("file02 file02 : " + file02);
+
+        /* [JavaScript][basic] null & undefined   출처: http://luvstudy.tistory.com/13 [파란하늘의 지식창고] */
+        if (typeof file02 !== "undefined") {
+            console.log("111");
+            fileSubmit(fileList);
+            console.log("222");
+        }
+        console.log("$('#fileUp') 00 - 01: " + $('#fileUp').val());
+    }
+
+    function fileSubmit(fileList) {
+//        event.preventDefault();
+//        var files = event.originalEvent.dataTransfer.files;
+        /* step.4 파일 첨부 후 파일 끌여다 놓는 것과 같은 Ajax 실행 */
+
+        var files = fileList;
+        console.log("files 03 : " + files);
+
+        var file = files[0];
+        console.log("file 04 : " + file);
+
+        var formData = new FormData();
+        console.log("formData 05 : " + formData);
+
+        formData.append("file", file);
+
+        $.ajax({
+//            url: '/s3/s3uploadAjax',
+            url: '/uploadAjax',
+            data: formData,
+            dataType: 'text',
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function (data) {
+                console.log("data : " + data);
+
+                var fileInfo = getFileInfo(data);
+                console.log("fileInfo : " + fileInfo);
+
+                var html = template(fileInfo);
+                console.log("html : " + html);
+
+                $(".uploadedList").append(html);
+            }
+        });
+    }
+
 </script>
-
-
 <%@include file="../include/footer.jsp" %>

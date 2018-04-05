@@ -2,7 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="jdbc:mysql://node.clvidmnht9m3.ap-northeast-2.rds.amazonaws.com/PrjWeb?verifyServerCertificate=false&amp;amp;useSSL=true:3306" uuid="5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e">
-      <database-info product="MySQL" version="5.5.5-10.1.19-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
+      <database-info product="MySQL" version="5.5.5-10.1.19-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
@@ -17,6 +17,7 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>HANAUSER</user-name>
       <introspection-schemas>*:HANAUSER,ORAGMP,SALE,SALEON,SALE_ON</introspection-schemas>
     </data-source>
@@ -27,14 +28,15 @@
       </database-info>
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <user-name>HANAUSER</user-name>
-      <introspection-schemas>*:HANAUSER,ORAGMP,SALE,SALE_ON</introspection-schemas>
+      <introspection-schemas>*:HANAGROUPWARE,HANAUSER,ORAGMP,SALE,SALE_ON</introspection-schemas>
     </data-source>
     <data-source name="@58.229.234.11" uuid="64780d55-7390-49f9-a579-1e6fc54f2f04">
-      <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production&#10;With the Partitioning, OLAP, Data Mining and Real Application Testing options" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
+      <database-info product="Oracle" version="Oracle Database 11g Release 11.2.0.4.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
         <extra-name-characters>$#</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>HANAUSER</user-name>
       <introspection-schemas>*:HANAUSER,ORAGMP,SALE,SALE_ON</introspection-schemas>
     </data-source>

@@ -75,7 +75,7 @@ public class BoardDAOImpl implements BoardDAO {
     @Override
     public List<BoardVO> listCriteria(Criteria cri) throws Exception {return session.selectList(namespace + ".listCriteria", cri);}
 
-    // 이거 안 씀. 밑의 listSearchCount 씀
+    // 이거 안 씀. 밑의 listSearchCount 씀 --------------------------------------------------------
     @Override
     public int countPaging(Criteria cri) throws Exception {return session.selectOne(namespace + ".countPaging", cri);}
 

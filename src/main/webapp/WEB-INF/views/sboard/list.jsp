@@ -131,8 +131,9 @@
                                 <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
                                         <%--${boardVO.getcolor} // ${boardVO.writer}--%>
                                 <%--</td>--%>
-                                <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                <td align="left" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
                                     ${boardVO.writer}
+                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.writer}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
                                 </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
@@ -246,17 +247,22 @@
 <!-- /.content -->
 
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
+<%--<script>--%>
+    <%--var result = '${msg}';--%>
+
+    <%--if (result == 'SUCCESS') {--%>
+        <%--alert("처리가 완료되었습니다.");--%>
+    <%--}--%>
+<%--</script>--%>
+
+<%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
+<%--ex) www.profile.com?name=hyewon&age=25--%>
 <script>
     var result = '${msg}';
 
     if (result == 'SUCCESS') {
         alert("처리가 완료되었습니다.");
     }
-</script>
-
-<%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
-<%--ex) www.profile.com?name=hyewon&age=25--%>
-<script>
 
     // list(리스트)의 g/b 넘버 포맷팅 Todo: 나머지 넘버 포맷팅 해야함
     $('.listgcnt').number(true);
@@ -274,6 +280,8 @@
     }
 
     $(document).ready(function () {
+
+        // $('#idDetail').off();
 
         var allUrlAddr = $(location).attr('href');
 
@@ -373,11 +381,11 @@
             }
         });
 
-        function pad(n, width) {
-            n = n + '';
-            return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
-
-        }
+//        function pad(n, width) {
+//            n = n + '';
+//            return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+//
+//        }
 
 //
 //        var number = $('.bringBoardVOgetcolor').val();
@@ -421,6 +429,17 @@
 //
 //        });
 
+        /* 게시판 리스트에서 유저 별명을 클릭했을 때 */
+        $('.idDetail').on("click", function (event) {
+            event.stopPropagation();  // 이벤트버블링 방지
+            alert("메롱! 06 : " + $('#bringBoardVOgetId').val());
+            console.log("메롱! 06 : " + $('#bringBoardVOgetId').val());
+            <%--alert("메롱! 07 : " + ${boardVO.id});--%>
+            <%--console.log("메롱! 07 : " + $${boardVO.id});--%>
+            event.stopPropagation();  // 이벤트버블링 방지
+            // event.addEventListener();
+            $('.idDetail').off();
+        });
     });
 
 </script>

@@ -41,6 +41,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$USER_HOME$/Desktop/beauty/trunk" />
     <file type="web" url="file://$USER_HOME$/Desktop/downedGit/PrjWeb07-master/PrjWeb07-master" />
+    <file type="web" url="file://$USER_HOME$/IdeaProjects/tna3/TNA3-master" />
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="JavaScriptSettings">
@@ -71,6 +72,7 @@
         <option value="$USER_HOME$/Desktop/beauty/Balgre/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$USER_HOME$/Desktop/downedGit/PrjWeb07-master/PrjWeb07-master/pom.xml" />
+        <option value="$USER_HOME$/IdeaProjects/tna3/TNA3-master/pom.xml" />
       </list>
     </option>
   </component>

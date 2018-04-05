@@ -61,18 +61,25 @@
 	/*margin-bottom: 30px;*/
 	text-transform: capitalize;
 
-	color: #c00;
-	color: #fb940b;
-	color: #ff0;
-	color: #0c0;
-	color: #03c0c6;
-	color: #00f;
-	color: #762ca7;
-	color: #ff98bf;
-	color: #fff;
-	color: #999;
-	color: #000;
-	color: #885418;
+	color: #c00;		/*'rgba(204, 0, 0, 0.2)',*/
+	color: #fb940b;		/*'rgba(251, 148, 11, 0.2)',*/
+	color: #ff0;		/*'rgba(255, 255, 0, 0.2)',*/
+	color: #0c0;		/*'rgba(0, 204, 0, 0.2)'*/
+
+	color: #03c0c6;		/*'rgba(3, 192, 198, 0.2)'*/
+	color: #00f;		/*'rgba(3, 192, 198, 0.2)',*/
+	color: #762ca7;		/*'rgba(118, 44, 167, 0.2)',*/
+	color: #ff98bf;		/*'rgba(255, 152, 191, 0.2)',*/
+
+	color: #fff;		/*'rgba(255, 255, 255, 0.2)',*/
+	color: #999;		/*'rgba(153, 153, 153, 0.2)',*/
+	color: #000;		/*'rgba(0, 0, 0, 0.2)',*/
+	color: #885418;		/*'rgba(136, 84, 24, 0.2)'*/
+
+/*"Red", "Orange", "Yellow", "Green",
+                "WeakBlue", "Blue", "Purple", "Pink",
+                "White", "Grey", "Black", "Camel"*/
+
 
     color: #7BD4CC; /*AQUAPOISE*/
     color: #BEA42E; /*HONEY*/

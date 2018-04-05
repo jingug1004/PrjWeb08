@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$USER_HOME$/bal" vcs="Git" />
+    <mapping directory="$USER_HOME$/sample" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="D:/hana_AtoJ/workspace/hana_groupware" vcs="svn" />
+    <mapping directory="D:/hana_AtoJ/workspace/hana_online" vcs="svn" />
   </component>
 </project>

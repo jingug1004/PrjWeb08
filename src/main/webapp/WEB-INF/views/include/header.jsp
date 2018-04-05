@@ -594,6 +594,65 @@
                         <%--<li><a href="/jqGrid/jqGridList03">jq3</a></li>--%>
                         <!-- jqGrid 헤더 메뉴 -->
 
+                        <!-- 통계 -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
+                               data-toggle="dropdown">
+                                통계
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0);">인기 게시물</a>
+                                    <ul class="dropdown-menu">
+                                        <%--<ul id="cateNum" class="dropdown-menu">--%>
+                                        <li class="active" value="1101"><a href="/sboard/popList" title="<spring:message code="프로필.개요" />">실시간</a></li>
+                                        <li value="1102"><a href="" title="<spring:message code="프로필.생애" />">일간</a></li>
+                                        <li value="1103"><a href="" title="<spring:message code="프로필.약력" />">주간</a></li>
+                                        <li><a href="" title="<spring:message code="프로필.가족관계" />">월간</a></li>
+                                        <%--</ul>--%>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0);">그래프</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="" title="<spring:message code="당선전.당선전공약" />">당선 전 공약</a></li>
+                                        <li><a href="" title="<spring:message code="당선전.공약이행" />">공약 이행</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0);">당선 후</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="" title="<spring:message code="당선후.당선후공약" />">당선 후 공약</a></li>
+                                        <li><a href="" title="<spring:message code="당선후.공약이행" />">공약 이행</a></li>
+                                    </ul>
+                                </li>
+
+                                <%--<li class="dropdown-submenu">--%>
+                                <%--<a href="javascript:void(0);">당선 후</a>--%>
+                                <%--<ul class="dropdown-menu">--%>
+                                <%----%>
+                                <%--</ul>--%>
+                                <%--</li>--%>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0);">사람</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="" title="<spring:message code="사람.청와대" />">청와대</a></li>
+                                        <li><a href="" title="<spring:message code="사람.국회" />">국회</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 통계 -->
+
+                        <!-- jqGrid 헤더 메뉴 -->
+                        <%--<li><a href="/jqGrid/jqGridList">jq</a></li>--%>
+                        <li><a href="/chart/jstest">chart</a></li>
+                        <%--<li><a href="/jqGrid/jqGridList03">jq3</a></li>--%>
+                        <!-- jqGrid 헤더 메뉴 -->
+
                     </ul>
                     <!-- End Nav Menu -->
                 </div>

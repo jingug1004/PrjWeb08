@@ -39,7 +39,7 @@ public interface PointDAO {
     public List<String> userLevelPointGET () throws Exception;                  // 전체 회원의 upoint에 따른 내림차순
 
     /* 유저의 전체, 칼라별 레벨 순번을 가져오기 위한 전체 리스트 */
-    public List<String> userColorPointGET (String uday) throws Exception;                  // 전체 회원의 upoint에 따른 내림차순
+    public List<String> userColorPointGET (String uday) throws Exception;       // 전체 회원의 upoint에 따른 내림차순
 
 
 }

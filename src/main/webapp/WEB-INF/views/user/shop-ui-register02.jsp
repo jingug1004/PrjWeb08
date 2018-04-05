@@ -123,6 +123,8 @@
                                 <%--<option value="0" selected disabled--%>
                                 <option value="0" selected="">정치성향</option>
                                 <%--<option value="1">Male</option>--%>
+                                <option value="자유주의 보수적" <c:if test="남자">selected</c:if>>자유주의 보수적</option>
+                                <option value="권위주의 보수적" <c:if test="남자">selected</c:if>>권위주의 보수적</option>
                                 <option value="매우 보수적" <c:if test="남자">selected</c:if>>매우 보수적</option>
                                 <%--<option value="2" <c:if test="${여자}">selected</c:if>>Female</option>--%>
                                 <%--<option value="2" <c:if test="${"여자"}">selected</c:if>>Female</option>--%>
@@ -130,9 +132,13 @@
                                 <%--바로 위 HTTP Status 500 오류 - "${여자}" contains invalid expression(s):
                                     javax.el.ELException: Failed to parse the expression [${여자}]--%>
                                 <option value="약간 보수적" <c:if test="${reg_gender == 2}">selected</c:if>>약간 보수적</option>
+                                <option value="관심형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>관심형 중도적</option>
                                 <option value="중도적" <c:if test="${reg_gender == 3}">selected</c:if>>중도적</option>
+                                <option value="방임형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>방임형 중도적</option>
                                 <option value="약간 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>약간 진보적</option>
                                 <option value="매우 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>매우 진보적</option>
+                                <option value="권위주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>권위주의 진보적</option>
+                                <option value="자유주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>자유주의 진보적</option>
                             </select>
                         </label>
 

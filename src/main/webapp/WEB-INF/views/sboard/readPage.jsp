@@ -17,6 +17,10 @@
 <script type="text/javascript" src="/resources/js/upload.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> &lt;%&ndash;chart.js 플러그인&ndash;%&gt;--%>
+<%--<script src="/resources/chartjs/Chart.bundle.js" type="text/javascript"></script>--%>
+<%--<script src="/resources/chartjs/Chart.js" type="text/javascript"></script>--%>
+
 
 <!-- Main content -->
 <style type="text/css">
@@ -82,8 +86,13 @@
         opacity: 0;
         pointer-events: none;
     }
-
     /* CSS 이벤트 제어 속성 - pointer-events 출처: http://webclub.tistory.com/331 [Web Club] */
+
+    /*canvas {*/
+        /*-moz-user-select: none;*/
+        /*-webkit-user-select: none;*/
+        /*-ms-user-select: none;*/
+    /*}*/
 
 </style>
 
@@ -168,6 +177,20 @@
                         </script>
 
                     </div>
+
+
+                    <%--<div class="form-group">--%>
+                        <%--<canvas id="myChartLeft" width="400" height="400"></canvas>--%>
+                        <%--<canvas id="myChartRight" width="400" height="400"></canvas>--%>
+                    <%--</div>--%>
+                    <%--<button id="randomizeData">Randomize Data</button>--%>
+                    <%--<button id="addDataset">Add Dataset</button>--%>
+                    <%--<button id="removeDataset">Remove Dataset</button>--%>
+                    <%--<button id="addData">Add Data</button>--%>
+                    <%--<button id="removeData">Remove Data</button>--%>
+
+
+
                     <div class="form-group">
                         <div style="display:inline; float: left; width: 100%;">
                             <div style="display: inline; float: left; width: 19%; margin-right: 1%;">
@@ -714,11 +737,13 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             }
         });
     });
+<%--
 
 </script>
 
 
 <script>
+--%>
 
     //    $('.readgbcnt').val().number(true);
     //    $('.readvcnt').val().number(true);
@@ -883,10 +908,10 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 //            $("#replycntSmall").data.length;
 //        });
 
-        var bno = ${boardVO.bno};
+        var bno02 = ${boardVO.bno};
         var template = Handlebars.compile($("#templateAttach").html());
 
-        $.getJSON("/sboard/getAttach/" + bno, function (list) {
+        $.getJSON("/sboard/getAttach/" + bno02, function (list) {
             $(list).each(function () {
 
                 var fileInfo = getFileInfo(this);
@@ -927,6 +952,9 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             // 화면에 원본 이미지가 보여진 후 다시 한번 사용자가 클릭하면 이미지가 사라지는 효과를 처리.
 
         });
+
+//        var ctx = document.getElementById("chart-area").getContext("2d");
+//        window.myDoughnut = new Chart(ctx, config);
     });
     // end. $(document).ready(function () {
 
@@ -1056,11 +1084,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
     }
 
     function goLogin() {
-
         self.location = "/user/login";
-
     }
-
 </script>
 
 <%@include file="../include/footer.jsp" %>
