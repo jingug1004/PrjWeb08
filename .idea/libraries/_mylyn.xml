@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name=".mylyn">
+    <CLASSES>
+      <root url="jar://D:/hana_AtoJ/workspace/.metadata/.mylyn/.tasks.xml.zip!/" />
+      <root url="jar://D:/hana_AtoJ/workspace/.metadata/.mylyn/tasks.xml.zip!/" />
+      <root url="jar://D:/hana_AtoJ/workspace/.metadata/.mylyn/repositories.xml.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

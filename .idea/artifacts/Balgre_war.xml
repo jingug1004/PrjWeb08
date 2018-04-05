@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Balgre:war">
+    <output-path>$USER_HOME$/IdeaProjects/tna3/TNA3-master/target</output-path>
+    <root id="archive" name="Balgre-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Balgre:war exploded" />
+    </root>
+  </artifact>
+</component>
