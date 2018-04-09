@@ -23,7 +23,7 @@
 - 웹 컨텐트 내용 전부 옮김
 - properties 파일의 config_local.properties와 database_local.properties 수정함
 
-# 
+# 테스트
 
 ### AWS Deploy시 예상 되는 오류
 
