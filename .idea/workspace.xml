@@ -7,7 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="43c63fab-8b5d-4adf-8d4d-5257ee3a297c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Algo/Basic.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/co/common/utils/DBInfoManageUtil.java.mine" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/co/common/utils/DBInfoManageUtil.java.r651" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/co/common/utils/DBInfoManageUtil.java.r699" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/config_dev.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/config_dev26.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/config_local.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/config_real.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/database_dev.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/database_dev26.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/database_local.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/database_real.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/log4j.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web08.iml" afterPath="$PROJECT_DIR$/Web08.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/rebel.xml" afterPath="$PROJECT_DIR$/src/main/resources/rebel.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/modifyPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/modifyPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$USER_HOME$/Desktop/beauty/Balgre/target/" />
@@ -49,7 +69,7 @@
     <favorites_list name="Web08" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5500826">
+    <splitter split-orientation="horizontal" split-proportion="0.5109534">
       <split-first>
         <splitter split-orientation="horizontal" split-proportion="0.49969932">
           <split-first>
@@ -57,8 +77,18 @@
               <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1260">
-                      <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+                    <state relative-caret-position="0">
+                      <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="shop-ui-register02.jsp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="126">
+                      <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -74,12 +104,37 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="list.jsp" pinned="false" current-in-tab="true">
+              <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="252">
-                      <caret line="83" column="21" lean-forward="false" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+                    <state relative-caret-position="759">
+                      <caret line="170" column="47" lean-forward="true" selection-start-line="170" selection-start-column="47" selection-end-line="170" selection-end-column="47" />
+                      <folding>
+                        <element signature="n#style#0;n#th#5;n#tr#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="modifyPage.jsp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/modifyPage.jsp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="2835">
+                      <caret line="278" column="10" lean-forward="false" selection-start-line="278" selection-start-column="10" selection-end-line="278" selection-end-column="10" />
                       <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="readPage.jsp" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="269">
+                      <caret line="134" column="100" lean-forward="true" selection-start-line="134" selection-start-column="100" selection-end-line="134" selection-end-column="100" />
+                      <folding>
+                        <element signature="e#5140#5206#0#HTML" expanded="true" />
+                        <element signature="e#5824#5873#0#HTML" expanded="true" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -91,7 +146,7 @@
               <file leaf-file-name="AmazoneWebServiceUtil.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/util/AmazoneWebServiceUtil.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="700">
+                    <state relative-caret-position="0">
                       <caret line="84" column="31" lean-forward="false" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
                       <folding />
                     </state>
@@ -131,18 +186,8 @@
               <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UploadController.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="196">
-                      <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="Basic.java" pinned="false" current-in-tab="false">
-                <entry file="file://$USER_HOME$/IdeaProjects/Algo/src/Basic.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="602">
-                      <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+                    <state relative-caret-position="392">
+                      <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -151,18 +196,51 @@
               <file leaf-file-name="rebel.xml" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/resources/rebel.xml">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="378">
-                      <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                    <state relative-caret-position="294">
+                      <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                      <folding>
+                        <marker date="1523321735891" expanded="true" signature="377:763" ph="..." />
+                        <marker date="1523321735891" expanded="true" signature="742:747" ph="..." />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="shop.style.css" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="39130">
+                      <caret line="2795" column="27" lean-forward="false" selection-start-line="2795" selection-start-column="27" selection-end-line="2795" selection-end-column="27" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="shop.style.css" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
+              <file leaf-file-name="shop-ui-register02.jsp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="546">
-                      <caret line="2794" column="25" lean-forward="false" selection-start-line="2794" selection-start-column="25" selection-end-line="2794" selection-end-column="25" />
+                    <state relative-caret-position="364">
+                      <caret line="386" column="54" lean-forward="true" selection-start-line="386" selection-start-column="54" selection-end-line="386" selection-end-column="54" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="BoardVO.java" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="476">
+                      <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="UserVO.java" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/UserVO.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="602">
+                      <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
                       <folding />
                     </state>
                   </provider>
@@ -179,7 +257,7 @@
               <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
                 <entry file="file://$USER_HOME$/IdeaProjects/tna3/TNA3-master/src/main/java/net/balgre/config/WebConfig.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="714">
+                    <state relative-caret-position="434">
                       <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
                       <folding>
                         <element signature="imports" expanded="true" />
@@ -188,12 +266,30 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="register.jsp" pinned="false" current-in-tab="true">
+              <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="570">
-                      <caret line="251" column="5" lean-forward="false" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
+                    <state relative-caret-position="686">
+                      <caret line="52" column="61" lean-forward="true" selection-start-line="52" selection-start-column="61" selection-end-line="52" selection-end-column="61" />
                       <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="tbl_user" pinned="false" current-in-tab="false">
+                <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_user">
+                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                    <state>
+                      <filtering enabled="true" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="tbl_board" pinned="false" current-in-tab="true">
+                <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_board">
+                  <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                    <state>
+                      <filtering enabled="true" />
                     </state>
                   </provider>
                 </entry>
@@ -202,11 +298,11 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="upload.js" pinned="false" current-in-tab="false">
+              <file leaf-file-name="upload.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/upload.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="546">
-                      <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                      <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -215,19 +311,19 @@
               <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/pom.xml">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="3570">
-                      <caret line="255" column="0" lean-forward="false" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
+                    <state relative-caret-position="348">
+                      <caret line="285" column="20" lean-forward="true" selection-start-line="285" selection-start-column="20" selection-end-line="285" selection-end-column="20" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+              <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/README.md">
                   <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                     <state split_layout="SPLIT">
-                      <first_editor relative-caret-position="350">
-                        <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+                      <first_editor relative-caret-position="490">
+                        <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
                         <folding />
                       </first_editor>
                       <second_editor />
@@ -251,18 +347,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>btn-upload</find>
-      <find>file</find>
-      <find>dragenter</find>
-      <find>dragover</find>
-      <find>drop</find>
-      <find>fileDrop</find>
-      <find>fileNum</find>
-      <find>changeValue</find>
-      <find>fileselect</find>
-      <find>var formData = new FormData</find>
-      <find>docu</find>
-      <find>.close</find>
       <find>window.close</find>
       <find>.ready</find>
       <find>uploadajax</find>
@@ -281,6 +365,18 @@
       <find>breadcrumb-v3-in</find>
       <find>breadcrumbs-v4</find>
       <find>breadcrumb-v4-in</find>
+      <find>common</find>
+      <find>idCreate</find>
+      <find>javascript:</find>
+      <find>uid</find>
+      <find>required</find>
+      <find>&lt;input</find>
+      <find>email</find>
+      <find>닉네</find>
+      <find>Writer</find>
+      <find>수정</find>
+      <find>Level</find>
+      <find>updip</find>
     </findStrings>
     <replaceStrings>
       <replace>assets/</replace>
@@ -301,7 +397,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/zerock/util/MarshallerUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/message/htmlHeaderProfile.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/message/htmlheaderprofile.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserDAOImpl.java" />
@@ -322,13 +417,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/controller/JqGridController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/controller/ChartJSController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chart/jstest.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/jqGrid/jqGridList02.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-modify.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/persistence/PointDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/pages/log-reg-v3.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pop/popList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java" />
@@ -344,14 +437,17 @@
         <option value="$USER_HOME$/sample/www/build/main.js" />
         <option value="$USER_HOME$/sample/src/app/app.component.ts" />
         <option value="$USER_HOME$/sample/src/pages/login/login.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/modifyPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp" />
         <option value="$USER_HOME$/IdeaProjects/Algo/src/Basic.java" />
         <option value="$PROJECT_DIR$/src/main/resources/rebel.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp" />
       </list>
     </option>
   </component>
@@ -402,10 +498,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2059" />
+    <option name="x" value="-2155" />
     <option name="y" value="-1049" />
-    <option name="width" value="3607" />
-    <option name="height" value="1096" />
+    <option name="width" value="3842" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -522,7 +618,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Web08" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Algo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web08" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Algo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web08" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scratches">
         <subPane>
           <expand>
@@ -539,24 +657,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Web08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Web08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -566,8 +666,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="main.js&#9;FILE&#9;file://C:/Users/Emiya/sample/www/build/main.js&#10;errorpage&#9;FILE&#9;jar://C:/Users/Emiya/.m2/repository/org/springframework/boot/spring-boot/1.4.0.RELEASE/spring-boot-1.4.0.RELEASE.jar!/org/springframework/boot/web/servlet/ErrorPage.class&#10;mainfor&#9;FILE&#9;file://D:/hana_AtoJ/workspace/hana_online/WebContent/WEB-INF/jsps/main/mainForEmployee.jsp&#10;header.jsp&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;searchB&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;searchBo&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;marsh&#9;PSI&#9;JAVA://org.zerock.util.MarshallerUtil&#10;header&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;readme&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/README.md&#10;pom.xml&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/pom.xml&#10;servl&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;servletCo&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;userService&#9;PSI&#9;JAVA://org.zerock.service.UserService&#10;read.jsp&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/board/read.jsp&#10;readPage&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/board/readPage.jsp&#10;header.js&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;userdaoim&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/persistence/UserDAOImpl.java&#10;uservo&#9;PSI&#9;JAVA://org.zerock.domain.UserVO&#10;usermapper.&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/resources/mappers/userMapper.xml&#10;boardDaoimp&#9;PSI&#9;JAVA://org.zerock.persistence.BoardDAOImpl&#10;searchbo&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;boardServi&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;boardMapp&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/resources/mappers/boardMapper.xml&#10;regist&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/sboard/register.jsp&#10;bootstrap.min.css&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/assets/plugins/bootstrap/css/bootstrap.min.css&#10;shop.sty&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/assets/css/shop.style.css&#10;uploadCon&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/controller/UploadController.java&#10;replyServi&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/java/org/zerock/service/ReplyServiceImpl.java&#10;uploadC&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/java/org/zerock/controller/UploadController.java&#10;servlet&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;replyDaoim&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAOImpl.java&#10;userColorDa&#9;null&#9;null&#10;replyDao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAO.java&#10;boarddao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/BoardDAO.java&#10;replydao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAO.java&#10;boardServic&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;readpage&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/readPage.jsp&#10;replyV&#9;PSI&#9;JAVA://org.zerock.domain.ReplyVO&#10;user&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/domain/UserVO.java&#10;register.jsp&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/register.jsp&#10;boardVO&#9;PSI&#9;JAVA://org.zerock.domain.BoardVO&#10;userDA&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/persistence/UserDAO.java&#10;boardService&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/service/BoardService.java&#10;boardDAO&#9;PSI&#9;JAVA://org.zerock.persistence.BoardDAO&#10;boardserviceimp&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;userVO&#9;PSI&#9;JAVA://org.zerock.domain.UserVO&#10;shop&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/webapp/WEB-INF/views/user/shop-ui-login.jsp&#10;userCont&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/controller/UserController.java&#10;readPa&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/readPage.jsp&#10;pointUtils&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/util/PointUtils.java" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="SearchEverywhereHistoryKey" value="uservo&#9;PSI&#9;JAVA://org.zerock.domain.UserVO&#10;BoardVO&#9;PSI&#9;JAVA://org.zerock.domain.BoardVO&#10;main.js&#9;FILE&#9;file://C:/Users/Emiya/sample/www/build/main.js&#10;errorpage&#9;FILE&#9;jar://C:/Users/Emiya/.m2/repository/org/springframework/boot/spring-boot/1.4.0.RELEASE/spring-boot-1.4.0.RELEASE.jar!/org/springframework/boot/web/servlet/ErrorPage.class&#10;mainfor&#9;FILE&#9;file://D:/hana_AtoJ/workspace/hana_online/WebContent/WEB-INF/jsps/main/mainForEmployee.jsp&#10;header.jsp&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;searchB&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;searchBo&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;marsh&#9;PSI&#9;JAVA://org.zerock.util.MarshallerUtil&#10;header&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;readme&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/README.md&#10;pom.xml&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/pom.xml&#10;servl&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;servletCo&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;userService&#9;PSI&#9;JAVA://org.zerock.service.UserService&#10;read.jsp&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/board/read.jsp&#10;readPage&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/board/readPage.jsp&#10;header.js&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;userdaoim&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/persistence/UserDAOImpl.java&#10;usermapper.&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/resources/mappers/userMapper.xml&#10;boardDaoimp&#9;PSI&#9;JAVA://org.zerock.persistence.BoardDAOImpl&#10;searchbo&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;boardServi&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;boardMapp&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/resources/mappers/boardMapper.xml&#10;regist&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/sboard/register.jsp&#10;bootstrap.min.css&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/assets/plugins/bootstrap/css/bootstrap.min.css&#10;shop.sty&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/assets/css/shop.style.css&#10;uploadCon&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/controller/UploadController.java&#10;replyServi&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/java/org/zerock/service/ReplyServiceImpl.java&#10;uploadC&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/java/org/zerock/controller/UploadController.java&#10;servlet&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;replyDaoim&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAOImpl.java&#10;userColorDa&#9;null&#9;null&#10;replyDao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAO.java&#10;boarddao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/BoardDAO.java&#10;replydao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAO.java&#10;boardServic&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;readpage&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/readPage.jsp&#10;replyV&#9;PSI&#9;JAVA://org.zerock.domain.ReplyVO&#10;user&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/domain/UserVO.java&#10;register.jsp&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/register.jsp&#10;boardVO&#9;PSI&#9;JAVA://org.zerock.domain.BoardVO&#10;userDA&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/persistence/UserDAO.java&#10;boardService&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/service/BoardService.java&#10;boardDAO&#9;PSI&#9;JAVA://org.zerock.persistence.BoardDAO&#10;boardserviceimp&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;userVO&#9;PSI&#9;JAVA://org.zerock.domain.UserVO&#10;shop&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/webapp/WEB-INF/views/user/shop-ui-login.jsp&#10;userCont&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/controller/UserController.java&#10;readPa&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/readPage.jsp" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle&#10;MySQL" />
   </component>
@@ -1620,7 +1720,8 @@
       <workItem from="1522973529376" duration="13226000" />
       <workItem from="1523098289917" duration="8644000" />
       <workItem from="1523111281033" duration="2597000" />
-      <workItem from="1523266459630" duration="121000" />
+      <workItem from="1523266459630" duration="4372000" />
+      <workItem from="1523318723500" duration="22228000" />
     </task>
     <task id="LOCAL-00001" summary="170601 New Generation">
       <created>1496919698439</created>
@@ -1783,11 +1884,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523266567027</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="180409 18:35 (월)">
+      <created>1523266589859</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1523266589859</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="650160000" />
+    <option name="totallyTimeSpent" value="676639000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1799,111 +1907,60 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2059" y="-1049" width="3607" height="1096" extended-state="0" />
+    <frame x="-2155" y="-1049" width="3842" height="1036" extended-state="0" />
     <layout>
-      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08232309" sideWeight="0.2652068" order="16" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08011634" sideWeight="0.27845305" order="17" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.4978701" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15252525" sideWeight="0.5063898" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05272061" sideWeight="0.47445256" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.20808081" sideWeight="0.49574015" order="15" side_tool="false" content_ui="tabs" x="76" y="-748" width="1358" height="607" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15027624" sideWeight="0.5253834" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05272061" sideWeight="0.47445256" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.20808081" sideWeight="0.49574015" order="15" side_tool="false" content_ui="tabs" x="10" y="372" width="1358" height="333" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08232309" sideWeight="0.7347932" order="5" side_tool="false" content_ui="tabs" x="1639" y="347" width="408" height="575" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08232309" sideWeight="0.23108809" order="15" side_tool="true" content_ui="tabs" x="-201" y="-550" width="74" height="36" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08011634" sideWeight="0.72154695" order="6" side_tool="false" content_ui="tabs" x="1639" y="347" width="408" height="575" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08232309" sideWeight="0.23108809" order="16" side_tool="true" content_ui="tabs" x="-201" y="-550" width="74" height="36" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23737374" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18563536" sideWeight="0.5005288" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16262627" sideWeight="0.49361023" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" x="7" y="-826" width="1339" height="525" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14818653" sideWeight="0.47870076" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15027624" sideWeight="0.47461662" order="9" side_tool="false" content_ui="tabs" x="-2030" y="-599" width="1799" height="534" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13897938" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17098446" sideWeight="0.49361023" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06484353" sideWeight="0.49513382" order="0" side_tool="false" content_ui="combo" x="1681" y="236" width="292" height="602" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06292967" sideWeight="0.49060774" order="0" side_tool="false" content_ui="combo" x="1681" y="236" width="292" height="602" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06484353" sideWeight="0.5048662" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06292967" sideWeight="0.50939226" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2247557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Key Promoter" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1865285" sideWeight="0.48296058" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="-1291" y="-620" width="407" height="159" />
+      <window_info id="Key Promoter" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="-1291" y="-620" width="407" height="159" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Key Promoter X" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08143139" sideWeight="0.48704663" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31798714" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2247557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.4978701" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.25700536" sideWeight="0.78101075" order="5" side_tool="false" content_ui="tabs" x="1639" y="347" width="408" height="575" />
-      <window_info id="Key Promoter" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18736617" sideWeight="0.48296058" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16262627" sideWeight="0.49361023" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="-23" y="1150" width="1720" height="880" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1482684" sideWeight="0.47870076" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13939394" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.08396369" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1681" y="236" width="292" height="602" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25700536" sideWeight="0.21898928" order="15" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15252525" sideWeight="0.5063898" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.095882684" sideWeight="0.4954751" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.20808081" sideWeight="0.49574015" order="15" side_tool="false" content_ui="tabs" x="-1680" y="99" width="1341" height="574" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.24985899" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="1576" y="377" width="264" height="391" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23737374" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" x="-1499" y="259" width="1385" height="624" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15252525" sideWeight="0.49361023" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31798714" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -2016,48 +2073,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.4.0.RELEASE/spring-boot-1.4.0.RELEASE.jar!/org/springframework/boot/context/embedded/EmbeddedServletContainerCustomizer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.4.0.RELEASE/spring-boot-autoconfigure-1.4.0.RELEASE.jar!/org/springframework/boot/autoconfigure/web/DispatcherServletAutoConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.2.RELEASE/spring-webmvc-4.3.2.RELEASE.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/IdeaProjects/tna3/TNA3-master/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.4.0.RELEASE/spring-boot-1.4.0.RELEASE.jar!/org/springframework/boot/web/servlet/ErrorPage.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/IdeaProjects/tna3/TNA3-master/src/main/java/net/balgre/BalgreConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/IdeaProjects/tna3/TNA3-master/src/main/resources/templates/oauth.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -2165,20 +2180,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/961d8199/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.app_event">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/961d8199/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.app_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/961d8199/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.app_event" />
+    <entry file="das://table:/961d8199/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.app_user" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -2194,18 +2197,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="980" column="18" lean-forward="true" selection-start-line="980" selection-start-column="18" selection-end-line="980" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/s3uploadAjax.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="158" column="35" lean-forward="true" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2213,6 +2209,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2220,6 +2217,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2227,6 +2225,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="753">
           <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2237,17 +2236,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/IdeaProjects/tna3/TNA3-master/src/main/java/net/balgre/config/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
+        <state relative-caret-position="434">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2257,16 +2248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/util/AmazoneWebServiceUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
+        <state relative-caret-position="0">
           <caret line="84" column="31" lean-forward="false" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/upload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2303,62 +2286,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/IdeaProjects/Algo/src/Basic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/rebel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3570">
-          <caret line="255" column="0" lean-forward="false" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="2794" column="25" lean-forward="false" selection-start-line="2794" selection-start-column="25" selection-end-line="2794" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="350">
-            <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <first_editor relative-caret-position="490">
+            <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assets/css/shop.style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39130">
+          <caret line="2795" column="27" lean-forward="false" selection-start-line="2795" selection-start-column="27" selection-end-line="2795" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/IdeaProjects/Algo/src/Basic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/rebel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1523321735891" expanded="true" signature="377:763" ph="..." />
+            <marker date="1523321735891" expanded="true" signature="742:747" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/modifyPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2835">
+          <caret line="278" column="10" lean-forward="false" selection-start-line="278" selection-start-column="10" selection-end-line="278" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="285" column="20" lean-forward="true" selection-start-line="285" selection-start-column="20" selection-end-line="285" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="83" column="21" lean-forward="false" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+        <state relative-caret-position="759">
+          <caret line="170" column="47" lean-forward="true" selection-start-line="170" selection-start-column="47" selection-end-line="170" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#th#5;n#tr#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/shop-ui-register02.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_board">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/UserVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="134" column="100" lean-forward="true" selection-start-line="134" selection-start-column="100" selection-end-line="134" selection-end-column="100" />
+          <folding>
+            <element signature="e#5140#5206#0#HTML" expanded="true" />
+            <element signature="e#5824#5873#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

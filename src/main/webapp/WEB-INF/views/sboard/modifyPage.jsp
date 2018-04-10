@@ -62,13 +62,13 @@
                             <%--@declare id="exampleinputpassword1"--%>
                             <label for="exampleInputPassword1">Content</label>
                             <%--<textarea class="form-control" name="content" rows="20">${boardVO.content}</textarea>--%>
-                                <textarea name="content" class="form-control" rows="50">
-                                    ${boardVO.content}</textarea>
-                                <script>
-                                    CKEDITOR.replace( 'content' );
-                                    CKEDITOR.config.height = 450;
-                                    CKEDITOR.config.width = 'auto';
-                                </script>
+                            <textarea name="content" class="form-control" rows="50">
+                                ${boardVO.content}</textarea>
+                            <script>
+                                CKEDITOR.replace( 'content' );
+                                CKEDITOR.config.height = 450;
+                                CKEDITOR.config.width = 'auto';
+                            </script>
                         </div>
 
                         <div class="form-group">

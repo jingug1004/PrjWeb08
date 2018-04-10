@@ -89,9 +89,9 @@
     /* CSS 이벤트 제어 속성 - pointer-events 출처: http://webclub.tistory.com/331 [Web Club] */
 
     /*canvas {*/
-        /*-moz-user-select: none;*/
-        /*-webkit-user-select: none;*/
-        /*-ms-user-select: none;*/
+    /*-moz-user-select: none;*/
+    /*-webkit-user-select: none;*/
+    /*-ms-user-select: none;*/
     /*}*/
 
 </style>
@@ -180,8 +180,8 @@
 
 
                     <%--<div class="form-group">--%>
-                        <%--<canvas id="myChartLeft" width="400" height="400"></canvas>--%>
-                        <%--<canvas id="myChartRight" width="400" height="400"></canvas>--%>
+                    <%--<canvas id="myChartLeft" width="400" height="400"></canvas>--%>
+                    <%--<canvas id="myChartRight" width="400" height="400"></canvas>--%>
                     <%--</div>--%>
                     <%--<button id="randomizeData">Randomize Data</button>--%>
                     <%--<button id="addDataset">Add Dataset</button>--%>
@@ -210,7 +210,7 @@
                             <div style="display: inline; float: left; width: 15%; margin-right: 1%;">
                                 <label for="exampleInputEmail1">
                                     <img src="/assets/img/colors/modify_U.png" class="getColor" alt="">
-                                    Level</label>
+                                    Unify Total Level</label>
                                 <input type="text" name="utotallevel" class="form-control"
                                        value="Lv.${boardVO.utotallevel}" readonly="readonly">
                             </div>
@@ -737,13 +737,13 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             }
         });
     });
-<%--
+    <%--
 
-</script>
+    </script>
 
 
-<script>
---%>
+    <script>
+    --%>
 
     //    $('.readgbcnt').val().number(true);
     //    $('.readvcnt').val().number(true);
@@ -859,8 +859,8 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         // 현재 첨부파일의 이름을 배열로 작성해서 UploadController에 Ajax 방식으로 첨부파일에 대한 삭제를 지시.
         // 첨부파일 삭제 이후에 바로 <form> 태그를 이용해서 데이터베이스의 삭제를 처리할 것이므로, 성공이나 실패를 기다리지 않고, 바로 '/sboard/removePage'를 호출하는 형태로 작성.
 
-        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn01">목록</button>';
-        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn btn-primary" id="goListBtn02">목록</button>';
+        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn01">목록</button>';
+        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn02">목록</button>';
 
         function validMenuInReadPage() {
             if (getUrlParams().cate) {

@@ -71,7 +71,8 @@
 
                         <input type="text" name='keyword' id="keywordInputCate" value='${cri.keyword}'>
                             <%--<button id='newBtn'>글 쓰기0</button>--%>
-                        <button id='searchBtn01' class="btn btn-primary">검색</button>
+                            <%--<button id='searchBtn01' class="btn btn-primary">검색</button>--%>
+                        <button id='searchBtn01' class="btn">검색</button>
                     </div>
                 </div>
             </c:if>
@@ -81,6 +82,20 @@
                     <%--<h3 class="box-title">LIST</h3>--%>
                     <h3 class="box-title"></h3>
                 </div>
+
+                <div class="breadcrumbs-v5">
+                    <div class="container">
+                        <ul class="breadcrumb-v5">
+                            <%--<li><a href="/sort/realPopular">실시간 인기</a></li>--%>
+                            <li><a id="realPopular">실시간 인기</a></li>
+                            <li><a href="/blog/daily/visit">일간 인기</a></li>
+                            <li><a href="/blog/daily/rankCv">주간 인기</a></li>
+                            <li><a href="/blog/daily/referer">월간 인기</a></li>
+                            <li><a href="/blog/daily/demo">공지사항</a></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="box-body">
                     <table class="table table-bordered">
                         <tr>
@@ -89,7 +104,7 @@
                             <th style="width: 40px; text-align: center;" id="goodSort">Good</th>
                             <th style="width: 40px; text-align: center;" id="gbSort">G/B</th>
                             <th style="width: 40px;  text-align: center;" id="badSort">Bad</th>
-                            <th style="width: 120px; text-align: center;">WRITER</th>
+                            <th style="width: 240px; text-align: center;">WRITER</th>
                             <th style="width: 100px; text-align: center;">REGDATE</th>
                             <th style="width: 40px; text-align: center;" id="spamSort">Spam</th>
                             <th style="width: 40px; text-align: center;" id="viewSort">VIEW</th>
@@ -116,10 +131,10 @@
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPa${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
-                                        ${boardVO.title}
-                                            <c:if test="${boardVO.replycnt > 0}">
-                                                <strong>[ ${boardVO.replycnt} ]</strong>
-                                            </c:if>
+                                            ${boardVO.title}
+                                        <c:if test="${boardVO.replycnt > 0}">
+                                            <strong>[ ${boardVO.replycnt} ]</strong>
+                                        </c:if>
                                     </a>
                                 </td>
                                 <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
@@ -128,11 +143,11 @@
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
                                 <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
                                 </td>
-                                <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
-                                        <%--${boardVO.getcolor} // ${boardVO.writer}--%>
-                                <%--</td>--%>
+                                    <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
+                                    <%--${boardVO.getcolor} // ${boardVO.writer}--%>
+                                    <%--</td>--%>
                                 <td align="left" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
-                                    ${boardVO.writer}
+                                        ${boardVO.writer}
                                     <input type="hidden" id="bringBoardVOgetId" value=${boardVO.writer}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
                                 </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
@@ -150,10 +165,10 @@
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
-                                        ${boardVO.title}
-                                            <c:if test="${boardVO.replycnt > 0}">
-                                                <strong>[ ${boardVO.replycnt} ]</strong>
-                                            </c:if>
+                                            ${boardVO.title}
+                                        <c:if test="${boardVO.replycnt > 0}">
+                                            <strong>[ ${boardVO.replycnt} ]</strong>
+                                        </c:if>
                                     </a>
                                 </td>
                                 <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
@@ -163,7 +178,7 @@
                                 <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
                                 </td>
                                 <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
-                                    ${boardVO.writer}
+                                        ${boardVO.writer}
                                 </td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
@@ -179,7 +194,8 @@
                 <!-- /.box-body -->
 
                 <div>
-                    <button id='newBtn' class="btn btn-primary pull-right">글 쓰기</button>
+                    <%--<button id='newBtn' class="btn btn-primary pull-right">글 쓰기</button>--%>
+                    <button id='newBtn' class="btn pull-right">글 쓰기</button>
                 </div>
 
                 <div class="box-footer">
@@ -248,11 +264,11 @@
 
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
 <%--<script>--%>
-    <%--var result = '${msg}';--%>
+<%--var result = '${msg}';--%>
 
-    <%--if (result == 'SUCCESS') {--%>
-        <%--alert("처리가 완료되었습니다.");--%>
-    <%--}--%>
+<%--if (result == 'SUCCESS') {--%>
+<%--alert("처리가 완료되었습니다.");--%>
+<%--}--%>
 <%--</script>--%>
 
 <%--<script src="http://code.jquery.com/jquery-latest.js"></script>--%>
@@ -333,6 +349,19 @@
             }
         });
 
+        $('#realPopular').on("click", function (event) {
+            alert("oParams.cate : " + oParams.cate);
+//            $.ajax({
+//                type: 'post',
+//                url: '/sort/realPopular',
+//                data :
+//
+//
+//
+//            });
+
+        });
+
         $('#gbSort').on("click", function (event) {
 
             var criUrlParam = "&cntSortType=gbc";
@@ -404,23 +433,23 @@
 //        $('.getColor').prop("src", temp);
 
         <%--$("#getColor").each(function (itr) {--%>
-            <%--&lt;%&ndash;$(this).after($m[${list}]);&ndash;%&gt;--%>
-            <%--console.log("lllll~~~~~ {itr} : " + itr.length);--%>
+        <%--&lt;%&ndash;$(this).after($m[${list}]);&ndash;%&gt;--%>
+        <%--console.log("lllll~~~~~ {itr} : " + itr.length);--%>
 
-            <%--var number = $('#bringBoardVOgetcolor').val();--%>
+        <%--var number = $('#bringBoardVOgetcolor').val();--%>
 
-            <%--console.log("lllll~~~~~ number : " + number);--%>
+        <%--console.log("lllll~~~~~ number : " + number);--%>
 
-            <%--var tempUrl01 = "/assets/img/colors/";--%>
-            <%--var tempUrl02 = pad(number, 3);--%>
-            <%--var tempUrl03 = ".png";--%>
+        <%--var tempUrl01 = "/assets/img/colors/";--%>
+        <%--var tempUrl02 = pad(number, 3);--%>
+        <%--var tempUrl03 = ".png";--%>
 
-            <%--var tempUrl = "";--%>
-            <%--var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);--%>
+        <%--var tempUrl = "";--%>
+        <%--var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);--%>
 
-            <%--console.log("lllll~~~~~ temp : " + temp);--%>
+        <%--console.log("lllll~~~~~ temp : " + temp);--%>
 
-            <%--$('.getColor')[itr.current()].prop("src", temp);--%>
+        <%--$('.getColor')[itr.current()].prop("src", temp);--%>
         <%--});--%>
         <%--&lt;%&ndash;$(".reptilia").remove();&ndash;%&gt;--%>
 
@@ -432,8 +461,8 @@
         /* 게시판 리스트에서 유저 별명을 클릭했을 때 */
         $('.idDetail').on("click", function (event) {
             event.stopPropagation();  // 이벤트버블링 방지
-            alert("메롱! 06 : " + $('#bringBoardVOgetId').val());
-            console.log("메롱! 06 : " + $('#bringBoardVOgetId').val());
+            alert("나중에 구현합시다 180408! 06 : " + $('#bringBoardVOgetId').val());
+            console.log("나중에 구현합시다 180408 06 : " + $('#bringBoardVOgetId').val());
             <%--alert("메롱! 07 : " + ${boardVO.id});--%>
             <%--console.log("메롱! 07 : " + $${boardVO.id});--%>
             event.stopPropagation();  // 이벤트버블링 방지

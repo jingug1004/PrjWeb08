@@ -92,7 +92,8 @@
 
             <div class="col-md-5">
                 <%--<form id="sky-form4" class="log-reg-block sky-form">--%>
-                <form id="sky-form4" class="log-reg-block sky-form" action="/user/registPost" method="post">
+                <form id="sky-form4" class="log-reg-block sky-form" role="form">
+                    <%--<form id="sky-form4" class="log-reg-block sky-form" action="/user/registPost" method="post" role="form">--%>
                     <%--<form id="sky-form4" class="log-reg-block sky-form" action="/user/shop-ui-register03" method="post">--%>
                     <h2>Create New Account</h2>
 
@@ -101,17 +102,17 @@
                             <div class="col-sm-6">
                                 <section>
                                     <label class="input">
-                                        <input type="text" name="uid" placeholder="USER ID"
-                                               class="form-control">
-                                        <form:errors path="uid" cssClass="error"/>
+                                        <input id="uid" type="text" name="uid" placeholder="USER ID"
+                                               class="form-control" title="ID" pattern="[a-zA-z].+[0-9]">
+                                        <%--<form:errors path="uid" cssClass="error"/>--%>
                                     </label>
                                 </section>
                             </div>
                             <div class="col-sm-6">
                                 <section>
                                     <label class="input">
-                                        <input type="text" name="uname" placeholder="Like Politician ex)문재인"
-                                               class="form-control">
+                                        <input type="text" id="uname" name="uname" placeholder="존경하는 정치인 ex)문재인"
+                                               class="form-control" title="존경하는 정치인">
                                         <form:errors path="uname" cssClass="error"/>
                                         <%--messages.properties 안에 경로 레벨과 같아야 함!--%>
                                     </label>
@@ -119,26 +120,26 @@
                             </div>
                         </div>
                         <label class="select margin-bottom-15">
-                            <select name="ugender" class="form-control">
+                            <select id="ugender" name="ugender" class="form-control">
                                 <%--<option value="0" selected disabled--%>
-                                <option value="0" selected="">정치성향</option>
+                                <option value="" selected="">정치성향</option>
                                 <%--<option value="1">Male</option>--%>
-                                <option value="자유주의 보수적" <c:if test="남자">selected</c:if>>자유주의 보수적</option>
-                                <option value="권위주의 보수적" <c:if test="남자">selected</c:if>>권위주의 보수적</option>
-                                <option value="매우 보수적" <c:if test="남자">selected</c:if>>매우 보수적</option>
+                                <option value="A1 자유주의 보수적" <c:if test="남자">selected</c:if>>A1 자유주의 보수적</option>
+                                <option value="B1 권위주의 보수적" <c:if test="남자">selected</c:if>>B1 권위주의 보수적</option>
+                                <option value="C1 매우 보수적" <c:if test="남자">selected</c:if>>C1 매우 보수적</option>
                                 <%--<option value="2" <c:if test="${여자}">selected</c:if>>Female</option>--%>
                                 <%--<option value="2" <c:if test="${"여자"}">selected</c:if>>Female</option>--%>
                                 <%--<option value="여자" <c:if test="${reg_gender == 2}">selected</c:if>>Female</option>--%>
                                 <%--바로 위 HTTP Status 500 오류 - "${여자}" contains invalid expression(s):
                                     javax.el.ELException: Failed to parse the expression [${여자}]--%>
-                                <option value="약간 보수적" <c:if test="${reg_gender == 2}">selected</c:if>>약간 보수적</option>
-                                <option value="관심형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>관심형 중도적</option>
-                                <option value="중도적" <c:if test="${reg_gender == 3}">selected</c:if>>중도적</option>
-                                <option value="방임형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>방임형 중도적</option>
-                                <option value="약간 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>약간 진보적</option>
-                                <option value="매우 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>매우 진보적</option>
-                                <option value="권위주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>권위주의 진보적</option>
-                                <option value="자유주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>자유주의 진보적</option>
+                                <option value="D1 약간 보수적" <c:if test="${reg_gender == 2}">selected</c:if>>D1 약간 보수적</option>
+                                <option value="X0 관심형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>X0 관심형 중도적</option>
+                                <option value="Y0 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>Y0 중도적</option>
+                                <option value="Z0 방임형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>Z0 방임형 중도적</option>
+                                <option value="D2 약간 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>D2 약간 진보적</option>
+                                <option value="C2 매우 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>C2 매우 진보적</option>
+                                <option value="B2 권위주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>B2 권위주의 진보적</option>
+                                <option value="A2 자유주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>A2 자유주의 진보적</option>
                             </select>
                         </label>
 
@@ -224,84 +225,36 @@
                                 </div>
                             </div>
                         </div><!--/end panel group-->
-                        <%--
-                        <div class="row margin-bottom-10">
-                            </label>
-                            <div class="col-xs-6">
-                                <label class="select">
-                                    <select name="umonth" class="form-control">
-                                        <option selected="" value="0">Month</option>
-                                        &lt;%&ndash;<option>January</option>&ndash;%&gt;
-                                        <option value="01" &lt;%&ndash;<c:if test="${reg_month == 1}">selected</c:if>&ndash;%&gt;>January
-                                        </option>
-                                        <option value="02" <c:if test="${reg_month == 2}">selected</c:if>>February
-                                        </option>
-                                        <option value="03" &lt;%&ndash;<c:if test="${reg_month == 3}">selected</c:if>&ndash;%&gt;>March</option>
-                                        <option value="04" <c:if test="${reg_month == 4}">selected</c:if>>April</option>
-                                        <option value="05" <c:if test="${reg_month == 5}">selected</c:if>>May</option>
-                                        <option value="06" <c:if test="${reg_month == 6}">selected</c:if>>June</option>
-                                        <option value="07" <c:if test="${reg_month == 7}">selected</c:if>>July</option>
-                                        <option value="08" <c:if test="${reg_month == 8}">selected</c:if>>August</option>
-                                        <option value="09" <c:if test="${reg_month == 9}">selected</c:if>>September
-                                        </option>
-                                        &lt;%&ndash;org.springframework.validation.BeanPropertyBindingResult:
-                                        1 errors Field error in object 'userVO' on field 'umonth':
-                                        rejected value [10월]; codes [typeMismatch.userVO.umonth,typeMismatch.umonth,
-                                        typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.
-                                        DefaultMessageSourceResolvable: codes [userVO.umonth,umonth]; arguments [];
-                                        default message [umonth]]; default message [Failed to convert property value of type
-                                        [java.lang.String] to required type [int] for property 'umonth';
-                                        nested exception is java.lang.NumberFormatException: For input string: "10월"]&ndash;%&gt;
-                                        &lt;%&ndash;<option value="10월">October</option>&ndash;%&gt;
-                                        <option value="10" <c:if test="${reg_month == 10}">selected</c:if>>October
-                                            &lt;%&ndash;<option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November&ndash;%&gt;
-                                        <option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November
-                                        </option>
-                                        &lt;%&ndash;HTTP Status 500 오류 - "${reg_month == 12월}" contains invalid expression(s):
-                                        javax.el.ELException: Failed to parse the expression [${reg_month == 12월}]&ndash;%&gt;
-                                        &lt;%&ndash;<option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December&ndash;%&gt;
-                                        <option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December
-                                        </option>
-                                    </select>
-                                </label>
-                            </div>
-                            <div class="col-xs-3">
-                                <input type="text" name="uday" placeholder="Day" class="form-control" maxlength="2">
-                            </div>
-                            <div class="col-xs-3">
-                                <input type="text" name="uyear" placeholder="Year" class="form-control" maxlength="4">
-                            </div>
-                        </div>
-                        --%>
-                        <%-- fixme: 비밀번호 중복 검증  --%>
                         <section>
                             <label class="input">
-                                <input type="text" name="nickname" placeholder="Nickname" class="form-control">
+                                <input type="text" id="nickname" name="nickname" placeholder="Nickname" class="form-control"
+                                       title="닉네임">
                                 <form:errors path="nickname" cssClass="error"/>
                             </label>
                         </section>
                         <section>
                             <label class="input">
-                                <input type="email" name="email" placeholder="Email address" class="form-control">
+                                <input type="email" id="email" name="email" placeholder="Email address" class="form-control"
+                                       title="이메일">
                                 <form:errors path="email" cssClass="error"/>
                             </label>
                         </section>
                         <section>
                             <label class="input">
-                                <input type="password" name="upw" placeholder="Password" id="password"
-                                       class="form-control">
+                                <input type="password" id="upw" name="upw" placeholder="Password" id="password"
+                                       class="form-control" title="비밀번호">
                                 <form:errors path="upw" cssClass="error"/>
                             </label>
                         </section>
                         <section>
                             <label class="input">
-                                <input type="password" name="upwconfirm" placeholder="Confirm password"
-                                       class="form-control">
+                                <input type="password" id="upwconfirm" name="upwconfirm" placeholder="Confirm password"
+                                       class="form-control" title="비밀번호 확인">
                                 <form:errors path="upwconfirm" cssClass="error"/>
                             </label>
                         </section>
                     </div>
-
+                </form>
                     <label class="checkbox margin-bottom-10">
                         <input type="checkbox" name="checkbox"/>
                         <i></i>
@@ -312,9 +265,9 @@
                     <%--<i></i>--%>
                     <%--저는 <a href="#">이용약관 &amp; 운영방침</a>에 동의한 것을 읽었습니다.--%>
                     <%--</label>--%>
-                    <button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Create Account
-                    </button>
-                </form>
+                    <%--<button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Create Account--%>
+                    <button id="idCreate" class="btn-u btn-u-sea-shop btn-block margin-bottom-20"
+                            onclick="idCreateClick()">Create Account</button>
 
                 <div class="margin-bottom-20"></div>
                 <p class="text-center">계정을 가지고 계신가요? <a href="shop-ui-login.jsp">Login</a></p>
@@ -374,6 +327,97 @@
 
 <script>
     $('#ui-register-num').number(true);
+
+    function idCreateClick() { // step.01 윗단 html에서 onclick으로 idCreateClick 클릭하면 beforeValid() 메서드 호출.
+        beforeValid();
+    }
+
+    function beforeValid() { // step.02 input 필수 입력 사항 확인. 아무 이상 없으면 formPost() 메서드 호출.
+        var inputObjs = $("#sky-form4 input");
+        var bEmpty = true;
+        var focus;
+
+        inputObjs.each(function (index) {
+            if ($(this).val() == '') {
+                focus = $(this);
+                bEmpty = false;
+
+                alert($(this).attr('title') + " 필수 입력사항입니다.");
+                focus.focus();
+
+                return false;
+            }
+        });
+
+        if (!bEmpty) return;
+
+        formPost();
+    }
+
+    function formPost() { // step.03 <form> 안에 모든 <input> value 값 전달.
+        var formObj = $("form[role='form']");
+
+        formObj.attr("action", "/user/registPost");
+        formObj.attr("method", "post");
+        formObj.submit();
+    }
+
+    $(document).ready(function () {
+
+        // 출처: http://ondemand.tistory.com/183 [Cloud Computing On Demand]
+        var regType1 = /^[A-Za-z0-9+]{4,12}$/;
+
+        var focusUid = $('#uid');
+        focusUid.blur(function () {
+
+            // 출처: http://newmkka.tistory.com/51 정규식에 사용할 수 있는 메소드는 test(), compile(), match(), replace(), search()
+            if (!regType1.test(focusUid.val())) {
+                alert("최소 4자 이상 12자 이하 \n영어 대소문자, 숫자 혼합해서 입력해주세요.");
+            }
+        });
+
+        // 출처: http://lailong.tistory.com/entry/한글과-영문-숫자만을-허용하는-함수정규표현식-사용 [L A I L O N G]
+//        var regType2 = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/;
+//        var regType2 = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]{4,12}$/;
+        var regType2 = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\s\*]{4,14}$/; // 정규식 공백 허용은 \s
+
+        var focusNickname = $('#nickname');
+        focusNickname.blur(function () {
+
+            if (!regType2.test(focusNickname.val())) {
+                alert("최소 4자 이상 14자 이하 \n한글, 영어 대소문자, 숫자 혼합해서 입력해주세요.");
+            }
+        });
+
+        var focusUpw = $('#upw');
+        focusUpw.blur(function () {
+            checkPasswordPattern(focusUpw.val());
+        });
+
+        // 출처: http://holybell87.tistory.com/30#.WsxDGS6uzRY
+        function checkPasswordPattern(str) {
+            var pattern1 = /[0-9]/;	// 숫자
+            var pattern2 = /[a-zA-Z]/;	// 문자
+            var pattern3 = /[~!@#$%^&*()_+|<>?:{}]/;	// 특수문자
+            if (!pattern1.test(str) || !pattern2.test(str) || !pattern3.test(str) || str.length < 8) {
+                alert("비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        var focusUpwconfirm = $('#upwconfirm');
+
+        // 마우스 포인터를 올릴때 이벤트 발생시키기   출처: http://www.everdevel.com/jQuery/mouse-event.php
+        focusUpwconfirm.mouseleave(function () {
+           if (focusUpw.val() != focusUpwconfirm.val()) {
+               alert("비밀번호가 일치하지 않습니다. 다시 확인해 주세요.");
+               return false;
+           }
+        });
+
+    });
 </script>
 
 <%@ include file="../include/footer.jsp" %>

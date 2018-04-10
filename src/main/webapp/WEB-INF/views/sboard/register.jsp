@@ -72,22 +72,22 @@
                                 <p style="display: table-cell; text-align: center; vertical-align: middle;">
                                     첨부할 파일을 드래그 하거나 직접 <a id="btn-upload">파일찾기</a>
 
-                                <%--<form id="fileForm" action="uploadAjax" method="post">--%>
+                                    <%--<form id="fileForm" action="uploadAjax" method="post">--%>
 
                                     <%--<input type="file" id="fileUp"--%>
-                                           <%--name="fileUp" onchange="changeValue(this)" multiple="multiple"/>--%>
+                                    <%--name="fileUp" onchange="changeValue(this)" multiple="multiple"/>--%>
                                     <input style="display: none" type="file" id="fileUp"
                                            name="fileUp" onchange="changeValue(this)" multiple="multiple" />
 
                                     <%--<input type="button" value="전송하기" onClick="fileSubmit();">--%>
-                                <%--</form>--%>
+                                    <%--</form>--%>
                                 </p>
                             </div>
                             <%--첨부파일을 추가할 수 있는 영역--%>
                         </div>
                     </div>
 
-                        <!-- /.box-body -->
+                    <!-- /.box-body -->
 
                     <div class="box-footer text-right">
                         <div>
@@ -98,7 +98,7 @@
                         </ul>
                         <%--업로드 된 파일이 보여줄 수 있는 <ul></ul> 태그--%>
 
-                        <button type="submit" class="btn btn-primary">등록</button>
+                        <button type="submit" class="btn">등록</button>
                     </div>
                 </form>
             </div>
