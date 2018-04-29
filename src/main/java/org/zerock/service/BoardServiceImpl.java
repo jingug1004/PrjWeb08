@@ -16,6 +16,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -100,9 +102,6 @@ public class BoardServiceImpl implements BoardService {
         pointDAO.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
         /* 글 작성시 +50 포인트 */
 
-        System.out.println("lllll~~~~~ pointUtils.set : " + pointUtils.toString());
-
-
         /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
         String[] files = boardVO.getFiles();
         if (files == null) {
@@ -176,7 +175,7 @@ public class BoardServiceImpl implements BoardService {
 //            listMap.add(userVOMap);
 
 //            logger.info("lllll~~~~~ 09 : " + listMap.get(i));
-            logger.info("lllll~~~~~ 10 : " + userVO.getUcolorlevel());
+//            logger.info("lllll~~~~~ 10 : " + userVO.getUcolorlevel());
 
 //            listMap.add(userVOMap);
 
@@ -381,5 +380,25 @@ public class BoardServiceImpl implements BoardService {
         return boardDAO.getAttach(bno);
     }
 
+    @Override
+    public List<BoardVO> livePopular(SearchCriteria searchCriteria) throws Exception {
 
+        // http://everlikemorning.tistory.com/entry/SimpleDateFormat-%ED%8C%A8%ED%84%B4%EB%B0%8F-%EC%82%AC%EC%9A%A9%EC%98%88%EC%A0%9C
+        // SimpleDateFormat 패턴및 사용예제
+        Date today = new Date();
+        SimpleDateFormat sdfTodayToday = new SimpleDateFormat("yyyy-MM-dd");
+        String sdfToday = sdfTodayToday.format(today);
+
+        return boardDAO.livePopular(searchCriteria, sdfToday);
+    }
+
+    @Override
+    public int livePopularCount(SearchCriteria searchCriteria) throws Exception {
+
+        Date today = new Date();
+        SimpleDateFormat sdfTodayToday = new SimpleDateFormat("yyyy-MM-dd");
+        String sdfToday = sdfTodayToday.format(today);
+
+        return boardDAO.livePopularCount(searchCriteria, sdfToday);
+    }
 }

@@ -73,7 +73,7 @@ public class SearchBoardController {
                            /*@RequestParam(required = false, value = "cntSortType") String cntSortType*/) throws Exception {
 
         RateMaker rateMaker = new RateMaker();
-        rateMaker.setRategb();
+        rateMaker.setRategb();          // 지우면 안 됨! rateMaker 자체적으로 돌아감.
 
         boardVO.setCnum(cateNum); // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
         model.addAttribute("list", boardService.listSearchCriteria(cri));
@@ -336,6 +336,7 @@ public class SearchBoardController {
         return boardService.getAttach(bno);
     }
 
+    /* 삭제 요망 - 없애는 상위 메뉴임 */
     @RequestMapping(value = "/popList", method = RequestMethod.GET)
     public String popList(@ModelAttribute("cri") SearchCriteria cri,
                           Model model,
@@ -356,7 +357,27 @@ public class SearchBoardController {
         model.addAttribute("cateName", boardVO.getCnum());                                     // 리스트 목록 상단에 카테고리 이름 출력!
         model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
 
-
         return "/pop/popList";
     }
-}
+
+    @RequestMapping(value = "/livePopular", method = RequestMethod.GET)
+    public String livePopular(@ModelAttribute("cri") SearchCriteria cri,
+                              @RequestParam(required = false, value = "cate") Integer cateNum,
+                              BoardVO boardVO,
+                              Model model) throws Exception {
+
+        RateMaker rateMaker = new RateMaker();
+        rateMaker.setRategb();
+
+        boardVO.setCnum(cateNum); // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
+        model.addAttribute("livePopular", boardService.livePopular(cri));
+
+        PageMaker pageMaker = new PageMaker();
+        pageMaker.setCri(cri);
+        pageMaker.setTotalCount(boardService.livePopularCount(cri));
+        model.addAttribute("pageMaker", pageMaker);
+        model.addAttribute("cateName", boardVO.getCnum());                                     // 리스트 목록 상단에 카테고리 이름 출력!
+        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
+
+        return "sboard/list";
+    }}

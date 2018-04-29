@@ -175,7 +175,7 @@
             bno DESC
 
             limit #{pageStart}, #{perPageNum}
-        ]]>;
+        ]]>
     </select>
 
     <!-- 전체 검색 기능 구현시 총 몇개 카운트 -->
@@ -213,13 +213,13 @@
     <!--
     <select id="callCateName" resultType="String">
         SELECT cname FROM tbl_cate WHERE cnum =
-                             (SELECT cnum FROM tbl_board WHERE bno = #{bno});
+                             (SELECT cnum FROM tbl_board WHERE bno = #{bno})
     </select>
     -->
 
     <!-- 게시판 리스트(목록 - List)의 카테고리 이름 출력 -->
     <select id="callCateNameInList" resultType="String">
-        SELECT cname FROM tbl_cate WHERE cnum = #{cateNum};
+        SELECT cname FROM tbl_cate WHERE cnum = #{cateNum}
     </select>
 
     <insert id="addAttach">
@@ -239,12 +239,43 @@
     </insert>
 
     <select id="totalUserPostNumGET" resultType="int">
-        SELECT count(*) FROM tbl_board WHERE boardvisible = 'Y' AND id = #{uid};
+        SELECT count(*) FROM tbl_board WHERE boardvisible = 'Y' AND id = #{uid}
     </select>
 
     <select id="totalColorPostNumGet" resultType="int">
         SELECT count(*) FROM tbl_board WHERE boardvisible = 'Y' AND getcolor = #{getColor}
     </select>
+
+    <!-- 게시판 - 실시간 인기순으로 정렬 -->
+    <select id="livePopular" resultType="BoardVO">
+        SELECT *
+        FROM tbl_board
+        WHERE cnum = #{cate}
+        AND DATE(regdate) = #{sdfToday}
+        ORDER BY
+        gbcnt DESC,
+        goodcnt DESC,
+        regdate DESC
+
+        <include refid="cntSort"></include>
+
+        <![CDATA[
+              limit #{pageStart}, #{perPageNum}
+        ]]>
+
+    </select>
+
+    <select id="livePopularCount" resultType="int">
+        SELECT count(*)
+        FROM tbl_board
+        WHERE cnum = #{cate}
+        AND DATE(regdate) = #{sdfToday}
+        ORDER BY
+        gbcnt DESC,
+        goodcnt DESC,
+        regdate DESC
+    </select>
+
 
 </mapper>
 

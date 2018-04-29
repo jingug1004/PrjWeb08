@@ -87,7 +87,7 @@
                     <div class="container">
                         <ul class="breadcrumb-v5">
                             <%--<li><a href="/sort/realPopular">실시간 인기</a></li>--%>
-                            <li><a id="realPopular">실시간 인기</a></li>
+                            <li><a id="realPopular">실시간 인기7</a></li>
                             <li><a href="/blog/daily/visit">일간 인기</a></li>
                             <li><a href="/blog/daily/rankCv">주간 인기</a></li>
                             <li><a href="/blog/daily/referer">월간 인기</a></li>
@@ -189,6 +189,40 @@
                                 </td>
                             </tr>
                         </c:forEach>
+
+                        <c:forEach items="${livePopular}" var="boardVO" varStatus="itr">
+                            <tr>
+                                <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
+                                <td align="center">${boardVO.bno}</td>
+                                <td>
+                                    <a href='/sboard/readPa${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
+                                            ${boardVO.title}
+                                        <c:if test="${boardVO.replycnt > 0}">
+                                            <strong>[ ${boardVO.replycnt} ]</strong>
+                                        </c:if>
+                                    </a>
+                                </td>
+                                <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
+                                </td>
+                                <td align="right"><span
+                                        class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
+                                <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
+                                </td>
+                                    <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
+                                    <%--${boardVO.getcolor} // ${boardVO.writer}--%>
+                                    <%--</td>--%>
+                                <td align="left" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                        ${boardVO.writer}
+                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.writer}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
+                                </td>
+                                <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
+                                <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
+                                </td>
+                                <td align="right"><span class="badge bg-gray-light center listvcnt">${boardVO.viewcnt}</span>
+                                </td>
+                            </tr>
+                        </c:forEach>
+
                     </table>
                 </div>
                 <!-- /.box-body -->
@@ -350,15 +384,15 @@
         });
 
         $('#realPopular').on("click", function (event) {
-            alert("oParams.cate : " + oParams.cate);
-//            $.ajax({
-//                type: 'post',
-//                url: '/sort/realPopular',
-//                data :
-//
-//
-//
-//            });
+//            alert("oParams.cate : " + oParams.cate);
+            self.location = "livePopular"
+                + '${pageMaker.makeQuery(1)}'
+                + "&searchType="
+                + $("select option:selected").val()
+                + "&keyword="
+                + $('#keywordInputCate').val()
+                + "&cate="
+                + oParams.cate;
 
         });
 

@@ -106,11 +106,9 @@ public interface BoardDAO {
      */
     public int listSearchCount(SearchCriteria cri) throws Exception;
 
-
     public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception;
 
     public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception;
-
 
     /**
      * 댓글의 숫자를 변경할 수 있는 updateReplyCnt()를 추가.
@@ -188,5 +186,15 @@ public interface BoardDAO {
 
     public int totalColorPostNumGet(String getColor) throws Exception;
 
+    /**
+     * 게시판 - 실시간 인기순으로 정렬
+     *
+     * @param searchCriteria
+     * @return
+     * @throws Exception
+     */
+    public List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) throws Exception;
+
+    public int livePopularCount(SearchCriteria searchCriteria, String sdfToday) throws Exception;
 
 }

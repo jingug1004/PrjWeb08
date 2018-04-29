@@ -134,4 +134,15 @@ public interface BoardService {
      */
     public List<String> getAttach(Integer bno) throws Exception;
 
+    /**
+     * 게시판 - 실시간 인기순으로 정렬
+     *
+     * @param searchCriteria
+     * @return
+     * @throws Exception
+     */
+    public List<BoardVO> livePopular(SearchCriteria searchCriteria) throws Exception;
+    public int livePopularCount(SearchCriteria searchCriteria) throws Exception;
+
+
 }

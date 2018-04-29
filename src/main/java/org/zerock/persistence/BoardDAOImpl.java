@@ -175,4 +175,33 @@ public class BoardDAOImpl implements BoardDAO {
     public int totalColorPostNumGet(String getColor) throws Exception {
         return session.selectOne(namespace + ".totalColorPostNumGet", getColor);
     }
+
+    @Override
+    public List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) throws Exception {
+
+        logger.info("lll~~~ 01 searchCriteria " + searchCriteria.toString());
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+//        paramMap.put("searchCriteria", searchCriteria);
+        paramMap.put("cate", searchCriteria.getCate());
+        paramMap.put("pageStart", searchCriteria.getPageStart());
+        paramMap.put("perPageNum", searchCriteria.getPerPageNum());
+        paramMap.put("sdfToday", sdfToday);
+
+        return session.selectList(namespace + ".livePopular", paramMap);
+    }
+
+    @Override
+    public int livePopularCount(SearchCriteria searchCriteria, String sdfToday) throws Exception {
+
+        logger.info("lll~~~ 02 searchCriteria " + searchCriteria.toString());
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("cate", searchCriteria.getCate());
+        paramMap.put("sdfToday", sdfToday);
+
+        return session.selectOne(namespace + ".livePopularCount", paramMap);
+    }
 }
