@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.*;
 import org.zerock.persistence.*;
+import org.zerock.util.IPUtils;
 import org.zerock.util.PointUtils;
 import org.zerock.util.UnifyMessage;
 
@@ -58,21 +59,27 @@ public class ReplyServiceImpl implements ReplyService {
         if (object != null) {
         }
 
+        /* 게시판 글 등록시 아이피 등록 start */
+        IPUtils ipUtils = new IPUtils();
+        String ip = ipUtils.getIP();
+        replyVO.setReplyip(ip);
+        /* 게시판 글 등록시 아이피 등록 end */
+
         replyDAO.create(replyVO);
         boardDAO.updateReplyCnt(replyVO.getBno(), 1);
 
-        /* 댓글 작성시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 */
+        /* 댓글 작성시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 start */
         int tReplyNnum = replyDAO.totalUserReplyNumGET(loginUserVO.getUid());
         loginUserVO.setTreply(tReplyNnum);
         userDAO.totalUserReplyNumUPD(loginUserVO);
-        /* 댓글 작성시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 */
+        /* 댓글 작성시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 end */
 
-        /* 댓글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        /* 댓글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 start */
         int tcReplyNum = replyDAO.totalColorReplyNumGet(loginUserVO.getUday());
         userColorDAO.totalColorReplyNumUPD(tcReplyNum, loginUserVO.getUday());
-        /* 댓글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        /* 댓글 작성시 칼라별 tbl_color_result로 update 하는 비지니스 로직 end */
 
-        /* 댓글 작성시 +10 포인트 */
+        /* 댓글 작성시 +10 포인트 start */
         replyVO = replyDAO.readByIDnBnonText(replyVO);
 
         PointUtils pointUtils = new PointUtils(loginUserVO.getUid(), replyVO.getRno(), "댓글 작성", Integer.parseInt(UnifyMessage.getMessage("ReplyWritePoint")));
@@ -86,8 +93,7 @@ public class ReplyServiceImpl implements ReplyService {
 
         pointUtils.setBalancePoint(loginUserVO.getUpoint());
         pointDAO.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("ReplyWritePoint")));
-        /* 댓글 작성시 +10 포인트 */
-
+        /* 댓글 작성시 +10 포인트 end */
     }
 
     /**
@@ -103,22 +109,22 @@ public class ReplyServiceImpl implements ReplyService {
         Object object = httpSession.getAttribute("login");
         UserVO loginUserVO = (UserVO) object;
 
-        /* tbl_board의 replycnt 칼럼의 값을 1 증가시키는 작업과 댓글이 삭제될 때 replycnt 칼럼의 값을 -1 시키는 작업 */
+        /* tbl_board의 replycnt 칼럼의 값을 1 증가시키는 작업과 댓글이 삭제될 때 replycnt 칼럼의 값을 -1 시키는 작업 start */
         int bno = replyDAO.getBno(rno);
         replyDAO.delete(rno);                   // MyBatis 맵퍼 딜리트에서 업데이트(replyvisible = 'Y') 로 변경
         boardDAO.updateReplyCnt(bno, -1);
-        /* tbl_board의 replycnt 칼럼의 값을 1 증가시키는 작업과 댓글이 삭제될 때 replycnt 칼럼의 값을 -1 시키는 작업 */
+        /* tbl_board의 replycnt 칼럼의 값을 1 증가시키는 작업과 댓글이 삭제될 때 replycnt 칼럼의 값을 -1 시키는 작업 end */
 
-        /* 댓글 삭제시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 */
+        /* 댓글 삭제시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 start */
         int tReplynum = replyDAO.totalUserReplyNumGET(loginUserVO.getUid());    // 로그인한 유저의 아이디에 따라 총 댓글 수 조회
         loginUserVO.setTreply(tReplynum);
         userDAO.totalUserReplyNumUPD(loginUserVO);                              // 로그인한 유저의 총 댓글수(treply 칼럼)에 업데이트
-        /* 댓글 삭제시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 */
+        /* 댓글 삭제시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함 end */
 
-        /* 댓글 삭제시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        /* 댓글 삭제시 칼라별 tbl_color_result로 update 하는 비지니스 로직 start */
         int tcReplynum = replyDAO.totalColorReplyNumGet(loginUserVO.getUday()); // 로그인한 유저의 칼라에 따라서 칼라 기준으로 총 토탈수 조회
         userColorDAO.totalColorReplyNumUPD(tcReplynum, loginUserVO.getUday());  // tbl_color_result에 칼라 기준의 총 토탈수 업데이트 주입
-        /* 댓글 삭제시 칼라별 tbl_color_result로 update 하는 비지니스 로직 */
+        /* 댓글 삭제시 칼라별 tbl_color_result로 update 하는 비지니스 로직 end */
 
         /* 댓글 삭제시 -10 포인트 */
         PointUtils pointUtils = new PointUtils(

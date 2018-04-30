@@ -22,11 +22,13 @@ public class ReplyVO {
     private String replyer;
 
     private Date regdate;
-    private Date updatedate;
+    private Date updatedate;                // 댓글 수정 시간
 
-    private String bringreplycolor;
+    private String bringreplycolor;         // 댓글에 등록된 컬러 넘버
 
-    private String replyvisible;
+    private String replyvisible;            // 댓글 삭제 여부
+
+    private String replyip;                 // 댓글 등록 아이피
 
     public String getRid() {
         return rid;
@@ -150,6 +152,14 @@ public class ReplyVO {
         this.replyvisible = replyvisible;
     }
 
+    public String getReplyip() {
+        return replyip;
+    }
+
+    public void setReplyip(String replyip) {
+        this.replyip = replyip;
+    }
+
     @Override
     public String toString() {
         return "ReplyVO{" +
@@ -162,6 +172,7 @@ public class ReplyVO {
                 ", updatedate=" + updatedate +
                 ", bringreplycolor='" + bringreplycolor + '\'' +
                 ", replyvisible='" + replyvisible + '\'' +
+                ", replyip='" + replyip + '\'' +
                 '}';
     }
 }

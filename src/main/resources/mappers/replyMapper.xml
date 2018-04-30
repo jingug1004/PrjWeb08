@@ -24,8 +24,8 @@
 
     <insert id="create">
       <![CDATA[ 
-        insert into tbl_reply (rid, bno, replytext, replyer, bringreplycolor, replyvisible)
-        VALUES (#{rid}, #{bno}, #{replytext}, #{replyer}, #{bringreplycolor}, 'Y')
+        insert into tbl_reply (rid, bno, replytext, replyer, bringreplycolor, replyvisible, replyip)
+        VALUES (#{rid}, #{bno}, #{replytext}, #{replyer}, #{bringreplycolor}, 'Y', #{replyip})
         ]]>
     </insert>
 

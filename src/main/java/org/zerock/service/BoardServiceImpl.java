@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.*;
 import org.zerock.persistence.*;
+import org.zerock.util.IPUtils;
 import org.zerock.util.PointUtils;
 import org.zerock.util.UnifyMessage;
 
@@ -66,6 +67,12 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void regist(BoardVO boardVO, HttpSession httpSession) throws Exception {
 
+        /* 게시판 글 등록시 아이피 등록 start */
+        IPUtils ipUtils = new IPUtils();
+        String ip = ipUtils.getIP();
+        boardVO.setBoardip(ip);
+        /* 게시판 글 등록시 아이피 등록 end */
+
         Object object = httpSession.getAttribute("login");
         UserVO loginUserVO = (UserVO) object;
         if (object != null) {
@@ -105,18 +112,14 @@ public class BoardServiceImpl implements BoardService {
         /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
         String[] files = boardVO.getFiles();
         if (files == null) {
-
-            System.out.println("lllll~~~~~ files == null : " + files);
-
+            logger.info("lllll~~~~~ files == null : " + files);
             return;
         }
 
         for (String fileName : files) {
-
-            System.out.println("lllll~~~~~ fileName : " + fileName);
-            System.out.println("lllll~~~~~ boardVO.getBno() : " + boardVOExceptFile.getBno());      // boardVO로 하면 lastInsertID가 형성되지 않았기에 sQL 오류 발생.
+            logger.info("lllll~~~~~ fileName : " + fileName);
+            logger.info("lllll~~~~~ boardVO.getBno() : " + boardVOExceptFile.getBno());      // boardVO로 하면 lastInsertID가 형성되지 않았기에 sQL 오류 발생.
             boardDAO.addAttach(fileName, boardVOExceptFile.getBno());
-
         }
         /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
 

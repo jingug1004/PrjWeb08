@@ -29,14 +29,16 @@ public class BoardVO {
     private int replycnt;
     private int cnum;
 
-    private String[] files;
+    private String[] files;                     // 게시판 작성글 첨부파일
 
-    private String boardvisible;
+    private String boardvisible;                // 게시판 작성글 삭제 여부
 
-    private String getcolor;
+    private String getcolor;                    // 게시판 칼라 넘버
 
     private int utotallevel;                    // 회원의 전체 순위 Lv.0 ~ Lv.100
     private int ucolorlevel;                    // 회원의 칼라 순위 Lv.0 ~ Lv.100
+
+    private String boardip;                     // 게시판 작성글 ip
 
     /*-----*/
 
@@ -268,6 +270,14 @@ public class BoardVO {
         this.ucolorlevel = ucolorlevel;
     }
 
+    public String getBoardip() {
+        return boardip;
+    }
+
+    public void setBoardip(String boardip) {
+        this.boardip = boardip;
+    }
+
     @Override
     public String toString() {
         return "BoardVO{" +
@@ -290,6 +300,7 @@ public class BoardVO {
                 ", getcolor='" + getcolor + '\'' +
                 ", utotallevel=" + utotallevel +
                 ", ucolorlevel=" + ucolorlevel +
+                ", boardip='" + boardip + '\'' +
                 '}';
     }
 }

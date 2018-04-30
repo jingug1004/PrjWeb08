@@ -241,7 +241,6 @@
 <script src="/assets/js/forms/page_contact_form.js"></script>
 <script src="/assets/js/plugins/master-slider.js"></script>
 
-
 <script>
     jQuery(document).ready(function () {
         App.init();

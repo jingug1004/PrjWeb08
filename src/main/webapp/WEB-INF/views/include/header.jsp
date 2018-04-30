@@ -131,6 +131,12 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="/resources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css"/>
 
+    <%-- 데이트픽커 --%>
+    <%--<link href="/resources/bootstrap-datepicker/css/bootstrap-material-datetimepicker.css">--%>
+    <%--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--%>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/resources/datepicker/css/material-datetime-picker.css" rel="stylesheet" type="text/css"/>
+
     <%----------------------------------------------------------%>
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -152,9 +158,10 @@
     <%--<script src="/resources/js/num/jquery-1.11.3.min.js"></script>--%>
     <script src="/resources/js/num/jquery.number.min.js"></script>
 
-
-
-
+    <%-- 데이트픽커 --%>
+    <%--<script src="/resources/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>--%>
+    <%--<script src="/resources/bootstrap-datepicker/js/bootstrap-material-datetimepicker.js"></script>--%>
+    <script src="/resources/datepicker/js/material-datetime-picker.js"></script>
 
 </head>
 

@@ -132,12 +132,20 @@
                 <div class="box-body">
                     <div class="form-group">
                         <div style="display: inline; float: left; width: 100%;">
-                            <div style="display: inline; float: left; width: 65%; margin-right: 1%">
+                            <div style="display: inline; float: left; width: 48%; margin-right: 1%">
                                 <label for="exampleInputEmail1">
                                     <img src="/assets/img/colors/titleIcon.png" alt="">
                                     Title</label>
                                 <input type="text" name='title' class="form-control" value="${boardVO.title}"
                                        readonly="readonly">
+                                <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
+                            </div>
+                            <div id="divBoardip" style="display: inline; float: left; width: 16%; margin-right: 1%">
+                                <label for="exampleInputEmail1">
+                                    <img src="/assets/img/colors/ipIcon.png" alt="">
+                                    ip</label>
+                                <input id="boardip" type="text" name='boardip' class="form-control" value="${boardVO.boardip}"
+                                       readonly="readonly" style="color: #aa1111">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
                             <div id="gbdiv" style="display: inline; float: left; width: 16%; margin-right: 1%">
@@ -514,6 +522,9 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                 <span class="time">
                   <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
                     <%--'prettifyDate regdate'에는 handlebar의 기능을 확장하는 자바스크립트 방법의 예로 사용. --%>
+                </span>
+                <span class="time">
+                  <i class="fa"></i>{{replyip}}
                 </span>
             <h3 class="timeline-header"><strong>{{rno}}</strong>
                 <img src="/assets/img/colors/{{bringreplycolor}}.png" id="getColor" alt="">

@@ -87,11 +87,16 @@
                     <div class="container">
                         <ul class="breadcrumb-v5">
                             <%--<li><a href="/sort/realPopular">실시간 인기</a></li>--%>
-                            <li><a id="realPopular">실시간 인기7</a></li>
-                            <li><a href="/blog/daily/visit">일간 인기</a></li>
+                            <li><a id="realPopular">실시간 인기</a></li>
+                            <li id="liDailyPopular"><a id="dailyPopular">일간 인기</a></li>
                             <li><a href="/blog/daily/rankCv">주간 인기</a></li>
                             <li><a href="/blog/daily/referer">월간 인기</a></li>
-                            <li><a href="/blog/daily/demo">공지사항</a></li>
+                            <c:if test="${not empty login}">
+                                <li><a href="/blog/daily/demo"><img src="/assets/img/colors/${login.uday}.png"
+                                                                    id="getColor02"
+                                                                    alt="">${login.ugender}</a>
+                                </li>
+                            </c:if>
                         </ul>
                     </div>
                 </div>
@@ -383,8 +388,8 @@
             }
         });
 
+        // 실시간 인기 검색
         $('#realPopular').on("click", function (event) {
-//            alert("oParams.cate : " + oParams.cate);
             self.location = "livePopular"
                 + '${pageMaker.makeQuery(1)}'
                 + "&searchType="
@@ -393,8 +398,11 @@
                 + $('#keywordInputCate').val()
                 + "&cate="
                 + oParams.cate;
-
         });
+
+//        $('#dailyPopular').on("click", function (event) {
+//            $('#liDailyPopular').append("<input type='text' id='testDatepicker' />");
+//        });
 
         $('#gbSort').on("click", function (event) {
 
@@ -503,7 +511,24 @@
             // event.addEventListener();
             $('.idDetail').off();
         });
+
+//        $(function() {
+//            $( "#testDatepicker" ).datepicker({
+//                changeMonth: true,
+//                changeYear: true,
+//                nextText: '다음 달',
+//                prevText: '이전 달'
+//            });
+//        });
+
     });
+
+//    $("#liDailyPopular").on("mouseover", function () {
+//        $('#dailyPopular').append("<input type='text' id='testDatepicker' />");
+//    });
+
+//    $("#testDatepicker").datepicker({ weekStart : 0, time: false });
+
 
 </script>
 

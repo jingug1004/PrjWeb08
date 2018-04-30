@@ -20,6 +20,7 @@ public interface BoardService {
 
     /**
      * Regist. 글 등록 from SeachBoardController
+     * boarddao -> create
      *
      * @param boardVO the board
      * @throws Exception the exception
