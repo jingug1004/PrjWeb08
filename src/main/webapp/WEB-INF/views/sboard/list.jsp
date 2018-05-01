@@ -36,7 +36,7 @@
                     </div>
 
                     <div class='box-body text-right'>
-                        <select name="searchType">
+                        <select name="searchType" class="form-control-static">
                                 <%-- 옵션 기본값으로 하고 싶을 때 맨 상위를 주석으로 처리해서 제목이 기본값으로 보이게! --%>
                                 <%--<option value="n"--%>
                                 <%--<c:out value="${cri.searchType == null?'selected':''}"/>>--%>
@@ -69,7 +69,7 @@
                             </option>
                         </select>
 
-                        <input type="text" name='keyword' id="keywordInputCate" value='${cri.keyword}'>
+                        <input type="text" name='keyword' id="keywordInputCate" value='${cri.keyword}' class="form-control-static">
                             <%--<button id='newBtn'>글 쓰기0</button>--%>
                             <%--<button id='searchBtn01' class="btn btn-primary">검색</button>--%>
                         <button id='searchBtn01' class="btn">검색</button>
@@ -130,9 +130,13 @@
 
                         <%--</c:forEach>--%>
 
+                        <%-- 상위 헤더의 일반적으로 메뉴를 클릭하고 들어왔을 때의 list --%>
                         <c:forEach items="${list}" var="boardVO" varStatus="itr">
                             <tr>
+                                <%-- 작성자 칼라 색깔을 가져오기 위한 input hidden --%>
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
+                                <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
+                                <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPa${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
@@ -151,9 +155,8 @@
                                     <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
                                     <%--${boardVO.getcolor} // ${boardVO.writer}--%>
                                     <%--</td>--%>
-                                <td align="left" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                <td align="left" class="get"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
                                         ${boardVO.writer}
-                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.writer}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
                                 </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
@@ -166,6 +169,7 @@
                         <%-- listAny 전체 아이템 검색 / 반복문을 통한 리스트 목록 --%>
                         <c:forEach items="${listAny}" var="boardVO" varStatus="itr">
                             <tr>
+                                <%-- 작성자 칼라 색깔을 가져오기 위한 --%>
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
@@ -182,8 +186,10 @@
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
                                 <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
                                 </td>
-                                <td align="left"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                <td align="left" id="idDetail" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
                                         ${boardVO.writer}
+                                        <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
+                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
                                 </td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
@@ -195,6 +201,7 @@
                             </tr>
                         </c:forEach>
 
+                        <%-- 밑의 페이징도 따로 구현해야 함 --%>
                         <c:forEach items="${livePopular}" var="boardVO" varStatus="itr">
                             <tr>
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
@@ -216,10 +223,10 @@
                                     <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
                                     <%--${boardVO.getcolor} // ${boardVO.writer}--%>
                                     <%--</td>--%>
-                                <td align="left" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                <td align="left" id="idDetail" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
                                         ${boardVO.writer}
-                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.writer}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
-                                </td>
+                                        <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
+                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>                                </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
                                 </td>
@@ -501,15 +508,27 @@
 //        });
 
         /* 게시판 리스트에서 유저 별명을 클릭했을 때 */
-        $('.idDetail').on("click", function (event) {
-            event.stopPropagation();  // 이벤트버블링 방지
+        $('.get').on("click", function (event) {
+//            event.stopPropagation();  // 이벤트버블링 방지
             alert("나중에 구현합시다 180408! 06 : " + $('#bringBoardVOgetId').val());
             console.log("나중에 구현합시다 180408 06 : " + $('#bringBoardVOgetId').val());
             <%--alert("메롱! 07 : " + ${boardVO.id});--%>
             <%--console.log("메롱! 07 : " + $${boardVO.id});--%>
-            event.stopPropagation();  // 이벤트버블링 방지
+//            event.stopPropagation();  // 이벤트버블링 방지
             // event.addEventListener();
-            $('.idDetail').off();
+            self.location = "../userInfo/userInfoList"
+                + '${pageMaker.makeQuery(1)}'
+//                + "&searchType="
+//                + $("select option:selected").val()
+//                + "&keyword="
+//                + $('#keywordInputCate').val()
+//                + "&cate="
+//                + 1101;
+//                + oParams.cate;
+                    + "&loginid="
+                    + $('#bringBoardVOgetId').val();
+
+//            $('.idDetail').off();
         });
 
 //        $(function() {

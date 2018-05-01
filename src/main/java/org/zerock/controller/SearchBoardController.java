@@ -34,7 +34,7 @@ public class SearchBoardController {
     private static final Logger logger = LoggerFactory.getLogger(SearchBoardController.class);
 
     @Inject
-    private BoardService boardService;      // 게시판 글 처리하는 서비
+    private BoardService boardService;      // 게시판 작성글 처리하는 서비스
 
     @Inject
     private CntService cntService;          // cnt 처리하는 서비스

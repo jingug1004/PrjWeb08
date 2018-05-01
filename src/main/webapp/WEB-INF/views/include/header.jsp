@@ -592,7 +592,7 @@
                         <!-- End Books -->
 
                         <!-- 상품 리스트 헤더 메뉴 -->
-                        <li><a href="/product/productList">상품 리스트</a></li>
+                        <li><a href="/userInfo/userInfoList">상품 리스트</a></li>
                         <!-- 상품 리스트 헤더 메뉴 -->
 
                         <!-- jqGrid 헤더 메뉴 -->

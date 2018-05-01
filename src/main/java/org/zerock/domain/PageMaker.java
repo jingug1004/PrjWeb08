@@ -181,7 +181,6 @@ public class PageMaker {
      * @return the string
      */
     public String makeQuery(int page) {
-
         UriComponents uriComponents =
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
@@ -191,13 +190,12 @@ public class PageMaker {
     }
 
     /**
-     * 카테고리 검색(List)
+     * 정상적으로 메뉴 들어갔을 때 카테고리(List)
      *
      * @param page the page
      * @return the string
      */
     public String makeSearch(int page) {
-
         UriComponents uriComponents =
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
@@ -211,12 +209,27 @@ public class PageMaker {
     }
 
     /**
-     * 전체 검색(ListAny)
+     * 사이트 맨 위(헤더 부분) 전체 검색(ListAny)
      *
      * @return the string
      */
     public String makeSearchAll(int page) {
+        UriComponents uriComponents =
+                UriComponentsBuilder.newInstance()
+                        .queryParam("page", page)
+                        .queryParam("perPageNum", criListAny.getPerPageNum())
+                        .queryParam("keyword", ((SearchCriteriaListAny) criListAny).getKeyword())
+//                        .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
+                        .build();
+        return uriComponents.toUriString();
+    }
 
+    /**
+     * 사이트 맨 위(헤더 부분) 전체 검색(ListAny)
+     *
+     * @return the string
+     */
+    public String makeUserInfo(int page) {
         UriComponents uriComponents =
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)

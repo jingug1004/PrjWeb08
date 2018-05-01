@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.userInfoMapper">
+
+    <select id="userInfoList" resultType="BoardVO">
+        SELECT * FROM tbl_board WHERE id = #{loginid} ORDER BY regdate desc
+    </select>
+
+    <select id="userInfoListCount" resultType="int">
+        SELECT count(*) FROM tbl_board WHERE id = #{loginid} ORDER BY regdate desc
+    </select>
+
+
+
+    <sql id="search">
+        <if test="searchType != null">
+            <if test="searchType == 't'.toString()">
+                and title like CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="searchType == 'c'.toString()">
+                and content like CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="searchType == 'w'.toString()">
+                and writer like CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="searchType == 'tc'.toString()">
+                and ( title like CONCAT('%', #{keyword}, '%') OR content like
+                CONCAT('%', #{keyword}, '%'))
+            </if>
+            <if test="searchType == 'cw'.toString()">
+                and ( content like CONCAT('%', #{keyword}, '%') OR writer like
+                CONCAT('%', #{keyword}, '%'))
+            </if>
+            <if test="searchType == 'tcw'.toString()">
+                and ( title like CONCAT('%', #{keyword}, '%')
+                OR
+                content like CONCAT('%', #{keyword}, '%')
+                OR
+                writer like CONCAT('%', #{keyword}, '%'))
+            </if>
+        </if>
+    </sql>
+
+    <sql id="cntSort">
+        <if test="cntSortType != null">
+            <if test="cntSortType == 'gc'.toString()">
+                goodcnt DESC,
+            </if>
+            <if test="cntSortType == 'gbc'.toString()">
+                gbcnt DESC,
+            </if>
+            <if test="cntSortType == 'vc'.toString()">
+                viewcnt DESC,
+            </if>
+            <if test="cntSortType == 'bc'.toString()">
+                badcnt DESC,
+            </if>
+            <if test="cntSortType == 'sc'.toString()">
+                spamcnt DESC,
+            </if>
+        </if>
+    </sql>
+
+
+
+</mapper>
+
+

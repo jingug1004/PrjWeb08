@@ -14,16 +14,9 @@ public class SearchCriteria extends Criteria{
 
     private String searchType;            // 검색 타입
     private String keyword;               // 검색 키워드
-    private String cate;                  // 카테고리
+    private String cate;                  // 칼라 카테고리
     private String cntSortType;           // Good, Bad etc. 클릭하면 자동 정렬
-
-    public String getCate() {
-        return cate;
-    }
-
-    public void setCate(String cate) {
-        this.cate = cate;
-    }
+    private String loginid;               // 접속한 로그인 아이디
 
     /**
      * Gets search type.
@@ -69,13 +62,30 @@ public class SearchCriteria extends Criteria{
         this.cntSortType = cntSortType;
     }
 
+    public String getCate() {
+        return cate;
+    }
+
+    public void setCate(String cate) {
+        this.cate = cate;
+    }
+
+    public String getLoginid() {
+        return loginid;
+    }
+
+    public void setLoginid(String loginid) {
+        this.loginid = loginid;
+    }
+
     @Override
     public String toString() {
         return "SearchCriteria{" +
                 "searchType='" + searchType + '\'' +
                 ", keyword='" + keyword + '\'' +
                 ", cate='" + cate + '\'' +
-                ", cntSort='" + cntSortType + '\'' +
+                ", cntSortType='" + cntSortType + '\'' +
+                ", loginid='" + loginid + '\'' +
                 '}';
     }
 }
