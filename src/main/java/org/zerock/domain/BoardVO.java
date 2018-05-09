@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class BoardVO {
 
-    private String id;
+    private String id;                          // 게시판 작성자 아이디
 
     private Integer bno;
     private String title;
@@ -27,7 +27,7 @@ public class BoardVO {
 
     private int viewcnt;
     private int replycnt;
-    private int cnum;
+    private int cnum;                           // 게시판 카테고리 넘버
 
     private String[] files;                     // 게시판 작성글 첨부파일
 
@@ -39,6 +39,7 @@ public class BoardVO {
     private int ucolorlevel;                    // 회원의 칼라 순위 Lv.0 ~ Lv.100
 
     private String boardip;                     // 게시판 작성글 ip
+    private String boardipreal;                 // 게시판 작성글 ip (블라인드 처리 안 된)
 
     /*-----*/
 
@@ -278,6 +279,14 @@ public class BoardVO {
         this.boardip = boardip;
     }
 
+    public String getBoardipreal() {
+        return boardipreal;
+    }
+
+    public void setBoardipreal(String boardipreal) {
+        this.boardipreal = boardipreal;
+    }
+
     @Override
     public String toString() {
         return "BoardVO{" +
@@ -301,6 +310,7 @@ public class BoardVO {
                 ", utotallevel=" + utotallevel +
                 ", ucolorlevel=" + ucolorlevel +
                 ", boardip='" + boardip + '\'' +
+                ", boardipreal='" + boardipreal + '\'' +
                 '}';
     }
 }

@@ -59,11 +59,31 @@ public class ReplyServiceImpl implements ReplyService {
         if (object != null) {
         }
 
-        /* 게시판 글 등록시 아이피 등록 start */
+        /* 댓글 등록시 아이피 real 등록 start */
         IPUtils ipUtils = new IPUtils();
         String ip = ipUtils.getIP();
-        replyVO.setReplyip(ip);
-        /* 게시판 글 등록시 아이피 등록 end */
+//        String ip = "123.123.123.123";
+        replyVO.setReplyipreal(ip);
+        /* 댓글 등록시 아이피 real 등록 end */
+
+        /* 댓글 등록시 아이피 등록 start */
+        int a1 = ip.indexOf(".") - 1;
+        int a2 = ip.indexOf(".");
+        int b1 = ip.indexOf(".", a2 + 1) - 1;
+        int b2 = ip.indexOf(".", a2 + 1);
+        int c1 = ip.indexOf(".", b2 + 1) - 1;
+        int c2 = ip.indexOf(".", b2 + 1);
+        int d1 = ip.length() - 1;
+
+        StringBuffer stringBuffer = new StringBuffer(ip);
+
+        stringBuffer.replace(a1, a2, "*");
+        stringBuffer.replace(b1, b2, "*");
+        stringBuffer.replace(c1, c2, "*");
+        stringBuffer.replace(d1, d1 + 1, "*");
+
+        replyVO.setReplyip(String.valueOf(stringBuffer));
+        /* 댓글 등록시 아이피 등록 end */
 
         replyDAO.create(replyVO);
         boardDAO.updateReplyCnt(replyVO.getBno(), 1);

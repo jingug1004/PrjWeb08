@@ -135,8 +135,7 @@
                             <tr>
                                 <%-- 작성자 칼라 색깔을 가져오기 위한 input hidden --%>
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
-                                <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
-                                <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
+
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
                                     <a href='/sboard/readPa${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
@@ -155,8 +154,10 @@
                                     <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
                                     <%--${boardVO.getcolor} // ${boardVO.writer}--%>
                                     <%--</td>--%>
-                                <td align="left" class="get"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                <td align="left" class="get" id="${boardVO.id}"><img src="/assets/img/colors/${boardVO.getcolor}.png" alt="">
                                         ${boardVO.writer}
+                                        <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
+                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
                                 </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
@@ -508,27 +509,30 @@
 //        });
 
         /* 게시판 리스트에서 유저 별명을 클릭했을 때 */
-        $('.get').on("click", function (event) {
-//            event.stopPropagation();  // 이벤트버블링 방지
-            alert("나중에 구현합시다 180408! 06 : " + $('#bringBoardVOgetId').val());
-            console.log("나중에 구현합시다 180408 06 : " + $('#bringBoardVOgetId').val());
-            <%--alert("메롱! 07 : " + ${boardVO.id});--%>
-            <%--console.log("메롱! 07 : " + $${boardVO.id});--%>
-//            event.stopPropagation();  // 이벤트버블링 방지
-            // event.addEventListener();
-            self.location = "../userInfo/userInfoList"
-                + '${pageMaker.makeQuery(1)}'
-//                + "&searchType="
-//                + $("select option:selected").val()
-//                + "&keyword="
-//                + $('#keywordInputCate').val()
-//                + "&cate="
-//                + 1101;
-//                + oParams.cate;
-                    + "&loginid="
-                    + $('#bringBoardVOgetId').val();
+        <%--$('#get').on("click", function (event) {--%>
+<%--//            event.stopPropagation();  // 이벤트버블링 방지--%>
+            <%--alert("나중에 구현합시다 180408! 06 : " + $('#bringBoardVOgetId').val());--%>
+            <%--console.log("나중에 구현합시다 180408 06 : " + $('#bringBoardVOgetId').val());--%>
+<%--//            event.stopPropagation();  // 이벤트버블링 방지--%>
+            <%--// event.addEventListener();--%>
+            <%--self.location = "../userInfo/userInfoList"--%>
+                <%--+ '${pageMaker.makeQuery(1)}'--%>
+<%--//                + "&searchType="--%>
+<%--//                + $("select option:selected").val()--%>
+<%--//                + "&keyword="--%>
+<%--//                + $('#keywordInputCate').val()--%>
+<%--//                + "&cate="--%>
+<%--//                + 1101;--%>
+<%--//                + oParams.cate;--%>
+                    <%--+ "&loginid="--%>
+                    <%--+ $('#bringBoardVOgetId').val();--%>
 
-//            $('.idDetail').off();
+<%--//            $('.idDetail').off();--%>
+        <%--});--%>
+
+        $('.get').on("click", function (event) {
+            alert("클릭 완료!" + this.id + "아이디");
+
         });
 
 //        $(function() {
@@ -538,6 +542,9 @@
 //                nextText: '다음 달',
 //                prevText: '이전 달'
 //            });
+//        });
+//        $('.get').each(function() {
+//            alert( this.id );
 //        });
 
     });

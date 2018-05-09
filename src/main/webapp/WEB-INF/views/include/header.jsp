@@ -134,8 +134,8 @@
     <%-- 데이트픽커 --%>
     <%--<link href="/resources/bootstrap-datepicker/css/bootstrap-material-datetimepicker.css">--%>
     <%--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--%>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/resources/datepicker/css/material-datetime-picker.css" rel="stylesheet" type="text/css"/>
+    <%--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--%>
+    <%--<link href="/resources/datepicker/css/material-datetime-picker.css" rel="stylesheet" type="text/css"/>--%>
 
     <%----------------------------------------------------------%>
 
@@ -161,7 +161,7 @@
     <%-- 데이트픽커 --%>
     <%--<script src="/resources/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>--%>
     <%--<script src="/resources/bootstrap-datepicker/js/bootstrap-material-datetimepicker.js"></script>--%>
-    <script src="/resources/datepicker/js/material-datetime-picker.js"></script>
+    <%--<script src="/resources/datepicker/js/material-datetime-picker.js"></script>--%>
 
 </head>
 

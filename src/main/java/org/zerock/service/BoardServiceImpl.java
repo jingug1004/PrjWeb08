@@ -67,10 +67,29 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void regist(BoardVO boardVO, HttpSession httpSession) throws Exception {
 
-        /* 게시판 글 등록시 아이피 등록 start */
+        /* 게시판 글 등록시 아이피 real 등록 start */
         IPUtils ipUtils = new IPUtils();
         String ip = ipUtils.getIP();
-        boardVO.setBoardip(ip);
+        boardVO.setBoardipreal(ip);
+        /* 게시판 글 등록시 아이피 real 등록 end */
+
+        /* 게시판 글 등록시 아이피 등록 start */
+        int a1 = ip.indexOf(".") - 1;
+        int a2 = ip.indexOf(".");
+        int b1 = ip.indexOf(".", a2 + 1) - 1;
+        int b2 = ip.indexOf(".", a2 + 1);
+        int c1 = ip.indexOf(".", b2 + 1) - 1;
+        int c2 = ip.indexOf(".", b2 + 1);
+        int d1 = ip.length() - 1;
+
+        StringBuffer stringBuffer = new StringBuffer(ip);
+
+        stringBuffer.replace(a1, a2, "*");
+        stringBuffer.replace(b1, b2, "*");
+        stringBuffer.replace(c1, c2, "*");
+        stringBuffer.replace(d1, d1 + 1, "*");
+
+        boardVO.setBoardip(String.valueOf(stringBuffer));
         /* 게시판 글 등록시 아이피 등록 end */
 
         Object object = httpSession.getAttribute("login");

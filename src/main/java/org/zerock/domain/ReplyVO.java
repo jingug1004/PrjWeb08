@@ -29,6 +29,7 @@ public class ReplyVO {
     private String replyvisible;            // 댓글 삭제 여부
 
     private String replyip;                 // 댓글 등록 아이피
+    private String replyipreal;             // 댓글 등록 아이피 (블라인드 처리 안 된)
 
     public String getRid() {
         return rid;
@@ -160,6 +161,14 @@ public class ReplyVO {
         this.replyip = replyip;
     }
 
+    public String getReplyipreal() {
+        return replyipreal;
+    }
+
+    public void setReplyipreal(String replyipreal) {
+        this.replyipreal = replyipreal;
+    }
+
     @Override
     public String toString() {
         return "ReplyVO{" +
@@ -173,6 +182,7 @@ public class ReplyVO {
                 ", bringreplycolor='" + bringreplycolor + '\'' +
                 ", replyvisible='" + replyvisible + '\'' +
                 ", replyip='" + replyip + '\'' +
+                ", replyipreal='" + replyipreal + '\'' +
                 '}';
     }
 }
