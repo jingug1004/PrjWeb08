@@ -69,7 +69,8 @@ public class BoardServiceImpl implements BoardService {
 
         /* 게시판 글 등록시 아이피 real 등록 start */
         IPUtils ipUtils = new IPUtils();
-        String ip = ipUtils.getIP();
+//        String ip = ipUtils.getIP();
+        String ip = "123.123.123.123";
         boardVO.setBoardipreal(ip);
         /* 게시판 글 등록시 아이피 real 등록 end */
 

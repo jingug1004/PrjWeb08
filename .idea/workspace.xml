@@ -20,15 +20,12 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/database_local.properties" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/database_real.properties" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/hana_groupware/com/hanaph/gw/properties/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/domain/ReplyVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/domain/ReplyVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/domain/PageMaker.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/domain/PageMaker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zerock/service/ReplyServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/service/ReplyServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/userInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/userInfoMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,11 +73,11 @@
         <splitter split-orientation="horizontal" split-proportion="0.3171772">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
+              <file leaf-file-name="list.jsp" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="464">
-                      <caret line="534" column="0" lean-forward="false" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
+                    <state relative-caret-position="248">
+                      <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -89,18 +86,8 @@
               <file leaf-file-name="readPage.jsp" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="430">
-                      <caret line="150" column="35" lean-forward="false" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="Basic.java" pinned="false" current-in-tab="true">
-                <entry file="file://$USER_HOME$/IdeaProjects/Algo/src/Basic.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="350">
-                      <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+                    <state relative-caret-position="798">
+                      <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -115,8 +102,8 @@
                   <file leaf-file-name="SearchBoardController.java" pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="434">
-                          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+                        <state relative-caret-position="364">
+                          <caret line="159" column="9" lean-forward="true" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
                           <folding />
                         </state>
                       </provider>
@@ -125,8 +112,8 @@
                   <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="476">
-                          <caret line="59" column="6" lean-forward="false" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+                        <state relative-caret-position="-224">
+                          <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
                           <folding />
                         </state>
                       </provider>
@@ -145,11 +132,31 @@
                   <file leaf-file-name="UserInfoController.java" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserInfoController.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="476">
-                          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+                        <state relative-caret-position="744">
+                          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
                           <folding>
                             <element signature="imports" expanded="true" />
                           </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="PageMaker.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/PageMaker.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="584">
+                          <caret line="211" column="7" lean-forward="true" selection-start-line="211" selection-start-column="7" selection-end-line="211" selection-end-column="7" />
+                          <folding />
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="154">
+                          <caret line="209" column="36" lean-forward="true" selection-start-line="209" selection-start-column="36" selection-end-line="209" selection-end-column="36" />
+                          <folding />
                         </state>
                       </provider>
                     </entry>
@@ -161,7 +168,7 @@
                   <file leaf-file-name="BoardService.java" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardService.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="252">
+                        <state relative-caret-position="0">
                           <caret line="83" column="30" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
                           <folding />
                         </state>
@@ -171,8 +178,8 @@
                   <file leaf-file-name="BoardServiceImpl.java" pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="625">
-                          <caret line="81" column="41" lean-forward="true" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
+                        <state relative-caret-position="280">
+                          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
                           <folding />
                         </state>
                       </provider>
@@ -181,7 +188,7 @@
                   <file leaf-file-name="ReplyVO.java" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/ReplyVO.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="548">
+                        <state relative-caret-position="1736">
                           <caret line="164" column="27" lean-forward="false" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
                           <folding>
                             <element signature="e#2999#3000#0" expanded="true" />
@@ -206,8 +213,8 @@
                   <file leaf-file-name="ReplyServiceImpl.java" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/ReplyServiceImpl.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="490">
-                          <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+                        <state relative-caret-position="492">
+                          <caret line="62" column="40" lean-forward="false" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
                           <folding>
                             <element signature="imports" expanded="true" />
                           </folding>
@@ -230,7 +237,7 @@
                   <file leaf-file-name="BoardVO.java" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="434">
+                        <state relative-caret-position="560">
                           <caret line="41" column="75" lean-forward="false" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="75" />
                           <folding>
                             <element signature="e#5321#5322#0" expanded="true" />
@@ -238,6 +245,16 @@
                             <element signature="e#5409#5410#0" expanded="true" />
                             <element signature="e#5455#5456#0" expanded="true" />
                           </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="Basic.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$USER_HOME$/IdeaProjects/Algo/src/Basic.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="364">
+                          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+                          <folding />
                         </state>
                       </provider>
                     </entry>
@@ -253,146 +270,162 @@
           <split-first>
             <splitter split-orientation="horizontal" split-proportion="0.59477127">
               <split-first>
-                <splitter split-orientation="vertical" split-proportion="0.5">
-                  <split-first>
-                    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                      <file leaf-file-name="BoardDAO.java" pinned="false" current-in-tab="false">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="338">
-                              <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
-                              <folding />
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                      <file leaf-file-name="ReplyDAO.java" pinned="false" current-in-tab="false">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/ReplyDAO.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="588">
-                              <caret line="45" column="52" lean-forward="false" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-                              <folding />
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                      <file leaf-file-name="BoardDAOImpl.java" pinned="false" current-in-tab="true">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="154">
-                              <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-                              <folding />
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                      <file leaf-file-name="UserInfoDAO.java" pinned="false" current-in-tab="false">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAO.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="266">
-                              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                              <folding>
-                                <element signature="imports" expanded="true" />
-                              </folding>
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                    </leaf>
-                  </split-first>
-                  <split-second>
-                    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                      <file leaf-file-name="BoardDAO.java" pinned="false" current-in-tab="false">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="203">
-                              <caret line="103" column="22" lean-forward="false" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
-                              <folding />
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                      <file leaf-file-name="BoardDAOImpl.java" pinned="false" current-in-tab="false">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="392">
-                              <caret line="40" column="59" lean-forward="false" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
-                              <folding />
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                      <file leaf-file-name="ReplyDAOImpl.java" pinned="false" current-in-tab="true">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/ReplyDAOImpl.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="294">
-                              <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-                              <folding />
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                      <file leaf-file-name="UserInfoDAOImpl.java" pinned="false" current-in-tab="false">
-                        <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAOImpl.java">
-                          <provider selected="true" editor-type-id="text-editor">
-                            <state relative-caret-position="132">
-                              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-                              <folding>
-                                <element signature="imports" expanded="true" />
-                              </folding>
-                            </state>
-                          </provider>
-                        </entry>
-                      </file>
-                    </leaf>
-                  </split-second>
-                </splitter>
+                <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+                  <file leaf-file-name="BoardDAO.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="370">
+                          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+                          <folding />
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="ReplyDAO.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/ReplyDAO.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="588">
+                          <caret line="45" column="52" lean-forward="false" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+                          <folding />
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="BoardDAOImpl.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="392">
+                          <caret line="40" column="59" lean-forward="true" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+                          <folding>
+                            <element signature="e#3558#3574#0" expanded="true" />
+                            <element signature="e#5117#5133#0" expanded="true" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
+                    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/console.sql">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="489">
+                          <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+                          <folding />
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="UserInfoDAOImpl.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAOImpl.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="224">
+                          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+                          <folding>
+                            <element signature="imports" expanded="true" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="ReplyDAOImpl.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/ReplyDAOImpl.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="84">
+                          <caret line="35" column="79" lean-forward="true" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
+                          <folding />
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="UserInfoDAO.java" pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAO.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="266">
+                          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                          <folding>
+                            <element signature="imports" expanded="true" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                </leaf>
               </split-first>
               <split-second>
                 <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
                   <file leaf-file-name="boardMapper.xml" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="140">
-                          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+                        <state relative-caret-position="324">
+                          <caret line="251" column="22" lean-forward="true" selection-start-line="251" selection-start-column="22" selection-end-line="251" selection-end-column="22" />
                           <folding>
-                            <marker date="1525862806808" expanded="true" signature="249:458" ph="insert into tbl_board... " />
-                            <marker date="1525862806808" expanded="true" signature="748:822" ph="select * fro... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="987:1088" ph="select * fro... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="1137:1243" ph="update tbl_b... " />
-                            <marker date="1525862806808" expanded="true" signature="1416:1482" ph="UPDATE tbl_b... " />
-                            <marker date="1525862806808" expanded="true" signature="4744:5088" ph="select * fro... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="5443:5569" ph="select count... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="5734:6118" ph="SELECT * FRO... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="6261:6543" ph="SELECT COUNT... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="6628:6699" ph="UPDATE tbl_b... " />
-                            <marker date="1525862806808" expanded="true" signature="6785:6846" ph="UPDATE tbl_b... " />
-                            <marker date="1525862806808" expanded="true" signature="6967:7100" ph="SELECT cname... tbl_cate" />
-                            <marker date="1525862806808" expanded="true" signature="7432:7482" ph="SELECT cname... tbl_cate" />
-                            <marker date="1525862806808" expanded="true" signature="7534:7605" ph="INSERT INTO tbl_attach... " />
-                            <marker date="1525862806808" expanded="true" signature="7677:7744" ph="SELECT fulln... tbl_attach" />
-                            <marker date="1525862806808" expanded="true" signature="7799:7840" ph="DELETE FROM " />
-                            <marker date="1525862806808" expanded="true" signature="7896:7962" ph="INSERT INTO tbl_attach... " />
-                            <marker date="1525862806808" expanded="true" signature="8041:8112" ph="SELECT count... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="8192:8274" ph="SELECT count... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="8381:8561" ph="SELECT * FRO... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="8381:8673" ph="SELECT * FRO... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="8381:8686" ph="SELECT * FRO... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="8381:8687" ph="SELECT * FRO... tbl_board" />
-                            <marker date="1525862806808" expanded="true" signature="8762:8949" ph="SELECT count... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="249:458" ph="insert into tbl_board... " />
+                            <marker date="1525952950729" expanded="true" signature="748:822" ph="select * fro... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="987:1088" ph="select * fro... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="1137:1243" ph="update tbl_b... " />
+                            <marker date="1525952950729" expanded="true" signature="1416:1482" ph="UPDATE tbl_b... " />
+                            <marker date="1525952950729" expanded="true" signature="4744:5088" ph="select * fro... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="5443:5569" ph="select count... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="5734:6118" ph="SELECT * FRO... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="6261:6543" ph="SELECT COUNT... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="6628:6699" ph="UPDATE tbl_b... " />
+                            <marker date="1525952950729" expanded="true" signature="6785:6846" ph="UPDATE tbl_b... " />
+                            <marker date="1525952950729" expanded="true" signature="6967:7100" ph="SELECT cname... tbl_cate" />
+                            <marker date="1525952950729" expanded="true" signature="7432:7482" ph="SELECT cname... tbl_cate" />
+                            <marker date="1525952950729" expanded="true" signature="7534:7605" ph="INSERT INTO tbl_attach... " />
+                            <marker date="1525952950729" expanded="true" signature="7677:7744" ph="SELECT fulln... tbl_attach" />
+                            <marker date="1525952950729" expanded="true" signature="7799:7840" ph="DELETE FROM " />
+                            <marker date="1525952950729" expanded="true" signature="7896:7962" ph="INSERT INTO tbl_attach... " />
+                            <marker date="1525952950729" expanded="true" signature="8041:8112" ph="SELECT count... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="8192:8274" ph="SELECT count... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="8381:8561" ph="SELECT * FRO... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="8381:8673" ph="SELECT * FRO... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="8381:8686" ph="SELECT * FRO... tbl_board" />
+                            <marker date="1525952950729" expanded="true" signature="8761:8948" ph="SELECT count... tbl_board" />
                           </folding>
                         </state>
                       </provider>
                     </entry>
                   </file>
-                  <file leaf-file-name="userInfoMapper.xml" pinned="false" current-in-tab="true">
+                  <file leaf-file-name="cntMapper.xml" pinned="false" current-in-tab="true">
+                    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/cntMapper.xml">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="302">
+                          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+                          <folding>
+                            <marker date="1523266442994" expanded="true" signature="727:881" ph="INSERT INTO tbl_board_goodcnt... " />
+                            <marker date="1523266442994" expanded="true" signature="882:915" ph="UPDATE goodc... " />
+                            <marker date="1523266442994" expanded="true" signature="1534:1690" ph="UPDATE tbl_b... " />
+                            <marker date="1523266442994" expanded="true" signature="1574:1655" ph="SELECT COUNT... tbl_board_goodcnt" />
+                            <marker date="1523266442994" expanded="true" signature="2419:2481" ph="DELETE FROM " />
+                            <marker date="1523266442994" expanded="true" signature="2556:2635" ph="SELECT goodc... tbl_board_goodcnt" />
+                            <marker date="1523266442994" expanded="true" signature="2795:2947" ph="INSERT INTO tbl_board_goodcnt... " />
+                            <marker date="1523266442994" expanded="true" signature="2948:2979" ph="UPDATE badcn... " />
+                            <marker date="1523266442994" expanded="true" signature="3477:3537" ph="DELETE FROM " />
+                            <marker date="1523266442994" expanded="true" signature="3597:3751" ph="UPDATE tbl_b... " />
+                            <marker date="1523266442994" expanded="true" signature="3636:3716" ph="SELECT COUNT... tbl_board_goodcnt" />
+                            <marker date="1523266442994" expanded="true" signature="3825:3901" ph="SELECT badcn... tbl_board_goodcnt" />
+                            <marker date="1523266442994" expanded="true" signature="4031:4086" ph="SELECT goodc... tbl_board" />
+                            <marker date="1523266442994" expanded="true" signature="4158:4211" ph="SELECT badcn... tbl_board" />
+                            <marker date="1523266442994" expanded="true" signature="4265:4334" ph="UPDATE tbl_b... " />
+                            <marker date="1523266442994" expanded="true" signature="4447:4601" ph="INSERT INTO tbl_board_goodcnt... " />
+                            <marker date="1523266442994" expanded="true" signature="4602:4634" ph="UPDATE badcn... " />
+                            <marker date="1523266442994" expanded="true" signature="4690:4752" ph="DELETE FROM " />
+                            <marker date="1523266442994" expanded="true" signature="4813:4969" ph="UPDATE tbl_b... " />
+                            <marker date="1523266442994" expanded="true" signature="4853:4934" ph="SELECT COUNT... tbl_board_goodcnt" />
+                            <marker date="1523266442994" expanded="true" signature="5044:5123" ph="SELECT spamc... tbl_board_goodcnt" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="userInfoMapper.xml" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/userInfoMapper.xml">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="532">
-                          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+                        <state relative-caret-position="602">
+                          <caret line="43" column="10" lean-forward="true" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
                           <folding>
-                            <marker date="1525170212569" expanded="true" signature="279:346" ph="SELECT * FRO... tbl_board" />
-                            <marker date="1525170212569" expanded="true" signature="423:497" ph="SELECT count... tbl_board" />
+                            <marker date="1525933517353" expanded="true" signature="279:346" ph="SELECT * FRO... tbl_board" />
+                            <marker date="1525933517353" expanded="true" signature="423:497" ph="SELECT count... tbl_board" />
                           </folding>
                         </state>
                       </provider>
@@ -407,7 +440,7 @@
               <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/pom.xml">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
+                    <state relative-caret-position="5012">
                       <caret line="358" column="0" lean-forward="false" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
                       <folding />
                     </state>
@@ -417,8 +450,8 @@
               <file leaf-file-name="replyMapper.xml" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="490">
-                      <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+                    <state relative-caret-position="462">
+                      <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
                       <folding>
                         <marker date="1525870764576" expanded="true" signature="268:391" ph="SELECT * FRO... tbl_reply" />
                         <marker date="1525870764576" expanded="true" signature="490:610" ph="select * fro... tbl_reply" />
@@ -451,14 +484,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>makeSearchAll</find>
-      <find>makesearch</find>
-      <find>boardmapp</find>
-      <find>listAll</find>
-      <find>listSearchAnyCount</find>
-      <find>count</find>
-      <find>listSearchcount</find>
-      <find>c:fore</find>
       <find>c:for</find>
       <find>board</find>
       <find>{list</find>
@@ -467,11 +492,9 @@
       <find>pagemaker</find>
       <find>boardvo.id</find>
       <find>id</find>
-      <find>bringBoardVOgetId</find>
       <find>bringBoardVOgetcolor</find>
       <find>: moment;</find>
       <find>나중에 구현</find>
-      <find>get</find>
       <find>mate</find>
       <find>date</find>
       <find>material</find>
@@ -481,6 +504,16 @@
       <find>constConv</find>
       <find>replyip</find>
       <find>idntitle</find>
+      <find>get</find>
+      <find>idDetail</find>
+      <find>makeQuery</find>
+      <find>getBoardId</find>
+      <find>bringBoardVOgetId</find>
+      <find>makequ</find>
+      <find>searchcrite</find>
+      <find>실시간</find>
+      <find>Z0 방임형 중도적</find>
+      <find>changeGBPut</find>
     </findStrings>
     <replaceStrings>
       <replace>assets/</replace>
@@ -534,25 +567,25 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product/productList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/domain/SearchCriteria.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zerock/domain/PageMaker.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/userInfoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/service/UserInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/service/UserInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/controller/UserInfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userInfo/userInfoList.jsp" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/console.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml" />
-        <option value="$USER_HOME$/IdeaProjects/Algo/src/Basic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/domain/ReplyVO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/userInfoMapper.xml" />
+        <option value="$USER_HOME$/IdeaProjects/Algo/src/Basic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zerock/service/ReplyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zerock/domain/PageMaker.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/console.sql" />
       </list>
     </option>
   </component>
@@ -722,8 +755,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -765,6 +799,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zerock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web08" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrjWeb08" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zerock" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Web08" type="b2602c69:ProjectViewProjectNode" />
@@ -854,7 +897,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -865,7 +907,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="mybatis&#9;FILE&#9;file://C:/Users/Emiya/unify/Web08/PrjWeb08/src/main/resources/mybatis-config.xml&#10;searchcr&#9;FILE&#9;file://C:/Users/Emiya/unify/Web08/PrjWeb08/src/main/java/org/zerock/domain/SearchCriteria.java&#10;pagemaker&#9;FILE&#9;file://C:/Users/Emiya/unify/Web08/PrjWeb08/src/main/java/org/zerock/domain/PageMaker.java&#10;pagemak&#9;FILE&#9;file://C:/Users/Emiya/unify/Web08/PrjWeb08/src/main/java/org/zerock/domain/PageMaker.java&#10;searchCrite&#9;FILE&#9;file://C:/Users/Emiya/unify/Web08/PrjWeb08/src/main/java/org/zerock/domain/SearchCriteria.java&#10;uservo&#9;PSI&#9;JAVA://org.zerock.domain.UserVO&#10;BoardVO&#9;PSI&#9;JAVA://org.zerock.domain.BoardVO&#10;main.js&#9;FILE&#9;file://C:/Users/Emiya/sample/www/build/main.js&#10;errorpage&#9;FILE&#9;jar://C:/Users/Emiya/.m2/repository/org/springframework/boot/spring-boot/1.4.0.RELEASE/spring-boot-1.4.0.RELEASE.jar!/org/springframework/boot/web/servlet/ErrorPage.class&#10;mainfor&#9;FILE&#9;file://D:/hana_AtoJ/workspace/hana_online/WebContent/WEB-INF/jsps/main/mainForEmployee.jsp&#10;header.jsp&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;searchB&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;searchBo&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;marsh&#9;PSI&#9;JAVA://org.zerock.util.MarshallerUtil&#10;header&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;readme&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/README.md&#10;pom.xml&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/pom.xml&#10;servl&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;servletCo&#9;FILE&#9;file://C:/Users/Emiya/unify/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;userService&#9;PSI&#9;JAVA://org.zerock.service.UserService&#10;read.jsp&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/board/read.jsp&#10;readPage&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/board/readPage.jsp&#10;header.js&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/include/header.jsp&#10;userdaoim&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/persistence/UserDAOImpl.java&#10;usermapper.&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/resources/mappers/userMapper.xml&#10;boardDaoimp&#9;PSI&#9;JAVA://org.zerock.persistence.BoardDAOImpl&#10;searchbo&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/controller/SearchBoardController.java&#10;boardServi&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;boardMapp&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/resources/mappers/boardMapper.xml&#10;regist&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/sboard/register.jsp&#10;bootstrap.min.css&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/assets/plugins/bootstrap/css/bootstrap.min.css&#10;shop.sty&#9;FILE&#9;file://C:/Users/a/PrjWebA08/src/main/webapp/WEB-INF/views/assets/css/shop.style.css&#10;uploadCon&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/controller/UploadController.java&#10;replyServi&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/java/org/zerock/service/ReplyServiceImpl.java&#10;uploadC&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/java/org/zerock/controller/UploadController.java&#10;servlet&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/CompanyPrjWeb08/PrjWeb08/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&#10;replyDaoim&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAOImpl.java&#10;userColorDa&#9;null&#9;null&#10;replyDao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAO.java&#10;boarddao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/BoardDAO.java&#10;replydao&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/persistence/ReplyDAO.java&#10;boardServic&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/java/org/zerock/service/BoardServiceImpl.java&#10;readpage&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/LGprj08/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/readPage.jsp&#10;replyV&#9;PSI&#9;JAVA://org.zerock.domain.ReplyVO&#10;user&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/domain/UserVO.java&#10;register.jsp&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/webapp/WEB-INF/views/sboard/register.jsp&#10;boardVO&#9;PSI&#9;JAVA://org.zerock.domain.BoardVO&#10;userDA&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/persistence/UserDAO.java&#10;boardService&#9;FILE&#9;file://C:/Users/Emiya/IdeaProjects/PrjWeb08/src/main/java/org/zerock/service/BoardService.java&#10;boardDAO&#9;PSI&#9;JAVA://org.zerock.persistence.BoardDAO" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle&#10;MySQL" />
   </component>
@@ -1956,7 +1998,10 @@
       <workItem from="1525737394072" duration="350000" />
       <workItem from="1525763199304" duration="349000" />
       <workItem from="1525824512032" duration="6636000" />
-      <workItem from="1525858610901" duration="12014000" />
+      <workItem from="1525858610901" duration="12163000" />
+      <workItem from="1525912606939" duration="1372000" />
+      <workItem from="1525929549170" duration="35000" />
+      <workItem from="1525933391873" duration="24010000" />
     </task>
     <task id="LOCAL-00001" summary="170601 New Generation">
       <created>1496919698439</created>
@@ -2154,11 +2199,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525176835324</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="180509 (수) - 오늘 한 일 : 01.forEach에서 각자의 jquery id 값 구하는 기능 구현 완료 -&gt; 게시판 리스트에서 아이디 누르면 아이디 상세 페이지로!&#10;02.ip 끝자리 * 처리하기 -&gt; 게시판, 댓글&#10;- 내일 할 일 : 게시판 리스트에서 별명 클릭했을 때 게시글 넘기기. 회원 정보 수정 페이지. 회원 상세페이지 다이나믹 쿼리.&#10;- 도움이 필요한 부분 : 없음&#10;- 예상되는 오류, 에러, 이슈 : inntitle에서 writer로 받아서 또는 중복된 글일 때 오류">
+      <created>1525872590638</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1525872590638</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="809215000" />
+    <option name="totallyTimeSpent" value="834781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2180,27 +2232,30 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05542345" sideWeight="0.47629797" order="6" side_tool="false" content_ui="tabs" x="1639" y="347" width="408" height="575" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05542345" sideWeight="0.523702" order="16" side_tool="true" content_ui="tabs" x="-201" y="-550" width="74" height="36" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05542345" sideWeight="0.46166134" order="6" side_tool="false" content_ui="tabs" x="1639" y="347" width="408" height="575" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05542345" sideWeight="0.53833866" order="16" side_tool="true" content_ui="tabs" x="-201" y="-550" width="74" height="36" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23737374" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18510638" sideWeight="0.5005288" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18510158" sideWeight="0.5005288" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16262627" sideWeight="0.49361023" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="-1283" y="423" width="407" height="159" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1489842" sideWeight="0.47461662" order="9" side_tool="false" content_ui="tabs" x="-2030" y="-599" width="1799" height="534" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" x="-3575" y="287" width="1511" height="586" />
+      <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28442436" sideWeight="0.47461662" order="9" side_tool="false" content_ui="tabs" x="-2030" y="-599" width="1799" height="534" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" x="-1682" y="267" width="1518" height="586" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13897938" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16921398" sideWeight="0.49361023" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29345372" sideWeight="0.48694065" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.042802267" sideWeight="0.49060774" order="0" side_tool="false" content_ui="combo" x="1681" y="236" width="292" height="602" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287234" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06292967" sideWeight="0.50939226" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Nativescript Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22446808" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -2223,7 +2278,6 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18297872" sideWeight="0.48694065" order="19" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2299,7 +2353,8 @@
     <MESSAGE value="#### 180429 (일) - 오늘 한 일 : 실시간 인기 소팅 구현&#10;- 내일 할 일 : 일간 인기 소팅 구현&#10;- 예상되는 오류, 이슈, 에러 :&#10;- 도움이 필요한 일 :" />
     <MESSAGE value="180430 (월) - 오늘 한 일 : 게시글, 댓글 아이피 보이게 구현. ip 글리피콘 추가. &#10;- 내일 할 일 : 게시글 작성자 누르면 쓴 게시물, 댓글 보이게. 차트js도 구상해야 함.&#10;- 도움이 필요한 부분 : 일간, 주간, 월간 데이트 픽커 어떻게 화면에 보이게 할까&#10;- 예상되는 오류, 에러, 이슈 : 없음" />
     <MESSAGE value="180501 (화) - 오늘 한 일 : UserInfoClass에 새롭게 service, dao, mapper 만듬.&#10;- 내일 할 일 : 로그인한 사용자 정보 수정할 수 있게!&#10;- 도움이 필요한 부분 : 일간, 주간, 월간 소팅. 아이디 눌렀을 때 input hidden 가져오기&#10;- 예상되는 오류, 에러, 이슈 : 없음" />
-    <option name="LAST_COMMIT_MESSAGE" value="180501 (화) - 오늘 한 일 : UserInfoClass에 새롭게 service, dao, mapper 만듬.&#10;- 내일 할 일 : 로그인한 사용자 정보 수정할 수 있게!&#10;- 도움이 필요한 부분 : 일간, 주간, 월간 소팅. 아이디 눌렀을 때 input hidden 가져오기&#10;- 예상되는 오류, 에러, 이슈 : 없음" />
+    <MESSAGE value="180509 (수) - 오늘 한 일 : 01.forEach에서 각자의 jquery id 값 구하는 기능 구현 완료 -&gt; 게시판 리스트에서 아이디 누르면 아이디 상세 페이지로!&#10;02.ip 끝자리 * 처리하기 -&gt; 게시판, 댓글&#10;- 내일 할 일 : 게시판 리스트에서 별명 클릭했을 때 게시글 넘기기. 회원 정보 수정 페이지. 회원 상세페이지 다이나믹 쿼리.&#10;- 도움이 필요한 부분 : 없음&#10;- 예상되는 오류, 에러, 이슈 : inntitle에서 writer로 받아서 또는 중복된 글일 때 오류" />
+    <option name="LAST_COMMIT_MESSAGE" value="180509 (수) - 오늘 한 일 : 01.forEach에서 각자의 jquery id 값 구하는 기능 구현 완료 -&gt; 게시판 리스트에서 아이디 누르면 아이디 상세 페이지로!&#10;02.ip 끝자리 * 처리하기 -&gt; 게시판, 댓글&#10;- 내일 할 일 : 게시판 리스트에서 별명 클릭했을 때 게시글 넘기기. 회원 정보 수정 페이지. 회원 상세페이지 다이나믹 쿼리.&#10;- 도움이 필요한 부분 : 없음&#10;- 예상되는 오류, 에러, 이슈 : inntitle에서 writer로 받아서 또는 중복된 글일 때 오류" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2341,12 +2396,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/SQL/datepicker02/locales/bootstrap-datepicker.ar.js" />
-    <entry file="file://$PROJECT_DIR$/src/test/datepicker02/locales/bootstrap-datepicker.ar.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap-datepicker/js/bootstrap-datepicker.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/plugins/datepicker/js/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap-datepicker/css/bootstrap-material-datetimepicker.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap-datepicker/js/bootstrap-material-datetimepicker.js" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/datepicker/css/material-datetime-picker.css" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/datepicker/js/material-datetime-picker.js" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/HomeController.java">
@@ -2361,7 +2410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2384,7 +2432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2392,38 +2439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="45" column="52" lean-forward="false" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/PageMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/Criteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/SearchCriteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="59" column="6" lean-forward="false" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -2466,7 +2481,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="5012">
           <caret line="358" column="0" lean-forward="false" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
           <folding />
         </state>
@@ -2476,26 +2491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="590" column="0" lean-forward="true" selection-start-line="590" selection-start-column="0" selection-end-line="590" selection-end-column="0" />
-          <folding>
-            <marker date="1525172275023" expanded="false" signature="20268:33835" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2525,24 +2520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="150" column="35" lean-forward="false" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/UserInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -2555,30 +2532,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="0">
           <caret line="83" column="30" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_board">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="534" column="0" lean-forward="false" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/BoardVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
+        <state relative-caret-position="560">
           <caret line="41" column="75" lean-forward="false" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="75" />
           <folding>
             <element signature="e#5321#5322#0" expanded="true" />
@@ -2589,58 +2551,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <marker date="1525862806808" expanded="true" signature="249:458" ph="insert into tbl_board... " />
-            <marker date="1525862806808" expanded="true" signature="748:822" ph="select * fro... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="987:1088" ph="select * fro... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="1137:1243" ph="update tbl_b... " />
-            <marker date="1525862806808" expanded="true" signature="1416:1482" ph="UPDATE tbl_b... " />
-            <marker date="1525862806808" expanded="true" signature="4744:5088" ph="select * fro... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="5443:5569" ph="select count... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="5734:6118" ph="SELECT * FRO... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="6261:6543" ph="SELECT COUNT... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="6628:6699" ph="UPDATE tbl_b... " />
-            <marker date="1525862806808" expanded="true" signature="6785:6846" ph="UPDATE tbl_b... " />
-            <marker date="1525862806808" expanded="true" signature="6967:7100" ph="SELECT cname... tbl_cate" />
-            <marker date="1525862806808" expanded="true" signature="7432:7482" ph="SELECT cname... tbl_cate" />
-            <marker date="1525862806808" expanded="true" signature="7534:7605" ph="INSERT INTO tbl_attach... " />
-            <marker date="1525862806808" expanded="true" signature="7677:7744" ph="SELECT fulln... tbl_attach" />
-            <marker date="1525862806808" expanded="true" signature="7799:7840" ph="DELETE FROM " />
-            <marker date="1525862806808" expanded="true" signature="7896:7962" ph="INSERT INTO tbl_attach... " />
-            <marker date="1525862806808" expanded="true" signature="8041:8112" ph="SELECT count... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="8192:8274" ph="SELECT count... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="8381:8561" ph="SELECT * FRO... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="8381:8673" ph="SELECT * FRO... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="8381:8686" ph="SELECT * FRO... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="8381:8687" ph="SELECT * FRO... tbl_board" />
-            <marker date="1525862806808" expanded="true" signature="8762:8949" ph="SELECT count... tbl_board" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/ReplyVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
+        <state relative-caret-position="1736">
           <caret line="164" column="27" lean-forward="false" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
           <folding>
             <element signature="e#2999#3000#0" expanded="true" />
@@ -2666,62 +2579,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$USER_HOME$/IdeaProjects/Algo/src/Basic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/ReplyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+        <state relative-caret-position="492">
+          <caret line="62" column="40" lean-forward="false" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/readPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        <state relative-caret-position="798">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/RateMaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="81" column="41" lean-forward="true" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
+        <state relative-caret-position="539">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/ReplyDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/PageMaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+        <state relative-caret-position="584">
+          <caret line="211" column="7" lean-forward="true" selection-start-line="211" selection-start-column="7" selection-end-line="211" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/userInfoMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/Criteria.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding>
-            <marker date="1525170212569" expanded="true" signature="279:346" ph="SELECT * FRO... tbl_board" />
-            <marker date="1525170212569" expanded="true" signature="423:497" ph="SELECT count... tbl_board" />
-          </folding>
+        <state relative-caret-position="308">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/domain/SearchCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding>
             <marker date="1525870764576" expanded="true" signature="268:391" ph="SELECT * FRO... tbl_reply" />
             <marker date="1525870764576" expanded="true" signature="490:610" ph="select * fro... tbl_reply" />
@@ -2737,10 +2656,207 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/IdeaProjects/Algo/src/Basic.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+        <state relative-caret-position="744">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/userInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="43" column="10" lean-forward="true" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <folding>
+            <marker date="1525933517353" expanded="true" signature="279:346" ph="SELECT * FRO... tbl_board" />
+            <marker date="1525933517353" expanded="true" signature="423:497" ph="SELECT count... tbl_board" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/ReplyDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="35" column="79" lean-forward="true" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/UserInfoDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/BoardDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="40" column="59" lean-forward="true" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+          <folding>
+            <element signature="e#3558#3574#0" expanded="true" />
+            <element signature="e#5117#5133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_cate">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/d97d8d79/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/PrjWeb.tbl_board">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/CntService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/persistence/CntDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="92" column="15" lean-forward="false" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/boardMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="251" column="22" lean-forward="true" selection-start-line="251" selection-start-column="22" selection-end-line="251" selection-end-column="22" />
+          <folding>
+            <marker date="1525952950729" expanded="true" signature="249:458" ph="insert into tbl_board... " />
+            <marker date="1525952950729" expanded="true" signature="748:822" ph="select * fro... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="987:1088" ph="select * fro... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="1137:1243" ph="update tbl_b... " />
+            <marker date="1525952950729" expanded="true" signature="1416:1482" ph="UPDATE tbl_b... " />
+            <marker date="1525952950729" expanded="true" signature="4744:5088" ph="select * fro... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="5443:5569" ph="select count... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="5734:6118" ph="SELECT * FRO... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="6261:6543" ph="SELECT COUNT... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="6628:6699" ph="UPDATE tbl_b... " />
+            <marker date="1525952950729" expanded="true" signature="6785:6846" ph="UPDATE tbl_b... " />
+            <marker date="1525952950729" expanded="true" signature="6967:7100" ph="SELECT cname... tbl_cate" />
+            <marker date="1525952950729" expanded="true" signature="7432:7482" ph="SELECT cname... tbl_cate" />
+            <marker date="1525952950729" expanded="true" signature="7534:7605" ph="INSERT INTO tbl_attach... " />
+            <marker date="1525952950729" expanded="true" signature="7677:7744" ph="SELECT fulln... tbl_attach" />
+            <marker date="1525952950729" expanded="true" signature="7799:7840" ph="DELETE FROM " />
+            <marker date="1525952950729" expanded="true" signature="7896:7962" ph="INSERT INTO tbl_attach... " />
+            <marker date="1525952950729" expanded="true" signature="8041:8112" ph="SELECT count... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="8192:8274" ph="SELECT count... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="8381:8561" ph="SELECT * FRO... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="8381:8673" ph="SELECT * FRO... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="8381:8686" ph="SELECT * FRO... tbl_board" />
+            <marker date="1525952950729" expanded="true" signature="8761:8948" ph="SELECT count... tbl_board" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/cntMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding>
+            <marker date="1523266442994" expanded="true" signature="727:881" ph="INSERT INTO tbl_board_goodcnt... " />
+            <marker date="1523266442994" expanded="true" signature="882:915" ph="UPDATE goodc... " />
+            <marker date="1523266442994" expanded="true" signature="1534:1690" ph="UPDATE tbl_b... " />
+            <marker date="1523266442994" expanded="true" signature="1574:1655" ph="SELECT COUNT... tbl_board_goodcnt" />
+            <marker date="1523266442994" expanded="true" signature="2419:2481" ph="DELETE FROM " />
+            <marker date="1523266442994" expanded="true" signature="2556:2635" ph="SELECT goodc... tbl_board_goodcnt" />
+            <marker date="1523266442994" expanded="true" signature="2795:2947" ph="INSERT INTO tbl_board_goodcnt... " />
+            <marker date="1523266442994" expanded="true" signature="2948:2979" ph="UPDATE badcn... " />
+            <marker date="1523266442994" expanded="true" signature="3477:3537" ph="DELETE FROM " />
+            <marker date="1523266442994" expanded="true" signature="3597:3751" ph="UPDATE tbl_b... " />
+            <marker date="1523266442994" expanded="true" signature="3636:3716" ph="SELECT COUNT... tbl_board_goodcnt" />
+            <marker date="1523266442994" expanded="true" signature="3825:3901" ph="SELECT badcn... tbl_board_goodcnt" />
+            <marker date="1523266442994" expanded="true" signature="4031:4086" ph="SELECT goodc... tbl_board" />
+            <marker date="1523266442994" expanded="true" signature="4158:4211" ph="SELECT badcn... tbl_board" />
+            <marker date="1523266442994" expanded="true" signature="4265:4334" ph="UPDATE tbl_b... " />
+            <marker date="1523266442994" expanded="true" signature="4447:4601" ph="INSERT INTO tbl_board_goodcnt... " />
+            <marker date="1523266442994" expanded="true" signature="4602:4634" ph="UPDATE badcn... " />
+            <marker date="1523266442994" expanded="true" signature="4690:4752" ph="DELETE FROM " />
+            <marker date="1523266442994" expanded="true" signature="4813:4969" ph="UPDATE tbl_b... " />
+            <marker date="1523266442994" expanded="true" signature="4853:4934" ph="SELECT COUNT... tbl_board_goodcnt" />
+            <marker date="1523266442994" expanded="true" signature="5044:5123" ph="SELECT spamc... tbl_board_goodcnt" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/CntServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="93" column="33" lean-forward="false" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/service/BoardServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5ad4e8c8-a1c3-4be8-b0b7-dbcf69a5396e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zerock/controller/SearchBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="159" column="9" lean-forward="true" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sboard/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
       </provider>

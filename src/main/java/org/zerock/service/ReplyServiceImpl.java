@@ -61,8 +61,8 @@ public class ReplyServiceImpl implements ReplyService {
 
         /* 댓글 등록시 아이피 real 등록 start */
         IPUtils ipUtils = new IPUtils();
-        String ip = ipUtils.getIP();
-//        String ip = "123.123.123.123";
+//        String ip = ipUtils.getIP();
+        String ip = "123.123.123.123";
         replyVO.setReplyipreal(ip);
         /* 댓글 등록시 아이피 real 등록 end */
 

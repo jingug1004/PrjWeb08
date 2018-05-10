@@ -14,7 +14,6 @@
     </select>
 
 
-
     <sql id="search">
         <if test="searchType != null">
             <if test="searchType == 't'.toString()">
@@ -63,7 +62,6 @@
             </if>
         </if>
     </sql>
-
 
 
 </mapper>

@@ -154,10 +154,10 @@
                                     <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
                                     <%--${boardVO.getcolor} // ${boardVO.writer}--%>
                                     <%--</td>--%>
-                                <td align="left" class="get" id="${boardVO.id}"><img src="/assets/img/colors/${boardVO.getcolor}.png" alt="">
+                                <td align="left" class="getBoardId" id="${boardVO.id}"><img src="/assets/img/colors/${boardVO.getcolor}.png" alt="">
                                         ${boardVO.writer}
                                         <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
-                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
+                                    <%--<input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            &lt;%&ndash; 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 &ndash;%&gt;--%>
                                 </td>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
@@ -187,10 +187,10 @@
                                         class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
                                 <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
                                 </td>
-                                <td align="left" id="idDetail" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                <td align="left" class="getBoardId02" id="${boardVO.id}"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
                                         ${boardVO.writer}
                                         <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
-                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>
+                                    <%--<input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            &lt;%&ndash; 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 &ndash;%&gt;--%>
                                 </td>
                                     <%--<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"--%>
                                 <td align="center"><fmt:formatDate value="${boardVO.regdate}"
@@ -202,7 +202,7 @@
                             </tr>
                         </c:forEach>
 
-                        <%-- 밑의 페이징도 따로 구현해야 함 --%>
+                        <%-- 실시간 인기 소팅 - 밑의 페이징도 따로 구현해야 함 --%>
                         <c:forEach items="${livePopular}" var="boardVO" varStatus="itr">
                             <tr>
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
@@ -224,10 +224,10 @@
                                     <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
                                     <%--${boardVO.getcolor} // ${boardVO.writer}--%>
                                     <%--</td>--%>
-                                <td align="left" id="idDetail" class="idDetail"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                <td align="left" class="getBoardId03" id="${boardVO.id}"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
                                         ${boardVO.writer}
                                         <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
-                                    <input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            <%-- 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 --%>                                </td>
+                                    <%--<input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            &lt;%&ndash; 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 &ndash;%&gt;                                </td>--%>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
                                 </td>
@@ -509,52 +509,33 @@
 //        });
 
         /* 게시판 리스트에서 유저 별명을 클릭했을 때 */
-        <%--$('#get').on("click", function (event) {--%>
-<%--//            event.stopPropagation();  // 이벤트버블링 방지--%>
-            <%--alert("나중에 구현합시다 180408! 06 : " + $('#bringBoardVOgetId').val());--%>
-            <%--console.log("나중에 구현합시다 180408 06 : " + $('#bringBoardVOgetId').val());--%>
-<%--//            event.stopPropagation();  // 이벤트버블링 방지--%>
-            <%--// event.addEventListener();--%>
-            <%--self.location = "../userInfo/userInfoList"--%>
-                <%--+ '${pageMaker.makeQuery(1)}'--%>
-<%--//                + "&searchType="--%>
-<%--//                + $("select option:selected").val()--%>
-<%--//                + "&keyword="--%>
-<%--//                + $('#keywordInputCate').val()--%>
-<%--//                + "&cate="--%>
-<%--//                + 1101;--%>
-<%--//                + oParams.cate;--%>
-                    <%--+ "&loginid="--%>
-                    <%--+ $('#bringBoardVOgetId').val();--%>
-
-<%--//            $('.idDetail').off();--%>
-        <%--});--%>
-
-        $('.get').on("click", function (event) {
-            alert("클릭 완료!" + this.id + "아이디");
-
+        $('.getBoardId').on("click", function () {
+//            event.stopPropagation();  // 이벤트버블링 방지
+            // event.addEventListener();
+            self.location = "../userInfo/userInfoList"
+                + '${pageMaker.makeQuery(1)}'
+                + "&loginid="
+                + this.id;
         });
-
-//        $(function() {
-//            $( "#testDatepicker" ).datepicker({
-//                changeMonth: true,
-//                changeYear: true,
-//                nextText: '다음 달',
-//                prevText: '이전 달'
-//            });
-//        });
 //        $('.get').each(function() {
 //            alert( this.id );
 //        });
-
-    });
-
+        /* 전체 게시판 리스트에서 유저 별명을 클릭했을 때 */
+        $('.getBoardId02').on("click", function () {
+//            event.stopPropagation();  // 이벤트버블링 방지
+            // event.addEventListener();
+            self.location = "../userInfo/userInfoList"
+                + "?page=1"
+                + "&perPageNum=10"
+                + "&loginid="
+                + this.id;
+        });
 //    $("#liDailyPopular").on("mouseover", function () {
 //        $('#dailyPopular').append("<input type='text' id='testDatepicker' />");
 //    });
 
 //    $("#testDatepicker").datepicker({ weekStart : 0, time: false });
-
+    });
 
 </script>
 

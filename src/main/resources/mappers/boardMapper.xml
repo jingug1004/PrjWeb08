@@ -262,7 +262,6 @@
         <![CDATA[
               limit #{pageStart}, #{perPageNum}
         ]]>
-
     </select>
 
     <select id="livePopularCount" resultType="int">
