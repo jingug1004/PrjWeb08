@@ -1,9 +1,6 @@
 package org.zerock.persistence;
 
-import org.zerock.domain.BoardVO;
-import org.zerock.domain.Criteria;
-import org.zerock.domain.SearchCriteria;
-import org.zerock.domain.SearchCriteriaListAny;
+import org.zerock.domain.*;
 
 import java.util.List;
 
@@ -196,5 +193,18 @@ public interface BoardDAO {
     public List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) throws Exception;
 
     public int livePopularCount(SearchCriteria searchCriteria, String sdfToday) throws Exception;
+
+    /**
+     * 게시판 - 같은 정치성향 정렬
+     *
+     * @param searchCriteria
+     * @param boardVO
+     * @param userVO
+     * @return
+     * @throws Exception
+     */
+    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception;
+
+    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception;
 
 }

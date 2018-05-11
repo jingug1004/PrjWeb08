@@ -27,9 +27,9 @@ public class RateMaker {
 
     private static final Logger logger = LoggerFactory.getLogger(RateMaker.class);
 
-    private double rategdivb;
-    private double rategoodcnt;
-    private double ratebadcnt;
+    private double rategdivb;           // 굿 / 배드 = 굿 비율
+    private double rategoodcnt;         // 굿 누른 횟수
+    private double ratebadcnt;          // 배드 누른 횟수
     private double temp;
 
     public double getRategdivb() {

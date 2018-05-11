@@ -4,10 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import org.zerock.domain.BoardVO;
-import org.zerock.domain.Criteria;
-import org.zerock.domain.SearchCriteria;
-import org.zerock.domain.SearchCriteriaListAny;
+import org.zerock.domain.*;
 
 import javax.inject.Inject;
 import java.util.HashMap;
@@ -179,8 +176,6 @@ public class BoardDAOImpl implements BoardDAO {
     @Override
     public List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) throws Exception {
 
-        logger.info("lll~~~ 01 searchCriteria " + searchCriteria.toString());
-
         Map<String, Object> paramMap = new HashMap<>();
 
 //        paramMap.put("searchCriteria", searchCriteria);
@@ -195,13 +190,42 @@ public class BoardDAOImpl implements BoardDAO {
     @Override
     public int livePopularCount(SearchCriteria searchCriteria, String sdfToday) throws Exception {
 
-        logger.info("lll~~~ 02 searchCriteria " + searchCriteria.toString());
-
         Map<String, Object> paramMap = new HashMap<>();
 
         paramMap.put("cate", searchCriteria.getCate());
         paramMap.put("sdfToday", sdfToday);
 
         return session.selectOne(namespace + ".livePopularCount", paramMap);
+    }
+
+    @Override
+    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("getcolor", boardVO.getGetcolor());
+        paramMap.put("cnum", boardVO.getCnum());
+        paramMap.put("uday", userVO.getUday());
+        paramMap.put("ugender", userVO.getUgender());
+        paramMap.put("pageStart", searchCriteria.getPageStart());
+        paramMap.put("perPageNum", searchCriteria.getPerPageNum());
+
+        return session.selectList(namespace + ".samePopular", paramMap);
+    }
+
+    @Override
+    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("getcolor", boardVO.getGetcolor());
+        paramMap.put("cnum", boardVO.getCnum());
+        paramMap.put("uday", userVO.getUday());
+        paramMap.put("ugender", userVO.getUgender());
+        paramMap.put("pageStart", searchCriteria.getPageStart());
+        paramMap.put("perPageNum", searchCriteria.getPerPageNum());
+
+        return session.selectOne(namespace + ".samePopularCount", paramMap);
+
     }
 }

@@ -158,7 +158,7 @@
 일간 인기 : DailyPopular
 주간 인기 : WeeklyPopular
 월간 인기 : MonthlyPopular
-공지사항 : NoticeBoard
+공지사항 : SamePopular
 
 쌍용강북교육센터
 

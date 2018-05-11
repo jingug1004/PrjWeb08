@@ -275,7 +275,29 @@
         regdate DESC
     </select>
 
+    <!-- 게시판 - 같은 정치성향 정렬 -->
+    <select id="samePopular" resultType="BoardVO">
+        SELECT *
+        FROM tbl_board
+        WHERE getcolor = #{getcolor}
+              AND cnum = #{cnum}
+              AND id = ANY (SELECT uid
+                            FROM tbl_user
+                            WHERE uday = #{uday}
+                                  AND ugender = #{ugender})
+              limit #{pageStart}, #{perPageNum}
+    </select>
 
+    <select id="samePopularCount" resultType="int">
+       SELECT count(*)
+        FROM tbl_board
+        WHERE getcolor = #{getcolor}
+              AND cnum = #{cnum}
+              AND id = ANY (SELECT uid
+                            FROM tbl_user
+                            WHERE uday = #{uday}
+                                  AND ugender = #{ugender})
+    </select>
 </mapper>
 
 

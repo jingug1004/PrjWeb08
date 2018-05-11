@@ -424,4 +424,26 @@ public class BoardServiceImpl implements BoardService {
 
         return boardDAO.livePopularCount(searchCriteria, sdfToday);
     }
+
+    @Override
+    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception {
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            userVO.setUday(loginUserVO.getUday());         // 유저의 색깔 넘버 가져와서 셋함.
+            userVO.setUgender(loginUserVO.getUgender());   // 유저의 정치성향 ex) 'Y0 중도적' 가져와서 셋함.
+        }
+        return boardDAO.samePopular(searchCriteria, boardVO, userVO);
+    }
+
+    @Override
+    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception {
+        Object object = httpSession.getAttribute("login");
+        UserVO loginUserVO = (UserVO) object;
+        if (object != null) {
+            userVO.setUday(loginUserVO.getUday());         // 유저의 색깔 넘버 가져와서 셋함.
+            userVO.setUgender(loginUserVO.getUgender());   // 유저의 정치성향 ex) 'Y0 중도적' 가져와서 셋함.
+        }
+        return boardDAO.samePopularCount(searchCriteria, boardVO, userVO);
+    }
 }

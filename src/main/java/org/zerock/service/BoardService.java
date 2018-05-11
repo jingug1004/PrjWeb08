@@ -1,9 +1,6 @@
 package org.zerock.service;
 
-import org.zerock.domain.BoardVO;
-import org.zerock.domain.Criteria;
-import org.zerock.domain.SearchCriteria;
-import org.zerock.domain.SearchCriteriaListAny;
+import org.zerock.domain.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -144,6 +141,20 @@ public interface BoardService {
      */
     public List<BoardVO> livePopular(SearchCriteria searchCriteria) throws Exception;
     public int livePopularCount(SearchCriteria searchCriteria) throws Exception;
+
+    /**
+     * 게시판 - 같은 정치성향 정렬
+     *
+     * @param searchCriteria
+     * @param boardVO
+     * @param userVO
+     * @return
+     * @throws Exception
+     */
+    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception;
+
+    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception;
+
 
 
 }

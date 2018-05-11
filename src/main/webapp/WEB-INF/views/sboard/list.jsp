@@ -208,7 +208,7 @@
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
-                                    <a href='/sboard/readPa${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
+                                    <a href='/sboard/readPa${pageMakerLivePopular.makeSearch(pageMakerLivePopular.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
                                             ${boardVO.title}
                                         <c:if test="${boardVO.replycnt > 0}">
                                             <strong>[ ${boardVO.replycnt} ]</strong>
@@ -228,6 +228,40 @@
                                         ${boardVO.writer}
                                         <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
                                     <%--<input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            &lt;%&ndash; 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 &ndash;%&gt;                                </td>--%>
+                                <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
+                                <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
+                                </td>
+                                <td align="right"><span class="badge bg-gray-light center listvcnt">${boardVO.viewcnt}</span>
+                                </td>
+                            </tr>
+                        </c:forEach>
+
+                        <%-- 실시간 인기 소팅 - 밑의 페이징도 따로 구현해야 함 --%>
+                        <c:forEach items="${samePopular}" var="boardVO" varStatus="itr">
+                            <tr>
+                                <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
+                                <td align="center">${boardVO.bno}</td>
+                                <td>
+                                    <a href='/sboard/readPa${pageMakerSamePopular.makeSearch(pageMakerSamePopular.cri.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
+                                            ${boardVO.title}
+                                        <c:if test="${boardVO.replycnt > 0}">
+                                            <strong>[ ${boardVO.replycnt} ]</strong>
+                                        </c:if>
+                                    </a>
+                                </td>
+                                <td align="right"><span class="badge bg-green-gradient center listgcnt">${boardVO.goodcnt}</span>
+                                </td>
+                                <td align="right"><span
+                                        class="badge bg-yellow-gradient center listgbcnt">${boardVO.gbcnt}</span></td>
+                                <td align="right"><span class="badge bg-red-gradient center listbcnt">${boardVO.badcnt}</span>
+                                </td>
+                                    <%--<td align="left"><img src="/assets/img/colors/001.png" id="getColor" alt="">--%>
+                                    <%--${boardVO.getcolor} // ${boardVO.writer}--%>
+                                    <%--</td>--%>
+                                <td align="left" class="getBoardId03" id="${boardVO.id}"><img src="/assets/img/colors/${boardVO.getcolor}.png" id="getColor" alt="">
+                                        ${boardVO.writer}
+                                        <%-- 게시글 작성글의 아이디를 통하여 가져오는 input hidden --%>
+                                        <%--<input type="hidden" id="bringBoardVOgetId" value=${boardVO.id}>            &lt;%&ndash; 게시판 글의 아이디 클릭했을 때 아이디 값 가져옴 &ndash;%&gt;                                </td>--%>
                                 <td align="center"><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regdate}"/></td>
                                 <td align="right"><span class="badge bg-orange-active center listscnt">${boardVO.spamcnt}</span>
                                 </td>
@@ -287,6 +321,46 @@
 
                                     <c:if test="${pageMakerAny.next && pageMakerAny.endPage > 0}">
                                         <li><a href="listAny${pageMakerAny.makeSearchAll(pageMakerAny.endPage + 1) }">&raquo;</a>
+                                        </li>
+                                    </c:if>
+                                </c:when>
+
+                                <%-- 실시간 인기 소팅 --%>
+                                <c:when test="${not empty pageMakerLivePopular}">
+                                    <c:if test="${pageMakerLivePopular.prev}">
+                                        <li><a href="list${pageMakerLivePopular.makeSearch(pageMakerLivePopular.startPage - 1) }">&laquo;</a>
+                                        </li>
+                                    </c:if>
+
+                                    <c:forEach begin="${pageMakerLivePopular.startPage }"
+                                               end="${pageMakerLivePopular.endPage }" var="idx">
+                                        <li<c:out value="${pageMakerLivePopular.cri.page == idx?' class=active':''}"/>>
+                                            <a href="list${pageMakerLivePopular.makeSearch(idx)}">${idx}</a>
+                                        </li>
+                                    </c:forEach>
+
+                                    <c:if test="${pageMakerLivePopular.next && pageMakerLivePopular.endPage > 0}">
+                                        <li><a href="list${pageMakerLivePopular.makeSearch(pageMakerLivePopular.endPage + 1) }">&raquo;</a>
+                                        </li>
+                                    </c:if>
+                                </c:when>
+
+                                <%-- 실시간 인기 소팅 --%>
+                                <c:when test="${not empty pageMakerSamePopular}">
+                                    <c:if test="${pageMakerSamePopular.prev}">
+                                        <li><a href="list${pageMakerSamePopular.makeSearch(pageMakerSamePopular.startPage - 1) }">&laquo;</a>
+                                        </li>
+                                    </c:if>
+
+                                    <c:forEach begin="${pageMakerSamePopular.startPage }"
+                                               end="${pageMakerSamePopular.endPage }" var="idx">
+                                        <li<c:out value="${pageMakerSamePopular.cri.page == idx?' class=active':''}"/>>
+                                            <a href="list${pageMakerSamePopular.makeSearch(idx)}">${idx}</a>
+                                        </li>
+                                    </c:forEach>
+
+                                    <c:if test="${pageMakerSamePopular.next && pageMakerSamePopular.endPage > 0}">
+                                        <li><a href="list${pageMakerSamePopular.makeSearch(pageMakerSamePopular.endPage + 1) }">&raquo;</a>
                                         </li>
                                     </c:if>
                                 </c:when>
@@ -399,6 +473,18 @@
         // 실시간 인기 검색
         $('#realPopular').on("click", function (event) {
             self.location = "livePopular"
+                + '${pageMaker.makeQuery(1)}'
+                + "&searchType="
+                + $("select option:selected").val()
+                + "&keyword="
+                + $('#keywordInputCate').val()
+                + "&cate="
+                + oParams.cate;
+        });
+
+        // sameColor 같은 색깔 검색
+        $('#samePopular').on("click", function (event) {
+            self.location = "samePopular"
                 + '${pageMaker.makeQuery(1)}'
                 + "&searchType="
                 + $("select option:selected").val()

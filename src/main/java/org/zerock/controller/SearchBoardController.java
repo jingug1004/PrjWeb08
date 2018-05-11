@@ -336,7 +336,7 @@ public class SearchBoardController {
         return boardService.getAttach(bno);
     }
 
-    /* 삭제 요망 - 없애는 상위 메뉴임 */
+    /* 삭제 요망 - 없애는 상위 메뉴임 start */
     @RequestMapping(value = "/popList", method = RequestMethod.GET)
     public String popList(@ModelAttribute("cri") SearchCriteria cri,
                           Model model,
@@ -359,7 +359,18 @@ public class SearchBoardController {
 
         return "/pop/popList";
     }
+    /* 삭제 요망 - 없애는 상위 메뉴임 start */
 
+    /**
+     * 실시간 인기 검색
+     *
+     * @param cri
+     * @param cateNum
+     * @param boardVO
+     * @param model
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/livePopular", method = RequestMethod.GET)
     public String livePopular(@ModelAttribute("cri") SearchCriteria cri,
                               @RequestParam(required = false, value = "cate") Integer cateNum,
@@ -375,9 +386,49 @@ public class SearchBoardController {
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(cri);
         pageMaker.setTotalCount(boardService.livePopularCount(cri));
-        model.addAttribute("pageMaker", pageMaker);
-        model.addAttribute("cateName", boardVO.getCnum());                                     // 리스트 목록 상단에 카테고리 이름 출력!
-        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
+        model.addAttribute("pageMakerLivePopular", pageMaker);
+        model.addAttribute("cateName", "실시간 인기 검색");                                // 리스트 목록 상단에 카테고리 이름 출력!
+//        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
 
         return "sboard/list";
-    }}
+    }
+
+    /**
+     * sameColor 같은 색깔 검색
+     *
+     * @param cri
+     * @param cateNum
+     * @param boardVO
+     * @param model
+     * @param userVO
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/samePopular", method = RequestMethod.GET)
+    public String samePopular(@ModelAttribute("cri") SearchCriteria cri,
+                              @RequestParam(required = false, value = "cate") Integer cateNum,
+                              BoardVO boardVO,
+                              Model model,
+                              UserVO userVO,
+                              HttpSession httpSession) throws Exception {
+
+        RateMaker rateMaker = new RateMaker();
+        rateMaker.setRategb();
+
+        boardVO.setCnum(cateNum); // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
+        model.addAttribute("samePopular", boardService.samePopular(cri, boardVO, userVO, httpSession));
+
+        PageMaker pageMaker = new PageMaker();
+        pageMaker.setCri(cri);
+        pageMaker.setTotalCount(boardService.samePopularCount(cri, boardVO, userVO, httpSession));
+        model.addAttribute("pageMakerSamePopular", pageMaker);
+        model.addAttribute("cateName", "Color");                                     // 리스트 목록 상단에 카테고리 이름 출력!
+//        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
+
+
+        return "sboard/list";
+    }
+
+
+
+}
