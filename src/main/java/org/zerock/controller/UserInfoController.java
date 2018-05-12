@@ -48,6 +48,15 @@ public class UserInfoController {
     @Inject
     private UserInfoService userInfoService;// 글 작성자의 게시글과 댓글
 
+    /**
+     * 게시판의 유저(WRITER) 클릭했을 때. 유저 상세페이지로 이동.
+     *
+     * @param cri
+     * @param model
+     * @param boardVO
+     * @param paramLoginid
+     * @throws Exception
+     */
     @RequestMapping(value = "/userInfoList", method = RequestMethod.GET)
     public void userInfoList(@ModelAttribute("cri") SearchCriteria cri,
                              Model model,

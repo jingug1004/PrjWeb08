@@ -203,12 +203,14 @@ public class BoardDAOImpl implements BoardDAO {
 
         Map<String, Object> paramMap = new HashMap<>();
 
-        paramMap.put("getcolor", boardVO.getGetcolor());
+        paramMap.put("getcolor", userVO.getUday());
         paramMap.put("cnum", boardVO.getCnum());
         paramMap.put("uday", userVO.getUday());
         paramMap.put("ugender", userVO.getUgender());
         paramMap.put("pageStart", searchCriteria.getPageStart());
         paramMap.put("perPageNum", searchCriteria.getPerPageNum());
+
+        logger.info("lll~~~ boardDAOImpl : " + paramMap.toString());
 
         return session.selectList(namespace + ".samePopular", paramMap);
     }
@@ -218,7 +220,7 @@ public class BoardDAOImpl implements BoardDAO {
 
         Map<String, Object> paramMap = new HashMap<>();
 
-        paramMap.put("getcolor", boardVO.getGetcolor());
+        paramMap.put("getcolor", userVO.getUday());
         paramMap.put("cnum", boardVO.getCnum());
         paramMap.put("uday", userVO.getUday());
         paramMap.put("ugender", userVO.getUgender());

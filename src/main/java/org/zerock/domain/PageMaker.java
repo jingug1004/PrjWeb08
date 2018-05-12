@@ -21,14 +21,14 @@ public class PageMaker {
     private boolean prev;
     private boolean next;
     private int displayPageNum = 10;        // displayPageNum은 화면에 보여지는 페이지 번호의 숫자를 의미하는 변수를 추가
-                                            // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
+    // 만일 화면상에 페이지의 번호가 5개씩만 보여지고 싶다면 멤버 필드 값을 변경해주면 됨.
 
     private Criteria cri;                   // SearchCriteria에 상속하는 Criteria
     private CriteriaListAny criListAny;     // SearchCriteria에 상속하는 CriteriaListAny
 
     private int cnumFromBoardVO;            // BoardVO 에서 cnum(카테고리 넘버) 가져오는 필드
 
-    //
+    /* --------------------------------------------------------------------------------------------- */
 
     public int getCnumFromBoardVO() {
         return cnumFromBoardVO;
@@ -191,7 +191,7 @@ public class PageMaker {
     }
 
     /**
-     * 정상적으로 메뉴 들어갔을 때 카테고리(List)
+     * 정상적으로 헤더 카테고리 메뉴 들어갔을 때 카테고리(List)
      *
      * @param page the page
      * @return the string
@@ -226,16 +226,38 @@ public class PageMaker {
     }
 
     /**
-     * 사이트 맨 위(헤더 부분) 전체 검색(ListAny)
+     * 실시간 인기 게시판 리스트에서 페이징 넘버 클릭했을 때
      *
+     * @param page the page
      * @return the string
      */
-    public String makeUserInfo(int page) {
+    public String makeSearchLivePopular(int page) {
         UriComponents uriComponents =
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
-                        .queryParam("perPageNum", criListAny.getPerPageNum())
-                        .queryParam("keyword", ((SearchCriteriaListAny) criListAny).getKeyword())
+                        .queryParam("perPageNum", cri.getPerPageNum())
+                        .queryParam("cate", ((SearchCriteria) cri).getCate())
+//                        .queryParam("searchType", ((SearchCriteria) cri).getSearchType())
+//                        .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
+//                        .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
+                        .build();
+        return uriComponents.toUriString();
+    }
+
+    /**
+     * 같은 칼라 게시판 리스트에서 페이징 넘버 클릭했을 때
+     *
+     * @param page the page
+     * @return the string
+     */
+    public String makeSearchSamePopular(int page) {
+        UriComponents uriComponents =
+                UriComponentsBuilder.newInstance()
+                        .queryParam("page", page)
+                        .queryParam("perPageNum", cri.getPerPageNum())
+                        .queryParam("cate", ((SearchCriteria) cri).getCate())
+//                        .queryParam("searchType", ((SearchCriteria) cri).getSearchType())
+//                        .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
 //                        .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
                         .build();
         return uriComponents.toUriString();

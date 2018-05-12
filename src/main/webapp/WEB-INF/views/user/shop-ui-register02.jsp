@@ -121,17 +121,10 @@
                         </div>
                         <label class="select margin-bottom-15">
                             <select id="ugender" name="ugender" class="form-control">
-                                <%--<option value="0" selected disabled--%>
                                 <option value="" selected="">정치성향</option>
-                                <%--<option value="1">Male</option>--%>
                                 <option value="A1 자유주의 보수적" <c:if test="남자">selected</c:if>>A1 자유주의 보수적</option>
                                 <option value="B1 권위주의 보수적" <c:if test="남자">selected</c:if>>B1 권위주의 보수적</option>
                                 <option value="C1 매우 보수적" <c:if test="남자">selected</c:if>>C1 매우 보수적</option>
-                                <%--<option value="2" <c:if test="${여자}">selected</c:if>>Female</option>--%>
-                                <%--<option value="2" <c:if test="${"여자"}">selected</c:if>>Female</option>--%>
-                                <%--<option value="여자" <c:if test="${reg_gender == 2}">selected</c:if>>Female</option>--%>
-                                <%--바로 위 HTTP Status 500 오류 - "${여자}" contains invalid expression(s):
-                                    javax.el.ELException: Failed to parse the expression [${여자}]--%>
                                 <option value="D1 약간 보수적" <c:if test="${reg_gender == 2}">selected</c:if>>D1 약간 보수적</option>
                                 <option value="X0 관심형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>X0 관심형 중도적</option>
                                 <option value="Y0 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>Y0 중도적</option>

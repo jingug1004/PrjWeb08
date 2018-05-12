@@ -9,7 +9,6 @@ package org.zerock.domain;
  * How : 구성하기 위해서 Criteria에 searchType과 keyword를 추가해서 구현하는 것도 좋지만, 기존 코드와 좀 더 구분해 주고자 별도의 클래스(SearchCriteria)를 기존의 Criteria를 상속해서 사용하도록.
  */
 
-
 public class SearchCriteria extends Criteria{
 
     private String searchType;            // 검색 타입

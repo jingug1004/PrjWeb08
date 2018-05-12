@@ -48,8 +48,8 @@ public class UserVO {
 
     private Timestamp regdate;
 
-    private String regip;
-    private String updip;
+    private String regip;                       // 등록시 아이피
+    private String updip;                       // 최근 접속시 아이피
 
     private int tpost;
     private int treply;

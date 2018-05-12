@@ -385,6 +385,7 @@ public class SearchBoardController {
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(cri);
+        pageMaker.setCnumFromBoardVO(boardVO.getCnum());            // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
         pageMaker.setTotalCount(boardService.livePopularCount(cri));
         model.addAttribute("pageMakerLivePopular", pageMaker);
         model.addAttribute("cateName", "실시간 인기 검색");                                // 리스트 목록 상단에 카테고리 이름 출력!
@@ -420,15 +421,14 @@ public class SearchBoardController {
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(cri);
+        pageMaker.setCnumFromBoardVO(boardVO.getCnum());            // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
         pageMaker.setTotalCount(boardService.samePopularCount(cri, boardVO, userVO, httpSession));
         model.addAttribute("pageMakerSamePopular", pageMaker);
         model.addAttribute("cateName", "Color");                                     // 리스트 목록 상단에 카테고리 이름 출력!
 //        model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
 
-
         return "sboard/list";
     }
-
 
 
 }

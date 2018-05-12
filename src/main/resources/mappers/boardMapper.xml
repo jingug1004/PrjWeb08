@@ -181,6 +181,7 @@
     <!-- 전체 검색 기능 구현시 총 몇개 카운트 -->
     <select id="listSearchAnyCount" resultType="int">
         <![CDATA[
+
         SELECT COUNT(bno)
         FROM tbl_board
         WHERE bno > 0
@@ -277,6 +278,7 @@
 
     <!-- 게시판 - 같은 정치성향 정렬 -->
     <select id="samePopular" resultType="BoardVO">
+-- samePopular 게시판 - 같은 정치성향 정렬
         SELECT *
         FROM tbl_board
         WHERE getcolor = #{getcolor}
@@ -289,6 +291,7 @@
     </select>
 
     <select id="samePopularCount" resultType="int">
+-- samePopularCount 게시판 - 같은 정치성향 정렬
        SELECT count(*)
         FROM tbl_board
         WHERE getcolor = #{getcolor}

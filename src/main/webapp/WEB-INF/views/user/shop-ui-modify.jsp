@@ -17,6 +17,32 @@
 <!--=== End Header v5 ===-->
 <%@ include file="../include/header.jsp" %>
 
+<style>
+    .product-color label:hover {
+        cursor: pointer;
+        border: 2px solid #18ba9b;
+    }
+
+    .product-color input:checked ~ label {
+        border: 2px solid #18ba9b;
+    }
+
+    .product-color input[type=radio] {
+        display: none;
+    }
+
+    .product-color label {
+        /*width: 50px;*/
+        /*height: 50px;*/
+        /*float: right;*/
+        /*padding: 5px;*/
+        /*display: block;*/
+        /*font-size: 24px;*/
+        /*text-align: center;*/
+    }
+
+</style>
+
 <!--=== Breadcrumbs v4 ===-->
 <div class="breadcrumbs-v4">
     <div class="container">
@@ -92,75 +118,107 @@
                                 </section>
                             </div>
                         </div>
+
                         <label class="select margin-bottom-15">
                             <select name="ugender" class="form-control">
-                                <%--<option value="0" selected disabled--%>
-                                <option value="0" selected="">정치성향</option>
-                                <%--<option value="1">Male</option>--%>
-                                <option value="자유주의 보수적" <c:if test="남자">selected</c:if>>자유주의 보수적</option>
-                                <option value="권위주의 보수적" <c:if test="남자">selected</c:if>>권위주의 보수적</option>
-                                <option value="매우 보수적" <c:if test="남자">selected</c:if>>매우 보수적</option>
-                                <%--<option value="2" <c:if test="${여자}">selected</c:if>>Female</option>--%>
-                                <%--<option value="2" <c:if test="${"여자"}">selected</c:if>>Female</option>--%>
-                                <%--<option value="여자" <c:if test="${reg_gender == 2}">selected</c:if>>Female</option>--%>
-                                <%--바로 위 HTTP Status 500 오류 - "${여자}" contains invalid expression(s):
-                                    javax.el.ELException: Failed to parse the expression [${여자}]--%>
-                                <option value="약간 보수적" <c:if test="${reg_gender == 2}">selected</c:if>>약간 보수적</option>
-                                <option value="관심형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>관심형 중도적</option>
-                                <option value="중도적" <c:if test="${reg_gender == 3}">selected</c:if>>중도적</option>
-                                <option value="방임형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>방임형 중도적</option>
-                                <option value="약간 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>약간 진보적</option>
-                                <option value="매우 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>매우 진보적</option>
-                                <option value="권위주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>권위주의 진보적</option>
-                                <option value="자유주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>자유주의 진보적</option>
+                                <option value="" selected="">정치성향</option>
+                                <option value="A1 자유주의 보수적" <c:if test="남자">selected</c:if>>A1 자유주의 보수적</option>
+                                <option value="B1 권위주의 보수적" <c:if test="남자">selected</c:if>>B1 권위주의 보수적</option>
+                                <option value="C1 매우 보수적" <c:if test="남자">selected</c:if>>C1 매우 보수적</option>
+                                <option value="D1 약간 보수적" <c:if test="${reg_gender == 2}">selected</c:if>>D1 약간 보수적</option>
+                                <option value="X0 관심형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>X0 관심형 중도적</option>
+                                <option value="Y0 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>Y0 중도적</option>
+                                <option value="Z0 방임형 중도적" <c:if test="${reg_gender == 3}">selected</c:if>>Z0 방임형 중도적</option>
+                                <option value="D2 약간 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>D2 약간 진보적</option>
+                                <option value="C2 매우 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>C2 매우 진보적</option>
+                                <option value="B2 권위주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>B2 권위주의 진보적</option>
+                                <option value="A2 자유주의 진보적" <c:if test="${reg_gender == 3}">selected</c:if>>A2 자유주의 진보적</option>
                             </select>
                         </label>
-                        <%--<div class="row margin-bottom-10">--%>
-                            <%--<div class="col-xs-6">--%>
-                                <%--<label class="select">--%>
-                                    <%--<select name="umonth" class="form-control">--%>
-                                        <%--<option selected="" value="0">Month</option>--%>
-                                        <%--&lt;%&ndash;<option>January</option>&ndash;%&gt;--%>
-                                        <%--<option value="01" &lt;%&ndash;<c:if test="${reg_month == 1}">selected</c:if>&ndash;%&gt;>January--%>
-                                        <%--</option>--%>
-                                        <%--<option value="02" <c:if test="${reg_month == 2}">selected</c:if>>February--%>
-                                        <%--</option>--%>
-                                        <%--<option value="03" &lt;%&ndash;<c:if test="${reg_month == 3}">selected</c:if>&ndash;%&gt;>March</option>--%>
-                                        <%--<option value="04" <c:if test="${reg_month == 4}">selected</c:if>>April</option>--%>
-                                        <%--<option value="05" <c:if test="${reg_month == 5}">selected</c:if>>May</option>--%>
-                                        <%--<option value="06" <c:if test="${reg_month == 6}">selected</c:if>>June</option>--%>
-                                        <%--<option value="07" <c:if test="${reg_month == 7}">selected</c:if>>July</option>--%>
-                                        <%--<option value="08" <c:if test="${reg_month == 8}">selected</c:if>>August</option>--%>
-                                        <%--<option value="09" <c:if test="${reg_month == 9}">selected</c:if>>September--%>
-                                        <%--</option>--%>
-                                        <%--&lt;%&ndash;org.springframework.validation.BeanPropertyBindingResult:--%>
-                                        <%--1 errors Field error in object 'userVO' on field 'umonth':--%>
-                                        <%--rejected value [10월]; codes [typeMismatch.userVO.umonth,typeMismatch.umonth,--%>
-                                        <%--typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.--%>
-                                        <%--DefaultMessageSourceResolvable: codes [userVO.umonth,umonth]; arguments [];--%>
-                                        <%--default message [umonth]]; default message [Failed to convert property value of type--%>
-                                        <%--[java.lang.String] to required type [int] for property 'umonth';--%>
-                                        <%--nested exception is java.lang.NumberFormatException: For input string: "10월"]&ndash;%&gt;--%>
-                                        <%--&lt;%&ndash;<option value="10월">October</option>&ndash;%&gt;--%>
-                                        <%--<option value="10" <c:if test="${reg_month == 10}">selected</c:if>>October--%>
-                                            <%--&lt;%&ndash;<option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November&ndash;%&gt;--%>
-                                        <%--<option value="11" <c:if test="${reg_month == 11}">selected</c:if>>November--%>
-                                        <%--</option>--%>
-                                        <%--&lt;%&ndash;HTTP Status 500 오류 - "${reg_month == 12월}" contains invalid expression(s):--%>
-                                        <%--javax.el.ELException: Failed to parse the expression [${reg_month == 12월}]&ndash;%&gt;--%>
-                                        <%--&lt;%&ndash;<option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December&ndash;%&gt;--%>
-                                        <%--<option value="12" <c:if test="${reg_month == 12}">selected</c:if>>December--%>
-                                        <%--</option>--%>
-                                    <%--</select>--%>
-                                <%--</label>--%>
-                            <%--</div>--%>
-                            <%--<div class="col-xs-3">--%>
-                                <%--<input type="text" name="uday" placeholder="Day" class="form-control" maxlength="2">--%>
-                            <%--</div>--%>
-                            <%--<div class="col-xs-3">--%>
-                                <%--<input type="text" name="uyear" placeholder="Year" class="form-control" maxlength="4">--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
+
+                        <div class="panel-group" id="accordion-v5">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion-v5" href="#collapseFive">
+                                            Color
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <ul class="list-inline product-color-list product-color ls-ct-center">
+                                            <div class="list-inline product-color-list product-color ls-ct-center">
+                                                <li>
+                                                    <input type="radio" id="choice001" name="uday" value="001">
+                                                    <label class="color-one" for="choice001"><img
+                                                            src="/assets/img/colors/001.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice002" name="uday" value="002">
+                                                    <label class="color-one" for="choice002"><img
+                                                            src="/assets/img/colors/002.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice003" name="uday" value="003">
+                                                    <label class="color-one" for="choice003"><img
+                                                            src="/assets/img/colors/003.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice004" name="uday" value="004">
+                                                    <label class="color-one" for="choice004"><img
+                                                            src="/assets/img/colors/004.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice005" name="uday" value="005">
+                                                    <label class="color-one" for="choice005"><img
+                                                            src="/assets/img/colors/005.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice006" name="uday" value="006">
+                                                    <label class="color-one" for="choice006"><img
+                                                            src="/assets/img/colors/006.png" alt=""></label>
+                                                </li>
+                                            </div>
+                                            <div class="list-inline product-color-list product-color ls-ct-center">
+                                                <li>
+                                                    <input type="radio" id="choice007" name="uday" value="007">
+                                                    <label class="color-one" for="choice007"><img
+                                                            src="/assets/img/colors/007.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice008" name="uday" value="008">
+                                                    <label class="color-one" for="choice008"><img
+                                                            src="/assets/img/colors/008.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice009" name="uday" value="009">
+                                                    <label class="color-one" for="choice009"><img
+                                                            src="/assets/img/colors/009.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice010" name="uday" value="010">
+                                                    <label class="color-one" for="choice010"><img
+                                                            src="/assets/img/colors/010.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice011" name="uday" value="011">
+                                                    <label class="color-one" for="choice011"><img
+                                                            src="/assets/img/colors/011.png" alt=""></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="choice012" name="uday" value="012">
+                                                    <label class="color-one" for="choice012"><img
+                                                            src="/assets/img/colors/012.png" alt=""></label>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/end panel group-->
+
                         <section>
                             <label class="input">
                                 <input type="text" name="nickname" placeholder="Nickname" class="form-control">
