@@ -19,16 +19,19 @@ public class UserModifyVO {
     private String modupwconf;
     private String modrespectname;
     private int modupoint;
+
     private String modemail;
     private String modnickname;
     private String modcolor;
     private String moddelyn;
     private String modtrendency;
+
     private Timestamp modregdate;
     private String modregip;                        // 최초 회원가입 등록시 아이피
     private String modblindip;                      // 회원정보 변경시 아이피
     private int modtpost;
     private int modtreply;
+
     private int modtgood;
     private int modtbad;
     private int modtspam;

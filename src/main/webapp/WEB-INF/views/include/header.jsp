@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%--[출처] Spring - <spring:message> 태그 사용 2|작성자 hong699822--%>
-    <%--<%@ page session="false" %>--%>
+<%--<%@ page session="false" %>--%>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
@@ -262,9 +262,10 @@
                                 <li>
                                     <input type="hidden" id="loginUday" value="${login.uday}">
                                     <img src="/assets/img/colors/${login.uday}.png" id="getColor"
-                                         alt=""> ${login.nickname}님! | <a
-                                        href="<c:url value="/user/shop-ui-modify"/>">Modify</a> | <a
-                                        href="<c:url value="/user/logout"/>">Logout</a>
+                                         alt=""> ${login.nickname}님! |
+                                        <%--<a href="<c:url value="/user/shop-ui-modify"/>">Modify</a> |--%>
+                                    <a data-toggle="modal" data-target="#userModifyModal">Modify</a> |
+                                    <a href="<c:url value="/user/logout"/>">Logout</a>
                                 </li>
                             </c:if>
                             <li><i id="searchBtnAny" class="search fa fa-search search-button"></i></li>
@@ -361,21 +362,37 @@
                                     <a href="javascript:void(0);">프로필</a>
                                     <ul class="dropdown-menu">
                                         <%--<ul id="cateNum" class="dropdown-menu">--%>
-                                        <li class="active" value="1101"><a href="/sboard/list?cate=1101" title="<spring:message code="프로필.개요" />">개요</a></li>
-                                        <li value="1102"><a href="/sboard/list?cate=1102" title="<spring:message code="프로필.생애" />">생애</a></li>
-                                        <li value="1103"><a href="/sboard/list?cate=1103" title="<spring:message code="프로필.약력" />">약력</a></li>
-                                        <li><a href="/sboard/list?cate=1104" title="<spring:message code="프로필.가족관계" />">가족관계</a></li>
-                                        <li><a href="/sboard/list?cate=1105" title="<spring:message code="프로필.인간관계" />">인간관계</a></li>
-                                        <li><a href="/sboard/list?cate=1106" title="<spring:message code="프로필.반려동물" />">반려 동물</a></li>
-                                        <li><a href="/sboard/list?cate=1107" title="<spring:message code="프로필.성격" />">성격</a></li>
-                                        <li><a href="/sboard/list?cate=1108" title="<spring:message code="프로필.인기" />">인기</a></li>
-                                        <li><a href="/sboard/list?cate=1109" title="<spring:message code="프로필.별명" />">별명</a></li>
-                                        <li><a href="/sboard/list?cate=1110" title="<spring:message code="프로필.저서" />">저서</a></li>
-                                        <li><a href="/sboard/list?cate=1111" title="<spring:message code="프로필.선거이력" />">선거 이력</a></li>
-                                        <li><a href="/sboard/list?cate=1112" title="<spring:message code="프로필.각종타이틀" />">각종 타이틀</a></li>
-                                        <li><a href="/sboard/list?cate=1113" title="<spring:message code="프로필.비판과논란" />">비판과 논란</a></li>
-                                        <li><a href="/sboard/list?cate=1114" title="<spring:message code="프로필.재산" />">재산</a></li>
-                                        <li><a href="/sboard/list?cate=1115" title="<spring:message code="프로필.기타" />">기타</a></li>
+                                        <li class="active" value="1101"><a href="/sboard/list?cate=1101"
+                                                                           title="<spring:message code="프로필.개요" />">개요</a>
+                                        </li>
+                                        <li value="1102"><a href="/sboard/list?cate=1102"
+                                                            title="<spring:message code="프로필.생애" />">생애</a></li>
+                                        <li value="1103"><a href="/sboard/list?cate=1103"
+                                                            title="<spring:message code="프로필.약력" />">약력</a></li>
+                                        <li><a href="/sboard/list?cate=1104" title="<spring:message code="프로필.가족관계" />">가족관계</a>
+                                        </li>
+                                        <li><a href="/sboard/list?cate=1105" title="<spring:message code="프로필.인간관계" />">인간관계</a>
+                                        </li>
+                                        <li><a href="/sboard/list?cate=1106" title="<spring:message code="프로필.반려동물" />">반려
+                                            동물</a></li>
+                                        <li><a href="/sboard/list?cate=1107"
+                                               title="<spring:message code="프로필.성격" />">성격</a></li>
+                                        <li><a href="/sboard/list?cate=1108"
+                                               title="<spring:message code="프로필.인기" />">인기</a></li>
+                                        <li><a href="/sboard/list?cate=1109"
+                                               title="<spring:message code="프로필.별명" />">별명</a></li>
+                                        <li><a href="/sboard/list?cate=1110"
+                                               title="<spring:message code="프로필.저서" />">저서</a></li>
+                                        <li><a href="/sboard/list?cate=1111" title="<spring:message code="프로필.선거이력" />">선거
+                                            이력</a></li>
+                                        <li><a href="/sboard/list?cate=1112"
+                                               title="<spring:message code="프로필.각종타이틀" />">각종 타이틀</a></li>
+                                        <li><a href="/sboard/list?cate=1113"
+                                               title="<spring:message code="프로필.비판과논란" />">비판과 논란</a></li>
+                                        <li><a href="/sboard/list?cate=1114"
+                                               title="<spring:message code="프로필.재산" />">재산</a></li>
+                                        <li><a href="/sboard/list?cate=1115"
+                                               title="<spring:message code="프로필.기타" />">기타</a></li>
                                         <%--</ul>--%>
                                     </ul>
                                 </li>
@@ -383,15 +400,19 @@
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">당선 전</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/sboard/list?cate=1201" title="<spring:message code="당선전.당선전공약" />">당선 전 공약</a></li>
-                                        <li><a href="/sboard/list?cate=1202" title="<spring:message code="당선전.공약이행" />">공약 이행</a></li>
+                                        <li><a href="/sboard/list?cate=1201"
+                                               title="<spring:message code="당선전.당선전공약" />">당선 전 공약</a></li>
+                                        <li><a href="/sboard/list?cate=1202" title="<spring:message code="당선전.공약이행" />">공약
+                                            이행</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">당선 후</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/sboard/list?cate=1251" title="<spring:message code="당선후.당선후공약" />">당선 후 공약</a></li>
-                                        <li><a href="/sboard/list?cate=1252" title="<spring:message code="당선후.공약이행" />">공약 이행</a></li>
+                                        <li><a href="/sboard/list?cate=1251"
+                                               title="<spring:message code="당선후.당선후공약" />">당선 후 공약</a></li>
+                                        <li><a href="/sboard/list?cate=1252" title="<spring:message code="당선후.공약이행" />">공약
+                                            이행</a></li>
                                     </ul>
                                 </li>
 
@@ -404,8 +425,10 @@
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">사람</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/sboard/list?cate=1501" title="<spring:message code="사람.청와대" />">청와대</a></li>
-                                        <li><a href="/sboard/list?cate=1502" title="<spring:message code="사람.국회" />">국회</a></li>
+                                        <li><a href="/sboard/list?cate=1501" title="<spring:message code="사람.청와대" />">청와대</a>
+                                        </li>
+                                        <li><a href="/sboard/list?cate=1502"
+                                               title="<spring:message code="사람.국회" />">국회</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -463,59 +486,114 @@
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">대통령i</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1401" title="<spring:message code="대통령i.대통령비서실" />">대통령비서실</a></li>
-                                                        <li><a href="/sboard/list?cate=1402" title="<spring:message code="대통령i.대통령경호처" />">대통령경호처</a></li>
-                                                        <li><a href="/sboard/list?cate=1403" title="<spring:message code="대통령i.국가안보실" />">국가안보실</a></li>
+                                                        <li><a href="/sboard/list?cate=1401"
+                                                               title="<spring:message code="대통령i.대통령비서실" />">대통령비서실</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1402"
+                                                               title="<spring:message code="대통령i.대통령경호처" />">대통령경호처</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1403"
+                                                               title="<spring:message code="대통령i.국가안보실" />">국가안보실</a>
+                                                        </li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국가인권위원회</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1404" title="<spring:message code="국가인권위원회.국가인권위원회" />">국가인권위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1404"
+                                                               title="<spring:message code="국가인권위원회.국가인권위원회" />">국가인권위원회</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">대통령ii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1405" title="<spring:message code="대통령ii.감사원" />">감사원</a></li>
-                                                        <li><a href="/sboard/list?cate=1406" title="<spring:message code="대통령ii.국가정보원" />">국가정보원</a></li>
-                                                        <li><a href="/sboard/list?cate=1407" title="<spring:message code="대통령ii.방송통신위원회" />">방송통신위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1405"
+                                                               title="<spring:message code="대통령ii.감사원" />">감사원</a></li>
+                                                        <li><a href="/sboard/list?cate=1406"
+                                                               title="<spring:message code="대통령ii.국가정보원" />">국가정보원</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1407"
+                                                               title="<spring:message code="대통령ii.방송통신위원회" />">방송통신위원회</a>
+                                                        </li>
 
                                                     </ul>
                                                     <h3 class="mega-menu-heading">대통령iii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1408" title="<spring:message code="대통령iii.국가안전보장회의" />">국가안전보장회의</a></li>
-                                                        <li><a href="/sboard/list?cate=1409" title="<spring:message code="대통령iii.민주평화통일자문회의" />">민주평화통일자문회의</a></li>
-                                                        <li><a href="/sboard/list?cate=1410" title="<spring:message code="대통령iii.국민경제자문회의" />">국민경제자문회의</a></li>
-                                                        <li><a href="/sboard/list?cate=1411" title="<spring:message code="대통령iii.국가과학기술자문회의" />">국가과학기술자문회의</a></li>
-                                                        <li><a href="/sboard/list?cate=1412" title="<spring:message code="대통령iii.특별감찰관" />">특별감찰관</a></li>
+                                                        <li><a href="/sboard/list?cate=1408"
+                                                               title="<spring:message code="대통령iii.국가안전보장회의" />">국가안전보장회의</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1409"
+                                                               title="<spring:message code="대통령iii.민주평화통일자문회의" />">민주평화통일자문회의</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1410"
+                                                               title="<spring:message code="대통령iii.국민경제자문회의" />">국민경제자문회의</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1411"
+                                                               title="<spring:message code="대통령iii.국가과학기술자문회의" />">국가과학기술자문회의</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1412"
+                                                               title="<spring:message code="대통령iii.특별감찰관" />">특별감찰관</a>
+                                                        </li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국무총리i</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1413" title="<spring:message code="국무총리i.국무조정실" />">국무조정실</a></li>
-                                                        <li><a href="/sboard/list?cate=1414" title="<spring:message code="국무총리i.국무총리비서실" />">국무총리비서실</a></li>
+                                                        <li><a href="/sboard/list?cate=1413"
+                                                               title="<spring:message code="국무총리i.국무조정실" />">국무조정실</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1414"
+                                                               title="<spring:message code="국무총리i.국무총리비서실" />">국무총리비서실</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">국무총리ii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1415" title="<spring:message code="국무총리ii.기획재정부" />">기획재정부</a></li>
-                                                        <li><a href="/sboard/list?cate=1416" title="<spring:message code="국무총리ii.교육부" />">교육부</a></li>
-                                                        <li><a href="/sboard/list?cate=1417" title="<spring:message code="국무총리ii.미래창조과학부" />">미래창조과학부</a></li>
-                                                        <li><a href="/sboard/list?cate=1418" title="<spring:message code="국무총리ii.외교부" />">외교부</a></li>
-                                                        <li><a href="/sboard/list?cate=1419" title="<spring:message code="국무총리ii.통일부" />">통일부</a></li>
-                                                        <li><a href="/sboard/list?cate=1420" title="<spring:message code="국무총리ii.법무부" />">법무부</a></li>
-                                                        <li><a href="/sboard/list?cate=1421" title="<spring:message code="국무총리ii.국방부" />">국방부</a></li>
-                                                        <li><a href="/sboard/list?cate=1422" title="<spring:message code="국무총리ii.행정자치부" />">행정자치부</a></li>
-                                                        <li><a href="/sboard/list?cate=1423" title="<spring:message code="국무총리ii.문화체육관광부" />">문화체육관광부</a></li>
-                                                        <li><a href="/sboard/list?cate=1424" title="<spring:message code="국무총리ii.농림축산식품부" />">농림축산식품부</a></li>
-                                                        <li><a href="/sboard/list?cate=1425" title="<spring:message code="국무총리ii.산업통상자원부" />">산업통상자원부</a></li>
-                                                        <li><a href="/sboard/list?cate=1426" title="<spring:message code="국무총리ii.보건복지부" />">보건복지부</a></li>
-                                                        <li><a href="/sboard/list?cate=1427" title="<spring:message code="국무총리ii.환경부" />">환경부</a></li>
-                                                        <li><a href="/sboard/list?cate=1428" title="<spring:message code="국무총리ii.고용노동부" />">고용노동부</a></li>
-                                                        <li><a href="/sboard/list?cate=1429" title="<spring:message code="국무총리ii.여성가족부" />">여성가족부</a></li>
-                                                        <li><a href="/sboard/list?cate=1430" title="<spring:message code="국무총리ii.국토교통부" />">국토교통부</a></li>
-                                                        <li><a href="/sboard/list?cate=1431" title="<spring:message code="국무총리ii.해양수산부" />">해양수산부</a></li>
+                                                        <li><a href="/sboard/list?cate=1415"
+                                                               title="<spring:message code="국무총리ii.기획재정부" />">기획재정부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1416"
+                                                               title="<spring:message code="국무총리ii.교육부" />">교육부</a></li>
+                                                        <li><a href="/sboard/list?cate=1417"
+                                                               title="<spring:message code="국무총리ii.미래창조과학부" />">미래창조과학부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1418"
+                                                               title="<spring:message code="국무총리ii.외교부" />">외교부</a></li>
+                                                        <li><a href="/sboard/list?cate=1419"
+                                                               title="<spring:message code="국무총리ii.통일부" />">통일부</a></li>
+                                                        <li><a href="/sboard/list?cate=1420"
+                                                               title="<spring:message code="국무총리ii.법무부" />">법무부</a></li>
+                                                        <li><a href="/sboard/list?cate=1421"
+                                                               title="<spring:message code="국무총리ii.국방부" />">국방부</a></li>
+                                                        <li><a href="/sboard/list?cate=1422"
+                                                               title="<spring:message code="국무총리ii.행정자치부" />">행정자치부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1423"
+                                                               title="<spring:message code="국무총리ii.문화체육관광부" />">문화체육관광부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1424"
+                                                               title="<spring:message code="국무총리ii.농림축산식품부" />">농림축산식품부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1425"
+                                                               title="<spring:message code="국무총리ii.산업통상자원부" />">산업통상자원부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1426"
+                                                               title="<spring:message code="국무총리ii.보건복지부" />">보건복지부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1427"
+                                                               title="<spring:message code="국무총리ii.환경부" />">환경부</a></li>
+                                                        <li><a href="/sboard/list?cate=1428"
+                                                               title="<spring:message code="국무총리ii.고용노동부" />">고용노동부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1429"
+                                                               title="<spring:message code="국무총리ii.여성가족부" />">여성가족부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1430"
+                                                               title="<spring:message code="국무총리ii.국토교통부" />">국토교통부</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1431"
+                                                               title="<spring:message code="국무총리ii.해양수산부" />">해양수산부</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
 
@@ -523,64 +601,106 @@
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">국무총리iii</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1432" title="<spring:message code="국무총리iii.국민안전처" />">국민안전처</a></li>
-                                                        <li><a href="/sboard/list?cate=1433" title="<spring:message code="국무총리iii.인사혁신처" />">인사혁신처</a></li>
-                                                        <li><a href="/sboard/list?cate=1434" title="<spring:message code="국무총리iii.법제처" />">법제처</a></li>
-                                                        <li><a href="/sboard/list?cate=1435" title="<spring:message code="국무총리iii.국가보훈처" />">국가보훈처</a></li>
-                                                        <li><a href="/sboard/list?cate=1436" title="<spring:message code="국무총리iii.식품의약품안전처" />">식품의약품안전처</a></li>
-                                                        <li><a href="/sboard/list?cate=1437" title="<spring:message code="국무총리iii.공정거래위원회" />">공정거래위원회</a></li>
-                                                        <li><a href="/sboard/list?cate=1438" title="<spring:message code="국무총리iii.금융위원회" />">금융위원회</a></li>
-                                                        <li><a href="/sboard/list?cate=1439" title="<spring:message code="국무총리iii.국민권익위원회" />">국민권익위원회</a></li>
-                                                        <li><a href="/sboard/list?cate=1440" title="<spring:message code="국무총리iii.원자력안전위원회" />">원자력안전위원회</a></li>
+                                                        <li><a href="/sboard/list?cate=1432"
+                                                               title="<spring:message code="국무총리iii.국민안전처" />">국민안전처</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1433"
+                                                               title="<spring:message code="국무총리iii.인사혁신처" />">인사혁신처</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1434"
+                                                               title="<spring:message code="국무총리iii.법제처" />">법제처</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1435"
+                                                               title="<spring:message code="국무총리iii.국가보훈처" />">국가보훈처</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1436"
+                                                               title="<spring:message code="국무총리iii.식품의약품안전처" />">식품의약품안전처</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1437"
+                                                               title="<spring:message code="국무총리iii.공정거래위원회" />">공정거래위원회</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1438"
+                                                               title="<spring:message code="국무총리iii.금융위원회" />">금융위원회</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1439"
+                                                               title="<spring:message code="국무총리iii.국민권익위원회" />">국민권익위원회</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1440"
+                                                               title="<spring:message code="국무총리iii.원자력안전위원회" />">원자력안전위원회</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">기획재정부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1441" title="<spring:message code="기획재정부.국세청" />">국세청</a></li>
-                                                        <li><a href="/sboard/list?cate=1442" title="<spring:message code="기획재정부.관세청" />">관세청</a></li>
-                                                        <li><a href="/sboard/list?cate=1443" title="<spring:message code="기획재정부.조달청" />">조달청</a></li>
-                                                        <li><a href="/sboard/list?cate=1444" title="<spring:message code="기획재정부.통계청" />">통계청</a></li>
+                                                        <li><a href="/sboard/list?cate=1441"
+                                                               title="<spring:message code="기획재정부.국세청" />">국세청</a></li>
+                                                        <li><a href="/sboard/list?cate=1442"
+                                                               title="<spring:message code="기획재정부.관세청" />">관세청</a></li>
+                                                        <li><a href="/sboard/list?cate=1443"
+                                                               title="<spring:message code="기획재정부.조달청" />">조달청</a></li>
+                                                        <li><a href="/sboard/list?cate=1444"
+                                                               title="<spring:message code="기획재정부.통계청" />">통계청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">법무부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1445" title="<spring:message code="법무부.검찰청" />">검찰청</a></li>
+                                                        <li><a href="/sboard/list?cate=1445"
+                                                               title="<spring:message code="법무부.검찰청" />">검찰청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국방부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1446" title="<spring:message code="국방부.병무청" />">병무청</a></li>
-                                                        <li><a href="/sboard/list?cate=1447" title="<spring:message code="국방부.방위사업청" />">방위사업청</a></li>
+                                                        <li><a href="/sboard/list?cate=1446"
+                                                               title="<spring:message code="국방부.병무청" />">병무청</a></li>
+                                                        <li><a href="/sboard/list?cate=1447"
+                                                               title="<spring:message code="국방부.방위사업청" />">방위사업청</a>
+                                                        </li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">행정자치부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1448" title="<spring:message code="행정자치부.경찰청" />">경찰청</a></li>
+                                                        <li><a href="/sboard/list?cate=1448"
+                                                               title="<spring:message code="행정자치부.경찰청" />">경찰청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">문화체육관광부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1449" title="<spring:message code="문화체육관광부.문화재청" />">문화재청</a></li>
+                                                        <li><a href="/sboard/list?cate=1449"
+                                                               title="<spring:message code="문화체육관광부.문화재청" />">문화재청</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">농림축산식품부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1450" title="<spring:message code="농림축산식품부.농촌진흥청" />">농촌진흥청</a></li>
-                                                        <li><a href="/sboard/list?cate=1451" title="<spring:message code="농림축산식품부.산림청" />">산림청</a></li>
+                                                        <li><a href="/sboard/list?cate=1450"
+                                                               title="<spring:message code="농림축산식품부.농촌진흥청" />">농촌진흥청</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1451"
+                                                               title="<spring:message code="농림축산식품부.산림청" />">산림청</a>
+                                                        </li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">산업통상자원부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1452" title="<spring:message code="산업통상자원부.중소기업청" />">중소기업청</a></li>
-                                                        <li><a href="/sboard/list?cate=1453" title="<spring:message code="산업통상자원부.특허청" />">특허청</a></li>
+                                                        <li><a href="/sboard/list?cate=1452"
+                                                               title="<spring:message code="산업통상자원부.중소기업청" />">중소기업청</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1453"
+                                                               title="<spring:message code="산업통상자원부.특허청" />">특허청</a>
+                                                        </li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">환경부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1454" title="<spring:message code="환경부.기상청" />">기상청</a></li>
+                                                        <li><a href="/sboard/list?cate=1454"
+                                                               title="<spring:message code="환경부.기상청" />">기상청</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">국토교통부</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="/sboard/list?cate=1455" title="<spring:message code="국토교통부.행정중심복합도시건설청" />">행정중심복합도시건설청</a></li>
-                                                        <li><a href="/sboard/list?cate=1456" title="<spring:message code="국토교통부.새만금개발청" />">새만금개발청</a></li>
+                                                        <li><a href="/sboard/list?cate=1455"
+                                                               title="<spring:message code="국토교통부.행정중심복합도시건설청" />">행정중심복합도시건설청</a>
+                                                        </li>
+                                                        <li><a href="/sboard/list?cate=1456"
+                                                               title="<spring:message code="국토교통부.새만금개발청" />">새만금개발청</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div><!--/end row-->
@@ -614,7 +734,9 @@
                                     <a href="javascript:void(0);">인기 게시물</a>
                                     <ul class="dropdown-menu">
                                         <%--<ul id="cateNum" class="dropdown-menu">--%>
-                                        <li class="active" value="1101"><a href="/sboard/popList" title="<spring:message code="프로필.개요" />">실시간</a></li>
+                                        <li class="active" value="1101"><a href="/sboard/popList"
+                                                                           title="<spring:message code="프로필.개요" />">실시간</a>
+                                        </li>
                                         <li value="1102"><a href="" title="<spring:message code="프로필.생애" />">일간</a></li>
                                         <li value="1103"><a href="" title="<spring:message code="프로필.약력" />">주간</a></li>
                                         <li><a href="" title="<spring:message code="프로필.가족관계" />">월간</a></li>
@@ -670,6 +792,28 @@
     <!--=== End Header v5 ===-->
     <%--</div>--%>
 
+    <%-- 회원정보 수정 모달 start --%>
+    <div id="userModifyModal" class="modal modal-primary fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 <%--class="modal-title"--%>>비밀번호 확인</h4>
+                </div>
+                <div class="modal-body" data-rno>
+                    <p><input type="text" id="upwConfirm" class="form-control"></p>
+                </div>
+                <div class="modal-footer text-right">
+                    <button type="button" class="btn btn-info" id="upwConfirmBtn">확인</button>
+                    <%--<button type="button" class="btn btn-danger" id="replyDelBtn">삭제</button>--%>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%-- 회원정보 수정 모달 end --%>
+
     <script>
 
         <%--var tempUrl02 = ${login.uday};--%>
@@ -718,6 +862,46 @@
 //            var temp = tempUrl.concat(tempUrl01, tempUrl02, tempUrl03);
 //
 //            $('#getColor').prop("src", temp);
+
+            $("#upwConfirmBtn").on("click", function () {
+
+                var upwConfirm = $("#upwConfirm").val();
+
+                var loginUid = "${login.uid}";
+
+                var userVO = {
+                    uid: loginUid,
+                    upw: upwConfirm
+                };
+
+                alert("upwConfirm : " + upwConfirm);
+                alert("loginUpw : " + loginUid);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/userInfo/userPassConfirmGET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-HTTP-Method-Override": "POST"
+                    },
+                    dataType: 'text',
+                    data: JSON.stringify(userVO),
+                    success: function (data) {
+
+                        var temp = data;
+
+                        console.log("result 00 : " + data);
+                        console.log("result 01 : " + data[0]);
+                        console.log('result 02 : ' + data[1]);
+                        console.log('result 03 : ' + temp);
+                        console.log('result 04 : ' + temp[0]);
+                        console.log('result 05 : ' + temp[1]);
+                    },
+                    error: function (xhr, textStatus, error) {
+                        console.log("ErRoR : " + xhr, textStatus, error);
+                    }
+                });
+            });
 
         });
 

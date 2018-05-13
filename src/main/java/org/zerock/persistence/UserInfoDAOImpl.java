@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.UserVO;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -34,5 +35,11 @@ public class UserInfoDAOImpl implements UserInfoDAO {
     @Override
     public int userInfoListCount(String loginid) throws Exception {
         return session.selectOne(namespace + ".userInfoListCount", loginid);
+    }
+
+    @Override
+    public String userPassConfirmGET(UserVO userVO) throws Exception {
+        logger.info("lll~~~ userVO 01 : " + userVO.toString());
+        return session.selectOne(namespace + ".userPassConfirmGET", userVO);
     }
 }

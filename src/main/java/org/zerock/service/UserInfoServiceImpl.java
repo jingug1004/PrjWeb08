@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.UserVO;
 import org.zerock.persistence.*;
 
 import javax.inject.Inject;
@@ -46,5 +47,10 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public int userInfoListCount(String loginid) throws Exception {
         return userInfoDAO.userInfoListCount(loginid);
+    }
+
+    @Override
+    public String userPassConfirmGET(UserVO userVO) throws Exception {
+        return userInfoDAO.userPassConfirmGET(userVO);
     }
 }

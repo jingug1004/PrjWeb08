@@ -13,6 +13,11 @@
         SELECT count(*) FROM tbl_board WHERE id = #{loginid} ORDER BY regdate desc
     </select>
 
+    <!-- 회원정보 수정 페이지에서 회원정보 수정할 때 비밀번호 맞는지 확인하기 위한 GET -->
+    <select id="userPassConfirmGET" resultType="string">
+        -- userPassConfirmGET
+        SELECT upw FROM tbl_user WHERE uid = #{uid} AND upw = #{upw}
+    </select>
 
     <sql id="search">
         <if test="searchType != null">
@@ -62,6 +67,8 @@
             </if>
         </if>
     </sql>
+
+
 
 
 </mapper>

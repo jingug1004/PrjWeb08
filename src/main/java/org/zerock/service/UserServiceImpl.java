@@ -114,4 +114,5 @@ public class UserServiceImpl implements UserService {
     public int registUsersNumGET() throws Exception {
         return userDAO.registUsersNumGET();
     }
+
 }

@@ -53,7 +53,8 @@ public interface UserService {
      * @throws Exception the exception
      */
     public void regist(UserVO user) throws Exception;
-
     public int registUsersNumGET() throws Exception;
+
+
 
 }

@@ -2,16 +2,12 @@ package org.zerock.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.zerock.domain.BoardVO;
-import org.zerock.domain.PageMaker;
-import org.zerock.domain.RateMaker;
-import org.zerock.domain.SearchCriteria;
+import org.springframework.web.bind.annotation.*;
+import org.zerock.domain.*;
 import org.zerock.service.BoardService;
 import org.zerock.service.UserInfoService;
 
@@ -88,5 +84,16 @@ public class UserInfoController {
 
     }
 
+    @RequestMapping(value = "/userPassConfirmGET", method = RequestMethod.POST)
+    public ResponseEntity<String> userPassConfirmGET(@RequestBody UserVO userVO) throws Exception {
 
+        ResponseEntity<String> entity = null;
+        try {
+            entity = new ResponseEntity<>(userInfoService.userPassConfirmGET(userVO), HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+        return entity;
+    }
 }
