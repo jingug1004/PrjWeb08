@@ -874,9 +874,6 @@
                     upw: upwConfirm
                 };
 
-                alert("upwConfirm : " + upwConfirm);
-                alert("loginUpw : " + loginUid);
-
                 $.ajax({
                     type: 'POST',
                     url: '/userInfo/userPassConfirmGET',
@@ -890,12 +887,18 @@
 
                         var temp = data;
 
-                        console.log("result 00 : " + data);
-                        console.log("result 01 : " + data[0]);
-                        console.log('result 02 : ' + data[1]);
-                        console.log('result 03 : ' + temp);
-                        console.log('result 04 : ' + temp[0]);
-                        console.log('result 05 : ' + temp[1]);
+//                        console.log("result 00 : " + data);
+//                        console.log("result 01 : " + data[0]);
+//                        console.log('result 02 : ' + data[1]);
+//                        console.log('result 03 : ' + temp);
+//                        console.log('result 04 : ' + temp[0]);
+//                        console.log('result 05 : ' + temp[1]);
+
+                        if (temp == upwConfirm) {
+                            location.href ="/user/shop-ui-modify";
+                        } else {
+                            alert("비밀번호가 일치하지 않습니다.");
+                        }
                     },
                     error: function (xhr, textStatus, error) {
                         console.log("ErRoR : " + xhr, textStatus, error);

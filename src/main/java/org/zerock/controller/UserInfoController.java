@@ -84,6 +84,7 @@ public class UserInfoController {
 
     }
 
+    @ResponseBody
     @RequestMapping(value = "/userPassConfirmGET", method = RequestMethod.POST)
     public ResponseEntity<String> userPassConfirmGET(@RequestBody UserVO userVO) throws Exception {
 

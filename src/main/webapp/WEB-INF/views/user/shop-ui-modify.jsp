@@ -110,8 +110,8 @@
                             <div class="col-sm-6">
                                 <section>
                                     <label class="input">
-                                        <input type="text" name="uname" placeholder="User name"
-                                               class="form-control">
+                                        <input type="text" name="uname" placeholder="존경하는 정치인 ex)문재인"
+                                               class="form-control" title="존경하는 정치인">
                                         <form:errors path="uname" cssClass="error"/>
                                         <%--messages.properties 안에 경로 레벨과 같아야 함!--%>
                                     </label>
@@ -221,27 +221,27 @@
 
                         <section>
                             <label class="input">
-                                <input type="text" name="nickname" placeholder="Nickname" class="form-control">
+                                <input type="text" name="nickname" placeholder="Nickname" class="form-control" title="닉네임">
                                 <form:errors path="nickname" cssClass="error"/>
                             </label>
                         </section>
                         <section>
                             <label class="input">
-                                <input type="email" name="email" placeholder="Email address" class="form-control">
+                                <input type="email" name="email" placeholder="Email address" class="form-control" title="이메일">
                                 <form:errors path="email" cssClass="error"/>
                             </label>
                         </section>
                         <section>
                             <label class="input">
                                 <input type="password" name="upw" placeholder="Password" id="password"
-                                       class="form-control">
+                                       class="form-control" title="비밀번호">
                                 <form:errors path="upw" cssClass="error"/>
                             </label>
                         </section>
                         <section>
                             <label class="input">
                                 <input type="password" name="upwconfirm" placeholder="Confirm password"
-                                       class="form-control">
+                                       class="form-control" title="비밀번호 확인">
                                 <form:errors path="upwconfirm" cssClass="error"/>
                             </label>
                         </section>

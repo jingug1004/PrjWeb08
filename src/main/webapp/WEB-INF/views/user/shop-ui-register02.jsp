@@ -121,7 +121,7 @@
                         </div>
                         <label class="select margin-bottom-15">
                             <select id="ugender" name="ugender" class="form-control">
-                                <option value="" selected="">정치성향</option>
+                                <option value="Y0 중도적" selected="">정치성향</option>
                                 <option value="A1 자유주의 보수적" <c:if test="남자">selected</c:if>>A1 자유주의 보수적</option>
                                 <option value="B1 권위주의 보수적" <c:if test="남자">selected</c:if>>B1 권위주의 보수적</option>
                                 <option value="C1 매우 보수적" <c:if test="남자">selected</c:if>>C1 매우 보수적</option>
@@ -348,10 +348,18 @@
     }
 
     function formPost() { // step.03 <form> 안에 모든 <input> value 값 전달.
+        var isNullUday = $("input[name=uday]:checked").val();
+
         var formObj = $("form[role='form']");
 
         formObj.attr("action", "/user/registPost");
         formObj.attr("method", "post");
+
+        if (isNullUday == null || isNullUday == "" || isNullUday == undefined) {
+//            formObj.append($('<input type="radio" id="choice009" name="uday" value="009">'));
+            formObj.append($('#choice009').attr("checked", true));
+        }
+
         formObj.submit();
     }
 

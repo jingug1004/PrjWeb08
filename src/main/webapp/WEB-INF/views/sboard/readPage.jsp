@@ -86,6 +86,7 @@
         opacity: 0;
         pointer-events: none;
     }
+
     /* CSS 이벤트 제어 속성 - pointer-events 출처: http://webclub.tistory.com/331 [Web Club] */
 
     /*canvas {*/
@@ -144,7 +145,8 @@
                                 <label for="exampleInputEmail1">
                                     <img src="/assets/img/colors/ipIcon.png" alt="">
                                     ip</label>
-                                <input id="boardip" type="text" name='boardip' class="form-control" value="${boardVO.boardip}"
+                                <input id="boardip" type="text" name='boardip' class="form-control"
+                                       value="${boardVO.boardip}"
                                        readonly="readonly" style="color: #aa1111">
                                 <%--조회 화면이므로 아예 사용자가 내용을 수정할 수 없도록 EL로 출력되는 부분에는 readonly 속성을 이용해서 사용자가 내용을 수정할 수 없도록 만들어 줌. 밑의 2개도 readonly--%>
                             </div>
@@ -196,7 +198,6 @@
                     <%--<button id="removeDataset">Remove Dataset</button>--%>
                     <%--<button id="addData">Add Data</button>--%>
                     <%--<button id="removeData">Remove Data</button>--%>
-
 
 
                     <div class="form-group">
@@ -523,7 +524,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                   <i class="fa fa-clock-o"></i>{{prettifyDate regdate}}
                     <%--'prettifyDate regdate'에는 handlebar의 기능을 확장하는 자바스크립트 방법의 예로 사용. --%>
                 </span>
-                <span class="time">
+            <span class="time">
                   <i class="fa"></i>{{replyip}}
                 </span>
             <h3 class="timeline-header"><strong>{{rno}}</strong>
