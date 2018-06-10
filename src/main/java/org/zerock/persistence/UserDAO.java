@@ -1,5 +1,6 @@
 package org.zerock.persistence;
 
+import org.zerock.domain.UserModifyVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 
@@ -52,11 +53,13 @@ public interface UserDAO {
      * @param uvo the uvo
      * @throws Exception the exception
      */
-    public void create(UserVO uvo) throws Exception;
+    public void create(UserVO uvo) throws Exception;                    // 최초 회원가입
+
+    public void createLog(UserModifyVO userModifyVO) throws Exception;              // 최초 회원가입 로그 이력
 
     public int registUsersNumGET() throws Exception;                    // 전체 등록된 회원수 GET
 
-    public int registColorNumGET(String uday) throws Exception;                    // 전체 등록된 칼라별 회원수 GET - Lv0~100 구하기 위해서
+    public int registColorNumGET(String uday) throws Exception;         // 전체 등록된 칼라별 회원수 GET - Lv0~100 구하기 위해서
 
     public void totalUserPostNumUPD(UserVO userVO) throws Exception;    // 전체 유저의 등록한 게시물 수 업데이트
 

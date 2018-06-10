@@ -41,6 +41,11 @@
         VALUES (#{uid}, #{upw}, #{upwconfirm}, #{uname}, #{email}, #{nickname}, #{uday}, #{uyear}, 'N', #{ugender}, #{regip})
     </insert>
 
+    <insert id="createLog">
+        INSERT INTO tbl_user_modify (modid, modupw, modupwconf, modrespectname, modemail, modnickname, modcolor, moddelyn, modtrendency, modregip)
+        VALUES (#{modid}, #{modupw}, #{modupwconf}, #{modrespectname}, #{modemail}, #{modnickname}, #{modcolor}, 'N', #{modtrendency}, #{modregip})
+    </insert>
+
     <!--<select id="selectEmail" resultType="UserVO">-->
         <!--select * from tbl_user where email = #{email}-->
     <!--</select>-->

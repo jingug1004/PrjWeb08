@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
+import org.zerock.domain.UserModifyVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.service.PointService;
@@ -192,7 +193,45 @@ public class UserController {
      * Modify post.
      */
     @RequestMapping(value = "/shop-ui-modify", method = RequestMethod.POST)
-    public void modifyPOST() {
+    public String modifyPOST(@Valid UserVO userVO,
+                           RedirectAttributes rttr,
+                           Model model) throws Exception {
+//        logger.info("lll~~~ user modify post ........... userVO.toString() ........... lll~~~" + userVO.toString() + "lll~~~ userVO.toString() ........... lll~~~");
+//        if (bindingResult.hasErrors()) {
+//            logger.info("lll~~~ modify Binding Result has error! lll~~~");
+//            List<ObjectError> errors = bindingResult.getAllErrors();
+//            for (ObjectError error : errors) {
+//                logger.info("lll~~~ modify error : {}, {}", error.getCode(), error.getDefaultMessage() + " lll~~~");
+//            }
+//            return "user/shop-ui-register02";
+//        }
+
+//        userService.regist(userVO);             // tbl_user
+
+        /* tbl_user_modify 테이블 start */
+        UserModifyVO userModifyVO = new UserModifyVO();
+
+        userModifyVO.setModid(userVO.getUid());
+        userModifyVO.setModupw(userVO.getUpw());
+        userModifyVO.setModupwconf(userVO.getUpwconfirm());
+        userModifyVO.setModrespectname(userVO.getUname());
+        userModifyVO.setModemail(userVO.getEmail());
+
+        userModifyVO.setModnickname(userVO.getNickname());
+        userModifyVO.setModcolor(userVO.getUday());
+//        userModifyVO.setModdelyn(userVO.getDelyn());
+        userModifyVO.setModtrendency(userVO.getUgender());
+        userModifyVO.setModregip(userVO.getRegip());
+
+        userService.createLog(userModifyVO);      // tbl_user_modify 테이블
+        /* tbl_user_modify 테이블 end */
+
+        model.addAttribute("uiregister", userService.registUsersNumGET());
+
+        rttr.addFlashAttribute("msg", "SUCCESS");
+
+//        return "user/shop-ui-register03";
+        return "redirect:/home";
 
     }
 

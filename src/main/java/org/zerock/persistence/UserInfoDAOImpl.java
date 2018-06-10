@@ -39,7 +39,6 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 
     @Override
     public String userPassConfirmGET(UserVO userVO) throws Exception {
-        logger.info("lll~~~ userVO 01 : " + userVO.toString());
         return session.selectOne(namespace + ".userPassConfirmGET", userVO);
     }
 }

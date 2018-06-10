@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.zerock.domain.PointInsertVO;
+import org.zerock.domain.UserModifyVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.persistence.PointDAO;
@@ -71,7 +72,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void regist(UserVO userVO) throws Exception {
 
-        /* 회원가입시 등록할 ip주소 */
+        /* 회원가입시 등록할 ip주소 start */
         HttpServletRequest httpServletRequest =
                 ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 
@@ -87,26 +88,44 @@ public class UserServiceImpl implements UserService {
             ip = httpServletRequest.getRemoteAddr();
         }
         userVO.setRegip(ip);
-        /* 회원가입시 등록할 ip주소 */
+        /* 회원가입시 등록할 ip주소 end */
 
-        userDAO.create(userVO);
+        userDAO.create(userVO);         // tbl_user 테이블
 
-        /* 회원가입시 100 포인트 증정 */
+        /* tbl_user_modify 테이블 start */
+        UserModifyVO userModifyVO = new UserModifyVO();
+
+        userModifyVO.setModid(userVO.getUid());
+        userModifyVO.setModupw(userVO.getUpw());
+        userModifyVO.setModupwconf(userVO.getUpwconfirm());
+        userModifyVO.setModrespectname(userVO.getUname());
+        userModifyVO.setModemail(userVO.getEmail());
+
+        userModifyVO.setModnickname(userVO.getNickname());
+        userModifyVO.setModcolor(userVO.getUday());
+//        userModifyVO.setModdelyn(userVO.getDelyn());
+        userModifyVO.setModtrendency(userVO.getUgender());
+        userModifyVO.setModregip(userVO.getRegip());
+
+        userDAO.createLog(userModifyVO);      // tbl_user_modify 테이블
+        /* tbl_user_modify 테이블 end */
+
+        /* 회원가입시 100 포인트 증정 start */
         PointUtils pointUtils = new PointUtils(userVO.getUid(), "회원가입", Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
         PointInsertVO pointInsertVO = new PointInsertVO();
         pointInsertVO.setPinsid(userVO.getUid());
         pointInsertVO.setPinspoint(Integer.parseInt(UnifyMessage.getMessage("RegisterPoint"))); // 회원가입시 100 포인트 증정
         pointInsertVO.setPinsdeldate(pointUtils.getDeleteScheduleDate());
         pointInsertVO.setPinscontent(pointUtils.getSavingPointContent());
-        pointDAO.insertOperPoint(pointInsertVO);
+        pointDAO.insertOperPoint(pointInsertVO);            // 회원가입 포인트 로그
 
         pointDAO.balancePointUpdate(userVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("RegisterPoint")));
-        /* 회원가입시 100 포인트 증정 */
+        /* 회원가입시 100 포인트 증정 end */
 
-        /* 색깔별 회원가입수 tbl_color_result에 저장 */
+        /* 색깔별 회원가입수 tbl_color_result에 저장 start */
         int userColorNum = userColorDAO.userColorInputGET(userVO.getUday());
         userColorDAO.userColorInputTotalUpd(userColorNum, userVO.getUday());
-        /* 색깔별 회원가입수 tbl_color_result에 저장 */
+        /* 색깔별 회원가입수 tbl_color_result에 저장 end */
 
     }
 
@@ -115,4 +134,9 @@ public class UserServiceImpl implements UserService {
         return userDAO.registUsersNumGET();
     }
 
+    @Override
+    public void createLog(UserModifyVO userModifyVO) throws Exception {
+        userDAO.createLog(userModifyVO);
+
+    }
 }

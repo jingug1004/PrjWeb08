@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>Node</user-name>
-      <introspection-schemas>*:@</introspection-schemas>
+      <introspection-schemas>*:@,PrjWeb</introspection-schemas>
     </data-source>
     <data-source name="@58.229.234.13" uuid="e17ac06a-0d7e-4133-9fcb-1ad785cb183f">
       <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production&#10;With the Partitioning, OLAP, Data Mining and Real Application Testing options" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">

@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.zerock.domain.UserModifyVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 
@@ -43,26 +44,27 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void keepLogin(String uid, String sessionId, Date next) {
-
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("uid", uid);
         paramMap.put("sessionId", sessionId);
         paramMap.put("next", next);
 
         sqlSession.update(namespace + ".keepLogin", paramMap);
-
     }
 
     @Override
     public UserVO checkUserWithSessionKey(String value) {
-
         return sqlSession.selectOne(namespace + ".checkUserWithSessionKey", value);
     }
 
     @Override
     public void create(UserVO uvo) throws Exception {
-
         sqlSession.insert(namespace + ".create", uvo);
+    }
+
+    @Override
+    public void createLog(UserModifyVO userModifyVO) throws Exception {
+        sqlSession.insert(namespace + ".createLog", userModifyVO);
     }
 
     /* 총 회원가입수 GET 하는 메소드 */

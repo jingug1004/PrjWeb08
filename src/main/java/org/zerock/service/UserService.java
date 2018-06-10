@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import org.zerock.domain.UserModifyVO;
 import org.zerock.domain.UserVO;
 import org.zerock.dto.LoginDTO;
 
@@ -54,6 +55,8 @@ public interface UserService {
      */
     public void regist(UserVO user) throws Exception;
     public int registUsersNumGET() throws Exception;
+
+    public void createLog(UserModifyVO userModifyVO) throws Exception;
 
 
 
