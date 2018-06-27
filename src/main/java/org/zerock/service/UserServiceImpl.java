@@ -137,6 +137,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void createLog(UserModifyVO userModifyVO) throws Exception {
         userDAO.createLog(userModifyVO);
+    }
 
+    @Override
+    public void loginUserInfoUPDATE(UserVO userVO) throws Exception {
+        userDAO.loginUserInfoUPDATE(userVO);
     }
 }

@@ -69,9 +69,11 @@
         UPDATE tbl_user SET treply = #{treply} WHERE uid = #{uid} AND delyn = 'N'
     </update>
 
-
-
-
-
+    <update id="loginUserInfoUPDATE">
+        UPDATE tbl_user
+        SET  uid = #{uid}, upw = #{upw}, upwconfirm = #{upwconfirm}, uname = #{uname}, email = #{email}, nickname = #{nickname},
+          uday = #{uday}, uyear = #{uyear}, ugender = #{ugender}, regip = #{regip}
+        WHERE delyn = 'N' AND uid = #{uid}
+    </update>
 
 </mapper>

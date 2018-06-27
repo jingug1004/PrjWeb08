@@ -89,4 +89,9 @@ public class UserDAOImpl implements UserDAO {
     public void totalUserReplyNumUPD(UserVO userVO) throws Exception {
         sqlSession.update(namespace + ".totalUserReplyNumUPD", userVO);
     }
+
+    @Override
+    public void loginUserInfoUPDATE(UserVO userVO) throws Exception {
+        sqlSession.update(namespace + ".loginUserInfoUPDATE", userVO);
+    }
 }

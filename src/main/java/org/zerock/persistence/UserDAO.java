@@ -55,7 +55,7 @@ public interface UserDAO {
      */
     public void create(UserVO uvo) throws Exception;                    // 최초 회원가입
 
-    public void createLog(UserModifyVO userModifyVO) throws Exception;              // 최초 회원가입 로그 이력
+    public void createLog(UserModifyVO userModifyVO) throws Exception;  // 최초 회원가입 로그 이력
 
     public int registUsersNumGET() throws Exception;                    // 전체 등록된 회원수 GET
 
@@ -64,5 +64,7 @@ public interface UserDAO {
     public void totalUserPostNumUPD(UserVO userVO) throws Exception;    // 전체 유저의 등록한 게시물 수 업데이트
 
     public void totalUserReplyNumUPD(UserVO userVO) throws Exception;   // 전체 유저의 등록한 댓글 수 업데이트
+
+    public void loginUserInfoUPDATE(UserVO userVO) throws Exception;    // tbl_user 테이블 회원 정보 수정
 
 }

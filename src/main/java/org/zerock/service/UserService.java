@@ -58,6 +58,6 @@ public interface UserService {
 
     public void createLog(UserModifyVO userModifyVO) throws Exception;
 
-
+    public void loginUserInfoUPDATE(UserVO userVO) throws Exception;
 
 }

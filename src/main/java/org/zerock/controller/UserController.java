@@ -223,8 +223,12 @@ public class UserController {
         userModifyVO.setModtrendency(userVO.getUgender());
         userModifyVO.setModregip(userVO.getRegip());
 
-        userService.createLog(userModifyVO);      // tbl_user_modify 테이블
+        userService.createLog(userModifyVO);        // tbl_user_modify 테이블
         /* tbl_user_modify 테이블 end */
+
+        userService.loginUserInfoUPDATE(userVO);    // tbl_user 테이블 UPDATE
+
+
 
         model.addAttribute("uiregister", userService.registUsersNumGET());
 

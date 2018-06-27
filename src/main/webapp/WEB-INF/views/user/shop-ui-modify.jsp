@@ -119,10 +119,9 @@
                                 </section>
                             </div>
                         </div>
-
                         <label class="select margin-bottom-15">
-                            <select name="ugender" class="form-control">
-                                <option value="" selected="">정치성향</option>
+                            <select id="ugender" name="ugender" class="form-control">
+                                <option value="Y0 중도적" selected="">정치성향</option>
                                 <option value="A1 자유주의 보수적" <c:if test="남자">selected</c:if>>A1 자유주의 보수적</option>
                                 <option value="B1 권위주의 보수적" <c:if test="남자">selected</c:if>>B1 권위주의 보수적</option>
                                 <option value="C1 매우 보수적" <c:if test="남자">selected</c:if>>C1 매우 보수적</option>
@@ -219,7 +218,6 @@
                                 </div>
                             </div>
                         </div><!--/end panel group-->
-
                         <section>
                             <label class="input">
                                 <input type="text" id="nickname" name="nickname" placeholder="Nickname" class="form-control"
