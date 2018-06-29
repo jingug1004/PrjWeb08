@@ -16,6 +16,7 @@ public class SearchCriteria extends Criteria{
     private String cate;                  // 칼라 카테고리
     private String cntSortType;           // Good, Bad etc. 클릭하면 자동 정렬
     private String loginid;               // 접속한 로그인 아이디
+    private String attachName;            // 첨부파일 가져오기 위한 VO
 
     /**
      * Gets search type.
@@ -77,6 +78,14 @@ public class SearchCriteria extends Criteria{
         this.loginid = loginid;
     }
 
+    public String getAttachName() {
+        return attachName;
+    }
+
+    public void setAttachName(String attachName) {
+        this.attachName = attachName;
+    }
+
     @Override
     public String toString() {
         return "SearchCriteria{" +
@@ -85,6 +94,7 @@ public class SearchCriteria extends Criteria{
                 ", cate='" + cate + '\'' +
                 ", cntSortType='" + cntSortType + '\'' +
                 ", loginid='" + loginid + '\'' +
+                ", attachName='" + attachName + '\'' +
                 '}';
     }
 }

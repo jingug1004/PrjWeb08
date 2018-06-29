@@ -54,7 +54,7 @@ public class UserInfoController {
      * @throws Exception
      */
     @RequestMapping(value = "/userInfoList", method = RequestMethod.GET)
-    public void userInfoList(@ModelAttribute("cri") SearchCriteria cri,
+    public String userInfoList(@ModelAttribute("cri") SearchCriteria cri,
                              Model model,
                              BoardVO boardVO,
                              @RequestParam(required = false, value = "loginid") String paramLoginid) throws Exception {
@@ -62,16 +62,26 @@ public class UserInfoController {
         RateMaker rateMaker = new RateMaker();
         rateMaker.setRategb();          // 지우면 안 됨! rateMaker 자체적으로 돌아감.
 
+//        cri.setAttachName();
+
         // boardVO.setCnum(cateNum); // 1~10 페이징 처리를 위하여 URL의 cate의 값을 가져와서-@RequestParam("cate)-셋 메서드 활용.
-        model.addAttribute("userInfoList", userInfoService.userInfoList(paramLoginid));
+        model.addAttribute("userInfoList", userInfoService.userInfoList(cri));
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(cri);
         pageMaker.setCnumFromBoardVO(boardVO.getCnum());            // 1~10 페이징에서 cate 넘버를 가져오기 위한 setter 메서드.
-        pageMaker.setTotalCount(userInfoService.userInfoListCount(paramLoginid)); // pageMaker.setTotalCount(boardService.listCountCriteria(cri));
+        pageMaker.setTotalCount(userInfoService.userInfoListCount(cri)); // pageMaker.setTotalCount(boardService.listCountCriteria(cri));
         model.addAttribute("pageMaker", pageMaker);
         // model.addAttribute("cateName", boardVO.getCnum());                                     // 리스트 목록 상단에 카테고리 이름 출력!
         model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
+
+//        model.addAttribute("getAttachNameGET", boardService.getAttachNameGET(board))
+
+        logger.info("lll~~~ pageMaker.toString() : " + pageMaker.toString());
+        logger.info("lll~~~ cri : " + cri.toString());
+        logger.info("lll~~~ userInfoService.userInfoList(cri) : " + userInfoService.userInfoList(cri).toString());
+
+        return "userInfo/userInfoList";
     }
 
     @RequestMapping(value = "/userInfoListGrid", method = RequestMethod.GET)

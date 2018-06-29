@@ -126,10 +126,7 @@
     <!-- 기본 게시판(cate) 보여주는 리스트 -->
     <select id="listSearch" resultType="BoardVO">
         <![CDATA[
-              select *
-              from tbl_board
-              where bno > 0 AND cnum = #{cate}
-              AND boardvisible = 'Y'
+              select * from tbl_board where bno > 0 AND cnum = #{cate} AND boardvisible = 'Y'
         ]]>
 
         <include refid="search"></include>
@@ -150,20 +147,14 @@
     <!-- 게시판 밑 페이징 (1~10버튼) 구현하기 위한 총 몇개 카운트 -->
     <select id="listSearchCount" resultType="int">
         <![CDATA[
-          select count(*)
-          from tbl_board
-          where bno > 0
-          AND cnum = #{cate}
-          AND boardvisible = 'Y'
+          select count(*) from tbl_board where bno > 0 AND cnum = #{cate} AND boardvisible = 'Y'
         ]]>
         <include refid="search"></include>
     </select>
 
     <!-- 전체 검색 기능 구현 listAny -->
     <select id="listSearchAny" resultType="BoardVO">
-        SELECT * FROM tbl_board
-        WHERE bno > 0
-        AND boardvisible = 'Y'
+        SELECT * FROM tbl_board WHERE bno > 0 AND boardvisible = 'Y'
         AND (title LIKE concat('%', #{keyword}, '%')
         OR content LIKE concat('%', #{keyword}, '%')
         OR writer LIKE concat('%', #{keyword}, '%'))
@@ -181,11 +172,7 @@
     <!-- 전체 검색 기능 구현시 총 몇개 카운트 -->
     <select id="listSearchAnyCount" resultType="int">
         <![CDATA[
-
-        SELECT COUNT(bno)
-        FROM tbl_board
-        WHERE bno > 0
-        AND boardvisible = 'Y'
+        SELECT COUNT(bno) FROM tbl_board WHERE bno > 0 AND boardvisible = 'Y'
         ]]>
         AND (
         writer LIKE concat('%', #{keyword}, '%')
@@ -206,9 +193,7 @@
 
     <!-- 게시판 글(읽기 - readPage)의 카테고리 이름 출력 -->
     <select id="callCateName" resultType="String">
-        SELECT cname FROM tbl_cate
-        LEFT JOIN tbl_board
-        ON tbl_cate.cnum = tbl_board.cnum
+        SELECT cname FROM tbl_cate LEFT JOIN tbl_board ON tbl_cate.cnum = tbl_board.cnum
         WHERE tbl_board.bno = #{bno}
     </select>
     <!--
@@ -249,14 +234,8 @@
 
     <!-- 게시판 - 실시간 인기순으로 정렬 -->
     <select id="livePopular" resultType="BoardVO">
-        SELECT *
-        FROM tbl_board
-        WHERE cnum = #{cate}
-        AND DATE(regdate) = #{sdfToday}
-        ORDER BY
-        gbcnt DESC,
-        goodcnt DESC,
-        regdate DESC
+        SELECT * FROM tbl_board WHERE cnum = #{cate} AND DATE(regdate) = #{sdfToday}
+        ORDER BY gbcnt DESC, goodcnt DESC, regdate DESC
 
         <include refid="cntSort"></include>
 
@@ -266,41 +245,28 @@
     </select>
 
     <select id="livePopularCount" resultType="int">
-        SELECT count(*)
-        FROM tbl_board
-        WHERE cnum = #{cate}
-        AND DATE(regdate) = #{sdfToday}
-        ORDER BY
-        gbcnt DESC,
-        goodcnt DESC,
-        regdate DESC
+        SELECT count(*) FROM tbl_board WHERE cnum = #{cate} AND DATE(regdate) = #{sdfToday}
+        ORDER BY gbcnt DESC, goodcnt DESC, regdate DESC
     </select>
 
     <!-- 게시판 - 같은 정치성향 정렬 -->
     <select id="samePopular" resultType="BoardVO">
 -- samePopular 게시판 - 같은 정치성향 정렬
-        SELECT *
-        FROM tbl_board
-        WHERE getcolor = #{getcolor}
-              AND cnum = #{cnum}
-              AND id = ANY (SELECT uid
-                            FROM tbl_user
-                            WHERE uday = #{uday}
-                                  AND ugender = #{ugender})
+        SELECT * FROM tbl_board WHERE getcolor = #{getcolor} AND cnum = #{cnum}
+        AND id = ANY (SELECT uid FROM tbl_user WHERE uday = #{uday} AND ugender = #{ugender})
               limit #{pageStart}, #{perPageNum}
     </select>
 
     <select id="samePopularCount" resultType="int">
 -- samePopularCount 게시판 - 같은 정치성향 정렬
-       SELECT count(*)
-        FROM tbl_board
-        WHERE getcolor = #{getcolor}
-              AND cnum = #{cnum}
-              AND id = ANY (SELECT uid
-                            FROM tbl_user
-                            WHERE uday = #{uday}
-                                  AND ugender = #{ugender})
+       SELECT count(*) FROM tbl_board WHERE getcolor = #{getcolor} AND cnum = #{cnum}
+       AND id = ANY (SELECT uid FROM tbl_user WHERE uday = #{uday} AND ugender = #{ugender})
     </select>
+
+    <select id="getAttachNameGET" resultType="string">
+        SELECT fullName FROM tbl_attach WHERE bno = #{bno} LIMIT 1
+    </select>
+
 </mapper>
 
 

@@ -86,6 +86,10 @@ public class SearchBoardController {
         model.addAttribute("cateName", boardVO.getCnum());                                     // 리스트 목록 상단에 카테고리 이름 출력!
         model.addAttribute("cateName", boardService.callCateNameInList(boardVO.getCnum()));    // 게시판 상세 글의 카테고리 이름 출력
 
+        logger.info("lll~~~ pageMaker.toString() : " + pageMaker.toString());
+        logger.info("lll~~~ cri : " + cri.toString());
+        logger.info("lll~~~ boardService.listSearchCriteria(cri) : " + boardService.listSearchCriteria(cri).toString());
+
         return "sboard/list";
     }
 
@@ -102,6 +106,8 @@ public class SearchBoardController {
         pageMaker.setCriListAny(searchCriteriaListAny);
         pageMaker.setTotalCountListAny(boardService.listSearchAnyCount(searchCriteriaListAny));
         model.addAttribute("pageMakerAny", pageMaker);
+
+        logger.info("lll~~~ pageMaker.toString() : " + pageMaker.toString());
 
         return "sboard/list";
     }

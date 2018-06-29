@@ -42,6 +42,20 @@
         opacity: 1;
         boarder: 1px;
         margin: auto;
+
+        /* [CSS] 요소 및 레이어 중앙 정렬시키는 가장 쉽고 간단한 방법 start */
+        position: fixed;
+        left: 50%;
+        top: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        /* https://webisfree.com/2016-03-09/[css]-%EC%9A%94%EC%86%8C-%EB%B0%8F-%EB%A0%88%EC%9D%B4%EC%96%B4-
+        %EC%A4%91%EC%95%99-%EC%A0%95%EB%A0%AC%EC%8B%9C%ED%82%A4%EB%8A%94-%EA%B0%80%EC%9E%A5-%EC%89%BD%EA%B3%A0-
+        %EA%B0%84%EB%8B%A8%ED%95%9C-%EB%B0%A9%EB%B2%95 end */
     }
 
     .show {

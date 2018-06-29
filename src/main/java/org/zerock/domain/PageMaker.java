@@ -226,6 +226,22 @@ public class PageMaker {
     }
 
     /**
+     * 게시판 리스트에서 유저 클릭한 후 유저 상세정보 나오게.
+     *
+     * @param page
+     * @return
+     */
+    public String makeQueryUserid(int page) {
+        UriComponents uriComponents =
+                UriComponentsBuilder.newInstance()
+                        .queryParam("page", page)
+                        .queryParam("perPageNum", cri.getPerPageNum())
+                        .queryParam("loginid", ((SearchCriteria)cri).getLoginid())
+                        .build();
+        return uriComponents.toUriString();
+    }
+
+    /**
      * 실시간 인기 게시판 리스트에서 페이징 넘버 클릭했을 때
      *
      * @param page the page

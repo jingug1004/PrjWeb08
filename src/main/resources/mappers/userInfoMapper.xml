@@ -5,8 +5,21 @@
 
 <mapper namespace="org.zerock.mapper.userInfoMapper">
 
+    <!--<select id="userInfoList" resultType="BoardVO">-->
+        <!--SELECT * FROM tbl_board WHERE id = #{loginid} ORDER BY-->
+        <!--<![CDATA[-->
+              <!--bno desc-->
+              <!--limit #{pageStart}, #{perPageNum}-->
+        <!--]]>-->
+    <!--</select>-->
+
     <select id="userInfoList" resultType="BoardVO">
-        SELECT * FROM tbl_board WHERE id = #{loginid} ORDER BY regdate desc
+      SELECT *, (SELECT fullName FROM tbl_attach WHERE bno = tbl_board.bno LIMIT 1) fullname
+      FROM tbl_board WHERE id = #{loginid} ORDER BY
+        <![CDATA[
+              bno desc
+              limit #{pageStart}, #{perPageNum}
+        ]]>
     </select>
 
     <select id="userInfoListCount" resultType="int">

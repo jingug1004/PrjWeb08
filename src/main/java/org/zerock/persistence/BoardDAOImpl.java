@@ -210,8 +210,6 @@ public class BoardDAOImpl implements BoardDAO {
         paramMap.put("pageStart", searchCriteria.getPageStart());
         paramMap.put("perPageNum", searchCriteria.getPerPageNum());
 
-        logger.info("lll~~~ boardDAOImpl : " + paramMap.toString());
-
         return session.selectList(namespace + ".samePopular", paramMap);
     }
 
@@ -228,6 +226,10 @@ public class BoardDAOImpl implements BoardDAO {
         paramMap.put("perPageNum", searchCriteria.getPerPageNum());
 
         return session.selectOne(namespace + ".samePopularCount", paramMap);
+    }
 
+    @Override
+    public String getAttachNameGET(int bno) throws Exception {
+        return session.selectOne(namespace + ".getAttachNameGET", bno);
     }
 }

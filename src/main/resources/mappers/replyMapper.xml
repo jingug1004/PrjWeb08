@@ -6,20 +6,11 @@
 <mapper namespace="org.zerock.mapper.ReplyMapper">
 
     <select id="list" resultType="ReplyVO">
-        SELECT
-        *
-        FROM
-        tbl_reply
-        WHERE bno = #{bno} AND replyvisible = 'Y'
-        ORDER BY rno DESC
+        SELECT * FROM tbl_reply WHERE bno = #{bno} AND replyvisible = 'Y' ORDER BY rno DESC
     </select>
 
     <select id="readByIDnBnonText" resultType="org.zerock.domain.ReplyVO">
-        select
-        *
-        from
-        tbl_reply
-        where rid = #{rid} AND bno = #{bno} AND replytext = #{replytext}
+        select * from tbl_reply where rid = #{rid} AND bno = #{bno} AND replytext = #{replytext}
     </select>
 
     <insert id="create">
@@ -40,14 +31,8 @@
     </update>
 
     <select id="listPage" resultType="ReplyVO">
-      SELECT
-      *
-      FROM
-      tbl_reply
-      WHERE
-      bno = #{bno} AND replyvisible = 'Y'
-      ORDER BY rno DESC
-      limit #{cri.pageStart}, #{cri.perPageNum}
+      SELECT * FROM tbl_reply WHERE bno = #{bno} AND replyvisible = 'Y'
+      ORDER BY rno DESC limit #{cri.pageStart}, #{cri.perPageNum}
     </select>
 
     <!--SELECT COUNT(bno) FROM tbl_reply WHERE bno = #{bno} AND replyvisible = 'Y'-->

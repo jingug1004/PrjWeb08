@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.SearchCriteria;
 import org.zerock.domain.UserVO;
 import org.zerock.persistence.*;
 
@@ -40,13 +41,13 @@ public class UserInfoServiceImpl implements UserInfoService {
     private static final Logger logger = LoggerFactory.getLogger(UserInfoServiceImpl.class);
 
     @Override
-    public List<BoardVO> userInfoList(String loginid) throws Exception {
-        return userInfoDAO.userInfoList(loginid);
+    public List<BoardVO> userInfoList(SearchCriteria searchCriteria) throws Exception {
+        return userInfoDAO.userInfoList(searchCriteria);
     }
 
     @Override
-    public int userInfoListCount(String loginid) throws Exception {
-        return userInfoDAO.userInfoListCount(loginid);
+    public int userInfoListCount(SearchCriteria searchCriteria) throws Exception {
+        return userInfoDAO.userInfoListCount(searchCriteria);
     }
 
     @Override

@@ -40,5 +40,15 @@
       <user-name>HANAUSER</user-name>
       <introspection-schemas>*:HANAUSER,ORAGMP,SALE,SALE_ON</introspection-schemas>
     </data-source>
+    <data-source name="PrjWeb@localhost" uuid="a12f4fa6-50ae-4476-8692-812a41c278f1">
+      <database-info product="MySQL" version="5.5.5-10.3.7-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:prjweb</introspection-schemas>
+    </data-source>
   </component>
 </project>

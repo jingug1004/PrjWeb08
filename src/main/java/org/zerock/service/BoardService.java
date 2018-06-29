@@ -155,6 +155,13 @@ public interface BoardService {
 
     public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception;
 
-
+    /**
+     * 글 번호로 첨부파일 이름 딱 하나 가져오기
+     *
+     * @param bno
+     * @return
+     * @throws Exception
+     */
+    public String getAttachNameGET(int bno) throws Exception;
 
 }

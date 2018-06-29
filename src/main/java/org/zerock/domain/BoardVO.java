@@ -41,6 +41,8 @@ public class BoardVO {
     private String boardip;                     // 게시판 작성글 ip
     private String boardipreal;                 // 게시판 작성글 ip (블라인드 처리 안 된)
 
+    private String fullname;                    // 회원정보 리스트의 첨부파일 가져오기 위한 VO -> DB에는 안 만들었음.
+
     /*-----*/
 
     public String getId() {
@@ -287,6 +289,14 @@ public class BoardVO {
         this.boardipreal = boardipreal;
     }
 
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
     @Override
     public String toString() {
         return "BoardVO{" +
@@ -311,6 +321,7 @@ public class BoardVO {
                 ", ucolorlevel=" + ucolorlevel +
                 ", boardip='" + boardip + '\'' +
                 ", boardipreal='" + boardipreal + '\'' +
+                ", fullname='" + fullname + '\'' +
                 '}';
     }
 }

@@ -446,4 +446,9 @@ public class BoardServiceImpl implements BoardService {
         }
         return boardDAO.samePopularCount(searchCriteria, boardVO, userVO);
     }
+
+    @Override
+    public String getAttachNameGET(int bno) throws Exception {
+        return boardDAO.getAttachNameGET(bno);
+    }
 }
