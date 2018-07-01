@@ -195,7 +195,9 @@
                     <form id="searchForm" method="get" action="/sboard/listAny">
                         <input type="text" name="keyword" id="keywordInput" value="${criteria.keyword}"
                                class="form-control" placeholder="Search (2글자 이상 입력 후 Enter!)"
-                        <%-- onkeydown="listAnySubmit()"--%> onblur="validate(this, 2, 100)"
+                               onclick="validate(this, 2, 100, event)"
+                               <%--onblur="validate(this, 2, 100)"--%>
+                        <%-- onkeydown="listAnySubmit()"--%>
                         <%--onkeypress="javascript:codeCheck(event)"--%>>
                         <%--<input type="hidden" id="searchBtn" value="검색">--%>
                     </form>
@@ -209,20 +211,26 @@
                         <!-- Topbar Navigation -->
                         <ul class="left-topbar">
                             <li>
-                                <a>Currency (KRW)</a>
+                                <a>OFFICIAL</a>
                                 <ul class="currency">
                                     <li class="active">
-                                        <a href="#">KRW <i class="fa fa-check"></i></a>
+                                        <a href="http://www.president.go.kr/" target="_blank">청와대 사이트<i class="fa fa-check"></i></a>
                                     </li>
-                                    <li><a href="#">JPY</a></li>
-                                    <li><a href="#">CNY</a></li>
-                                    <li><a href="#">Dollar</a></li>
-                                    <li><a href="#">Euro</a></li>
-                                    <li><a href="#">Pound</a></li>
+                                    <li><a href="https://twitter.com/TheBlueHouseKR" target="_blank">청와대 트위터</a></li>
+                                    <li><a href="https://www.facebook.com/TheBlueHouseKR/" target="_blank">청와대 페이스북</a></li>
+                                    <li><a href="https://www.instagram.com/thebluehouse_kr/" target="_blank">청와대 인스타그램</a></li>
+                                    <li><a href="https://www.youtube.com/channel/UC7WMB_czX5jF__5kqT4d9Ww" target="_blank">청와대 유투브</a></li>
+                                    <li><a href="https://blog.naver.com/moonjaein2" target="_blank">문재인 네이버 블로그</a></li>
+                                    <li><a href="https://twitter.com/moonriver365" target="_blank">문재인 트위터</a></li>
+                                    <li><a href="https://www.facebook.com/moonbyun1" target="_blank">문재인 페이스북</a></li>
+                                    <li><a href="https://www.youtube.com/user/moonriver365" target="_blank">문재인 유투브</a></li>
+                                    <li><a href="https://www.instagram.com/moonjaein/" target="_blank">문재인 인스타그램</a></li>
+                                    <li><a href="https://www.instagram.com/moonjaein/" target="_blank">문재인 인스타그램</a></li>
+                                    <li><a href="http://moonjaein.com/" target="_blank">문재인닷컴</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a>Language (KOR)</a>
+                                <a>UNOFFICIAL</a>
                                 <ul class="language">
                                     <li class="active">
                                         <a href="#">Korean (KOR)<i class="fa fa-check"></i></a>
@@ -249,7 +257,7 @@
                                 <%--<li>${todayTime}</li>--%>
                                 <%--<li>${clientIP}</li>--%>
                                 <li><a href="#">Account</a></li>
-                                <li><a href="#">Wishlist (0)</a></li>
+                                <li><a href="#">Readlist (0)</a></li>
                                 <li><a href="<c:url value="/user/login"/>">Login</a> | <a
                                         href="<c:url value="/user/shop-ui-register"/>">Register</a>
                                 </li>
@@ -258,7 +266,7 @@
                                 <%--<li>${todayTime}</li>--%>
                                 <%--<li>${login.updip}</li>--%>
                                 <li><a href="#">Account</a></li>
-                                <li><a href="#">Wishlist (0)</a></li>
+                                <li><a href="#">Readlist (0)</a></li>
                                 <li>
                                     <input type="hidden" id="loginUday" value="${login.uday}">
                                     <img src="/assets/img/colors/${login.uday}.png" id="getColor"
@@ -918,8 +926,14 @@
         }
 
         /* 몇 글자 이상, 몇 글자 이하로 입력해야 함. */
-        function validate(element, min, max) {
+        function validate(element, min, max, event) {
             var len = element.value.length;
+            if (event.keyCode === 13) {
+                if ($('#keywordInput').val() == null || $('#keywordInput').val() == "") {
+                    alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
+                    return false;
+                }
+            }
             if ((len < min) || (len > max)) {
                 alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
                 // element.style.borderColor = "#FF0000";
@@ -927,12 +941,14 @@
 
                 element.focus();
                 // 입력 필드로 포커스를 이동
-
+                return false;
 //                element.preventDefault();
             }
-            else {
+            else if ($('#keywordInput').val() == null || $('#keywordInput').val() == "") {
+                alert(min + '자 이상 ' + max + '자 이하로 입력해야 합니다').one();
                 // element.style.borderColor = "#ffffff";
                 // 입력 필드의 경계선을 흰색으로 설정
+                return false;
             }
         }
 

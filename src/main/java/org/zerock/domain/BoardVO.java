@@ -29,7 +29,7 @@ public class BoardVO {
     private int replycnt;
     private int cnum;                           // 게시판 카테고리 넘버
 
-    private String[] files;                     // 게시판 작성글 첨부파일
+    private String[] files;                     // 게시판 작성글 첨부파일 -> DB에는 안 만들었음.
 
     private String boardvisible;                // 게시판 작성글 삭제 여부
 

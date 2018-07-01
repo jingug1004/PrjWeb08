@@ -209,7 +209,13 @@
     </select>
 
     <insert id="addAttach">
+        -- addAttach //
         INSERT INTO tbl_attach(fullname, bno) VALUES (#{fullName}, #{boardBno})
+    </insert>
+
+    <insert id="addAttachOrigin">
+        -- addAttachOrigin //
+        INSERT INTO tbl_attach_origin(fullname, bno) VALUES (#{fullName}, #{boardBno})
     </insert>
 
     <select id="getAttach" resultType="string">

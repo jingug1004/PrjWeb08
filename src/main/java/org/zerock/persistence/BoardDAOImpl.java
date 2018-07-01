@@ -137,9 +137,22 @@ public class BoardDAOImpl implements BoardDAO {
         paramMap.put("fullName", fullName);
         paramMap.put("boardBno", boardBno);
 
-        logger.info("lllll~~~~~ addAttach fullName : " + paramMap.toString() + "lllll~~~~~ ");
+        logger.info("lll~~~ addAttach fullName : " + paramMap.toString() + "lll~~~ ");
 
         session.insert(namespace + ".addAttach", paramMap);
+    }
+
+    @Override
+    public void addAttachOrigin(String fullName, int boardBno) throws Exception {
+
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("fullName", fullName);
+        paramMap.put("boardBno", boardBno);
+
+        logger.info("lllll~~~~~ addAttachOrigin fullName : " + paramMap.toString() + "lllll~~~~~ ");
+
+        session.insert(namespace + ".addAttachOrigin", paramMap);
     }
 
     @Override

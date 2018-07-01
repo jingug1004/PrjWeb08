@@ -142,6 +142,7 @@
 
                     <input type='hidden' name='searchType' value="${cri.searchType}">
                     <input type='hidden' name='keyword' value="${cri.keyword}">
+                    <input type='hidden' name='loginid' value="${cri.loginid}">
                 </form>
 
                 <div class="box-body">
@@ -887,12 +888,15 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
 
         var goListBtn01 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn01">목록</button>';
         var goListBtn02 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn02">목록</button>';
+        var goListBtn03 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn03">목록</button>';
 
         function validMenuInReadPage() {
-            if (getUrlParams().cate) {
-                $('a[name = "goListBtnTest"]').html(goListBtn01);
-            } else {
-                $('a[name = "goListBtnTest"]').html(goListBtn02);
+            if (getUrlParams().cate != null && getUrlParams().keyword == null && getUrlParams().cate != 0) {
+                $('a[name = "goListBtnTest"]').html(goListBtn01);   // cate에서 글 읽기(Read) 들어갔을 때
+            } else if (getUrlParams().keyword != null) {
+                $('a[name = "goListBtnTest"]').html(goListBtn02);   // listAny에서 글 읽기(Read) 들어갔을 때
+            } else if (getUrlParams().loginid != null) {
+                $('a[name = "goListBtnTest"]').html(goListBtn03);   // 회원 상세페이지에서 들어갔을 때
             }
         }
 
@@ -912,6 +916,15 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             // 전체 검색 했을 때 뒤로가기 누르면 /sboard/list 로 매핑 호출되면 안 되기 때문에.
             formObj.attr("method", "get");
             formObj.attr("action", "/sboard/listAny?keyword=" + getUrlParams().keyword);
+            formObj.submit();
+            // history.back();
+        });
+
+        $("#goListBtn03").on("click", function () {
+
+            // 전체 검색 했을 때 뒤로가기 누르면 /sboard/list 로 매핑 호출되면 안 되기 때문에.
+            formObj.attr("method", "get");
+            formObj.attr("action", "/userInfo/userInfoList?loginid=" + getUrlParams().loginid);
             formObj.submit();
             // history.back();
         });

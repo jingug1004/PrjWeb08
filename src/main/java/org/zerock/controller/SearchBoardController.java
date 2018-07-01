@@ -183,8 +183,7 @@ public class SearchBoardController {
                      @ModelAttribute("cri") SearchCriteria cri,
                      HttpServletRequest httpServletRequest,
                      HttpServletResponse httpServletResponse,
-                     @RequestParam(required = false, value = "cate") String cateNum
-    ) throws Exception {
+                     @RequestParam(required = false, value = "cate") String cateNum) throws Exception {
 
         String readPageDest = httpServletRequest.getQueryString();               //   page=1&cate=1102&perPageNum=10&searchType&keyword&cntSortType&bno=4590
         String readPageDest02 = httpServletRequest.getRequestURI();              //   /sboard/readPage

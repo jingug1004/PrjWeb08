@@ -129,19 +129,37 @@ public class BoardServiceImpl implements BoardService {
         pointDAO.balancePointUpdate(loginUserVO.getUid(), Integer.parseInt(UnifyMessage.getMessage("BoardWritePoint")));
         /* 글 작성시 +50 포인트 */
 
-        /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
+        /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 start */
         String[] files = boardVO.getFiles();
         if (files == null) {
             logger.info("lllll~~~~~ files == null : " + files);
             return;
         }
 
+        /* 원본 파일명도 tbl_attach_origin 테이블에 insert - 글 리스트 썸네일 보여주기 위해서 start */
+        String sUnder = "s_";
+
         for (String fileName : files) {
             logger.info("lllll~~~~~ fileName : " + fileName);
             logger.info("lllll~~~~~ boardVO.getBno() : " + boardVOExceptFile.getBno());      // boardVO로 하면 lastInsertID가 형성되지 않았기에 sQL 오류 발생.
             boardDAO.addAttach(fileName, boardVOExceptFile.getBno());
+
+            String subFileName = fileName.substring(12);
+            String confirmFileName = subFileName.substring(0, 2);
+
+            if (sUnder.equals(confirmFileName)) {
+                String last01 = fileName.substring(0, 12);
+                String last02 = fileName.substring(14);
+
+                String finFileName = last01 + last02;
+
+                boardDAO.addAttachOrigin(finFileName, boardVOExceptFile.getBno());
+            } else {
+                boardDAO.addAttachOrigin(fileName, boardVOExceptFile.getBno());
+            }
         }
-        /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 */
+        /* 원본 파일명도 tbl_attach_origin 테이블에 insert - 글 리스트 썸네일 보여주기 위해서 end */
+        /* 게시글의 파일 첨부 있을 시, 첨부파일 하나씩 파일 가져옴 end */
 
     }
 

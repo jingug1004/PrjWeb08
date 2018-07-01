@@ -14,7 +14,7 @@
     <!--</select>-->
 
     <select id="userInfoList" resultType="BoardVO">
-      SELECT *, (SELECT fullName FROM tbl_attach WHERE bno = tbl_board.bno LIMIT 1) fullname
+      SELECT *, (SELECT fullName FROM tbl_attach_origin WHERE bno = tbl_board.bno LIMIT 1) fullname
       FROM tbl_board WHERE id = #{loginid} ORDER BY
         <![CDATA[
               bno desc

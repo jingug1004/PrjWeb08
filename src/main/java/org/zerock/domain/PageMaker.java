@@ -204,6 +204,7 @@ public class PageMaker {
                         .queryParam("perPageNum", cri.getPerPageNum())
                         .queryParam("searchType", ((SearchCriteria) cri).getSearchType())
                         .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
+
                         .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
                         .build();
         return uriComponents.toUriString();
@@ -219,8 +220,11 @@ public class PageMaker {
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
                         .queryParam("perPageNum", criListAny.getPerPageNum())
+                        .queryParam("cate", getCnumFromBoardVO())
                         .queryParam("keyword", ((SearchCriteriaListAny) criListAny).getKeyword())
-//                        .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
+                        .queryParam("searchType", ((SearchCriteriaListAny) criListAny).getSearchType())
+
+                        .queryParam("cntSortType", ((SearchCriteriaListAny) criListAny).getCntSortType())
                         .build();
         return uriComponents.toUriString();
     }
@@ -237,6 +241,11 @@ public class PageMaker {
                         .queryParam("page", page)
                         .queryParam("perPageNum", cri.getPerPageNum())
                         .queryParam("loginid", ((SearchCriteria)cri).getLoginid())
+                        .queryParam("cate", getCnumFromBoardVO())
+                        .queryParam("searchType", ((SearchCriteria) cri).getSearchType())
+
+                        .queryParam("keyword", ((SearchCriteria) cri).getKeyword())
+                        .queryParam("cntSortType", ((SearchCriteria) cri).getCntSortType())
                         .build();
         return uriComponents.toUriString();
     }

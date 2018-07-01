@@ -151,6 +151,14 @@ public interface BoardDAO {
     public void addAttach(String fullName, int boardBno) throws Exception;
 
     /**
+     * tbl_attach 테이블에는 썸네일(s_...) 파일명 저장. tbl_attach_origin은 원본 파일명 그대로 저장 - 리스트 썸네일 이미지 사이즈 안 맞아서, 맞게 할려고.
+     *
+     * @param fullName 첨부파일의 이름.
+     * @throws Exception
+     */
+    public void addAttachOrigin(String fullName, int boardBno) throws Exception;
+
+    /**
      * 특정 게시물의 첨부파일을 시간 순서대로 가져오는 SQL문을 작성.
      * BoardDAO - boardMapper.xml - BoardDAOImpl
      *

@@ -324,249 +324,252 @@ helloworld!
         </div>
 
         <ul class="list-inline owl-slider">
-            <li class="item">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                      src="http://static.showit.co/800/AUdzBDFUQAic22fP3fXbVw/61049/senior-portraits-photography-los-angeles-california_0064.jpg"
-                                                      alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">When I met him</a></h4>
-                            <span class="gender text-uppercase">GIRL</span>
-                            <span class="gender">Suits - Schoollooks</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">123,000</span>
-                        </div>
+            <c:forEach items="${random10BoardsList}" var="boardVO" varStatus="itr">
+                <li class="item">
+                    <div class="product-img">
+                        <a href="shop-ui-inner.html">
+                            <img class="full-width img-responsive"
+                                 src="/assets/img/aUpload${boardVO.fullname}"
+                                 alt=""></a>
+                        <a class="product-review" href="shop-ui-inner.html">Quick review</a>
+                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                                 data-placement="left" class="tooltips" href="#"><i
-                                class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="item">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                      src="https://ae01.alicdn.com/kf/HTB1CLXcPFXXXXXbXFXXq6xXFXXXy/2017-New-Fashion-Winter-Coats-Women-Europe-Long-Jacket-Green-Wool-Long-Trench-Coat.jpg_640x640.jpg"
-                                                      alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Community S</a></h4>
-                            <span class="gender text-uppercase">Women</span>
-                            <span class="gender">Outers - Coat</span>
+                    <div class="product-description product-description-brd">
+                        <div class="overflow-h margin-bottom-5">
+                            <div class="pull-left">
+                                <h4 class="title-price"><a href="shop-ui-inner.html">${boardVO.title}</a></h4>
+                                <span class="gender text-uppercase">GIRL</span>
+                                <span class="gender">Suits - Schoollooks</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="title-price">123,000</span>
+                            </div>
                         </div>
-                        <div class="product-price">
-                            <span class="title-price">60,000</span>
-                            <span class="title-price line-through">70,000</span>
-                        </div>
+                        <ul class="list-inline product-ratings">
+                            <li><i class="rating-selected fa fa-star"></i></li>
+                            <li><i class="rating-selected fa fa-star"></i></li>
+                            <li><i class="rating-selected fa fa-star"></i></li>
+                            <li><i class="rating fa fa-star"></i></li>
+                            <li><i class="rating fa fa-star"></i></li>
+                            <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                     data-placement="left" class="tooltips" href="#"><i
+                                    class="fa fa-heart"></i></a></li>
+                        </ul>
                     </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                                 data-placement="left" class="tooltips" href="#"><i
-                                class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="item">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                      src="http://cdn1-www.momtastic.com/assets/uploads/2015/03/Nelly-Stella-dress-with-cut-out-sleeves.jpg"
-                                                      alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    <div class="shop-rgba-red rgba-banner">Out of stock</div>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Joy of family</a></h4>
-                            <span class="gender text-uppercase">CHILDREN</span>
-                            <span class="gender">Outers - Coat</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">67,000</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                                 data-placement="left" class="tooltips" href="#"><i
-                                class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="item">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                      src="https://s-media-cache-ak0.pinimg.com/564x/b6/28/4d/b6284d49d9b351dbba981d896e64f522.jpg"
-                                                      alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    <div class="shop-rgba-dark-green rgba-banner">New</div>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Don't tell BF</a></h4>
-                            <span class="gender text-uppercase">Women</span>
-                            <span class="gender">Suits - Onepiece</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">87,000</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                                 data-placement="left" class="tooltips" href="#"><i
-                                class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="item">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                      src="http://img.yonhapnews.co.kr//etc/inner/KR/2012/01/11//AKR20120111074800003_01_i.jpg"
-                                                      alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Baby Baby Baby</a></h4>
-                            <span class="gender text-uppercase">Baby</span>
-                            <span class="gender">Suits - set</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">45,000</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                                 data-placement="left" class="tooltips" href="#"><i
-                                class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="item">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                      src="http://g03.a.alicdn.com/kf/HTB1pRN5OXXXXXciXpXXq6xXFXXXs/Cenmon-%EC%88%A0-%EC%B2%B4%EC%9D%B8-%EA%B8%B4-%EB%AA%A9%EA%B1%B8%EC%9D%B4-%ED%8E%9C%EB%8D%98%ED%8A%B8-%EC%9D%98%EC%83%81-%EB%B3%B4%EC%84%9D-%EC%9C%A0%ED%96%89-%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC-%EC%97%AC%EC%84%B1-Colar-%EB%AA%A9%EA%B1%B8%EC%9D%B4.jpg"
-                                                      alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    <div class="shop-rgba-red rgba-banner">Out of stock</div>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">It's my life</a></h4>
-                            <span class="gender text-uppercase">Women</span>
-                            <span class="gender">Accessory - Necklace</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">168,000</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                                 data-placement="left" class="tooltips" href="#"><i
-                                class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </li>
+                </li>
+            </c:forEach>
+            <%--<li class="item">--%>
+                <%--<div class="product-img">--%>
+                    <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                      <%--src="https://ae01.alicdn.com/kf/HTB1CLXcPFXXXXXbXFXXq6xXFXXXy/2017-New-Fashion-Winter-Coats-Women-Europe-Long-Jacket-Green-Wool-Long-Trench-Coat.jpg_640x640.jpg"--%>
+                                                      <%--alt=""></a>--%>
+                    <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                    <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+                <%--</div>--%>
+                <%--<div class="product-description product-description-brd">--%>
+                    <%--<div class="overflow-h margin-bottom-5">--%>
+                        <%--<div class="pull-left">--%>
+                            <%--<h4 class="title-price"><a href="shop-ui-inner.html">Community S</a></h4>--%>
+                            <%--<span class="gender text-uppercase">Women</span>--%>
+                            <%--<span class="gender">Outers - Coat</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="product-price">--%>
+                            <%--<span class="title-price">60,000</span>--%>
+                            <%--<span class="title-price line-through">70,000</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<ul class="list-inline product-ratings">--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                                 <%--data-placement="left" class="tooltips" href="#"><i--%>
+                                <%--class="fa fa-heart"></i></a></li>--%>
+                    <%--</ul>--%>
+                <%--</div>--%>
+            <%--</li>--%>
+            <%--<li class="item">--%>
+                <%--<div class="product-img">--%>
+                    <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                      <%--src="http://cdn1-www.momtastic.com/assets/uploads/2015/03/Nelly-Stella-dress-with-cut-out-sleeves.jpg"--%>
+                                                      <%--alt=""></a>--%>
+                    <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                    <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+                    <%--<div class="shop-rgba-red rgba-banner">Out of stock</div>--%>
+                <%--</div>--%>
+                <%--<div class="product-description product-description-brd">--%>
+                    <%--<div class="overflow-h margin-bottom-5">--%>
+                        <%--<div class="pull-left">--%>
+                            <%--<h4 class="title-price"><a href="shop-ui-inner.html">Joy of family</a></h4>--%>
+                            <%--<span class="gender text-uppercase">CHILDREN</span>--%>
+                            <%--<span class="gender">Outers - Coat</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="product-price">--%>
+                            <%--<span class="title-price">67,000</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<ul class="list-inline product-ratings">--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                                 <%--data-placement="left" class="tooltips" href="#"><i--%>
+                                <%--class="fa fa-heart"></i></a></li>--%>
+                    <%--</ul>--%>
+                <%--</div>--%>
+            <%--</li>--%>
+            <%--<li class="item">--%>
+                <%--<div class="product-img">--%>
+                    <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                      <%--src="https://s-media-cache-ak0.pinimg.com/564x/b6/28/4d/b6284d49d9b351dbba981d896e64f522.jpg"--%>
+                                                      <%--alt=""></a>--%>
+                    <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                    <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+                    <%--<div class="shop-rgba-dark-green rgba-banner">New</div>--%>
+                <%--</div>--%>
+                <%--<div class="product-description product-description-brd">--%>
+                    <%--<div class="overflow-h margin-bottom-5">--%>
+                        <%--<div class="pull-left">--%>
+                            <%--<h4 class="title-price"><a href="shop-ui-inner.html">Don't tell BF</a></h4>--%>
+                            <%--<span class="gender text-uppercase">Women</span>--%>
+                            <%--<span class="gender">Suits - Onepiece</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="product-price">--%>
+                            <%--<span class="title-price">87,000</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<ul class="list-inline product-ratings">--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                                 <%--data-placement="left" class="tooltips" href="#"><i--%>
+                                <%--class="fa fa-heart"></i></a></li>--%>
+                    <%--</ul>--%>
+                <%--</div>--%>
+            <%--</li>--%>
+            <%--<li class="item">--%>
+                <%--<div class="product-img">--%>
+                    <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                      <%--src="http://img.yonhapnews.co.kr//etc/inner/KR/2012/01/11//AKR20120111074800003_01_i.jpg"--%>
+                                                      <%--alt=""></a>--%>
+                    <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                    <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+                <%--</div>--%>
+                <%--<div class="product-description product-description-brd">--%>
+                    <%--<div class="overflow-h margin-bottom-5">--%>
+                        <%--<div class="pull-left">--%>
+                            <%--<h4 class="title-price"><a href="shop-ui-inner.html">Baby Baby Baby</a></h4>--%>
+                            <%--<span class="gender text-uppercase">Baby</span>--%>
+                            <%--<span class="gender">Suits - set</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="product-price">--%>
+                            <%--<span class="title-price">45,000</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<ul class="list-inline product-ratings">--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                                 <%--data-placement="left" class="tooltips" href="#"><i--%>
+                                <%--class="fa fa-heart"></i></a></li>--%>
+                    <%--</ul>--%>
+                <%--</div>--%>
+            <%--</li>--%>
+            <%--<li class="item">--%>
+                <%--<div class="product-img">--%>
+                    <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                      <%--src="http://g03.a.alicdn.com/kf/HTB1pRN5OXXXXXciXpXXq6xXFXXXs/Cenmon-%EC%88%A0-%EC%B2%B4%EC%9D%B8-%EA%B8%B4-%EB%AA%A9%EA%B1%B8%EC%9D%B4-%ED%8E%9C%EB%8D%98%ED%8A%B8-%EC%9D%98%EC%83%81-%EB%B3%B4%EC%84%9D-%EC%9C%A0%ED%96%89-%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC-%EC%97%AC%EC%84%B1-Colar-%EB%AA%A9%EA%B1%B8%EC%9D%B4.jpg"--%>
+                                                      <%--alt=""></a>--%>
+                    <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                    <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+                    <%--<div class="shop-rgba-red rgba-banner">Out of stock</div>--%>
+                <%--</div>--%>
+                <%--<div class="product-description product-description-brd">--%>
+                    <%--<div class="overflow-h margin-bottom-5">--%>
+                        <%--<div class="pull-left">--%>
+                            <%--<h4 class="title-price"><a href="shop-ui-inner.html">It's my life</a></h4>--%>
+                            <%--<span class="gender text-uppercase">Women</span>--%>
+                            <%--<span class="gender">Accessory - Necklace</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="product-price">--%>
+                            <%--<span class="title-price">168,000</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<ul class="list-inline product-ratings">--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li><i class="rating fa fa-star"></i></li>--%>
+                        <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                                 <%--data-placement="left" class="tooltips" href="#"><i--%>
+                                <%--class="fa fa-heart"></i></a></li>--%>
+                    <%--</ul>--%>
+                <%--</div>--%>
+            <%--</li>--%>
         </ul>
     </div>
     <!--=== End Illustration v2 ===-->
 
     <%--09.home.jsp의 가운데 카테고리 CSS 코넥트 연결 안 되는 이슈 해결(지금은 주석처리 해놨음)--%>
-    <%--<!--=== Illustration v3 ===-->--%>
-    <%--<div class="row margin-bottom-50">--%>
-        <%--<div class="col-md-4 md-margin-bottom-30">--%>
-            <%--<div class="overflow-h">--%>
-                <%--<a class="illustration-v3 illustration-img1"--%>
-                   <%--href="#">--%>
-					<%--<span class="illustration-bg">--%>
-                         <%--<span class="illustration-ads">--%>
-							<%--<span class="illustration-v3-category">--%>
-								<%--<span class="product-category">GIRL</span>--%>
-								<%--<span class="product-amount">87 Items</span>--%>
-							<%--</span>--%>
-						<%--</span>--%>
-					<%--</span>--%>
-                <%--</a>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="col-md-4 md-margin-bottom-30">--%>
-            <%--<div class="overflow-h">--%>
-                <%--<a class="illustration-v3 illustration-img2"--%>
-                   <%--href="http://www.dove.com/content/dam/unilever/dove/global/general_image/personal_care_unidentified/personal_care_unidentified/day10_shot04_076_hero-293217.jpg.ulenscale.767x360.jpg">--%>
-					<%--<span class="illustration-bg">--%>
-						<%--<span class="illustration-ads">--%>
-							<%--<span class="illustration-v3-category">--%>
-								<%--<span class="product-category">Women</span>--%>
-								<%--<span class="product-amount">156 Items</span>--%>
-							<%--</span>--%>
-						<%--</span>--%>
-					<%--</span>--%>
-                <%--</a>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="col-md-4">--%>
-            <%--<div class="overflow-h">--%>
-                <%--<a class="illustration-v3 illustration-img3"--%>
-                   <%--href="http://mummyfique.com/wp-content/uploads/2016/12/MFE-side-ad-1.jpg">--%>
-					<%--<span class="illustration-bg">--%>
-						<%--<span class="illustration-ads">--%>
-							<%--<span class="illustration-v3-category">--%>
-								<%--<span class="product-category">Children</span>--%>
-								<%--<span class="product-amount">68 Items</span>--%>
-							<%--</span>--%>
-						<%--</span>--%>
-					<%--</span>--%>
-                <%--</a>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
+    <!--=== Illustration v3 ===-->
+    <div class="row margin-bottom-50">
+        <div class="col-md-4 md-margin-bottom-30">
+            <div class="overflow-h">
+                <a class="illustration-v3 illustration-img1"
+                   href="#">
+					<span class="illustration-bg">
+                         <span class="illustration-ads">
+							<span class="illustration-v3-category">
+								<span class="product-category">고용노동부</span>
+								<span class="product-amount">87 Items</span>
+							</span>
+						</span>
+					</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 md-margin-bottom-30">
+            <div class="overflow-h">
+                <a class="illustration-v3 illustration-img2"
+                   href="http://www.dove.com/content/dam/unilever/dove/global/general_image/personal_care_unidentified/personal_care_unidentified/day10_shot04_076_hero-293217.jpg.ulenscale.767x360.jpg">
+					<span class="illustration-bg">
+						<span class="illustration-ads">
+							<span class="illustration-v3-category">
+								<span class="product-category">통일부</span>
+								<span class="product-amount">156 Items</span>
+							</span>
+						</span>
+					</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="overflow-h">
+                <a class="illustration-v3 illustration-img3"
+                   href="http://mummyfique.com/wp-content/uploads/2016/12/MFE-side-ad-1.jpg">
+					<span class="illustration-bg">
+						<span class="illustration-ads">
+							<span class="illustration-v3-category">
+								<span class="product-category">환경부</span>
+								<span class="product-amount">68 Items</span>
+							</span>
+						</span>
+					</span>
+                </a>
+            </div>
+        </div>
+    </div>
     <%--<!--=== End Illustration v3 ===-->--%>
 
     <div class="heading heading-v1 margin-bottom-40">
@@ -811,7 +814,7 @@ helloworld!
     <div class="row illustration-v4 margin-bottom-40">
         <div class="col-md-4">
             <div class="heading heading-v1 margin-bottom-20">
-                <h2>Top Rated</h2>
+                <h2>Top Good</h2>
             </div>
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/08.jpg" alt="">
@@ -853,7 +856,7 @@ helloworld!
         </div>
         <div class="col-md-4">
             <div class="heading heading-v1 margin-bottom-20">
-                <h2>Best Sellers</h2>
+                <h2>Best G/B</h2>
             </div>
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/02.jpg" alt="">
@@ -895,7 +898,7 @@ helloworld!
         </div>
         <div class="col-md-4 padding">
             <div class="heading heading-v1 margin-bottom-20">
-                <h2>Sale Items</h2>
+                <h2>Top Bad</h2>
             </div>
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/07.jpg" alt="">

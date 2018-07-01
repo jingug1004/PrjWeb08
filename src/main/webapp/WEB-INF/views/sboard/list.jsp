@@ -174,7 +174,7 @@
                                 <input type="hidden" id="bringBoardVOgetcolor" value=${boardVO.getcolor}>
                                 <td align="center">${boardVO.bno}</td>
                                 <td>
-                                    <a href='/sboard/readPage${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
+                                    <a href='/sboard/readPa${pageMakerAny.makeSearchAll(pageMakerAny.criListAny.page)}&bno=${boardVO.bno}' class="cookieBoardPOST">
                                             ${boardVO.title}
                                         <c:if test="${boardVO.replycnt > 0}">
                                             <strong>[ ${boardVO.replycnt} ]</strong>

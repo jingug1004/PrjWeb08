@@ -345,9 +345,10 @@
                                     <ul class="list-inline overflow-h">
                                         <li><h4 class="title-price">
                                                 <%--<a href="shop-ui-inner.html">${boardVO.title}</a>--%>
-                                            <a href='/sboard/readPa${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'
+                                            <a href='/sboard/readPa${pageMaker.makeQueryUserid(pageMaker.cri.page)}&bno=${boardVO.bno}'
                                                class="cookieBoardPOST">
                                                     ${boardVO.title}
+                                                            <%--${boardVO.fullname}--%>
                                                 <c:if test="${boardVO.replycnt > 0}">
                                                     <strong>[ ${boardVO.replycnt} ]</strong>
                                                 </c:if>
@@ -368,9 +369,9 @@
                                         <span class="title-price margin-right-10">$60.00</span>
                                         <span class="title-price line-through">$95.00</span>
                                     </div>
-                                    <p class="margin-bottom-20" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                            ${boardVO.content}
+                                    <p class="margin-bottom-20 contentStyleInput" id="contentStyleInput">
                                     </p>
+                                        ${boardVO.content}
                                     <ul class="list-inline add-to-wishlist margin-bottom-20">
                                         <li class="wishlist-in">
                                             <i class="fa fa-heart"></i>
@@ -449,6 +450,8 @@
     }
 
     $(document).ready(function () {
+
+        $('.contentStyleInput').next().css({"white-space": "nowrap", "overflow": "hidden", "text-overflow": "ellipsis"});
 
         var allUrlAddr = $(location).attr('href');
 
