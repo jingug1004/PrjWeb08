@@ -12,6 +12,12 @@
       FROM tbl_board ORDER BY rand() LIMIT 10
     </select>
 
+    <select id="latest4BoardsList" resultType="BoardVO">
+        -- latest4BoardsList //
+        SELECT *, (SELECT fullName FROM tbl_attach_origin WHERE bno = tbl_board.bno LIMIT 1) fullName
+        FROM tbl_board ORDER BY bno DESC LIMIT 4
+    </select>
+
 
 
 

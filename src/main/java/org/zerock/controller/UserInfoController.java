@@ -77,10 +77,6 @@ public class UserInfoController {
 
 //        model.addAttribute("getAttachNameGET", boardService.getAttachNameGET(board))
 
-        logger.info("lll~~~ pageMaker.toString() : " + pageMaker.toString());
-        logger.info("lll~~~ cri : " + cri.toString());
-        logger.info("lll~~~ userInfoService.userInfoList(cri) : " + userInfoService.userInfoList(cri).toString());
-
         return "userInfo/userInfoList";
     }
 

@@ -886,16 +886,18 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         // 현재 첨부파일의 이름을 배열로 작성해서 UploadController에 Ajax 방식으로 첨부파일에 대한 삭제를 지시.
         // 첨부파일 삭제 이후에 바로 <form> 태그를 이용해서 데이터베이스의 삭제를 처리할 것이므로, 성공이나 실패를 기다리지 않고, 바로 '/sboard/removePage'를 호출하는 형태로 작성.
 
-        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn01">목록</button>';
-        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn02">목록</button>';
-        var goListBtn03 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn03">목록</button>';
+        var goListBtn01 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn01">목록1</button>';
+        var goListBtn02 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn02">목록2</button>';
+        var goListBtn03 = '<button type="submit" name="goListBtn" class="btn" id="goListBtn03">목록3</button>';
 
         function validMenuInReadPage() {
-            if (getUrlParams().cate != null && getUrlParams().keyword == null && getUrlParams().cate != 0) {
+//            if (getUrlParams().keyword == null && getUrlParams().cate != 0) {
+            if (!getUrlParams().cate.match("backList02") && !getUrlParams().cate.match("backList03")) {
                 $('a[name = "goListBtnTest"]').html(goListBtn01);   // cate에서 글 읽기(Read) 들어갔을 때
-            } else if (getUrlParams().keyword != null) {
+            } else if (getUrlParams().cate.match("backList02")) {
                 $('a[name = "goListBtnTest"]').html(goListBtn02);   // listAny에서 글 읽기(Read) 들어갔을 때
-            } else if (getUrlParams().loginid != null) {
+//            } else if (getUrlParams().loginid != null && getUrlParams().keyword == null && getUrlParams().cate == 0) {
+            } else if (getUrlParams().cate.match("backList03")) {
                 $('a[name = "goListBtnTest"]').html(goListBtn03);   // 회원 상세페이지에서 들어갔을 때
             }
         }

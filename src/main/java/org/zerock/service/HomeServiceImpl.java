@@ -47,4 +47,9 @@ public class HomeServiceImpl implements HomeService {
         return homeDAO.random10BoardsList(searchCriteria);
     }
 
+    @Override
+    public List<BoardVO> latest4BoardsList(SearchCriteria searchCriteria) throws Exception {
+        return homeDAO.latest4BoardsList(searchCriteria);
+    }
+
 }

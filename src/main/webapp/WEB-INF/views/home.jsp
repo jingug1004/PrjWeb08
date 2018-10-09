@@ -578,133 +578,138 @@ helloworld!
 
     <!--=== Illustration v2 ===-->
     <div class="row illustration-v2">
-        <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-            <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                  src="https://ae01.alicdn.com/kf/HTB1W6VEJpXXXXbQXFXXq6xXFXXXa/Summer-women-font-b-dress-b-font-Europe-and-America-in-spring-and-summer-haute-couture.jpg"
-                                                  alt=""></a>
-                <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-            </div>
-            <div class="product-description product-description-brd">
-                <div class="overflow-h margin-bottom-5">
-                    <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">Anywhere Whatever</a></h4>
-                        <span class="gender text-uppercase">Woman</span>
-                        <span class="gender">Suits - Two Piece</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="title-price">75,000</span>
-                    </div>
+        <c:forEach items="${latest4BoardsList}" var="boardVO" varStatus="itr">
+            <div class="col-md-3 col-sm-6 md-margin-bottom-30">
+                <div class="product-img">
+                    <a href="shop-ui-inner.html">
+                        <img class="full-width img-responsive"
+                             src="/assets/img/aUpload${boardVO.fullname}"
+                             alt=""></a>
+                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
+                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
-                <ul class="list-inline product-ratings">
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-            <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                  src="https://s-media-cache-ak0.pinimg.com/236x/15/d7/9d/15d79da32b5b69a62f8b6d109630b866.jpg"
-                                                  alt=""></a>
-                <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-            </div>
-            <div class="product-description product-description-brd">
-                <div class="overflow-h margin-bottom-5">
-                    <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">Alaways It's sunny</a></h4>
-                        <span class="gender text-uppercase">GIRL</span>
-                        <span class="gender">Suits - One Piece</span>
+                <div class="product-description product-description-brd">
+                    <div class="overflow-h margin-bottom-5">
+                        <div class="pull-left">
+                            <h4 class="title-price"><a href="shop-ui-inner.html">${boardVO.title}</a></h4>
+                            <span class="gender text-uppercase">Woman</span>
+                            <span class="gender">Suits - Two Piece</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="title-price">75,000</span>
+                        </div>
                     </div>
-                    <div class="product-price">
-                        <span class="title-price">58,000</span>
-                        <span class="title-price line-through">68,000</span>
-                    </div>
+                    <ul class="list-inline product-ratings">
+                        <li><i class="rating-selected fa fa-star"></i></li>
+                        <li><i class="rating-selected fa fa-star"></i></li>
+                        <li><i class="rating-selected fa fa-star"></i></li>
+                        <li><i class="rating fa fa-star"></i></li>
+                        <li><i class="rating fa fa-star"></i></li>
+                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
+                                                 data-placement="left" class="tooltips" href="#"><i
+                                class="fa fa-heart"></i></a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="list-inline product-ratings">
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
-                    </li>
-                </ul>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-            <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                  src="http://image.dhgate.com/0x0/f2/albu/g2/M01/44/97/rBVaGlbRBKyAPVG8AAKKg_G2kJ8367.jpg"
-                                                  alt=""></a>
-                <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                <div class="shop-rgba-red rgba-banner">Out of stock</div>
-            </div>
-            <div class="product-description product-description-brd">
-                <div class="overflow-h margin-bottom-5">
-                    <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">I wannabe mom</a></h4>
-                        <span class="gender text-uppercase">GIRL</span>
-                        <span class="gender">Bottom - Skirt</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="title-price">45,000</span>
-                    </div>
-                </div>
-                <ul class="list-inline product-ratings">
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-            <div class="product-img">
-                <a href="shop-ui-inner.html"><img class="full-width img-responsive"
-                                                  src="http://www.dhresource.com/260x260s/f2-albu-g5-M00-E3-E7-rBVaJFi761GAVVvbAAGiBhA4wOw827.jpg/hot-kid-girls-dress-plaid-bowknot-belt-vest.jpg"
-                                                  alt=""></a>
-                <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                <div class="shop-rgba-dark-green rgba-banner">New</div>
-            </div>
-            <div class="product-description product-description-brd">
-                <div class="overflow-h margin-bottom-5">
-                    <div class="pull-left">
-                        <h4 class="title-price"><a href="shop-ui-inner.html">Happy Thing</a></h4>
-                        <span class="gender text-uppercase">CHILDREN</span>
-                        <span class="gender">Suits - One Piece</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="title-price">35,000</span>
-                    </div>
-                </div>
-                <ul class="list-inline product-ratings">
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating-selected fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li><i class="rating fa fa-star"></i></li>
-                    <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"
-                                             data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        </c:forEach>
+
+    <%--<div class="col-md-3 col-sm-6 md-margin-bottom-30">--%>
+            <%--<div class="product-img">--%>
+                <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                  <%--src="https://s-media-cache-ak0.pinimg.com/236x/15/d7/9d/15d79da32b5b69a62f8b6d109630b866.jpg"--%>
+                                                  <%--alt=""></a>--%>
+                <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+            <%--</div>--%>
+            <%--<div class="product-description product-description-brd">--%>
+                <%--<div class="overflow-h margin-bottom-5">--%>
+                    <%--<div class="pull-left">--%>
+                        <%--<h4 class="title-price"><a href="shop-ui-inner.html">Alaways It's sunny</a></h4>--%>
+                        <%--<span class="gender text-uppercase">GIRL</span>--%>
+                        <%--<span class="gender">Suits - One Piece</span>--%>
+                    <%--</div>--%>
+                    <%--<div class="product-price">--%>
+                        <%--<span class="title-price">58,000</span>--%>
+                        <%--<span class="title-price line-through">68,000</span>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<ul class="list-inline product-ratings">--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating fa fa-star"></i></li>--%>
+                    <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                             <%--data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>--%>
+                    <%--</li>--%>
+                <%--</ul>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-3 col-sm-6 md-margin-bottom-30">--%>
+            <%--<div class="product-img">--%>
+                <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                  <%--src="http://image.dhgate.com/0x0/f2/albu/g2/M01/44/97/rBVaGlbRBKyAPVG8AAKKg_G2kJ8367.jpg"--%>
+                                                  <%--alt=""></a>--%>
+                <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+                <%--<div class="shop-rgba-red rgba-banner">Out of stock</div>--%>
+            <%--</div>--%>
+            <%--<div class="product-description product-description-brd">--%>
+                <%--<div class="overflow-h margin-bottom-5">--%>
+                    <%--<div class="pull-left">--%>
+                        <%--<h4 class="title-price"><a href="shop-ui-inner.html">I wannabe mom</a></h4>--%>
+                        <%--<span class="gender text-uppercase">GIRL</span>--%>
+                        <%--<span class="gender">Bottom - Skirt</span>--%>
+                    <%--</div>--%>
+                    <%--<div class="product-price">--%>
+                        <%--<span class="title-price">45,000</span>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<ul class="list-inline product-ratings">--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating fa fa-star"></i></li>--%>
+                    <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                             <%--data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>--%>
+                    <%--</li>--%>
+                <%--</ul>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-3 col-sm-6 md-margin-bottom-30">--%>
+            <%--<div class="product-img">--%>
+                <%--<a href="shop-ui-inner.html"><img class="full-width img-responsive"--%>
+                                                  <%--src="http://www.dhresource.com/260x260s/f2-albu-g5-M00-E3-E7-rBVaJFi761GAVVvbAAGiBhA4wOw827.jpg/hot-kid-girls-dress-plaid-bowknot-belt-vest.jpg"--%>
+                                                  <%--alt=""></a>--%>
+                <%--<a class="product-review" href="shop-ui-inner.html">Quick review</a>--%>
+                <%--<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+                <%--<div class="shop-rgba-dark-green rgba-banner">New</div>--%>
+            <%--</div>--%>
+            <%--<div class="product-description product-description-brd">--%>
+                <%--<div class="overflow-h margin-bottom-5">--%>
+                    <%--<div class="pull-left">--%>
+                        <%--<h4 class="title-price"><a href="shop-ui-inner.html">Happy Thing</a></h4>--%>
+                        <%--<span class="gender text-uppercase">CHILDREN</span>--%>
+                        <%--<span class="gender">Suits - One Piece</span>--%>
+                    <%--</div>--%>
+                    <%--<div class="product-price">--%>
+                        <%--<span class="title-price">35,000</span>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<ul class="list-inline product-ratings">--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating-selected fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating fa fa-star"></i></li>--%>
+                    <%--<li><i class="rating fa fa-star"></i></li>--%>
+                    <%--<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip"--%>
+                                             <%--data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a>--%>
+                    <%--</li>--%>
+                <%--</ul>--%>
+            <%--</div>--%>
+        <%--</div>--%>
     </div>
     <!--=== End Illustration v2 ===-->
 </div>
@@ -814,7 +819,7 @@ helloworld!
     <div class="row illustration-v4 margin-bottom-40">
         <div class="col-md-4">
             <div class="heading heading-v1 margin-bottom-20">
-                <h2>Top Good</h2>
+                <h2>Monthly Good</h2>
             </div>
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/08.jpg" alt="">
@@ -856,7 +861,7 @@ helloworld!
         </div>
         <div class="col-md-4">
             <div class="heading heading-v1 margin-bottom-20">
-                <h2>Best G/B</h2>
+                <h2>Weekly Good</h2>
             </div>
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/02.jpg" alt="">
@@ -898,7 +903,7 @@ helloworld!
         </div>
         <div class="col-md-4 padding">
             <div class="heading heading-v1 margin-bottom-20">
-                <h2>Top Bad</h2>
+                <h2>Daily Good</h2>
             </div>
             <div class="thumb-product">
                 <img class="thumb-product-img" src="assets/img/thumb/07.jpg" alt="">

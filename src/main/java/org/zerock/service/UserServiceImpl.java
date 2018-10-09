@@ -88,6 +88,7 @@ public class UserServiceImpl implements UserService {
             ip = httpServletRequest.getRemoteAddr();
         }
         userVO.setRegip(ip);
+        userVO.setUpdip(ip);
         /* 회원가입시 등록할 ip주소 end */
 
         userDAO.create(userVO);         // tbl_user 테이블
@@ -126,6 +127,8 @@ public class UserServiceImpl implements UserService {
         int userColorNum = userColorDAO.userColorInputGET(userVO.getUday());
         userColorDAO.userColorInputTotalUpd(userColorNum, userVO.getUday());
         /* 색깔별 회원가입수 tbl_color_result에 저장 end */
+
+        logger.info("lll~~~ : " + userColorNum + " // " + userVO.toString() + " lll~~~");
 
     }
 

@@ -54,6 +54,10 @@ public class HomeController {
         model.addAttribute("random10BoardsList", homeService.random10BoardsList(searchCriteria));
         /* Home.jsp에 중상단에 보여줄 10개 랜덤 게시물 end */
 
+        /* Home.jsp에 중단에 보여줄 4개 최신 게시물 start */
+        model.addAttribute("latest4BoardsList", homeService.latest4BoardsList(searchCriteria));
+        /* Home.jsp에 중단에 보여줄 4개 최신 게시물 end */
+
         /* 접속 날짜 시간 start */
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String todaySimple = simpleDateFormat.format(date);

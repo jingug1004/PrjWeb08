@@ -31,4 +31,9 @@ public class HomeDAOImpl implements HomeDAO {
         return session.selectList(namespace + ".random10BoardsList", searchCriteria);
     }
 
+    @Override
+    public List<BoardVO> latest4BoardsList(SearchCriteria searchCriteria) throws Exception {
+        return session.selectList(namespace + ".latest4BoardsList", searchCriteria);
+    }
+
 }

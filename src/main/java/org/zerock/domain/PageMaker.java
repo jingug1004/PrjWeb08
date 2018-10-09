@@ -220,7 +220,7 @@ public class PageMaker {
                 UriComponentsBuilder.newInstance()
                         .queryParam("page", page)
                         .queryParam("perPageNum", criListAny.getPerPageNum())
-                        .queryParam("cate", getCnumFromBoardVO())
+                        .queryParam("cate", "backList02")
                         .queryParam("keyword", ((SearchCriteriaListAny) criListAny).getKeyword())
                         .queryParam("searchType", ((SearchCriteriaListAny) criListAny).getSearchType())
 
@@ -241,7 +241,7 @@ public class PageMaker {
                         .queryParam("page", page)
                         .queryParam("perPageNum", cri.getPerPageNum())
                         .queryParam("loginid", ((SearchCriteria)cri).getLoginid())
-                        .queryParam("cate", getCnumFromBoardVO())
+                        .queryParam("cate", "backList03")
                         .queryParam("searchType", ((SearchCriteria) cri).getSearchType())
 
                         .queryParam("keyword", ((SearchCriteria) cri).getKeyword())

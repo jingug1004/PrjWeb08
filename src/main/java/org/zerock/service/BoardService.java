@@ -164,4 +164,6 @@ public interface BoardService {
      */
     public String getAttachNameGET(int bno) throws Exception;
 
+
+
 }

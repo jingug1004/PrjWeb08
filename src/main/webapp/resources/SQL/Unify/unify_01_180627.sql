@@ -1,4 +1,4 @@
-create table tbl_user
+create table tbl_usery
 (
 	uid varchar(50) not null comment '회원의 아이디'
 		primary key,
