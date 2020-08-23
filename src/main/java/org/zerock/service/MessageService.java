@@ -20,7 +20,7 @@ public interface MessageService {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void addMessage(MessageVO vo) throws Exception;
+    void addMessage(MessageVO vo) throws Exception;
 
     /**
      * Read message message vo.
@@ -30,6 +30,6 @@ public interface MessageService {
      * @return the message vo
      * @throws Exception the exception
      */
-    public MessageVO readMessage(String uid, Integer mno) throws Exception;
+    MessageVO readMessage(String uid, Integer mno) throws Exception;
 
 }

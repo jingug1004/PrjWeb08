@@ -26,28 +26,28 @@ import javax.servlet.http.HttpSession;
 
 public interface CntService {
 
-    public void goodCntPush(GoodCntVO goodCntVO, HttpSession httpSession) throws Exception;
+    void goodCntPush(GoodCntVO goodCntVO, HttpSession httpSession) throws Exception;
 
-    public String goodCntVOGet(String loginUserID, int bno) throws Exception;
-
-    // ---------------------------------------------------------------
-
-    public void badCntPush(GoodCntVO badCntVO, HttpSession httpSession) throws Exception;
-
-    public String badCntVOGet(String loginUserID, int bno) throws Exception;
+    String goodCntVOGet(String loginUserID, int bno) throws Exception;
 
     // ---------------------------------------------------------------
 
-    public int getGoodCntGet(int goodcntbno) throws Exception;
+    void badCntPush(GoodCntVO badCntVO, HttpSession httpSession) throws Exception;
 
-    public int getBadCntGet(int badcntbno) throws Exception;
-
-    public void changeGBPut(int gbbno, double gbRate) throws Exception;
+    String badCntVOGet(String loginUserID, int bno) throws Exception;
 
     // ---------------------------------------------------------------
 
-    public void spamCntPush(GoodCntVO spamCntVO, HttpSession httpSession) throws Exception;
+    int getGoodCntGet(int goodcntbno) throws Exception;
 
-    public String spamCntVOGet(String loginUserID, int bno) throws Exception;
+    int getBadCntGet(int badcntbno) throws Exception;
+
+    void changeGBPut(int gbbno, double gbRate) throws Exception;
+
+    // ---------------------------------------------------------------
+
+    void spamCntPush(GoodCntVO spamCntVO, HttpSession httpSession) throws Exception;
+
+    String spamCntVOGet(String loginUserID, int bno) throws Exception;
 
 }

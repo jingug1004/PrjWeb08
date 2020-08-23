@@ -133,7 +133,7 @@ public class StringUtil {
         int e = 0;
         StringBuffer result = new StringBuffer();
         while ((e = content.indexOf(pattern, s)) >= 0) {
-            result.append(content.substring(s, e));
+            result.append(content, s, e);
             result.append(replace);
             s = e + pattern.length();
         }

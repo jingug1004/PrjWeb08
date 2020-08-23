@@ -29,38 +29,38 @@ public class BoardDAOImpl implements BoardDAO {
 //    공통으로 사용하는 XML Mapper의 namespace를 지정하고 사용.
 
     @Override
-    public void create(BoardVO vo) throws Exception {
+    public void create(BoardVO vo) {
         session.insert(namespace + ".create", vo);
     }
 
     @Override
-    public BoardVO read(Integer bno) throws Exception {
+    public BoardVO read(Integer bno) {
         return session.selectOne(namespace + ".read", bno);
     }
 
     @Override
-    public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception {
+    public BoardVO readByIDnTitle(BoardVO boardVO) {
         return session.selectOne(namespace + ".readByIDnTitle", boardVO);
     }
 
     @Override
-    public void update(BoardVO vo) throws Exception {
+    public void update(BoardVO vo) {
         session.update(namespace + ".update", vo);
     }
 
     // SQL delete 에서 update 로 바꿈. 전달 메소드는 remove지만 마이바티스는 update로!
     @Override
-    public void delete(Integer bno) throws Exception {
+    public void delete(Integer bno) {
         session.update(namespace + ".delete", bno);
     }
 
     // 정말 무시하자! 옛날 거! ---------------------------------------------------------
     @Override
-    public List<BoardVO> listAll() throws Exception {return session.selectList(namespace + ".listAll");}
+    public List<BoardVO> listAll() {return session.selectList(namespace + ".listAll");}
 
     // 정말 무시하자! 옛날 거! ---------------------------------------------------------
     @Override
-    public List<BoardVO> listPage(int page) throws Exception {
+    public List<BoardVO> listPage(int page) {
         if (page <= 0) {
             page = 1;
         }
@@ -70,37 +70,37 @@ public class BoardDAOImpl implements BoardDAO {
 
     // 정말 무시하자! 옛날 거! 밑의 listSearch 씀 --------------------------------------------------
     @Override
-    public List<BoardVO> listCriteria(Criteria cri) throws Exception {return session.selectList(namespace + ".listCriteria", cri);}
+    public List<BoardVO> listCriteria(Criteria cri) {return session.selectList(namespace + ".listCriteria", cri);}
 
     // 이거 안 씀. 밑의 listSearchCount 씀 --------------------------------------------------------
     @Override
-    public int countPaging(Criteria cri) throws Exception {return session.selectOne(namespace + ".countPaging", cri);}
+    public int countPaging(Criteria cri) {return session.selectOne(namespace + ".countPaging", cri);}
 
     // 기본 게시판(cate) 클릭하고 나서 보여주는 리스트
     @Override
-    public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+    public List<BoardVO> listSearch(SearchCriteria cri) {
         return session.selectList(namespace + ".listSearch", cri);
     }
 
     // 게시판 밑 페이징 (1~10버튼) // 게시판 전체 몇 개인지 카운트 불러오는 메소드
     @Override
-    public int listSearchCount(SearchCriteria cri) throws Exception {
+    public int listSearchCount(SearchCriteria cri) {
         return session.selectOne(namespace + ".listSearchCount", cri);
     }
 
     // 전체 검색 기능 구현
     @Override
-    public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception {
+    public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) {
         return session.selectList(namespace + ".listSearchAny", criteria);
     }
 
     @Override
-    public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception {
+    public int listSearchAnyCount(SearchCriteriaListAny criteria) {
         return session.selectOne(namespace + ".listSearchAnyCount", criteria);
     }
 
     @Override
-    public void updateReplyCnt(Integer bno, int amount) throws Exception {
+    public void updateReplyCnt(Integer bno, int amount) {
 
         Map<String, Object> paramMap = new HashMap<String, Object>();
 
@@ -112,25 +112,25 @@ public class BoardDAOImpl implements BoardDAO {
 
     /* 게시판 글 클릭 시 조회 수 증가 */
     @Override
-    public void updateViewCnt(Integer bno) throws Exception {
+    public void updateViewCnt(Integer bno) {
         session.update(namespace + ".updateViewCnt", bno);
     }
 
     /* 게시판 글의 카테고리 이름 출력 */
     @Override
-    public String callCateName(Integer bno) throws Exception {
+    public String callCateName(Integer bno) {
         return session.selectOne(namespace + ".callCateName", bno);
     }
 
     /* 게시판 리스트의 카테고리 이름 출력 */
     @Override
-    public String callCateNameInList(Integer cateNum) throws Exception {
+    public String callCateNameInList(Integer cateNum) {
         return session.selectOne(namespace + ".callCateNameInList", cateNum);
     }
 
 
     @Override
-    public void addAttach(String fullName, int boardBno) throws Exception {
+    public void addAttach(String fullName, int boardBno) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -143,7 +143,7 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public void addAttachOrigin(String fullName, int boardBno) throws Exception {
+    public void addAttachOrigin(String fullName, int boardBno) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -156,17 +156,17 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public List<String> getAttach(Integer bno) throws Exception {
+    public List<String> getAttach(Integer bno) {
         return session.selectList(namespace + ".getAttach", bno);
     }
 
     @Override
-    public void deleteAttach(Integer bno) throws Exception {
+    public void deleteAttach(Integer bno) {
         session.delete(namespace + ".deleteAttach", bno);
     }
 
     @Override
-    public void replaceAttach(String fullName, Integer bno) throws Exception {
+    public void replaceAttach(String fullName, Integer bno) {
 
         Map<String, Object> paramMap = new HashMap<String, Object>();
 
@@ -177,17 +177,17 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public int totalUserPostNumGET(String uid) throws Exception {
+    public int totalUserPostNumGET(String uid) {
         return session.selectOne(namespace + ".totalUserPostNumGET", uid);
     }
 
     @Override
-    public int totalColorPostNumGet(String getColor) throws Exception {
+    public int totalColorPostNumGet(String getColor) {
         return session.selectOne(namespace + ".totalColorPostNumGet", getColor);
     }
 
     @Override
-    public List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) throws Exception {
+    public List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -201,7 +201,7 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public int livePopularCount(SearchCriteria searchCriteria, String sdfToday) throws Exception {
+    public int livePopularCount(SearchCriteria searchCriteria, String sdfToday) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -212,7 +212,7 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception {
+    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -227,7 +227,7 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception {
+    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -242,7 +242,7 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public String getAttachNameGET(int bno) throws Exception {
+    public String getAttachNameGET(int bno) {
         return session.selectOne(namespace + ".getAttachNameGET", bno);
     }
 }

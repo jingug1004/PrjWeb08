@@ -26,20 +26,20 @@ public interface PointDAO {
 //    public void updatePoint(String uid, int point) throws Exception;
 
     /* 글 작성할 때 포인트 추가, 제거 */
-    public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
+    void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
 
-    public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception;
+    void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception;
 
-    public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
+    void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
 
-    public void balancePointUpdate(String uid, int balancePoint) throws Exception;
+    void balancePointUpdate(String uid, int balancePoint) throws Exception;
     /* 글 작성할 때 포인트 추가, 제거 */
 
     /* 유저의 전체, 칼라별 레벨 순번을 가져오기 위한 전체 리스트 */
-    public List<String> userLevelPointGET () throws Exception;                  // 전체 회원의 upoint에 따른 내림차순
+    List<String> userLevelPointGET() throws Exception;                  // 전체 회원의 upoint에 따른 내림차순
 
     /* 유저의 전체, 칼라별 레벨 순번을 가져오기 위한 전체 리스트 */
-    public List<String> userColorPointGET (String uday) throws Exception;       // 전체 회원의 upoint에 따른 내림차순
+    List<String> userColorPointGET(String uday) throws Exception;       // 전체 회원의 upoint에 따른 내림차순
 
 
 }

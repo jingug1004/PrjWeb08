@@ -288,7 +288,7 @@ public class DatePrepareClass {
         if (slen - 1 < start)
             return "";
         if (slen < start + len)
-            return Str.substring(start, Str.length());
+            return Str.substring(start);
         else
             return Str.substring(start, start + len);
     }

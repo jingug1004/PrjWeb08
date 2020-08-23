@@ -45,7 +45,7 @@ public class SampleInterceptor extends HandlerInterceptorAdapter{
     @Override
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
-                             Object handler) throws Exception {
+                             Object handler) {
 
         System.out.println("lll~~~ pre handle............... lll~~~");
 

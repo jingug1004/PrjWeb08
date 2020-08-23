@@ -27,33 +27,33 @@ public class ReplyDAOImpl implements ReplyDAO{
     private static String namespace = "org.zerock.mapper.ReplyMapper";
 
     @Override
-    public List<ReplyVO> list(Integer bno) throws Exception {
+    public List<ReplyVO> list(Integer bno) {
         return sqlSession.selectList(namespace + ".list", bno);
     }
 
     @Override
-    public ReplyVO readByIDnBnonText(ReplyVO replyVO) throws Exception {
+    public ReplyVO readByIDnBnonText(ReplyVO replyVO) {
         return sqlSession.selectOne(namespace + ".readByIDnBnonText", replyVO);
     }
 
     @Override
-    public void create(ReplyVO vo) throws Exception {
+    public void create(ReplyVO vo) {
         sqlSession.insert(namespace + ".create", vo);
     }
 
     @Override
-    public void update(ReplyVO vo) throws Exception {
+    public void update(ReplyVO vo) {
         sqlSession.update(namespace + ".update", vo);
     }
 
     @Override
-    public void delete(Integer rno) throws Exception {
+    public void delete(Integer rno) {
         // sqlSession.delete(namespace + ".delete", rno);
         sqlSession.update(namespace + ".delete", rno);
     }
 
     @Override
-    public List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception {
+    public List<ReplyVO> listPage(Integer bno, Criteria cri) {
         Map<String, Object> paramMap = new HashMap<>();
 
         paramMap.put("bno", bno);
@@ -63,22 +63,22 @@ public class ReplyDAOImpl implements ReplyDAO{
     }
 
     @Override
-    public int count(Integer bno) throws Exception {
+    public int count(Integer bno) {
         return sqlSession.selectOne(namespace + ".count", bno);
     }
 
     @Override
-    public int getBno(Integer rno) throws Exception {
+    public int getBno(Integer rno) {
         return sqlSession.selectOne(namespace + ".getBno", rno);
     }
 
     @Override
-    public int totalUserReplyNumGET(String uid) throws Exception {
+    public int totalUserReplyNumGET(String uid) {
         return sqlSession.selectOne(namespace + ".totalUserReplyNumGET", uid); // 댓글 작성시 접속한 유저의 별명을 통해서 총 댓글 등록수 구함
     }
 
     @Override
-    public int totalColorReplyNumGet(String getColor) throws Exception {
+    public int totalColorReplyNumGet(String getColor) {
         return sqlSession.selectOne(namespace + ".totalColorReplyNumGet", getColor);
     }
 }

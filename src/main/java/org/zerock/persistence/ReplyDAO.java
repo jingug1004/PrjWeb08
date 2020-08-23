@@ -25,9 +25,9 @@ public interface ReplyDAO {
      * @return the list
      * @throws Exception the exception
      */
-    public List<ReplyVO> list(Integer bno) throws Exception;
+    List<ReplyVO> list(Integer bno) throws Exception;
 
-    public ReplyVO readByIDnBnonText (ReplyVO replyVO) throws Exception;
+    ReplyVO readByIDnBnonText(ReplyVO replyVO) throws Exception;
 
     /**
      * Create.
@@ -35,7 +35,7 @@ public interface ReplyDAO {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void create(ReplyVO vo) throws Exception;
+    void create(ReplyVO vo) throws Exception;
 
     /**
      * Update.
@@ -43,7 +43,7 @@ public interface ReplyDAO {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void update(ReplyVO vo) throws Exception;
+    void update(ReplyVO vo) throws Exception;
 
     /**
      * Delete.
@@ -51,7 +51,7 @@ public interface ReplyDAO {
      * @param rno the rno
      * @throws Exception the exception
      */
-    public void delete(Integer rno) throws Exception;
+    void delete(Integer rno) throws Exception;
 
     /**
      * REST 방식의 경우 전통적인 Model 객체에 데이터를 담지 않고 객체를 처리할 수 있기 때문에 메소드의 파라미터 처리가 조금 달라지긴 해도 간단하게 처리 가능.
@@ -61,7 +61,7 @@ public interface ReplyDAO {
      * @return the list
      * @throws Exception the exception
      */
-    public List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception;
+    List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception;
 
     /**
      * 화면에 페이징 처리를 하기 위해서는 반드시 해당 게시물의 댓글 수가 필요하므로 count()를 작성.
@@ -70,7 +70,7 @@ public interface ReplyDAO {
      * @return the int
      * @throws Exception the exception
      */
-    public int count(Integer bno) throws Exception;
+    int count(Integer bno) throws Exception;
 
     /**
      * 댓글이 삭제될 때 해당 게시물의 번호를 알아내는 기능을 추가.
@@ -79,10 +79,10 @@ public interface ReplyDAO {
      * @return the bno
      * @throws Exception the exception
      */
-    public int getBno(Integer rno) throws Exception;
+    int getBno(Integer rno) throws Exception;
 
-    public int totalUserReplyNumGET(String uid) throws Exception;
+    int totalUserReplyNumGET(String uid) throws Exception;
 
-    public int totalColorReplyNumGet(String getColor) throws Exception;
+    int totalColorReplyNumGet(String getColor) throws Exception;
 
 }

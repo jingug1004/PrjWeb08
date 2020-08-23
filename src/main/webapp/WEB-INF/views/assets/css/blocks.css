@@ -18,15 +18,15 @@
   4.1 - Block Grid v1
   4.2 - Block Grid v2
 5. Services Box v1
-6. Service Block
-  6.1 - Service Block v1
-  6.2 - Service Block v2
-  6.3 - Service Block v3
-  6.4 - Service Block v4
-  6.5 - Service Block v5
-  6.6 - Service Block v6
-  6.7 - Service Block v7
-  6.8 - Service Block v8
+6. service Block
+  6.1 - service Block v1
+  6.2 - service Block v2
+  6.3 - service Block v3
+  6.4 - service Block v4
+  6.5 - service Block v5
+  6.6 - service Block v6
+  6.7 - service Block v7
+  6.8 - service Block v8
   6.# - Colored Content Boxes
   6.# - Funny Boxes
 7. Process
@@ -714,9 +714,9 @@
 }
 
 /*--------------------------------------------------
-	[6. Service Block ]
+	[6. service Block ]
 ----------------------------------------------------*/
-/*Service Block v1
+/*service Block v1
 ------------------------------------*/
 .service-block-v1 {
   margin-top: 20px;
@@ -746,7 +746,7 @@
   margin-bottom: 20px;
 }
 
-/*Service Block v2 (used in page_404_error2.html)
+/*service Block v2 (used in page_404_error2.html)
 ------------------------------------*/
 .service-block-v2 .service-block-in {
   padding: 20px 30px;
@@ -773,7 +773,7 @@
   color: #fff;
 }
 
-/*Service Block v3 (used in profile pages)
+/*service Block v3 (used in profile pages)
 ------------------------------------*/
 .service-block-v3 {
   padding: 20px;
@@ -813,7 +813,7 @@
   margin-bottom: 7px;
 }
 
-/*Service Innner*/
+/*service Innner*/
 .service-block-v3 .service-in small {
   font-size: 16px;
   text-transform: uppercase;
@@ -843,7 +843,7 @@
   background: #fff;
 }
 
-/*Service Block v4
+/*service Block v4
 ------------------------------------*/
 .service-block-v4 {
   position: relative;
@@ -880,7 +880,7 @@
   text-transform: uppercase;
 }
 
-/*Service Block v5
+/*service Block v5
 ------------------------------------*/
 .service-block-v5 {
   text-align: center;
@@ -917,7 +917,7 @@
   }
 }
 
-/*Service Block v6
+/*service Block v6
 ------------------------------------*/
 .service-block-v6 i {
   float: left;
@@ -938,7 +938,7 @@
   text-transform: uppercase;
 }
 
-/*Service Block v7
+/*service Block v7
 ------------------------------------*/
 .service-block-v7 {
   margin-top: 20px;
@@ -968,7 +968,7 @@
     margin-bottom: 20px;
 }
 
-/*Service Block v8
+/*service Block v8
 ------------------------------------*/
 .service-block-v8 {
   padding: 25px;
@@ -6326,7 +6326,7 @@
 	}
 }
 
-/* Service Block
+/* service Block
 ------------------------------------*/
 .service {
 	overflow: hidden;
@@ -6600,7 +6600,7 @@ a.thumbnail {
 
 /*Servive Blocks
 ------------------------------------*/
-/*Service Alternative Block*/
+/*service Alternative Block*/
 .service-alternative .service:hover {
 	background: #76ca2c;
 	transition: all 0.4s ease-in-out;
@@ -7006,7 +7006,7 @@ ul.blog-tags a:hover i {
 	color: #72c02c;
 }
 
-/*Promo Service*/
+/*Promo service*/
 .promo-service {
 	margin-bottom: 20px;
 }
@@ -7710,7 +7710,7 @@ img.img-mouse {
 
 /*Desire Page
 ------------------------------------*/
-/*Service Info*/
+/*service Info*/
 .service-info {
 	position: relative;
 	padding: 40px 0 50px;

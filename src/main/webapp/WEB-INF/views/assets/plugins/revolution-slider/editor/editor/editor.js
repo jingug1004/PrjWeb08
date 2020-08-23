@@ -152,7 +152,7 @@ jQuery(document).ready(function() {
 				return false;
 			}
 		});
-	})
+	});
 
 
 	// HIDE JS IF WE ARE ON MOBILE
@@ -168,14 +168,14 @@ jQuery(document).ready(function() {
 	jQuery('#transitselector').click(function() {
 		var ts = jQuery('.transition-selectbox-holder');
 		if (!ts.hasClass("opened")) {
-			punchgs.TweenLite.fromTo(ts,0.2,{opacity:0,transformOrigin:"center bottom", transformPerspective:400, y:-50,rotationX:0,z:0},{opacity:1,y:0,rotationX:0,ease:punchgs.Power3.easeOut})
+			punchgs.TweenLite.fromTo(ts,0.2,{opacity:0,transformOrigin:"center bottom", transformPerspective:400, y:-50,rotationX:0,z:0},{opacity:1,y:0,rotationX:0,ease:punchgs.Power3.easeOut});
 			ts.css({display:'block'});
 			setTimeout(function() {
 				naviapi.reinitialise();
-			},100)
+			},100);
 			ts.addClass("opened");
 		}
-	})
+	});
 
 	jQuery('body').on('mouseleave','.transition-selectbox-holder.opened',function() {
 
@@ -197,7 +197,7 @@ jQuery(document).ready(function() {
 			callChanger();
 
 		})
-	})
+	});
 
 	/******************************
 		-	TIMER CHANGER	-
@@ -212,7 +212,7 @@ jQuery(document).ready(function() {
 		mrtime.text('Time: '+curtime/1000+"s");
 
 		callChanger();
-	})
+	});
 
 	jQuery('#inctime').click(function() {
 		var mrtime = jQuery('#mrtime');
@@ -222,7 +222,7 @@ jQuery(document).ready(function() {
 		mrtime.text('Time: '+curtime/1000+"s");
 
 		callChanger();
-	})
+	});
 
 
 	/******************************
@@ -237,7 +237,7 @@ jQuery(document).ready(function() {
 		mrslot.text('Slots: '+slot);
 
 		callChanger();
-	})
+	});
 
 	jQuery('#incslot').click(function() {
 		var mrslot = jQuery('#mrslot');
@@ -248,7 +248,7 @@ jQuery(document).ready(function() {
 		mrslot.text('Slots: '+slot);
 
 		callChanger();
-	})
+	});
 
 	var timeoutv;
 	function callChanger() {
@@ -263,7 +263,7 @@ jQuery(document).ready(function() {
 						jQuery(this).data("transition",anim);
 						jQuery(this).data("slotamount",slot);
 						jQuery(this).data("masterspeed",timer);
-					})
+					});
 
 					jQuery('#resultanim').text(anim);
 					jQuery('#resultslot').text(slot);

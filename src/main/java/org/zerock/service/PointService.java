@@ -26,12 +26,12 @@ import org.zerock.domain.PointUpdateVO;
 
 public interface PointService {
 
-    public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
+    void insertOperPoint(PointInsertVO pointInsertVO) throws Exception;
 
-    public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception;
+    void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception;
 
-    public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
+    void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception;
 
-    public void balancePointUpdate(String uid, int balancePoint) throws Exception;
+    void balancePointUpdate(String uid, int balancePoint) throws Exception;
 
 }

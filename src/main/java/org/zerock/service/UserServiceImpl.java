@@ -37,10 +37,10 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     @Inject
-    private PointDAO pointDAO;                              // 포인트 DAO
+    private PointDAO pointDAO;                              // 포인트 dao
 
     @Inject
-    private UserColorDAO userColorDAO;                      // 칼라 DAO
+    private UserColorDAO userColorDAO;                      // 칼라 dao
 
     @Override
     public UserVO login(LoginDTO dto) throws Exception {
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void keepLogin(String uid, String sessionId, Date next) throws Exception {
+    public void keepLogin(String uid, String sessionId, Date next) {
 
         userDAO.keepLogin(uid, sessionId, next);
     }

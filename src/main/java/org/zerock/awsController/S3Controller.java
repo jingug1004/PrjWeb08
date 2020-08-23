@@ -22,6 +22,7 @@ import javax.inject.Inject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 /**
@@ -71,7 +72,7 @@ public class S3Controller {
 
     @ResponseBody
     @RequestMapping(value = "/s3uploadAjax", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
-    public ResponseEntity<String> s3uploadAjax(MultipartFile multipartFile) throws Exception {
+    public ResponseEntity<String> s3uploadAjax(MultipartFile multipartFile) {
 
         logger.info(" lllll~~~~~ multipartFile.toString() : " + multipartFile.toString() + " lllll~~~~~ ");
 
@@ -104,7 +105,7 @@ public class S3Controller {
                 fileName = fileName.substring(fileName.indexOf("_") + 1);
                 httpHeaders.setContentType(MediaType.APPLICATION_OCTET_STREAM);
                 httpHeaders.add("Content-Disposition", "attachment; filename=\"" +
-                new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
+                new String(fileName.getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1) + "\"");
                 logger.info("");
             }
 

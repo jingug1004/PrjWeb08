@@ -641,7 +641,7 @@
 
         window.onload = function () {
             oParams = getUrlParams();
-        }
+        };
 
         // 새 글 등록
         $('#newBtn').on("click", function (evt) {

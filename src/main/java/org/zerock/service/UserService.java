@@ -23,11 +23,11 @@ public interface UserService {
      * @return the user vo 회원가입한 회원 정보의 VO가 필요하니깐
      * @throws Exception the exception
      */
-    public UserVO login(LoginDTO dto) throws Exception;
+    UserVO login(LoginDTO dto) throws Exception;
 
-    public void loginIpUpd(UserVO userVO) throws Exception;
+    void loginIpUpd(UserVO userVO) throws Exception;
 
-    public UserVO loginInfoNoPW(String uid) throws Exception;
+    UserVO loginInfoNoPW(String uid) throws Exception;
 
     /**
      * Keep login. 로그인 정보를 유지하는 keepLogin과 과거에 접속한 사용자인지를 확인하는 기능을 작성
@@ -37,7 +37,7 @@ public interface UserService {
      * @param next      the next
      * @throws Exception the exception
      */
-    public void keepLogin(String uid, String sessionId, Date next) throws Exception;
+    void keepLogin(String uid, String sessionId, Date next) throws Exception;
 
     /**
      * Check login before user vo.
@@ -45,7 +45,7 @@ public interface UserService {
      * @param value the value
      * @return the user vo
      */
-    public UserVO checkLoginBefore(String value);
+    UserVO checkLoginBefore(String value);
 
     /**
      * Regist.
@@ -53,11 +53,11 @@ public interface UserService {
      * @param user the user
      * @throws Exception the exception
      */
-    public void regist(UserVO user) throws Exception;
-    public int registUsersNumGET() throws Exception;
+    void regist(UserVO user) throws Exception;
+    int registUsersNumGET() throws Exception;
 
-    public void createLog(UserModifyVO userModifyVO) throws Exception;
+    void createLog(UserModifyVO userModifyVO) throws Exception;
 
-    public void loginUserInfoUPDATE(UserVO userVO) throws Exception;
+    void loginUserInfoUPDATE(UserVO userVO) throws Exception;
 
 }

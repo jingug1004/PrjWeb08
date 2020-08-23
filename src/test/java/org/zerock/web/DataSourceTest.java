@@ -27,10 +27,9 @@ public class DataSourceTest {
 	/**
 	 * Test conection.
 	 *
-	 * @throws Exception the exception
-	 */
+     */
 	@Test
-	public void testConection()throws Exception{
+	public void testConection() {
 		
 		try(Connection con = ds.getConnection()){
 			

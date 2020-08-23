@@ -42,7 +42,7 @@ public class CntDAOImpl implements CntDAO {
 
     // 굿 버튼 눌렀을 때
     @Override
-    public void goodCntPush(GoodCntVO goodCntVO) throws Exception {
+    public void goodCntPush(GoodCntVO goodCntVO) {
 
         session.insert(namespace + ".goodCntInsert", goodCntVO);
 //        session.update(namespace + ".goodCntUpdate", goodCntVO);
@@ -52,7 +52,7 @@ public class CntDAOImpl implements CntDAO {
 
     // 굿 버튼 보이게 안 보이게
     @Override
-    public String goodCntVOGet(String loginUserID, int bno) throws Exception {
+    public String goodCntVOGet(String loginUserID, int bno) {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("goodcntParamMap", bno + loginUserID + "Good");
         return session.selectOne(namespace + ".goodCntVOGet", paramMap);
@@ -62,7 +62,7 @@ public class CntDAOImpl implements CntDAO {
 
     // 배드 버튼 눌렀을 때
     @Override
-    public void badCntPush(GoodCntVO badcntbno) throws Exception {
+    public void badCntPush(GoodCntVO badcntbno) {
 
 //        logger.info("lll~~~ " + badcntbno.toString() + "lll~~~");
 
@@ -74,7 +74,7 @@ public class CntDAOImpl implements CntDAO {
     }
 
     @Override
-    public String badCntVOGet(String loginUserID, int bno) throws Exception {
+    public String badCntVOGet(String loginUserID, int bno) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -90,20 +90,20 @@ public class CntDAOImpl implements CntDAO {
 
     // good 하기 위한 good 개수 구하는.
     @Override
-    public int getGoodCntGet(int goodcntbno) throws Exception {
+    public int getGoodCntGet(int goodcntbno) {
         // logger.info("lll~~~ " + String.valueOf(goodcntbno));
         return session.selectOne(namespace + ".getGoodCntGet", goodcntbno);
     }
 
     // Bad 하기 위한 Bad 개수 구하는.
     @Override
-    public int getBadCntGet(int badcntbno) throws Exception {
+    public int getBadCntGet(int badcntbno) {
         // logger.info("lll~~~ " + String.valueOf(badcntbno));
         return session.selectOne(namespace + ".getBadCntGet", badcntbno);
     }
 
     @Override
-    public void changeGBPut(int gbbno, double gbRate) throws Exception {
+    public void changeGBPut(int gbbno, double gbRate) {
 
         Map<String, Object> paramMap = new HashMap<>();
 
@@ -116,7 +116,7 @@ public class CntDAOImpl implements CntDAO {
     // -----------------------------------------------------------------------
 
     @Override
-    public void spamCntPush(GoodCntVO spamCntVO) throws Exception {
+    public void spamCntPush(GoodCntVO spamCntVO) {
 
         logger.info("lllll~~~~~ bad paramMap.toString() : " + spamCntVO.toString() + "lllll~~~~~");
 
@@ -127,7 +127,7 @@ public class CntDAOImpl implements CntDAO {
     }
 
     @Override
-    public String spamCntVOGet(String loginUserID, int bno) throws Exception {
+    public String spamCntVOGet(String loginUserID, int bno) {
 
         Map<String, Object> paramMap = new HashMap<>();
 

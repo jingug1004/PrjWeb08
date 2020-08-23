@@ -22,6 +22,7 @@ import javax.annotation.Resource;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 /**
@@ -146,7 +147,7 @@ public class UploadController {
                 // 이미지가 아닌 경우에는 MIME 타입을 다운로드 용으로 사용되는 'application/octet-stream'으로 지정.
                 // 브라우저는 이 MIME 타입을 보고 사용자에게 자동으로 다운로드 창을 열어줌.
                 headers.add("Content-Disposition", "attachment; filename=\"" +
-                        new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
+                        new String(fileName.getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1) + "\"");
                         // 다운로드할 때 사용자에게 보이는 파일의 이름이므로 한글 처리를 해서 전송.
                         // 한글 파일의 경우 다운로드하면 파일의 이름이 깨져서 나오기 때문에 반드시 인코딩 처리를 할 필요가 있음.
             }

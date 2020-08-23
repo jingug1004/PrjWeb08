@@ -12,12 +12,12 @@ package org.zerock.persistence;
 
 public interface UserColorDAO {
 
-    public int userColorInputGET(String userColor) throws Exception;
+    int userColorInputGET(String userColor) throws Exception;
 
-    public void userColorInputTotalUpd(int userColorNum, String userColor) throws Exception;
+    void userColorInputTotalUpd(int userColorNum, String userColor) throws Exception;
 
-    public void totalColorPostNumUPD(int getTotalPostNumByColor, String userColor) throws Exception;
+    void totalColorPostNumUPD(int getTotalPostNumByColor, String userColor) throws Exception;
 
-    public void totalColorReplyNumUPD(int getTotalReplyNumByColor, String userColor) throws Exception;
+    void totalColorReplyNumUPD(int getTotalReplyNumByColor, String userColor) throws Exception;
 
 }

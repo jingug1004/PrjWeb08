@@ -75,7 +75,7 @@ public class UploadFileUtils {
 
     private static String makeIcon(String uploadPath,
                                    String path,
-                                   String fileName) throws Exception {
+                                   String fileName) {
         // makeIcon()은 경로 처리를 하는 문자열의 치환용도에 불과
 
         String iconName = uploadPath + path + File.separator + fileName;

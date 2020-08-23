@@ -63,7 +63,7 @@ public class UserController {
      * @return the string
      */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginGET(@ModelAttribute("dto") LoginDTO dto) throws Exception {
+    public String loginGET(@ModelAttribute("dto") LoginDTO dto) {
 
         return "user/shop-ui-login";
     }
@@ -121,7 +121,7 @@ public class UserController {
      * @return the string /user/shop-ui-register02를 GET 방식으로 접근한 경우 약관 동의 화면인 /shop-ui-register 경로로 리다이렉트 시킬 수 있다.
      */
     @RequestMapping(value = "/shop-ui-register02", method = RequestMethod.GET)
-    public String register02GEThadle() throws Exception {
+    public String register02GEThadle() {
         return "redirect:/user/shop-ui-register";
     }
 

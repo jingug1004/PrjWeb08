@@ -18,7 +18,7 @@ public interface BoardDAO {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void create(BoardVO vo) throws Exception;
+    void create(BoardVO vo) throws Exception;
 
     /**
      * Read board vo.
@@ -27,9 +27,9 @@ public interface BoardDAO {
      * @return the board vo
      * @throws Exception the exception
      */
-    public BoardVO read(Integer bno) throws Exception;
+    BoardVO read(Integer bno) throws Exception;
 
-    public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception;
+    BoardVO readByIDnTitle(BoardVO boardVO) throws Exception;
 
     /**
      * Update.
@@ -37,7 +37,7 @@ public interface BoardDAO {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void update(BoardVO vo) throws Exception;
+    void update(BoardVO vo) throws Exception;
 
     /**
      * Delete.
@@ -45,7 +45,7 @@ public interface BoardDAO {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public void delete(Integer bno) throws Exception;
+    void delete(Integer bno) throws Exception;
 
     /**
      * List all list.     // 정말 무시하자! 옛날 거!
@@ -53,7 +53,7 @@ public interface BoardDAO {
      * @return the list
      * @throws Exception the exception
      */
-    public List<BoardVO> listAll() throws Exception;
+    List<BoardVO> listAll() throws Exception;
 
     /**
      * 게시판 글 페이징 처리.
@@ -62,7 +62,7 @@ public interface BoardDAO {
      * @return the list
      * @throws Exception the exception
      */
-    public List<BoardVO> listPage(int page) throws Exception;
+    List<BoardVO> listPage(int page) throws Exception;
 
     /**
      * BoardDAO에 list를 출력하는 부분.
@@ -72,7 +72,7 @@ public interface BoardDAO {
      * @return the list
      * @throws Exception the exception
      */
-    public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+    List<BoardVO> listCriteria(Criteria cri) throws Exception;
 
     /**
      * 게시물의 BoardDAO에서 totalCount를 반환할 수 있게 처리하기 위해서.
@@ -81,7 +81,7 @@ public interface BoardDAO {
      * @return the int
      * @throws Exception the exception
      */
-    public int countPaging(Criteria cri) throws Exception;
+    int countPaging(Criteria cri) throws Exception;
 
     //use for dynamic sql
 
@@ -92,7 +92,7 @@ public interface BoardDAO {
      * @return the list
      * @throws Exception the exception
      */
-    public List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
+    List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
 
     /**
      * List search count int. 페이징! 게시판 밑 1~10까지 버튼.
@@ -101,11 +101,11 @@ public interface BoardDAO {
      * @return the int
      * @throws Exception the exception
      */
-    public int listSearchCount(SearchCriteria cri) throws Exception;
+    int listSearchCount(SearchCriteria cri) throws Exception;
 
-    public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception;
+    List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception;
 
-    public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception;
+    int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception;
 
     /**
      * 댓글의 숫자를 변경할 수 있는 updateReplyCnt()를 추가.
@@ -115,7 +115,7 @@ public interface BoardDAO {
      * @param amount the amount
      * @throws Exception the exception
      */
-    public void updateReplyCnt(Integer bno, int amount) throws Exception;
+    void updateReplyCnt(Integer bno, int amount) throws Exception;
 
     /**
      * Update view cnt.
@@ -123,7 +123,7 @@ public interface BoardDAO {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public void updateViewCnt(Integer bno) throws Exception;
+    void updateViewCnt(Integer bno) throws Exception;
 
     /**
      * 게시판 글의 카테고리 이름 출력
@@ -131,7 +131,7 @@ public interface BoardDAO {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public String callCateName(Integer bno) throws Exception;
+    String callCateName(Integer bno) throws Exception;
 
     /**
      * 게시판 리스트(목록 - List)의 카테고리 이름 출력
@@ -139,7 +139,7 @@ public interface BoardDAO {
      * @param cateNum 카테고리 번호
      * @throws Exception the exception
      */
-    public String callCateNameInList(Integer cateNum) throws Exception;
+    String callCateNameInList(Integer cateNum) throws Exception;
 
     /**
      * 새로운 첨부파일이 추가될 수 있는 기능이 추가 - '새롭게 생성된 게시물의 번호가 필요하다는 점'.
@@ -148,7 +148,7 @@ public interface BoardDAO {
      * @param fullName 첨부파일의 이름.
      * @throws Exception
      */
-    public void addAttach(String fullName, int boardBno) throws Exception;
+    void addAttach(String fullName, int boardBno) throws Exception;
 
     /**
      * tbl_attach 테이블에는 썸네일(s_...) 파일명 저장. tbl_attach_origin은 원본 파일명 그대로 저장 - 리스트 썸네일 이미지 사이즈 안 맞아서, 맞게 할려고.
@@ -156,7 +156,7 @@ public interface BoardDAO {
      * @param fullName 첨부파일의 이름.
      * @throws Exception
      */
-    public void addAttachOrigin(String fullName, int boardBno) throws Exception;
+    void addAttachOrigin(String fullName, int boardBno) throws Exception;
 
     /**
      * 특정 게시물의 첨부파일을 시간 순서대로 가져오는 SQL문을 작성.
@@ -166,7 +166,7 @@ public interface BoardDAO {
      * @return the attach
      * @throws Exception the exception
      */
-    public List<String> getAttach(Integer bno) throws Exception;
+    List<String> getAttach(Integer bno) throws Exception;
 
     /**
      * 게시물의 수정에는 기존의 첨부파일을 삭제하고, 새롭게 추가하는 부분이 들어가므로 BoardDAO에 다음과 같은 SQL 처리가 필요.
@@ -175,7 +175,7 @@ public interface BoardDAO {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public void deleteAttach(Integer bno) throws Exception;
+    void deleteAttach(Integer bno) throws Exception;
 
     /**
      * 게시물의 수정에는 기존의 첨부파일을 삭제하고, 새롭게 추가하는 부분이 들어가므로 BoardDAO에 다음과 같은 SQL 처리가 필요.
@@ -185,11 +185,11 @@ public interface BoardDAO {
      * @param bno      the bno
      * @throws Exception the exception
      */
-    public void replaceAttach(String fullName, Integer bno) throws Exception;
+    void replaceAttach(String fullName, Integer bno) throws Exception;
 
-    public int totalUserPostNumGET(String uid) throws Exception; // 글 작성시 접속한 유저의 아이디를 통해서 총 게시글 등록수 구함
+    int totalUserPostNumGET(String uid) throws Exception; // 글 작성시 접속한 유저의 아이디를 통해서 총 게시글 등록수 구함
 
-    public int totalColorPostNumGet(String getColor) throws Exception;
+    int totalColorPostNumGet(String getColor) throws Exception;
 
     /**
      * 게시판 - 실시간 인기순으로 정렬
@@ -198,9 +198,9 @@ public interface BoardDAO {
      * @return
      * @throws Exception
      */
-    public List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) throws Exception;
+    List<BoardVO> livePopular(SearchCriteria searchCriteria, String sdfToday) throws Exception;
 
-    public int livePopularCount(SearchCriteria searchCriteria, String sdfToday) throws Exception;
+    int livePopularCount(SearchCriteria searchCriteria, String sdfToday) throws Exception;
 
     /**
      * 게시판 - 같은 정치성향 정렬
@@ -211,9 +211,9 @@ public interface BoardDAO {
      * @return
      * @throws Exception
      */
-    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception;
+    List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception;
 
-    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception;
+    int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO) throws Exception;
 
 
     /**
@@ -223,6 +223,6 @@ public interface BoardDAO {
      * @return
      * @throws Exception
      */
-    public String getAttachNameGET(int bno) throws Exception;
+    String getAttachNameGET(int bno) throws Exception;
 
 }

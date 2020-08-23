@@ -24,11 +24,11 @@ public interface UserDAO {
      * @return the user vo 사용자의 정보를 등록하거나 수정할 때의 데이터를 보관하는 UserVO 클래스
      * @throws Exception the exception
      */
-    public UserVO login(LoginDTO dto) throws Exception;
+    UserVO login(LoginDTO dto) throws Exception;
 
-    public void loginIpUpd(UserVO userVO) throws Exception;
+    void loginIpUpd(UserVO userVO) throws Exception;
 
-    public UserVO loginInfoNoPW(String uid) throws Exception;
+    UserVO loginInfoNoPW(String uid) throws Exception;
 
     /**
      * 로그인한 사용자의 sessionKey와 sessionLimit을 업데이트 하는 기능 / userMapper.xml의 keepLogin
@@ -37,7 +37,7 @@ public interface UserDAO {
      * @param sessionId the session id
      * @param next      the next
      */
-    public void keepLogin(String uid, String sessionId, Date next);
+    void keepLogin(String uid, String sessionId, Date next);
 
     /**
      * loginCookie에 기록된 값으로 사용자의 정보를 조회하는 기능을 추가
@@ -45,7 +45,7 @@ public interface UserDAO {
      * @param value the value
      * @return the user vo
      */
-    public UserVO checkUserWithSessionKey(String value);
+    UserVO checkUserWithSessionKey(String value);
 
     /**
      * 유저 생성(회원가입)
@@ -53,18 +53,18 @@ public interface UserDAO {
      * @param uvo the uvo
      * @throws Exception the exception
      */
-    public void create(UserVO uvo) throws Exception;                    // 최초 회원가입
+    void create(UserVO uvo) throws Exception;                    // 최초 회원가입
 
-    public void createLog(UserModifyVO userModifyVO) throws Exception;  // 최초 회원가입 로그 이력
+    void createLog(UserModifyVO userModifyVO) throws Exception;  // 최초 회원가입 로그 이력
 
-    public int registUsersNumGET() throws Exception;                    // 전체 등록된 회원수 GET
+    int registUsersNumGET() throws Exception;                    // 전체 등록된 회원수 GET
 
-    public int registColorNumGET(String uday) throws Exception;         // 전체 등록된 칼라별 회원수 GET - Lv0~100 구하기 위해서
+    int registColorNumGET(String uday) throws Exception;         // 전체 등록된 칼라별 회원수 GET - Lv0~100 구하기 위해서
 
-    public void totalUserPostNumUPD(UserVO userVO) throws Exception;    // 전체 유저의 등록한 게시물 수 업데이트
+    void totalUserPostNumUPD(UserVO userVO) throws Exception;    // 전체 유저의 등록한 게시물 수 업데이트
 
-    public void totalUserReplyNumUPD(UserVO userVO) throws Exception;   // 전체 유저의 등록한 댓글 수 업데이트
+    void totalUserReplyNumUPD(UserVO userVO) throws Exception;   // 전체 유저의 등록한 댓글 수 업데이트
 
-    public void loginUserInfoUPDATE(UserVO userVO) throws Exception;    // tbl_user 테이블 회원 정보 수정
+    void loginUserInfoUPDATE(UserVO userVO) throws Exception;    // tbl_user 테이블 회원 정보 수정
 
 }

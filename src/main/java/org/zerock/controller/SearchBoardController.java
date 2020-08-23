@@ -290,10 +290,9 @@ public class SearchBoardController {
      * 등록 화면 Get
      * registerGET() 메소드의 선언에 사용된 @RequestMapping 애노테이션의 설정을 보면 특정한 URI를 의미하는 value 속성과 GET/POST 등의 전송방식으로 결정하는 method라는 속성을 사용.
      *
-     * @throws Exception the exception
      */
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public void registGET() throws Exception {
+    public void registGET() {
     }
 
     /**

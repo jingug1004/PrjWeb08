@@ -28,7 +28,7 @@ module.exports = {
    hslaString: hslaString,
    hwbString: hwbString,
    keyword: keyword
-}
+};
 
 function getRgba(string) {
    if (!string) {
@@ -773,7 +773,7 @@ module.exports = {
   lch2lab: lch2lab,
   lch2xyz: lch2xyz,
   lch2rgb: lch2rgb
-}
+};
 
 
 function rgb2hsl(rgb) {
@@ -1422,7 +1422,7 @@ var conversions = require(3);
 
 var convert = function() {
    return new Converter();
-}
+};
 
 for (var func in conversions) {
   // export Raw versions
@@ -1668,8 +1668,8 @@ module.exports = {
 //! license : MIT
 //! momentjs.com
 
-;(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+(function (global, factory) {
+            typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
     global.moment = factory()
 }(this, (function () { 'use strict';
@@ -6334,7 +6334,7 @@ module.exports = function(Chart) {
 			xAxes: [{
 				type: 'category',
 
-				// Specific to Bar Controller
+				// Specific to Bar controller
 				categoryPercentage: 0.8,
 				barPercentage: 0.9,
 
@@ -6647,7 +6647,7 @@ module.exports = function(Chart) {
 				position: 'left',
 				type: 'category',
 
-				// Specific to Horizontal Bar Controller
+				// Specific to Horizontal Bar controller
 				categoryPercentage: 0.8,
 				barPercentage: 0.9,
 
@@ -8271,7 +8271,7 @@ module.exports = function(Chart) {
 			me._bufferedRender = false;
 
 			/**
-			 * Provided for backward compatibility, Chart and Chart.Controller have been merged,
+			 * Provided for backward compatibility, Chart and Chart.controller have been merged,
 			 * the "instance" still need to be defined since it might be called from plugins.
 			 * @prop Chart#chart
 			 * @deprecated since version 2.6.0

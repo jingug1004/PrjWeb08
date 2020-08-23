@@ -462,7 +462,7 @@ $(document).ready(function() {
       */
 
       $('.destroy').click(function(e){
-        e.preventDefault()
+        e.preventDefault();
         $("#owl-demo").data('owlCarousel').destroy();
       });
 
@@ -479,7 +479,7 @@ $(document).ready(function() {
       */
 
       $('.reinit').click(function(e){
-        e.preventDefault()
+        e.preventDefault();
         if(booleanValue === true){
           booleanValue = false;
         } else if(booleanValue === false){
@@ -489,14 +489,14 @@ $(document).ready(function() {
         owl.data('owlCarousel').reinit({
             singleItem : booleanValue
           });
-      })
+      });
 
       /*
       Well, if you destroyed plugin why not resurect it?
       */
 
       $('.rebuild').click(function(e){
-        e.preventDefault()
+        e.preventDefault();
         owl.owlCarousel();
       });
 

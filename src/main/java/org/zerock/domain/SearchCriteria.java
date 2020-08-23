@@ -16,7 +16,7 @@ public class SearchCriteria extends Criteria{
     private String cate;                  // 칼라 카테고리
     private String cntSortType;           // Good, Bad etc. 클릭하면 자동 정렬
     private String loginid;               // 접속한 로그인 아이디
-    private String attachName;            // 첨부파일 가져오기 위한 VO
+    private String attachName;            // 첨부파일 가져오기 위한 vo
 
     /**
      * Gets search type.

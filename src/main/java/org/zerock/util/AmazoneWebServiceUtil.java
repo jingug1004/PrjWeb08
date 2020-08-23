@@ -160,7 +160,7 @@ public class AmazoneWebServiceUtil {
         return thumbnailName.substring(uploadPath.length()).replace(File.separatorChar, '/');
     }
 
-    private static String makeIcon(String uploadPath, String path, String fileName) throws Exception {
+    private static String makeIcon(String uploadPath, String path, String fileName) {
 
         String iconName = uploadPath + path + File.separator + fileName;
 

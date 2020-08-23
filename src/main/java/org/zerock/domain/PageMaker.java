@@ -87,8 +87,8 @@ public class PageMaker {
             endPage = tempEndPage;
         }
 
-        prev = startPage == 1 ? false : true;
-        next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
+        prev = startPage != 1;
+        next = endPage * cri.getPerPageNum() < totalCount;
     }
 
     /**
@@ -115,8 +115,8 @@ public class PageMaker {
             endPage = tempEndPage;
         }
 
-        prev = startPage == 1 ? false : true;
-        next = endPage * criListAny.getPerPageNum() >= totalCount ? false : true;
+        prev = startPage != 1;
+        next = endPage * criListAny.getPerPageNum() < totalCount;
     }
 
     /**

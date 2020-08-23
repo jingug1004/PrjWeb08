@@ -586,7 +586,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
         var html = template(replyArr);
         $(".replyLi").remove();
         target.after(html);
-    }
+    };
 
     var bno = ${boardVO.bno};
     // 가장 먼저 선언된 var bno는 JSP에 처리되는 문자열로 해당 게시물의 번호를 의미.
@@ -787,8 +787,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
             params[key] = value;
         });
         return params;
-    };
-
+    }
     //    $("#cnumToList").val(getUrlParamsCnt().cate);
 
     //    window.onload = function() {
@@ -840,8 +839,7 @@ data-toggle="modal" data-target="#modifyModal">Modify</a>
                 params[key] = value;
             });
             return params;
-        };
-
+        }
         $("#cnumToList").val(getUrlParams().cate);
 
         window.onload = function () {

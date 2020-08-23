@@ -19,14 +19,14 @@ public class MemberDAOTest {
     private MemberDAO dao;
 
     @Test
-    public void testTime() throws Exception {
+    public void testTime() {
 
         System.out.println(dao.getTime());
 
     }
 
     @Test
-    public void testInsertMember() throws Exception {
+    public void testInsertMember() {
 
         MemberVO vo = new MemberVO();
         vo.setUserid("user01");

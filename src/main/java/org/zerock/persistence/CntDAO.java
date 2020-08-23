@@ -23,28 +23,28 @@ import org.zerock.domain.GoodCntVO;
 
 public interface CntDAO {
 
-    public void goodCntPush(GoodCntVO goodCntVO) throws Exception;             // 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인
+    void goodCntPush(GoodCntVO goodCntVO) throws Exception;             // 굿 버튼 눌렀을 때 아이디가 있는지 없는지 확인
 
-    public String goodCntVOGet(String loginUserID, int bno) throws Exception;            // 굿 누르고 안 눌렀을 때 인풋박스에 적용되는 칼라
-
-    // ---------------------------------------------------------
-
-    public void badCntPush(GoodCntVO badCntVO) throws Exception;               // 배드 버튼 눌렀을 때 아이디가 있는지 없는지 확인
-
-    public String badCntVOGet(String loginUserID, int bno) throws Exception;            // 굿 누르고 안 눌렀을 때 인풋박스에 적용되는 칼라
+    String goodCntVOGet(String loginUserID, int bno) throws Exception;            // 굿 누르고 안 눌렀을 때 인풋박스에 적용되는 칼라
 
     // ---------------------------------------------------------
 
-    public int getGoodCntGet(int goodcntbno) throws Exception;                 // Good 하기 위한 Good 개수 구하는.
+    void badCntPush(GoodCntVO badCntVO) throws Exception;               // 배드 버튼 눌렀을 때 아이디가 있는지 없는지 확인
 
-    public int getBadCntGet(int badcntbno) throws Exception;                   // Bad 하기 위한 Bad 개수 구하는.
-
-    public void changeGBPut(int gbbno, double gbRate) throws Exception;        // G/B 자동으로 변화는.
+    String badCntVOGet(String loginUserID, int bno) throws Exception;            // 굿 누르고 안 눌렀을 때 인풋박스에 적용되는 칼라
 
     // ---------------------------------------------------------
 
-    public void spamCntPush(GoodCntVO spamCntVO) throws Exception;
+    int getGoodCntGet(int goodcntbno) throws Exception;                 // Good 하기 위한 Good 개수 구하는.
 
-    public String spamCntVOGet(String loginUserID, int bno) throws Exception;
+    int getBadCntGet(int badcntbno) throws Exception;                   // Bad 하기 위한 Bad 개수 구하는.
+
+    void changeGBPut(int gbbno, double gbRate) throws Exception;        // G/B 자동으로 변화는.
+
+    // ---------------------------------------------------------
+
+    void spamCntPush(GoodCntVO spamCntVO) throws Exception;
+
+    String spamCntVOGet(String loginUserID, int bno) throws Exception;
 
 }

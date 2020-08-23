@@ -831,7 +831,7 @@
             /* url 쿼리 스트링 구하기 */
             window.onload = function () {
                 oParams = getUrlParams();
-            }
+            };
 
             /* 정규식이용 input박스 한글 숫자 영문만 입력되도록 */
             $("#keywordInput").on("keypress", function (event) {

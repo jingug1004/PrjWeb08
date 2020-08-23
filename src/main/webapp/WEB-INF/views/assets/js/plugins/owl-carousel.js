@@ -19,7 +19,7 @@ var OwlCarousel = function () {
 		            // Custom Navigation Events
 		            jQuery(".next").click(function(){
 		                owl.trigger('owl.next');
-		            })
+		            });
 		            jQuery(".prev").click(function(){
 		                owl.trigger('owl.prev');
 		            })
@@ -64,7 +64,7 @@ var OwlCarousel = function () {
 		            // Custom Navigation Events
 		            jQuery(".next").click(function(){
 		                owl.trigger('owl.next');
-		            })
+		            });
 		            jQuery(".prev").click(function(){
 		                owl.trigger('owl.prev');
 		            })
@@ -82,7 +82,7 @@ var OwlCarousel = function () {
 		            // Custom Navigation Events
 		            jQuery(".next-v2").click(function(){
 		                owl.trigger('owl.next');
-		            })
+		            });
 		            jQuery(".prev-v3").click(function(){
 		                owl.trigger('owl.prev');
 		            })

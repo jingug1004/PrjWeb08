@@ -145,8 +145,7 @@
                             params[key] = value;
                         });
                         return params;
-                    };
-
+                    }
                     $("#cnumToListAtMod").val(getUrlParams().cate);
 
                     $("#cancelWarning").on("click", function (e) {

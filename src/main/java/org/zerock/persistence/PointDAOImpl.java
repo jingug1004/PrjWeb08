@@ -43,23 +43,23 @@ public class PointDAOImpl implements PointDAO {
 //    }
 
     @Override
-    public void insertOperPoint(PointInsertVO pointInsertVO) throws Exception {
+    public void insertOperPoint(PointInsertVO pointInsertVO) {
         logger.info("lllll~~~~~ pointInsertVO.toString() : " + pointInsertVO.toString());
         sqlSession.insert(namespace + ".insertOperPoint", pointInsertVO);
     }
 
     @Override
-    public void updateOperPoint(PointUpdateVO pointUpdateVO) throws Exception {
+    public void updateOperPoint(PointUpdateVO pointUpdateVO) {
         sqlSession.insert(namespace + ".updateOperPoint", pointUpdateVO);
     }
 
     @Override
-    public void deleteOperPoint(PointDeleteVO pointDeleteVO) throws Exception {
+    public void deleteOperPoint(PointDeleteVO pointDeleteVO) {
         sqlSession.insert(namespace + ".deleteOperPoint", pointDeleteVO);
     }
 
     @Override
-    public void balancePointUpdate(String uid, int balancePoint) throws Exception {
+    public void balancePointUpdate(String uid, int balancePoint) {
 
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("uid", uid);
@@ -71,12 +71,12 @@ public class PointDAOImpl implements PointDAO {
     }
 
     @Override
-    public List<String> userLevelPointGET() throws Exception {
+    public List<String> userLevelPointGET() {
         return sqlSession.selectList(namespace + ".userLevelPointGET");
     }
 
     @Override
-    public List<String> userColorPointGET(String uday) throws Exception {
+    public List<String> userColorPointGET(String uday) {
         return sqlSession.selectList(namespace + ".userColorPointGET", uday);
     }
 }

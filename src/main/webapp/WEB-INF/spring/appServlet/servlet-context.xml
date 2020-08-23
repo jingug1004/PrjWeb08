@@ -27,7 +27,7 @@
 
     <mvc:annotation-driven/>
 
-    <!-- Enables the Spring MVC @Controller programming model -->
+    <!-- Enables the Spring MVC @controller programming model -->
     <beans:bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 
     <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

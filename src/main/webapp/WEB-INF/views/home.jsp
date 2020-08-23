@@ -777,7 +777,7 @@ helloworld!
 <!--=== End Twitter-Block ===-->
 
 <div class="container">
-    <!--=== Product Service ===-->
+    <!--=== Product service ===-->
     <div class="row margin-bottom-60">
         <div class="col-md-4 product-service md-margin-bottom-30">
             <div class="product-service-heading">
@@ -813,7 +813,7 @@ helloworld!
             </div>
         </div>
     </div><!--/end row-->
-    <!--=== End Product Service ===-->
+    <!--=== End Product service ===-->
 
     <!--=== Illustration v4 ===-->
     <div class="row illustration-v4 margin-bottom-40">

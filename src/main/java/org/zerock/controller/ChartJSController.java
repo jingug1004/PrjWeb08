@@ -35,7 +35,7 @@ public class ChartJSController {
 //    }
 
     @RequestMapping(value = "/jstest", method = RequestMethod.GET)
-    public void jstest() throws Exception {
+    public void jstest() {
 
 
     }

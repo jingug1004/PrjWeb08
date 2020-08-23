@@ -20,7 +20,7 @@ public interface MessageDAO {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void create(MessageVO vo) throws Exception;
+    void create(MessageVO vo) throws Exception;
 
     /**
      * Read message message vo.
@@ -29,7 +29,7 @@ public interface MessageDAO {
      * @return the message vo
      * @throws Exception the exception
      */
-    public MessageVO readMessage(Integer mno) throws Exception;
+    MessageVO readMessage(Integer mno) throws Exception;
 
     /**
      * Update state.
@@ -37,6 +37,6 @@ public interface MessageDAO {
      * @param mno the mno
      * @throws Exception the exception
      */
-    public void updateState(Integer mno) throws Exception;
+    void updateState(Integer mno) throws Exception;
 
 }

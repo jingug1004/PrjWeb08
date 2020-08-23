@@ -15,7 +15,7 @@ import java.util.List;
  * Created by macbookpro on 2017. 2. 4.. PM 1:04
  * What :
  * Why :
- * How : 클래스 선언부에는 스프링의 빈으로 인식되기 위해서 @Service 애노테이션이 적용된 것을 볼 수 있음.
+ * How : 클래스 선언부에는 스프링의 빈으로 인식되기 위해서 @service 애노테이션이 적용된 것을 볼 수 있음.
  */
 @Service
 public class UserInfoServiceImpl implements UserInfoService {

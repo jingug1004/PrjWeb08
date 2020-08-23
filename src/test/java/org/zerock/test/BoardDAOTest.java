@@ -138,10 +138,9 @@ public class BoardDAOTest {
      * UriComponents 클래스는 path나 query에 해당하는 문자열들을 추가해서 원하는 URI를 생성할 때 사용.
      * 원하는 데이터를 계속 추가해서 처리할 수 있고, 필요한 데이터를 설정. 코드에서 queryParam()의 경우 나중에는 GET 방식의 '?' 뒤에 붙는 데이터가 되는 것을 볼 수 있음.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testURI() throws Exception {
+    public void testURI() {
 
         UriComponents uriComponents = UriComponentsBuilder.newInstance()
                 .path("/board/read")
@@ -158,10 +157,9 @@ public class BoardDAOTest {
      * UriComponentsBuilder는 특정 URI를 먼저 지정하고 작업하는 것도 가능.
      * 미리 필요한 경로를 지정해 두고 '{module}'와 같은 경로를 'board'로, '{page}'를 'read'로 변경할 수 있음.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testURI2() throws Exception {
+    public void testURI2() {
 
         UriComponents uriComponents = UriComponentsBuilder.newInstance()
                 .path("/{module}/{page}")

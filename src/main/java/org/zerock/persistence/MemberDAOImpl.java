@@ -31,14 +31,14 @@ public class MemberDAOImpl implements MemberDAO {
 
 
 	@Override
-	public MemberVO readMember(String userid) throws Exception {
+	public MemberVO readMember(String userid) {
 		return (MemberVO) 
 				sqlSession.selectOne(namespace+".selectMember", userid);
 	}
 
 
 	@Override
-	public MemberVO readWithPW(String userid, String pw) throws Exception {
+	public MemberVO readWithPW(String userid, String pw) {
 		
 		Map<String, Object> paramMap = new HashMap<String, Object>();
 		

@@ -22,7 +22,7 @@ public interface BoardService {
      * @param boardVO the board
      * @throws Exception the exception
      */
-    public void regist(BoardVO boardVO, HttpSession httpSession) throws Exception;
+    void regist(BoardVO boardVO, HttpSession httpSession) throws Exception;
 
     /**
      * Read board vo.
@@ -31,13 +31,13 @@ public interface BoardService {
      * @return the board vo
      * @throws Exception the exception
      */
-    public BoardVO read(Integer bno) throws Exception;
+    BoardVO read(Integer bno) throws Exception;
 
-    public void cookieBoard(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, int bno, String cateNum) throws Exception;
+    void cookieBoard(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, int bno, String cateNum) throws Exception;
 
-    public void updateViewCnt(Integer bno) throws Exception;
+    void updateViewCnt(Integer bno) throws Exception;
 
-    public BoardVO readByIDnTitle(BoardVO boardVO) throws Exception;
+    BoardVO readByIDnTitle(BoardVO boardVO) throws Exception;
 
     /**
      * 게시판 글의 카테고리 이름 출력
@@ -45,7 +45,7 @@ public interface BoardService {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public String callCateName(int bno) throws Exception;
+    String callCateName(int bno) throws Exception;
 
 
     /**
@@ -54,7 +54,7 @@ public interface BoardService {
      * @param cateNum 카테고리 번호
      * @throws Exception the exception
      */
-    public String callCateNameInList(int cateNum) throws Exception;
+    String callCateNameInList(int cateNum) throws Exception;
 
     /**
      * Modify.
@@ -62,7 +62,7 @@ public interface BoardService {
      * @param board the board
      * @throws Exception the exception
      */
-    public void modify(BoardVO board) throws Exception;
+    void modify(BoardVO board) throws Exception;
 
     /**
      * Remove.
@@ -70,7 +70,7 @@ public interface BoardService {
      * @param bno the bno
      * @throws Exception the exception
      */
-    public void remove(Integer bno, HttpSession httpSession) throws Exception;
+    void remove(Integer bno, HttpSession httpSession) throws Exception;
 
     /**
      * List all list.     // 정말 무시하자! 옛날 거!
@@ -78,7 +78,7 @@ public interface BoardService {
      * @return the list
      * @throws Exception the exception
      */
-    public List<BoardVO> listAll() throws Exception;
+    List<BoardVO> listAll() throws Exception;
 
     /**
      * List criteria list.
@@ -87,7 +87,7 @@ public interface BoardService {
      * @return the list
      * @throws Exception the exception
      */
-    public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+    List<BoardVO> listCriteria(Criteria cri) throws Exception;
 
     /**
      * Criteria를 이용해서 전체 게시물의 숫자를 계산하도록 변경이 필요.
@@ -96,7 +96,7 @@ public interface BoardService {
      * @return the int
      * @throws Exception the exception
      */
-    public int listCountCriteria(Criteria cri) throws Exception;
+    int listCountCriteria(Criteria cri) throws Exception;
 
 
     /**
@@ -106,9 +106,9 @@ public interface BoardService {
      * @return the list
      * @throws Exception the exception
      */
-    public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+    List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 
-    public List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception;
+    List<BoardVO> listSearchAny(SearchCriteriaListAny criteria) throws Exception;
 
 
     /**
@@ -118,9 +118,9 @@ public interface BoardService {
      * @return the int
      * @throws Exception the exception
      */
-    public int listSearchCount(SearchCriteria cri) throws Exception;
+    int listSearchCount(SearchCriteria cri) throws Exception;
 
-    public int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception;
+    int listSearchAnyCount(SearchCriteriaListAny criteria) throws Exception;
 
 
     /**
@@ -130,7 +130,7 @@ public interface BoardService {
      * @return the attach
      * @throws Exception the exception
      */
-    public List<String> getAttach(Integer bno) throws Exception;
+    List<String> getAttach(Integer bno) throws Exception;
 
     /**
      * 게시판 - 실시간 인기순으로 정렬
@@ -139,8 +139,8 @@ public interface BoardService {
      * @return
      * @throws Exception
      */
-    public List<BoardVO> livePopular(SearchCriteria searchCriteria) throws Exception;
-    public int livePopularCount(SearchCriteria searchCriteria) throws Exception;
+    List<BoardVO> livePopular(SearchCriteria searchCriteria) throws Exception;
+    int livePopularCount(SearchCriteria searchCriteria) throws Exception;
 
     /**
      * 게시판 - 같은 정치성향 정렬
@@ -151,9 +151,9 @@ public interface BoardService {
      * @return
      * @throws Exception
      */
-    public List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception;
+    List<BoardVO> samePopular(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception;
 
-    public int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception;
+    int samePopularCount(SearchCriteria searchCriteria, BoardVO boardVO, UserVO userVO, HttpSession httpSession) throws Exception;
 
     /**
      * 글 번호로 첨부파일 이름 딱 하나 가져오기
@@ -162,7 +162,7 @@ public interface BoardService {
      * @return
      * @throws Exception
      */
-    public String getAttachNameGET(int bno) throws Exception;
+    String getAttachNameGET(int bno) throws Exception;
 
 
 

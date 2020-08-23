@@ -28,17 +28,17 @@ public class UserDAOImpl implements UserDAO {
     private static String namespace = "org.zerock.mapper.UserMapper";
 
     @Override
-    public UserVO login(LoginDTO dto) throws Exception {
+    public UserVO login(LoginDTO dto) {
         return sqlSession.selectOne(namespace + ".login", dto);
     }
 
     @Override
-    public UserVO loginInfoNoPW(String uid) throws Exception {
+    public UserVO loginInfoNoPW(String uid) {
         return sqlSession.selectOne(namespace + ".loginInfoNoPW", uid);
     }
 
     @Override
-    public void loginIpUpd(UserVO userVO) throws Exception {
+    public void loginIpUpd(UserVO userVO) {
         sqlSession.update(namespace + ".loginIpUpd", userVO);
     }
 
@@ -58,40 +58,40 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void create(UserVO uvo) throws Exception {
+    public void create(UserVO uvo) {
         sqlSession.insert(namespace + ".create", uvo);
     }
 
     @Override
-    public void createLog(UserModifyVO userModifyVO) throws Exception {
+    public void createLog(UserModifyVO userModifyVO) {
         sqlSession.insert(namespace + ".createLog", userModifyVO);
     }
 
     /* 총 회원가입수 GET 하는 메소드 */
     @Override
-    public int registUsersNumGET() throws Exception {
+    public int registUsersNumGET() {
         return sqlSession.selectOne(namespace + ".registUsersNumGET");
     }
 
     @Override
-    public int registColorNumGET(String uday) throws Exception {
+    public int registColorNumGET(String uday) {
         return sqlSession.selectOne(namespace + ".registColorNumGET", uday);
     }
 
     /* 글 작성시 접속한 유저의 별명을 통해서 총 게시글 등록수 구함 */
     @Override
-    public void totalUserPostNumUPD(UserVO userVO) throws Exception {
+    public void totalUserPostNumUPD(UserVO userVO) {
         sqlSession.update(namespace + ".totalUserPostNumUPD", userVO);
     }
 
     /* 댓글 작성시 접속한 유저의 아이디를 통해서 총 댓글 등록수 구함 */
     @Override
-    public void totalUserReplyNumUPD(UserVO userVO) throws Exception {
+    public void totalUserReplyNumUPD(UserVO userVO) {
         sqlSession.update(namespace + ".totalUserReplyNumUPD", userVO);
     }
 
     @Override
-    public void loginUserInfoUPDATE(UserVO userVO) throws Exception {
+    public void loginUserInfoUPDATE(UserVO userVO) {
         sqlSession.update(namespace + ".loginUserInfoUPDATE", userVO);
     }
 }

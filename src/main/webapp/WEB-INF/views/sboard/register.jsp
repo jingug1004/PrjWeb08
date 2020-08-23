@@ -44,7 +44,7 @@
                             <%--<textarea class="form-control" name="content" rows="20"--%>
                             <%--placeholder="Enter ..."></textarea>--%>
                             <%--
-                            textarea의 name은 boardVO(VO) 필드와 같아야 한다.
+                            textarea의 name은 boardVO(vo) 필드와 같아야 한다.
                             ex) boardVO의 private String content; = <textarea name="content'
                             --%>
                             <textarea name="content" class="form-control" placeholder="Enter ..." rows="50"></textarea>

@@ -11,9 +11,9 @@
 /* ================== bin-debug/js/pro/tools/base.js =================== */
 window.averta = {};
 
-;(function($){
-	
-	//"use strict";
+(function ($) {
+
+    //"use strict";
 	
 	window.package = function(name){
 		if(!window[name]) window[name] = {};
@@ -43,7 +43,7 @@ window.averta = {};
 		'Icab'   : '-icab-'
 	};
 	
-	window._mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+	window._mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	window._touch  = 'ontouchstart' in document;
 	$(document).ready(function(){
 		window._jcsspfx 		= getVendorPrefix();	   // JS CSS VendorPrefix
@@ -228,7 +228,7 @@ window.averta = {};
 		} else {
 			return version == ieVer;
 		}
-	}
+	};
 
 	$.removeDataAttrs = function($target, exclude) {
 	    var i,
@@ -333,9 +333,8 @@ window.averta = {};
 })(jQuery);
 
 /* ================== bin-debug/js/pro/tools/EventDispatcher.js =================== */
-;(function(){
-	
-	"use strict";
+(function () {
+    "use strict";
 	
 	averta.EventDispatcher = function(){
 		this.listeners = {};
@@ -386,8 +385,7 @@ window.averta = {};
 })();
 
 /* ================== bin-debug/js/pro/tools/TouchSwipe.js =================== */
-;(function($){
-
+(function ($) {
     "use strict";
 
     var isTouch     = 'ontouchstart' in document,
@@ -612,13 +610,9 @@ window.averta = {};
 })(jQuery);
 
 /* ================== bin-debug/js/pro/tools/Timer.js =================== */
-/**
- * 	Ticker Class
- * 	Author: Averta Ltd
- */
 
-;(function(){
-	"use strict";
+(function () {
+    "use strict";
 	
 	averta.Ticker = function(){};
 	
@@ -672,12 +666,8 @@ window.averta = {};
 	
 })();
 
-/**
- * 	Timer Class
- * 	Author: Averta Ltd
- */
-;(function(){
-	"use strict";
+(function () {
+    "use strict";
 	
 	if(!Date.now){
 		Date.now = function(){
@@ -734,9 +724,8 @@ window.averta = {};
 })();
 
 /* ================== bin-debug/js/pro/tools/CSSTweener.js =================== */
-;(function(){
-	
-	"use strict";
+(function () {
+    "use strict";
 	
 	var evt = null;
 	
@@ -852,12 +841,8 @@ window.averta = {};
 		
 })();
 
-/**
- *	Cross Tween Class
- */
-;(function(){
-	
-	"use strict";
+(function () {
+    "use strict";
 	
 	var _cssanim = null;
 	window.CTween = {};
@@ -951,9 +936,9 @@ window.averta = {};
 	
 })();
 
-;(function(){
-	
-	// Thanks to matthewlein
+(function () {
+
+    // Thanks to matthewlein
 	// https://github.com/matthewlein/Ceaser
 	
 	window.EaseDic = {
@@ -991,9 +976,8 @@ window.averta = {};
 })();
 
 /* ================== bin-debug/js/pro/tools/Aligner.js =================== */
-;(function(){
-	
-	"use strict";
+(function () {
+    "use strict";
 	
 	window.MSAligner = function(type , $container , $img ){
 		
@@ -1089,16 +1073,9 @@ window.averta = {};
 })();
 
 /* ================== bin-debug/js/pro/controls/controller.js =================== */
-/**
- *  Touch List Control
- * 	version 1.1.2
- * 	
- * 	Copyright (C) 2014, Averta Ltd. All rights reserved. 	 	
- */
 
-;(function(){	
-	
-	"use strict";
+(function () {
+    "use strict";
 		
 	var _options = {
 		bouncing 			: true,
@@ -1518,16 +1495,9 @@ window.averta = {};
 })();
 
 /* ================== bin-debug/js/pro/layers/LayerController.js =================== */
-/**
- * Master Slider Layer Controller 
- * @author averta
- * @package Master Slider jQuery PRO
- * @since 2.11.1
- */
-;(function(window, document, $){
-
-	/**
-	 * Layer Controller constructor
+(function (window, document, $) {
+    /**
+	 * Layer controller constructor
 	 * @param {MSSlide} slide layer controller's slide.
 	 */
 	window.MSLayerController = function (slide) {
@@ -1977,9 +1947,8 @@ window.averta = {};
 })(window, document, jQuery);
 
 /* ================== bin-debug/js/pro/layers/LayerEffects.js =================== */
-;(function($){
-	
-	window.MSLayerEffects = {};
+(function ($) {
+    window.MSLayerEffects = {};
 	
 	var installed,
 		_fade = {opacity:0};
@@ -2278,8 +2247,8 @@ window.averta = {};
 			return r;		
 			
 		} : function (x , y , z , dist , orig , fade){
-			return st.left(dist , fade);;
-		};
+            return st.left(dist, fade);
+        };
 		
 		st.rotate3dright = (window._css3d)? function(x , y , z , dist , orig , fade){
 			var r = st.right(dist , fade);
@@ -2287,8 +2256,8 @@ window.averta = {};
 			if(orig) r[transform_orig_css] = orig;
 			return r;		
 		} : function (x , y , z , dist , orig , fade){
-			return st.right(dist , fade);;
-		};
+            return st.right(dist, fade);
+        };
 		
 		st.rotate3dtop = (window._css3d)? function(x , y , z , dist , orig , fade){
 			var r = st.top(dist , fade);
@@ -2296,8 +2265,8 @@ window.averta = {};
 			if(orig) r[transform_orig_css] = orig;
 			return r;		
 		} : function (x , y , z , dist , orig , fade){
-			return st.top(dist , fade);;
-		};
+            return st.top(dist, fade);
+        };
 		
 		st.rotate3dbottom = (window._css3d)? function(x , y , z , dist , orig , fade){
 			var r = st.bottom(dist , fade);
@@ -2366,15 +2335,9 @@ window.averta = {};
 })(jQuery);
 
 /* ================== bin-debug/js/pro/layers/LayerElement.js =================== */
-/**
- * Master Slider Layer Element
- * @author Averta
- * @package Master Slider jQuery
- */
 
-;(function($){
-	
-	/**
+(function ($) {
+    /**
 	 * master slider layer element constructor
 	 */
 	window.MSLayerElement = function(){
@@ -2535,7 +2498,7 @@ window.averta = {};
 
 		// parallax effect 
 		// @since v1.6.0
-		this.parallax = this.$element.data('parallax')
+		this.parallax = this.$element.data('parallax');
 		if( this.parallax != null ) {
 			this.parallax /= 100;
 			this.$parallaxElement = $('<div></div>').addClass('ms-parallax-layer');
@@ -2962,7 +2925,7 @@ window.averta = {};
 			this._lastParaY = this._paraY;
 		}
 
-	}
+	};
 
 	/**
 	 * Parallax move ticker function
@@ -3000,9 +2963,8 @@ window.averta = {};
 })(jQuery);
 
 /* ================== bin-debug/js/pro/layers/ImageLayerElement.js =================== */
-;(function($){
-	
-	window.MSImageLayerElement = function(){
+(function ($) {
+    window.MSImageLayerElement = function(){
 		MSLayerElement.call(this);
 		this.needPreload = true;
 		
@@ -3069,9 +3031,8 @@ window.averta = {};
 })(jQuery);
 
 /* ================== bin-debug/js/pro/layers/VideoLayerElement.js =================== */
-;(function($){
-	
-	window.MSVideoLayerElement = function(){
+(function ($) {
+    window.MSVideoLayerElement = function(){
 		MSLayerElement.call(this);
 		
 		this.__cssConfig.push(
@@ -3171,9 +3132,8 @@ window.averta = {};
 })(jQuery);
 
 /* ================== bin-debug/js/pro/layers/HotspotLayer.js =================== */
-;(function($){
-
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSHotspotLayer = function(){
 		MSLayerElement.call(this);
@@ -3235,7 +3195,7 @@ window.averta = {};
 		if(this._lastClass)	this.tt.removeClass(this._lastClass);
 		this.tt.addClass(name);
 		this._lastClass = name;
-	}
+	};
 	
 	p._alignPolicy = function(){
 		var h = this.tt.outerHeight(false),
@@ -3266,7 +3226,7 @@ window.averta = {};
 		os2 = this.slide.slider.$element.offset();
 		
 		var dist = 50,
-			space = 15 //* this.factor;
+			space = 15; //* this.factor;
 		
 		this.pos_x = os.left - os2.left - this.slide.slider.$element.scrollLeft();
 		this.pos_y = os.top - os2.top - this.slide.slider.$element.scrollTop();
@@ -3475,7 +3435,7 @@ window.averta = {};
 		this.ttcont = $('<div></div>')
 					  .addClass('ms-tooltip-cont')
 					  .html(this.data)
-					  .appendTo(this.tt)
+					  .appendTo(this.tt);
 
 
 		if( this.$element.data('stay-hover') === true ) {
@@ -3563,14 +3523,8 @@ MSSliderEvent.RESERVED_SPACE_CHANGE = 'ms_rsc'; // internal use
 MSSliderEvent.DESTROY				= 'ms_destroy';
 
 /* ================== bin-debug/js/pro/controls/Slide.js =================== */
-/**
- * Master Slider Slide Class
- * @author averta
- * @package Master Slider jQuery 
- */
-;(function(window, document, $){
-	
-	"use strict";
+(function (window, document, $) {
+    "use strict";
 	
 	window.MSSlide = function(){
 		
@@ -4264,9 +4218,8 @@ MSSliderEvent.DESTROY				= 'ms_destroy';
 })(window, document, jQuery);
 
 /* ================== bin-debug/js/pro/controls/SlideController.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var SliderViewList = {};
 	
@@ -4542,7 +4495,7 @@ MSSliderEvent.DESTROY				= 'ms_destroy';
 			this.view.appendSlide(slide);
 		}
 
-	}
+	};
 
 	p.__resize = function(hard){
 		if(!this.created) return;
@@ -4824,13 +4777,9 @@ MSSliderEvent.DESTROY				= 'ms_destroy';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/MasterSlider.js =================== */
-/**
- * Master Slider Main JavaScript File
- */
 
-;(function($){
-
-	"use strict";
+(function ($) {
+    "use strict";
 
 	var LayerTypes = {
 		'image' 	: MSImageLayerElement,
@@ -4912,7 +4861,7 @@ MSSliderEvent.DESTROY				= 'ms_destroy';
 	MasterSlider.releaseDate 	= 'Dec 2015';
 
 	// Master Slider plugins.
-	MasterSlider._plugins = []
+	MasterSlider._plugins = [];
 	var MS = MasterSlider;
 	MS.registerPlugin = function ( plugin ) {
 		if ( MS._plugins.indexOf(plugin) === -1 ) {
@@ -5289,7 +5238,7 @@ MSSliderEvent.DESTROY				= 'ms_destroy';
 
 	p._updateSideMargins = function(){
 		this.$element.css('margin', this.topSpace + 'px ' + this.rightSpace + 'px ' + this.bottomSpace + 'px ' + this.leftSpace + 'px');
-	}
+	};
 
 	p._realignControls = function(){
 		this.rightSpace = this.leftSpace = this.topSpace = this.bottomSpace = 0;
@@ -5587,7 +5536,7 @@ MSSliderEvent.DESTROY				= 'ms_destroy';
 
 })( jQuery, window, document );
 
-;(function ( $, window, document, undefined ) {
+(function ($, window, document, undefined) {
     "use strict";
 
     /* ------------------------------------------------------------------------------ */
@@ -5621,7 +5570,7 @@ MSSliderEvent.DESTROY				= 'ms_destroy';
             }
 
             return false;
-        }
+        };
 
         _ready.apply( this, arguments );
     };
@@ -5643,9 +5592,8 @@ MSViewEvents.CHANGE_START   	= 'slideChangeStart';
 MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 
 /* ================== bin-debug/js/pro/views/BasicView.js =================== */
-;(function($){
-
-	"use strict";
+(function ($) {
+    "use strict";
 
 	window.MSBasicView = function(options){
 
@@ -5743,7 +5691,7 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 
 			this.index = target_index;
 		}else{
-			if(snap < 0 ||  snap >= this.slidesCount) return
+			if(snap < 0 ||  snap >= this.slidesCount) return;
 			this.index = snap;
 		}
 
@@ -6189,9 +6137,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/WaveView.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSWaveView = function(options){
 		MSBasicView.call(this , options);
@@ -6287,16 +6234,9 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/FadeBasicView.js =================== */
-/**
- * Master Slider Fade Basic view
- * @author averta
- * @version 1.1
- * @package MS
- */
 
-;(function(){
-	
-	window.MSFadeBasicView = function(options){
+(function () {
+    window.MSFadeBasicView = function(options){
 		MSWaveView.call(this , options);
 		this.$element.removeClass('ms-wave-view').addClass('ms-fade-basic-view');
 	};
@@ -6323,15 +6263,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })();
 
 /* ================== bin-debug/js/pro/views/FadeWaveView.js =================== */
-/**
- * Master Slider Fade Wave View
- * @author averta
- * @version 1.0
- * @extends {MSWaveView}
- */
-;(function(){
-	
-	window.MSFadeWaveView = function(options){
+(function () {
+    window.MSFadeWaveView = function(options){
 		MSWaveView.call(this , options);
 		this.$element.removeClass('ms-wave-view').addClass('ms-fade-wave-view');
 	};
@@ -6361,9 +6294,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })();
 
 /* ================== bin-debug/js/pro/views/FlowView.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSFlowView = function(options){
 		MSWaveView.call(this , options);
@@ -6400,15 +6332,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/FadeFlowView.js =================== */
-/**
- * Master Slider Fade Flow View
- * @author averta
- * @extends {MSWaveView}
- * @version 1.0
- */
-;(function(){
-	
-	window.MSFadeFlowView = function(options){
+(function () {
+    window.MSFadeFlowView = function(options){
 		MSWaveView.call(this , options);
 		this.$element.removeClass('ms-wave-view').addClass('ms-fade-flow-view');
 	};
@@ -6430,7 +6355,7 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 	p.__updateSlidesHoriz = function(slide , distance){
 		var clc = this.__calculate(distance);
 		slide.$element.css('opacity' , 1-clc.value/300);
-		console.log(window._jcsspfx + 'transform','translateZ('+ -clc.value +'px) rotateY(' + clc.rvalue + 'deg) ')
+		console.log(window._jcsspfx + 'transform','translateZ('+ -clc.value +'px) rotateY(' + clc.rvalue + 'deg) ');
 		slide.$element[0].style[window._jcsspfx + 'Transform'] = 'translateZ('+ -clc.value +'px) rotateY(' + clc.rvalue + 'deg) ';
 	};
 	
@@ -6445,9 +6370,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })();
 
 /* ================== bin-debug/js/pro/views/MaskView.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSMaskView = function(options){
 		MSBasicView.call(this , options);
@@ -6665,9 +6589,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/ParallaxMaskView.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSParallaxMaskView = function(options){
 		MSMaskView.call(this , options);
@@ -6725,9 +6648,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/FadeView.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSFadeView = function(options){
 		MSBasicView.call(this , options);
@@ -6810,9 +6732,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/ScaleView.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSScaleView = function(options){
 		MSBasicView.call(this , options);
@@ -6852,15 +6773,9 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/StackView.js =================== */
-/**
- * Master Slider Stack View 
- * @package Master Slider jQuery
- * @author Averta
- */
 
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSStackView = function(options){
 		MSBasicView.call(this , options);
@@ -6926,17 +6841,9 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/views/FocusView.js =================== */
-/**
- * Master Slider Focus View
- * @version 1.1
- * @author averta
- * @package MS
- * @extends {MSFadeBasicView}
- */
 
-;(function(){
-
-	'use strict';
+(function () {
+    'use strict';
 	
 	var perspective = 2000;
 
@@ -6977,16 +6884,9 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })();
 
 /* ================== bin-debug/js/pro/views/PartialWaveView.js =================== */
-/**
- * Master Slider Partial Wave View
- * @version 1.0
- * @author averta
- * @extends {MSWaveView}
- */
 
-;(function(){
-	
-	window.MSPartialWaveView = function(options){
+(function () {
+    window.MSPartialWaveView = function(options){
 		MSWaveView.call(this , options);
 		this.$element.removeClass('ms-wave-view').addClass('ms-partial-wave-view');
 	};
@@ -7021,8 +6921,7 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })();
 
 /* ================== bin-debug/js/pro/views/BoxView.js =================== */
-;(function($){
-
+(function ($) {
     "use strict";
 
     window.MSBoxView = function(options){
@@ -7068,9 +6967,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/BaseControl.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var BaseControl = function(){
 		this.options = {
@@ -7266,9 +7164,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/Arrows.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var MSArrows = function(options){
 		BaseControl.call(this);
@@ -7341,9 +7238,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/Thumblist.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var MSThumblist = function(options){
 		BaseControl.call(this);
@@ -7639,7 +7535,7 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 		if(pos + this.thumbSize - this.controller.value > this.$element[this.__dimen]()){
 			var first_snap = this.cindex - Math.floor(this.$element[this.__dimen]() / this.thumbSize) + 1;
 			this.controller.gotoSnap(first_snap , true);
-			return;
+
 		}
 	};
 
@@ -7706,9 +7602,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/Bullets.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var MSBulltes = function(options){
 		BaseControl.call(this);
@@ -7819,9 +7714,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/Scrollbar.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var MSScrollbar = function(options){
 		BaseControl.call(this);
@@ -8008,9 +7902,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/Timebar.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var MSTimerbar = function(options){
 		BaseControl.call(this);
@@ -8128,9 +8021,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/CircleTimer.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	var MSCircleTimer = function(options){
 		BaseControl.call(this);
@@ -8228,9 +8120,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/Lightbox.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSLightbox = function(options){
 		BaseControl.call(this , options);
@@ -8275,9 +8166,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/uicontrols/SlideInfo.js =================== */
-;(function($){
-	
-	"use strict";
+(function ($) {
+    "use strict";
 	
 	window.MSSlideInfo = function(options){
 		BaseControl.call(this , options);
@@ -8429,14 +8319,9 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/plugins/MSGallery.js =================== */
-/**
- *	Master Slider, Gallery Template v1.0
- * 	@author: Averta Ltd.
- */
 
-;(function($){
-	
-	window.MSGallery = function(id , slider){
+(function ($) {
+    window.MSGallery = function(id , slider){
 		this.id = id;
 		this.slider = slider;
 		
@@ -8500,14 +8385,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/plugins/MSFlickrV2.js =================== */
-/**
- * Master Slider Flickr Plugin Version 2
- * @version 2.0.0
- * @author Averta Ltd.
- */
-;(function($){
-	
-	/**
+(function ($) {
+    /**
 	 * Generate Flickr photoset url
 	 * @param  {String} key   api key
 	 * @param  {String} id    photoset id
@@ -8677,15 +8556,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/plugins/MSFacebookGallery.js =================== */
-/**
- * Master Slider Facebook Gallery plugin
- * @author Averta Ltd.
- * @version 1.0.0
- */
-;(function($){
-
-
-	window.MSFacebookGallery = function(slider, options){
+(function ($) {
+    window.MSFacebookGallery = function(slider, options){
 		var _options = {
 			count			:10,
 			type			:'photostream', // album
@@ -8981,14 +8853,8 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery);
 
 /* ================== bin-debug/js/pro/plugins/MSKeyboardNav.js =================== */
-/**
- * Keyboard navigation plugin for Master Slider.
- * @version  1.0.0
- * @author Averta
- * @package MasterSlider jQuery
- */
-;(function($, document, window){
-	var PId = 0;
+(function ($, document, window) {
+    var PId = 0;
 
 	// check if master slider is available
 	if ( !window.MasterSlider ) {
@@ -9040,17 +8906,9 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery, document, window);
 
 /* ================== bin-debug/js/pro/plugins/MSStartOnAppear.js =================== */
-/**
- * Start on appear plugin for Master Slider.
- * 
- * @description This plugin prevents slider automatically initialization and inits slider when it appears inside of the browser window.
- * @version  1.0.0
- * @author Averta
- * @package MasterSlider jQuery
- */
 
-;(function($, document, window){
-	var PId = 0,
+(function ($, document, window) {
+    var PId = 0,
 		$window = $(window),
 		$doc = $(document);
 
@@ -9104,18 +8962,9 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(jQuery, document, window);
 
 /* ================== bin-debug/js/pro/plugins/MSFilters.js =================== */
-/**
- * Master Slider Filters Plugin
- * This plugin adds CSS3 filters to the slides, like brightness, grayscale, sepia, ... It works in major browser and devices but in IE `opacity` only supported.
- * 
- * @package Master Slider jQuery
- * @author Averta
- * @version  1.0.0a
- */
 
-;(function (document, window, jQuery){
-
-	var filterUnits = {
+(function (document, window, jQuery) {
+    var filterUnits = {
 		'hue-rotate' 	: 'deg',
 		'blur' 			: 'px'
 	}, initialValues = {
@@ -9128,7 +8977,7 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 		'sepia'			: 0,
 		'blur'			: 0,
 		'grayscale'		: 0
-	}
+	};
 
 	// check if master slider is available
 	if ( !window.MasterSlider ) {
@@ -9223,18 +9072,10 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 })(document, window, jQuery);
 
 /* ================== bin-debug/js/pro/plugins/MSScrollToAction.js =================== */
-/**
- * Master Slider Scroll To Action Plugin.
- * 
- * @description This plugins adds page scrolling actions to the layer actions list.
- * @version  1.0.0
- * @author Averta
- * @package MasterSlider jQuery
- */
 
-;(function($, document, window){
+(function ($, document, window) {
 
-	// check if master slider is available
+    // check if master slider is available
 	if ( !window.MasterSlider ) {
 		return;
 	}
@@ -9274,7 +9115,7 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 		if ( target.length === 0 ) {
 			return;
 		}
-		console.log(target.offset().top, duration )
+		console.log(target.offset().top, duration );
 
 		if( duration == null ) {
 			duration = 1.4;
@@ -9299,7 +9140,7 @@ MSViewEvents.CHANGE_END	     	= 'slideChangeEnd';
 		$('html, body').animate({
 			scrollTop: sliderEle.offset().top + sliderEle.outerHeight(false)
 		}, duration * 1000, 'easeInOutQuad');
-	}
+	};
 
 	// install plugin to master slider
 	MasterSlider.registerPlugin( ScrollToAction );

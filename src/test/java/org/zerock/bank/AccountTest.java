@@ -30,20 +30,18 @@ public class AccountTest {
     /**
      * Test account.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testAccount() throws Exception {
+    public void testAccount() {
 
     }
 
     /**
      * Test get balance.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testGetBalance() throws Exception {
+    public void testGetBalance() {
         assertEquals(10000, account.getBalance());
 
         account = new Account(1000);
@@ -56,10 +54,9 @@ public class AccountTest {
     /**
      * Test deposit.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testDeposit() throws Exception {
+    public void testDeposit() {
         account.deposit(1000);
         assertEquals(11000, account.getBalance());
     }
@@ -67,10 +64,9 @@ public class AccountTest {
     /**
      * Test widthdraw.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testWidthdraw() throws Exception {
+    public void testWidthdraw() {
         account.withdraw(1000);
         assertEquals(9000, account.getBalance());
     }

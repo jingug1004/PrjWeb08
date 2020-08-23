@@ -81,18 +81,18 @@ public class UserInfoController {
     }
 
     @RequestMapping(value = "/userInfoListGrid", method = RequestMethod.GET)
-    public void userInfoListGridGET() throws Exception {
+    public void userInfoListGridGET() {
 
     }
 
     @RequestMapping(value = "/userInfoListDetail", method = RequestMethod.GET)
-    public void userInfoListDetailGET() throws Exception {
+    public void userInfoListDetailGET() {
 
     }
 
     @ResponseBody
     @RequestMapping(value = "/userPassConfirmGET", method = RequestMethod.POST)
-    public ResponseEntity<String> userPassConfirmGET(@RequestBody UserVO userVO) throws Exception {
+    public ResponseEntity<String> userPassConfirmGET(@RequestBody UserVO userVO) {
 
         ResponseEntity<String> entity = null;
         try {

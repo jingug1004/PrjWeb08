@@ -29,17 +29,17 @@ public class UserInfoDAOImpl implements UserInfoDAO {
     private static String namespace = "org.zerock.mapper.userInfoMapper";
 
     @Override
-    public List<BoardVO> userInfoList(SearchCriteria searchCriteria) throws Exception {
+    public List<BoardVO> userInfoList(SearchCriteria searchCriteria) {
         return session.selectList(namespace + ".userInfoList", searchCriteria);
     }
 
     @Override
-    public int userInfoListCount(SearchCriteria searchCriteria) throws Exception {
+    public int userInfoListCount(SearchCriteria searchCriteria) {
         return session.selectOne(namespace + ".userInfoListCount", searchCriteria);
     }
 
     @Override
-    public String userPassConfirmGET(UserVO userVO) throws Exception {
+    public String userPassConfirmGET(UserVO userVO) {
         return session.selectOne(namespace + ".userPassConfirmGET", userVO);
     }
 }

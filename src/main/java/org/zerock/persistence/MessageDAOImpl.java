@@ -23,19 +23,19 @@ public class MessageDAOImpl implements MessageDAO{
     private static String namespace ="org.zerock.mapper.MessageMapper";
 
     @Override
-    public void create(MessageVO vo) throws Exception {
+    public void create(MessageVO vo) {
 
         session.insert(namespace+".create", vo);
     }
 
     @Override
-    public MessageVO readMessage(Integer mno) throws Exception {
+    public MessageVO readMessage(Integer mno) {
 
         return session.selectOne(namespace+".readMessage", mno);
     }
 
     @Override
-    public void updateState(Integer mno) throws Exception {
+    public void updateState(Integer mno) {
 
         session.update(namespace+".upldateState", mno);
 

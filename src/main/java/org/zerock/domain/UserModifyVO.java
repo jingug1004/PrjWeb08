@@ -6,7 +6,7 @@ import java.sql.Timestamp;
  * Created by EMIYA on 2018. 5. 12. PM 21:043
  * sp4chap11-Project / org.zerock.domain
  * No pain, No gain!
- * What : 유저 정보 변경시 기록 남길 VO.
+ * What : 유저 정보 변경시 기록 남길 vo.
  * Why :
  * How :
  */

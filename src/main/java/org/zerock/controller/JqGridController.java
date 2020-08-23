@@ -35,7 +35,7 @@ public class JqGridController {
 //    }
 
     @RequestMapping(value = "/jqGridList02", method = RequestMethod.GET)
-    public void jqGridList02() throws Exception {
+    public void jqGridList02() {
 
 
     }

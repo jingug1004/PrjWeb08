@@ -769,7 +769,7 @@
 <%--<p>--%>
 <%--2014 &copy; UNIFY. ALL Rights Reserved.--%>
 <%--<a target="_blank" href="https://twitter.com/htmlstream">Htmlstream</a> | <a href="#">Privacy--%>
-<%--Policy</a> | <a href="#">Terms of Service</a>--%>
+<%--Policy</a> | <a href="#">Terms of service</a>--%>
 <%--</p>--%>
 <%--</div>--%>
 <%--<div class="col-md-6">--%>

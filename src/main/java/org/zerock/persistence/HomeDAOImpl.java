@@ -27,12 +27,12 @@ public class HomeDAOImpl implements HomeDAO {
     private static String namespace = "org.zerock.mapper.homeMapper";
 
     @Override
-    public List<BoardVO> random10BoardsList(SearchCriteria searchCriteria) throws Exception {
+    public List<BoardVO> random10BoardsList(SearchCriteria searchCriteria) {
         return session.selectList(namespace + ".random10BoardsList", searchCriteria);
     }
 
     @Override
-    public List<BoardVO> latest4BoardsList(SearchCriteria searchCriteria) throws Exception {
+    public List<BoardVO> latest4BoardsList(SearchCriteria searchCriteria) {
         return session.selectList(namespace + ".latest4BoardsList", searchCriteria);
     }
 

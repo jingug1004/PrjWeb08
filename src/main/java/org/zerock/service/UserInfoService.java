@@ -14,8 +14,8 @@ import java.util.List;
  */
 public interface UserInfoService {
 
-    public List<BoardVO> userInfoList(SearchCriteria searchCriteria) throws Exception;
-    public int userInfoListCount(SearchCriteria searchCriteria) throws Exception;
+    List<BoardVO> userInfoList(SearchCriteria searchCriteria) throws Exception;
+    int userInfoListCount(SearchCriteria searchCriteria) throws Exception;
 
     /**
      * 회원정보 수정 페이지에서 회원정보 수정할 때 비밀번호 맞는지 확인하기 위한 GET.
@@ -24,6 +24,6 @@ public interface UserInfoService {
      * @return
      * @throws Exception
      */
-    public String userPassConfirmGET(UserVO userVO) throws Exception;
+    String userPassConfirmGET(UserVO userVO) throws Exception;
 
 }

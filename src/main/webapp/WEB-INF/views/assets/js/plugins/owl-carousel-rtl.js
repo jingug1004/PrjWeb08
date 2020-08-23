@@ -26,10 +26,10 @@ var OwlCarousel = function () {
 		  });
 		  jQuery(".owl-slider-next").click(function() {
 		    jQuery(".owl-slider").trigger("next.owl.carousel");
-		  })
+		  });
 		  jQuery(".owl-slider-prev").click(function() {
 		    jQuery(".owl-slider").trigger("prev.owl.carousel");
-		  })
+		  });
 
 		  //Owl Slider v2
 	    jQuery(".owl-slider-v2").owlCarousel({
@@ -84,7 +84,7 @@ var OwlCarousel = function () {
 		  });
 		  jQuery(".owl-slider-v4-next").click(function(){
 		    jQuery(".owl-slider-v4").trigger('next.owl.carousel');
-		  })
+		  });
 		  jQuery(".owl-slider-v4-prev").click(function(){
 		    jQuery(".owl-slider-v4").trigger('prev.owl.carousel');
 		  })

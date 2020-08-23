@@ -24,12 +24,12 @@ public class UserColorDAOImpl implements UserColorDAO {
     private static String namespace = "org.zerock.mapper.UserColorMapper";
 
     @Override
-    public int userColorInputGET(String userColor) throws Exception {
+    public int userColorInputGET(String userColor) {
         return sqlSession.selectOne(namespace + ".userColorInputGET", userColor);
     }
 
     @Override
-    public void userColorInputTotalUpd(int userColorNum, String userColor) throws Exception {
+    public void userColorInputTotalUpd(int userColorNum, String userColor) {
 
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("userColorNum", userColorNum);
@@ -39,7 +39,7 @@ public class UserColorDAOImpl implements UserColorDAO {
     }
 
     @Override
-    public void totalColorPostNumUPD(int getTotalPostNumByColor, String userColor) throws Exception {
+    public void totalColorPostNumUPD(int getTotalPostNumByColor, String userColor) {
 
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("getTotalPostNumByColor", getTotalPostNumByColor);
@@ -49,7 +49,7 @@ public class UserColorDAOImpl implements UserColorDAO {
     }
 
     @Override
-    public void totalColorReplyNumUPD(int getTotalReplyNumByColor, String userColor) throws Exception {
+    public void totalColorReplyNumUPD(int getTotalReplyNumByColor, String userColor) {
 
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("getTotalReplyNumByColor", getTotalReplyNumByColor);

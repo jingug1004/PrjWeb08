@@ -28,22 +28,22 @@ public class UserLevelDAOImpl implements UserLevelDAO {
 //    }
 
     @Override
-    public void userLevelLoginUserUPD() throws Exception {
+    public void userLevelLoginUserUPD() {
 
     }
 
     @Override
-    public void userAllUserUPD() throws Exception {
+    public void userAllUserUPD() {
 
     }
 
     @Override
-    public void userLevelPostUserUPD(UserVO userVO) throws Exception {
+    public void userLevelPostUserUPD(UserVO userVO) {
         sqlSession.update(namespace + ".userLevelPostUserUPD", userVO);
     }
 
     @Override
-    public void userLevelColorUserUPD(UserVO userVO) throws Exception {
+    public void userLevelColorUserUPD(UserVO userVO) {
         sqlSession.update(namespace + ".userLevelColorUserUPD", userVO);
     }
 }

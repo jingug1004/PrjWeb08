@@ -22,7 +22,7 @@ import java.util.Map;
  * Why :
  * How :
  */
-//@Controller
+//@controller
 @RestController
 @RequestMapping("/replies")
 public class ReplyController {

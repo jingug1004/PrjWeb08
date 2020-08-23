@@ -53,7 +53,7 @@ public class PointUtils {
 
     private int balancePoint;                       // tbl_user의 포인트 잔액
 
-    public PointUtils(){}; // 기본 생성자
+    public PointUtils(){} // 기본 생성자
 
     // insert 회원가입시 100 포인트(+) 생성자
     public PointUtils(String loginId, String reason, int savingPoint) {

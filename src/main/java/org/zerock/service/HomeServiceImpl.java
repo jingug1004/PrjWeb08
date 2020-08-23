@@ -14,7 +14,7 @@ import java.util.List;
  * Created by macbookpro on 2017. 2. 4.. PM 1:04
  * What :
  * Why :
- * How : 클래스 선언부에는 스프링의 빈으로 인식되기 위해서 @Service 애노테이션이 적용된 것을 볼 수 있음.
+ * How : 클래스 선언부에는 스프링의 빈으로 인식되기 위해서 @service 애노테이션이 적용된 것을 볼 수 있음.
  */
 @Service
 public class HomeServiceImpl implements HomeService {
@@ -38,7 +38,7 @@ public class HomeServiceImpl implements HomeService {
     private UserInfoDAO userInfoDAO;                    // 글 작성자의 게시글과 댓글
 
     @Inject
-    private HomeDAO homeDAO;                            // 홈에 렌더링할 게시물 DAO
+    private HomeDAO homeDAO;                            // 홈에 렌더링할 게시물 dao
 
     private static final Logger logger = LoggerFactory.getLogger(HomeServiceImpl.class);
 

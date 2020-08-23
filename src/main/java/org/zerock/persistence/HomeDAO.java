@@ -22,7 +22,7 @@ public interface HomeDAO {
      * @return
      * @throws Exception
      */
-    public List<BoardVO> random10BoardsList(SearchCriteria searchCriteria) throws Exception;
+    List<BoardVO> random10BoardsList(SearchCriteria searchCriteria) throws Exception;
 
     /**
      * Home.jsp에 중단에 보여줄 4개 최신 게시물
@@ -31,7 +31,7 @@ public interface HomeDAO {
      * @return
      * @throws Exception
      */
-    public List<BoardVO> latest4BoardsList(SearchCriteria searchCriteria) throws Exception;
+    List<BoardVO> latest4BoardsList(SearchCriteria searchCriteria) throws Exception;
 
 
 }

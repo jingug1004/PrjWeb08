@@ -24,7 +24,7 @@ public interface ReplyService {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void addReply(ReplyVO vo, HttpSession httpSession) throws Exception;
+    void addReply(ReplyVO vo, HttpSession httpSession) throws Exception;
 
     /**
      * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.
@@ -33,7 +33,7 @@ public interface ReplyService {
      * @return the list
      * @throws Exception the exception
      */
-    public List<ReplyVO> listReply(Integer bno) throws Exception;
+    List<ReplyVO> listReply(Integer bno) throws Exception;
 
     /**
      * Modify reply.
@@ -41,7 +41,7 @@ public interface ReplyService {
      * @param vo the vo
      * @throws Exception the exception
      */
-    public void modifyReply(ReplyVO vo) throws Exception;
+    void modifyReply(ReplyVO vo) throws Exception;
 
     /**
      * Remove reply.
@@ -49,7 +49,7 @@ public interface ReplyService {
      * @param rno the rno
      * @throws Exception the exception
      */
-    public void removeReply(Integer rno, HttpSession httpSession) throws Exception;
+    void removeReply(Integer rno, HttpSession httpSession) throws Exception;
 
     /**
      * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.
@@ -59,7 +59,7 @@ public interface ReplyService {
      * @return the list
      * @throws Exception the exception
      */
-    public List<ReplyVO> listReplyPage(Integer bno, Criteria cri) throws Exception;
+    List<ReplyVO> listReplyPage(Integer bno, Criteria cri) throws Exception;
 
     /**
      * Ajax 댓글 처리의 REST 방식의 ReplyController 작성 중 댓글 처리를 위한 서비스.
@@ -68,6 +68,6 @@ public interface ReplyService {
      * @return the int
      * @throws Exception the exception
      */
-    public int count(Integer bno) throws Exception;
+    int count(Integer bno) throws Exception;
 
 }
